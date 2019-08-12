@@ -1,0 +1,149 @@
+DEBUG - 2019-08-12 14:26:29 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 14:26:29 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 14:26:29 --> Total execution time: 0.2235
+DEBUG - 2019-08-12 14:26:32 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 14:26:32 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 14:26:32 --> Total execution time: 0.1548
+DEBUG - 2019-08-12 14:26:37 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 14:26:37 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 14:26:39 --> Total execution time: 2.3272
+DEBUG - 2019-08-12 14:27:05 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 14:27:05 --> No URI present. Default controller set.
+DEBUG - 2019-08-12 14:27:05 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 14:27:05 --> Total execution time: 0.1998
+DEBUG - 2019-08-12 14:30:28 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 14:30:28 --> No URI present. Default controller set.
+DEBUG - 2019-08-12 14:30:28 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 14:30:28 --> Total execution time: 0.2177
+DEBUG - 2019-08-12 14:30:31 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 14:30:31 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 14:30:31 --> Total execution time: 0.2162
+DEBUG - 2019-08-12 14:30:32 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 14:30:32 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 14:30:32 --> Total execution time: 0.2007
+DEBUG - 2019-08-12 14:30:36 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 14:30:36 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 14:30:36 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2019-08-12 14:30:36 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 14:30:36 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 14:30:36 --> Total execution time: 0.1850
+DEBUG - 2019-08-12 14:30:38 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 14:30:38 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 14:30:38 --> Total execution time: 0.2656
+DEBUG - 2019-08-12 14:30:38 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 14:30:38 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 14:30:38 --> Total execution time: 0.2558
+DEBUG - 2019-08-12 14:30:41 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 14:30:41 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 14:30:41 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 14:30:41 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 14:30:42 --> Total execution time: 0.1902
+DEBUG - 2019-08-12 14:30:42 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 14:30:42 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 14:30:42 --> Total execution time: 0.1854
+DEBUG - 2019-08-12 14:31:25 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 14:31:25 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 14:31:25 --> Total execution time: 0.1406
+DEBUG - 2019-08-12 15:05:44 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 15:05:44 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 15:05:44 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 15:05:44 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 15:05:44 --> Total execution time: 0.2088
+DEBUG - 2019-08-12 15:05:52 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 15:05:52 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 15:05:52 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2019-08-12 15:05:52 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 15:05:52 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 15:05:53 --> Total execution time: 0.1623
+DEBUG - 2019-08-12 15:05:55 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 15:05:55 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 15:05:55 --> Total execution time: 0.1827
+DEBUG - 2019-08-12 15:05:55 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 15:05:55 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 15:05:55 --> Total execution time: 0.2181
+DEBUG - 2019-08-12 15:05:58 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 15:05:58 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 15:05:58 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 15:05:59 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 15:05:59 --> Total execution time: 0.1752
+DEBUG - 2019-08-12 15:10:32 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 15:10:32 --> No URI present. Default controller set.
+DEBUG - 2019-08-12 15:10:32 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 15:10:32 --> Total execution time: 0.2734
+DEBUG - 2019-08-12 15:39:35 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 15:39:35 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 15:39:35 --> Total execution time: 0.2013
+DEBUG - 2019-08-12 15:39:37 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 15:39:38 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 15:39:38 --> Total execution time: 0.2948
+DEBUG - 2019-08-12 15:39:38 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 15:39:38 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2019-08-12 15:39:38 --> 404 Page Not Found: Images/space.gif
+DEBUG - 2019-08-12 16:53:16 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:53:16 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2019-08-12 16:53:17 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): Connection refused /www/system/database/drivers/mysqli/mysqli_driver.php 201
+ERROR - 2019-08-12 16:53:17 --> Unable to connect to the database
+ERROR - 2019-08-12 16:53:17 --> Severity: Warning --> ini_set(): Headers already sent. You cannot change the session module's ini settings at this time /www/system/libraries/Session/Session.php 282
+ERROR - 2019-08-12 16:53:17 --> Severity: Warning --> session_set_cookie_params(): Cannot change session cookie parameters when headers already sent /www/system/libraries/Session/Session.php 294
+ERROR - 2019-08-12 16:53:17 --> Severity: Warning --> ini_set(): Headers already sent. You cannot change the session module's ini settings at this time /www/system/libraries/Session/Session.php 304
+ERROR - 2019-08-12 16:53:17 --> Severity: Warning --> ini_set(): Headers already sent. You cannot change the session module's ini settings at this time /www/system/libraries/Session/Session.php 314
+ERROR - 2019-08-12 16:53:17 --> Severity: Warning --> ini_set(): Headers already sent. You cannot change the session module's ini settings at this time /www/system/libraries/Session/Session.php 315
+ERROR - 2019-08-12 16:53:17 --> Severity: Warning --> ini_set(): Headers already sent. You cannot change the session module's ini settings at this time /www/system/libraries/Session/Session.php 316
+ERROR - 2019-08-12 16:53:17 --> Severity: Warning --> ini_set(): Headers already sent. You cannot change the session module's ini settings at this time /www/system/libraries/Session/Session.php 317
+ERROR - 2019-08-12 16:53:17 --> Severity: Warning --> ini_set(): Headers already sent. You cannot change the session module's ini settings at this time /www/system/libraries/Session/Session.php 375
+ERROR - 2019-08-12 16:53:17 --> Severity: Warning --> ini_set(): Headers already sent. You cannot change the session module's ini settings at this time /www/system/libraries/Session/drivers/Session_files_driver.php 108
+ERROR - 2019-08-12 16:53:17 --> Severity: Warning --> session_set_save_handler(): Cannot change save handler when headers already sent /www/system/libraries/Session/Session.php 110
+ERROR - 2019-08-12 16:53:17 --> Severity: Warning --> session_start(): Cannot start session when headers already sent /www/system/libraries/Session/Session.php 143
+ERROR - 2019-08-12 16:53:17 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): Connection refused /www/system/database/drivers/mysqli/mysqli_driver.php 201
+ERROR - 2019-08-12 16:53:17 --> Unable to connect to the database
+ERROR - 2019-08-12 16:53:17 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): Connection refused /www/system/database/drivers/mysqli/mysqli_driver.php 201
+ERROR - 2019-08-12 16:53:17 --> Unable to connect to the database
+ERROR - 2019-08-12 16:53:17 --> Severity: error --> Exception: Call to a member function real_escape_string() on boolean /www/system/database/drivers/mysqli/mysqli_driver.php 391
+ERROR - 2019-08-12 16:53:17 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /www/system/core/Exceptions.php:271) /www/system/core/Common.php 570
+DEBUG - 2019-08-12 16:54:15 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:15 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 16:54:15 --> Total execution time: 0.1939
+DEBUG - 2019-08-12 16:54:15 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:15 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2019-08-12 16:54:15 --> 404 Page Not Found: Images/space.gif
+DEBUG - 2019-08-12 16:54:17 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:17 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 16:54:17 --> Total execution time: 0.1925
+DEBUG - 2019-08-12 16:54:21 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:21 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 16:54:21 --> Total execution time: 0.1734
+DEBUG - 2019-08-12 16:54:23 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:23 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 16:54:23 --> Total execution time: 0.1730
+DEBUG - 2019-08-12 16:54:31 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:31 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 16:54:31 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2019-08-12 16:54:32 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:32 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 16:54:32 --> Total execution time: 0.1562
+DEBUG - 2019-08-12 16:54:33 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:33 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 16:54:33 --> Total execution time: 0.1924
+DEBUG - 2019-08-12 16:54:33 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:33 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 16:54:34 --> Total execution time: 0.2330
+DEBUG - 2019-08-12 16:54:37 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:37 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 16:54:37 --> Total execution time: 0.1670
+DEBUG - 2019-08-12 16:54:47 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:47 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 16:54:48 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2019-08-12 16:54:49 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 16:54:49 --> Total execution time: 0.1639
+DEBUG - 2019-08-12 16:54:51 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:51 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 16:54:51 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:51 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 16:54:51 --> Total execution time: 0.1788
+DEBUG - 2019-08-12 16:54:53 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:53 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 16:54:53 --> Total execution time: 0.2206
+DEBUG - 2019-08-12 16:54:54 --> UTF-8 Support Enabled
+DEBUG - 2019-08-12 16:54:54 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2019-08-12 16:55:03 --> Total execution time: 8.7603
