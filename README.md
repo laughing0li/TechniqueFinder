@@ -1,10 +1,15 @@
 # Technique Finder
 
-Technique Finder(TF) application aids to find the techniques and facilities to fit your research project.
+Technique Finder(TF) application aids researchers to find the techniques and facilities to fit their research project.
 
 Use TF to identify and understand the microscopy and microanalyses techniques available to researchers through Microscopy Australia.
 You will find the contact details of expert staff for each technique. They can provide you with all the information you need,
 and guide you through the planning, training, data collection and interpretation stages of your experiments.
+
+## Licensing
+- The Technique Finder application licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.](https://creativecommons.org/licenses/by-nc-sa/4.0/)   ![CC-NC-SA](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
+- It is built on top of the [Code Igniter](https://www.codeigniter.com) PHP framework which is licensed using the [MIT](https://github.com/bcit-ci/CodeIgniter/blob/develop/license.txt) license.
+
 
 ## System requirements
 
