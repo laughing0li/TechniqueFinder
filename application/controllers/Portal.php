@@ -67,12 +67,12 @@ class Portal extends CI_Controller {
         ));
     }
 
-    public function bioOptionsSelection(){
+    public function geochemOptionsSelection(){
         $staticData = array();
-        $staticData['tf.biologyChoices.quickGuide'] = $this->Static_model->getSaticDataByName('tf.biologyChoices.quickGuide')->text;
-        $staticData['tf.biologyChoices.comparison.title'] = $this->Static_model->getSaticDataByName('tf.biologyChoices.comparison.title')->text;
-        $staticData['tf.biologyChoices.left.title'] = $this->Static_model->getSaticDataByName('tf.biologyChoices.left.title')->text;
-        $staticData['tf.biologyChoices.right.title'] = $this->Static_model->getSaticDataByName('tf.biologyChoices.right.title')->text;
+        $staticData['tf.geochemChoices.quickGuide'] = $this->Static_model->getSaticDataByName('tf.geochemChoices.quickGuide')->text;
+        $staticData['tf.geochemChoices.comparison.title'] = $this->Static_model->getSaticDataByName('tf.geochemChoices.comparison.title')->text;
+        $staticData['tf.geochemChoices.left.title'] = $this->Static_model->getSaticDataByName('tf.geochemChoices.left.title')->text;
+        $staticData['tf.geochemChoices.right.title'] = $this->Static_model->getSaticDataByName('tf.geochemChoices.right.title')->text;
 
 
         $this->load->model('OptionChoice_model');
@@ -86,7 +86,7 @@ class Portal extends CI_Controller {
         ));
     }
 
-    public function physicsOptionsSelection(){
+    public function expProcOptionsSelection(){
         $staticData = array();
         $staticData['tf.physicsChoices.quickGuide'] = $this->Static_model->getSaticDataByName('tf.physicsChoices.quickGuide')->text;;
         $staticData['tf.physicsChoices.comparison.title'] = $this->Static_model->getSaticDataByName('tf.physicsChoices.comparison.title')->text;;
@@ -103,6 +103,25 @@ class Portal extends CI_Controller {
                 'right_list'=>$right_list
         ));
     }
+
+    public function samplePrepOptionsSelection(){
+        $staticData = array();
+        $staticData['tf.physicsChoices.quickGuide'] = $this->Static_model->getSaticDataByName('tf.physicsChoices.quickGuide')->text;;
+        $staticData['tf.physicsChoices.comparison.title'] = $this->Static_model->getSaticDataByName('tf.physicsChoices.comparison.title')->text;;
+        $staticData['tf.physicsChoices.left.title'] = $this->Static_model->getSaticDataByName('tf.physicsChoices.left.title')->text;
+        $staticData['tf.physicsChoices.right.title'] = $this->Static_model->getSaticDataByName('tf.physicsChoices.right.title')->text;
+
+        $this->load->model('OptionChoice_model');
+        $left_list = $this->OptionChoice_model->getAllOptionChoices('PHYSICS', 'LEFT');
+        $right_list = $this->OptionChoice_model->getAllOptionChoices('PHYSICS', 'RIGHT');
+
+        $this->load->view('Portal/phys_options_selection', array(
+            'staticData' => $staticData,
+                'left_list'=>$left_list,
+                'right_list'=>$right_list
+        ));
+    }
+
 
 
     public function getTechniqueByOptionCombination(){

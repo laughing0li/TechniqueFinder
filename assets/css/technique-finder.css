@@ -408,6 +408,33 @@ a.ui-button:active,
     padding: 0;
 }
 
+#button_exp_proc a {
+    margin: 0 1.5em;
+    height: 50px;
+    float: left;
+    background-position: 0;
+    width: 185px;
+    background: url(../images/button_choices_exp_proc.gif);
+}
+
+#button_sample_prep a {
+    margin: 0 1.5em;
+    height: 50px;
+    float: left;
+    background-position: 0;
+    width: 185px;
+    background: url(../images/button_choices_sample_prep.gif);
+}
+
+#button_geochem a {
+    margin: 0 1.5em;
+    height: 50px;
+    float: left;
+    background-position: 0;
+    width: 185px;
+    background: url(../images/button_choices_geochem.gif);
+}
+
 #button_bio a {
     margin: 0 1.5em;
     height: 50px;

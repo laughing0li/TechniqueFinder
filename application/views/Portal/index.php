@@ -23,8 +23,11 @@
                     <span id="content"><?php if(isset($staticData['tf.home.optionsExplanation'])){echo $staticData['tf.home.optionsExplanation'];}?></span>
                   <span class="buttons">
                       <ul style='list-style: none'>
-                      <li id="button_bio"><a href="<?php echo base_url();?>Portal/bioOptionsSelection"></a></li>
-                        <li id="button_phys"><a href="<?php echo base_url();?>Portal/physicsOptionsSelection"></a></li>
+                        <!-- <li id="button_bio"><a href="<?php echo base_url();?>Portal/geochemOptionsSelection"></a></li> -->
+		        <!-- <li id="button_phys"><a href="<?php echo base_url();?>Portal/physicsOptionsSelection"></a></li> -->
+                        <li id="button_geochem"><a href="<?php echo base_url();?>Portal/geochemOptionsSelection"></a></li>
+                        <li id="button_exp_proc"><a href="<?php echo base_url();?>Portal/expProcOptionsSelection"></a></li>
+                        <li id="button_sample_prep"><a href="<?php echo base_url();?>Portal/samplePrepOptionsSelection"></a></li>
                       </ul>
                   </span>
                   

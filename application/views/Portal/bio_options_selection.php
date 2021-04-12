@@ -20,14 +20,14 @@
            
             <div class="clear"></div>
          
-            <?php echo $staticData['tf.biologyChoices.quickGuide']; ?>
+            <?php echo $staticData['tf.geochemChoices.quickGuide']; ?>
 
 <div style="float:left;margin-left:15px;">
     <div style="float:left;">
         <table style="text-align: left;">
             <tr>
                 <td class="tf-yellow-box" valign="top">
-                <div class="tf-setp-title"><?php echo strip_tags($staticData['tf.biologyChoices.left.title']);?> </div>
+                <div class="tf-setp-title"><?php echo strip_tags($staticData['tf.geochemChoices.left.title']);?> </div>
                     <ul style="padding-left:15px;">
                         <?php
 /**
@@ -50,10 +50,10 @@ foreach($left_list as $r){
                 </td>
                 <td style="width:100px; vertical-align:center;" >
                     <img src="<?php echo base_url().'assets/images/space.gif'?>" width="20" height="5" />
-                    <span style="text-align:center;"><h1 class="tf-heading"><?php echo strip_tags($staticData['tf.biologyChoices.comparison.title']);?> </h1></span>
+                    <span style="text-align:center;"><h1 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']);?> </h1></span>
                 </td>
                 <td class="tf-yellow-box" valign="top">
-                    <div class="tf-setp-title"><?php echo strip_tags($staticData['tf.biologyChoices.right.title']);?> </div>
+                    <div class="tf-setp-title"><?php echo strip_tags($staticData['tf.geochemChoices.right.title']);?> </div>
                     <ul style="padding-left:15px;">
                         <?php
                         foreach($right_list as $r){

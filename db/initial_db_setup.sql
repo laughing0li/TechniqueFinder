@@ -225,7 +225,14 @@ CREATE TABLE `option_choice` (
 
 LOCK TABLES `option_choice` WRITE;
 /*!40000 ALTER TABLE `option_choice` DISABLE KEYS */;
-INSERT INTO `option_choice` VALUES (71,0,1,'Bio Left Option 1','LEFT','BIOLOGY'),(72,0,1,'Bio Right Option 1','RIGHT','BIOLOGY'),(73,0,2,'Bio Right Option 2','RIGHT','BIOLOGY'),(74,0,1,'Phy Left Option 1','LEFT','PHYSICS'),(75,0,1,'Phy Right Option 1','RIGHT','PHYSICS'),(76,0,2,'Phy Right Option 2','RIGHT','PHYSICS');
+INSERT INTO `option_choice` VALUES (71,0,1,'Age','LEFT','BIOLOGY'),
+(77,0,1,'Elemental Composition','LEFT','BIOLOGY'),
+(78,0,1,'Isotopic Analysis','LEFT','BIOLOGY'),
+(72,0,1,'Bio Right Option 1','RIGHT','BIOLOGY'),
+(73,0,2,'Bio Right Option 2','RIGHT','BIOLOGY'),
+(74,0,1,'Phy Left Option 1','LEFT','PHYSICS'),
+(75,0,1,'Phy Right Option 1','RIGHT','PHYSICS'),
+(76,0,2,'Phy Right Option 2','RIGHT','PHYSICS');
 /*!40000 ALTER TABLE `option_choice` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -399,7 +406,28 @@ CREATE TABLE `static_content` (
 
 LOCK TABLES `static_content` WRITE;
 /*!40000 ALTER TABLE `static_content` DISABLE KEYS */;
-INSERT INTO `static_content` VALUES (1,7,'<h1>Find the techniques and facilities to fit your research project</h1>\r\n\r\n<p>Use TechFi to identify and understand the microscopy and microanalysis techniques available to researchers through Microscopy Australia. You will find the contact details of our expert staff for each technique. They can provide you with all the information you need and guide you through the planning, training, data collection and interpretation stages of your experiments.</p>\r\n','tf.home.quickGuide'),(2,3,'','tf.home.optionsExplanation'),(3,3,'<h1>\r\n	Choices for biological sciences</h1>\r\n<p>\r\n	The choices offered below are based on the fact that many experiments in the biological sciences involve the interaction or relationship of two things. For instance, you might want to look at the interaction of one protein with another protein, a cell with the extracellular matrix, or possibly one thing within another such as metal ions in the hard tissue of insect teeth or a particular cell type in an organ. There are also options to study the structure, migration or isolation of a single item.</p>\r\n<p>\r\n	Choose one item from each list and then click the Show Possible Techniques button to see what techniques could help in your experiment.</p>\r\n','tf.biologyChoices.quickGuide'),(4,5,'<p>and</p>\r\n','tf.biologyChoices.comparison.title'),(5,2,'Step 1: Choose a sample\r\n','tf.biologyChoices.left.title'),(6,2,'Step 2: Choose another sample\r\n','tf.biologyChoices.right.title'),(7,1,'<h1>Choices for the physical sciences</h1>\r\n\r\n<p>Choose the type and scale of investigation you want to do.</p>\r\n','tf.physicsChoices.quickGuide'),(8,0,'<p>at the scale of</p>\r\n','tf.physicsChoices.comparison.title'),(9,2,'<p>Step 1: Choose a property</p>\r\n','tf.physicsChoices.left.title'),(10,2,'<p>Step 2: Choose a size scale</p>\r\n','tf.physicsChoices.right.title'),(11,0,'If you know what you want to explore, type it into the search box and click \'go\'.','tf.home.searchExplanation'),(12,9,'<p>Unused</p>\r\n','tf.menu'),(13,1,'This list shows the techniques currently available at the Microscopy Australia.','tf.home.allTechniquesExplanation'),(14,15,'<div style=\"position:absolute; top:55px\">\r\n<h2>TechFi or industry enquiries:</h2>\r\n\r\n<p><a href=\"mailto:jenny.whiting@micro.org.au\">Dr Jenny Whiting</a><br />\r\nMicroscopy Australia Marketing & Business Development Manager<br />\r\nTel: +61 2 9114 0566<br />\r\n<a href=\"mailto:jenny.whiting@micro.org.au\">jenny.whiting@micro.org.au</a></p>\r\n\r\n<p><img alt=\"TechFi\" src=\"http://micro.org.au/techniquefinder/assets/images/TechFi-2018-Reg-310px.png\" style=\"    bottom: -242px;height: 214px;position: absolute;width: 310px;margin-left: -57px;\" /></p>\r\n</div>\r\n','tf.home.infoboxContent'),(15,0,'','tf.tracking.intersect'),(16,3,'','tf.tracking.ammrf');
+INSERT INTO `static_content` VALUES (1,7,'<h1>Find the techniques and facilities to fit your research project</h1>\r\n\r\n<p>Use TechFi to identify and understand the analysis techniques available to researchers through Australian Geochemistry Network. You will find the contact details of our expert staff for each technique. They can provide you with all the information you need and guide you through the planning, training, data collection and interpretation stages of your experiments.</p>\r\n','tf.home.quickGuide'),
+(2,3,'','tf.home.optionsExplanation'),
+(3,3,'<h1>\r\n	Choices for biological sciences</h1>\r\n<p>\r\n	The choices offered below are based on the fact that many experiments in the biological sciences involve the interaction or relationship of two things. For instance, you might want to look at the interaction of one protein with another protein, a cell with the extracellular matrix, or possibly one thing within another such as metal ions in the hard tissue of insect teeth or a particular cell type in an organ. There are also options to study the structure, migration or isolation of a single item.</p>\r\n<p>\r\n	Choose one item from each list and then click the Show Possible Techniques button to see what techniques could help in your experiment.</p>\r\n','tf.biologyChoices.quickGuide'),
+(4,5,'<p>and</p>\r\n','tf.biologyChoices.comparison.title'),
+(5,2,'Step 1: Choose a sample\r\n','tf.biologyChoices.left.title'),
+(6,2,'Step 2: Choose another sample\r\n','tf.biologyChoices.right.title'),
+(7,1,'<h1>Choices for the physical sciences</h1>\r\n\r\n<p>Choose the type and scale of investigation you want to do.</p>\r\n','tf.physicsChoices.quickGuide'),
+(8,0,'<p>at the scale of</p>\r\n','tf.physicsChoices.comparison.title'),
+(9,2,'<p>Step 1: Choose a property</p>\r\n','tf.physicsChoices.left.title'),
+(10,2,'<p>Step 2: Choose a size scale</p>\r\n','tf.physicsChoices.right.title'),
+(11,0,'If you know what you want to explore, type it into the search box and click \'go\'.','tf.home.searchExplanation'),
+(12,9,'<p>Unused</p>\r\n','tf.menu'),
+(13,1,'This list shows the techniques currently available at the Microscopy Australia.','tf.home.allTechniquesExplanation'),
+(14,15,'<div style=\"position:absolute; top:55px\">\r\n<h2>TechFi or industry enquiries:</h2>\r\n\r\n<p><a href=\"mailto:jenny.whiting@micro.org.au\">Dr Jenny Whiting</a><br />\r\nMicroscopy Australia Marketing & Business Development Manager<br />\r\nTel: +61 2 9114 0566<br />\r\n<a href=\"mailto:jenny.whiting@micro.org.au\">jenny.whiting@micro.org.au</a></p>\r\n\r\n<p><img alt=\"TechFi\" src=\"http://micro.org.au/techniquefinder/assets/images/TechFi-2018-Reg-310px.png\" style=\"    bottom: -242px;height: 214px;position: absolute;width: 310px;margin-left: -57px;\" /></p>\r\n</div>\r\n','tf.home.infoboxContent'),
+(15,0,'','tf.tracking.intersect'),
+(16,3,'','tf.tracking.ammrf'),
+(17,3,'<h1>\r\n	Geochemical Analysis</h1>\r\n<p>\r\n	The choices offered below are based on the fact that many experiments in the geochemical sciences involve the interaction or relationship of two things.</p>\r\n<p>\r\n	Choose one item from each list and then click the Show Possible Techniques button to see what techniques could help in your experiment.</p>\r\n','tf.geochemChoices.quickGuide'),
+(18,5,'<p>and</p>\r\n','tf.geochemChoices.comparison.title'),
+(19,2,'Step 1: Choose a research interest\r\n','tf.geochemChoices.left.title'),
+(20,2,'Step 2: Choose elements, isotopic system or minerals\r\n','tf.geochemChoices.right.title');
+
+
 /*!40000 ALTER TABLE `static_content` ENABLE KEYS */;
 UNLOCK TABLES;
 

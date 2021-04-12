@@ -29,7 +29,7 @@
  */
 
 if($science == 'BIOLOGY'){
-    echo '<li id="button_backBio"><a href="'.base_url().'Portal/bioOptionsSelection"></a></li>';
+    echo '<li id="button_backBio"><a href="'.base_url().'Portal/geochemOptionsSelection"></a></li>';
 }else{
     echo '<li id="button_backPhys"><a href="'.base_url().'Portal/physicsOptionsSelection"></a></li>';
 }
