@@ -10,6 +10,11 @@
  *                   https://creativecommons.org/licenses/by-nc-sa/4.0/
  */
 
+
+body {
+    background-color: rgb(242,242,241);
+    }
+
 .tf-footer{
     text-align: center;
     border: 1px solid #ccc;
@@ -21,7 +26,7 @@
     display: block;
     margin-right: 2.5em;
     margin-left: 2.5em;
-    font-family: Verdana;
+    font-family: arial, verdana, sans-serif;
     font-size: smaller;
 }
 
@@ -82,6 +87,12 @@
     width: 220px;
 }
 
+.tf-attribution {
+    color: #282572;
+    float: left;
+    font-family: arial, verdana, sans-serif;
+}
+
 .error-message{
     padding-left: 1em;
     padding-top: 1em;
@@ -124,6 +135,15 @@
     font-size: 16px;
     margin: .8em 0 .3em 0;
 }
+
+.tf-main-heading {
+    width: 100%;
+    color: #282572;
+    font-weight: normal;
+    font-size: 32px;
+    margin: .8em 0 .3em 0;
+}
+
 
 .tf-font-11{
     font-size:11px;
@@ -328,7 +348,7 @@ a.ui-button:active,
 
 .tf-yellow-box {
     font-size: 12px;
-    background: #fef2bf;
+    background: #59c2aa;
     padding: 1em;
     line-height: 19px;
     border: 1px solid #D3D3D3;
@@ -383,7 +403,7 @@ a.ui-button:active,
 }
 
 #main {
-    width: 560px;
+    width: 700px;
     text-align: left;
     padding: 10px 0 10px 10px;
     border-right: 0px solid #B2B3B6;
@@ -392,7 +412,7 @@ a.ui-button:active,
 #infobox {
     position: absolute;
     top: 100px;
-    left: 585px;
+    left: 705px;
     width: 205px;
     height: 550px;
 }
@@ -461,23 +481,22 @@ a.ui-button:active,
 }
 
 #content h1 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #c75a1c;
+    font-size: 20px;
+    color: #282572;
+    font-family: arial, verdana, sans-serif;
 }
 
 #content h5 {
     font-size: 12px;
-    font-weight: bold;
-    background-color: #E9E8E8;
+    background-color: #D8D9D7;
     padding: 0 7px 0px 7px;
     margin: 10px 0 2px 0;
-    color: #181818;
+    color: #282572;
 }
 
 #content hr {
     height: 1px;
-    color: #d78715;
+    color: #282572;
     background-image: url(../images/hr.gif);
     border: none;
     padding: 0;
@@ -500,7 +519,7 @@ a.ui-button:active,
 
 #footer a {
     text-decoration: underline;
-    color: #225eb8;
+    color: #282572;
 }
 
 .go_container a {
@@ -638,7 +657,7 @@ a.ui-button:active,
     text-decoration: underline;
     color: #225eb8;
     /*optional*/
-    font-family:arial,sans-serif; /*input has OS specific font-family*/
+    font-family: arial, verdana, sans-serif; /*input has OS specific font-family*/
     cursor:pointer;
 }
 

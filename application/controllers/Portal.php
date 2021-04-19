@@ -72,14 +72,15 @@ class Portal extends CI_Controller {
         $staticData['tf.geochemChoices.quickGuide'] = $this->Static_model->getSaticDataByName('tf.geochemChoices.quickGuide')->text;
         $staticData['tf.geochemChoices.comparison.title'] = $this->Static_model->getSaticDataByName('tf.geochemChoices.comparison.title')->text;
         $staticData['tf.geochemChoices.left.title'] = $this->Static_model->getSaticDataByName('tf.geochemChoices.left.title')->text;
+        $staticData['tf.geochemChoices.centre.title'] = $this->Static_model->getSaticDataByName('tf.geochemChoices.centre.title')->text;
         $staticData['tf.geochemChoices.right.title'] = $this->Static_model->getSaticDataByName('tf.geochemChoices.right.title')->text;
 
 
         $this->load->model('OptionChoice_model');
-        $left_list = $this->OptionChoice_model->getAllOptionChoices('BIOLOGY', 'LEFT');
-        $right_list = $this->OptionChoice_model->getAllOptionChoices('BIOLOGY', 'RIGHT');
+        $left_list = $this->OptionChoice_model->getAllOptionChoices('GEOCHEM', 'LEFT');
+        $right_list = $this->OptionChoice_model->getAllOptionChoices('GEOCHEM', 'RIGHT');
 
-        $this->load->view('Portal/bio_options_selection', array(
+        $this->load->view('Portal/geochem_options_selection', array(
             'staticData' => $staticData,
                 'left_list'=>$left_list,
                 'right_list'=>$right_list
@@ -127,6 +128,7 @@ class Portal extends CI_Controller {
     public function getTechniqueByOptionCombination(){
         $science = $this->input->get('science');
         $left = $this->input->get('leftOption');
+	$centreText = $this->input->get('centreText');
         $right = $this->input->get('rightOption');
         $this->load->model('OptionChoice_model');
         $leftOption = $this->OptionChoice_model->getOptionChoiceById($left);
@@ -156,6 +158,7 @@ class Portal extends CI_Controller {
         $this->load->view('Portal/technique_search_by_choices', array(
             'science' => $science,
             'leftOption' => $leftOption,
+	    'centreText' => $centreText,
             'rightOption' => $rightOption,
             'searchResults'=>array_slice($searchResults, $offset?$offset:0, self::PAGE_LENGTH),
             'Media_model'=>$this->Media_model

@@ -1,5 +1,5 @@
 <?php $this->load->view('layout/portal_header.php');?>
-<head><title>TechFi™</title></head>
+<head><title>AGN Instrument Finder</title></head>
 <style>
     input, select, textarea {
         font-family: inherit;
@@ -22,25 +22,17 @@
          
             <?php echo $staticData['tf.geochemChoices.quickGuide']; ?>
 
+
+
 <div style="float:left;margin-left:15px;">
     <div style="float:left;">
         <table style="text-align: left;">
             <tr>
+                <!-- STEP 1 -->
                 <td class="tf-yellow-box" valign="top">
                 <div class="tf-setp-title"><?php echo strip_tags($staticData['tf.geochemChoices.left.title']);?> </div>
                     <ul style="padding-left:15px;">
                         <?php
-/**
- * TechniqueFinder - bio_options_selection.php
- *
- * Description:
- * Author:           Intersect Australia Ltd
- * Created:          12 Aug 2019
- * Source:           https://github.com/IntersectAustralia/TechniqueFinder
- * License:          Copyright (c) 2019 Intersect Australia - Licensed under Creative Commons
- *                   Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
- *                   https://creativecommons.org/licenses/by-nc-sa/4.0/
- */
 
 foreach($left_list as $r){
                             echo '<li _id="'.$r->id.'" _type="leftOption" class="tf-buttonDiv" onclick="onSelect(this)">'.$r->name.'</li>';
@@ -48,10 +40,22 @@ foreach($left_list as $r){
                         ?>
                     </ul>                
                 </td>
-                <td style="width:100px; vertical-align:center;" >
+                <!-- THEN -->
+                <td style="width:50px; vertical-align:center;" >
                     <img src="<?php echo base_url().'assets/images/space.gif'?>" width="20" height="5" />
                     <span style="text-align:center;"><h1 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']);?> </h1></span>
                 </td>
+                <!-- STEP 2 -->
+                <td class="tf-yellow-box" valign="top">
+                    <div class="tf-setp-title"><?php echo strip_tags($staticData['tf.geochemChoices.centre.title']);?> </div>
+		    <input type="text" placeholder="Type here element interested in"></input>
+                </td>
+                <!-- THEN -->
+                <td style="width:50px; vertical-align:center;" >
+                    <img src="<?php echo base_url().'assets/images/space.gif'?>" width="20" height="5" />
+                    <span style="text-align:center;"><h1 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']);?> </h1></span>
+                </td>
+                <!-- STEP 3 -->
                 <td class="tf-yellow-box" valign="top">
                     <div class="tf-setp-title"><?php echo strip_tags($staticData['tf.geochemChoices.right.title']);?> </div>
                     <ul style="padding-left:15px;">
@@ -72,12 +76,12 @@ foreach($left_list as $r){
 <br>
 <br>
 
-            <span style="margin: 10px 0 10px 0;"><a class="tf-top" href="#top" title="top">TOP</a></span>
             <span class="nav_buttons">
 	        	<form action="<?php echo base_url().'Portal/getTechniqueByOptionCombination';?>" method="get" name="choiceForm" id="choiceForm">
 	              <ul style="float:right">
-	              	<input type="hidden" id="science" name="science" value="BIOLOGY">
+	              	<input type="hidden" id="science" name="science" value="GEOCHEM">
 	              	<input type="hidden" id="leftOptionVal" name="leftOption" value="">
+                        <input type="hidden" id="centreTextVal" name="centreText" value="">
 	              	<input type="hidden" id="rightOptionVal" name="rightOption" value="">
 	                <li id="button_showPosTech" style="display: none;"><a style="float: right;" href="javascript:document.choiceForm.submit()"></a></li>
 	                <li id="disabled_showPosTech" ><a style="float: right;" href="#"></a></li>
@@ -92,8 +96,7 @@ foreach($left_list as $r){
 
 
         <div id="footer">
-             <p id="attribution_ammrf" style="float:left;">© 2018 Microscopy Australia | <a href="mailto:feedback@micro.org.au" class="style1 style1">Feedback</a> | <a id="footer" href="http://ammrf.org.au/legal-notices/" title="disclaimer">Disclaimer</a></p>
-             <p id="attribution_intersect" style="float:right;"> <a class="intersect_logo_link" href="http://www.intersect.org.au/" target="_blank"></a>Developed by <a href="http://www.intersect.org.au/" target="_blank">Intersect Australia</a></p>
+            <?php include 'footer.php';?>
         </div>
         <div style="clear: both"><!-- ff --></div>
     </div>

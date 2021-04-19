@@ -11,17 +11,13 @@
 <body>
 <div class="row">
 
-    <div class=" tf-footer">
+    <div class="tf-footer">
         <span style="float:left;">
             v2.0.0
         </span>
 
         <span>
-            © 2018 Microscopy Australia |
-             Developed by
-            <span>
-                <a class="tf-hyperlink"  href="https://intersect.org.au/">Intersect Australia</a>
-            </span>
+            © AuScope Limited 2021
         </span>
 
     </div>

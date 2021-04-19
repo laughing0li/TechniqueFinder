@@ -1,5 +1,5 @@
 <?php $this->load->view('layout/portal_header.php');?>
-<head><title>TechFi™</title></head>
+<head><title>AGN Instrument Finder</title></head>
 <style>
     input, select, textarea {
         font-family: inherit;
@@ -72,12 +72,12 @@ foreach($left_list as $r){
 <br>
 <br>
 
-            <span style="margin-left: 1.5em;"><a class="tf-top" href="#top" title="top">TOP</a></span>
             <span class="nav_buttons">
 	        	<form action="<?php echo base_url().'Portal/getTechniqueByOptionCombination';?>" method="get" name="choiceForm" id="choiceForm">
 	              <ul style="float:right">
 	              	<input type="hidden" id="science" name="science" value="PHYSICS">
 	              	<input type="hidden" id="leftOptionVal" name="leftOption" value="">
+                        <input type="hidden" id="centreTextVal" name="centreText" value="">
 	              	<input type="hidden" id="rightOptionVal" name="rightOption" value="">
 	                <li id="button_showPosTech" style="display: none;"><a style="float: right;" href="javascript:document.choiceForm.submit()"></a></li>
 	                <li id="disabled_showPosTech" ><a style="float: right;" href="#"></a></li>
@@ -92,8 +92,7 @@ foreach($left_list as $r){
 
 
         <div id="footer">
-             <p id="attribution_ammrf" style="float:left;">© 2018 Microscopy Australia | <a href="mailto:feedback@micro.org.au" class="style1 style1">Feedback</a> | <a id="footer" href="http://ammrf.org.au/legal-notices/" title="disclaimer">Disclaimer</a></p>
-             <p id="attribution_intersect" style="float:right;"> <a class="intersect_logo_link" href="http://www.intersect.org.au/" target="_blank"></a>Developed by <a href="http://www.intersect.org.au/" target="_blank">Intersect Australia</a></p>
+            <?php include 'footer.php';?> 
         </div>
         <div style="clear: both"><!-- ff --></div>
     </div>

@@ -1,5 +1,5 @@
 <?php $this->load->view('layout/portal_header.php');?>
-<head><title>TechFi™</title></head>
+<head><title>AGN Instrument Finder</title></head>
 <link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
 <script src="http://vjs.zencdn.net/4.12/video.js"></script>
 
@@ -224,12 +224,10 @@ if($prevPage=='listTechniques'){
         <br><br>
 
 
-        <p><span style="margin: 10px 0 10px 0;"><a class="tf-top" href="#top" title="top">TOP</a></span></p>
 
     </div>
     <div id="footer">
-        <p id="attribution_ammrf" style="float:left;">© 2018 Microscopy Australia | <a href="mailto:feedback@ammrf.org.au" class="style1 style1">Feedback</a> | <a id="footer" href="http://www.ammrf.org.au/disclaimer.php" title="disclaimer">Disclaimer</a></p>
-        <p id="attribution_intersect" style="float:right;"> <a class="intersect_logo_link" href="http://www.intersect.org.au/" target="_blank"></a>Developed by <a href="http://www.intersect.org.au/" target="_blank">Intersect Australia</a></p>
+        <?php include 'footer.php';?>
     </div>
     <div style="clear: both"><!-- ff --></div>
 
