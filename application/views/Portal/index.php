@@ -1,5 +1,9 @@
 <?php $this->load->view('layout/portal_header.php');?>
-<head><title>AGN Instrument Finder</title></head>
+<head>
+    <title>AGN Instrument Finder</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+</head>
 <style>
     input, select, textarea {
         font-family: inherit;
@@ -9,71 +13,62 @@
         width: 16em;
 </style>
 <body>
-    <div id="header" class="tf-main-heading">AGN Instrument Finder<img style="float: right;" src="assets/images/AGN-Logo.png" width=200></div>
+    <div id="header" class="container tf-main-heading">&nbsp;AGN Instrument Finder<img style="float: left;" src="assets/images/AGN-Logo.png" width=200></div>
         
-    <div id="main">
 
-        <div id="content">
+    <div class="container" id="content">
+        <div class="alert alert-primary" role="alert">
             <?php echo $staticData['tf.home.quickGuide']; ?>
+        </div>
 
-            <h5>Option 1: Choose your research interest</h5>
-            <hr>
-            <table width="100%">
-            <tbody><tr>
-                <td class="tf-yellow-box" style="padding:0.5em;" valign="top">
-                    <span id="content"><?php if(isset($staticData['tf.home.optionsExplanation'])){echo $staticData['tf.home.optionsExplanation'];}?></span>
-                  <span class="buttons">
-                      <ul style='list-style: none'>
-                        <!-- <li id="button_bio"><a href="<?php echo base_url();?>Portal/geochemOptionsSelection"></a></li> -->
-		        <!-- <li id="button_phys"><a href="<?php echo base_url();?>Portal/physicsOptionsSelection"></a></li> -->
-                        <li id="button_geochem"><a href="<?php echo base_url();?>Portal/geochemOptionsSelection"></a></li>
-                        <li id="button_exp_proc"><a href="<?php echo base_url();?>Portal/expProcOptionsSelection"></a></li>
-                        <li id="button_sample_prep"><a href="<?php echo base_url();?>Portal/samplePrepOptionsSelection"></a></li>
-                      </ul>
-                  </span>
-                  
-                 </td>
-            </tr>
-            </tbody>
-            </table>
-        
-            <h5>Option 2: Search by keyword</h5>
-            <hr>
-            <table width="100%">
-            <tbody><tr>
-                <td class="tf-yellow-box" style="padding:1em;" valign="top">
-                    <span class="portalOptionText"><?php echo $staticData['tf.home.searchExplanation']; ?></span>
-                    <form action="<?php echo base_url();?>Portal/techniqueSearch" method="get" name="searchForm" id="searchForm">
-                    Search <input id="searchBox" name="q" type="text" style="width:85%;">
-                    <p><span class="go_container"><span id="button_go"><a href="javascript:document.searchForm.submit()"></a></span></span></p>
-                    </form>
-                 </td>
-            </tr>
-            </tbody></table>
-        
-            <h5>Option 3: View list of available techniques</h5>
-            <hr>
-            <table width="100%">
-            <tbody><tr>
-                <td class="tf-yellow-box" style="padding:1em;" valign="top">
-                    <span class="portalOptionText"><?php echo html_entity_decode($staticData['tf.home.allTechniquesExplanation']); ?></span>
-                    <p><span class="go_container"><span id="button_viewList"><a href="<?php echo base_url();?>Portal/listTechniques"></a></span></span></p>
-                 </td>
-            </tr>
-            </tbody></table>
+        <h3 class="tf-heading">Option 1: Choose your research interest</h3>
+        <hr>
+        <!-- <?php if(isset($staticData['tf.home.optionsExplanation'])){
+            echo "<div class='alert alert-primary' role='alert'>".$staticData['tf.home.optionsExplanation']."</div";
+        }?> -->
+        <div class="d-grid gap-2 col-6 mx-auto">
+
+            <button class="btn btn-lg btn-primary" type="button" onclick="window.location.assign('<?php echo base_url();?>Portal/geochemOptionsSelection');">Geochemical Analysis</button>
+            <button class="btn btn-lg btn-primary" type="button" onclick="window.location.assign('<?php echo base_url();?>Portal/expProcOptionsSelection');">Experimental Procedure</button>
+            <button class="btn btn-lg btn-primary" type="button" onclick="window.location.assign('<?php echo base_url();?>Portal/samplePrepOptionsSelection');">Sample Preparation</button>
         </div>
+        <hr>
+        <h3 class="tf-heading">Option 2: Search by keyword</h3>
+        <hr>
+	<div class="card">
+            <div class="card-body">
+		<h5 class="card-title"><?php echo $staticData['tf.home.searchExplanation']; ?></h5>
+                <form action="<?php echo base_url();?>Portal/techniqueSearch" method="get" name="searchForm" id="searchForm">
+                    <input type="text" class="form-control" id="option2Search" placeholder="Type search term here">
+                    <p></p>
+                    <button class="btn btn-lg btn-primary" type="button" onclick="document.searchForm.submit()">Go</button>
+                </form>
+            </div>
+        </div>
+        
+        <h3 class="tf-heading">Option 3: View list of available techniques</h3>
+        <hr>
+	<div class="card">
+            <div class="card-body">
+		<h5 class="card-title"><?php echo html_entity_decode($staticData['tf.home.allTechniquesExplanation']); ?></h5>
+                <p></p>
+		<button class="btn btn-lg btn-primary" type="button" onclick="window.location.assign('<?php echo base_url();?>Portal/listTechniques');">View List</button>
+                </form>
+            </div>
+        </div>
+    </div>
             
-        <div id="footer">
-            <?php include 'footer.php';?>
-        </div>
-    
-        <div style="clear: both"><!-- ff --></div>
+    <div class="container" id="footer">
+        <?php include 'footer.php';?>
     </div>
 
-    <div id="infobox">
+    <div style="clear: both"><!-- ff --></div>
+
+    <div class="container" id="infobox">
         <?php echo $staticData['tf.home.infoboxContent']; ?>
     </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>
 
 <?php $this->load->view('layout/portal_footer.php')?>

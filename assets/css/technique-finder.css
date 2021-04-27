@@ -130,9 +130,9 @@ body {
 }
 
 .tf-heading{
-    color: #003b76;
+    color: #282572;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 20px;
     margin: .8em 0 .3em 0;
 }
 
@@ -488,7 +488,6 @@ a.ui-button:active,
 
 #content h5 {
     font-size: 12px;
-    background-color: #D8D9D7;
     padding: 0 7px 0px 7px;
     margin: 10px 0 2px 0;
     color: #282572;
