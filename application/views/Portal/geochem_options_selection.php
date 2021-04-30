@@ -1,141 +1,124 @@
 <?php $this->load->view('layout/portal_header.php');?>
-<head><title>AGN Instrument Finder</title></head>
-<style>
-    input, select, textarea {
-        font-family: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        margin-top: 9px;
-        width: 16em;
-</style>
+<head>
+    <title>AGN Instrument Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
 <body>
         
-    <div id="main">
-        <div id="content">
-            <span class="nav_buttons">
-                <ul>
-                    <li id="button_backStart"><a style="float: right;" href="<?php echo base_url();?>Portal"></a></li>
-                </ul>
-            </span>
+        <div id="content" class="container">
+	    <div class="d-flex justify-content-end">
+                <div class="p-2">
+		    <button type="submit" class="btn btn-primary btn-lg" onclick="window.location.assign('<?php echo base_url();?>Portal')">Back</button>
+                </div>
+            </div>
            
             <div class="clear"></div>
          
-            <?php echo $staticData['tf.geochemChoices.quickGuide']; ?>
+            <div class="alert alert-primary">
+<?php echo $staticData['tf.geochemChoices.quickGuide']; ?>
+            </div>
 
-
-
-<div style="float:left;margin-left:15px;">
-    <div style="float:left;">
-        <table style="text-align: left;">
-            <tr>
-                <!-- STEP 1 -->
-                <td class="tf-yellow-box" valign="top">
-                <div class="tf-setp-title"><?php echo strip_tags($staticData['tf.geochemChoices.left.title']);?> </div>
-                    <ul style="padding-left:15px;">
+            <!-- LHS COLUMN -->
+            <div class="col-4">
+                <div class="row">
+                    <!-- STEP 1 -->
+                    <h3 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.left.title']);?> </h3>
+                    <div class="btn-group" role="group">
                         <?php
-
-foreach($left_list as $r){
-                            echo '<li _id="'.$r->id.'" _type="leftOption" class="tf-buttonDiv" onclick="onSelect(this)">'.$r->name.'</li>';
-                        }
+                          foreach($left_list as $r){
+                                 echo '<input _id="'.$r->id.'" _type="leftOption"  type="radio" class="btn-check" name="btnradio-1" id="btnradio-'.$r->id.'" autocomplete="off" onclick="onClick(this)">';
+                                 echo '<label class="btn btn-primary btn-lg" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
+                          }
                         ?>
-                    </ul>                
-                </td>
-                <!-- THEN -->
-                <td style="width:50px; vertical-align:center;" >
+		    </div>
+                </div>
+                <div class="row">
+                    <!-- THEN -->
                     <img src="<?php echo base_url().'assets/images/space.gif'?>" width="20" height="5" />
                     <span style="text-align:center;"><h1 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']);?> </h1></span>
-                </td>
-                <!-- STEP 2 -->
-                <td class="tf-yellow-box" valign="top">
-                    <div class="tf-setp-title"><?php echo strip_tags($staticData['tf.geochemChoices.centre.title']);?> </div>
-		    <input type="text" placeholder="Type here element interested in"></input>
-                </td>
-                <!-- THEN -->
-                <td style="width:50px; vertical-align:center;" >
+                </div>
+                <div class="row">
+                    <!-- STEP 2 -->
+                    <h3 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.centre.title']);?> </h3>
+                    <input id="step2" class="form-control" style="font-size: 12px" type="text" placeholder="Type here element interested in"></input>
+                </div>
+                <div class="row">
+                    <!-- THEN -->
                     <img src="<?php echo base_url().'assets/images/space.gif'?>" width="20" height="5" />
                     <span style="text-align:center;"><h1 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']);?> </h1></span>
-                </td>
-                <!-- STEP 3 -->
-                <td class="tf-yellow-box" valign="top">
-                    <div class="tf-setp-title"><?php echo strip_tags($staticData['tf.geochemChoices.right.title']);?> </div>
-                    <ul style="padding-left:15px;">
+                </div>
+                <div class="row">
+                    <!-- STEP 3 -->
+                    <h3 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.right.title']);?> </h3>
+                    <div class="btn-group" role="group">
                         <?php
                         foreach($right_list as $r){
-                            echo '<li _id="'.$r->id.'" _type="rightOption" class="tf-buttonDiv" onclick="onSelect(this)">'.$r->name.'</li>';
+                            echo '<input _id="'.$r->id.'" _type="rightOption" type="radio" class="btn-check" name="btnradio-2" id="btnradio-'.$r->id.'" autocomplete="off" onclick="onClick(this);">';
+                            echo '<label class="btn btn-primary btn-lg" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
                         }
                         ?>
-                    </ul> 
-                </td>
-            </tr>
-
-        </table>
-    </div>
+		    </div>
+                </div>
 
     
-</div>
-<br>
-<br>
+            </div> <!-- col-4 -->
 
-            <span class="nav_buttons">
-	        	<form action="<?php echo base_url().'Portal/getTechniqueByOptionCombination';?>" method="get" name="choiceForm" id="choiceForm">
-	              <ul style="float:right">
-	              	<input type="hidden" id="science" name="science" value="GEOCHEM">
-	              	<input type="hidden" id="leftOptionVal" name="leftOption" value="">
+            <!-- RHS COLUMN -->
+            <div class="col-8"></div>
+
+            <br>
+            <br>
+
+            <div class="d-flex justify-content-end">
+                <div class="p-2">
+                    <form action="<?php echo base_url().'Portal/getTechniqueByOptionCombination';?>" method="get" name="choiceForm" id="choiceForm">
+                        <input type="hidden" id="science" name="science" value="GEOCHEM">
+                        <input type="hidden" id="leftOptionVal" name="leftOption" value="">
                         <input type="hidden" id="centreTextVal" name="centreText" value="">
-	              	<input type="hidden" id="rightOptionVal" name="rightOption" value="">
-	                <li id="button_showPosTech" style="display: none;"><a style="float: right;" href="javascript:document.choiceForm.submit()"></a></li>
-	                <li id="disabled_showPosTech" ><a style="float: right;" href="#"></a></li>
-                    </ul>
-	            </form>  
-	        </span>
+                        <input type="hidden" id="rightOptionVal" name="rightOption" value="">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    </form>
+                </div>
+            </div>
 
             <br>
 
-        </div>            
+      </div>            
 
 
 
-        <div id="footer">
-            <?php include 'footer.php';?>
-        </div>
-        <div style="clear: both"><!-- ff --></div>
+    <div id="footer" class="container">
+        <?php include 'footer.php';?>
     </div>
+    <div style="clear: both"><!-- ff --></div>
 
     <div id="infobox"> </div>
+    <div class="container">
+        <?php $this->load->view('layout/portal_footer.php')?>
+    </div>
 
     
 
-</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
 
 <script type="text/javascript">
-function onSelect(e){
+/* This assigns values to the submit form when user clicks on buttons */
+function onClick(e){
     var left_id = null;
     var right_id = null;
     var element = $(e);
     if(element.attr('_type') == 'leftOption'){
-        $('.tf-select-left').removeClass('tf-select-left');
-        element.addClass('tf-select-left');
         left_id = element.attr('_id');
-        right_id = $('.tf-select-right').attr('_id');
+        $('#leftOptionVal').val(left_id);
     }
     else if(element.attr('_type') == 'rightOption'){
-        $('.tf-select-right').removeClass('tf-select-right');
-        element.addClass('tf-select-right');
         right_id = element.attr('_id');
-        left_id = $('.tf-select-left').attr('_id');
-    }
-    else{
-       ; 
-    }
-    if(left_id && right_id){
-        $('#leftOptionVal').val(left_id);
         $('#rightOptionVal').val(right_id);
-        $('#disabled_showPosTech').hide();
-        $('#button_showPosTech').show();
     }
+    $('#centreTextVal').val($('#step2').val());
 }
-
 </script>
 
-<?php $this->load->view('layout/portal_footer.php')?>
+</body>
 

@@ -29,6 +29,7 @@
  */
 
 if($science == 'GEOCHEM'){
+    
     echo '<li id="button_backBio"><a href="'.base_url().'Portal/geochemOptionsSelection"></a></li>';
 }else{
     echo '<li id="button_backPhys"><a href="'.base_url().'Portal/physicsOptionsSelection"></a></li>';
@@ -47,7 +48,7 @@ if($science == 'GEOCHEM'){
             <div class="clear"></div>
             <h1>Possible Techniques</h1>
             <hr>
-            <p>Results for: <span class="tf-orange"><b><?php echo $leftOption->name.' and '.$rightOption->name ?></b></span></p>
+            <p>Results for: <span class="tf-orange"><b><?php if (isset($leftOption->name) && isset($rightOption->name)) { echo $leftOption->name.' and '.$rightOption->name; } ?></b></span></p>
 
 
         <?php

@@ -424,7 +424,7 @@ INSERT INTO `static_content` VALUES (1,7,'<h1>Find the instruments and facilitie
 (15,0,'','tf.tracking.intersect'),
 (16,3,'','tf.tracking.ammrf'),
 (17,3,'<h1>\r\n	Geochemical Analysis</h1>\r\n<p>\r\n	The choices offered below are based on the fact that many experiments in the geochemical sciences involve the interaction or relationship of two things.</p>\r\n<p>\r\n	Choose one item from each list and then click the Show Possible Techniques button to see what techniques could help in your experiment.</p>\r\n','tf.geochemChoices.quickGuide'),
-(18,5,'<p>and</p>\r\n','tf.geochemChoices.comparison.title'),
+(18,5,'<p>then</p>\r\n','tf.geochemChoices.comparison.title'),
 (19,2,'Step 1: Choose a research interest\r\n','tf.geochemChoices.left.title'),
 (20,2,'Step 2: Choose elements, isotopic system or minerals\r\n','tf.geochemChoices.centre.title'),
 (21,2,'Step 3: Type of analysis', 'tf.geochemChoices.right.title' );
