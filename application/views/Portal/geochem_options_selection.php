@@ -61,7 +61,7 @@
                 </div>
 
     
-            </div> <!-- col-4 -->
+            </div> <!-- END col-4 -->
 
             <!-- RHS COLUMN -->
             <div class="col-8"></div>
@@ -76,7 +76,7 @@
                         <input type="hidden" id="leftOptionVal" name="leftOption" value="">
                         <input type="hidden" id="centreTextVal" name="centreText" value="">
                         <input type="hidden" id="rightOptionVal" name="rightOption" value="">
-                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-lg" onclick="onSubmit()">Submit</button>
                     </form>
                 </div>
             </div>
@@ -103,19 +103,23 @@
 
 
 <script type="text/javascript">
-/* This assigns values to the submit form when user clicks on buttons */
+/* This assigns radio button values to the submit form when user clicks on buttons */
 function onClick(e){
     var left_id = null;
     var right_id = null;
     var element = $(e);
-    if(element.attr('_type') == 'leftOption'){
+    if (element.attr('_type') == 'leftOption'){
         left_id = element.attr('_id');
         $('#leftOptionVal').val(left_id);
     }
-    else if(element.attr('_type') == 'rightOption'){
+    else if (element.attr('_type') == 'rightOption'){
         right_id = element.attr('_id');
         $('#rightOptionVal').val(right_id);
     }
+}
+
+/* This assigns text form values to the submit form when the user clicks on submit button */
+function onSubmit() {
     $('#centreTextVal').val($('#step2').val());
 }
 </script>
