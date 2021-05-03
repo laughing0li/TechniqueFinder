@@ -442,15 +442,29 @@ DROP TABLE IF EXISTS `technique`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `technique` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `version` bigint(20) NOT NULL,
-  `summary` longtext NOT NULL,
+  `name` varchar(255) NOT NULL,  /* Name of the technique */
+  `instrument_name` varchar(255) NOT NULL, /* Type of instrument primary instrument */
+  `model` varchar(255), 
+  `manufacturer` varchar(255), /* Brand of the instrument */
+  `sample_type` varchar(255),    /* type of samples */
+  `analysis_type` varchar(255),  /* TEMPORARY! type of analysis */
+  `wavelength` varchar(63),
+  `beam_diameter` varchar(63),
+  `min_conc` varchar(63),
+  `technique` varchar(256), /* ?? */
+  `mass` varchar(63),
+  `volume` varchar(63),
+  `pressure` varchar(63),
+  `temperature` varchar(63),
+  `ext_reference` varchar(255),
+  `summary` longtext, /* short description of the technique */
+  `description` longtext NOT NULL, /* a full description of the technique */
   `keywords` longtext NOT NULL,
-  `description` longtext NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `version` bigint(20) NOT NULL,
   `alternative_names` longtext NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`),
-  FULLTEXT KEY `fulltext_index` (`name`,`alternative_names`,`summary`,`description`,`keywords`)
+  UNIQUE KEY `model` (`model`),
+  FULLTEXT KEY `fulltext_index` (`name`,`instrument_name`,`model`,`manufacturer`,`analysis_type`,`sample_type`,`technique`,`alternative_names`,`summary`,`description`,`keywords`)
 ) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -460,7 +474,58 @@ CREATE TABLE `technique` (
 
 LOCK TABLES `technique` WRITE;
 /*!40000 ALTER TABLE `technique` DISABLE KEYS */;
-INSERT INTO `technique` VALUES (17,19,'<p>Shorter&nbsp;f<strong>or</strong><em>ma</em><u>tt</u><span style=\"color:#e74c3c\">able</span> description.</p>\r\n','Example, keywords','<p><span style=\"font-size:18px\">Longer</span> f<strong>or</strong><em>ma</em><u>tt</u><span style=\"color:#e74c3c\">able</span> description.</p>\r\n','Sample Technique','Alternative Sample Technique Name'),(154,0,'<p>Short Description</p>\r\n','keywords, sample','<p>Long&nbsp;Description</p>\r\n','Another Sample Technique','Alternative Technique name');
+INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation system','RESOlution SE S-155','Resonetics-Australian Scientific Instruments','Polished section','In situ','193 nm','2-300 µm','','','','','',' ','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system'),
+(2,'Introduction system','Excimer laser ablation system','RESOlution SE M-50A','Resonetics-Australian Scientific Instruments','Polished section','In situ','193 nm','2-300 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system'),
+(3,'Introduction system','Excimer laser ablation system','Analyte G2','Photon Machines Inc.','Polished section','In situ','193 nm','1-400 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system'),
+(4,'Introduction system','Excimer laser ablation system','Analyte LSX-213','Photon Machines Inc.','Polished section','In situ','213 nm','4-200 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system'),
+(5,'Introduction system','Excimer laser ablation system','Analyte 198-FS','Photon Machines Inc.','Polished section','In situ','198 nm','','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system'),
+(6,'Introduction system','Excimer laser ablation system','Analyte Excite','Photon Machines Inc.','Polished section','In situ','193 nm','1-150 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system'),
+(7,'Introduction system','Excimer laser ablation system','Lambda Physik',' OPTEX laser','Polished section','In situ','193 nm','','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system'),
+(8,'Introduction system','laser fusion/step heating system','Firestar Series V40 CO2 laser','Synrad','Solid','Both','10600 nm','2500 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system'),
+(9,'Introduction system','laser fusion/step heating system','Fusions 10.6 CO2 laser','Photon Machines Inc.','Solid','Both','10600 nm','125-6000 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system'),
+(10,'ICP-MS','SF-ICP-MS','Element-XR','Thermo-Fisher Scientific','Liquid','Both','','','10 ppb','','','','','','','Summary of ICP-MS','Description of ICP-MS','Keywords of ICP-MS',1,'Alternative names for ICP-MS'),
+(11,'ICP-MS','ICP-MS','Quadrupole ICPMS 7700 ','Agilent','Introduction system','Both','','','10 ppb','','','','','','','Summary of ICP-MS','Description of ICP-MS','Keywords of ICP-MS',1,'Alternative names for ICP-MS'),
+(12,'ICP-MS','ICP-MS','Quadrupole ICPMS 7700x','Agilent','Introduction system','Both','','','10 ppb','','','','','','','Summary of ICP-MS','Description of ICP-MS','Keywords of ICP-MS',1,'Alternative names for ICP-MS'),
+(13,'ICP-MS','ICP-MS','Quadrupole ICPMS 7500','Agilent','Introduction system','Both','','','10 ppb','','','','','','','Summary of ICP-MS','Description of ICP-MS','Keywords of ICP-MS',1,'Alternative names for ICP-MS'),
+(14,'ICP-MS','ICP-MS','Triple Quadrupole (Q3) ICP-MS 8900','Agilent','Introduction system','Both','','','10 ppb','','','','','','','Summary of ICP-MS','Description of ICP-MS','Keywords of ICP-MS',1,'Alternative names for ICP-MS'),
+(15,'ICP-MS','ICP-MS','MAP-MS-215/50','Mass Analyser Products','Liquid','Bulk','','','10 ppb','','','','','','','Summary of ICP-MS','Description of ICP-MS','Keywords of ICP-MS',1,'Alternative names for ICP-MS'),
+(16,'MC-ICP-MS','MC-ICP-MS','Plasma 1','Nu Instruments Ltd','Liquid','Bulk','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS'),
+(17,'MC-ICP-MS','MC-ICP-MS','Plasma 2','Nu Instruments Ltd','Liquid','Bulk','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS'),
+(18,'MC-ICP-MS','MC-ICP-MS','Plasma 3','Nu Instruments Ltd','Liquid','Bulk','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS'),
+(19,'MC-ICP-MS','MC-ICP-MS','Plasma Sapphire','Nu Instruments Ltd','Liquid','Bulk','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS'),
+(20,'MC-ICP-MS','MC-ICP-MS','Neptune Plus','Thermo-Fisher Scientific','Liquid','Bulk','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS'),
+(21,'ICP-MS','SF-ICP-MS','Plasma Attom','Nu Instruments Ltd','Liquid','Bulk','','','1 ppb','','','','','','','Summary of ICP-MS','Description of ICP-MS','Keywords of ICP-MS',1,'Alternative names for ICP-MS'),
+(22,'ICP-MS','SF-ICP-MS','Plasma Attom-ES','Nu Instruments Ltd','Liquid','Bulk','','','1 ppb','','','','','','','Summary of ICP-MS','Description of ICP-MS','Keywords of ICP-MS',1,'Alternative names for ICP-MS'),
+(23,'TIMS','TIMS','Triton','Thermo Finnigan','Liquid','Bulk','','','1 ppb','','','','','','','Summary of TIMS','Description of TIMS','Keywords of TIMS',1,'Alternative names for TIMS'),
+(24,'TIMS','TIMS','Triton Plus','Thermo Finnigan','Liquid','Bulk','','','1 ppb','','','','','','','Summary of TIMS','Description of TIMS','Keywords of TIMS',1,'Alternative names for TIMS'),
+(25,'IRMS','Stable Isotope Ratio Mass Spectrometer','MAT 253+ with EBEX','Thermo Finnigan','Liquid','Bulk','','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS'),
+(26,'AES','MP-AES','Argilent 4200','Agilent','Liquid','Bulk','','','','','','','','','','Summary of AES','Description of AES','Keywords of AES',1,'Alternative names for AES'),
+(27,'SIMS','SHRIMP','SHRIMP 2','Australian Scientific Instruments','Thin_polished section','In situ','','','10 ppt','','','','','','','Summary of SIMS','Description of SIMS','Keywords of SIMS',1,'Alternative names for SIMS'),
+(28,'Noble gas mass spetrometer','MC-MS-Noble Gas (Ar)','Argus VI','Thermo-Fisher Scientific','Solid','Both','','','','','','','','','','Summary of Noble gas mass spetrometer','Description of Noble gas mass spetrometer','Keywords of Noble gas mass spetrometer',1,'Alternative names for Noble gas mass spetrometer'),
+(29,'Noble gas mass spetrometer','MS-Noble Gas (Ar)','VG3600','VG Instruments','Solid','Both','','','','','','','','','','Summary of Noble gas mass spetrometer','Description of Noble gas mass spetrometer','Keywords of Noble gas mass spetrometer',1,'Alternative names for Noble gas mass spetrometer'),
+(30,'Noble gas mass spetrometer','MS-Noble Gas (Ar)','MM5400','Micromass','Solid','Both','','','','','','','','','','Summary of Noble gas mass spetrometer','Description of Noble gas mass spetrometer','Keywords of Noble gas mass spetrometer',1,'Alternative names for Noble gas mass spetrometer'),
+(31,'Noble gas mass spetrometer','Step-heating (Ar)','Low-blank argon extraction furnace TC-9','Modifications Ltd.','Solid','Bulk','','','','','','','','','','Summary of Noble gas mass spetrometer','Description of Noble gas mass spetrometer','Keywords of Noble gas mass spetrometer',1,'Alternative names for Noble gas mass spetrometer'),
+(32,'Noble gas mass spetrometer','QMS ( Noble Gas-He)','Alphachron','Australian Scientific instruments','Solid','Both','','','','','','','','','','Summary of Noble gas mass spetrometer','Description of Noble gas mass spetrometer','Keywords of Noble gas mass spetrometer',1,'Alternative names for Noble gas mass spetrometer'),
+(33,'Noble gas mass spetrometer','MS-Noble Gas (He)','Helium extration system with Pfeiffer Prisma MS','Patterson Instruments Ltd / CSIRO','Solid','Both','','','','','','','','','','Summary of Noble gas mass spetrometer','Description of Noble gas mass spetrometer','Keywords of Noble gas mass spetrometer',1,'Alternative names for Noble gas mass spetrometer'),
+(34,'XRF','XRF','M4 Tornado Micro XRF','Bruker','Solid','In situ','','','1 %','','','','','','','Summary of XRF','Description of XRF','Keywords of XRF',1,'Alternative names for XRF'),
+(35,'XRF','XRF','Axios 1kW XRF','PANalytical','Solid','In situ','','','1 %','','','','','','','Summary of XRF','Description of XRF','Keywords of XRF',1,'Alternative names for XRF'),
+(36,'EMP','EMP','SX-100 Electron microprobe','Cameca','Solid','In situ','','','','','','','','','','Summary of EMP','Description of EMP','Keywords of EMP',1,'Alternative names for EMP'),
+(37,'alpha counter','alpha counter','Alpha Particle counter','Ortec','Solid','Bulk','','','1 ppm','','','','','','','Summary of alpha counter','Description of alpha counter','Keywords of alpha counter',1,'Alternative names for alpha counter'),
+(38,'Elemental Analyser CHNS','Elemental Analyser CHNS','Vario EL Cube','Elementar','Solid','Bulk','','','','','10-1000 mg','','','','','Summary of Elemental Analyser CHNS','Description of Elemental Analyser CHNS','Keywords of Elemental Analyser CHNS',1,'Alternative names for Elemental Analyser CHNS'),
+(39,'Elemental Analyser CHNS','Elemental Analyser CHNS','EA3000','EuroEA','Solid','Bulk','','','','','1-50 mg','','','','','Summary of Elemental Analyser CHNS','Description of Elemental Analyser CHNS','Keywords of Elemental Analyser CHNS',1,'Alternative names for Elemental Analyser CHNS'),
+(40,'Automated fission track counting system','Automated fission track counting system','Autoscan Deluxe w. ZEISS M2m Microscope','AutoScan','Solid','Both','','','','','','','','','','Summary of Automated fission track counting system','Description of Automated fission track counting system','Keywords of Automated fission track counting system',1,'Alternative names for Automated fission track counting system'),
+(41,'Experiemental instrument','Griggs press','Griggs apparatus','n/a','','','','','','','','150','3','1600','','Summary of Experiemental instrument','Description of Experiemental instrument','Keywords of Experiemental instrument',1,'Alternative names for Experiemental instrument'),
+(42,'Experiemental instrument','Piston cylinder','piston-cylinder apparatus','n/a','','','','','','','','','6','2000','','Summary of Experiemental instrument','Description of Experiemental instrument','Keywords of Experiemental instrument',1,'Alternative names for Experiemental instrument'),
+(43,'Experiemental instrument','Piston cylinder','rapid-quench piston-cylinder apparatus','GUKO Sondermaschinenbau','','','','','','','','','6','2000','','Summary of Experiemental instrument','Description of Experiemental instrument','Keywords of Experiemental instrument',1,'Alternative names for Experiemental instrument'),
+(44,'Experiemental instrument','Multi-anvil press','multi-anvil apparatus','Bristol University','','','','','','','','10','20','2200','','Summary of Experiemental instrument','Description of Experiemental instrument','Keywords of Experiemental instrument',1,'Alternative names for Experiemental instrument'),
+(45,'Experiemental instrument','Multi-anvil press','MAX2003','Voggenreiter GmbH','','','','','','','','10','20','2200','','Summary of Experiemental instrument','Description of Experiemental instrument','Keywords of Experiemental instrument',1,'Alternative names for Experiemental instrument'),
+(46,'Experiemental instrument','Multi-anvil press',' Walker module - 1000 ton-press','Voggenreiter GmbH','','','','','','','','10','20','2200','','Summary of Experiemental instrument','Description of Experiemental instrument','Keywords of Experiemental instrument',1,'Alternative names for Experiemental instrument'),
+(47,'Experiemental instrument','Diamond-anvil press','diamond-anvil cell apparatus','constructed in house','','','','','','','','','100-600','1500-6000','','Summary of Experiemental instrument','Description of Experiemental instrument','Keywords of Experiemental instrument',1,'Alternative names for Experiemental instrument'),
+(48,'Experiemental instrument','Raman microscope','LABRAM HR Evolution','Horiba','','','','','','','','','','','','Summary of Experiemental instrument','Description of Experiemental instrument','Keywords of Experiemental instrument',1,'Alternative names for Experiemental instrument'),
+(49,'Fourrier Transform IR microscope','Fourrier Transform IR microscope','iN10','Thermo-Fisher Scientific','','','','','','','','','','','','Summary of Fourrier Transform IR microscope','Description of Fourrier Transform IR microscope','Keywords of Fourrier Transform IR microscope',1,'Alternative names for Fourrier Transform IR microscope'),
+(50,'MC-ICP-MS','MC-ICP-MS','Neptune','Thermo-Fisher Scientific','Liquid','Bulk','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS'),
+(51,'IRMS','EA-IRMS','Flash 2000','Thermo-Fisher Scientific','Liquid','Bulk','','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS'),
+(52,'IRMS','CG-IRMS','Delta V Advantage irMS','Thermo-Fisher Scientific','Liquid','Bulk','','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS');
 /*!40000 ALTER TABLE `technique` ENABLE KEYS */;
 UNLOCK TABLES;
 
