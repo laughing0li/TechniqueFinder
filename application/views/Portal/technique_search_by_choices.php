@@ -23,32 +23,20 @@ $this->load->view('layout/portal_header.php');?>
 <body>
         
     <div id="main">
-
 	<div id="content" class="container">
-            <span class="nav_buttons">
-                <ul>
-<?php
-if($science == 'GEOCHEM'){
+            <div class="d-flex mb-2">
+                <div class="p-2 me-auto">
+                    <button type="submit" class="btn btn-primary" onclick="window.location.assign('<?php echo base_url();?>Portal/geochemOptionsSelection')">Back to Search</button>
+                </div>
+                <div class="p-2">
+                    <button type="submit" class="btn btn-primary" onclick="window.location.assign('<?php echo base_url();?>Portal')">Back to Start</button>
+                </div>
+            </div>
     
-    echo '<li id="button_backBio"><a href="'.base_url().'Portal/geochemOptionsSelection"></a></li>';
-}else{
-    echo '<li id="button_backPhys"><a href="'.base_url().'Portal/physicsOptionsSelection"></a></li>';
-}
-?>
-                </ul>
-            </span>
-
-            <span class="nav_buttons">
-                <ul>
-                    <li id="button_backStart"><a style="float:right" href="<?php echo base_url();?>Portal"></a></li>
-                </ul>
-            </span>
-
-           
             <div class="clear"></div>
             <h1>Possible Techniques</h1>
             <hr>
-            <p>Results for: <span class="tf-orange"><b><?php if (isset($leftOption->name) && isset($rightOption->name)) { echo $leftOption->name.' and '.$rightOption->name; } ?></b></span></p>
+            <p>Results for: <span><b><?php if (isset($leftOption->name) && isset($rightOption->name)) { echo $leftOption->name.' and '.$rightOption->name; } ?></b></span></p>
 
 
         <?php
