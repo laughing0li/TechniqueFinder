@@ -1,8 +1,6 @@
 <?php $this->load->view('layout/portal_header.php');?>
 <head>
     <title>AGN Instrument Finder</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
 </head>
 <style>
     input, select, textarea {
@@ -28,9 +26,9 @@
         }?> -->
         <div class="d-grid gap-2 col-6 mx-auto">
 
-            <button class="btn btn-lg btn-primary" type="button" onclick="window.location.assign('<?php echo base_url();?>Portal/geochemOptionsSelection');">Geochemical Analysis</button>
-            <button class="btn btn-lg btn-primary" type="button" onclick="window.location.assign('<?php echo base_url();?>Portal/expProcOptionsSelection');">Experimental Procedure</button>
-            <button class="btn btn-lg btn-primary" type="button" onclick="window.location.assign('<?php echo base_url();?>Portal/samplePrepOptionsSelection');">Sample Preparation</button>
+            <button class="btn btn-primary" type="button" onclick="window.location.assign('<?php echo base_url();?>Portal/geochemOptionsSelection');">Geochemical Analysis</button>
+            <button class="btn btn-primary" type="button" onclick="window.location.assign('<?php echo base_url();?>Portal/expProcOptionsSelection');">Experimental Procedure</button>
+            <button class="btn btn-primary" type="button" onclick="window.location.assign('<?php echo base_url();?>Portal/samplePrepOptionsSelection');">Sample Preparation</button>
         </div>
         <hr>
         <h3 class="tf-heading">Option 2: Search by keyword</h3>
@@ -41,7 +39,7 @@
                 <form action="<?php echo base_url();?>Portal/techniqueSearch" method="get" name="searchForm" id="searchForm">
                     <input type="text" class="form-control" id="option2Search" placeholder="Type search term here">
                     <p></p>
-                    <button class="btn btn-lg btn-primary" type="button" onclick="document.searchForm.submit()">Go</button>
+                    <button class="btn btn-primary" type="button" onclick="document.searchForm.submit()">Go</button>
                 </form>
             </div>
         </div>
@@ -52,7 +50,7 @@
             <div class="card-body">
 		<h5 class="card-title"><?php echo html_entity_decode($staticData['tf.home.allTechniquesExplanation']); ?></h5>
                 <p></p>
-		<button class="btn btn-lg btn-primary" type="button" onclick="window.location.assign('<?php echo base_url();?>Portal/listTechniques');">View List</button>
+		<button class="btn btn-primary" type="button" onclick="window.location.assign('<?php echo base_url();?>Portal/listTechniques');">View List</button>
                 </form>
             </div>
         </div>
@@ -68,7 +66,6 @@
         <?php echo $staticData['tf.home.infoboxContent']; ?>
     </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>
 
 <?php $this->load->view('layout/portal_footer.php')?>

@@ -1,4 +1,16 @@
-<?php $this->load->view('layout/portal_header.php');?>
+<?php
+/**
+ * TechniqueFinder - technique_search_by_choices.php
+ *
+ * Description:
+ * Author:           Intersect Australia Ltd
+ * Created:          12 Aug 2019
+ * Source:           https://github.com/IntersectAustralia/TechniqueFinder
+ * License:          Copyright (c) 2019 Intersect Australia - Licensed under Creative Commons
+ *                   Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+ *                   https://creativecommons.org/licenses/by-nc-sa/4.0/
+ */
+$this->load->view('layout/portal_header.php');?>
 <head><title>AGN Instrument Finder</title></head>
 <style>
     input, select, textarea {
@@ -12,22 +24,10 @@
         
     <div id="main">
 
-        <div id="content">
+	<div id="content" class="container">
             <span class="nav_buttons">
                 <ul>
 <?php
-/**
- * TechniqueFinder - technique_search_by_choices.php
- *
- * Description:
- * Author:           Intersect Australia Ltd
- * Created:          12 Aug 2019
- * Source:           https://github.com/IntersectAustralia/TechniqueFinder
- * License:          Copyright (c) 2019 Intersect Australia - Licensed under Creative Commons
- *                   Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
- *                   https://creativecommons.org/licenses/by-nc-sa/4.0/
- */
-
 if($science == 'GEOCHEM'){
     
     echo '<li id="button_backBio"><a href="'.base_url().'Portal/geochemOptionsSelection"></a></li>';

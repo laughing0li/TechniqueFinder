@@ -1,14 +1,13 @@
 <?php $this->load->view('layout/portal_header.php');?>
 <head>
     <title>AGN Instrument Finder</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 <body>
         
         <div id="content" class="container">
 	    <div class="d-flex justify-content-end">
                 <div class="p-2">
-		    <button type="submit" class="btn btn-primary btn-lg" onclick="window.location.assign('<?php echo base_url();?>Portal')">Back</button>
+		    <button type="submit" class="btn btn-primary" onclick="window.location.assign('<?php echo base_url();?>Portal')">Back</button>
                 </div>
             </div>
            
@@ -19,7 +18,7 @@
             </div>
 
             <!-- LHS COLUMN -->
-            <div class="col-4">
+            <div class="col-5">
                 <div class="row">
                     <!-- STEP 1 -->
                     <h3 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.left.title']);?> </h3>
@@ -27,7 +26,7 @@
                         <?php
                           foreach($left_list as $r){
                                  echo '<input _id="'.$r->id.'" _type="leftOption"  type="radio" class="btn-check" name="btnradio-1" id="btnradio-'.$r->id.'" autocomplete="off" onclick="onClick(this)">';
-                                 echo '<label class="btn btn-primary btn-lg" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
+                                 echo '<label class="btn btn-primary" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
                           }
                         ?>
 		    </div>
@@ -54,7 +53,7 @@
                         <?php
                         foreach($right_list as $r){
                             echo '<input _id="'.$r->id.'" _type="rightOption" type="radio" class="btn-check" name="btnradio-2" id="btnradio-'.$r->id.'" autocomplete="off" onclick="onClick(this);">';
-                            echo '<label class="btn btn-primary btn-lg" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
+                            echo '<label class="btn btn-primary" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
                         }
                         ?>
 		    </div>
@@ -64,7 +63,7 @@
             </div> <!-- END col-4 -->
 
             <!-- RHS COLUMN -->
-            <div class="col-8"></div>
+            <div class="col-7"></div>
 
             <br>
             <br>
@@ -76,7 +75,7 @@
                         <input type="hidden" id="leftOptionVal" name="leftOption" value="">
                         <input type="hidden" id="centreTextVal" name="centreText" value="">
                         <input type="hidden" id="rightOptionVal" name="rightOption" value="">
-                        <button type="submit" class="btn btn-primary btn-lg" onclick="onSubmit()">Submit</button>
+                        <button type="submit" class="btn btn-primary" onclick="onSubmit()">Submit</button>
                     </form>
                 </div>
             </div>
@@ -98,9 +97,6 @@
     </div>
 
     
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-
 
 <script type="text/javascript">
 /* This assigns radio button values to the submit form when user clicks on buttons */
