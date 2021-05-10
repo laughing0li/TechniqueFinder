@@ -1,24 +1,3 @@
-<?php $this->load->view('layout/portal_header.php');?>
-<head><title>AGN Instrument Finder</title></head>
-<link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
-<script src="http://vjs.zencdn.net/4.12/video.js"></script>
-
-
-<style>
-    input, select, textarea {
-        font-family: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        margin-top: 9px;
-        width: 16em;
-</style>
-<body>
-
-<div id="main">
-
-    <div id="content">
-            <span class="nav_buttons">
-                <ul>
 <?php
 /**
  * TechniqueFinder - technique_view.php
@@ -32,27 +11,30 @@
  *                   https://creativecommons.org/licenses/by-nc-sa/4.0/
  */
 
+$this->load->view('layout/portal_header.php');?>
+<head><title>AGN Instrument Finder</title></head>
+<link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/4.12/video.js"></script>
+
+
+<body>
+
+<div id="main">
+
+    <div id="content" class="container">
+	<div class="d-flex mb-2">
+            <div class="p-2 me-auto">
+<?php
+
 if($prevPage=='listTechniques'){
-    echo '<li id="button_backAllTech"><a href="'.base_url().'Portal/listTechniques"></a></li>';
+    echo '<div class="p-2"><button class="btn btn-primary" type="submit" onclick="window.location.assign(\''.base_url().'Portal/listTechniques\')">Back to list of available techniques</button></div>';
 }
 ?>
-                </ul>
-            </span>
-
-        <span class="nav_buttons">
-                <ul>
-                    <li id="button_backStart"><a style="float:right" href="<?php echo base_url();?>Portal"></a></li>
-                    <?php if(isset($science) && isset($left) && isset($right)){?>
-                        <?php if($science!='' && $left!='' && $right!=''){?>
-                        <?php if($science =='BIOLOGY'){ ?>
-                            <li id="button_backShowPosTech"><a style="float:left;" href="<?php echo base_url().'Portal/getTechniqueByOptionCombination?science='.$science.'&leftOption='.$left.'&rightOption='.$right;?>"></a></li>
-                        <?php }else{?>
-                            <li id="button_backShowPosTech"><a style="float:left;" href="<?php echo base_url().'Portal/getTechniqueByOptionCombination?science='.$science.'&leftOption='.$left.'&rightOption='.$right;?>"></a></li>
-                        <?php }?>
-                        <?php } ?>
-                    <?php } ?>
-                </ul>
-            </span>
+            </div>   
+            <div class="p-2">
+                <button class="btn btn-primary" type="submit" onclick="window.location.assign('<?php echo base_url();?>Portal')">Back to start</button>
+            </div>
+        </div>
 
 
         <div class="clear"></div>
@@ -61,7 +43,46 @@ if($prevPage=='listTechniques'){
         <h5>About this technique</h5>
         <hr>
         <?php echo $theTechnique->description; ?>
-
+<!--
+-->
+        <hr>
+	<table class="table table-striped">
+            <thead>
+                <tr class="tf-font-14">
+                    <th scope="col">Model</th>
+                    <th scope="col">Manufacturer</th>
+                    <th scope="col">Sample Type</th>
+                    <th scope="col">Analysis Type</th>
+                    <th scope="col">Wavelength</th>
+                    <th scope="col">Beam Diameter</th>
+                    <th scope="col">Min Conc.</th>
+                    <th scope="col">Technique</th>
+                    <th scope="col">Mass</th>
+                    <th scope="col">Volume (mm<sup>3</sup>)</th>
+                    <th scope="col">Pressure (GPa)</th>
+                    <th scope="col">Temp. (K)</th >
+                    <th scope="col">Reference</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tf-font-14">
+		    <th scope="row"><?php echo $theTechnique->model; ?></th>
+		    <td><?php echo $theTechnique->manufacturer; ?></td>
+		    <td><?php echo $theTechnique->sample_type; ?></td>
+		    <td><?php echo $theTechnique->analysis_type; ?></td>
+		    <td><?php echo $theTechnique->wavelength; ?></td>
+		    <td><?php echo $theTechnique->beam_diameter; ?></td>
+		    <td><?php echo $theTechnique->min_conc; ?></td>
+		    <td><?php echo $theTechnique->technique; ?></td>
+		    <td><?php echo $theTechnique->mass; ?></td>
+		    <td><?php echo $theTechnique->volume; ?></td>
+		    <td><?php echo $theTechnique->pressure; ?></td>
+		    <td><?php echo $theTechnique->temperature; ?></td>
+		    <td><?php echo $theTechnique->ext_reference; ?></td>
+                </tr>
+            </tbody>
+        </table>
+<!--
         <div>
             <?php
             if(count($caseStudies)){
@@ -223,7 +244,7 @@ if($prevPage=='listTechniques'){
         </div>
         <br><br>
 
-
+-->
 
     </div>
     <div id="footer">
@@ -231,7 +252,7 @@ if($prevPage=='listTechniques'){
     </div>
     <div style="clear: both"><!-- ff --></div>
 
-    <div id="infobox">
+<!--   <div id="infobox">
         <table cellpadding="0" border="0" width="100%" style="padding-top: 12em;"><tbody>
             <tr>
                 <td>
@@ -257,7 +278,7 @@ if($prevPage=='listTechniques'){
                 </td>
             </tr>
             </tbody></table>
-    </div>
+    </div> -->
 </div>
 
 </body>

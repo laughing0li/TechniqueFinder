@@ -1,26 +1,26 @@
 <?php $this->load->view('layout/portal_header.php');?>
 <head><title>AGN Instrument Finder</title></head>
-<style>
-    input, select, textarea {
-        font-family: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        margin-top: 9px;
-        width: 16em;
-</style>
 <body>
         
     <div id="main">
-        <div id="content">
-            <span class="nav_buttons">
-                <ul>
-                    <li id="button_backStart"><a style="float: right;" href="<?php echo base_url();?>Portal"></a></li>
-                </ul>
+        <div id="content" class="container">
+            <span class="d-flex justify-content-end">
+                <div class="p-2">
+                    <button class="btn btn-primary" type="submit" onclick="window.location.assign('<?php echo base_url();?>Portal')">Back</button>
+                </div>
             </span>
            
             <div class="clear"></div>
-            <h1>List of available techniques</h1>
-            <ul>
+            <h1>List of Available Techniques</h1>
+            <table class="table table-striped">
+                 <thead>
+                     <tr class="tf-font-14">
+                          <th scope="col">Model</th>
+                          <th scope="col">Instrument Type</th>
+                          <th scope="col">Manufacturer</th>
+                     </tr>
+                </thead>
+                <tbody>
                 <?php
 /**
  * TechniqueFinder - technique_list.php
@@ -35,10 +35,11 @@
  */
 
 foreach($allTechniques as $r){
-                        echo '<li><a style="font-size:12px;font-weight:500;" href="'.base_url().'Portal/viewTechnique/'.$r->id.'?nav_from=listTechniques" >'.$r->name.'</a></li>';
+                        echo '<tr class="tf-font-14"><th scope="row"><a href="'.base_url().'Portal/viewTechnique/'.$r->id.'?nav_from=listTechniques" >'.$r->model.'</a></th><td>'.$r->instrument_name.'</td><td>'.$r->manufacturer.'</td></tr>';
                     }
                 ?>
-            </ul>
+                </tbody>
+            </table>
         </div>            
 
 
