@@ -16,6 +16,61 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `element_instrument_type`
+--
+DROP TABLE IF EXISTS `element_instrument_type`;
+CREATE TABLE `element_instrument_type` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `element_id` bigint(20) NOT NULL,
+  `instrument_type_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK38B5242494368I73` (`element_id`),
+  KEY `FK38B5242493368Y73` (`instrument_type_id`),
+  CONSTRAINT `FK35G8282792068C76` FOREIGN KEY (`element_id`) REFERENCES `element` (`id`),
+  CONSTRAINT `FK38G7242492568C76` FOREIGN KEY (`instrument_type_id`) REFERENCES `instrument_type` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
+
+--
+-- Table structure for table `instrument_type`
+--
+DROP TABLE IF EXISTS `instrument_type`;
+CREATE TABLE `instrument_type` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(63) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+LOCK TABLES `instrument_type` WRITE;
+INSERT INTO `instrument_type` VALUES(NULL, 'Excimer laser ablation system'),
+(NULL, 'fusion/step heating system'),
+(NULL, 'SF-ICP-MS'),
+(NULL, 'ICP-MS'),
+(NULL, 'MC-ICP-MS'),
+(NULL, 'TIMS'),
+(NULL, 'Stable Isotope Ratio Mass Spectrometer'),
+(NULL, 'MP-AES'),
+(NULL, 'SHRIMP'),
+(NULL, 'MC-MS-Noble Gas (Ar)'),
+(NULL, 'MS-Noble Gas (Ar)'),
+(NULL, 'Step-heating (Ar)'),
+(NULL, 'MS-Noble Gas (He)'),
+(NULL, 'XRF'),
+(NULL, 'EMP'),
+(NULL, 'alpha counter'),
+(NULL, 'Elemental Analyser CHNS'),
+(NULL, 'Automated fission track counting system'),
+(NULL, 'Griggs press'),
+(NULL, 'Piston cylinder'),
+(NULL, 'Multi-anvil press'),
+(NULL, 'Diamond-anvil press'),
+(NULL, 'Raman microscope'),
+(NULL, 'Fourrier Transform IR microscope'),
+(NULL, 'EA-IRMS'),
+(NULL, 'CG-IRMS');
+UNLOCK TABLES;
+  
 -- Table structure for table `elements`
 --
 DROP TABLE IF EXISTS `elements`;
@@ -25,7 +80,7 @@ CREATE TABLE `elements` (
   `symbol` varchar(3) NOT NULL,
   `atomic_number` varchar(4) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `elements`
