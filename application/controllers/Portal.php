@@ -24,11 +24,11 @@ class Portal extends CI_Controller {
 
     public function index(){
         $staticData = array();
-        $staticData['tf.home.quickGuide']= $this->Static_model->getSaticDataByName('tf.home.quickGuide')->text;
-        $staticData['tf.home.searchExplanation']= $this->Static_model->getSaticDataByName('tf.home.searchExplanation')->text;
-        $staticData['tf.home.allTechniquesExplanation']= $this->Static_model->getSaticDataByName('tf.home.allTechniquesExplanation')->text;
-        $staticData['tf.home.infoboxContent']= $this->Static_model->getSaticDataByName('tf.home.infoboxContent')->text;
-        $staticData['tf.home.optionsExplanation']= $this->Static_model->getSaticDataByName('tf.home.optionsExplanation')->text;
+        $staticData['tf.home.quickGuide']= $this->Static_model->getStaticDataByName('tf.home.quickGuide')->text;
+        $staticData['tf.home.searchExplanation']= $this->Static_model->getStaticDataByName('tf.home.searchExplanation')->text;
+        $staticData['tf.home.allTechniquesExplanation']= $this->Static_model->getStaticDataByName('tf.home.allTechniquesExplanation')->text;
+        $staticData['tf.home.infoboxContent']= $this->Static_model->getStaticDataByName('tf.home.infoboxContent')->text;
+        $staticData['tf.home.optionsExplanation']= $this->Static_model->getStaticDataByName('tf.home.optionsExplanation')->text;
 
         $this->load->view('Portal/index', array(
             'staticData' => $staticData
@@ -69,30 +69,30 @@ class Portal extends CI_Controller {
 
     public function geochemOptionsSelection(){
         $staticData = array();
-        $staticData['tf.geochemChoices.quickGuide'] = $this->Static_model->getSaticDataByName('tf.geochemChoices.quickGuide')->text;
-        $staticData['tf.geochemChoices.comparison.title'] = $this->Static_model->getSaticDataByName('tf.geochemChoices.comparison.title')->text;
-        $staticData['tf.geochemChoices.left.title'] = $this->Static_model->getSaticDataByName('tf.geochemChoices.left.title')->text;
-        $staticData['tf.geochemChoices.centre.title'] = $this->Static_model->getSaticDataByName('tf.geochemChoices.centre.title')->text;
-        $staticData['tf.geochemChoices.right.title'] = $this->Static_model->getSaticDataByName('tf.geochemChoices.right.title')->text;
+        $staticData['tf.geochemChoices.quickGuide'] = $this->Static_model->getStaticDataByName('tf.geochemChoices.quickGuide')->text;
+        $staticData['tf.geochemChoices.comparison.title'] = $this->Static_model->getStaticDataByName('tf.geochemChoices.comparison.title')->text;
+        $staticData['tf.geochemChoices.step1.title'] = $this->Static_model->getStaticDataByName('tf.geochemChoices.step1.title')->text;
+        $staticData['tf.geochemChoices.step2.title'] = $this->Static_model->getStaticDataByName('tf.geochemChoices.step2.title')->text;
+        $staticData['tf.geochemChoices.step3.title'] = $this->Static_model->getStaticDataByName('tf.geochemChoices.step3.title')->text;
 
 
         $this->load->model('OptionChoice_model');
-        $left_list = $this->OptionChoice_model->getAllOptionChoices('GEOCHEM', 'LEFT');
-        $right_list = $this->OptionChoice_model->getAllOptionChoices('GEOCHEM', 'RIGHT');
+        $step1_list = $this->OptionChoice_model->getAllOptionChoices('GEOCHEM', 'STEP1');
+        $step2_list = $this->OptionChoice_model->getAllOptionChoices('GEOCHEM', 'STEP2');
 
         $this->load->view('Portal/geochem_options_selection', array(
             'staticData' => $staticData,
-                'left_list'=>$left_list,
-                'right_list'=>$right_list
+                'step1_list'=>$step1_list,
+                'step2_list'=>$step2_list
         ));
     }
 
     public function expProcOptionsSelection(){
         $staticData = array();
-        $staticData['tf.physicsChoices.quickGuide'] = $this->Static_model->getSaticDataByName('tf.physicsChoices.quickGuide')->text;;
-        $staticData['tf.physicsChoices.comparison.title'] = $this->Static_model->getSaticDataByName('tf.physicsChoices.comparison.title')->text;;
-        $staticData['tf.physicsChoices.left.title'] = $this->Static_model->getSaticDataByName('tf.physicsChoices.left.title')->text;
-        $staticData['tf.physicsChoices.right.title'] = $this->Static_model->getSaticDataByName('tf.physicsChoices.right.title')->text;
+        $staticData['tf.physicsChoices.quickGuide'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.quickGuide')->text;;
+        $staticData['tf.physicsChoices.comparison.title'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.comparison.title')->text;;
+        $staticData['tf.physicsChoices.left.title'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.left.title')->text;
+        $staticData['tf.physicsChoices.right.title'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.right.title')->text;
 
         $this->load->model('OptionChoice_model');
         $left_list = $this->OptionChoice_model->getAllOptionChoices('PHYSICS', 'LEFT');
@@ -107,10 +107,10 @@ class Portal extends CI_Controller {
 
     public function samplePrepOptionsSelection(){
         $staticData = array();
-        $staticData['tf.physicsChoices.quickGuide'] = $this->Static_model->getSaticDataByName('tf.physicsChoices.quickGuide')->text;;
-        $staticData['tf.physicsChoices.comparison.title'] = $this->Static_model->getSaticDataByName('tf.physicsChoices.comparison.title')->text;;
-        $staticData['tf.physicsChoices.left.title'] = $this->Static_model->getSaticDataByName('tf.physicsChoices.left.title')->text;
-        $staticData['tf.physicsChoices.right.title'] = $this->Static_model->getSaticDataByName('tf.physicsChoices.right.title')->text;
+        $staticData['tf.physicsChoices.quickGuide'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.quickGuide')->text;;
+        $staticData['tf.physicsChoices.comparison.title'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.comparison.title')->text;;
+        $staticData['tf.physicsChoices.left.title'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.left.title')->text;
+        $staticData['tf.physicsChoices.right.title'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.right.title')->text;
 
         $this->load->model('OptionChoice_model');
         $left_list = $this->OptionChoice_model->getAllOptionChoices('PHYSICS', 'LEFT');
@@ -123,7 +123,29 @@ class Portal extends CI_Controller {
         ));
     }
 
+    public function getTechniqueChoices($id1, $id2){
+        $this->load->model('OptionChoice_model');
+	$chosen1 = $this->OptionChoice_model->getOptionChoiceById($id1);
+	if ($id2 == "0") {
+            // User has selected first step only
+	    $tech_meta_arr = $this->OptionChoice_model->getTechniqueCatByCatTyp($chosen1->name);
+	    if ($tech_meta_arr) {
+	        $this->printTechniqueCards($tech_meta_arr);
+	    }
+	} else {
+	    $chosen2 = $this->OptionChoice_model->getOptionChoiceById($id2);
+	    $tech_meta_arr = $this->OptionChoice_model->getTechniqueCatByAnalysis($chosen1->name, $chosen2->name);
+	    if ($tech_meta_arr) {
+		$this->printTechniqueCards($tech_meta_arr);
+	    }
+        }
+    }
 
+    private function printTechniqueCards($tech_meta_arr) {
+        foreach ($tech_meta_arr as $tech_meta) {
+             print("<div class='card text-white bg-primary mb-3' style='max-width: 20rem'><div class='card-body'>$tech_meta->category</div></div>");
+        }
+    }
 
     public function getTechniqueByOptionCombination(){
         $science = $this->input->get('science');

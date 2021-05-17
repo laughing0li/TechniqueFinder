@@ -24,6 +24,22 @@ class OptionChoice_model extends MY_Model
     }
 
 
+    function getTechniqueCatByCatTyp($category_type) {
+	    return $this->db->distinct()->from('technique_metadata')->select('category')
+                ->where('category_type', $category_type)->get()->result();
+    }
+
+    function getTechniqueCatByAnalysis($category_type, $analysis_type) {
+	// If user doesn't know then select all
+	if ($analysis_type == 'I don\'t know') {
+            return $this->getTechniqueCatByCatTyp($category_type);
+        } else {
+            return $this->db->distinct()->from('technique_metadata')->select('category')
+		    ->where('category_type', $category_type)
+		    ->where('analysis_type', $analysis_type)->get()->result();
+	}
+    }
+
     /////////////////////////////////////////////////////////////////////////////////////
     function createOptionChoice($name, $science, $type){
         $this->db->trans_start();

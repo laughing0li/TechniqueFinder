@@ -62,7 +62,7 @@ class Static_model extends MY_Model
         $result = $this->db->set('text', $data)->where('id', $x)->update('static_content');
     }
 
-    function getSaticDataByName($name){
+    function getStaticDataByName($name){
         $result = $this->db->where('name',$name)->get('static_content')->row();
         return $result;
     }
