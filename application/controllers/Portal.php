@@ -173,7 +173,7 @@ class Portal extends CI_Controller {
         $this->load->library('pagination');
 
         $config['base_url'] = base_url().'Portal/techniqueSearch';
-        $config['total_rows'] = count($searchResults);
+        $config['total_rows'] = count($newSearchResults);
         $config['num_links'] = 4;
         $config['per_page'] = self::PAGE_LENGTH;
         $config['first_link'] = FALSE;
@@ -193,7 +193,7 @@ class Portal extends CI_Controller {
             'leftOption' => $step1Option,
 	    'centreText' => $step3Text,
             'rightOption' => $step2Option,
-            'searchResults'=>array_slice($searchResults, $offset?$offset:0, self::PAGE_LENGTH),
+            'searchResults'=>array_slice($newSearchResults, $offset?$offset:0, self::PAGE_LENGTH),
             'Media_model'=>$this->Media_model
         ));
 
