@@ -159,6 +159,17 @@ class Portal extends CI_Controller {
 
         $this->load->model('OptionCombination_model');
         $searchResults = $this->OptionCombination_model->getAllTechniquesByOptionCombination($step1OptionId, $step2OptionId);
+	$newSearchResults = array();
+	$this->load->model('Element_model');
+	foreach($searchResults as $result) {
+		$elements = $this->Element_model->getAllElementsByInstrumentType($result->name);
+		foreach($elements as $e) {
+			if ($e->name == $step3Text || $e->symbol == $step3Text) {
+				array_push($newSearchResults, $result);
+			}
+		}
+
+	}
         $this->load->library('pagination');
 
         $config['base_url'] = base_url().'Portal/techniqueSearch';
