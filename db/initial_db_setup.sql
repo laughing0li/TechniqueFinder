@@ -1115,7 +1115,7 @@ INSERT INTO `option_choice` VALUES (71,0,1,'Age Determination','STEP1','GEOCHEM'
 (73,0,1,'Isotopic Analysis','STEP1','GEOCHEM'),
 (74,0,1,'In situ','STEP2','GEOCHEM'),
 (75,0,1,'Whole Rock','STEP2','GEOCHEM'),
-(76,0,1,'I don''t know','STEP2','GEOCHEM'),
+/* (76,0,1,'I don''t know','STEP2','GEOCHEM'), */
 (77,0,1,'Phy Left Option 1','LEFT','PHYSICS'),
 (78,0,1,'Phy Right Option 1','RIGHT','PHYSICS'),
 (79,0,2,'Phy Right Option 2','RIGHT','PHYSICS');
@@ -1152,7 +1152,39 @@ CREATE TABLE `option_combination` (
 
 LOCK TABLES `option_combination` WRITE;
 /*!40000 ALTER TABLE `option_combination` DISABLE KEYS */;
-INSERT INTO `option_combination` VALUES (1955,0,17,1,71,72),(1957,0,154,1,74,75);
+INSERT INTO `option_combination` VALUES(NULL, 1, 10, 0, 72, 74), (NULL, 1, 10, 0, 72, 75),
+(NULL, 1, 11, 0, 72, 74), (NULL, 1, 11, 0, 72, 75),
+(NULL, 1, 12, 0, 72, 74), (NULL, 1, 12, 0, 72, 75),
+(NULL, 1, 13, 0, 72, 74), (NULL, 1, 13, 0, 72, 75),
+(NULL, 1, 14, 0, 72, 74), (NULL, 1, 14, 0, 72, 75),
+(NULL, 1, 15, 0, 72, 75),
+(NULL, 1, 16, 0, 73, 75),
+(NULL, 1, 17, 0, 73, 75),
+(NULL, 1, 18, 0, 73, 75),
+(NULL, 1, 19, 0, 73, 75),
+(NULL, 1, 20, 0, 73, 75),
+(NULL, 1, 21, 0, 72, 75),
+(NULL, 1, 22, 0, 72, 75),
+(NULL, 1, 23, 0, 73, 75),
+(NULL, 1, 24, 0, 73, 75),
+(NULL, 1, 25, 0, 73, 75),
+(NULL, 1, 26, 0, 72, 75),
+(NULL, 1, 27, 0, 73, 75),
+(NULL, 1, 28, 0, 71, 74), (NULL, 1, 28, 0, 71, 75),
+(NULL, 1, 29, 0, 71, 74), (NULL, 1, 29, 0, 71, 75),
+(NULL, 1, 30, 0, 71, 74), (NULL, 1, 30, 0, 71, 75),
+(NULL, 1, 31, 0, 71, 75),
+(NULL, 1, 32, 0, 71, 74), (NULL, 1, 32, 0, 71, 75),
+(NULL, 1, 33, 0, 71, 74), (NULL, 1, 33, 0, 71, 75),
+(NULL, 1, 34, 0, 72, 75),
+(NULL, 1, 35, 0, 72, 75),
+(NULL, 1, 36, 0, 72, 75),
+(NULL, 1, 37, 0, 72, 75),
+(NULL, 1, 38, 0, 72, 75),
+(NULL, 1, 39, 0, 72, 75),
+(NULL, 1, 50, 0, 73, 75),
+(NULL, 1, 51, 0, 73, 75),
+(NULL, 1, 52, 0, 73, 75);
 /*!40000 ALTER TABLE `option_combination` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1330,26 +1362,27 @@ CREATE TABLE `technique_metadata` (
   PRIMARY KEY (`id`)
 );
 LOCK TABLES `technique_metadata` WRITE;
-INSERT INTO `technique_metadata` VALUES(1,'Introduction system', 'Introduction system', 'In Situ'),
+INSERT INTO `technique_metadata` VALUES(1,'Introduction system', 'Introduction system', 'In situ'),
 (2, 'Introduction system', 'Introduction system', 'Both'),
-(3, 'SF-ICP-MS', 'Elemental Composition', 'Both'),
-(4, 'Q-ICP-MS', 'Elemental Composition', 'Both'),
-(5, 'Q3-ICP-MS', 'Elemental Composition', 'Both'),
-(6, 'ICP-MS', 'Elemental Composition', 'Whole Rock'),
-(7, 'MC-ICP-MS', 'Isotopic Analysis', 'Whole Rock'),
-(8, 'SF-ICP-MS', 'Elemental Composition', 'Whole Rock'),
-(9, 'TIMS', 'Isotopic Analysis', 'Whole Rock'),
-(10, 'IRMS', 'Isotopic Analysis', 'Whole Rock'),
-(11, 'MP-AES', 'Elemental Composition', 'Whole Rock'),
-(12, 'SIMS', 'Isotopic Analysis', 'In situ'),
-(13, 'Noble gas mass spectrometer', 'Age Determination', 'Both'),
-(14, 'Noble gas mass spectrometer', 'Age Determination', 'Whole Rock'),
-(15, 'XRF', 'Elemental Composition', 'In situ'),
-(16, 'EMP', 'Elemental Composition', 'In situ'),
-(17, 'alpha counter', 'Elemental Composition', 'Whole Rock'),
-(18, 'Elemental Analyser CHNS', 'Elemental Composition', 'Whole Rock'),
-(19, 'Unknown', 'Unknown', 'Both'),
-(20, 'Experimental Instrument', 'Experimental Instrument', 'Unknown');
+(3, 'SF-ICP-MS', 'Elemental Composition', 'Whole'),
+(4, 'SF-ICP-MS', 'Elemental Composition', 'Both'),
+(5, 'Q-ICP-MS', 'Elemental Composition', 'Both'),
+(6, 'Q3-ICP-MS', 'Elemental Composition', 'Both'),
+(7, 'ICP-MS', 'Elemental Composition', 'Whole Rock'),
+(8, 'MC-ICP-MS', 'Isotopic Analysis', 'Whole Rock'),
+(9, 'SF-ICP-MS', 'Elemental Composition', 'Whole Rock'),
+(10, 'TIMS', 'Isotopic Analysis', 'Whole Rock'),
+(11, 'IRMS', 'Isotopic Analysis', 'Whole Rock'),
+(12, 'MP-AES', 'Elemental Composition', 'Whole Rock'),
+(13, 'SIMS', 'Isotopic Analysis', 'In situ'),
+(14, 'Noble gas mass spectrometer', 'Age Determination', 'Both'),
+(15, 'Noble gas mass spectrometer', 'Age Determination', 'Whole Rock'),
+(16, 'XRF', 'Elemental Composition', 'In situ'),
+(17, 'EMP', 'Elemental Composition', 'In situ'),
+(18, 'alpha counter', 'Elemental Composition', 'Whole Rock'),
+(19, 'Elemental Analyser CHNS', 'Elemental Composition', 'Whole Rock'),
+(20, 'Unknown', 'Unknown', 'Both'),
+(21, 'Experimental Instrument', 'Experimental Instrument', 'Unknown');
 UNLOCK TABLES;
 
 
