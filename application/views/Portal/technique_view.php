@@ -82,6 +82,28 @@ if($prevPage=='listTechniques'){
                 </tr>
             </tbody>
         </table>
+        <div>
+        <?php
+        echo '<ul>';
+        foreach($localisationItems as $localisation) {
+            echo "<li>Year Commissioned: ".$localisation[0]."&nbsp;&nbsp;&nbsp;";
+            echo "Applications: ";
+            foreach(array_slice($localisation, 1) as $application) {
+                echo $application.", ";
+            }
+            echo "</li>";
+        }
+        echo '</ul>';
+        echo '</br>';
+        foreach($locationItems as $location) {
+            echo '<ul>';
+            echo "<li>Name: ".$location[0]."</li>";
+            echo "<li>Institution: ".$location[1]."</li>";
+            echo "<li>Address: ".$location[2]."</li>";
+            echo "<li>State: ".$location[3]."</li>";
+            echo '</ul>';
+        }
+        ?>
 <!--
         <div>
             <?php

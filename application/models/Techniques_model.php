@@ -363,6 +363,34 @@ class Techniques_model extends MY_Model
         return($reference_items);
     }
 
+    function getLocalisationItems($technique_id) {
+        $query = $this->db->query("SELECT localisation.yr_commissioned, localisation.applications from localisation where technique_id=".$technique_id.";");
+        $ret_list = array();
+        $item_list = $query->result_array();
+        foreach($item_list as $item) {
+            $line = array();
+            array_push($line, $item['yr_commissioned']);
+            $app_list = json_decode($item['applications']);
+            foreach($app_list as $app) {
+                array_push($line, $app);
+            }
+            array_push($ret_list, $line);
+        }
+        return($ret_list);
+    }
+
+    function getLocationItems($technique_id) {
+        $query = $this->db->query("SELECT location.center_name, location.institution, location.address, location.state from location, localisation where location.id = localisation.location_id and localisation.technique_id = ".$technique_id.";");
+        $item_list = $query->result_array();
+        $ret_list = array();
+        foreach($item_list as $item) {
+            $line = array();
+            array_push($line, $item['center_name'], $item['institution'], $item['address'], $item['state']);
+            array_push($ret_list, $line);
+        }
+        return($ret_list);
+    }
+
     function update_technique($x,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items){
         $technique_data = array(
             'name' => $technique_name,

@@ -126,7 +126,6 @@ class Portal extends CI_Controller {
     public function getTechniqueChoices($id1, $id2){
         $this->load->model('OptionChoice_model');
 	$chosen1 = $this->OptionChoice_model->getOptionChoiceById($id1);
-	var_dump($chosen1, $id1);
 	if ($id2 == "0") {
             // User has selected first step only
 	    $tech_meta_arr = $this->OptionChoice_model->getTechniqueCatByCatTyp($chosen1->name);
@@ -239,6 +238,9 @@ class Portal extends CI_Controller {
                 'references' => $this->Techniques_model->getReferencesForTechnique($x),
                 'outputExamples' => $this->Techniques_model->getMediasForTechniqueSection($x,'OUTPUT'),
                 'instrumentExamples' =>$this->Techniques_model->getMediasForTechniqueSection($x,'INSTRUMENT'),
+                'localisationItems' =>$this->Techniques_model->getLocalisationItems($x),
+                'locationItems' =>$this->Techniques_model->getLocationItems($x)
+
             )
         );
     }

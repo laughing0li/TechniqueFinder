@@ -1487,6 +1487,96 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 UNLOCK TABLES;
 
 --
+-- Table structure for table `localisation`
+--
+DROP TABLE IF EXISTS `localisation`;
+CREATE TABLE `localisation` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `location_id` bigint(20) DEFAULT NULL,
+  `technique_id` bigint(20) DEFAULT NULL,
+  `yr_commissioned` varchar(7),
+  `applications` JSON,
+  PRIMARY KEY (`id`),
+  KEY `FK546GG1519AE409C5` (`location_id`),
+  KEY `FK546GH1519AE409C5` (`technique_id`),
+  CONSTRAINT `FK546HJ136FC3948AF` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`),
+  CONSTRAINT `FK546HJ136EC3948AF` FOREIGN KEY (`technique_id`) REFERENCES `technique` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
+
+LOCK TABLES `localisation` WRITE;
+INSERT INTO `localisation` VALUES(NULL, 1, 3,'2013','["geochronology","radiogenic_geochronology","trace_elements","isotopes"]'),
+(NULL, 1, 4,'2017','["geochronology","radiogenic_geochronology","trace_elements","isotopes"]'),
+(NULL, 1, 5,'2013','["geochronology","radiogenic_geochronology","trace_elements","isotopes"]'),
+(NULL, 1, 6,'2015','["geochronology","radiogenic_geochronology","trace_elements","isotopes"]'),
+(NULL, 1, 12,'2010','["geochronology","trace_elements"]'),
+(NULL, 1, 13,'2004','["geochronology","trace_elements"]'),
+(NULL, 1, 14,'2017','["geochronology","radiogenic_geochronology","trace_elements"]'),
+(NULL, 1, 16,'2003','["geochronology","radiogenic_geochronology","isotopes"]'),
+(NULL, 1, 17,'2015','["geochronology","radiogenic_geochronology","isotopes"]'),
+(NULL, 1, 20,'2018','["geochronology","radiogenic_geochronology","isotopes"]'),
+(NULL, 1, 21,'2013','["geochronology","radiogenic_geochronology","isotopes"]'),
+(NULL, 1, 23,'2005','["geochronology","radiogenic_geochronology","isotopes"]'),
+(NULL, 1, 24,'2018','["geochronology","radiogenic_geochronology","isotopes"]'),
+(NULL, 1, 25,'2015','["isotopes"]'),
+(NULL, 1, 26,'2014','["trace_elements","major_elements"]'),
+(NULL, 1, 34,'2017','["isotopes"]'),
+(NULL, 1, 35,'2012','["trace_elements","major_elements"]'),
+(NULL, 1, 36,'2018','["geochronology"]'),
+(NULL, 1, 36,'2005','["geochronology"]'),
+(NULL, 1, 37,'n/a','["geochronology","isotopes"]'),
+(NULL, 1, 38,'2016','["trace_elements","major_elements"]'),
+(NULL, 1, 39,'2015','["trace_elements","major_elements"]'),
+(NULL, 1, 41,'n/a','["experimental_petrology"]'),
+(NULL, 1, 42,'1976','["experimental_petrology"]'),
+(NULL, 1, 43,'2020','["experimental_petrology"]'),
+(NULL, 1, 44,'2006','["experimental_petrology"]'),
+(NULL, 1, 45,'2019','["experimental_petrology"]'),
+(NULL, 1, 46,'2019','["experimental_petrology"]'),
+(NULL, 1, 47,'2017','["experimental_petrology"]'),
+(NULL, 1, 48,'2008','[]'),
+(NULL, 1, 49,'2014','[]'),
+(NULL, 2, 1,'2018','["geochronology","trace_elements","isotopes"]'),
+(NULL, 2, 1,'2020','["geochronology","trace_elements","isotopes"]'),
+(NULL, 2, 2,'2012','["geochronology","radiogenic_geochronology","trace_elements","isotopes"]'),
+(NULL, 2, 10,'2013','["trace_elements","isotopes"]'),
+(NULL, 2, 10,'2014','["trace_elements","isotopes"]'),
+(NULL, 2, 11,'2012','["geochronology","thermochronology","trace_elements","isotopes"]'),
+(NULL, 2, 14,'2018','["geochronology","trace_elements","isotopes"]'),
+(NULL, 2, 15,'2000','["geochronology","trace_elements","isotopes"]'),
+(NULL, 2, 17,'2016','["geochronology","trace_elements","isotopes"]'),
+(NULL, 2, 18,'2020','["geochronology","trace_elements","isotopes"]'),
+(NULL, 2, 23,'2009','["geochronology","isotopes"]'),
+(NULL, 2, 27,'1992','["geochronology","isotopes"]'),
+(NULL, 2, 27,'2006','["geochronology","isotopes"]'),
+(NULL, 2, 28,'2010','["geochronology"]'),
+(NULL, 2, 32,'2010','["thermochronology"]'),
+(NULL, 2, 33,'2000','["thermochronology"]'),
+(NULL, 2, 40,'2019','["thermochronology"]'),
+(NULL, 2, 50,'n/a','["geochronology","radiogenic_geochronology","isotopes"]'),
+(NULL, 3, 1,'2016','["geochronology","radiogenic_geochronology","thermochronology","trace_elements","isotopes"]'),
+(NULL, 3, 1,'2018','["geochronology","radiogenic_geochronology","thermochronology","trace_elements","isotopes"]'),
+(NULL, 3, 7,'2002','["geochronology","thermochronology"]'),
+(NULL, 3, 8,'2008','["geochronology","thermochronology"]'),
+(NULL, 3, 9,'2012','["geochronology","thermochronology"]'),
+(NULL, 3, 11,'2011','["geochronology","trace_elements"]'),
+(NULL, 3, 11,'2016','["geochronology","trace_elements"]'),
+(NULL, 3, 16,'1998','["geochronology","radiogenic_geochronology","isotopes"]'),
+(NULL, 3, 17,'2010','["geochronology","radiogenic_geochronology","isotopes"]'),
+(NULL, 3, 19,'2020','["geochronology","radiogenic_geochronology","isotopes"]'),
+(NULL, 3, 22,'2017','["geochronology","radiogenic_geochronology","isotopes"]'),
+(NULL, 3, 28,'2012','["geochronology","thermochronology"]'),
+(NULL, 3, 29,'1993','["geochronology","thermochronology"]'),
+(NULL, 3, 30,'2001','["geochronology","thermochronology"]'),
+(NULL, 3, 40,'2017','["geochronology","thermochronology"]'),
+(NULL, 3, 31,'1993','["geochronology","thermochronology"]'),
+(NULL, 2, 51,'n/a','["isotopes"]'),
+(NULL, 2, 52,'2012','["isotopes"]'),
+(NULL, 2, 52,'2013','["isotopes"]');
+UNLOCK TABLES;
+
+--
 -- Table structure for table `technique_case_study`
 --
 
