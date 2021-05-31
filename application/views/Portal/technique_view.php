@@ -49,60 +49,66 @@ if($prevPage=='listTechniques'){
 	<table class="table table-striped">
             <thead>
                 <tr class="tf-font-14">
-                    <th scope="col">Model</th>
-                    <th scope="col">Manufacturer</th>
-                    <th scope="col">Sample Type</th>
-                    <th scope="col">Analysis Type</th>
-                    <th scope="col">Wavelength</th>
-                    <th scope="col">Beam Diameter</th>
-                    <th scope="col">Min Conc.</th>
-                    <th scope="col">Technique</th>
-                    <th scope="col">Mass</th>
-                    <th scope="col">Volume (mm<sup>3</sup>)</th>
-                    <th scope="col">Pressure (GPa)</th>
-                    <th scope="col">Temp. (K)</th >
-                    <th scope="col">Reference</th>
+                    <?php
+                    echo (empty($theTechnique->model)) ? "":"<th scope='col'>Model</th>";
+                    echo (empty($theTechnique->manufacturer)) ? "":"<th scope='col'>Manufacturer</th>";
+                    echo (empty($theTechnique->sample_type)) ? "":"<th scope='col'>Sample Type</th>";
+                    echo (empty($theTechnique->analysis_type)) ? "":"<th scope='col'>Analysis Type</th>";
+                    echo (empty($theTechnique->wavelength)) ? "":"<th scope='col'>Wavelength</th>";
+                    echo (empty($theTechnique->beam_diameter)) ? "":"<th scope='col'>Beam Diameter</th>";
+                    echo (empty($theTechnique->min_conc)) ? "":"<th scope='col'>Min Conc.</th>";
+                    echo (empty($theTechnique->technique)) ? "":"<th scope='col'>Technique</th>";
+                    echo (empty($theTechnique->mass)) ? "":"<th scope='col'>Mass</th>";
+                    echo (empty($theTechnique->volume)) ? "":"<th scope='col'>Volume (mm<sup>3</sup>)</th>";
+                    echo (empty($theTechnique->pressure)) ? "":"<th scope='col'>Pressure (GPa)</th>";
+                    echo (empty($theTechnique->temperature)) ? "":"<th scope='col'>Temp. (K)</th>";
+                    echo (empty($theTechnique->ext_reference)) ? "":"<th scope='col'>Reference</th>";
+                    ?>
                 </tr>
             </thead>
             <tbody>
                 <tr class="tf-font-14">
-		    <th scope="row"><?php echo $theTechnique->model; ?></th>
-		    <td><?php echo $theTechnique->manufacturer; ?></td>
-		    <td><?php echo $theTechnique->sample_type; ?></td>
-		    <td><?php echo $theTechnique->analysis_type; ?></td>
-		    <td><?php echo $theTechnique->wavelength; ?></td>
-		    <td><?php echo $theTechnique->beam_diameter; ?></td>
-		    <td><?php echo $theTechnique->min_conc; ?></td>
-		    <td><?php echo $theTechnique->technique; ?></td>
-		    <td><?php echo $theTechnique->mass; ?></td>
-		    <td><?php echo $theTechnique->volume; ?></td>
-		    <td><?php echo $theTechnique->pressure; ?></td>
-		    <td><?php echo $theTechnique->temperature; ?></td>
-		    <td><?php echo $theTechnique->ext_reference; ?></td>
+                    <?php
+                    echo (empty($theTechnique->model)) ? "":"<th scope='row'>$theTechnique->model</th>";
+                    echo (empty($theTechnique->manufacturer)) ? "":"<td>$theTechnique->manufacturer</td>";
+                    echo (empty($theTechnique->sample_type)) ? "":"<td>$theTechnique->sample_type</td>";
+                    echo (empty($theTechnique->analysis_type)) ? "":"<td>$theTechnique->analysis_type</td>";
+                    echo (empty($theTechnique->wavelength)) ? "":"<td>$theTechnique->wavelength</td>";
+                    echo (empty($theTechnique->beam_diameter)) ? "":"<td>$theTechnique->beam_diameter</td>";
+                    echo (empty($theTechnique->min_conc)) ? "":"<td>$theTechnique->min_conc</td>";
+                    echo (empty($theTechnique->technique)) ? "":"<td>$theTechnique->technique</td>";
+                    echo (empty($theTechnique->mass)) ? "":"<td>$theTechnique->mass</td>";
+                    echo (empty($theTechnique->volume)) ? "":"<td>$theTechnique->volume</td>";
+                    echo (empty($theTechnique->pressure)) ? "":"<td>$theTechnique->pressure</td>";
+                    echo (empty($theTechnique->temperature)) ? "":"<td>$theTechnique->temperature</td>";
+                    echo (empty($theTechnique->ext_reference)) ? "":"<td>$theTechnique->ext_reference</td>";
+                    ?>
                 </tr>
             </tbody>
         </table>
-        <div>
+        <div class='row card-group'>
+
         <?php
-        echo '<ul>';
-        foreach($localisationItems as $localisation) {
-            echo "<li>Year Commissioned: ".$localisation[0]."&nbsp;&nbsp;&nbsp;";
-            echo "Applications: ";
+        foreach($localisationItems as $key=>$localisation) {
+            echo "<div class='col-4'>";
+            echo "<div class='card border-primary h-100'>";
+            echo "<div class='card-header text-white bg-primary'>$theTechnique->model at ".$locationItems[$key][0]."</div>";
+            echo "<div class='card-body'>";
+            echo "<p class='card-text'>Year Commissioned: ".$localisation[0]."</p>";
+            echo "<p class='card-text'>Applications: ";
             foreach(array_slice($localisation, 1) as $application) {
                 echo $application.", ";
             }
-            echo "</li>";
+            echo "</p>";
+            echo "<p class='card-text'>Name: ".$locationItems[$key][0]."</p>";
+            echo "<p class='card-text'>Institution: ".$locationItems[$key][1]."</p>";
+            echo "<p class='card-text'>Address: ".$locationItems[$key][2]."</p>";
+            echo "<p class='card-text'>State: ".$locationItems[$key][3]."</p>";
+            echo "</div>"; /* card-body */
+            echo "</div>"; /* card */
+            echo "</div>"; /* col-4 */
         }
-        echo '</ul>';
-        echo '</br>';
-        foreach($locationItems as $location) {
-            echo '<ul>';
-            echo "<li>Name: ".$location[0]."</li>";
-            echo "<li>Institution: ".$location[1]."</li>";
-            echo "<li>Address: ".$location[2]."</li>";
-            echo "<li>State: ".$location[3]."</li>";
-            echo '</ul>';
-        }
+        echo "</div>"; /* card-group */
         ?>
 <!--
         <div>
