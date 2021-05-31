@@ -12,7 +12,7 @@
  */
 
 $this->load->view('layout/portal_header.php');?>
-<head><title>AGN Instrument Finder</title></head>
+<head><title>AGN Laboratory Finder</title></head>
 <link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
 <script src="http://vjs.zencdn.net/4.12/video.js"></script>
 

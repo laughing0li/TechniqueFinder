@@ -1,6 +1,6 @@
 <?php $this->load->view('layout/portal_header.php');?>
 <head>
-    <title>AGN Instrument Finder</title>
+    <title>AGN Laboratory Finder</title>
 </head>
 <style>
     input, select, textarea {
@@ -11,7 +11,7 @@
         width: 16em;
 </style>
 <body>
-    <div id="header" class="container tf-main-heading">&nbsp;AGN Instrument Finder<img style="float: left;" src="assets/images/AGN-Logo.png" width=200></div>
+    <div id="header" class="container tf-main-heading">&nbsp;AGN Laboratory Finder<img style="float: left;" src="assets/images/AGN-Logo.png" width=200></div>
         
 
     <div class="container" id="content">

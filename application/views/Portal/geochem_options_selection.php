@@ -1,6 +1,6 @@
 <?php $this->load->view('layout/portal_header.php');?>
 <head>
-    <title>AGN Instrument Finder</title>
+    <title>AGN Laboratory Finder</title>
 </head>
 <body>
         

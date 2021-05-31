@@ -11,7 +11,7 @@
  *                   https://creativecommons.org/licenses/by-nc-sa/4.0/
  */
 $this->load->view('layout/portal_header.php');?>
-<head><title>AGN Instrument Finder</title></head>
+<head><title>AGN Laboratory Finder</title></head>
 <style>
     input, select, textarea {
         font-family: inherit;
