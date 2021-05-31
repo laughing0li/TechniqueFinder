@@ -2,14 +2,6 @@
 <head>
     <title>AGN Laboratory Finder</title>
 </head>
-<style>
-    input, select, textarea {
-        font-family: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        margin-top: 9px;
-        width: 16em;
-</style>
 <body>
     <div id="header" class="container tf-main-heading">&nbsp;AGN Laboratory Finder<img style="float: left;" src="assets/images/AGN-Logo.png" width=200></div>
         
@@ -37,7 +29,7 @@
             <div class="card-body">
 		<h5 class="card-title"><?php echo $staticData['tf.home.searchExplanation']; ?></h5>
                 <form action="<?php echo base_url();?>Portal/techniqueSearch" method="get" name="searchForm" id="searchForm">
-                    <input type="text" class="form-control" id="option2Search" placeholder="Type search term here">
+                    <input id="myAutocomplete" type="text" class="form-control" id="option2Search" placeholder="Type search term here">
                     <p></p>
                     <button class="btn btn-primary" type="button" onclick="document.searchForm.submit()">Go</button>
                 </form>
@@ -65,7 +57,18 @@
     <div class="container" id="infobox">
         <?php echo $staticData['tf.home.infoboxContent']; ?>
     </div>
-
+<script>
+var datasrc = [
+<?php $keyword_list = $this->Techniques_model->getKeywordList();
+foreach($keyword_list as $keyword) {
+    echo "{label: '".$keyword->name."', value: '".$keyword->name."'},\n";
+}
+?>
+];
+const ac = new Autocomplete(document.getElementById('myAutocomplete'), {
+      data: datasrc
+})
+</script>
 </body>
 
 <?php $this->load->view('layout/portal_footer.php')?>

@@ -721,6 +721,14 @@ class Techniques_model extends MY_Model
         $this->db->delete('technique',array('id'=>$x));
     }
 
+    function getKeywordList() {
+        $r1 = $this->db->query('select distinct name from technique')->result();
+        $r2 = $this->db->query('select distinct center_name as name from location')->result();
+        $r3 = $this->db->query('select distinct institution as name from location')->result();
+        return array_merge($r1, $r2, $r3);
+    }
+
+
 
     function searchByKeywords($q){
         /*
