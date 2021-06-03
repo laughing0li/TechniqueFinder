@@ -725,7 +725,8 @@ class Techniques_model extends MY_Model
         $r1 = $this->db->query('select distinct name from technique')->result();
         $r2 = $this->db->query('select distinct center_name as name from location')->result();
         $r3 = $this->db->query('select distinct institution as name from location')->result();
-        return array_merge($r1, $r2, $r3);
+        $r4 = $this->db->query('select distinct name from option_choice')->result();
+        return array_merge($r1, $r2, $r3, $r4);
     }
 
 
@@ -745,7 +746,7 @@ class Techniques_model extends MY_Model
         if($q == '*'){
             $q= '';
         }
-        $r1 = $this->db->query('SELECT * from technique where MATCH(name, alternative_names, summary, description, keywords) AGAINST(? IN NATURAL LANGUAGE MODE)',
+        $r1 = $this->db->query('SELECT * from technique where MATCH(name, instrument_name, model, manufacturer, analysis_type, sample_type, technique, alternative_names, summary, description, keywords) AGAINST(? IN NATURAL LANGUAGE MODE)',
             array($q))->result();
         $r2_3 = $this->db->query(//location and contact
             'select technique.* from location join contact on location.id=contact.location_id'
