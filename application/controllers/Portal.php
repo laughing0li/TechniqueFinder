@@ -82,8 +82,8 @@ class Portal extends CI_Controller {
 
         $this->load->view('Portal/geochem_options_selection', array(
             'staticData' => $staticData,
-                'step1_list'=>$step1_list,
-                'step2_list'=>$step2_list
+                'step1_list' => $step1_list,
+                'step2_list' => $step2_list
         ));
     }
 
@@ -96,14 +96,15 @@ class Portal extends CI_Controller {
 
         $this->load->view('Portal/experimental_proc', array(
             'staticData' => $staticData,
-                'techniqueList'=>$technique_list,
+            'techniqueList' => $technique_list
         ));
     }
 
     public function samplePrepOptionsSelection(){
+        die; /* TEMPORARY */
         $staticData = array();
-        $staticData['tf.physicsChoices.quickGuide'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.quickGuide')->text;;
-        $staticData['tf.physicsChoices.comparison.title'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.comparison.title')->text;;
+        $staticData['tf.physicsChoices.quickGuide'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.quickGuide')->text;
+        $staticData['tf.physicsChoices.comparison.title'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.comparison.title')->text;
         $staticData['tf.physicsChoices.left.title'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.left.title')->text;
         $staticData['tf.physicsChoices.right.title'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.right.title')->text;
 
@@ -138,7 +139,13 @@ class Portal extends CI_Controller {
 
     private function printTechniqueCards($tech_meta_arr) {
         foreach ($tech_meta_arr as $tech_meta) {
-             print("<div class='card text-white bg-primary mb-3' style='max-width: 20rem'><div class='card-body'>$tech_meta->category</div></div>");
+             print("<div class='card mb-3' style='max-width: 20rem'>".
+                   "<div class='card-header text-white bg-primary'>$tech_meta->category</div>".
+                   "<div class='card-body'>");
+             echo ($tech_meta->model!='')? "<b>Models:</b> $tech_meta->model":"";
+             echo ($tech_meta->beam_diameter!='')? "<br/><b>Beam Diam.:</b> $tech_meta->beam_diameter":"";
+             echo ($tech_meta->min_conc!='')? "<br/><b>Min. Conc.:</b> $tech_meta->min_conc":"";
+             print("</div></div>");
         }
     }
 
