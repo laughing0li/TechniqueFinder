@@ -1,40 +1,4 @@
-<?php $this->load->view('layout/portal_header.php');?>
-<head><title>AGN Laboratory Finder</title></head>
-<style>
-    input, select, textarea {
-        font-family: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        margin-top: 9px;
-        width: 16em;
-</style>
-<body>
-        
-    <div id="main">
-
-        <div id="content">
-            <span class="nav_buttons">
-                <ul>
-                    <li id="button_backStart"><a style="float:right" href="<?php echo base_url();?>Portal"></a></li>
-                </ul>
-            </span>
-           
-            <div class="clear"></div>
-            <h1>Possible Techniques</h1>
-            <h5>Search by keyword</h5>
-            <hr>
-            <table width="100%"> <tbody><tr>
-                <td class="tf-yellow-box" style="padding:1em;" valign="top"><p> </p>
-                    <form action="<?php echo base_url();?>Portal/techniqueSearch" method="get" name="searchForm" id="searchForm">
-                        Search <input id="searchBox" name="q" type="text" style="width:85%;" value="<?php echo $searchedKeyword ?>">
-                        <p><span class="go_container"><span id="button_go"><a href="javascript:document.searchForm.submit()"></a></span></span></p>
-                    </form>
-                </td>
-            </tr></tbody></table>
-
-        <p>Results for: <span class="tf-orange"><b><?php echo $searchedKeyword ?></b></span></p>
-
-        <?php
+<?php
 /**
  * TechniqueFinder - technique_search.php
  *
@@ -46,8 +10,36 @@
  *                   Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
  *                   https://creativecommons.org/licenses/by-nc-sa/4.0/
  */
+?>
 
-if(count($searchResults) == 0){
+<?php $this->load->view('layout/portal_header.php');?>
+<head><title>AGN Laboratory Finder</title></head>
+<body>
+        
+        <div id="content" class="container">
+            <div class="d-flex justify-content-end">
+                <div class="p-2">
+		    <button type="submit" class="btn btn-primary" onclick="window.location.assign('<?php echo base_url();?>Portal')">Back</button>
+                </div>
+            </div>
+           
+            <div class="clear"></div>
+            <h1>Possible Techniques</h1>
+            <h5>Search by keyword</h5>
+            <hr>
+	    <div class="card">
+                <div class="card-body">
+                    <form action="<?php echo base_url();?>Portal/techniqueSearch" method="get" name="searchForm" id="searchForm">
+                        <input id="myAutocomplete" type="text" class="form-control" name="q" placeholder="Type search term here">
+                        <p></p>
+                        <button class="btn btn-primary" type="button" onclick="document.searchForm.submit()">Go</button>
+                    </form>
+                </div>
+        </div>
+
+        <p>Results for: <span class="tf-orange"><b><?php echo $searchedKeyword ?></b></span></p>
+
+<?php if(count($searchResults) == 0){
             echo 'No matching techniques found';
         }
         else {
@@ -87,13 +79,12 @@ if(count($searchResults) == 0){
 
 
         </div>            
-        <div id="footer">
+        <div id="footer" class="container">
             <?php include 'footer.php';?> 
         </div>
         <div style="clear: both"><!-- ff --></div>
 
     <div id="infobox"> </div>
-</div>
 
 </body>
 
