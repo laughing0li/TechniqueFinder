@@ -22,9 +22,9 @@
             echo "<div class='card-body'>";
             echo "<p class='card-text'>Model: $technique->model</p>";
             echo "<p class='card-text'>Manufacturer: $technique->manufacturer</p>";
-            echo (empty($technique->volume))? "":"<p class='card-text'>Volume: $technique->volume</p>";
-            echo (empty($technique->pressure))? "":"<p class='card-text'>Pressure: $technique->pressure</p>";
-            echo (empty($technique->temperature))? "":"<p class='card-text'>Temperature: $technique->temperature</p>";
+            echo (empty($technique->volume))? "":"<p class='card-text'>Volume: $technique->volume mm<sup>3</sup></p>";
+            echo (empty($technique->pressure))? "":"<p class='card-text'>Max. Pressure: $technique->pressure GPa</p>";
+            echo (empty($technique->temperature))? "":"<p class='card-text'>Max. Temperature: $technique->temperature K</p>";
             echo "<p class='card-text'>$technique->summary</p>";
 	    echo "<button type='submit' class='btn btn-primary' onclick='window.location.assign(\"".base_url()."Portal/viewTechnique/".$technique->id."\")'>Details</button>";
             echo "</div>"; /* card-body */
