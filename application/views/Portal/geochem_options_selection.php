@@ -19,7 +19,7 @@
 
             <div class="row">
                 <!-- LHS COLUMN -->
-                <div class="col-6">
+                <div class="col-5">
                     <div class="row">
                         <!-- STEP 1 -->
                         <h3 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.step1.title']);?> </h3>
@@ -62,7 +62,7 @@
                 </div> <!-- END LHS COLUMN -->
 
                 <!-- RHS COLUMN -->
-	        <div class="col-6">
+	        <div class="col-7">
                     <div class="row">
                         <span id="display-area"></span>
                     </div>
@@ -104,7 +104,10 @@
     
 
 <script type="text/javascript">
-/* This assigns radio button values to the submit form when user clicks on buttons */
+/* This does two things:
+   1. Updates the cards on the right hand side as the user makes choices
+   2. Assigns radio button values to the submit form when user clicks on buttons
+*/
 function onClick(e){
     var element = $(e);
     // Update RHS display

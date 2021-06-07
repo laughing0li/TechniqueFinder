@@ -10,6 +10,10 @@
  *                   https://creativecommons.org/licenses/by-nc-sa/4.0/
  */
 
+/* Widen out to use full width */
+@media only screen and (min-width : 1200px) {
+    .container { max-width: 1800px; }
+}
 
 body {
     background-color: rgb(242,242,241);
@@ -91,6 +95,11 @@ body {
     color: #282572;
     float: left;
     font-family: arial, verdana, sans-serif;
+}
+
+.tf-card {
+    font-size: 0.8rem;
+    max-width: 15rem;
 }
 
 .error-message{
