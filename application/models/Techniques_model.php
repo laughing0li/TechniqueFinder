@@ -725,10 +725,12 @@ class Techniques_model extends MY_Model
         $r1 = $this->db->query('select distinct name from technique')->result();
         $r2 = $this->db->query('select distinct center_name as name from location')->result();
         $r3 = $this->db->query('select distinct institution as name from location')->result();
-        $r4 = $this->db->query('select distinct name from option_choice')->result();
-        $r5 = $this->db->query('select distinct name from elements')->result();
-        $r6 = $this->db->query('select distinct symbol from elements')->result();
-        return array_merge($r1, $r2, $r3, $r4, $r5, $r6);
+        $r4 = $this->db->query('select distinct address as name from location')->result();
+        $r5 = $this->db->query('select distinct state as name from location')->result();
+        $r6 = $this->db->query('select distinct name from option_choice')->result();
+        $r7 = $this->db->query('select distinct name from elements')->result();
+        $r8 = $this->db->query('select distinct symbol from elements')->result();
+        return array_merge($r1, $r2, $r3, $r4, $r5, $r6, $r7, $r8);
     }
 
 
@@ -754,11 +756,10 @@ class Techniques_model extends MY_Model
 
         // Search in location and contact
         $r2_3 = $this->db->query(
-            'select technique.* from location join contact on location.id=contact.location_id'
-            .' join technique_contact on contact.id=technique_contact.contact_id join technique on technique_contact.technique_contacts_id =technique.id'
-            .' where MATCH(location.institution, location.center_name, location.`address`, location.state) AGAINST(? IN NATURAL LANGUAGE MODE)'
-            .' or MATCH(contact.`name`, contact.contact_position, contact.telephone, contact.email) AGAINST(? IN NATURAL LANGUAGE MODE); ',
-            array($q,$q))->result();
+            'select technique.* from location join localisation on location.id=localisation.location_id'
+            .' join technique on localisation.technique_id=technique.id'
+            .' where MATCH(location.institution, location.center_name, location.`address`, location.state) AGAINST(? IN NATURAL LANGUAGE MODE); ',
+            array($q))->result();
 
         // Search in case_study
         $r4 = $this->db->query(
@@ -793,13 +794,12 @@ class Techniques_model extends MY_Model
             'SELECT technique.* from elements'
             .' join elements_elements_set on elements_elements_set.elements_id=elements.id'
             .' join elements_set on elements_elements_set.elements_set_id=elements_set.id'
-            .' join technique on technique.element_set_id = elements_set.id
-            .' where MATCH(elements.`name`, elements.`symbol`) AGAINST(? IN NATURAL LANGUAGE MODE)',
+            .' join technique on technique.elements_set_id = elements_set.id'
+            .' where MATCH(elements.`name`, elements.`symbol`) AGAINST(? IN NATURAL LANGUAGE MODE);',
             array($q))->result();
-          
 
         $results = array();
-        $merged = array_merge($r1,$r2_3,$r4,$r5,$r6,$r7);
+        $merged = array_merge($r1,$r2_3,$r4,$r5,$r6,$r7,$r8);
         foreach($merged as $r){
             if(!isset($results[$r->id])){
                 $results[$r->id] = $r;
