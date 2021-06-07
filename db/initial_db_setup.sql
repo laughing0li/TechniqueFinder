@@ -1025,6 +1025,27 @@ CREATE TABLE `media` (
 
 LOCK TABLES `media` WRITE;
 /*!40000 ALTER TABLE `media` DISABLE KEYS */;
+INSERT INTO `media` VALUES(1, 1, 1, 'ALPHA', 1, 'ALPHA caption', 'image'),
+(2, 1, 2, 'CHNS', 2, 'CHNS caption', 'image'),
+(3, 1, 3, 'EMP', 3, 'EMP caption', 'image'),
+(4, 1, 4, 'FISSION-TRACK', 4, 'FISSION-TRACK caption', 'image'),
+(5, 1, 5, 'IRMS', 5, 'IRMS caption', 'image'),
+(6, 1, 6, 'K-AR', 6, 'K-AR caption', 'image'),
+(7, 1, 7, 'LA-MC-ICP-MS', 7, 'LA-MC-ICP-MS caption', 'image'),
+(8, 1, 8, 'LA-XX-ICP-MS', 8, 'LA-XX-ICP-MS caption', 'image'),
+(9, 1, 9, 'LU-HF', 9, 'LU-HF caption', 'image'),
+(10, 1, 10, 'MAP', 10, 'MAP caption', 'image'),
+(11, 1, 11, 'MC-ICP-MS', 11, 'MC-ICP-MS caption', 'image'),
+(12, 1, 12, 'MP-AES', 12, 'MP-AES caption', 'image'),
+(13, 1, 13, 'NOBLE-GAS', 13, 'NOBLE-GAS caption', 'image'),
+(14, 1, 14, 'RE-OS', 14, 'RE-OS caption', 'image'),
+(15, 1, 15, 'SF-ICP-MS', 15, 'SF-ICP-MS caption', 'image'),
+(16, 1, 16, 'SF-ICP-MS', 16, 'SF-ICP-MS caption', 'image'),
+(17, 1, 17, 'SHRIMP', 17, 'SHRIMP caption', 'image'),
+(18, 1, 18, 'TIMS', 18, 'TIMS caption', 'image'),
+(19, 1, 19, 'U-PB', 19, 'U-PB caption', 'image'),
+(20, 1, 20, 'U-TH-SM-HE', 20, 'U-TH-SM-HE caption', 'image'),
+(21, 1, 21, 'XRF', 21, 'XRF caption', 'image');
 /*!40000 ALTER TABLE `media` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1054,6 +1075,27 @@ CREATE TABLE `media_file` (
 LOCK TABLES `media_file` WRITE;
 /*!40000 ALTER TABLE `media_file` DISABLE KEYS */;
 /*!40000 ALTER TABLE `media_file` ENABLE KEYS */;
+INSERT INTO `media_file` VALUES (1, 1, 288, 'ALPHA.png', 400, 'image/png', 199140),
+(2, 1, 288, 'CHNS.jpg', 400, 'image/jpg', 199140), 
+(3, 1, 288, 'EMP.jpg', 400, 'image/jpg', 199140), 
+(4, 1, 288, 'FISSION-TRACK.webp', 400, 'image/webp', 199140), 
+(5, 1, 288, 'IRMS.jpg', 400, 'image/jpg', 199140), 
+(6, 1, 288, 'K-AR.png', 400, 'image/png', 199140), 
+(7, 1, 288, 'LA-MC-ICP-MS.jpg', 400, 'image/jpg', 199140), 
+(8, 1, 288, 'LA-XX-ICP-MS.jpg', 400, 'image/jpg', 199140), 
+(9, 1, 288, 'LU-HF.gif', 400, 'image/gif', 199140), 
+(10, 1, 288, 'MAP.jpg', 400, 'image/jpg', 199140), 
+(11, 1, 288, 'MC-ICP-MS.jpg', 400, 'image/jpg', 199140), 
+(12, 1, 288, 'MP-AES.webp', 400, 'image/webp', 199140), 
+(13, 1, 288, 'NOBLE-GAS.png', 400, 'image/png', 199140), 
+(14, 1, 288, 'RE-OS.jpg', 400, 'image/jpg', 199140), 
+(15, 1, 288, 'SF-ICP-MS.jpg', 400, 'image/jpg', 199140), 
+(16, 1, 288, 'SF-ICP-MS.webp', 400, 'image/webp', 199140), 
+(17, 1, 288, 'SHRIMP.jpg', 400, 'image/jpg', 199140), 
+(18, 1, 288, 'TIMS.jpg', 400, 'image/jpg', 199140), 
+(19, 1, 288, 'U-PB.gif', 400, 'image/gif', 199140), 
+(20, 1, 288, 'U-TH-SM-HE.jpg', 400, 'image/jpg', 199140), 
+(21, 1, 288, 'XRF.jpg', 400, 'image/png', 199140); 
 UNLOCK TABLES;
 
 --
