@@ -726,7 +726,9 @@ class Techniques_model extends MY_Model
         $r2 = $this->db->query('select distinct center_name as name from location')->result();
         $r3 = $this->db->query('select distinct institution as name from location')->result();
         $r4 = $this->db->query('select distinct name from option_choice')->result();
-        return array_merge($r1, $r2, $r3, $r4);
+        $r5 = $this->db->query('select distinct name from elements')->result();
+        $r6 = $this->db->query('select distinct symbol from elements')->result();
+        return array_merge($r1, $r2, $r3, $r4, $r5, $r6);
     }
 
 
@@ -746,34 +748,55 @@ class Techniques_model extends MY_Model
         if($q == '*'){
             $q= '';
         }
+        // Search in technique
         $r1 = $this->db->query('SELECT * from technique where MATCH(name, instrument_name, model, manufacturer, analysis_type, sample_type, technique, alternative_names, summary, description, keywords) AGAINST(? IN NATURAL LANGUAGE MODE)',
             array($q))->result();
-        $r2_3 = $this->db->query(//location and contact
+
+        // Search in location and contact
+        $r2_3 = $this->db->query(
             'select technique.* from location join contact on location.id=contact.location_id'
             .' join technique_contact on contact.id=technique_contact.contact_id join technique on technique_contact.technique_contacts_id =technique.id'
             .' where MATCH(location.institution, location.center_name, location.`address`, location.state) AGAINST(? IN NATURAL LANGUAGE MODE)'
             .' or MATCH(contact.`name`, contact.contact_position, contact.telephone, contact.email) AGAINST(? IN NATURAL LANGUAGE MODE); ',
             array($q,$q))->result();
-        $r4 = $this->db->query(//case_study
+
+        // Search in case_study
+        $r4 = $this->db->query(
             'SELECT technique.* from case_study'
             .' join technique_case_study on case_study.id=technique_case_study.case_study_id join technique on technique_case_study.technique_case_studies_id=technique.id'
             .' where MATCH(case_study.`name`, case_study.`url`) AGAINST(? IN NATURAL LANGUAGE MODE);',
             array($q))->result();
-        $r5 = $this->db->query(//review
+
+        // Search in review
+        $r5 = $this->db->query(
             'SELECT technique.* from review'
             .' join technique_review on review.id=technique_review.review_id join technique on technique_review.technique_reviews_id =technique.id'
             .' where MATCH(review.reference_names, review.title, review.full_reference, review.`url`) AGAINST(? IN NATURAL LANGUAGE MODE);',
             array($q))->result();
-        $r6 = $this->db->query(//option_choice
+
+        // Search in option_choice
+        $r6 = $this->db->query(
             'SELECT technique.* from option_choice '.
             ' join option_combination on option_choice.id in (option_combination.left_id, option_combination.right_id ) join technique on option_combination.technique_id =technique.id'
             .' where MATCH( option_choice.`name`) AGAINST(? IN NATURAL LANGUAGE MODE) group by option_combination.technique_id ;',
             array($q))->result();
-        $r7 = $this->db->query(//media
+
+        // Search in media
+        $r7 = $this->db->query(
             'SELECT technique.* from media '
             .' join media_in_section on media.id=media_in_section.media_id join technique on media_in_section.technique_id=technique.id '
             .' where MATCH(media.caption) AGAINST(? IN NATURAL LANGUAGE MODE)',
             array($q))->result();
+
+        // Search in elements
+        $r8 = $this->db->query(
+            'SELECT technique.* from elements'
+            .' join elements_elements_set on elements_elements_set.elements_id=elements.id'
+            .' join elements_set on elements_elements_set.elements_set_id=elements_set.id'
+            .' join technique on technique.element_set_id = elements_set.id
+            .' where MATCH(elements.`name`, elements.`symbol`) AGAINST(? IN NATURAL LANGUAGE MODE)',
+            array($q))->result();
+          
 
         $results = array();
         $merged = array_merge($r1,$r2_3,$r4,$r5,$r6,$r7);

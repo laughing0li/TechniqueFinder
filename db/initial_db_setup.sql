@@ -16,21 +16,21 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `element_instrument_type`
+-- Table structure for table `element_element_set`
 --
-DROP TABLE IF EXISTS `element_instrument_type`;
-CREATE TABLE `element_instrument_type` (
+DROP TABLE IF EXISTS `element_element_set`;
+CREATE TABLE `element_element_set` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `element_id` bigint(20) NOT NULL,
-  `instrument_type_id` bigint(20) NOT NULL,
+  `element_set_id` bigint(20) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK38B5242494368I73` (`element_id`),
-  KEY `FK38B5242493368Y73` (`instrument_type_id`),
+  KEY `FK38B5242493368Y73` (`element_set_id`),
   CONSTRAINT `FK35G8282792068C76` FOREIGN KEY (`element_id`) REFERENCES `element` (`id`),
-  CONSTRAINT `FK38G7242492568C76` FOREIGN KEY (`instrument_type_id`) REFERENCES `instrument_type` (`id`)
+  CONSTRAINT `FK38G7242492568C76` FOREIGN KEY (`element_set_id`) REFERENCES `element_set` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
-LOCK TABLES `element_instrument_type` WRITE;
-INSERT INTO `element_instrument_type` VALUES(NULL, 1, 24),
+LOCK TABLES `element_element_set` WRITE;
+INSERT INTO `element_element_set` VALUES(NULL, 1, 24),
 (NULL, 2, 11),(NULL, 2, 17),(NULL, 2, 18),(NULL, 2, 19),(NULL, 2, 20),
 (NULL, 3, 4),
 (NULL, 3, 5),
@@ -719,49 +719,49 @@ INSERT INTO `element_instrument_type` VALUES(NULL, 1, 24),
 UNLOCK TABLES;
 
 --
--- Table structure for table `instrument_type`
+-- Table structure for table `element_set`
 --
-DROP TABLE IF EXISTS `instrument_type`;
-CREATE TABLE `instrument_type` (
+DROP TABLE IF EXISTS `element_set`;
+CREATE TABLE `element_set` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(63) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-LOCK TABLES `instrument_type` WRITE;
-INSERT INTO `instrument_type` VALUES(NULL, 'Excimer laser ablation system'),
-(NULL, 'fusion/step heating system'),
-(NULL, 'SF-ICP-MS'),
-(NULL, 'Q-ICP-MS'),
-(NULL, 'Q3-ICP-MS'),
-(NULL, 'MC-ICP-MS'),
-(NULL, 'LA-ICP-MS'),
-(NULL, 'LA-SF-ICP-MS'),
-(NULL, 'AES'),
-(NULL, 'Electron microprobe'),
-(NULL, 'Noble gas spectrometers'),
-(NULL, 'SIMS'),
-(NULL, 'TIMS'),
-(NULL, 'Stable Isotope Ratio Mass Spectrometer'),
-(NULL, 'MP-AES'),
-(NULL, 'SHRIMP'),
-(NULL, 'MC-MS-Noble Gas (Ar)'),
-(NULL, 'MS-Noble Gas (Ar)'),
-(NULL, 'Step-heating (Ar)'),
-(NULL, 'MS-Noble Gas (He)'),
-(NULL, 'XRF'),
-(NULL, 'EMP'),
-(NULL, 'alpha counter'),
-(NULL, 'Elemental Analyser CHNS'),
-(NULL, 'Automated fission track counting system'),
-(NULL, 'Griggs press'),
-(NULL, 'Piston cylinder'),
-(NULL, 'Multi-anvil press'),
-(NULL, 'Diamond-anvil press'),
-(NULL, 'Raman microscope'),
-(NULL, 'Fourrier Transform IR microscope'),
-(NULL, 'EA-IRMS'),
-(NULL, 'CG-IRMS');
+LOCK TABLES `element_set` WRITE;
+INSERT INTO `element_set` VALUES(1, 'Excimer laser ablation system'),
+(2, 'fusion/step heating system'),
+(3, 'SF-ICP-MS'),
+(4, 'Q-ICP-MS'),
+(5, 'Q3-ICP-MS'),
+(6, 'MC-ICP-MS'),
+(7, 'LA-ICP-MS'),
+(8, 'LA-SF-ICP-MS'),
+(9, 'AES'),
+(10, 'Electron microprobe'),
+(11, 'Noble gas spectrometers'),
+(12, 'SIMS'),
+(13, 'TIMS'),
+(14, 'Stable Isotope Ratio Mass Spectrometer'),
+(15, 'MP-AES'),
+(16, 'SHRIMP'),
+(17, 'MC-MS-Noble Gas (Ar)'),
+(18, 'MS-Noble Gas (Ar)'),
+(19, 'Step-heating (Ar)'),
+(20, 'MS-Noble Gas (He)'),
+(21, 'XRF'),
+(22, 'EMP'),
+(23, 'alpha counter'),
+(24, 'Elemental Analyser CHNS'),
+(25, 'Automated fission track counting system'),
+(26, 'Griggs press'),
+(27, 'Piston cylinder'),
+(28, 'Multi-anvil press'),
+(29, 'Diamond-anvil press'),
+(30, 'Raman microscope'),
+(31, 'Fourrier Transform IR microscope'),
+(32, 'EA-IRMS'),
+(33, 'CG-IRMS');
 UNLOCK TABLES;
   
 -- Table structure for table `elements`
