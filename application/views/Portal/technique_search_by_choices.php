@@ -12,16 +12,7 @@
  */
 $this->load->view('layout/portal_header.php');?>
 <head><title>AGN Laboratory Finder</title></head>
-<style>
-    input, select, textarea {
-        font-family: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        margin-top: 9px;
-        width: 16em;
-</style>
 <body>
-        
     <div id="main">
 	<div id="content" class="container">
             <div class="d-flex mb-2">
@@ -52,11 +43,13 @@ $this->load->view('layout/portal_header.php');?>
                     if (isset($mediaForLIST[0])) {
                         $media_location = $mediaForLIST[0]->location;
                     }
-                    echo ' <h5>' . $r->name . '</h5>'
+                    echo '<h4>' . $r->name . '</h4>'
                         . '<hr>'
                         . '<table width="100%"> <tbody><tr>'
                         . '<td valign="top">'
                         . '<div class="summary">'
+                        . "<b>Centre Name:</b> $r->center_name</br>"
+                        . "<b>Institution:</b> $r->institution</br>"
                         . $r->summary
                         . '</div>';
                             echo '<form action="'. base_url().'Portal/viewTechnique/'. $r->id .'" method="POST">'.

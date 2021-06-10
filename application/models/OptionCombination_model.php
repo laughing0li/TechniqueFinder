@@ -19,12 +19,16 @@ class OptionCombination_model extends MY_Model
     }
 
     function getAllTechniquesByOptionCombination($left, $right){
-        return $this->db->select('technique.*')
-            ->from('option_combination')->join('technique', 'option_combination.technique_id = technique.id')
-            ->where('option_combination.left_id', $left)
-            ->where('option_combination.right_id', $right)
-            ->order_by('option_combination.priority','ASC')
-            ->get()->result();
+        $result = $this->db->select('min(technique.id) as id, technique.name, technique.summary, location.center_name, location.institution')
+          ->from('option_combination')
+          ->join('technique', 'option_combination.technique_id = technique.id')
+          ->join('localisation', 'technique.id = localisation.technique_id')
+          ->join('location', 'localisation.location_id = location.id')
+          ->where('option_combination.left_id', $left)
+          ->where('option_combination.right_id', $right)
+          ->order_by('technique.name, technique.summary, location.center_name, location.institution','ASC')
+          ->group_by('technique.name, technique.summary, location.center_name, location.institution')->get()->result();
+        return $result;
     }
 
     function saveOptionCombination($left, $right, $techniqueIds){
