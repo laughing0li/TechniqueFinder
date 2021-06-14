@@ -19,8 +19,6 @@ $this->load->view('layout/portal_header.php');?>
 
 <body>
 
-<div id="main">
-
     <div id="content" class="container">
 	<div class="d-flex mb-2">
             <div class="p-2 me-auto">
@@ -37,7 +35,6 @@ if($prevPage=='listTechniques'){
         </div>
 
 
-        <div class="clear"></div>
         <h1><?php echo $theTechnique->name; ?></h1>
 
         <h5>About this technique</h5>
@@ -307,7 +304,6 @@ if($prevPage=='listTechniques'){
             </tr>
             </tbody></table>
     </div> -->
-</div>
 
 </body>
 <script type="text/javascript">
