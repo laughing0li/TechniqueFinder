@@ -1130,6 +1130,36 @@ CREATE TABLE `media_in_section` (
 LOCK TABLES `media_in_section` WRITE;
 /*!40000 ALTER TABLE `media_in_section` DISABLE KEYS */;
 /*!40000 ALTER TABLE `media_in_section` ENABLE KEYS */;
+INSERT INTO `media_in_section` VALUES (10, 1, 10, 1, 15, 'LIST'),
+(16, 1, 16, 1, 11, 'LIST'),
+(17, 1, 17, 1, 11, 'LIST'),
+(18, 1, 18, 1, 11, 'LIST'),
+(19, 1, 19, 1, 11, 'LIST'),
+(20, 1, 20, 1, 11, 'LIST'),
+(21, 1, 21, 1, 16, 'LIST'),
+(22, 1, 22, 1, 16, 'LIST'),
+(23, 1, 23, 1, 18, 'LIST'),
+(24, 1, 24, 1, 18, 'LIST'),
+(25, 1, 25, 1, 5, 'LIST'),
+(26, 1, 26, 1, 12, 'LIST'),
+(27, 1, 27, 1, 17, 'LIST'),
+(28, 1, 28, 1, 13, 'LIST'),
+(29, 1, 29, 1, 13, 'LIST'),
+(30, 1, 30, 1, 13, 'LIST'),
+(31, 1, 31, 1, 13, 'LIST'),
+(32, 1, 32, 1, 13, 'LIST'),
+(33, 1, 33, 1, 13, 'LIST'),
+(34, 1, 34, 1, 21, 'LIST'),
+(35, 1, 35, 1, 21, 'LIST'),
+(36, 1, 36, 1, 3, 'LIST'),
+(37, 1, 37, 1, 1, 'LIST'),
+(38, 1, 38, 1, 2, 'LIST'),
+(39, 1, 39, 1, 2, 'LIST'),
+(40, 1, 40, 1, 4, 'LIST'),
+(49, 1, 49, 1, 5, 'LIST'),
+(50, 1, 50, 1, 11, 'LIST'),
+(51, 1, 51, 1, 5, 'LIST'),
+(52, 1, 52, 1, 5, 'LIST');
 UNLOCK TABLES;
 
 --
