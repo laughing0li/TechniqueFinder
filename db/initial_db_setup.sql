@@ -1439,35 +1439,153 @@ CREATE TABLE `technique_metadata` (
   PRIMARY KEY (`id`)
 );
 LOCK TABLES `technique_metadata` WRITE;
-INSERT INTO `technique_metadata` VALUES(1,'Introduction system', 'Introduction system', 'Spot Analysis'),
-(2, 'Introduction system', 'Introduction system', 'Both'),
-(3, 'SF-ICP-MS', 'Elemental Composition', 'Whole Rock or Mineral Separates'),
-(4, 'SF-ICP-MS', 'Elemental Composition', 'Both'),
-(5, 'Q-ICP-MS', 'Elemental Composition', 'Both'),
-(6, 'Q3-ICP-MS', 'Elemental Composition', 'Both'),
-(7, 'ICP-MS', 'Elemental Composition', 'Whole Rock or Mineral Separates'),
-(8, 'MC-ICP-MS', 'Isotopic Analysis', 'Whole Rock or Mineral Separates'),
-(9, 'SF-ICP-MS', 'Elemental Composition', 'Whole Rock or Mineral Separates'),
-(10, 'TIMS', 'Isotopic Analysis', 'Whole Rock or Mineral Separates'),
-(11, 'IRMS', 'Isotopic Analysis', 'Whole Rock or Mineral Separates'),
-(12, 'MP-AES', 'Elemental Composition', 'Whole Rock or Mineral Separates'),
-(13, 'SIMS', 'Isotopic Analysis', 'Spot Analysis'),
-(14, 'Noble gas mass spectrometer', 'Age Determination', 'Both'),
-(15, 'Noble gas mass spectrometer', 'Age Determination', 'Whole Rock or Mineral Separates'),
-(16, 'XRF', 'Elemental Composition', 'Spot Analysis'),
-(17, 'EMP', 'Elemental Composition', 'Spot Analysis'),
-(18, 'alpha counter', 'Elemental Composition', 'Whole Rock or Mineral Separates'),
-(19, 'Elemental Analyser CHNS', 'Elemental Composition', 'Whole Rock or Mineral Separates'),
-(20, 'Unknown', 'Unknown', 'Both'),
-(21, 'Experimental Instrument', 'Experimental Instrument', 'Unknown');
+INSERT INTO `technique_metadata` VALUES
+(1,'LA-ICP-MS','Elemental Composition','Spot Analysis'),
+(2,'LA-SF-ICP-MS','Elemental Composition','Spot Analysis'),
+(3,'Electron Micro Probe','Elemental Composition','Spot Analysis'),
+(4,'SHRIMP','Elemental Composition','Spot Analysis'),
+(5,'XRF','Elemental Composition','Spot Analysis'),
+(6,'Fourier Transform InfraRed ','Elemental Composition','Spot Analysis'),
+(7,'Raman','Elemental Composition','Spot Analysis'),
+(8,'Scanning Electron Microscope','Elemental Composition','Spot Analysis'),
+(9,'Q-ICP-MS /Q3-ICP-MS','Elemental Composition','Whole Rock or Mineral Separates'),
+(10,'SF-ICP-MS','Elemental Composition','Whole Rock or Mineral Separates'),
+(11,'CHNS elemental analyser','Elemental Composition','Whole Rock or Mineral Separates'),
+(12,'MP-AES','Elemental Composition','Whole Rock or Mineral Separates'),
+(13,'Alpha counter','Elemental Composition','Whole Rock or Mineral Separates'),
+(14,'XRF','Elemental Composition','Whole Rock or Mineral Separates'),
+(15,'LA-MC-ICP-MS','Isotopic Analysis','Spot Analysis'),
+(16,'Helix','Isotopic Analysis','Spot Analysis'),
+(17,'SHRIMP','Isotopic Analysis','Spot Analysis'),
+(18,'LA-SF-ICP-MS','Isotopic Analysis','Spot Analysis'),
+(19,'MC-ICP-MS','Isotopic Analysis','Whole Rock or Mineral Separates'),
+(20,'TIMS','Isotopic Analysis','Whole Rock or Mineral Separates'),
+(21,'IRMS','Isotopic Analysis','Whole Rock or Mineral Separates'),
+(22,'SF-ICP-MS','Isotopic Analysis','Whole Rock or Mineral Separates'),
+(23,'Helix','Isotopic Analysis','Whole Rock or Mineral Separates'),
+(24,'U-Pb system','Age Determination','Spot Analysis'),
+(25,'Fission track','Age Determination','Spot Analysis'),
+(26,'U-Th-Sm/He','Age Determination','Spot Analysis'),
+(27,'K-Ar','Age Determination','Spot Analysis'),
+(28,'Lu-Hf','Age Determination','Spot Analysis'),
+(29,'Rb-Sr','Age Determination','Spot Analysis'),
+(30,'U-Pb-Th','Age Determination','Whole Rock or Mineral Separates'),
+(31,'Re-Os','Age Determination','Whole Rock or Mineral Separates'),
+(32,'Sm-Nd','Age Determination','Whole Rock or Mineral Separates'),
+(33,'Carbon','Age Determination','Whole Rock or Mineral Separates'),
+(34,'Ar-Ar','Age Determination','Whole Rock or Mineral Separates'),
+(35,'Lu-Hf','Age Determination','Whole Rock or Mineral Separates'),
+(36,'Rb-Sr','Age Determination','Whole Rock or Mineral Separates'),
+(37,'Pb-Pb','Age Determination','Whole Rock or Mineral Separates'),
+(38,'U-series','Age Determination','Whole Rock or Mineral Separates'),
+(101,'Introduction system', 'Introduction system', 'Spot Analysis'),
+(102, 'Introduction system', 'Introduction system', 'Both'),
+(200, 'Unknown', 'Unknown', 'Both'),
+(201, 'Experimental Instrument', 'Experimental Instrument', 'Not applicable'),
+(214, 'Noble Gas spectrometer', 'Age Determination', 'Both'),
+(215, 'Noble Gas Spectrometer', 'Age Determination', 'Whole Rock or Mineral Separates');
 UNLOCK TABLES;
 
+--
+-- Table structure for table `technique_metadata_link`
+--
+DROP TABLE IF EXISTS `technique_metadata_link`;
+CREATE TABLE `technique_metadata_link` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `technique_metadata_id` bigint(20) NOT NULL, 
+  `technique_id` bigint(20) NOT NULL, 
+  PRIMARY KEY (`id`),
+  CONSTRAINT `FK546HF136DC3948BF` FOREIGN KEY (`technique_metadata_id`) REFERENCES `technique_metadata` (`id`),
+  CONSTRAINT `FK546HF136DC3948AF` FOREIGN KEY (`technique_id`) REFERENCES `technique` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `technique_metadata_link`
+--
+LOCK TABLES `technique_metadata_link` WRITE;
+INSERT INTO `technique_metadata_link` VALUES(NULL, 101, 1),
+(NULL, 101, 2), -- Excimer laser ablation system
+(NULL, 101, 3), -- Excimer laser ablation system
+(NULL, 101, 4), -- Excimer laser ablation system
+(NULL, 101, 5), -- Excimer laser ablation system
+(NULL, 101, 6), -- Excimer laser ablation system
+(NULL, 101, 7), -- Excimer laser ablation system
+(NULL, 102, 8), -- laser fusion/step heating system
+(NULL, 102, 9), -- laser fusion/step heating system
+(NULL, 10, 10), -- SF-ICP-MS
+(NULL, 9, 11), -- Q-ICP-MS
+(NULL, 9, 12), -- Q-ICP-MS
+(NULL, 9, 13), -- Q-ICP-MS
+(NULL, 9, 14), -- Q3-ICP-MS
+(NULL, 19, 16), -- MC-ICP-MS
+(NULL, 30, 16), -- MC-ICP-MS
+(NULL, 31, 16), -- MC-ICP-MS
+(NULL, 32, 16), -- MC-ICP-MS
+(NULL, 19, 17), -- MC-ICP-MS
+(NULL, 30, 17), -- MC-ICP-MS
+(NULL, 31, 17), -- MC-ICP-MS
+(NULL, 32, 17), -- MC-ICP-MS
+(NULL, 19, 18), -- MC-ICP-MS
+(NULL, 30, 18), -- MC-ICP-MS
+(NULL, 31, 18), -- MC-ICP-MS
+(NULL, 32, 18), -- MC-ICP-MS
+(NULL, 19, 19), -- MC-ICP-MS
+(NULL, 30, 19), -- MC-ICP-MS
+(NULL, 31, 19), -- MC-ICP-MS
+(NULL, 32, 19), -- MC-ICP-MS
+(NULL, 19, 20), -- MC-ICP-MS
+(NULL, 30, 20), -- MC-ICP-MS
+(NULL, 31, 20), -- MC-ICP-MS
+(NULL, 32, 20), -- MC-ICP-MS
+(NULL, 10, 21), -- SF-ICP-MS
+(NULL, 22, 21), -- SF-ICP-MS
+(NULL, 10, 22), -- SF-ICP-MS
+(NULL, 22, 22), -- SF-ICP-MS
+(NULL, 20, 23), -- TIMS
+(NULL, 31, 23), -- TIMS
+(NULL, 20, 24), -- TIMS
+(NULL, 31, 24), -- TIMS
+(NULL, 21, 25), -- IRMS
+(NULL, 12, 26), -- MP-AES
+(NULL, 4, 27), -- SIMS
+(NULL, 17, 27), -- SIMS
+(NULL, 24, 27), -- SIMS
+(NULL, 214, 28), -- Noble gas spectrometer
+(NULL, 214, 29), -- Noble gas spectrometer
+(NULL, 214, 30), -- Noble gas spectrometer
+(NULL, 214, 31), -- Noble gas spectrometer
+(NULL, 214, 32), -- Noble gas spectrometer
+(NULL, 214, 33), -- Noble gas spectrometer
+(NULL, 5, 34), -- XRF
+(NULL, 14,34), -- XRF
+(NULL, 5, 35), -- XRF
+(NULL, 14, 35), -- XRF
+(NULL, 3, 36), -- EMP
+(NULL, 13, 37), -- alpha counter
+(NULL, 11, 38), -- CHNS
+(NULL, 11, 39), -- CHNS
+(NULL, 25, 40), -- Microscope
+(NULL, 201, 41), -- Griggs Press
+(NULL, 201, 42), -- Piston cylinder
+(NULL, 201, 43), -- Piston cylinder
+(NULL, 201, 44), -- Multi-anvil press
+(NULL, 201, 45), -- Multi-anvil press
+(NULL, 201, 46), -- Multi-anvil press
+(NULL, 201, 47), -- Diamond-anvil press
+(NULL, 7, 48), -- Raman microscope
+(NULL, 6, 49), -- Microscope
+(NULL, 19, 50), -- MC-ICP-MS
+(NULL, 30, 50), -- MC-ICP-MS
+(NULL, 31, 50), -- MC-ICP-MS
+(NULL, 32, 50), -- MC-ICP-MS
+(NULL, 21, 51), -- IRMS
+(NULL, 21, 52); -- IRMS
+UNLOCK TABLES;
 
 
 --
 -- Table structure for table `technique`
 --
-
 DROP TABLE IF EXISTS `technique`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -1493,14 +1611,11 @@ CREATE TABLE `technique` (
   `keywords` longtext NOT NULL,
   `version` bigint(20) NOT NULL,
   `alternative_names` longtext NOT NULL,
-  `technique_metadata_id` bigint(20) NOT NULL,
   `elements_set_id` bigint(20),
   PRIMARY KEY (`id`),
   UNIQUE KEY `model` (`model`),
   FULLTEXT KEY `fulltext_index` (`name`,`instrument_name`,`model`,`manufacturer`,`analysis_type`,`sample_type`,`technique`,`alternative_names`,`summary`,`description`,`keywords`),
-  KEY `FK546GF1519AE409C5` (`technique_metadata_id`),
   KEY `FK586GF5919AE409C5` (`elements_set_id`),
-  CONSTRAINT `FK546HF136DC3948AF` FOREIGN KEY (`technique_metadata_id`) REFERENCES `technique_metadata` (`id`),
   CONSTRAINT `FK746HF636DC3948AE` FOREIGN KEY (`elements_set_id`) REFERENCES `elements_set` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1511,58 +1626,58 @@ CREATE TABLE `technique` (
 
 LOCK TABLES `technique` WRITE;
 /*!40000 ALTER TABLE `technique` DISABLE KEYS */;
-INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation system','RESOlution SE S-155','Resonetics-Australian Scientific Instruments','Polished section','Spot Analysis','193 nm','2-300 µm','','','','','',' ','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1, 1),
-(2,'Introduction system','Excimer laser ablation system','RESOlution SE M-50A','Resonetics-Australian Scientific Instruments','Polished section','Spot Analysis','193 nm','2-300 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1, 1),
-(3,'Introduction system','Excimer laser ablation system','Analyte G2','Photon Machines Inc.','Polished section','Spot Analysis','193 nm','1-400 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1, 1),
-(4,'Introduction system','Excimer laser ablation system','Analyte LSX-213','Photon Machines Inc.','Polished section','Spot Analysis','213 nm','4-200 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1, 1),
-(5,'Introduction system','Excimer laser ablation system','Analyte 198-FS','Photon Machines Inc.','Polished section','Spot Analysis','198 nm','','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1, 1),
-(6,'Introduction system','Excimer laser ablation system','Analyte Excite','Photon Machines Inc.','Polished section','Spot Analysis','193 nm','1-150 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1, 1),
-(7,'Introduction system','Excimer laser ablation system','Lambda Physik',' OPTEX laser','Polished section','Spot Analysis','193 nm','','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1, 1),
-(8,'Introduction system','laser fusion/step heating system','Firestar Series V40 CO2 laser','Synrad','Solid','Both','10600 nm','2500 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 2, 2),
-(9,'Introduction system','laser fusion/step heating system','Fusions 10.6 CO2 laser','Photon Machines Inc.','Solid','Both','10600 nm','125-6000 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 2, 2),
-(10,'SF-ICP-MS','SF-ICP-MS','Element-XR','Thermo-Fisher Scientific','Liquid','Both','','','10 ppb','','','','','','','Summary of SF-ICP-MS','Description of SF-ICP-MS','Keywords of SF-ICP-MS',1,'Alternative names for SF-ICP-MS', 4, 3),
-(11,'Q-ICP-MS','Q-ICP-MS','Quadrupole ICPMS 7700 ','Agilent','Introduction system','Both','','','10 ppb','','','','','','','Summary of Q-ICP-MS','Description of Q-ICP-MS','Keywords of Q-ICP-MS',1,'Alternative names for Q-ICP-MS', 5, 4),
-(12,'Q-ICP-MS','Q-ICP-MS','Quadrupole ICPMS 7700x','Agilent','Introduction system','Both','','','10 ppb','','','','','','','Summary of Q-ICP-MS','Description of Q-ICP-MS','Keywords of Q-ICP-MS',1,'Alternative names for Q-ICP-MS', 5, 4),
-(13,'Q-ICP-MS','Q-ICP-MS','Quadrupole ICPMS 7500','Agilent','Introduction system','Both','','','10 ppb','','','','','','','Summary of Q-ICP-MS','Description of Q-ICP-MS','Keywords of Q-ICP-MS',1,'Alternative names for Q-ICP-MS', 5, 4),
-(14,'Q3-ICP-MS','Q3-ICP-MS','Triple Quadrupole (Q3) ICP-MS 8900','Agilent','Introduction system','Both','','','10 ppb','','','','','','','Summary of Q3-ICP-MS','Description of Q3-ICP-MS','Keywords of Q3-ICP-MS',1,'Alternative names for Q3-ICP-MS', 6, 5),
-(15,'ICP-MS','ICP-MS','MAP-MS-215/50','Mass Analyser Products','Liquid','Whole Rock or Mineral Separates','','','10 ppb','','','','','','','Summary of ICP-MS','Description of ICP-MS','Keywords of ICP-MS',1,'Alternative names for ICP-MS', 7, NULL),
-(16,'MC-ICP-MS','MC-ICP-MS','Plasma 1','Nu Instruments Ltd','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 8, 6),
-(17,'MC-ICP-MS','MC-ICP-MS','Plasma 2','Nu Instruments Ltd','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 8, 6),
-(18,'MC-ICP-MS','MC-ICP-MS','Plasma 3','Nu Instruments Ltd','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 8, 6),
-(19,'MC-ICP-MS','MC-ICP-MS','Plasma Sapphire','Nu Instruments Ltd','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 8, 6),
-(20,'MC-ICP-MS','MC-ICP-MS','Neptune Plus','Thermo-Fisher Scientific','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 8, 6),
-(21,'SF-ICP-MS','SF-ICP-MS','Plasma Attom','Nu Instruments Ltd','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of SF-ICP-MS','Description of SF-ICP-MS','Keywords of SF-ICP-MS',1,'Alternative names for SF-ICP-MS', 9, 3),
-(22,'SF-ICP-MS','SF-ICP-MS','Plasma Attom-ES','Nu Instruments Ltd','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of SF-ICP-MS','Description of SF-ICP-MS','Keywords of SF-ICP-MS',1,'Alternative names for SF-ICP-MS', 9, 3),
-(23,'TIMS','TIMS','Triton','Thermo Finnigan','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of TIMS','Description of TIMS','Keywords of TIMS',1,'Alternative names for TIMS', 10, 13),
-(24,'TIMS','TIMS','Triton Plus','Thermo Finnigan','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of TIMS','Description of TIMS','Keywords of TIMS',1,'Alternative names for TIMS', 10, 13),
-(25,'IRMS','Stable Isotope Ratio Mass Spectrometer','MAT 253+ with EBEX','Thermo Finnigan','Liquid','Whole Rock or Mineral Separates','','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 11, 14),
-(26,'MP-AES','MP-AES','Agilent 4200','Agilent','Liquid','Whole Rock or Mineral Separates','','','','','','','','','','Summary of AES','Description of AES','Keywords of AES',1,'Alternative names for AES', 12, 9),
-(27,'SIMS','SHRIMP','SHRIMP 2','Australian Scientific Instruments','Thin_polished section','Spot Analysis','','','10 ppt','','','','','','','Summary of SIMS','Description of SIMS','Keywords of SIMS',1,'Alternative names for SIMS', 13, 16),
-(28,'Noble gas mass spectrometer','MC-MS-Noble Gas (Ar)','Argus VI','Thermo-Fisher Scientific','Solid','Both','','','','','','','','','','Summary of Noble gas mass spectrometer','Description of Noble gas mass spectrometer','Keywords of Noble gas mass spectrometer',1,'Alternative names for Noble gas mass spectrometer', 14, 17),
-(29,'Noble gas mass spectrometer','MS-Noble Gas (Ar)','VG3600','VG Instruments','Solid','Both','','','','','','','','','','Summary of Noble gas mass spectrometer','Description of Noble gas mass spectrometer','Keywords of Noble gas mass spectrometer',1,'Alternative names for Noble gas mass spectrometer', 14, 18),
-(30,'Noble gas mass spectrometer','MS-Noble Gas (Ar)','MM5400','Micromass','Solid','Both','','','','','','','','','','Summary of Noble gas mass spectrometer','Description of Noble gas mass spectrometer','Keywords of Noble gas mass spectrometer',1,'Alternative names for Noble gas mass spectrometer', 14, 18),
-(31,'Noble gas mass spectrometer','Step-heating (Ar)','Low-blank argon extraction furnace TC-9','Modifications Ltd.','Solid','Whole Rock or Mineral Separates','','','','','','','','','','Summary of Noble gas mass spectrometer','Description of Noble gas mass spectrometer','Keywords of Noble gas mass spectrometer',1,'Alternative names for Noble gas mass spectrometer', 14, 19),
-(32,'Noble gas mass spectrometer','QMS ( Noble Gas-He)','Alphachron','Australian Scientific instruments','Solid','Both','','','','','','','','','','Summary of Noble gas mass spectrometer','Description of Noble gas mass spectrometer','Keywords of Noble gas mass spectrometer',1,'Alternative names for Noble gas mass spectrometer', 14, NULL),
-(33,'Noble gas mass spectrometer','MS-Noble Gas (He)','Helium extration system with Pfeiffer Prisma MS','Patterson Instruments Ltd / CSIRO','Solid','Both','','','','','','','','','','Summary of Noble gas mass spectrometer','Description of Noble gas mass spectrometer','Keywords of Noble gas mass spectrometer',1,'Alternative names for Noble gas mass spectrometer', 14, 20),
-(34,'XRF','XRF','M4 Tornado Micro XRF','Bruker','Solid','Spot Analysis','','','1 %','','','','','','','Summary of XRF','Description of XRF','Keywords of XRF',1,'Alternative names for XRF', 16, 21),
-(35,'XRF','XRF','Axios 1kW XRF','PANalytical','Solid','Spot Analysis','','','1 %','','','','','','','Summary of XRF','Description of XRF','Keywords of XRF',1,'Alternative names for XRF', 16, 21),
-(36,'EMP','EMP','SX-100 Electron microprobe','Cameca','Solid','Spot Analysis','','','','','','','','','','Summary of EMP','Description of EMP','Keywords of EMP',1,'Alternative names for EMP', 17, 22),
-(37,'alpha counter','alpha counter','Alpha Particle counter','Ortec','Solid','Whole Rock or Mineral Separates','','','1 ppm','','','','','','','Summary of alpha counter','Description of alpha counter','Keywords of alpha counter',1,'Alternative names for alpha counter', 18, 23),
-(38,'Elemental Analyser CHNS','Elemental Analyser CHNS','Vario EL Cube','Elementar','Solid','Whole Rock or Mineral Separates','','','','','10-1000 mg','','','','','Summary of Elemental Analyser CHNS','Description of Elemental Analyser CHNS','Keywords of Elemental Analyser CHNS',1,'Alternative names for Elemental Analyser CHNS', 19, 24),
-(39,'Elemental Analyser CHNS','Elemental Analyser CHNS','EA3000','EuroEA','Solid','Whole Rock or Mineral Separates','','','','','1-50 mg','','','','','Summary of Elemental Analyser CHNS','Description of Elemental Analyser CHNS','Keywords of Elemental Analyser CHNS',1,'Alternative names for Elemental Analyser CHNS', 19, 24),
-(40,'Automated fission track counting system','Automated fission track counting system','Autoscan Deluxe w. ZEISS M2m Microscope','AutoScan','Solid','Both','','','','','','','','','','Summary of Automated fission track counting system','Description of Automated fission track counting system','Keywords of Automated fission track counting system',1,'Alternative names for Automated fission track counting system', 20, 25),
-(41,'Experimental instrument','Griggs press','Griggs apparatus','n/a','','','','','','','','150','3','1600','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 21, 26),
-(42,'Experimental instrument','Piston cylinder','piston-cylinder apparatus','n/a','','','','','','','','','6','2000','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 21, 27),
-(43,'Experimental instrument','Piston cylinder','rapid-quench piston-cylinder apparatus','GUKO Sondermaschinenbau','','','','','','','','','6','2000','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 21, 27),
-(44,'Experimental instrument','Multi-anvil press','multi-anvil apparatus','Bristol University','','','','','','','','10','20','2200','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 21, 28),
-(45,'Experimental instrument','Multi-anvil press','MAX2003','Voggenreiter GmbH','','','','','','','','10','20','2200','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 21, 28),
-(46,'Experimental instrument','Multi-anvil press',' Walker module - 1000 ton-press','Voggenreiter GmbH','','','','','','','','10','20','2200','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 21, 28),
-(47,'Experimental instrument','Diamond-anvil press','diamond-anvil cell apparatus','constructed in house','','','','','','','','','100-600','1500-6000','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 21, 29),
-(48,'Experimental instrument','Raman microscope','LABRAM HR Evolution','Horiba','','','','','','','','','','','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 21, 30),
-(49,'Fourier Transform IR microscope','Fourier Transform IR microscope','iN10','Thermo-Fisher Scientific','','','','','','','','','','','','Summary of Fourier Transform IR microscope','Description of Fourier Transform IR microscope','Keywords of Fourier Transform IR microscope',1,'Alternative names for Fourier Transform IR microscope', 21, 31),
-(50,'MC-ICP-MS','MC-ICP-MS','Neptune','Thermo-Fisher Scientific','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 8, 6),
-(51,'IRMS','EA-IRMS','Flash 2000','Thermo-Fisher Scientific','Liquid','Whole Rock or Mineral Separates','','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 11, 32),
-(52,'IRMS','CG-IRMS','Delta V Advantage irMS','Thermo-Fisher Scientific','Liquid','Whole Rock or Mineral Separates','','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 11, 33);
+INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation system','RESOlution SE S-155','Resonetics-Australian Scientific Instruments','Polished section','Spot Analysis','193 nm','2-300 µm','','','','','',' ','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1),
+(2,'Introduction system','Excimer laser ablation system','RESOlution SE M-50A','Resonetics-Australian Scientific Instruments','Polished section','Spot Analysis','193 nm','2-300 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1),
+(3,'Introduction system','Excimer laser ablation system','Analyte G2','Photon Machines Inc.','Polished section','Spot Analysis','193 nm','1-400 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1),
+(4,'Introduction system','Excimer laser ablation system','Analyte LSX-213','Photon Machines Inc.','Polished section','Spot Analysis','213 nm','4-200 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1),
+(5,'Introduction system','Excimer laser ablation system','Analyte 198-FS','Photon Machines Inc.','Polished section','Spot Analysis','198 nm','','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1),
+(6,'Introduction system','Excimer laser ablation system','Analyte Excite','Photon Machines Inc.','Polished section','Spot Analysis','193 nm','1-150 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1),
+(7,'Introduction system','Excimer laser ablation system','Lambda Physik',' OPTEX laser','Polished section','Spot Analysis','193 nm','','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1),
+(8,'Introduction system','laser fusion/step heating system','Firestar Series V40 CO2 laser','Synrad','Solid','Both','10600 nm','2500 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 2),
+(9,'Introduction system','laser fusion/step heating system','Fusions 10.6 CO2 laser','Photon Machines Inc.','Solid','Both','10600 nm','125-6000 µm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 2),
+(10,'SF-ICP-MS','SF-ICP-MS','Element-XR','Thermo-Fisher Scientific','Liquid','Both','','','10 ppb','','','','','','','Summary of SF-ICP-MS','Description of SF-ICP-MS','Keywords of SF-ICP-MS',1,'Alternative names for SF-ICP-MS', 3),
+(11,'Q-ICP-MS','Q-ICP-MS','Quadrupole ICPMS 7700 ','Agilent','Introduction system','Both','','','10 ppb','','','','','','','Summary of Q-ICP-MS','Description of Q-ICP-MS','Keywords of Q-ICP-MS',1,'Alternative names for Q-ICP-MS', 4),
+(12,'Q-ICP-MS','Q-ICP-MS','Quadrupole ICPMS 7700x','Agilent','Introduction system','Both','','','10 ppb','','','','','','','Summary of Q-ICP-MS','Description of Q-ICP-MS','Keywords of Q-ICP-MS',1,'Alternative names for Q-ICP-MS', 4),
+(13,'Q-ICP-MS','Q-ICP-MS','Quadrupole ICPMS 7500','Agilent','Introduction system','Both','','','10 ppb','','','','','','','Summary of Q-ICP-MS','Description of Q-ICP-MS','Keywords of Q-ICP-MS',1,'Alternative names for Q-ICP-MS', 4),
+(14,'Q3-ICP-MS','Q3-ICP-MS','Triple Quadrupole (Q3) ICP-MS 8900','Agilent','Introduction system','Both','','','10 ppb','','','','','','','Summary of Q3-ICP-MS','Description of Q3-ICP-MS','Keywords of Q3-ICP-MS',1,'Alternative names for Q3-ICP-MS', 5),
+(15,'ICP-MS','ICP-MS','MAP-MS-215/50','Mass Analyser Products','Liquid','Whole Rock or Mineral Separates','','','10 ppb','','','','','','','Summary of ICP-MS','Description of ICP-MS','Keywords of ICP-MS',1,'Alternative names for ICP-MS', NULL),
+(16,'MC-ICP-MS','MC-ICP-MS','Plasma 1','Nu Instruments Ltd','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
+(17,'MC-ICP-MS','MC-ICP-MS','Plasma 2','Nu Instruments Ltd','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
+(18,'MC-ICP-MS','MC-ICP-MS','Plasma 3','Nu Instruments Ltd','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
+(19,'MC-ICP-MS','MC-ICP-MS','Plasma Sapphire','Nu Instruments Ltd','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
+(20,'MC-ICP-MS','MC-ICP-MS','Neptune Plus','Thermo-Fisher Scientific','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
+(21,'SF-ICP-MS','SF-ICP-MS','Plasma Attom','Nu Instruments Ltd','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of SF-ICP-MS','Description of SF-ICP-MS','Keywords of SF-ICP-MS',1,'Alternative names for SF-ICP-MS', 3),
+(22,'SF-ICP-MS','SF-ICP-MS','Plasma Attom-ES','Nu Instruments Ltd','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of SF-ICP-MS','Description of SF-ICP-MS','Keywords of SF-ICP-MS',1,'Alternative names for SF-ICP-MS', 3),
+(23,'TIMS','TIMS','Triton','Thermo Finnigan','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of TIMS','Description of TIMS','Keywords of TIMS',1,'Alternative names for TIMS', 13),
+(24,'TIMS','TIMS','Triton Plus','Thermo Finnigan','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of TIMS','Description of TIMS','Keywords of TIMS',1,'Alternative names for TIMS', 13),
+(25,'IRMS','Stable Isotope Ratio Mass Spectrometer','MAT 253+ with EBEX','Thermo Finnigan','Liquid','Whole Rock or Mineral Separates','','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 14),
+(26,'MP-AES','MP-AES','Agilent 4200','Agilent','Liquid','Whole Rock or Mineral Separates','','','','','','','','','','Summary of AES','Description of AES','Keywords of AES',1,'Alternative names for AES', 9),
+(27,'SIMS','SHRIMP','SHRIMP 2','Australian Scientific Instruments','Thin_polished section','Spot Analysis','','','10 ppt','','','','','','','Summary of SIMS','Description of SIMS','Keywords of SIMS',1,'Alternative names for SIMS', 16),
+(28,'Noble gas mass spectrometer','MC-MS-Noble Gas (Ar)','Argus VI','Thermo-Fisher Scientific','Solid','Both','','','','','','','','','','Summary of Noble gas mass spectrometer','Description of Noble gas mass spectrometer','Keywords of Noble gas mass spectrometer',1,'Alternative names for Noble gas mass spectrometer', 17),
+(29,'Noble gas mass spectrometer','MS-Noble Gas (Ar)','VG3600','VG Instruments','Solid','Both','','','','','','','','','','Summary of Noble gas mass spectrometer','Description of Noble gas mass spectrometer','Keywords of Noble gas mass spectrometer',1,'Alternative names for Noble gas mass spectrometer', 18),
+(30,'Noble gas mass spectrometer','MS-Noble Gas (Ar)','MM5400','Micromass','Solid','Both','','','','','','','','','','Summary of Noble gas mass spectrometer','Description of Noble gas mass spectrometer','Keywords of Noble gas mass spectrometer',1,'Alternative names for Noble gas mass spectrometer', 18),
+(31,'Noble gas mass spectrometer','Step-heating (Ar)','Low-blank argon extraction furnace TC-9','Modifications Ltd.','Solid','Whole Rock or Mineral Separates','','','','','','','','','','Summary of Noble gas mass spectrometer','Description of Noble gas mass spectrometer','Keywords of Noble gas mass spectrometer',1,'Alternative names for Noble gas mass spectrometer', 19),
+(32,'Noble gas mass spectrometer','QMS ( Noble Gas-He)','Alphachron','Australian Scientific instruments','Solid','Both','','','','','','','','','','Summary of Noble gas mass spectrometer','Description of Noble gas mass spectrometer','Keywords of Noble gas mass spectrometer',1,'Alternative names for Noble gas mass spectrometer', NULL),
+(33,'Noble gas mass spectrometer','MS-Noble Gas (He)','Helium extration system with Pfeiffer Prisma MS','Patterson Instruments Ltd / CSIRO','Solid','Both','','','','','','','','','','Summary of Noble gas mass spectrometer','Description of Noble gas mass spectrometer','Keywords of Noble gas mass spectrometer',1,'Alternative names for Noble gas mass spectrometer', 20),
+(34,'XRF','XRF','M4 Tornado Micro XRF','Bruker','Solid','Spot Analysis','','','1 %','','','','','','','Summary of XRF','Description of XRF','Keywords of XRF',1,'Alternative names for XRF', 21),
+(35,'XRF','XRF','Axios 1kW XRF','PANalytical','Solid','Spot Analysis','','','1 %','','','','','','','Summary of XRF','Description of XRF','Keywords of XRF',1,'Alternative names for XRF', 21),
+(36,'EMP','EMP','SX-100 Electron microprobe','Cameca','Solid','Spot Analysis','','','','','','','','','','Summary of EMP','Description of EMP','Keywords of EMP',1,'Alternative names for EMP', 22),
+(37,'alpha counter','alpha counter','Alpha Particle counter','Ortec','Solid','Whole Rock or Mineral Separates','','','1 ppm','','','','','','','Summary of alpha counter','Description of alpha counter','Keywords of alpha counter',1,'Alternative names for alpha counter', 23),
+(38,'Elemental Analyser CHNS','Elemental Analyser CHNS','Vario EL Cube','Elementar','Solid','Whole Rock or Mineral Separates','','','','','10-1000 mg','','','','','Summary of Elemental Analyser CHNS','Description of Elemental Analyser CHNS','Keywords of Elemental Analyser CHNS',1,'Alternative names for Elemental Analyser CHNS', 24),
+(39,'Elemental Analyser CHNS','Elemental Analyser CHNS','EA3000','EuroEA','Solid','Whole Rock or Mineral Separates','','','','','1-50 mg','','','','','Summary of Elemental Analyser CHNS','Description of Elemental Analyser CHNS','Keywords of Elemental Analyser CHNS',1,'Alternative names for Elemental Analyser CHNS', 24),
+(40,'Automated fission track counting system','Automated fission track counting system','Autoscan Deluxe w. ZEISS M2m Microscope','AutoScan','Solid','Both','','','','','','','','','','Summary of Automated fission track counting system','Description of Automated fission track counting system','Keywords of Automated fission track counting system',1,'Alternative names for Automated fission track counting system', 25),
+(41,'Experimental instrument','Griggs press','Griggs apparatus','n/a','','','','','','','','150','3','1600','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 26),
+(42,'Experimental instrument','Piston cylinder','piston-cylinder apparatus','n/a','','','','','','','','','6','2000','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 27),
+(43,'Experimental instrument','Piston cylinder','rapid-quench piston-cylinder apparatus','GUKO Sondermaschinenbau','','','','','','','','','6','2000','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 27),
+(44,'Experimental instrument','Multi-anvil press','multi-anvil apparatus','Bristol University','','','','','','','','10','20','2200','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 28),
+(45,'Experimental instrument','Multi-anvil press','MAX2003','Voggenreiter GmbH','','','','','','','','10','20','2200','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 28),
+(46,'Experimental instrument','Multi-anvil press',' Walker module - 1000 ton-press','Voggenreiter GmbH','','','','','','','','10','20','2200','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 28),
+(47,'Experimental instrument','Diamond-anvil press','diamond-anvil cell apparatus','constructed in house','','','','','','','','','100-600','1500-6000','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 29),
+(48,'Experimental instrument','Raman microscope','LABRAM HR Evolution','Horiba','','','','','','','','','','','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 30),
+(49,'Fourier Transform IR microscope','Fourier Transform IR microscope','iN10','Thermo-Fisher Scientific','','','','','','','','','','','','Summary of Fourier Transform IR microscope','Description of Fourier Transform IR microscope','Keywords of Fourier Transform IR microscope',1,'Alternative names for Fourier Transform IR microscope', 31),
+(50,'MC-ICP-MS','MC-ICP-MS','Neptune','Thermo-Fisher Scientific','Liquid','Whole Rock or Mineral Separates','','','1 ppb','','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
+(51,'IRMS','EA-IRMS','Flash 2000','Thermo-Fisher Scientific','Liquid','Whole Rock or Mineral Separates','','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 32),
+(52,'IRMS','CG-IRMS','Delta V Advantage irMS','Thermo-Fisher Scientific','Liquid','Whole Rock or Mineral Separates','','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 33);
 /*!40000 ALTER TABLE `technique` ENABLE KEYS */;
 UNLOCK TABLES;
 

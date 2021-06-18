@@ -11,8 +11,6 @@
                 </div>
             </div>
            
-            <!-- <div class="clear"></div> -->
-         
             <div class="alert alert-primary">
 <?php echo $staticData['tf.geochemChoices.quickGuide']; ?>
             </div>
