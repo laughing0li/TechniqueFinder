@@ -958,9 +958,9 @@ CREATE TABLE `contact` (
 
 LOCK TABLES `contact` WRITE;
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
-INSERT INTO `contact` VALUES (1, 1, 'Contact Position','Contact Title','',1,'Contact Telephone','Contact Email','Contact Name'),
-(2, 1, 'Contact Position','Contact Title','',2,'Contact Telephone','Contact Email','Contact Name'),
-(3, 1, 'Contact Position','Contact Title','',3,'Contact Telephone','Contact Email','Contact Name');
+INSERT INTO `contact` VALUES (1, 1, 'MQ GeoAnalytical Contact Position','MQ GeoAnalytical Contact Title','',1,'+61 (2) 9850 4402','mqga@mq.edu.au','MQ GeoAnalytical Contact Name'),
+(2, 1, 'Centre Director','Centre Director','',2,'+61 8 9266 2108','DirectorJdLC@curtin.edu.au','Prof. Brent McInnes'),
+(3, 1, 'School Operations Officer','School Operations Officer','',3,'+61 3 8344 9395','jmcook@unimelb.edu.au','Joanne Patton');
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 UNLOCK TABLES;
 

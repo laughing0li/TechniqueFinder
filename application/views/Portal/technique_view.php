@@ -40,13 +40,18 @@ if($prevPage=='listTechniques'){
         <h5>About this technique</h5>
         <hr>
         <?php echo $theTechnique->description; ?>
-<!--
--->
         <hr>
-	<table class="table table-striped">
-            <thead>
-                <tr class="tf-font-14">
-                    <?php
+        <div class='row card-group'>
+
+        <?php
+        foreach($localisationItems as $key=>$localisation) {
+            echo "<div class='col-4'>";
+            echo "<div class='card border-primary h-100'>";
+            echo "<div class='card-header text-white bg-primary'>".$locationItems[$key][0]." at ".$locationItems[$key][1]."</div>";
+            echo "<div class='card-body'>";
+	    echo "<table class='table table-striped'>";
+            echo "<thead>";
+            echo "<tr class='tf-font-14'>";
                     echo (empty($theTechnique->model)) ? "":"<th scope='col'>Model</th>";
                     echo (empty($theTechnique->manufacturer)) ? "":"<th scope='col'>Manufacturer</th>";
                     echo (empty($theTechnique->sample_type)) ? "":"<th scope='col'>Sample Type</th>";
@@ -60,12 +65,11 @@ if($prevPage=='listTechniques'){
                     echo (empty($theTechnique->pressure)) ? "":"<th scope='col'>Pressure (GPa)</th>";
                     echo (empty($theTechnique->temperature)) ? "":"<th scope='col'>Temp. (K)</th>";
                     echo (empty($theTechnique->ext_reference)) ? "":"<th scope='col'>Reference</th>";
-                    ?>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="tf-font-14">
-                    <?php
+                    
+            echo "</tr>";
+            echo "</thead>";
+            echo "<tbody>";
+            echo "<tr class='tf-font-14'>";
                     echo (empty($theTechnique->model)) ? "":"<th scope='row'>$theTechnique->model</th>";
                     echo (empty($theTechnique->manufacturer)) ? "":"<td>$theTechnique->manufacturer</td>";
                     echo (empty($theTechnique->sample_type)) ? "":"<td>$theTechnique->sample_type</td>";
@@ -79,28 +83,18 @@ if($prevPage=='listTechniques'){
                     echo (empty($theTechnique->pressure)) ? "":"<td>$theTechnique->pressure</td>";
                     echo (empty($theTechnique->temperature)) ? "":"<td>$theTechnique->temperature</td>";
                     echo (empty($theTechnique->ext_reference)) ? "":"<td>$theTechnique->ext_reference</td>";
-                    ?>
-                </tr>
-            </tbody>
-        </table>
-        <div class='row card-group'>
-
-        <?php
-        foreach($localisationItems as $key=>$localisation) {
-            echo "<div class='col-4'>";
-            echo "<div class='card border-primary h-100'>";
-            echo "<div class='card-header text-white bg-primary'>$theTechnique->model at ".$locationItems[$key][0]."</div>";
-            echo "<div class='card-body'>";
+            echo "</tr>";
+            echo "</tbody>";
+            echo "</table>";
             echo "<p class='card-text'>Year Commissioned: ".$localisation[0]."</p>";
             echo "<p class='card-text'>Applications: ";
             foreach(array_slice($localisation, 1) as $application) {
                 echo $application.", ";
             }
             echo "</p>";
-            echo "<p class='card-text'>Name: ".$locationItems[$key][0]."</p>";
-            echo "<p class='card-text'>Institution: ".$locationItems[$key][1]."</p>";
             echo "<p class='card-text'>Address: ".$locationItems[$key][2]."</p>";
             echo "<p class='card-text'>State: ".$locationItems[$key][3]."</p>";
+            echo "<p class='card-text'>Contact: ".$locationItems[$key][4]."</p>";
             echo "</div>"; /* card-body */
             echo "</div>"; /* card */
             echo "</div>"; /* col-4 */

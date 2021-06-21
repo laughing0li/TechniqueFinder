@@ -380,12 +380,12 @@ class Techniques_model extends MY_Model
     }
 
     function getLocationItems($technique_id) {
-        $query = $this->db->query("SELECT location.center_name, location.institution, location.address, location.state from location, localisation where location.id = localisation.location_id and localisation.technique_id = ".$technique_id.";");
+        $query = $this->db->query("SELECT location.center_name, location.institution, location.address, location.state, contact.email from location, localisation, contact where location.id = localisation.location_id and localisation.technique_id = ".$technique_id." and contact.location_id = location.id;");
         $item_list = $query->result_array();
         $ret_list = array();
         foreach($item_list as $item) {
             $line = array();
-            array_push($line, $item['center_name'], $item['institution'], $item['address'], $item['state']);
+            array_push($line, $item['center_name'], $item['institution'], $item['address'], $item['state'], $item['email']);
             array_push($ret_list, $line);
         }
         return($ret_list);
