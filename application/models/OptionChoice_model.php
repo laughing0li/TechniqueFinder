@@ -24,7 +24,7 @@ class OptionChoice_model extends MY_Model
     }
 
     function getTechniqueCatByCatTyp($category_type) {
-            return $this->db->query("select technique_metadata.category, group_concat(distinct technique.model separator '; ') as model, group_concat(distinct technique.beam_diameter separator '; ') as beam_diameter, group_concat(distinct technique.min_conc separator '; ') as min_conc from technique inner join technique_metadata on technique.technique_metadata_id = technique_metadata.id where technique_metadata.category_type = ? group by technique_metadata.category", array($category_type))->result();
+            return $this->db->query("select technique_view.category, group_concat(distinct technique_view.model separator '; ') as model, group_concat(distinct technique_view.beam_diameter separator '; ') as beam_diameter, group_concat(distinct technique_view.min_conc separator '; ') as min_conc from technique_view where technique_view.category_type = ? group by technique_view.category", array($category_type))->result();
     }
 
     function getTechniqueCatByAnalysis($category_type, $analysis_type) {
@@ -32,7 +32,7 @@ class OptionChoice_model extends MY_Model
 	if ($analysis_type == 'I don\'t know') {
             return $this->getTechniqueCatByCatTyp($category_type);
         } else {
-            return $this->db->query("select technique_metadata.category, group_concat(distinct technique.model separator '; ') as model, group_concat(distinct technique.beam_diameter separator '; ') as beam_diameter, group_concat(distinct technique.min_conc separator '; ') as min_conc from technique inner join technique_metadata on technique.technique_metadata_id = technique_metadata.id where technique_metadata.category_type = ? and technique_metadata.analysis_type = ? group by technique_metadata.category", array($category_type, $analysis_type))->result();
+            return $this->db->query("select technique_view.category, group_concat(distinct technique_view.model separator '; ') as model, group_concat(distinct technique_view.beam_diameter separator '; ') as beam_diameter, group_concat(distinct technique_view.min_conc separator '; ') as min_conc from technique_view where technique_view.category_type = ? and technique_view.analysis_type = ? group by technique_view.category", array($category_type, $analysis_type))->result();
 	}
     }
 

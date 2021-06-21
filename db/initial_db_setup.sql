@@ -1679,9 +1679,13 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 /*!40000 ALTER TABLE `technique` ENABLE KEYS */;
 UNLOCK TABLES;
 
--- DROP VIEW IF EXISTS `technique_view`;
--- CREATE VIEW `technique_view` AS
--- SELECT t.name, t.model, t.sample_type, t.wavelength, t.beam_diameter, t.min_conc, 
+DROP VIEW IF EXISTS `technique_view`;
+CREATE VIEW `technique_view` AS
+SELECT t.id as technique_id, m.category_type, m.category, m.analysis_type, t.model, t.manufacturer, t.sample_type,
+ t.wavelength, t.beam_diameter, t.min_conc, t.mass, t.volume, t.pressure, t.temperature, t.ext_reference, t.summary,
+ t.description, t.keywords, t.version, t.alternative_names
+from technique t join technique_metadata_link on t.id = technique_metadata_link.technique_id
+               join technique_metadata m on m.id = technique_metadata_link.technique_metadata_id;
 
 --
 -- Table structure for table `localisation`
