@@ -49,6 +49,15 @@ if($prevPage=='listTechniques'){
             echo "<div class='card border-primary h-100'>";
             echo "<div class='card-header text-white bg-primary'>".$locationItems[$key][0]." at ".$locationItems[$key][1]."</div>";
             echo "<div class='card-body'>";
+            echo "<p class='card-text'>Applications: ";
+            foreach(array_slice($localisation, 1) as $application) {
+                echo $application.", ";
+            }
+            echo "</p>";
+            echo "<p class='card-text'>Year Commissioned: ".$localisation[0]."</p>";
+            echo "<p class='card-text'>Address: ".$locationItems[$key][2]."</p>";
+            echo "<p class='card-text'>State: ".$locationItems[$key][3]."</p>";
+            echo "<p class='card-text'>Contact: ".$locationItems[$key][4]."</p>";
 	    echo "<table class='table table-striped'>";
             echo "<thead>";
             echo "<tr class='tf-font-14'>";
@@ -86,15 +95,6 @@ if($prevPage=='listTechniques'){
             echo "</tr>";
             echo "</tbody>";
             echo "</table>";
-            echo "<p class='card-text'>Year Commissioned: ".$localisation[0]."</p>";
-            echo "<p class='card-text'>Applications: ";
-            foreach(array_slice($localisation, 1) as $application) {
-                echo $application.", ";
-            }
-            echo "</p>";
-            echo "<p class='card-text'>Address: ".$locationItems[$key][2]."</p>";
-            echo "<p class='card-text'>State: ".$locationItems[$key][3]."</p>";
-            echo "<p class='card-text'>Contact: ".$locationItems[$key][4]."</p>";
             echo "</div>"; /* card-body */
             echo "</div>"; /* card */
             echo "</div>"; /* col-4 */
