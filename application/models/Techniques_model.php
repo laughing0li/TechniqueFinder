@@ -751,7 +751,7 @@ class Techniques_model extends MY_Model
             $q= '';
         }
         // Search in technique
-        $r1 = $this->db->query('SELECT * from technique where MATCH(name, instrument_name, model, manufacturer, analysis_type, sample_type, technique, alternative_names, summary, description, keywords) AGAINST(? IN NATURAL LANGUAGE MODE)',
+        $r1 = $this->db->query('SELECT * from technique where MATCH(name, instrument_name, model, manufacturer, sample_type, alternative_names, summary, description, keywords) AGAINST(? IN NATURAL LANGUAGE MODE)',
             array($q))->result();
 
         // Search in location and contact
