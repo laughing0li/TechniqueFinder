@@ -151,9 +151,9 @@ class Portal extends CI_Controller {
         }
 
         echo "[";
-        $elemResults = array_unique($elemResults);
-        $arr_e_len = count($elemResults);
-        foreach($elemResults as $e_idx => $elem) {
+        $elemResultsUniq = array_values(array_unique($elemResults));
+        $arr_e_len = count($elemResultsUniq);
+        foreach($elemResultsUniq as $e_idx => $elem) {
             echo '{"label": "'.$elem.'", "value": "'.$elem.'"}';
             if ($e_idx < $arr_e_len  - 1) {
                 echo ',';
