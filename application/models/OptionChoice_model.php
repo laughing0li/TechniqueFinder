@@ -23,6 +23,13 @@ class OptionChoice_model extends MY_Model
             ->where('id', $id)->get()->row();
     }
 
+    function getKeywordList() {
+        $r1 = $this->db->query('select distinct name from elements')->result();
+        $r2 = $this->db->query('select distinct symbol as name from elements')->result();
+        return array_merge($r1, $r2);
+    }
+
+
     function getTechniqueCatByCatTyp($category_type) {
             return $this->db->query("select technique_view.category, group_concat(distinct technique_view.model separator '; ') as model, group_concat(distinct technique_view.beam_diameter separator '; ') as beam_diameter, group_concat(distinct technique_view.min_conc separator '; ') as min_conc from technique_view where technique_view.category_type = ? group by technique_view.category", array($category_type))->result();
     }

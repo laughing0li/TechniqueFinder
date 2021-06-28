@@ -55,7 +55,7 @@
                     <div class="row">
                         <!-- STEP 3 -->
                         <h3 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.step3.title']);?> </h3>
-                        <input id="step3" class="form-control" style="font-size: 12px; max-width: 32rem" type="text" placeholder="Type here element interested in"></input>
+                        <input id="step3" class="form-control" style="font-size: 12px; max-width: 32rem" type="text" placeholder="Type here element interested in" autocomplete="off"></input>
                     </div>
                 </div> <!-- END LHS COLUMN -->
 
@@ -132,6 +132,7 @@ function onClick(e){
 	    var step1_id = $('#step1OptionVal').val();
 	    xmlhttp.open("GET", "<?php echo base_url().'Portal/getTechniqueChoices/';?>"+step1_id+"/"+step2_id, true);
             xmlhttp.send();
+            autoKeywordUpdate(step1_id, step2_id);
         }
     }
 
@@ -151,6 +152,18 @@ function onClick(e){
 /* This assigns text form values to the submit form when the user clicks on submit button */
 function onSubmit() {
     $('#step3TextVal').val($('#step3').val());
+}
+
+/* This updates the set of autocomplete keywords in Step 3 */
+function autoKeywordUpdate(step1_id, step2_id) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            const ac = new Autocomplete(document.getElementById('step3'), { data: JSON.parse(this.responseText) });
+        }
+    };
+    xmlhttp.open("GET", "<?php echo base_url().'Portal/getTechniqueKeywords/';?>"+step1_id+"/"+step2_id, true);
+    xmlhttp.send();
 }
 </script>
 

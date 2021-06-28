@@ -137,6 +137,31 @@ class Portal extends CI_Controller {
         }
     }
 
+    public function getTechniqueKeywords($step1OptionId, $step2OptionId) {
+        $this->load->model('OptionCombination_model');
+        $searchResults = $this->OptionCombination_model->getAllTechniquesByOptionCombination($step1OptionId, $step2OptionId);
+        $this->load->model('Element_model');
+        $elemResults = array();
+        foreach($searchResults as $res_idx => $result) {
+            $elements = $this->Element_model->getAllElementsByInstrumentType($result->name);
+            foreach($elements as $e_idx => $e) {
+                array_push($elemResults, $e->name);
+                array_push($elemResults, $e->symbol);
+            }
+        }
+
+        echo "[";
+        $elemResults = array_unique($elemResults);
+        $arr_e_len = count($elemResults);
+        foreach($elemResults as $e_idx => $elem) {
+            echo '{"label": "'.$elem.'", "value": "'.$elem.'"}';
+            if ($e_idx < $arr_e_len  - 1) {
+                echo ',';
+            }
+        }
+        echo "]";
+    }
+
     private function printTechniqueCards($tech_meta_arr) {
         /* Print out cards in two columns */
         $array_pairs = array_chunk($tech_meta_arr, 3);
@@ -249,7 +274,6 @@ class Portal extends CI_Controller {
                 'instrumentExamples' =>$this->Techniques_model->getMediasForTechniqueSection($x,'INSTRUMENT'),
                 'localisationItems' =>$this->Techniques_model->getLocalisationItems($x),
                 'locationItems' =>$this->Techniques_model->getLocationItems($x)
-
             )
         );
     }

@@ -44,8 +44,6 @@
         }
         else {
             foreach ($searchResults as $r) {
-
-
                 $mediaForLIST = $Media_model->getMediaInfosByTechniqueIdAndSection($r->id, 'LIST');
                 $media_location = 'nowhere.png';
                 if (isset($mediaForLIST[0])) {
