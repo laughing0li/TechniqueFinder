@@ -729,7 +729,7 @@ class Techniques_model extends MY_Model
         $r5 = $this->db->query('select distinct state as name from location')->result();
         $r6 = $this->db->query('select distinct name from option_choice')->result();
         $r7 = $this->db->query('select distinct name from elements')->result();
-        $r8 = $this->db->query('select distinct symbol from elements')->result();
+        $r8 = $this->db->query('select distinct symbol as name from elements')->result();
         return array_merge($r1, $r2, $r3, $r4, $r5, $r6, $r7, $r8);
     }
 
