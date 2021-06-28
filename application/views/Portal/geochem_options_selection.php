@@ -120,6 +120,8 @@ function onClick(e){
             };
 	    xmlhttp.open("GET", "<?php echo base_url().'Portal/getTechniqueChoices/';?>"+step1_id+"/0", true);
             xmlhttp.send();
+            // Reset step 2 radio buttons
+            $('input[name="btnradio-2"]').prop('checked', false);
 
         } else if (element.attr('_type') == 'step2Option') {
             step2_id = element.attr('_id');
@@ -132,6 +134,7 @@ function onClick(e){
 	    var step1_id = $('#step1OptionVal').val();
 	    xmlhttp.open("GET", "<?php echo base_url().'Portal/getTechniqueChoices/';?>"+step1_id+"/"+step2_id, true);
             xmlhttp.send();
+            // Set up autocomplete keywords for step 3
             autoKeywordUpdate(step1_id, step2_id);
         }
     }
