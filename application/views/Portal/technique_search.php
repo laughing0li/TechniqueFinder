@@ -30,7 +30,7 @@
 	    <div class="card">
                 <div class="card-body">
                     <form action="<?php echo base_url();?>Portal/techniqueSearch" method="get" name="searchForm" id="searchForm">
-                        <input id="myAutocomplete" type="text" class="form-control" name="q" placeholder="Type search term here">
+                        <input id="myAutocomplete" type="text" class="form-control" name="q" placeholder="Type search term here" autocomplete="off">
                         <p></p>
                         <button class="btn btn-primary" type="button" onclick="document.searchForm.submit()">Go</button>
                     </form>
@@ -83,6 +83,18 @@
         <div style="clear: both"><!-- ff --></div>
 
     <div id="infobox"> </div>
+<script>
+var datasrc = [
+<?php $keyword_list = $this->Techniques_model->getKeywordList();
+foreach($keyword_list as $keyword) {
+    echo "{label: '".$keyword->name."', value: '".$keyword->name."'},\n";
+}
+?>
+];
+const ac = new Autocomplete(document.getElementById('myAutocomplete'), {
+      data: datasrc
+})
+</script>
 
 </body>
 
