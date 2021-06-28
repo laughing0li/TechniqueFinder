@@ -29,7 +29,7 @@
             <div class="card-body">
 		<h5 class="card-title"><?php echo $staticData['tf.home.searchExplanation']; ?></h5>
                 <form action="<?php echo base_url();?>Portal/techniqueSearch" method="get" name="searchForm" id="searchForm">
-                    <input id="myAutocomplete" type="text" class="form-control" name="q" placeholder="Type search term here">
+                    <input id="myAutocomplete" type="text" class="form-control" name="q" placeholder="Please type search term here" autocomplete="off">
                     <p></p>
                     <button class="btn btn-primary" type="button" onclick="document.searchForm.submit()">Go</button>
                 </form>
