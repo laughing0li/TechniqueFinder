@@ -55,7 +55,7 @@
                     <div class="row">
                         <!-- STEP 3 -->
                         <h3 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.step3.title']);?> </h3>
-                        <input id="step3" class="form-control" style="font-size: 12px; max-width: 32rem" type="text" placeholder="Type here element interested in" autocomplete="off"></input>
+                        <input id="step3" _type="step3Option" class="form-control" style="font-size: 12px; max-width: 32rem" type="text" placeholder="Type here element interested in" onchange="elementClick(this)" autocomplete="off"></input>
                     </div>
                 </div> <!-- END LHS COLUMN -->
 
@@ -69,20 +69,6 @@
             </div> <!-- END class="row" -->
 
             <br>
-            <br>
-
-            <div class="d-flex justify-content-end">
-                <div class="p-2">
-                    <form action="<?php echo base_url().'Portal/getTechniqueByOptionCombination';?>" method="get" name="choiceForm" id="choiceForm">
-                        <input type="hidden" id="science" name="science" value="GEOCHEM">
-                        <input type="hidden" id="step1OptionVal" name="step1Option" value="">
-                        <input type="hidden" id="step2OptionVal" name="step2Option" value="">
-                        <input type="hidden" id="step3TextVal" name="step3Text" value="">
-                        <button type="submit" class="btn btn-primary" onclick="onSubmit()">Submit</button>
-                    </form>
-                </div>
-            </div>
-
             <br>
 
       </div>            
@@ -102,10 +88,9 @@
     
 
 <script type="text/javascript">
-/* This does two things:
-   1. Updates the cards on the right hand side as the user makes choices
-   2. Assigns radio button values to the submit form when user clicks on buttons
-*/
+/*
+ * This updates the cards on the right hand side as the user makes choices
+ */
 function onClick(e){
     var element = $(e);
     // Update RHS display
@@ -118,10 +103,12 @@ function onClick(e){
                     document.getElementById("display-area").innerHTML = this.responseText;
                 }
             };
-	    xmlhttp.open("GET", "<?php echo base_url().'Portal/getTechniqueChoices/';?>"+step1_id+"/0", true);
+	    xmlhttp.open("GET", "<?php echo base_url().'Portal/getTechniqueChoices/';?>"+step1_id+"/0/Notspecified", true);
             xmlhttp.send();
             // Reset step 2 radio buttons
             $('input[name="btnradio-2"]').prop('checked', false);
+            // Reset step 3 input
+            $('#step3').removeAttr('disabled');            
 
         } else if (element.attr('_type') == 'step2Option') {
             step2_id = element.attr('_id');
@@ -131,30 +118,28 @@ function onClick(e){
                     document.getElementById("display-area").innerHTML = this.responseText;
                 }
             };
-	    var step1_id = $('#step1OptionVal').val();
-	    xmlhttp.open("GET", "<?php echo base_url().'Portal/getTechniqueChoices/';?>"+step1_id+"/"+step2_id, true);
+	    var step1_id = $('input[name="btnradio-1"]:checked').attr('_id');
+	    xmlhttp.open("GET", "<?php echo base_url().'Portal/getTechniqueChoices/';?>"+step1_id+"/"+step2_id+"/Notspecified", true);
             xmlhttp.send();
             // Set up autocomplete keywords for step 3
             autoKeywordUpdate(step1_id, step2_id);
         }
     }
-
-    // Fill out submit form
-    var step1_id = null;
-    var step2_id = null;
-    if (element.attr('_type') == 'step1Option'){
-        step1_id = element.attr('_id');
-        $('#step1OptionVal').val(step1_id);
-    }
-    else if (element.attr('_type') == 'step2Option'){
-        step2_id = element.attr('_id');
-        $('#step2OptionVal').val(step2_id);
-    }
 }
 
-/* This assigns text form values to the submit form when the user clicks on submit button */
-function onSubmit() {
-    $('#step3TextVal').val($('#step3').val());
+/* Called when user selects an element  in Step 3 */
+function elementClick(e) {
+    var step1_id = $('input[name="btnradio-1"]:checked').attr('_id');
+    var step2_id = $('input[name="btnradio-2"]:checked').attr('_id');
+    var step3_val = $('#step3').val();
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("display-area").innerHTML = this.responseText;
+        }
+    };
+    xmlhttp.open("GET", "<?php echo base_url().'Portal/getTechniqueChoices/';?>"+step1_id+"/"+step2_id+"/"+step3_val, true);
+    xmlhttp.send();
 }
 
 /* This updates the set of autocomplete keywords in Step 3 */
@@ -162,7 +147,13 @@ function autoKeywordUpdate(step1_id, step2_id) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            const ac = new Autocomplete(document.getElementById('step3'), { data: JSON.parse(this.responseText) });
+            const jsonResp = JSON.parse(this.responseText);
+            if (jsonResp.length === 0) {
+                $('#step3').attr('disabled', 'disabled');            
+            } else {
+                $('#step3').removeAttr('disabled');            
+                const ac = new Autocomplete(document.getElementById('step3'), { data: jsonResp });
+            }
         }
     };
     xmlhttp.open("GET", "<?php echo base_url().'Portal/getTechniqueKeywords/';?>"+step1_id+"/"+step2_id, true);

@@ -119,7 +119,14 @@ class Portal extends CI_Controller {
         ));
     }
 
-    public function getTechniqueChoices($id1, $id2){
+    /**
+     * Gets cards to display on RHS of "Geochemical Analysis" page
+     *
+     * @param       string  $id1   option choice id for step 1 
+     * @param       string  $id2   option choice id for step 2 
+     * @param       string  $val3  text value for step 3
+     */
+    public function getTechniqueChoices($id1, $id2, $val3){
         $this->load->model('OptionChoice_model');
 	$chosen1 = $this->OptionChoice_model->getOptionChoiceById($id1);
 	if ($id2 == "0") {
@@ -128,9 +135,17 @@ class Portal extends CI_Controller {
 	    if ($tech_meta_arr) {
 	        $this->printTechniqueCards($tech_meta_arr);
 	    }
-	} else {
+	} else if ($val3 == "Notspecified") {
+            // User has selected first and second steps only
 	    $chosen2 = $this->OptionChoice_model->getOptionChoiceById($id2);
 	    $tech_meta_arr = $this->OptionChoice_model->getTechniqueCatByAnalysis($chosen1->name, $chosen2->name);
+	    if ($tech_meta_arr) {
+		$this->printTechniqueCards($tech_meta_arr);
+	    }
+        } else {
+            // User has chosen values at all three steps
+	    $chosen2 = $this->OptionChoice_model->getOptionChoiceById($id2);
+	    $tech_meta_arr = $this->OptionChoice_model->getTechniqueCatByElement($chosen1->name, $chosen2->name, $val3);
 	    if ($tech_meta_arr) {
 		$this->printTechniqueCards($tech_meta_arr);
 	    }
@@ -169,7 +184,7 @@ class Portal extends CI_Controller {
              echo "<div class='row'>";
              foreach ($tech_meta_pair as $tech_meta) { 
                  echo "<div class='col-sm-4'>".
-                      "<div class='card mb-3 tf-card'>".
+                      "<div class='card mb-3 tf-card' onclick='window.location.assign(\"".base_url()."Portal/viewTechnique/37\")'>".
                       "<div class='card-header text-white bg-primary'>$tech_meta->category</div>".
                       "<div class='card-body'>";
                  echo ($tech_meta->model!='')? "<b>Models:</b> $tech_meta->model":"";
