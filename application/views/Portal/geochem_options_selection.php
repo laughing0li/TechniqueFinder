@@ -41,8 +41,8 @@
                         <div class="btn-group" role="group">
                             <?php
                             foreach($step2_list as $r){
-                                echo '<input _id="'.$r->id.'" _type="step2Option" type="radio" class="btn-check" name="btnradio-2" id="btnradio-'.$r->id.'" autocomplete="off" onclick="onClick(this);">';
-                                echo '<label class="btn btn-primary" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
+                                echo '<input _id="'.$r->id.'" _type="step2Option" type="radio" class="btn-check" name="btnradio-2" id="btnradio-'.$r->id.'" autocomplete="off" disabled="disabled" onclick="onClick(this);">';
+                                echo '<label class="btn btn-primary disabled" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
                             }
                             ?>
                         </div>
@@ -55,7 +55,7 @@
                     <div class="row">
                         <!-- STEP 3 -->
                         <h3 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.step3.title']);?> </h3>
-                        <input id="step3" _type="step3Option" class="form-control" style="font-size: 12px; max-width: 32rem" type="text" placeholder="Type here element interested in" onchange="elementClick(this)" autocomplete="off"></input>
+                        <input id="step3" _type="step3Option" class="form-control" style="font-size: 12px; max-width: 32rem" type="text" placeholder="Type here element interested in" onchange="elementClick(this)" autocomplete="off" disabled="disabled"></input>
                     </div>
                 </div> <!-- END LHS COLUMN -->
 
@@ -96,6 +96,7 @@ function onClick(e){
     // Update RHS display
     if (element.attr('type') == 'radio') {
         if (element.attr('_type') == 'step1Option') {
+            // User clicked on "Step1" button
             step1_id = element.attr('_id');
 	    var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
@@ -105,12 +106,17 @@ function onClick(e){
             };
 	    xmlhttp.open("GET", "<?php echo base_url().'Portal/getTechniqueChoices/';?>"+step1_id+"/0/Notspecified", true);
             xmlhttp.send();
+            // Enable step 2 radio buttons
+            $('input[name="btnradio-2"]').removeAttr('disabled');
+            $(".btn-group label").removeClass('disabled');
+
             // Reset step 2 radio buttons
             $('input[name="btnradio-2"]').prop('checked', false);
             // Reset step 3 input
-            $('#step3').removeAttr('disabled');            
+            $('#step3').attr('disabled', 'disabled');
 
         } else if (element.attr('_type') == 'step2Option') {
+            // User clicked on "Step2" button
             step2_id = element.attr('_id');
 	    var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {

@@ -67,6 +67,10 @@ class Portal extends CI_Controller {
         ));
     }
 
+    /**
+     * Assemble the data to display "Step 1", "Step 2", "Step 3" options from the "Geochemical Analysis" page
+     *
+     */
     public function geochemOptionsSelection(){
         $staticData = array();
         $staticData['tf.geochemChoices.quickGuide'] = $this->Static_model->getStaticDataByName('tf.geochemChoices.quickGuide')->text;
@@ -87,6 +91,10 @@ class Portal extends CI_Controller {
         ));
     }
 
+    /**
+     * Assemble the data to display the "Experimental Procedure" page
+     *
+     */
     public function expProcOptionsSelection(){
         $staticData = array();
         $staticData['tf.expProcChoices.quickGuide'] = $this->Static_model->getStaticDataByName('tf.expProcChoices.quickGuide')->text;;
@@ -100,6 +108,10 @@ class Portal extends CI_Controller {
         ));
     }
 
+    /**
+     * Assemble the data to display the "Sample Preparation" page
+     *
+     */
     public function samplePrepOptionsSelection(){
         die; /* TEMPORARY */
         $staticData = array();
@@ -177,8 +189,13 @@ class Portal extends CI_Controller {
         echo "]";
     }
 
+    /**
+     * Emits HTML to display a page of cards on RHS of "Geochemical Analysis" page
+     *
+     * @param       array $tech_meta_arr  array with "category", "model", "beam_diameter", "min_conc" attributes
+     */
     private function printTechniqueCards($tech_meta_arr) {
-        /* Print out cards in two columns */
+        /* Print out cards in three columns */
         $array_pairs = array_chunk($tech_meta_arr, 3);
         foreach ($array_pairs as $tech_meta_pair) {
              echo "<div class='row'>";
