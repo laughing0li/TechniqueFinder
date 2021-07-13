@@ -67,6 +67,10 @@ class Portal extends CI_Controller {
         ));
     }
 
+    /**
+     * Assemble the data to display "Step 1", "Step 2", "Step 3" options from the "Geochemical Analysis" page
+     *
+     */
     public function geochemOptionsSelection(){
         $staticData = array();
         $staticData['tf.geochemChoices.quickGuide'] = $this->Static_model->getStaticDataByName('tf.geochemChoices.quickGuide')->text;
@@ -87,6 +91,10 @@ class Portal extends CI_Controller {
         ));
     }
 
+    /**
+     * Assemble the data to display the "Experimental Procedure" page
+     *
+     */
     public function expProcOptionsSelection(){
         $staticData = array();
         $staticData['tf.expProcChoices.quickGuide'] = $this->Static_model->getStaticDataByName('tf.expProcChoices.quickGuide')->text;;
@@ -100,6 +108,10 @@ class Portal extends CI_Controller {
         ));
     }
 
+    /**
+     * Assemble the data to display the "Sample Preparation" page
+     *
+     */
     public function samplePrepOptionsSelection(){
         die; /* TEMPORARY */
         $staticData = array();
@@ -119,7 +131,14 @@ class Portal extends CI_Controller {
         ));
     }
 
-    public function getTechniqueChoices($id1, $id2){
+    /**
+     * Gets cards to display on RHS of "Geochemical Analysis" page
+     *
+     * @param       string  $id1   option choice id for step 1 
+     * @param       string  $id2   option choice id for step 2 
+     * @param       string  $val3  text value for step 3
+     */
+    public function getTechniqueChoices($id1, $id2, $val3){
         $this->load->model('OptionChoice_model');
 	$chosen1 = $this->OptionChoice_model->getOptionChoiceById($id1);
 	if ($id2 == "0") {
@@ -128,9 +147,17 @@ class Portal extends CI_Controller {
 	    if ($tech_meta_arr) {
 	        $this->printTechniqueCards($tech_meta_arr);
 	    }
-	} else {
+	} else if ($val3 == "Notspecified") {
+            // User has selected first and second steps only
 	    $chosen2 = $this->OptionChoice_model->getOptionChoiceById($id2);
 	    $tech_meta_arr = $this->OptionChoice_model->getTechniqueCatByAnalysis($chosen1->name, $chosen2->name);
+	    if ($tech_meta_arr) {
+		$this->printTechniqueCards($tech_meta_arr);
+	    }
+        } else {
+            // User has chosen values at all three steps
+	    $chosen2 = $this->OptionChoice_model->getOptionChoiceById($id2);
+	    $tech_meta_arr = $this->OptionChoice_model->getTechniqueCatByElement($chosen1->name, $chosen2->name, $val3);
 	    if ($tech_meta_arr) {
 		$this->printTechniqueCards($tech_meta_arr);
 	    }
@@ -162,14 +189,19 @@ class Portal extends CI_Controller {
         echo "]";
     }
 
+    /**
+     * Emits HTML to display a page of cards on RHS of "Geochemical Analysis" page
+     *
+     * @param       array $tech_meta_arr  array with "category", "model", "beam_diameter", "min_conc" attributes
+     */
     private function printTechniqueCards($tech_meta_arr) {
-        /* Print out cards in two columns */
+        // Print out cards in three columns
         $array_pairs = array_chunk($tech_meta_arr, 3);
         foreach ($array_pairs as $tech_meta_pair) {
              echo "<div class='row'>";
              foreach ($tech_meta_pair as $tech_meta) { 
                  echo "<div class='col-sm-4'>".
-                      "<div class='card mb-3 tf-card'>".
+                      "<div class='card mb-3 tf-card' onclick='window.location.assign(\"".base_url()."Portal/viewGeochemAnalysis/40\")'>".
                       "<div class='card-header text-white bg-primary'>$tech_meta->category</div>".
                       "<div class='card-body'>";
                  echo ($tech_meta->model!='')? "<b>Models:</b> $tech_meta->model":"";
@@ -242,7 +274,33 @@ class Portal extends CI_Controller {
         );
     }
 
-    public function viewTechnique($x){
+    /**
+     * Assemble data for the final page after the "Geochemical Analysis" page
+     *
+     * @param       string $id  technique identifier
+     */
+    public function viewGeochemAnalysis($id) {
+        $this->load->model('Element_model');
+        $this->load->model('Techniques_model');
+        $theTechnique = $this->Techniques_model->getTechniqueData($id);
+        $instrumentType =  $theTechnique->instrument_name;
+        $this->load->view('Portal/geochem_analysis_view',
+            array(
+                'theTechnique' => $theTechnique,
+                'theContacts' => $this->Techniques_model->getContactsForTechnique($id),
+                'localisationItems' => $this->Techniques_model->getLocalisationItems($id),
+                'locationItems' => $this->Techniques_model->getLocationItems($id),
+                'elementItems' => $this->Element_model->getAllElementsByInstrumentType($instrumentType)
+            )
+        );
+    }
+
+    /**
+     * Assemble data for the final page after the "Choices for Experimental Procedures" page
+     *
+     * @param       string $id  technique identifier
+     */
+    public function viewTechnique($id){
 
         $science = '';
         $left = '';
@@ -257,23 +315,21 @@ class Portal extends CI_Controller {
             $right=$_POST['right'];
         }
 
-
         $this->load->model('Techniques_model');
-        $this->load->view(
-            'Portal/technique_view',
+        $this->load->view('Portal/technique_view',
             array(
                 'science'=>$science,
                 'right' => $right,
                 'left' => $left,
-                'prevPage'=> $this->input->get('nav_from'),
-                'theTechnique'=> $this->Techniques_model->getTechniqueData($x),
-                'caseStudies'=> $this->Techniques_model->getCaseStudiesforTechnique($x),
-                'theContacts' => $this->Techniques_model->getContactsForTechnique($x),
-                'references' => $this->Techniques_model->getReferencesForTechnique($x),
-                'outputExamples' => $this->Techniques_model->getMediasForTechniqueSection($x,'OUTPUT'),
-                'instrumentExamples' =>$this->Techniques_model->getMediasForTechniqueSection($x,'INSTRUMENT'),
-                'localisationItems' =>$this->Techniques_model->getLocalisationItems($x),
-                'locationItems' =>$this->Techniques_model->getLocationItems($x)
+                'prevPage' => $this->input->get('nav_from'),
+                'theTechnique' => $this->Techniques_model->getTechniqueData($id),
+                'caseStudies' => $this->Techniques_model->getCaseStudiesforTechnique($id),
+                'theContacts' => $this->Techniques_model->getContactsForTechnique($id),
+                'references' => $this->Techniques_model->getReferencesForTechnique($id),
+                'outputExamples' => $this->Techniques_model->getMediasForTechniqueSection($id,'OUTPUT'),
+                'instrumentExamples' => $this->Techniques_model->getMediasForTechniqueSection($id,'INSTRUMENT'),
+                'localisationItems' => $this->Techniques_model->getLocalisationItems($id),
+                'locationItems' => $this->Techniques_model->getLocationItems($id)
             )
         );
     }

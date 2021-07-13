@@ -900,6 +900,14 @@ INSERT INTO `elements` VALUES(NULL, 'Hydrogen','H','1'),
 (NULL, 'Oganesson','Og','118');
 UNLOCK TABLES;
 
+--
+-- View structure for view `elements_view`
+--
+DROP VIEW IF EXISTS `elements_view`;
+CREATE VIEW `elements_view` AS
+SELECT es.id as elements_set_id, e.name, e.symbol, e.atomic_number
+from elements_elements_set ees join elements e on ees.elements_id = e.id
+               join elements_set es on es.id = ees.elements_set_id;
 
 --
 -- Table structure for table `case_study`
@@ -1421,7 +1429,7 @@ INSERT INTO `static_content` VALUES (1,7,'<h1>Find the instruments and facilitie
 (18,5,'<p>then</p>\r\n','tf.geochemChoices.comparison.title'),
 (19,2,'Step 1: Choose a research interest\r\n','tf.geochemChoices.step1.title'),
 (20,2,'Step 2: Type of analysis', 'tf.geochemChoices.step2.title' ),
-(21,2,'Step 3: Choose elements, isotopic system or minerals\r\n','tf.geochemChoices.step3.title');
+(21,2,'Step 3: Choose elements\r\n','tf.geochemChoices.step3.title');
 
 
 /*!40000 ALTER TABLE `static_content` ENABLE KEYS */;
@@ -1679,11 +1687,14 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 /*!40000 ALTER TABLE `technique` ENABLE KEYS */;
 UNLOCK TABLES;
 
+--
+-- View structure for view `technique_view`
+--
 DROP VIEW IF EXISTS `technique_view`;
 CREATE VIEW `technique_view` AS
 SELECT t.id as technique_id, m.category_type, m.category, m.analysis_type, t.model, t.manufacturer, t.sample_type,
  t.wavelength, t.beam_diameter, t.min_conc, t.mass, t.volume, t.pressure, t.temperature, t.ext_reference, t.summary,
- t.description, t.keywords, t.version, t.alternative_names
+ t.description, t.keywords, t.version, t.alternative_names, t.elements_set_id
 from technique t join technique_metadata_link on t.id = technique_metadata_link.technique_id
                join technique_metadata m on m.id = technique_metadata_link.technique_metadata_id;
 
