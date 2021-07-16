@@ -1,13 +1,16 @@
-<?php $this->load->view('layout/portal_header.php');?>
+<?php $this->load->view('layout/portal_header.php'); ?>
 <head>
-    <title>AGN Laboratory Finder</title>
+    <title>Geochemical Analysis</title>
 </head>
 <body>
-        
-        <div id="content" class="container">
+<div class="container-lg">
+
+<?php include 'header.php'; ?>
+
+ <div id="content" class="container">
 	    <div class="d-flex justify-content-end">
                 <div class="p-2">
-		    <button type="submit" class="btn btn-primary" onclick="window.location.assign('<?php echo base_url();?>Portal')">Back</button>
+		    <button type="submit" class="btn outline-primary" onclick="window.location.assign('<?php echo base_url();?>Portal')">Back</button>
                 </div>
             </div>
            
@@ -25,7 +28,7 @@
                             <?php
                               foreach($step1_list as $r){
                                      echo '<input _id="'.$r->id.'" _type="step1Option"  type="radio" class="btn-check" name="btnradio-1" id="btnradio-'.$r->id.'" autocomplete="off" onclick="onClick(this)">';
-                                     echo '<label class="btn btn-primary" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
+                                     echo '<label class="btn outline-primary" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
                               }
                             ?>
                         </div>
@@ -42,7 +45,7 @@
                             <?php
                             foreach($step2_list as $r){
                                 echo '<input _id="'.$r->id.'" _type="step2Option" type="radio" class="btn-check" name="btnradio-2" id="btnradio-'.$r->id.'" autocomplete="off" disabled="disabled" onclick="onClick(this);">';
-                                echo '<label class="btn btn-primary disabled" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
+                                echo '<label class="btn outline-primary disabled" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
                             }
                             ?>
                         </div>
