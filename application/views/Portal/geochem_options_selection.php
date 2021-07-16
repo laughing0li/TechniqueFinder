@@ -3,6 +3,20 @@
     <title>Geochemical Analysis</title>
 </head>
 <body>
+<div class="container-lg">
+
+<?php include 'header.php'; ?>
+
+ <div id="content" class="container">
+	    <div class="d-flex justify-content-end">
+                <div class="p-2">
+		    <button type="submit" class="btn outline-primary" onclick="window.location.assign('<?php echo base_url();?>Portal')">Back</button>
+                </div>
+            </div>
+           
+            <div class="alert alert-primary">
+<?php echo $staticData['tf.geochemChoices.quickGuide']; ?>
+            </div>
 
             <div class="row">
                 <!-- LHS COLUMN -->
@@ -14,7 +28,7 @@
                             <?php
                               foreach($step1_list as $r){
                                      echo '<input _id="'.$r->id.'" _type="step1Option"  type="radio" class="btn-check" name="btnradio-1" id="btnradio-'.$r->id.'" autocomplete="off" onclick="onClick(this)">';
-                                     echo '<label class="btn btn-primary" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
+                                     echo '<label class="btn outline-primary" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
                               }
                             ?>
                         </div>
@@ -31,7 +45,7 @@
                             <?php
                             foreach($step2_list as $r){
                                 echo '<input _id="'.$r->id.'" _type="step2Option" type="radio" class="btn-check" name="btnradio-2" id="btnradio-'.$r->id.'" autocomplete="off" disabled="disabled" onclick="onClick(this);">';
-                                echo '<label class="btn btn-primary disabled" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
+                                echo '<label class="btn outline-primary disabled" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
                             }
                             ?>
                         </div>
@@ -46,20 +60,7 @@
                         <h3 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.step3.title']);?> </h3>
                         <input id="step3" _type="step3Option" class="form-control" style="font-size: 12px; max-width: 32rem" type="text" placeholder="Type here element interested in" onchange="elementClick(this)" autocomplete="off" disabled="disabled"></input>
                     </div>
-                </div>
-                <div class="row">
-                    <!-- THEN -->
-                    <img src="<?php echo base_url() . 'assets/images/space.gif' ?>" width="20" height="5"/>
-                    <span style="text-align:center;"><h1
-                                class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']); ?> </h1></span>
-                </div>
-                <div class="row">
-                    <!-- STEP 3 -->
-                    <h3 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.step3.title']); ?> </h3>
-                    <input id="step3" class="form-control" style="font-size: 12px; max-width: 32rem" type="text"
-                           placeholder="Type here element interested in" autocomplete="off"></input>
-                </div>
-            </div> <!-- END LHS COLUMN -->
+                </div> <!-- END LHS COLUMN -->
 
                 <!-- RHS COLUMN -->
 	        <div class="col-7">
@@ -77,14 +78,17 @@
 
 
 
+    <div id="footer" class="container">
+        <?php include 'footer.php';?>
+    </div>
+    <div style="clear: both"><!-- ff --></div>
 
-<div style="clear: both"><!-- ff --></div>
+    <div id="infobox"> </div>
+    <div class="container">
+        <?php $this->load->view('layout/portal_footer.php')?>
+    </div>
 
-<div id="infobox"></div>
-<div class="container">
-    <?php $this->load->view('layout/portal_footer.php') ?>
-</div>
-
+    
 
 <script type="text/javascript">
 /*
@@ -92,15 +96,6 @@
  */
 function onClick(e){
     var element = $(e);
-    // Update RHS display
-    if (element.attr('type') == 'radio') {
-        if (element.attr('_type') == 'step1Option') {
-            // User clicked on "Step1" button
-            step1_id = element.attr('_id');
-	    var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document
     // Update RHS display
     if (element.attr('type') == 'radio') {
         if (element.attr('_type') == 'step1Option') {
