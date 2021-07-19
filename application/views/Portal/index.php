@@ -95,14 +95,15 @@
                 </div>
             </div>
             <div class="col-4" style="color: #7e7caa">
-                <div class="border-bottom" style="margin: 68px 0"></div>
+                <a class="nav-link" href="<?php echo base_url(); ?>Portal/adminLogin">Admin Login</a>
+                <div class="border-bottom" style="margin: 28px 0"></div>
                 <p>NEED SOME HELP?</p>
                 if you cannot find what you are looking
                 <br>
                 for, <a href="mailto:alexander.prent@curtin.edu.au" >
                     <em>please reach out</em></a>
                     and we can help
-                <div class="border-bottom" style="margin: 68px 0"></div>
+                <div class="border-bottom" style="margin: 112px  0 28px 0"></div>
                 <p>ABOUT THE AGN</p>
                 <a href="https://www.auscope.org.au/agn">
                     The AuScope Geochemistry Network

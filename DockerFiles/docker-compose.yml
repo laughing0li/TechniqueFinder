@@ -30,6 +30,7 @@ services:
       - ../:/www
       - ./dev-database.php:/www/application/config/database.php
       - ./dev-config.php:/www/application/config/config.php
+    entrypoint: sh -c "cd /www/application/third_party && composer install && exec docker-php-entrypoint php-fpm" # install auth0 libs
     environment:
       - PHP_ENV=development
     networks:

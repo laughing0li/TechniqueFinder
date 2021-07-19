@@ -334,5 +334,12 @@ class Portal extends CI_Controller {
         );
     }
 
+    /**
+     * Go to admin login page
+     *
+     */
+    public function adminLogin() {
+        $this->load->view('login/auth');
+    }
 
 }
