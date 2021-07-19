@@ -719,3 +719,6 @@ a.ui-button:active,
     box-shadow: 0 0 0 .2rem rgba(237, 93, 74, 0.5)
 }
 
+.bg-primary {
+    background-color: #ED5D4A !important;
+}
