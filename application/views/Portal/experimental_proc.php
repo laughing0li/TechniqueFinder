@@ -6,6 +6,11 @@
 
 <div id="content" class="container">
 
+    <div class="d-flex justify-content-end">
+        <div class="p-2">
+            <button type="submit" class="btn outline-primary" onclick="window.location.assign('<?php echo base_url();?>Portal')">Back</button>
+        </div>
+    </div>
 
     <?php echo $staticData['tf.expProcChoices.quickGuide']; ?>
 
