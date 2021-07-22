@@ -12,7 +12,8 @@
             <div class="col-8">
                 <div class="container" id="content">
 
-                    <p  style="font-size: 34px; color: #282572; font-family: 'Open Sans', sans-serif">AGN Laboratory Finder</p>
+                    <!-- <p  style="font-size: 34px; color: #282572; font-family: 'Open Sans', sans-serif">AGN Laboratory Finder</p> -->
+                    <br>
                     <div class="border-bottom" style="margin: 50px 0"></div>
 
                     <p class="fs-6 lh-lg fw-bold" style="font-family: 'Open Sans', sans-serif;">
@@ -127,7 +128,7 @@
 
 <div style="clear: both"><!-- ff --></div>
 
-<div class="container" id="infobox">
+<div style='z-index: -1' class="container" id="infobox">
     <?php echo $staticData['tf.home.infoboxContent']; ?>
 </div>
 <script>

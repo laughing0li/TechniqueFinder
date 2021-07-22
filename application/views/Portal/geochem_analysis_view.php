@@ -5,34 +5,40 @@
  */
 
 $this->load->view('layout/portal_header.php');?>
-<head><title>AGN Laboratory Finder</title></head>
+<head><title>Analysis View</title></head>
 
 
 <body>
+<div class="container-md">
 
+    <?php include 'header.php'; ?>
     <div id="content" class="container">
-	<div class="d-flex mb-2">
-            <div class="p-2">
-                <button class="btn btn-primary" type="submit" onclick="window.location.assign('<?php echo base_url();?>Portal')">Back to start</button>
+        <div class="row">
+            <div class="col">
+
+            <h1><?php echo $theTechnique->name; ?></h1>
+        <p class='tf-font-14'><?php echo $theTechnique->description; ?></p>
+            </div>
+            <div class="col" >
+            <button style='float: right' class="btn outline-primary" type="submit" onclick="window.location.assign('<?php echo base_url();?>Portal/geochemOptionsSelection')">Back</button>
+
             </div>
         </div>
-
-
-        <h1><?php echo $theTechnique->name; ?></h1>
-
-        <hr>
-        <p class='tf-font-14'><?php echo $theTechnique->description; ?></p>
-        <hr>
+	
         <br>
-        <div class='row tf-font-14'>
+        <div class='row tf-font-14' style='m'>
 
         <?php
         foreach($localisationItems as $key=>$localisation) {
-            echo "<span class='tf-font-18' style='text-decoration: underline; font-weight: bold'>".$locationItems[$key][1]."</span>";
+            echo "<div class='border-bottom' style='margin: 20px 0'></div>";
 
-            echo "<table class='table w-50 p-3'>";
+            echo "<div style='border: 1px solid #ED5D4A; width: 400px; padding: 20px 20px'>";
+            
+            echo "<span class='tf-font-18' font-weight: bold'>".$locationItems[$key][1]."</span>";
+
+            echo "<table class='table ' style='margin-top: 20px' >";
             echo "<thead>";
-            echo "<tr class='tf-font-14'>";
+            echo "<tr class='tf-font-14' style='background: #ED5D4A; color: white !important'>";
                     echo (empty($theTechnique->model)) ? "":"<th scope='col'>Instrument</th>";
                     echo (empty($theTechnique->model)) ? "":"<th scope='col'>Model</th>";
                     echo (empty($theTechnique->sample_type)) ? "":"<th scope='col'>Elements analysed</th>";
@@ -47,24 +53,22 @@ $this->load->view('layout/portal_header.php');?>
             echo "</tr>";
             echo "</tbody>";
             echo "</table>";
-            echo "<hr>";
-            echo "<span style='text-decoration: underline; font-weight: bold'>Contact Details</span>";
-            echo "<span>".$locationItems[$key][6]."</span>";
-            echo "<span>T: ".$locationItems[$key][5]."</span>";
-            echo "<span>E: ".$locationItems[$key][4]."</span>";
-            echo "<span>Address: ".$locationItems[$key][2]."</span>";
-            echo "<hr>";
+            echo "<p style='text-decoration: underline; font-weight: bold'>Contact Details</p>";
+            echo "<p>".$locationItems[$key][6]."</p>";
+            echo "<p>T: ".$locationItems[$key][5]."</p>";
+            echo "<p>E: ".$locationItems[$key][4]."</p>";
+            echo "<p>Address: ".$locationItems[$key][2]."</p>";
+            echo "</div>";
             echo "<br>";
         }
         ?>
+
         </div> <!-- end 'row' -->
         <br>
 
     </div>
-    <div id="footer">
         <?php include 'footer.php';?>
-    </div>
-
+    
 </body>
 
 <?php $this->load->view('layout/portal_footer.php')?>
