@@ -26,7 +26,7 @@ $this->load->view('layout/portal_header.php');?>
         </div>
 	
         <br>
-        <div class='row tf-font-14' style='m'>
+        <div class='row tf-font-14'>
 
         <?php
         foreach($localisationItems as $key=>$localisation) {
