@@ -15,7 +15,10 @@
             </div>
            
             <div class="alert alert-primary">
-<?php echo $staticData['tf.geochemChoices.quickGuide']; ?>
+                <strong >
+                <?php echo $staticData['tf.geochemChoices.quickGuide']; ?>
+
+                </strong>
             </div>
 
             <div class="row">
@@ -28,7 +31,7 @@
                             <?php
                               foreach($step1_list as $r){
                                      echo '<input _id="'.$r->id.'" _type="step1Option"  type="radio" class="btn-check" name="btnradio-1" id="btnradio-'.$r->id.'" autocomplete="off" onclick="onClick(this)">';
-                                     echo '<label class="btn outline-primary" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
+                                     echo '<label style="box-shadow:none" class="btn outline-primary" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
                               }
                             ?>
                         </div>
@@ -45,7 +48,7 @@
                             <?php
                             foreach($step2_list as $r){
                                 echo '<input _id="'.$r->id.'" _type="step2Option" type="radio" class="btn-check" name="btnradio-2" id="btnradio-'.$r->id.'" autocomplete="off" disabled="disabled" onclick="onClick(this);">';
-                                echo '<label class="btn outline-primary disabled" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
+                                echo '<label style="box-shadow:none"  class="btn outline-primary disabled" for="btnradio-'.$r->id.'">'.$r->name.'</label>';
                             }
                             ?>
                         </div>

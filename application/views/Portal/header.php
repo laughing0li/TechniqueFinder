@@ -3,7 +3,8 @@
 <div class="container" style="margin-top: 30px; margin-bottom: 80px">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/Portal"><img src="/assets/images/AGN-Logo.png" width=300 height="60"></a>
+            <a class="navbar-brand" href="/Portal"><img src="/assets/images/AGN-LOGO1.png" width=350 height="80"></a>
+            <!-- <a class="navbar-brand" href="/Portal"><img src="/assets/images/AGN-Logo.png" width=300 height="60"></a> -->
             <button class="navbar-toggler outline-primary" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"
                     aria-expanded="false" aria-label="Toggle navigation">

@@ -1,111 +1,70 @@
-<?php $this->load->view('layout/portal_header.php');?>
+<?php $this->load->view('layout/portal_header.php'); ?>
+
 <head>
     <title>AGN Lab Finder Admin Login</title>
+    <link href='https://getbootstrap.com/docs/5.0/examples/sign-in/signin.css' rel='stylesheet'>
 </head>
 
-<body>
+<body class='text-center'>
 
-<div class="container-md">
+    <div style="margin: auto;">
+        <?php if ((validation_errors())) {
+            echo '<div class="error-message">';
+            echo validation_errors();
+            echo '</div>';
+        }
+        ?>
+        <div class="tf-login">
+            <?php echo form_open('login/validate_user'); ?>
+            <?php
+            echo '<div class="error-message">';
+            echo $this->session->flashdata('error_message');
+            echo '</div>';
+            ?>
 
-    <div class="container" style="margin-top: 30px; margin-bottom: 80px">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/Portal"><img src="/assets/images/AGN-Logo.png" width=300 height="60"></a>
-            </div>
-        </nav>
-    </div>
+            <?php if (isset($success_message)) {
+                echo '<div class="success-message">';
+                echo $success_message;
+                echo '</div>';
+            }
+            ?>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-8">
+            <main class="form-signin">
+                <table>
+                    <a href="/Portal">
+                        <img class="mb-4" src="/assets/images/AGN-Logo.png" alt="" width="300" height="60">
 
-                <p class="tf-font" style="font-size: 11px;">Please login using your credentials below:<p>
+                    </a>
+                    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+                    
 
-                <div class="row">&nbsp;</div>
-
-
-
-                <div class="tf-login-container" style="margin:0 auto;">
-                    <?php if((validation_errors())){
-                        echo '<div class="error-message">';
-                        echo validation_errors();
-                        echo '</div>';
-                    }
-                    ?>
-
-                    <div class="tf-login">
-                        <?php echo form_open('login/validate_user');?>
-                        <?php
-                            echo '<div class="error-message">';
-                            echo $this->session->flashdata('error_message');
-                            echo '</div>';
-                        ?>
-
-                        <?php if(isset($success_message)){
-                            echo '<div class="success-message">';
-                            echo $success_message;
-                            echo '</div>';
-                        }
-                        ?>
-
-                        <table>
-
-                            <tr>
-                                <td class="tf-font tf-login-label">Login ID</td>
-                                <td >
-                                    <input class="tf-font tf-login-input" type="text" name="username" value="" size="50" />
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="tf-font tf-login-label">Password</td>
-                                <td>
-                                    <input class="tf-font tf-login-input" type="password" name="password" value="" size="50" />
-                                </td>
-                            </tr>
-
-                            <tr style="margin-top: 1em;">
-                                <td class="tf-font tf-login-label" style="margin-top:0.5em; ">Remember me</td>
-                                <td>
-                                    <input class="tf-font" type="checkbox" style="margin-left: 12px; margin-top: 0.5em" name="remember_me"/>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="tf-font">&nbsp;</td>
-                                <td class="tf-login-input">
-                                    <input class="tf-login-button" type="submit" value="Login" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tf-font tf-hyperlink"><a style="margin-left: 1em;" href="<?php echo base_url();?>reset/resetPassword">Forgot your password?</a></td>
-                                <td>
-                                    &nbsp;
-                                </td>
-                            </tr>
-
-                        </table>
-                        <?php echo form_close();?>
+                    <div class="form-floating" style='margin-top: 30px'>
+                        <input style='box-shadow: none' type="text" name="username" class="form-control" id="floatingInput" placeholder="Username">
+                        <label for="floatingInput">Username</label>
                     </div>
-                </div>
-
-
-
-                <div class="row">&nbsp;</div>
-            </div>
-
-            <div class="col-4">
-                <div class="d-flex justify-content-end">
-                    <div class="p-2">
-                        <button type="submit" class="btn outline-primary" onclick="window.location.assign('<?php echo base_url();?>Portal')">Back</button>
+                    <div class="form-floating">
+                        <input style='box-shadow: none' type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
                     </div>
-                </div>
-            </div>
 
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    
+
+                    <button class="w-100 btn btn-lg outline-primary" type="submit" value='Login'>Sign in</button>
+                    <div style='margin-top: 20px;'>
+                        <a style="margin-left: 1em;" href="<?php echo base_url(); ?>reset/resetPassword">Forgot your password?</a>
+
+                    </div>
+
+                    <p class="mt-5 mb-3 text-muted">© AuScope Limited 2021   |   All rights reserved</p>
+                </table>
+            </main>
+            <?php echo form_close(); ?>
         </div>
     </div>
-</div>
 
 </body>
-
-
