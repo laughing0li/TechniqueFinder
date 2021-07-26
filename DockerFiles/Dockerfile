@@ -9,7 +9,7 @@
 #                      Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 #                      https://creativecommons.org/licenses/by-nc-sa/4.0/
 #
-FROM php:7.2-fpm
+FROM php:7.4-fpm
 
 RUN docker-php-ext-install mysqli
 

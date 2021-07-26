@@ -12,7 +12,7 @@
 version: '3.6'
 services:
   web:
-    image: nginx:1.15.0
+    image: nginx:1.21.1
     ports:
       - "80:80"
       - "25:25"
@@ -40,7 +40,7 @@ services:
       - db
 
   db:
-    image: mysql:5.7.22
+    image: mysql:5.7.35
     ports:
       - "3306:3306"
     networks:
