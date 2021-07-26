@@ -1482,7 +1482,10 @@ INSERT INTO `technique_metadata` VALUES
 (101,'Introduction system', 'Introduction system', 'Spot Analysis'),
 (102, 'Introduction system', 'Introduction system', 'Both'),
 (200, 'Unknown', 'Unknown', 'Both'),
-(201, 'Experimental Instrument', 'Experimental Instrument', 'Not applicable'),
+(201, 'Griggs Press', 'Experimental Instrument', 'Not applicable'),
+(202, 'Piston Cylinder', 'Experimental Instrument', 'Not applicable'),
+(203, 'Multi-anvil Press', 'Experimental Instrument', 'Not applicable'),
+(204, 'Diamond Anvil Press', 'Experimental Instrument', 'Not applicable'),
 (214, 'Noble Gas spectrometer', 'Age Determination', 'Both'),
 (215, 'Noble Gas Spectrometer', 'Age Determination', 'Whole Rock or Mineral Separates');
 UNLOCK TABLES;
@@ -1567,12 +1570,12 @@ INSERT INTO `technique_metadata_link` VALUES(NULL, 101, 1),
 (NULL, 11, 39), -- CHNS
 (NULL, 25, 40), -- Microscope
 (NULL, 201, 41), -- Griggs Press
-(NULL, 201, 42), -- Piston cylinder
-(NULL, 201, 43), -- Piston cylinder
-(NULL, 201, 44), -- Multi-anvil press
-(NULL, 201, 45), -- Multi-anvil press
-(NULL, 201, 46), -- Multi-anvil press
-(NULL, 201, 47), -- Diamond-anvil press
+(NULL, 202, 42), -- Piston cylinder
+(NULL, 202, 43), -- Piston cylinder
+(NULL, 203, 44), -- Multi-anvil press
+(NULL, 203, 45), -- Multi-anvil press
+(NULL, 203, 46), -- Multi-anvil press
+(NULL, 204, 47), -- Diamond-anvil press
 (NULL, 7, 48), -- Raman microscope
 (NULL, 6, 49), -- Microscope
 (NULL, 19, 50), -- MC-ICP-MS
