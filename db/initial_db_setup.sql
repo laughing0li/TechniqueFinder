@@ -1616,7 +1616,8 @@ CREATE TABLE `technique` (
   `elements_set_id` bigint(20),
   PRIMARY KEY (`id`),
   UNIQUE KEY `model` (`model`),
-  FULLTEXT KEY `fulltext_index` (`name`,`instrument_name`,`model`,`manufacturer`,`sample_type`,`alternative_names`,`summary`,`description`,`keywords`),
+  FULLTEXT KEY `fulltext_index1` (`name`,`instrument_name`,`model`,`manufacturer`,`sample_type`),
+  FULLTEXT KEY `fulltext_index2` (`alternative_names`,`summary`,`description`,`keywords`),
   KEY `FK586GF5919AE409C5` (`elements_set_id`),
   CONSTRAINT `FK746HF636DC3948AE` FOREIGN KEY (`elements_set_id`) REFERENCES `elements_set` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
