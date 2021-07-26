@@ -479,24 +479,6 @@ a.ui-button:active,
     background: url(../images/button_choices_geochem.gif);
 }
 
-#button_bio a {
-    margin: 0 1.5em;
-    height: 50px;
-    float: left;
-    background-position: 0;
-    width: 185px;
-    background: url(../images/button_choices_bio.gif);
-}
-
-#button_phys a {
-    margin: 0 1.5em;
-    height: 50px;
-    float: left;
-    background-position: 0;
-    width: 185px;
-    background: url(../images/button_choices_phys.gif);
-}
-
 #content p{
 	/*font-family: arial, verdana, sans-serif;*/
 	font-size: 12px; 
@@ -708,11 +690,13 @@ a.ui-button:active,
     border: 2px solid #ED5D4A;
 }
 
-.outline-primary:hover {
+.outline-primary:hover, input[type="radio"]:checked + label.outline-primary {
     color: white;
     background-color: #ED5D4A;
-    border-color: #ED5D4A
+    border-color: #ED5D4A;
 }
+
+
 
 .outline-primary:focus,
 .outline-primary.focus {
