@@ -1165,7 +1165,7 @@ INSERT INTO `media_in_section` VALUES (10, 1, 10, 1, 15, 'LIST'),
 (39, 1, 39, 1, 2, 'LIST'),
 (40, 1, 40, 1, 4, 'LIST'),
 (49, 1, 49, 1, 5, 'LIST'),
-(50, 1, 50, 1, 11, 'LIST'),
+(50, 1, 20, 1, 11, 'LIST'),
 (51, 1, 51, 1, 5, 'LIST'),
 (52, 1, 52, 1, 5, 'LIST');
 UNLOCK TABLES;
@@ -1577,10 +1577,10 @@ INSERT INTO `technique_metadata_link` VALUES(NULL, 101, 1),
 (NULL, 204, 47), -- Diamond-anvil press
 (NULL, 7, 48), -- Raman microscope
 (NULL, 6, 49), -- Microscope
-(NULL, 19, 50), -- MC-ICP-MS
-(NULL, 30, 50), -- MC-ICP-MS
-(NULL, 31, 50), -- MC-ICP-MS
-(NULL, 32, 50), -- MC-ICP-MS
+(NULL, 19, 20), -- MC-ICP-MS
+(NULL, 30, 20), -- MC-ICP-MS
+(NULL, 31, 20), -- MC-ICP-MS
+(NULL, 32, 20), -- MC-ICP-MS
 (NULL, 21, 51), -- IRMS
 (NULL, 21, 52); -- IRMS
 UNLOCK TABLES;
@@ -1676,7 +1676,6 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 (47,'Experimental instrument','Diamond-anvil press','diamond-anvil cell apparatus','constructed in house','','','','','','','100-600','1500-6000','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 29),
 (48,'Experimental instrument','Raman microscope','LABRAM HR Evolution','Horiba','','','','','','','','','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 30),
 (49,'Fourier Transform IR microscope','Fourier Transform IR microscope','iN10','Thermo-Fisher Scientific','','','','','','','','','','Summary of Fourier Transform IR microscope','Description of Fourier Transform IR microscope','Keywords of Fourier Transform IR microscope',1,'Alternative names for Fourier Transform IR microscope', 31),
-(50,'MC-ICP-MS','MC-ICP-MS','Neptune','Thermo-Fisher Scientific','Liquid','','','1 ppb','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
 (51,'IRMS','EA-IRMS','Flash 2000','Thermo-Fisher Scientific','Liquid','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 32),
 (52,'IRMS','CG-IRMS','Delta V Advantage IRMS','Thermo-Fisher Scientific','Liquid','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 33);
 /*!40000 ALTER TABLE `technique` ENABLE KEYS */;
@@ -1760,7 +1759,7 @@ INSERT INTO `localisation` VALUES(NULL, 1, 3,'2013','["geochronology","radiogeni
 (NULL, 2, 32,'2010','["thermochronology"]'),
 (NULL, 2, 33,'2000','["thermochronology"]'),
 (NULL, 2, 40,'2019','["thermochronology"]'),
-(NULL, 2, 50,'n/a','["geochronology","radiogenic_geochronology","isotopes"]'),
+(NULL, 2, 20,'n/a','["geochronology","radiogenic_geochronology","isotopes"]'),
 (NULL, 3, 1,'2016','["geochronology","radiogenic_geochronology","thermochronology","trace_elements","isotopes"]'),
 (NULL, 3, 1,'2018','["geochronology","radiogenic_geochronology","thermochronology","trace_elements","isotopes"]'),
 (NULL, 3, 7,'2002','["geochronology","thermochronology"]'),
