@@ -49,7 +49,7 @@ $this->load->view('layout/portal_header.php'); ?>
                 echo "<div class='card-body' >";
                 echo "<p class='card-text'>Applications: ";
                 foreach (array_slice($localisation, 1) as $application) {
-                    echo $application . "&nbsp&nbsp";
+                    echo $application . ";&nbsp&nbsp";
                 }
                 echo "</p>";
                 echo "<p class='card-text'>Year Commissioned: " . $localisation[0] . "</p>";
