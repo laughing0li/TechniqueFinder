@@ -1232,6 +1232,7 @@ CREATE TABLE `option_combination` (
 
 --
 -- Dumping data for table `option_combination`
+-- Used in 'Geochemical Analysis' page
 --
 
 LOCK TABLES `option_combination` WRITE;
@@ -1672,7 +1673,8 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 (48,'Experimental instrument','Raman microscope','LABRAM HR Evolution','Horiba','','','','','','','','','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 30),
 (49,'Fourier Transform IR microscope','Fourier Transform IR microscope','iN10','Thermo-Fisher Scientific','','','','','','','','','','Summary of Fourier Transform IR microscope','Description of Fourier Transform IR microscope','Keywords of Fourier Transform IR microscope',1,'Alternative names for Fourier Transform IR microscope', 31),
 (51,'IRMS','EA-IRMS','Flash 2000','Thermo-Fisher Scientific','Liquid','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 32),
-(52,'IRMS','CG-IRMS','Delta V Advantage IRMS','Thermo-Fisher Scientific','Liquid','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 33);
+(52,'IRMS','CG-IRMS','Delta V Advantage IRMS','Thermo-Fisher Scientific','Liquid','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 33),
+(53,'Introduction system','Excimer laser ablation system','Analyte Iridia','Photon Machines Inc.','Polished section','193 nm','1-150 µm','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1);
 /*!40000 ALTER TABLE `technique` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1738,6 +1740,7 @@ INSERT INTO `localisation` VALUES(NULL, 1, 3,'2013','["geochronology","radiogeni
 (NULL, 1, 47,'2017','["experimental_petrology"]'),
 (NULL, 1, 48,'2008','[]'),
 (NULL, 1, 49,'2014','[]'),
+(NULL, 1, 53,'n/a','["geochronology","radiogenic_geochronology","trace_elements","isotopes"]'),
 (NULL, 2, 1,'2018','["geochronology","trace_elements","isotopes"]'),
 (NULL, 2, 1,'2020','["geochronology","trace_elements","isotopes"]'),
 (NULL, 2, 2,'2012','["geochronology","radiogenic_geochronology","trace_elements","isotopes"]'),
