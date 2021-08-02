@@ -1144,7 +1144,6 @@ INSERT INTO `media_in_section` VALUES (10, 1, 10, 1, 15, 'LIST'),
 (18, 1, 18, 1, 11, 'LIST'),
 (19, 1, 19, 1, 11, 'LIST'),
 (20, 1, 20, 1, 11, 'LIST'),
-(21, 1, 21, 1, 16, 'LIST'),
 (22, 1, 22, 1, 16, 'LIST'),
 (23, 1, 23, 1, 18, 'LIST'),
 (24, 1, 24, 1, 18, 'LIST'),
@@ -1247,7 +1246,6 @@ INSERT INTO `option_combination` VALUES(NULL, 1, 10, 0, 72, 74), (NULL, 1, 10, 0
 (NULL, 1, 18, 0, 73, 75),
 (NULL, 1, 19, 0, 73, 75),
 (NULL, 1, 20, 0, 73, 75),
-(NULL, 1, 21, 0, 72, 75),
 (NULL, 1, 22, 0, 72, 75),
 (NULL, 1, 23, 0, 73, 75),
 (NULL, 1, 24, 0, 73, 75),
@@ -1540,8 +1538,6 @@ INSERT INTO `technique_metadata_link` VALUES(NULL, 101, 1),
 (NULL, 30, 20), -- MC-ICP-MS
 (NULL, 31, 20), -- MC-ICP-MS
 (NULL, 32, 20), -- MC-ICP-MS
-(NULL, 10, 21), -- SF-ICP-MS
-(NULL, 22, 21), -- SF-ICP-MS
 (NULL, 10, 22), -- SF-ICP-MS
 (NULL, 22, 22), -- SF-ICP-MS
 (NULL, 20, 23), -- TIMS
@@ -1647,7 +1643,6 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 (18,'MC-ICP-MS','MC-ICP-MS','Plasma 3','Nu Instruments Ltd','Liquid','','','1 ppb','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
 (19,'MC-ICP-MS','MC-ICP-MS','Plasma Sapphire','Nu Instruments Ltd','Liquid','','','1 ppb','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
 (20,'MC-ICP-MS','MC-ICP-MS','Neptune Plus','Thermo-Fisher Scientific','Liquid','','','1 ppb','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
-(21,'SF-ICP-MS','SF-ICP-MS','Plasma Attom','Nu Instruments Ltd','Liquid','','','1 ppb','','','','','','Summary of SF-ICP-MS','Description of SF-ICP-MS','Keywords of SF-ICP-MS',1,'Alternative names for SF-ICP-MS', 3),
 (22,'SF-ICP-MS','SF-ICP-MS','Plasma Attom-ES','Nu Instruments Ltd','Liquid','','','1 ppb','','','','','','Summary of SF-ICP-MS','Description of SF-ICP-MS','Keywords of SF-ICP-MS',1,'Alternative names for SF-ICP-MS', 3),
 (23,'TIMS','TIMS','Triton','Thermo Finnigan','Liquid','','','1 ppb','','','','','','Summary of TIMS','Description of TIMS','Keywords of TIMS',1,'Alternative names for TIMS', 13),
 (24,'TIMS','TIMS','Triton Plus','Thermo Finnigan','Liquid','','','1 ppb','','','','','','Summary of TIMS','Description of TIMS','Keywords of TIMS',1,'Alternative names for TIMS', 13),
@@ -1722,7 +1717,7 @@ INSERT INTO `localisation` VALUES(NULL, 1, 3,'2013','["geochronology","radiogeni
 (NULL, 1, 16,'2003','["geochronology","radiogenic_geochronology","isotopes"]'),
 (NULL, 1, 17,'2015','["geochronology","radiogenic_geochronology","isotopes"]'),
 (NULL, 1, 20,'2018','["geochronology","radiogenic_geochronology","isotopes"]'),
-(NULL, 1, 21,'2013','["geochronology","radiogenic_geochronology","isotopes"]'),
+(NULL, 1, 22,'2013','["geochronology","radiogenic_geochronology","isotopes"]'),
 (NULL, 1, 23,'2005','["geochronology","radiogenic_geochronology","isotopes"]'),
 (NULL, 1, 24,'2018','["geochronology","radiogenic_geochronology","isotopes"]'),
 (NULL, 1, 25,'2015','["isotopes"]'),
