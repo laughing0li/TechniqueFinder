@@ -1259,7 +1259,6 @@ INSERT INTO `option_combination` VALUES(NULL, 1, 10, 0, 72, 74), (NULL, 1, 10, 0
 (NULL, 1, 31, 0, 71, 75),
 (NULL, 1, 32, 0, 71, 74), (NULL, 1, 32, 0, 71, 75),
 (NULL, 1, 33, 0, 71, 74), (NULL, 1, 33, 0, 71, 75),
-(NULL, 1, 34, 0, 72, 75),
 (NULL, 1, 35, 0, 72, 75),
 (NULL, 1, 36, 0, 72, 75),
 (NULL, 1, 37, 0, 72, 75),
@@ -1557,7 +1556,6 @@ INSERT INTO `technique_metadata_link` VALUES(NULL, 101, 1),
 (NULL, 214, 32), -- Noble gas spectrometer
 (NULL, 214, 33), -- Noble gas spectrometer
 (NULL, 5, 34), -- XRF
-(NULL, 14,34), -- XRF
 (NULL, 5, 35), -- XRF
 (NULL, 14, 35), -- XRF
 (NULL, 3, 36), -- EMP
