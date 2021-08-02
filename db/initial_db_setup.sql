@@ -761,7 +761,8 @@ INSERT INTO `elements_set` VALUES(1, 'Excimer laser ablation system'),
 (30, 'Raman microscope'),
 (31, 'Fourier Transform IR microscope'),
 (32, 'EA-IRMS'),
-(33, 'CG-IRMS');
+(33, 'CG-IRMS'),
+(34, 'SEM');
 UNLOCK TABLES;
   
 -- Table structure for table `elements`
@@ -1198,11 +1199,7 @@ INSERT INTO `option_choice` VALUES (71,0,1,'Age Determination','STEP1','GEOCHEM'
 (72,0,1,'Elemental Composition','STEP1','GEOCHEM'),
 (73,0,1,'Isotopic Analysis','STEP1','GEOCHEM'),
 (74,0,1,'Spot Analysis','STEP2','GEOCHEM'),
-(75,0,1,'Whole Rock or Mineral Separates','STEP2','GEOCHEM'),
-/* (76,0,1,'I don''t know','STEP2','GEOCHEM'), */
-(77,0,1,'Phy Left Option 1','LEFT','PHYSICS'),
-(78,0,1,'Phy Right Option 1','RIGHT','PHYSICS'),
-(79,0,2,'Phy Right Option 2','RIGHT','PHYSICS');
+(75,0,1,'Whole Rock or Mineral Separates','STEP2','GEOCHEM');
 /*!40000 ALTER TABLE `option_choice` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1266,7 +1263,10 @@ INSERT INTO `option_combination` VALUES(NULL, 1, 10, 0, 72, 74), (NULL, 1, 10, 0
 (NULL, 1, 39, 0, 72, 75),
 (NULL, 1, 50, 0, 73, 75),
 (NULL, 1, 51, 0, 73, 75),
-(NULL, 1, 52, 0, 73, 75);
+(NULL, 1, 52, 0, 73, 75),
+(NULL, 1, 54, 0, 72, 74),
+(NULL, 1, 55, 0, 72, 74),
+(NULL, 1, 56, 0, 72, 74);
 /*!40000 ALTER TABLE `option_combination` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1576,7 +1576,11 @@ INSERT INTO `technique_metadata_link` VALUES(NULL, 101, 1),
 (NULL, 31, 20), -- MC-ICP-MS
 (NULL, 32, 20), -- MC-ICP-MS
 (NULL, 21, 51), -- IRMS
-(NULL, 21, 52); -- IRMS
+(NULL, 21, 52), -- IRMS
+(NULL, 101, 53), -- Excimer laser ablation system
+(NULL, 8, 54), -- SEM
+(NULL, 8, 55), -- SEM
+(NULL, 8, 56); -- SEM
 UNLOCK TABLES;
 
 
@@ -1671,7 +1675,11 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 (49,'Fourier Transform IR microscope','Fourier Transform IR microscope','iN10','Thermo-Fisher Scientific','','','','','','','','','','Summary of Fourier Transform IR microscope','Description of Fourier Transform IR microscope','Keywords of Fourier Transform IR microscope',1,'Alternative names for Fourier Transform IR microscope', 31),
 (51,'IRMS','EA-IRMS','Flash 2000','Thermo-Fisher Scientific','Liquid','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 32),
 (52,'IRMS','CG-IRMS','Delta V Advantage IRMS','Thermo-Fisher Scientific','Liquid','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 33),
-(53,'Introduction system','Excimer laser ablation system','Analyte Iridia','Photon Machines Inc.','Polished section','193 nm','1-150 µm','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1);
+(53,'Introduction system','Excimer laser ablation system','Analyte Iridia','Photon Machines Inc.','Polished section','193 nm','1-150 µm','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1),
+/* id, name, instrument_name, model, manufacturer, sample_type, wavelength, beam, min_conc, mass, volume, pressure, temp, ext_ref, summary, desc, keywords, version, alt_names, elements_set_id */
+(54, 'SEM', 'Scanning Electron Microscope (Field Emission)', 'Nanomin', 'FEI', '', '', '','','','','','','','Summary of SEM','Description of SEM','Keywords of SEM',1,'Alternative names for SEM', 34),
+(55, 'SEM', 'Scanning Electron Microscope', 'EVO MA15', 'Zeiss', '', '', '','','','','','','','Summary of SEM','Scanning electron microscope (with Oxford Instruments Aztec Synergy EDS/EBSD and Horiba HCLUE spectral cathodoluminescence detector)','Keywords of SEM',1,'Alternative names for SEM', 34),
+(56, 'SEM', 'Scanning Electron Microscope', 'JCM-6000', 'JEOL', '', '', '','','','','','','','Summary of SEM','Scanning electron microscope Benchtop (BSE-EDS)','Keywords of SEM',1,'Alternative names for SEM', 34);
 /*!40000 ALTER TABLE `technique` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1738,6 +1746,9 @@ INSERT INTO `localisation` VALUES(NULL, 1, 3,'2013','["geochronology","radiogeni
 (NULL, 1, 48,'2008','[]'),
 (NULL, 1, 49,'2014','[]'),
 (NULL, 1, 53,'n/a','["geochronology","radiogenic geochronology","trace elements","isotopes"]'),
+(NULL, 1, 54,'n/a','["imaging"]'),
+(NULL, 1, 55,'n/a','["imaging","major & minor elements","EBSD"]'),
+(NULL, 1, 56,'n/a','["imaging","major & minor elements"]'),
 (NULL, 2, 1,'2018','["geochronology","trace elements","isotopes"]'),
 (NULL, 2, 1,'2020','["geochronology","trace elements","isotopes"]'),
 (NULL, 2, 2,'2012','["geochronology","radiogenic geochronology","trace elements","isotopes"]'),
