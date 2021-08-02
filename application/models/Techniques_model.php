@@ -19,7 +19,7 @@ class Techniques_model extends MY_Model
     }
 
     function getAllTechniques(){
-        $result = $this->db->order_by('instrument_name','ASC')->get('technique')->result();
+        $result = $this->db->order_by('instrument_name ASC, model ASC')->get('technique')->result();
         return $result;
     }
 
