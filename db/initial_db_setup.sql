@@ -730,7 +730,7 @@ CREATE TABLE `elements_set` (
 
 LOCK TABLES `elements_set` WRITE;
 INSERT INTO `elements_set` VALUES(1, 'Excimer laser ablation system'),
-(2, 'fusion/step heating system'),
+(2, 'Laser Fusion/Step Heating System'),
 (3, 'SF-ICP-MS'),
 (4, 'Q-ICP-MS'),
 (5, 'Q3-ICP-MS'),
@@ -751,7 +751,7 @@ INSERT INTO `elements_set` VALUES(1, 'Excimer laser ablation system'),
 (20, 'MS-Noble Gas (He)'),
 (21, 'XRF'),
 (22, 'EMP'),
-(23, 'alpha counter'),
+(23, 'Alpha Counter'),
 (24, 'Elemental Analyser CHNS'),
 (25, 'Automated fission track counting system'),
 (26, 'Griggs press'),
@@ -762,7 +762,9 @@ INSERT INTO `elements_set` VALUES(1, 'Excimer laser ablation system'),
 (31, 'Fourier Transform IR microscope'),
 (32, 'EA-IRMS'),
 (33, 'CG-IRMS'),
-(34, 'SEM');
+(34, 'SEM'),
+(35, 'Rock Disaggregation Facility'),
+(36, 'Micro-sampling Machine');
 UNLOCK TABLES;
   
 -- Table structure for table `elements`
@@ -1484,7 +1486,9 @@ INSERT INTO `technique_metadata` VALUES
 (203, 'Multi-anvil Press', 'Experimental Instrument', 'Not applicable'),
 (204, 'Diamond Anvil Press', 'Experimental Instrument', 'Not applicable'),
 (214, 'Noble Gas spectrometer', 'Age Determination', 'Both'),
-(215, 'Noble Gas Spectrometer', 'Age Determination', 'Whole Rock or Mineral Separates');
+(215, 'Noble Gas Spectrometer', 'Age Determination', 'Whole Rock or Mineral Separates'),
+(300, 'Rock Disaggregation Facility', 'Sample Preparation', 'Not applicable'),
+(310, 'Micro-sampling Machine', 'Sample Preparation', 'Not applicable');
 UNLOCK TABLES;
 
 --
@@ -1511,8 +1515,8 @@ INSERT INTO `technique_metadata_link` VALUES(NULL, 101, 1),
 (NULL, 101, 5), -- Excimer laser ablation system
 (NULL, 101, 6), -- Excimer laser ablation system
 (NULL, 101, 7), -- Excimer laser ablation system
-(NULL, 102, 8), -- laser fusion/step heating system
-(NULL, 102, 9), -- laser fusion/step heating system
+(NULL, 102, 8), -- Laser fusion/step heating system
+(NULL, 102, 9), -- Laser fusion/step heating system
 (NULL, 10, 10), -- SF-ICP-MS
 (NULL, 9, 11), -- Q-ICP-MS
 (NULL, 9, 12), -- Q-ICP-MS
@@ -1558,7 +1562,7 @@ INSERT INTO `technique_metadata_link` VALUES(NULL, 101, 1),
 (NULL, 5, 34), -- XRF
 (NULL, 14, 35), -- XRF
 (NULL, 3, 36), -- EMP
-(NULL, 13, 37), -- alpha counter
+(NULL, 13, 37), -- Alpha Counter
 (NULL, 11, 38), -- CHNS
 (NULL, 11, 39), -- CHNS
 (NULL, 25, 40), -- Microscope
@@ -1580,7 +1584,9 @@ INSERT INTO `technique_metadata_link` VALUES(NULL, 101, 1),
 (NULL, 101, 53), -- Excimer laser ablation system
 (NULL, 8, 54), -- SEM
 (NULL, 8, 55), -- SEM
-(NULL, 8, 56); -- SEM
+(NULL, 8, 56), -- SEM
+(NULL, 300, 57), -- Rock Disaggregation Facility
+(NULL, 310, 58); -- Micro-sampling Machine
 UNLOCK TABLES;
 
 
@@ -1633,8 +1639,8 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 (5,'Introduction system','Excimer laser ablation system','Analyte 198-FS','Photon Machines Inc.','Polished section','198 nm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1),
 (6,'Introduction system','Excimer laser ablation system','Analyte Excite','Photon Machines Inc.','Polished section','193 nm','1-150 µm','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1),
 (7,'Introduction system','Excimer laser ablation system','Lambda Physik','OPTEX laser','Polished section','193 nm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1),
-(8,'Introduction system','laser fusion/step heating system','Firestar Series V40 CO2 laser','Synrad','Solid','10600 nm','2500 µm','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 2),
-(9,'Introduction system','laser fusion/step heating system','Fusions 10.6 CO2 laser','Photon Machines Inc.','Solid','10600 nm','125-6000 µm','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 2),
+(8,'Introduction system','Laser Fusion/Step Heating System','Firestar Series V40 CO2 laser','Synrad','Solid','10600 nm','2500 µm','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 2),
+(9,'Introduction system','Laser Fusion/Step Heating System','Fusions 10.6 CO2 laser','Photon Machines Inc.','Solid','10600 nm','125-6000 µm','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 2),
 (10,'SF-ICP-MS','SF-ICP-MS','Element-XR','Thermo-Fisher Scientific','Liquid','','','10 ppb','','','','','','Summary of SF-ICP-MS','Description of SF-ICP-MS','Keywords of SF-ICP-MS',1,'Alternative names for SF-ICP-MS', 3),
 (11,'Q-ICP-MS','Q-ICP-MS','Quadrupole ICPMS 7700 ','Agilent','Introduction system','','','10 ppb','','','','','','Summary of Q-ICP-MS','Description of Q-ICP-MS','Keywords of Q-ICP-MS',1,'Alternative names for Q-ICP-MS', 4),
 (12,'Q-ICP-MS','Q-ICP-MS','Quadrupole ICPMS 7700x','Agilent','Introduction system','','','10 ppb','','','','','','Summary of Q-ICP-MS','Description of Q-ICP-MS','Keywords of Q-ICP-MS',1,'Alternative names for Q-ICP-MS', 4),
@@ -1660,7 +1666,7 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 (34,'XRF','XRF','M4 Tornado Micro XRF','Bruker','Solid','','','1 %','','','','','','Summary of XRF','Description of XRF','Keywords of XRF',1,'Alternative names for XRF', 21),
 (35,'XRF','XRF','Axios 1kW XRF','PANalytical','Solid','','','1 %','','','','','','Summary of XRF','Description of XRF','Keywords of XRF',1,'Alternative names for XRF', 21),
 (36,'EMP','EMP','SX-100 Electron microprobe','Cameca','Solid','','','','','','','','','Summary of EMP','Description of EMP','Keywords of EMP',1,'Alternative names for EMP', 22),
-(37,'alpha counter','alpha counter','Alpha Particle counter','Ortec','Solid','','','1 ppm','','','','','','Summary of alpha counter','Description of alpha counter','Keywords of alpha counter',1,'Alternative names for alpha counter', 23),
+(37,'Alpha Counter','Alpha Counter','Alpha Particle counter','Ortec','Solid','','','1 ppm','','','','','','Summary of alpha counter','Description of alpha counter','Keywords of alpha counter',1,'Alternative names for alpha counter', 23),
 (38,'Elemental Analyser CHNS','Elemental Analyser CHNS','Vario EL Cube','Elementar','Solid','','','','10-1000 mg','','','','','Summary of Elemental Analyser CHNS','Description of Elemental Analyser CHNS','Keywords of Elemental Analyser CHNS',1,'Alternative names for Elemental Analyser CHNS', 24),
 (39,'Elemental Analyser CHNS','Elemental Analyser CHNS','EA3000','EuroEA','Solid','','','','1-50 mg','','','','','Summary of Elemental Analyser CHNS','Description of Elemental Analyser CHNS','Keywords of Elemental Analyser CHNS',1,'Alternative names for Elemental Analyser CHNS', 24),
 (40,'Automated fission track counting system','Automated fission track counting system','Autoscan Deluxe w. ZEISS M2m Microscope','AutoScan','Solid','','','','','','','','','Summary of Automated fission track counting system','Description of Automated fission track counting system','Keywords of Automated fission track counting system',1,'Alternative names for Automated fission track counting system', 25),
@@ -1679,7 +1685,10 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 /* id, name, instrument_name, model, manufacturer, sample_type, wavelength, beam, min_conc, mass, volume, pressure, temp, ext_ref, summary, desc, keywords, version, alt_names, elements_set_id */
 (54, 'SEM', 'Scanning Electron Microscope (Field Emission)', 'Nanomin', 'FEI', '', '', '','','','','','','','Summary of SEM','Description of SEM','Keywords of SEM',1,'Alternative names for SEM', 34),
 (55, 'SEM', 'Scanning Electron Microscope', 'EVO MA15', 'Zeiss', '', '', '','','','','','','','Summary of SEM','Scanning electron microscope (with Oxford Instruments Aztec Synergy EDS/EBSD and Horiba HCLUE spectral cathodoluminescence detector)','Keywords of SEM',1,'Alternative names for SEM', 34),
-(56, 'SEM', 'Scanning Electron Microscope', 'JCM-6000', 'JEOL', '', '', '','','','','','','','Summary of SEM','Scanning electron microscope Benchtop (BSE-EDS)','Keywords of SEM',1,'Alternative names for SEM', 34);
+(56, 'SEM', 'Scanning Electron Microscope', 'JCM-6000', 'JEOL', '', '', '','','','','','','','Summary of SEM','Scanning electron microscope Benchtop (BSE-EDS)','Keywords of SEM',1,'Alternative names for SEM', 34),
+(57, 'Sample Preparation', 'Rock Disaggregation Facility', 'Lab', 'selFrag', '', '', '','','','','','','','Summary of electrostatic rock disaggregation facility','Description of electrostatic rock disaggregation facility','Keywords of rock disaggregation facility',1,'Alternative names for rock disaggregation facility', 35),
+(58, 'Micro-sampling', 'MicroMill micro-sampling apparatus', 'MicroMill', 'New Wave Research', '', '', '','','','','','','','Summary of electrostatic rock disaggregation facility','Description of electrostatic rock disaggregation facility','Keywords of rock disaggregation facility',1,'Alternative names for rock disaggregation facility', 36);
+
 /*!40000 ALTER TABLE `technique` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1749,6 +1758,8 @@ INSERT INTO `localisation` VALUES(NULL, 1, 3,'2013','["geochronology","radiogeni
 (NULL, 1, 54,'n/a','["imaging"]'),
 (NULL, 1, 55,'n/a','["imaging","major & minor elements","EBSD"]'),
 (NULL, 1, 56,'n/a','["imaging","major & minor elements"]'),
+(NULL, 1, 57,'n/a','["sample preparation"]'),
+(NULL, 1, 58,'n/a','["geochronology","isotopes","radiogenic geochronology"]'),
 (NULL, 2, 1,'2018','["geochronology","trace elements","isotopes"]'),
 (NULL, 2, 1,'2020','["geochronology","trace elements","isotopes"]'),
 (NULL, 2, 2,'2012','["geochronology","radiogenic geochronology","trace elements","isotopes"]'),
