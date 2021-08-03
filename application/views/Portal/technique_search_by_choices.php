@@ -13,9 +13,12 @@
 $this->load->view('layout/portal_header.php'); ?>
 <head><title>AGN Laboratory Finder</title></head>
 <body>
-
+<div style='background: #282572'>
+    <div class='container-md' >
+        <?php include 'header.php'; ?>
+    </div>
+</div>
 <div class="container-lg">
-    <?php include 'header.php'; ?>
     <div id="content" class="container">
 
         <button type="submit" class="btn outline-primary"
