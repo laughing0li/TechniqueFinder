@@ -730,7 +730,7 @@ CREATE TABLE `elements_set` (
 
 LOCK TABLES `elements_set` WRITE;
 INSERT INTO `elements_set` VALUES(1, 'Excimer laser ablation system'),
-(2, 'fusion/step heating system'),
+(2, 'Laser Fusion/Step Heating System'),
 (3, 'SF-ICP-MS'),
 (4, 'Q-ICP-MS'),
 (5, 'Q3-ICP-MS'),
@@ -751,7 +751,7 @@ INSERT INTO `elements_set` VALUES(1, 'Excimer laser ablation system'),
 (20, 'MS-Noble Gas (He)'),
 (21, 'XRF'),
 (22, 'EMP'),
-(23, 'alpha counter'),
+(23, 'Alpha Counter'),
 (24, 'Elemental Analyser CHNS'),
 (25, 'Automated fission track counting system'),
 (26, 'Griggs press'),
@@ -761,7 +761,10 @@ INSERT INTO `elements_set` VALUES(1, 'Excimer laser ablation system'),
 (30, 'Raman microscope'),
 (31, 'Fourier Transform IR microscope'),
 (32, 'EA-IRMS'),
-(33, 'CG-IRMS');
+(33, 'CG-IRMS'),
+(34, 'SEM'),
+(35, 'Rock Disaggregation Facility'),
+(36, 'Micro-sampling Machine');
 UNLOCK TABLES;
   
 -- Table structure for table `elements`
@@ -1144,7 +1147,6 @@ INSERT INTO `media_in_section` VALUES (10, 1, 10, 1, 15, 'LIST'),
 (18, 1, 18, 1, 11, 'LIST'),
 (19, 1, 19, 1, 11, 'LIST'),
 (20, 1, 20, 1, 11, 'LIST'),
-(21, 1, 21, 1, 16, 'LIST'),
 (22, 1, 22, 1, 16, 'LIST'),
 (23, 1, 23, 1, 18, 'LIST'),
 (24, 1, 24, 1, 18, 'LIST'),
@@ -1165,7 +1167,7 @@ INSERT INTO `media_in_section` VALUES (10, 1, 10, 1, 15, 'LIST'),
 (39, 1, 39, 1, 2, 'LIST'),
 (40, 1, 40, 1, 4, 'LIST'),
 (49, 1, 49, 1, 5, 'LIST'),
-(50, 1, 50, 1, 11, 'LIST'),
+(50, 1, 20, 1, 11, 'LIST'),
 (51, 1, 51, 1, 5, 'LIST'),
 (52, 1, 52, 1, 5, 'LIST');
 UNLOCK TABLES;
@@ -1199,11 +1201,7 @@ INSERT INTO `option_choice` VALUES (71,0,1,'Age Determination','STEP1','GEOCHEM'
 (72,0,1,'Elemental Composition','STEP1','GEOCHEM'),
 (73,0,1,'Isotopic Analysis','STEP1','GEOCHEM'),
 (74,0,1,'Spot Analysis','STEP2','GEOCHEM'),
-(75,0,1,'Whole Rock or Mineral Separates','STEP2','GEOCHEM'),
-/* (76,0,1,'I don''t know','STEP2','GEOCHEM'), */
-(77,0,1,'Phy Left Option 1','LEFT','PHYSICS'),
-(78,0,1,'Phy Right Option 1','RIGHT','PHYSICS'),
-(79,0,2,'Phy Right Option 2','RIGHT','PHYSICS');
+(75,0,1,'Whole Rock or Mineral Separates','STEP2','GEOCHEM');
 /*!40000 ALTER TABLE `option_choice` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1233,6 +1231,7 @@ CREATE TABLE `option_combination` (
 
 --
 -- Dumping data for table `option_combination`
+-- Used in 'Geochemical Analysis' page
 --
 
 LOCK TABLES `option_combination` WRITE;
@@ -1242,13 +1241,11 @@ INSERT INTO `option_combination` VALUES(NULL, 1, 10, 0, 72, 74), (NULL, 1, 10, 0
 (NULL, 1, 12, 0, 72, 74), (NULL, 1, 12, 0, 72, 75),
 (NULL, 1, 13, 0, 72, 74), (NULL, 1, 13, 0, 72, 75),
 (NULL, 1, 14, 0, 72, 74), (NULL, 1, 14, 0, 72, 75),
-(NULL, 1, 15, 0, 72, 75),
 (NULL, 1, 16, 0, 73, 75),
 (NULL, 1, 17, 0, 73, 75),
 (NULL, 1, 18, 0, 73, 75),
 (NULL, 1, 19, 0, 73, 75),
 (NULL, 1, 20, 0, 73, 75),
-(NULL, 1, 21, 0, 72, 75),
 (NULL, 1, 22, 0, 72, 75),
 (NULL, 1, 23, 0, 73, 75),
 (NULL, 1, 24, 0, 73, 75),
@@ -1261,7 +1258,6 @@ INSERT INTO `option_combination` VALUES(NULL, 1, 10, 0, 72, 74), (NULL, 1, 10, 0
 (NULL, 1, 31, 0, 71, 75),
 (NULL, 1, 32, 0, 71, 74), (NULL, 1, 32, 0, 71, 75),
 (NULL, 1, 33, 0, 71, 74), (NULL, 1, 33, 0, 71, 75),
-(NULL, 1, 34, 0, 72, 75),
 (NULL, 1, 35, 0, 72, 75),
 (NULL, 1, 36, 0, 72, 75),
 (NULL, 1, 37, 0, 72, 75),
@@ -1269,7 +1265,10 @@ INSERT INTO `option_combination` VALUES(NULL, 1, 10, 0, 72, 74), (NULL, 1, 10, 0
 (NULL, 1, 39, 0, 72, 75),
 (NULL, 1, 50, 0, 73, 75),
 (NULL, 1, 51, 0, 73, 75),
-(NULL, 1, 52, 0, 73, 75);
+(NULL, 1, 52, 0, 73, 75),
+(NULL, 1, 54, 0, 72, 74),
+(NULL, 1, 55, 0, 72, 74),
+(NULL, 1, 56, 0, 72, 74);
 /*!40000 ALTER TABLE `option_combination` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1411,21 +1410,14 @@ LOCK TABLES `static_content` WRITE;
 /*!40000 ALTER TABLE `static_content` DISABLE KEYS */;
 INSERT INTO `static_content` VALUES (1,7,'<h1>Find the instruments and facilities to fit your research project</h1>\r\n\r\n<p>Use AGN Laborarory Finder to identify and understand the analysis techniques available to researchers through Australian Geochemistry Network. You will find the contact details of our expert staff for each technique. They can provide you with all the information you need and guide you through the planning, training, data collection and interpretation stages of your experiments.</p>\r\n','tf.home.quickGuide'),
 (2,3,'','tf.home.optionsExplanation'),
-(3,3,'<h1>\r\n	Choices for biological sciences</h1>\r\n<p>\r\n	The choices offered below are based on the fact that many experiments in the biological sciences involve the interaction or relationship of two things. For instance, you might want to look at the interaction of one protein with another protein, a cell with the extracellular matrix, or possibly one thing within another such as metal ions in the hard tissue of insect teeth or a particular cell type in an organ. There are also options to study the structure, migration or isolation of a single item.</p>\r\n<p>\r\n	Choose one item from each list and then click the Show Possible Techniques button to see what techniques could help in your experiment.</p>\r\n','tf.biologyChoices.quickGuide'),
-(4,5,'<p>and</p>\r\n','tf.biologyChoices.comparison.title'),
-(5,2,'Step 1: Choose a sample\r\n','tf.biologyChoices.left.title'),
-(6,2,'Step 2: Choose another sample\r\n','tf.biologyChoices.right.title'),
 (7,1,'<h1>Choices for Experimental Procedures</h1>\r\n\r\n<p>Choose the type of machine you to want to use.</p>\r\n','tf.expProcChoices.quickGuide'),
-(8,0,'<p>at the scale of</p>\r\n','tf.physicsChoices.comparison.title'),
-(9,2,'<p>Step 1: Choose a property</p>\r\n','tf.physicsChoices.left.title'),
-(10,2,'<p>Step 2: Choose a size scale</p>\r\n','tf.physicsChoices.right.title'),
 (11,0,'If you know what you want to explore, type it into the search box and click \'go\'.','tf.home.searchExplanation'),
 (12,9,'<p>Unused</p>\r\n','tf.menu'),
 (13,1,'This list shows the techniques currently available at Australian Geochemistry Network.','tf.home.allTechniquesExplanation'),
 (14,15,'<div style=\"position:absolute; top:55px\"></img></div>\r\n','tf.home.infoboxContent'),
 (15,0,'','tf.tracking.intersect'),
 (16,3,'','tf.tracking.ammrf'),
-(17,3,'<h1>\r\n	Geochemical Analysis</h1>\r\n<p>\r\n	The choices offered below are based on the fact that many experiments in the geochemical sciences involve the interaction or relationship of two things.</p>\r\n<p>\r\n	Choose one item from each list and then click the Show Possible Techniques button to see what techniques could help in your experiment.</p>\r\n','tf.geochemChoices.quickGuide'),
+(17,3,'<h1>\r\n	Geochemical Analysis</h1>\r\n<p>\r\n	The choices offered below are based on the fact that many experiments in the geochemical sciences involve the interaction or relationship of two things.</p>\r\n<p>\r\n	Choose one item from each list to see what techniques could help in your experiment.</p>\r\n','tf.geochemChoices.quickGuide'),
 (18,5,'<p>then</p>\r\n','tf.geochemChoices.comparison.title'),
 (19,2,'Step 1: Choose a research interest\r\n','tf.geochemChoices.step1.title'),
 (20,2,'Step 2: Type of analysis', 'tf.geochemChoices.step2.title' ),
@@ -1489,9 +1481,14 @@ INSERT INTO `technique_metadata` VALUES
 (101,'Introduction system', 'Introduction system', 'Spot Analysis'),
 (102, 'Introduction system', 'Introduction system', 'Both'),
 (200, 'Unknown', 'Unknown', 'Both'),
-(201, 'Experimental Instrument', 'Experimental Instrument', 'Not applicable'),
+(201, 'Griggs Press', 'Experimental Instrument', 'Not applicable'),
+(202, 'Piston Cylinder', 'Experimental Instrument', 'Not applicable'),
+(203, 'Multi-anvil Press', 'Experimental Instrument', 'Not applicable'),
+(204, 'Diamond Anvil Press', 'Experimental Instrument', 'Not applicable'),
 (214, 'Noble Gas spectrometer', 'Age Determination', 'Both'),
-(215, 'Noble Gas Spectrometer', 'Age Determination', 'Whole Rock or Mineral Separates');
+(215, 'Noble Gas Spectrometer', 'Age Determination', 'Whole Rock or Mineral Separates'),
+(300, 'Rock Disaggregation Facility', 'Sample Preparation', 'Not applicable'),
+(310, 'Micro-sampling Machine', 'Sample Preparation', 'Not applicable');
 UNLOCK TABLES;
 
 --
@@ -1518,8 +1515,8 @@ INSERT INTO `technique_metadata_link` VALUES(NULL, 101, 1),
 (NULL, 101, 5), -- Excimer laser ablation system
 (NULL, 101, 6), -- Excimer laser ablation system
 (NULL, 101, 7), -- Excimer laser ablation system
-(NULL, 102, 8), -- laser fusion/step heating system
-(NULL, 102, 9), -- laser fusion/step heating system
+(NULL, 102, 8), -- Laser fusion/step heating system
+(NULL, 102, 9), -- Laser fusion/step heating system
 (NULL, 10, 10), -- SF-ICP-MS
 (NULL, 9, 11), -- Q-ICP-MS
 (NULL, 9, 12), -- Q-ICP-MS
@@ -1545,8 +1542,6 @@ INSERT INTO `technique_metadata_link` VALUES(NULL, 101, 1),
 (NULL, 30, 20), -- MC-ICP-MS
 (NULL, 31, 20), -- MC-ICP-MS
 (NULL, 32, 20), -- MC-ICP-MS
-(NULL, 10, 21), -- SF-ICP-MS
-(NULL, 22, 21), -- SF-ICP-MS
 (NULL, 10, 22), -- SF-ICP-MS
 (NULL, 22, 22), -- SF-ICP-MS
 (NULL, 20, 23), -- TIMS
@@ -1565,29 +1560,33 @@ INSERT INTO `technique_metadata_link` VALUES(NULL, 101, 1),
 (NULL, 214, 32), -- Noble gas spectrometer
 (NULL, 214, 33), -- Noble gas spectrometer
 (NULL, 5, 34), -- XRF
-(NULL, 14,34), -- XRF
-(NULL, 5, 35), -- XRF
 (NULL, 14, 35), -- XRF
 (NULL, 3, 36), -- EMP
-(NULL, 13, 37), -- alpha counter
+(NULL, 13, 37), -- Alpha Counter
 (NULL, 11, 38), -- CHNS
 (NULL, 11, 39), -- CHNS
 (NULL, 25, 40), -- Microscope
 (NULL, 201, 41), -- Griggs Press
-(NULL, 201, 42), -- Piston cylinder
-(NULL, 201, 43), -- Piston cylinder
-(NULL, 201, 44), -- Multi-anvil press
-(NULL, 201, 45), -- Multi-anvil press
-(NULL, 201, 46), -- Multi-anvil press
-(NULL, 201, 47), -- Diamond-anvil press
+(NULL, 202, 42), -- Piston cylinder
+(NULL, 202, 43), -- Piston cylinder
+(NULL, 203, 44), -- Multi-anvil press
+(NULL, 203, 45), -- Multi-anvil press
+(NULL, 203, 46), -- Multi-anvil press
+(NULL, 204, 47), -- Diamond-anvil press
 (NULL, 7, 48), -- Raman microscope
 (NULL, 6, 49), -- Microscope
-(NULL, 19, 50), -- MC-ICP-MS
-(NULL, 30, 50), -- MC-ICP-MS
-(NULL, 31, 50), -- MC-ICP-MS
-(NULL, 32, 50), -- MC-ICP-MS
+(NULL, 19, 20), -- MC-ICP-MS
+(NULL, 30, 20), -- MC-ICP-MS
+(NULL, 31, 20), -- MC-ICP-MS
+(NULL, 32, 20), -- MC-ICP-MS
 (NULL, 21, 51), -- IRMS
-(NULL, 21, 52); -- IRMS
+(NULL, 21, 52), -- IRMS
+(NULL, 101, 53), -- Excimer laser ablation system
+(NULL, 8, 54), -- SEM
+(NULL, 8, 55), -- SEM
+(NULL, 8, 56), -- SEM
+(NULL, 300, 57), -- Rock Disaggregation Facility
+(NULL, 310, 58); -- Micro-sampling Machine
 UNLOCK TABLES;
 
 
@@ -1620,7 +1619,8 @@ CREATE TABLE `technique` (
   `elements_set_id` bigint(20),
   PRIMARY KEY (`id`),
   UNIQUE KEY `model` (`model`),
-  FULLTEXT KEY `fulltext_index` (`name`,`instrument_name`,`model`,`manufacturer`,`sample_type`,`alternative_names`,`summary`,`description`,`keywords`),
+  FULLTEXT KEY `fulltext_index1` (`name`,`instrument_name`,`model`,`manufacturer`,`sample_type`),
+  FULLTEXT KEY `fulltext_index2` (`alternative_names`,`summary`,`description`,`keywords`),
   KEY `FK586GF5919AE409C5` (`elements_set_id`),
   CONSTRAINT `FK746HF636DC3948AE` FOREIGN KEY (`elements_set_id`) REFERENCES `elements_set` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
@@ -1639,20 +1639,18 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 (5,'Introduction system','Excimer laser ablation system','Analyte 198-FS','Photon Machines Inc.','Polished section','198 nm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1),
 (6,'Introduction system','Excimer laser ablation system','Analyte Excite','Photon Machines Inc.','Polished section','193 nm','1-150 µm','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1),
 (7,'Introduction system','Excimer laser ablation system','Lambda Physik','OPTEX laser','Polished section','193 nm','','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1),
-(8,'Introduction system','laser fusion/step heating system','Firestar Series V40 CO2 laser','Synrad','Solid','10600 nm','2500 µm','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 2),
-(9,'Introduction system','laser fusion/step heating system','Fusions 10.6 CO2 laser','Photon Machines Inc.','Solid','10600 nm','125-6000 µm','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 2),
+(8,'Introduction system','Laser Fusion/Step Heating System','Firestar Series V40 CO2 laser','Synrad','Solid','10600 nm','2500 µm','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 2),
+(9,'Introduction system','Laser Fusion/Step Heating System','Fusions 10.6 CO2 laser','Photon Machines Inc.','Solid','10600 nm','125-6000 µm','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 2),
 (10,'SF-ICP-MS','SF-ICP-MS','Element-XR','Thermo-Fisher Scientific','Liquid','','','10 ppb','','','','','','Summary of SF-ICP-MS','Description of SF-ICP-MS','Keywords of SF-ICP-MS',1,'Alternative names for SF-ICP-MS', 3),
 (11,'Q-ICP-MS','Q-ICP-MS','Quadrupole ICPMS 7700 ','Agilent','Introduction system','','','10 ppb','','','','','','Summary of Q-ICP-MS','Description of Q-ICP-MS','Keywords of Q-ICP-MS',1,'Alternative names for Q-ICP-MS', 4),
 (12,'Q-ICP-MS','Q-ICP-MS','Quadrupole ICPMS 7700x','Agilent','Introduction system','','','10 ppb','','','','','','Summary of Q-ICP-MS','Description of Q-ICP-MS','Keywords of Q-ICP-MS',1,'Alternative names for Q-ICP-MS', 4),
 (13,'Q-ICP-MS','Q-ICP-MS','Quadrupole ICPMS 7500','Agilent','Introduction system','','','10 ppb','','','','','','Summary of Q-ICP-MS','Description of Q-ICP-MS','Keywords of Q-ICP-MS',1,'Alternative names for Q-ICP-MS', 4),
 (14,'Q3-ICP-MS','Q3-ICP-MS','Triple Quadrupole (Q3) ICP-MS 8900','Agilent','Introduction system','','','10 ppb','','','','','','Summary of Q3-ICP-MS','Description of Q3-ICP-MS','Keywords of Q3-ICP-MS',1,'Alternative names for Q3-ICP-MS', 5),
-(15,'ICP-MS','ICP-MS','MAP-MS-215/50','Mass Analyser Products','Liquid','','','10 ppb','','','','','','Summary of ICP-MS','Description of ICP-MS','Keywords of ICP-MS',1,'Alternative names for ICP-MS', NULL),
-(16,'MC-ICP-MS','MC-ICP-MS','Plasma 1','Nu Instruments Ltd','Liquid','','','1 ppb','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
-(17,'MC-ICP-MS','MC-ICP-MS','Plasma 2','Nu Instruments Ltd','Liquid','','','1 ppb','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
+(16,'MC-ICP-MS','MC-ICP-MS','Plasma I-HR-ES','Nu Instruments Ltd','Liquid','','','1 ppb','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
+(17,'MC-ICP-MS','MC-ICP-MS','Plasma II-ES','Nu Instruments Ltd','Liquid','','','1 ppb','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
 (18,'MC-ICP-MS','MC-ICP-MS','Plasma 3','Nu Instruments Ltd','Liquid','','','1 ppb','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
 (19,'MC-ICP-MS','MC-ICP-MS','Plasma Sapphire','Nu Instruments Ltd','Liquid','','','1 ppb','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
 (20,'MC-ICP-MS','MC-ICP-MS','Neptune Plus','Thermo-Fisher Scientific','Liquid','','','1 ppb','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
-(21,'SF-ICP-MS','SF-ICP-MS','Plasma Attom','Nu Instruments Ltd','Liquid','','','1 ppb','','','','','','Summary of SF-ICP-MS','Description of SF-ICP-MS','Keywords of SF-ICP-MS',1,'Alternative names for SF-ICP-MS', 3),
 (22,'SF-ICP-MS','SF-ICP-MS','Plasma Attom-ES','Nu Instruments Ltd','Liquid','','','1 ppb','','','','','','Summary of SF-ICP-MS','Description of SF-ICP-MS','Keywords of SF-ICP-MS',1,'Alternative names for SF-ICP-MS', 3),
 (23,'TIMS','TIMS','Triton','Thermo Finnigan','Liquid','','','1 ppb','','','','','','Summary of TIMS','Description of TIMS','Keywords of TIMS',1,'Alternative names for TIMS', 13),
 (24,'TIMS','TIMS','Triton Plus','Thermo Finnigan','Liquid','','','1 ppb','','','','','','Summary of TIMS','Description of TIMS','Keywords of TIMS',1,'Alternative names for TIMS', 13),
@@ -1668,7 +1666,7 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 (34,'XRF','XRF','M4 Tornado Micro XRF','Bruker','Solid','','','1 %','','','','','','Summary of XRF','Description of XRF','Keywords of XRF',1,'Alternative names for XRF', 21),
 (35,'XRF','XRF','Axios 1kW XRF','PANalytical','Solid','','','1 %','','','','','','Summary of XRF','Description of XRF','Keywords of XRF',1,'Alternative names for XRF', 21),
 (36,'EMP','EMP','SX-100 Electron microprobe','Cameca','Solid','','','','','','','','','Summary of EMP','Description of EMP','Keywords of EMP',1,'Alternative names for EMP', 22),
-(37,'alpha counter','alpha counter','Alpha Particle counter','Ortec','Solid','','','1 ppm','','','','','','Summary of alpha counter','Description of alpha counter','Keywords of alpha counter',1,'Alternative names for alpha counter', 23),
+(37,'Alpha Counter','Alpha Counter','Alpha Particle counter','Ortec','Solid','','','1 ppm','','','','','','Summary of alpha counter','Description of alpha counter','Keywords of alpha counter',1,'Alternative names for alpha counter', 23),
 (38,'Elemental Analyser CHNS','Elemental Analyser CHNS','Vario EL Cube','Elementar','Solid','','','','10-1000 mg','','','','','Summary of Elemental Analyser CHNS','Description of Elemental Analyser CHNS','Keywords of Elemental Analyser CHNS',1,'Alternative names for Elemental Analyser CHNS', 24),
 (39,'Elemental Analyser CHNS','Elemental Analyser CHNS','EA3000','EuroEA','Solid','','','','1-50 mg','','','','','Summary of Elemental Analyser CHNS','Description of Elemental Analyser CHNS','Keywords of Elemental Analyser CHNS',1,'Alternative names for Elemental Analyser CHNS', 24),
 (40,'Automated fission track counting system','Automated fission track counting system','Autoscan Deluxe w. ZEISS M2m Microscope','AutoScan','Solid','','','','','','','','','Summary of Automated fission track counting system','Description of Automated fission track counting system','Keywords of Automated fission track counting system',1,'Alternative names for Automated fission track counting system', 25),
@@ -1681,9 +1679,16 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 (47,'Experimental instrument','Diamond-anvil press','diamond-anvil cell apparatus','constructed in house','','','','','','','100-600','1500-6000','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 29),
 (48,'Experimental instrument','Raman microscope','LABRAM HR Evolution','Horiba','','','','','','','','','','Summary of Experimental instrument','Description of Experimental instrument','Keywords of Experimental instrument',1,'Alternative names for Experimental instrument', 30),
 (49,'Fourier Transform IR microscope','Fourier Transform IR microscope','iN10','Thermo-Fisher Scientific','','','','','','','','','','Summary of Fourier Transform IR microscope','Description of Fourier Transform IR microscope','Keywords of Fourier Transform IR microscope',1,'Alternative names for Fourier Transform IR microscope', 31),
-(50,'MC-ICP-MS','MC-ICP-MS','Neptune','Thermo-Fisher Scientific','Liquid','','','1 ppb','','','','','','Summary of MC-ICP-MS','Description of MC-ICP-MS','Keywords of MC-ICP-MS',1,'Alternative names for MC-ICP-MS', 6),
 (51,'IRMS','EA-IRMS','Flash 2000','Thermo-Fisher Scientific','Liquid','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 32),
-(52,'IRMS','CG-IRMS','Delta V Advantage IRMS','Thermo-Fisher Scientific','Liquid','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 33);
+(52,'IRMS','CG-IRMS','Delta V Advantage IRMS','Thermo-Fisher Scientific','Liquid','','','','','','','','','Summary of IRMS','Description of IRMS','Keywords of IRMS',1,'Alternative names for IRMS', 33),
+(53,'Introduction system','Excimer laser ablation system','Analyte Iridia','Photon Machines Inc.','Polished section','193 nm','1-150 µm','','','','','','','Summary of Introduction system','Description of Introduction system','Keywords of Introduction system',1,'Alternative names for Introduction system', 1),
+/* id, name, instrument_name, model, manufacturer, sample_type, wavelength, beam, min_conc, mass, volume, pressure, temp, ext_ref, summary, desc, keywords, version, alt_names, elements_set_id */
+(54, 'SEM', 'Scanning Electron Microscope (Field Emission)', 'Nanomin', 'FEI', '', '', '','','','','','','','Summary of SEM','Description of SEM','Keywords of SEM',1,'Alternative names for SEM', 34),
+(55, 'SEM', 'Scanning Electron Microscope', 'EVO MA15', 'Zeiss', '', '', '','','','','','','','Summary of SEM','Scanning electron microscope (with Oxford Instruments Aztec Synergy EDS/EBSD and Horiba HCLUE spectral cathodoluminescence detector)','Keywords of SEM',1,'Alternative names for SEM', 34),
+(56, 'SEM', 'Scanning Electron Microscope', 'JCM-6000', 'JEOL', '', '', '','','','','','','','Summary of SEM','Scanning electron microscope Benchtop (BSE-EDS)','Keywords of SEM',1,'Alternative names for SEM', 34),
+(57, 'Sample Preparation', 'Rock Disaggregation Facility', 'Lab', 'selFrag', '', '', '','','','','','','','Summary of electrostatic rock disaggregation facility','Description of electrostatic rock disaggregation facility','Keywords of rock disaggregation facility',1,'Alternative names for rock disaggregation facility', 35),
+(58, 'Micro-sampling', 'MicroMill micro-sampling apparatus', 'MicroMill', 'New Wave Research', '', '', '','','','','','','','Summary of electrostatic rock disaggregation facility','Description of electrostatic rock disaggregation facility','Keywords of rock disaggregation facility',1,'Alternative names for rock disaggregation facility', 36);
+
 /*!40000 ALTER TABLE `technique` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1718,47 +1723,52 @@ CREATE TABLE `localisation` (
 
 
 LOCK TABLES `localisation` WRITE;
-INSERT INTO `localisation` VALUES(NULL, 1, 3,'2013','["geochronology","radiogenic_geochronology","trace_elements","isotopes"]'),
-(NULL, 1, 4,'2017','["geochronology","radiogenic_geochronology","trace_elements","isotopes"]'),
-(NULL, 1, 5,'2013','["geochronology","radiogenic_geochronology","trace_elements","isotopes"]'),
-(NULL, 1, 6,'2015','["geochronology","radiogenic_geochronology","trace_elements","isotopes"]'),
-(NULL, 1, 12,'2010','["geochronology","trace_elements"]'),
-(NULL, 1, 13,'2004','["geochronology","trace_elements"]'),
-(NULL, 1, 14,'2017','["geochronology","radiogenic_geochronology","trace_elements"]'),
-(NULL, 1, 16,'2003','["geochronology","radiogenic_geochronology","isotopes"]'),
-(NULL, 1, 17,'2015','["geochronology","radiogenic_geochronology","isotopes"]'),
-(NULL, 1, 20,'2018','["geochronology","radiogenic_geochronology","isotopes"]'),
-(NULL, 1, 21,'2013','["geochronology","radiogenic_geochronology","isotopes"]'),
-(NULL, 1, 23,'2005','["geochronology","radiogenic_geochronology","isotopes"]'),
-(NULL, 1, 24,'2018','["geochronology","radiogenic_geochronology","isotopes"]'),
+INSERT INTO `localisation` VALUES(NULL, 1, 3,'2013','["geochronology","radiogenic geochronology","trace elements","isotopes"]'),
+(NULL, 1, 4,'2017','["geochronology","radiogenic geochronology","trace elements","isotopes"]'),
+(NULL, 1, 5,'2013','["geochronology","radiogenic geochronology","trace elements","isotopes"]'),
+(NULL, 1, 6,'2015','["geochronology","radiogenic geochronology","trace elements","isotopes"]'),
+(NULL, 1, 12,'2010','["geochronology","trace elements"]'),
+(NULL, 1, 13,'2004','["geochronology","trace elements"]'),
+(NULL, 1, 14,'2017','["geochronology","radiogenic geochronology","trace elements"]'),
+(NULL, 1, 16,'2003','["geochronology","radiogenic geochronology","isotopes"]'),
+(NULL, 1, 17,'2015','["geochronology","radiogenic geochronology","isotopes"]'),
+(NULL, 1, 20,'2018','["geochronology","radiogenic geochronology","isotopes"]'),
+(NULL, 1, 22,'2013','["geochronology","radiogenic geochronology","isotopes"]'),
+(NULL, 1, 23,'2005','["geochronology","radiogenic geochronology","isotopes"]'),
+(NULL, 1, 24,'2018','["geochronology","radiogenic geochronology","isotopes"]'),
 (NULL, 1, 25,'2015','["isotopes"]'),
-(NULL, 1, 26,'2014','["trace_elements","major_elements"]'),
+(NULL, 1, 26,'2014','["trace elements","major elements"]'),
 (NULL, 1, 34,'2017','["isotopes"]'),
-(NULL, 1, 35,'2012','["trace_elements","major_elements"]'),
+(NULL, 1, 35,'2012','["trace elements","major elements"]'),
 (NULL, 1, 36,'2018','["geochronology"]'),
 (NULL, 1, 36,'2005','["geochronology"]'),
 (NULL, 1, 37,'n/a','["geochronology","isotopes"]'),
-(NULL, 1, 38,'2016','["trace_elements","major_elements"]'),
-(NULL, 1, 39,'2015','["trace_elements","major_elements"]'),
-(NULL, 1, 41,'n/a','["experimental_petrology"]'),
-(NULL, 1, 42,'1976','["experimental_petrology"]'),
-(NULL, 1, 43,'2020','["experimental_petrology"]'),
-(NULL, 1, 44,'2006','["experimental_petrology"]'),
-(NULL, 1, 45,'2019','["experimental_petrology"]'),
-(NULL, 1, 46,'2019','["experimental_petrology"]'),
-(NULL, 1, 47,'2017','["experimental_petrology"]'),
+(NULL, 1, 38,'2016','["trace elements","major elements"]'),
+(NULL, 1, 39,'2015','["trace elements","major elements"]'),
+(NULL, 1, 41,'n/a','["experimental petrology"]'),
+(NULL, 1, 42,'1976','["experimental petrology"]'),
+(NULL, 1, 43,'2020','["experimental petrology"]'),
+(NULL, 1, 44,'2006','["experimental petrology"]'),
+(NULL, 1, 45,'2019','["experimental petrology"]'),
+(NULL, 1, 46,'2019','["experimental petrology"]'),
+(NULL, 1, 47,'2017','["experimental petrology"]'),
 (NULL, 1, 48,'2008','[]'),
 (NULL, 1, 49,'2014','[]'),
-(NULL, 2, 1,'2018','["geochronology","trace_elements","isotopes"]'),
-(NULL, 2, 1,'2020','["geochronology","trace_elements","isotopes"]'),
-(NULL, 2, 2,'2012','["geochronology","radiogenic_geochronology","trace_elements","isotopes"]'),
-(NULL, 2, 10,'2013','["trace_elements","isotopes"]'),
-(NULL, 2, 10,'2014','["trace_elements","isotopes"]'),
-(NULL, 2, 11,'2012','["geochronology","thermochronology","trace_elements","isotopes"]'),
-(NULL, 2, 14,'2018','["geochronology","trace_elements","isotopes"]'),
-(NULL, 2, 15,'2000','["geochronology","trace_elements","isotopes"]'),
-(NULL, 2, 17,'2016','["geochronology","trace_elements","isotopes"]'),
-(NULL, 2, 18,'2020','["geochronology","trace_elements","isotopes"]'),
+(NULL, 1, 53,'n/a','["geochronology","radiogenic geochronology","trace elements","isotopes"]'),
+(NULL, 1, 54,'n/a','["imaging"]'),
+(NULL, 1, 55,'n/a','["imaging","major & minor elements","EBSD"]'),
+(NULL, 1, 56,'n/a','["imaging","major & minor elements"]'),
+(NULL, 1, 57,'n/a','["sample preparation"]'),
+(NULL, 1, 58,'n/a','["geochronology","isotopes","radiogenic geochronology"]'),
+(NULL, 2, 1,'2018','["geochronology","trace elements","isotopes"]'),
+(NULL, 2, 1,'2020','["geochronology","trace elements","isotopes"]'),
+(NULL, 2, 2,'2012','["geochronology","radiogenic geochronology","trace elements","isotopes"]'),
+(NULL, 2, 10,'2013','["trace elements","isotopes"]'),
+(NULL, 2, 10,'2014','["trace elements","isotopes"]'),
+(NULL, 2, 11,'2012','["geochronology","thermochronology","trace elements","isotopes"]'),
+(NULL, 2, 14,'2018','["geochronology","trace elements","isotopes"]'),
+(NULL, 2, 17,'2016','["geochronology","trace elements","isotopes"]'),
+(NULL, 2, 18,'2020','["geochronology","trace elements","isotopes"]'),
 (NULL, 2, 23,'2009','["geochronology","isotopes"]'),
 (NULL, 2, 27,'1992','["geochronology","isotopes"]'),
 (NULL, 2, 27,'2006','["geochronology","isotopes"]'),
@@ -1766,18 +1776,18 @@ INSERT INTO `localisation` VALUES(NULL, 1, 3,'2013','["geochronology","radiogeni
 (NULL, 2, 32,'2010','["thermochronology"]'),
 (NULL, 2, 33,'2000','["thermochronology"]'),
 (NULL, 2, 40,'2019','["thermochronology"]'),
-(NULL, 2, 50,'n/a','["geochronology","radiogenic_geochronology","isotopes"]'),
-(NULL, 3, 1,'2016','["geochronology","radiogenic_geochronology","thermochronology","trace_elements","isotopes"]'),
-(NULL, 3, 1,'2018','["geochronology","radiogenic_geochronology","thermochronology","trace_elements","isotopes"]'),
+(NULL, 2, 20,'n/a','["geochronology","radiogenic geochronology","isotopes"]'),
+(NULL, 3, 1,'2016','["geochronology","radiogenic geochronology","thermochronology","trace elements","isotopes"]'),
+(NULL, 3, 1,'2018','["geochronology","radiogenic geochronology","thermochronology","trace elements","isotopes"]'),
 (NULL, 3, 7,'2002','["geochronology","thermochronology"]'),
 (NULL, 3, 8,'2008','["geochronology","thermochronology"]'),
 (NULL, 3, 9,'2012','["geochronology","thermochronology"]'),
-(NULL, 3, 11,'2011','["geochronology","trace_elements"]'),
-(NULL, 3, 11,'2016','["geochronology","trace_elements"]'),
-(NULL, 3, 16,'1998','["geochronology","radiogenic_geochronology","isotopes"]'),
-(NULL, 3, 17,'2010','["geochronology","radiogenic_geochronology","isotopes"]'),
-(NULL, 3, 19,'2020','["geochronology","radiogenic_geochronology","isotopes"]'),
-(NULL, 3, 22,'2017','["geochronology","radiogenic_geochronology","isotopes"]'),
+(NULL, 3, 11,'2011','["geochronology","trace elements"]'),
+(NULL, 3, 11,'2016','["geochronology","trace elements"]'),
+(NULL, 3, 16,'1998','["geochronology","radiogenic geochronology","isotopes"]'),
+(NULL, 3, 17,'2010','["geochronology","radiogenic geochronology","isotopes"]'),
+(NULL, 3, 19,'2020','["geochronology","radiogenic geochronology","isotopes"]'),
+(NULL, 3, 22,'2017','["geochronology","radiogenic geochronology","isotopes"]'),
 (NULL, 3, 28,'2012','["geochronology","thermochronology"]'),
 (NULL, 3, 29,'1993','["geochronology","thermochronology"]'),
 (NULL, 3, 30,'2001','["geochronology","thermochronology"]'),

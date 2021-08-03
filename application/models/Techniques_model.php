@@ -19,7 +19,7 @@ class Techniques_model extends MY_Model
     }
 
     function getAllTechniques(){
-        $result = $this->db->order_by('name','ASC')->get('technique')->result();
+        $result = $this->db->order_by('instrument_name ASC, model ASC')->get('technique')->result();
         return $result;
     }
 
@@ -750,16 +750,20 @@ class Techniques_model extends MY_Model
         if($q == '*'){
             $q= '';
         }
-        // Search in technique
-        $r1 = $this->db->query('SELECT * from technique where MATCH(name, instrument_name, model, manufacturer, sample_type, alternative_names, summary, description, keywords) AGAINST(? IN NATURAL LANGUAGE MODE)',
+        // Literal search in technique
+        $r1 = $this->db->query('SELECT * from technique where MATCH(name, instrument_name, model, manufacturer, sample_type) AGAINST(? IN NATURAL LANGUAGE MODE)',
+            array('q' => '"'.$q.'"'))->result();
+
+        // Word search in technique
+        $r1_2 = $this->db->query('SELECT * from technique where MATCH(alternative_names, summary, description, keywords) AGAINST(? IN NATURAL LANGUAGE MODE)',
             array($q))->result();
 
-        // Search in location and contact
-        $r2_3 = $this->db->query(
-            'select technique.* from location join localisation on location.id=localisation.location_id'
-            .' join technique on localisation.technique_id=technique.id'
+        // Literal search in location and contact
+        $r2 = $this->db->query(
+            'select technique.* from location inner join localisation on location.id=localisation.location_id'
+            .' inner join technique on localisation.technique_id=technique.id'
             .' where MATCH(location.institution, location.center_name, location.`address`, location.state) AGAINST(? IN NATURAL LANGUAGE MODE); ',
-            array($q))->result();
+            array('q' => '"'.$q.'"'))->result();
 
         // Search in case_study
         $r4 = $this->db->query(
@@ -799,7 +803,7 @@ class Techniques_model extends MY_Model
             array($q))->result();
 
         $results = array();
-        $merged = array_merge($r1,$r2_3,$r4,$r5,$r6,$r7,$r8);
+        $merged = array_merge($r1,$r1_2,$r2,$r4,$r5,$r6,$r7,$r8);
         foreach($merged as $r){
             if(!isset($results[$r->id])){
                 $results[$r->id] = $r;

@@ -31,92 +31,66 @@ $this->load->view('layout/portal_header.php'); ?>
         <div class='container-md'>
             <?php include 'header.php'; ?>
         </div>
-    </div>
-    <div style='background-image: linear-gradient(180deg,#282572,#4b4b88);  font-family: Calibre-Light'>
+        <div class='row card-group'>
+            <?php
+            foreach ($localisationItems as $key => $localisation) {
+                echo "<div class='col-lg-6' style='margin: auto'> ";
+                echo "<div class='card h-100'>";
+                echo "<div style='background-color: #ED5D4A' class='card-header text-white'>" . $locationItems[$key][0] . " at " . $locationItems[$key][1] . "</div>";
+                echo "<div class='card-body' >";
+                echo "<p class='card-text'>Applications: ";
+                foreach (array_slice($localisation, 1) as $application) {
+                    echo $application . ";&nbsp&nbsp";
+                }
+                echo "</p>";
+                echo "<p class='card-text'>Year Commissioned: " . $localisation[0] . "</p>";
+                echo "<p class='card-text'>Address: " . $locationItems[$key][2] . "</p>";
+                echo "<p class='card-text'>State: " . $locationItems[$key][3] . "</p>";
+                echo "<p class='card-text'>Contact: " . $locationItems[$key][4] . "</p>";
+                echo "<table class='table table-striped'>";
+                echo "<thead>";
+                echo "<tr class='tf-font-14'>";
+                echo (empty($theTechnique->model)) ? "" : "<th scope='col'>Model</th>";
+                echo (empty($theTechnique->manufacturer)) ? "" : "<th scope='col'>Manufacturer</th>";
+                echo (empty($theTechnique->sample_type)) ? "" : "<th scope='col'>Sample Type</th>";
+                echo (empty($theTechnique->analysis_type)) ? "" : "<th scope='col'>Analysis Type</th>";
+                echo (empty($theTechnique->wavelength)) ? "" : "<th scope='col'>Wavelength</th>";
+                echo (empty($theTechnique->beam_diameter)) ? "" : "<th scope='col'>Beam Diameter</th>";
+                echo (empty($theTechnique->min_conc)) ? "" : "<th scope='col'>Min Conc.</th>";
+                echo (empty($theTechnique->technique)) ? "" : "<th scope='col'>Technique</th>";
+                echo (empty($theTechnique->mass)) ? "" : "<th scope='col'>Mass</th>";
+                echo (empty($theTechnique->volume)) ? "" : "<th scope='col'>Volume (mm<sup>3</sup>)</th>";
+                echo (empty($theTechnique->pressure)) ? "" : "<th scope='col'>Pressure (GPa)</th>";
+                echo (empty($theTechnique->temperature)) ? "" : "<th scope='col'>Temp. (K)</th>";
+                echo (empty($theTechnique->ext_reference)) ? "" : "<th scope='col'>Reference</th>";
 
-    <div class="container-md">
-        <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col-10">
-                <div id="content" class="container" style="margin-bottom: 40px;">
-                    <?php
-                    if ($prevPage == 'listTechniques') {
-                        echo '<button style="float: right" class="btn outline-primary" type="submit" onclick="window.location.assign(\'' . base_url() . 'Portal/listTechniques\')">Back to list of available techniques</button>';
-                    }
-                    ?>
-                    <h1 style="color: #f2f2f1"><?php echo $theTechnique->name; ?></h1>
-
-                    <br>
-
-                    <div class="border-bottom" style="margin: 30px 0"></div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-4" style="margin: auto; padding-bottom: 20px; color: #7e7caa">
-                                <?php echo $theTechnique->description; ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='row card-group'>
-                        <?php
-                        foreach ($localisationItems as $key => $localisation) {
-                            echo "<div class='col-lg-6' style='margin: auto'> ";
-                            echo "<div class='card h-100' style='margin-bottom: 10px'> ";
-                            echo "<div style='background-color: #ED5D4A' class='card-header text-white'>" . $locationItems[$key][0] . " at " . $locationItems[$key][1] . "</div>";
-                            echo "<div class='card-body' >";
-                            echo "<p class='card-text'>Applications: ";
-                            foreach (array_slice($localisation, 1) as $application) {
-                                echo $application . "&nbsp&nbsp";
-                            }
-                            echo "</p>";
-                            echo "<p class='card-text'>Year Commissioned: " . $localisation[0] . "</p>";
-                            echo "<p class='card-text'>Address: " . $locationItems[$key][2] . "</p>";
-                            echo "<p class='card-text'>State: " . $locationItems[$key][3] . "</p>";
-                            echo "<p class='card-text'>Contact: " . $locationItems[$key][4] . "</p>";
-                            echo "<table class='table table-striped'>";
-                            echo "<thead>";
-                            echo "<tr class='tf-font-14'>";
-                            echo (empty($theTechnique->model)) ? "" : "<th scope='col'>Model</th>";
-                            echo (empty($theTechnique->manufacturer)) ? "" : "<th scope='col'>Manufacturer</th>";
-                            echo (empty($theTechnique->sample_type)) ? "" : "<th scope='col'>Sample Type</th>";
-                            echo (empty($theTechnique->analysis_type)) ? "" : "<th scope='col'>Analysis Type</th>";
-                            echo (empty($theTechnique->wavelength)) ? "" : "<th scope='col'>Wavelength</th>";
-                            echo (empty($theTechnique->beam_diameter)) ? "" : "<th scope='col'>Beam Diameter</th>";
-                            echo (empty($theTechnique->min_conc)) ? "" : "<th scope='col'>Min Conc.</th>";
-                            echo (empty($theTechnique->technique)) ? "" : "<th scope='col'>Technique</th>";
-                            echo (empty($theTechnique->mass)) ? "" : "<th scope='col'>Mass</th>";
-                            echo (empty($theTechnique->volume)) ? "" : "<th scope='col'>Volume (mm<sup>3</sup>)</th>";
-                            echo (empty($theTechnique->pressure)) ? "" : "<th scope='col'>Pressure (GPa)</th>";
-                            echo (empty($theTechnique->temperature)) ? "" : "<th scope='col'>Temp. (K)</th>";
-                            echo (empty($theTechnique->ext_reference)) ? "" : "<th scope='col'>Reference</th>";
-
-                            echo "</tr>";
-                            echo "</thead>";
-                            echo "<tbody>";
-                            echo "<tr class='tf-font-14'>";
-                            echo (empty($theTechnique->model)) ? "" : "<th scope='row'>$theTechnique->model</th>";
-                            echo (empty($theTechnique->manufacturer)) ? "" : "<td>$theTechnique->manufacturer</td>";
-                            echo (empty($theTechnique->sample_type)) ? "" : "<td>$theTechnique->sample_type</td>";
-                            echo (empty($theTechnique->analysis_type)) ? "" : "<td>$theTechnique->analysis_type</td>";
-                            echo (empty($theTechnique->wavelength)) ? "" : "<td>$theTechnique->wavelength</td>";
-                            echo (empty($theTechnique->beam_diameter)) ? "" : "<td>$theTechnique->beam_diameter</td>";
-                            echo (empty($theTechnique->min_conc)) ? "" : "<td>$theTechnique->min_conc</td>";
-                            echo (empty($theTechnique->technique)) ? "" : "<td>$theTechnique->technique</td>";
-                            echo (empty($theTechnique->mass)) ? "" : "<td>$theTechnique->mass</td>";
-                            echo (empty($theTechnique->volume)) ? "" : "<td>$theTechnique->volume</td>";
-                            echo (empty($theTechnique->pressure)) ? "" : "<td>$theTechnique->pressure</td>";
-                            echo (empty($theTechnique->temperature)) ? "" : "<td>$theTechnique->temperature</td>";
-                            echo (empty($theTechnique->ext_reference)) ? "" : "<td>$theTechnique->ext_reference</td>";
-                            echo "</tr>";
-                            echo "</tbody>";
-                            echo "</table>";
-                            echo "</div>"; /* card-body */
-                            echo "</div>"; /* card */
-                            echo "</div>"; /* col-4 */
-                        }
-                        echo "</div>"; /* card-group */
-                        ?>
-                        <!--
+                echo "</tr>";
+                echo "</thead>";
+                echo "<tbody>";
+                echo "<tr class='tf-font-14'>";
+                echo (empty($theTechnique->model)) ? "" : "<th scope='row'>$theTechnique->model</th>";
+                echo (empty($theTechnique->manufacturer)) ? "" : "<td>$theTechnique->manufacturer</td>";
+                echo (empty($theTechnique->sample_type)) ? "" : "<td>$theTechnique->sample_type</td>";
+                echo (empty($theTechnique->analysis_type)) ? "" : "<td>$theTechnique->analysis_type</td>";
+                echo (empty($theTechnique->wavelength)) ? "" : "<td>$theTechnique->wavelength</td>";
+                echo (empty($theTechnique->beam_diameter)) ? "" : "<td>$theTechnique->beam_diameter</td>";
+                echo (empty($theTechnique->min_conc)) ? "" : "<td>$theTechnique->min_conc</td>";
+                echo (empty($theTechnique->technique)) ? "" : "<td>$theTechnique->technique</td>";
+                echo (empty($theTechnique->mass)) ? "" : "<td>$theTechnique->mass</td>";
+                echo (empty($theTechnique->volume)) ? "" : "<td>$theTechnique->volume</td>";
+                echo (empty($theTechnique->pressure)) ? "" : "<td>$theTechnique->pressure</td>";
+                echo (empty($theTechnique->temperature)) ? "" : "<td>$theTechnique->temperature</td>";
+                echo (empty($theTechnique->ext_reference)) ? "" : "<td>$theTechnique->ext_reference</td>";
+                echo "</tr>";
+                echo "</tbody>";
+                echo "</table>";
+                echo "</div>"; /* card-body */
+                echo "</div>"; /* card */
+                echo "</div>"; /* col-4 */
+            }
+            echo "</div>"; /* card-group */
+            ?>
+            <!--
         <div>
             <?php
             if (count($caseStudies)) {
