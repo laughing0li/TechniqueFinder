@@ -105,6 +105,43 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+        </form>
+        <br>
+
+        <p class="fs-6">Results for: <span class="tf-orange"><b><?php echo $searchedKeyword ?></b></span></p>
+
+        <?php if (count($searchResults) == 0) {
+            echo 'No matching techniques found';
+        } else {
+            foreach ($searchResults as $r) {
+                $mediaForLIST = $Media_model->getMediaInfosByTechniqueIdAndSection($r->id, 'LIST');
+                $media_location = 'nowhere.png';
+                if (isset($mediaForLIST[0])) {
+                    $media_location = $mediaForLIST[0]->location;
+                }
+                echo
+                    '<div class="border-bottom" style="margin: 50px 0"></div>
+'
+                    .'<div class="container">'
+                    . '<div class="row">'
+                    . '<div class="col">'
+                    . '<h1><a href="' . base_url() . 'Portal/viewTechnique/' . $r->id . '" id="Technique_' . $r->id . '"><b>' . $r ->name . '</b>: ' . $r->instrument_name . ': ' . $r->model . '</a></h1>'
+                    . '<p>' . $r->summary . '</p>'
+                    . '</div>'
+                    . '<div class="col"><img src="' . base_url() . 'media-dir/' . $media_location . '" width="145" height="145" alt="' . $media_location . '"></div>'
+                    . '</div>'
+                    . '</div>';
+            }
+        }
+        ?>
+
+        <br><br>
+        <div class="tf-paging">
+            Page:
+            <?php echo $this->pagination->create_links(); ?>
+>>>>>>> dfa3e8010f5543d1832a62ecce05f27ccec2936e
         </div>
 
     </div>

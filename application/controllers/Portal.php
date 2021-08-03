@@ -201,7 +201,7 @@ class Portal extends CI_Controller {
              echo "<div class='row'>";
              foreach ($tech_meta_pair as $tech_meta) { 
                  echo "<div class='col-sm-4'>".
-                      "<div class='card mb-3 tf-card' onclick='window.location.assign(\"".base_url()."Portal/viewGeochemAnalysis/40\")'>".
+                      "<div class='card mb-3 tf-card' onclick='window.location.assign(\"".base_url()."Portal/viewGeochemAnalysis/".$tech_meta->technique_id."\")'>".
                       "<div class='card-header text-white bg-primary'>$tech_meta->category</div>".
                       "<div class='card-body'>";
                  echo ($tech_meta->model!='')? "<b>Models:</b> $tech_meta->model":"";

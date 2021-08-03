@@ -33,16 +33,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <link rel="icon" href="<?php echo base_url(); ?>/assets/images/favicon.ico" type="image/gif">
 
-    <!-- The following code is AGAINST the MVC Pattern -->
-    <?php $this->load->model('Static_model');
-    $static_data = $this->Static_model->getAllStaticData();
-    //TODO: Improve the code below to
-    if (strpos($static_data[14]['text'], '<script') !== false) { echo strip_tags($static_data[14]['text'], '<script>');}
-    if (strpos($static_data[14]['text'], '<script') !== false) { echo strip_tags($static_data[14]['text'], '<script>');}
-    ?>
-
-
-
+    <!-- Google Analytics -->
     <script type="text/javascript">
 
         var _gaq = _gaq || [];
@@ -59,6 +50,5 @@
 
 </head>
 <body>
-<!--<script type="text/javascript" src="--><?php //echo base_url();?><!--/assets/js/jquery-1.9.0.min.js"></script>-->
 </body>
 </html>
