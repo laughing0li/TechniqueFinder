@@ -18,14 +18,14 @@
 <head>
     <title>Technique Search</title>
     <style>
-        h1, a {
+        h1,
+       .col a {
             color: #f2f2f1 !important
         }
 
         .col a:hover {
             color: grey !important
         }
-        
     </style>
 </head>
 
@@ -35,7 +35,7 @@
             <?php include 'header.php'; ?>
         </div>
     </div>
-    <div style='background-image: linear-gradient(180deg,#282572,#4b4b88);  font-family: Calibre-Light; height: 520px'>
+    <div style='background-image: linear-gradient(180deg,#282572,#4b4b88);  font-family: Calibre-Light; '>
 
         <div class="container-md">
 
@@ -46,7 +46,7 @@
 
 
                             <div class="clear"></div>
-                            <h1 >Possible Techniques</h1>
+                            <h1>Possible Techniques</h1>
                             <br>
 
                             <form action="<?php echo base_url(); ?>Portal/techniqueSearch" method="get" name="searchForm" id="searchForm">
@@ -105,66 +105,31 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-=======
-        </form>
-        <br>
+            </form>
+            <br>
 
-        <p class="fs-6">Results for: <span class="tf-orange"><b><?php echo $searchedKeyword ?></b></span></p>
-
-        <?php if (count($searchResults) == 0) {
-            echo 'No matching techniques found';
-        } else {
-            foreach ($searchResults as $r) {
-                $mediaForLIST = $Media_model->getMediaInfosByTechniqueIdAndSection($r->id, 'LIST');
-                $media_location = 'nowhere.png';
-                if (isset($mediaForLIST[0])) {
-                    $media_location = $mediaForLIST[0]->location;
-                }
-                echo
-                    '<div class="border-bottom" style="margin: 50px 0"></div>
-'
-                    .'<div class="container">'
-                    . '<div class="row">'
-                    . '<div class="col">'
-                    . '<h1><a href="' . base_url() . 'Portal/viewTechnique/' . $r->id . '" id="Technique_' . $r->id . '"><b>' . $r ->name . '</b>: ' . $r->instrument_name . ': ' . $r->model . '</a></h1>'
-                    . '<p>' . $r->summary . '</p>'
-                    . '</div>'
-                    . '<div class="col"><img src="' . base_url() . 'media-dir/' . $media_location . '" width="145" height="145" alt="' . $media_location . '"></div>'
-                    . '</div>'
-                    . '</div>';
-            }
-        }
-        ?>
-
-        <br><br>
-        <div class="tf-paging">
-            Page:
-            <?php echo $this->pagination->create_links(); ?>
->>>>>>> dfa3e8010f5543d1832a62ecce05f27ccec2936e
+        </div>
+        </div>
+        <div class='container-md'>
+            <?php include 'footer.php'; ?>
+        </div>
+        <div style="clear: both">
+            <!-- ff -->
         </div>
 
-    </div>
-    <div class='container-md'>
-        <?php include 'footer.php'; ?>
-    </div>
-    <div style="clear: both">
-        <!-- ff -->
-    </div>
-
-    <div id="infobox"></div>
-    <script>
-        var datasrc = [
-            <?php $keyword_list = $this->Techniques_model->getKeywordList();
-            foreach ($keyword_list as $keyword) {
-                echo "{label: '" . $keyword->name . "', value: '" . $keyword->name . "'},\n";
-            }
-            ?>
-        ];
-        const ac = new Autocomplete(document.getElementById('myAutocomplete'), {
-            data: datasrc
-        })
-    </script>
+        <div id="infobox"></div>
+        <script>
+            var datasrc = [
+                <?php $keyword_list = $this->Techniques_model->getKeywordList();
+                foreach ($keyword_list as $keyword) {
+                    echo "{label: '" . $keyword->name . "', value: '" . $keyword->name . "'},\n";
+                }
+                ?>
+            ];
+            const ac = new Autocomplete(document.getElementById('myAutocomplete'), {
+                data: datasrc
+            })
+        </script>
 
 </body>
 

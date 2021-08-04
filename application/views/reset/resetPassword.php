@@ -16,7 +16,7 @@
     
 </head>
 
-<body class='text-center'>
+<body class='text-center' style='background-image: linear-gradient(180deg,#282572,#4b4b88);  font-family: Calibre-Light'>
 
     <div style="margin: auto" >
         <div class="error-message"><?php echo validation_errors(); ?> </div>
@@ -24,10 +24,10 @@
             <?php echo form_open('reset/password'); ?>
             <main class="form-signin">
                 <form>
-                    <a href="/Portal">
-                        <img class="mb-4" src="/assets/images/AGN-Logo.png" alt="" width="300" height="60">
+                <a href="/Portal" style="margin-left: -20px">
+                        <img class="mb-4" src="/assets/images/LabFinder-logo.png" alt="" width="350" height="75">
                     </a>
-                    <h1 class="h3 mb-3 fw-normal">Reset password form</h1>
+                    <h1 style="color: #f2f2f1" class="h3 mb-3 fw-normal">Reset password form</h1>
 
                     <div class="form-floating">
                         <input style="box-shadow: none;" type="text" name="username" class="form-control" id="floatingInput" placeholder="Login ID">
