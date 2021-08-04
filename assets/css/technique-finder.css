@@ -30,6 +30,16 @@ body {
     /* background-image: linear-gradient(180deg,#282572,#4b4b88); */
     }
 
+
+.bg-color {
+    background-image: linear-gradient(180deg,#282572,#4b4b88);
+    font-family: Calibre-Light;
+}
+
+.header-bg-color {
+    background: #282572
+}
+
 .tf-footer{
     text-align: center;
     border: 1px solid #ccc;
@@ -707,4 +717,19 @@ a.ui-button:active,
 
 .nav-link:hover {
     color: #9e9b9b !important;
+}
+
+/* geochemical analysis page */
+.col-10 strong h1, 
+#content .col h1,
+.row .col span,
+#content span h1,
+.col-10 #content h1,
+.row .col a
+{
+    color: #f2f2f1 !important;
+}
+
+a:hover {
+    color: grey !important;
 }

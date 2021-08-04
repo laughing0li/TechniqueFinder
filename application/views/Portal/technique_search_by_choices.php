@@ -13,7 +13,7 @@
 $this->load->view('layout/portal_header.php'); ?>
 <head><title>AGN Laboratory Finder</title></head>
 <body>
-<div style='background: #282572'>
+<div class="header-bg-color">
     <div class='container-md' >
         <?php include 'header.php'; ?>
     </div>

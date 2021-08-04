@@ -17,25 +17,15 @@
 
 <head>
     <title>Technique Search</title>
-    <style>
-        h1,
-       .col a {
-            color: #f2f2f1 !important
-        }
-
-        .col a:hover {
-            color: grey !important
-        }
-    </style>
 </head>
 
 <body>
-    <div style='background: #282572'>
+    <div class="header-bg-color">
         <div class='container-md'>
             <?php include 'header.php'; ?>
         </div>
     </div>
-    <div style='background-image: linear-gradient(180deg,#282572,#4b4b88);  font-family: Calibre-Light; '>
+    <div class="bg-color">
 
         <div class="container-md">
 

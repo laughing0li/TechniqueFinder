@@ -16,18 +16,13 @@ $this->load->view('layout/portal_header.php'); ?>
 
 <head>
     <title>Experimental instrument</title>
-    <style>
-        .tf-font-14 {
-            color: #282572 !important;
-        }
-    </style>
 </head>
 <link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
 <script src="http://vjs.zencdn.net/4.12/video.js"></script>
 
 
 <body>
-    <div style='background: #282572'>
+    <div class="header-bg-color">
         <div class='container-md'>
             <?php include 'header.php'; ?>
         </div>
@@ -36,7 +31,7 @@ $this->load->view('layout/portal_header.php'); ?>
 
 
 
-    <div style='background-image: linear-gradient(180deg,#282572,#4b4b88);  font-family: Calibre-Light; '>
+    <div class="bg-color">
         <div class="container-md">
             <div class="container">
                 <div class="row justify-content-md-center">
@@ -60,7 +55,7 @@ $this->load->view('layout/portal_header.php'); ?>
                                     echo "<p class='card-text'>Contact: " . $locationItems[$key][4] . "</p>";
                                     echo "<table class='table table-striped'>";
                                     echo "<thead>";
-                                    echo "<tr class='tf-font-14'>";
+                                    echo "<tr style='color: #282572;font-size:14px'>";
                                     echo (empty($theTechnique->model)) ? "" : "<th scope='col'>Model</th>";
                                     echo (empty($theTechnique->manufacturer)) ? "" : "<th scope='col'>Manufacturer</th>";
                                     echo (empty($theTechnique->sample_type)) ? "" : "<th scope='col'>Sample Type</th>";
@@ -78,7 +73,7 @@ $this->load->view('layout/portal_header.php'); ?>
                                     echo "</tr>";
                                     echo "</thead>";
                                     echo "<tbody>";
-                                    echo "<tr class='tf-font-14'>";
+                                    echo "<tr style='color: #282572;font-size:14px'>";
                                     echo (empty($theTechnique->model)) ? "" : "<th scope='row'>$theTechnique->model</th>";
                                     echo (empty($theTechnique->manufacturer)) ? "" : "<td>$theTechnique->manufacturer</td>";
                                     echo (empty($theTechnique->sample_type)) ? "" : "<td>$theTechnique->sample_type</td>";
