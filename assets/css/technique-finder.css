@@ -15,10 +15,30 @@
     .container { max-width: 1800px; }
 }
 
+@font-face {
+    font-family: Calibre-Light;
+    src: url('/assets/fonts/Calibre-Light.otf');
+    font-family: Calibre-Semibold;
+    src: url('/assets/fonts/Calibre-Semibold.otf');
+    font-family: TypeTogether;
+    src: url('/assets/fonts/TypeTogether\ -\ Karmina-Regular.otf');
+}
+
 body {
-    font-family: 'Open Sans', sans-serif;
     background-color: rgb(242,242,241);
+    /* background: url(../images/background.jpg); */
+    /* background-image: linear-gradient(180deg,#282572,#4b4b88); */
     }
+
+
+.bg-color {
+    background-image: linear-gradient(180deg,#282572,#4b4b88);
+    font-family: Calibre-Light;
+}
+
+.header-bg-color {
+    background: #282572
+}
 
 .tf-footer{
     text-align: center;
@@ -31,7 +51,6 @@ body {
     display: block;
     margin-right: 2.5em;
     margin-left: 2.5em;
-    /*font-family: arial, verdana, sans-serif;*/
     font-size: smaller;
 }
 
@@ -39,18 +58,15 @@ body {
     color: #282572;
     font-weight: bold;
     text-decoration: none;
-    /*font-family: 'Open Sans', sans-serif;*/
 }
 
 .tf-hyperlink, a:hover {
     color: #003b76;
     font-weight: bold;
     text-decoration: none;
-    /*font-family: 'Open Sans', sans-serif;*/
 }
 
 .tf-font{
-    /*font-family: Verdana;*/
 }
 
 .tf-login-navbar{
@@ -71,7 +87,6 @@ body {
 }
 
 .tf-login-button{
-    /*font-family: verdana;*/
     float: right;
     width: 4em;
     background: ghostwhite;
@@ -95,7 +110,6 @@ body {
 .tf-attribution {
     color: #282572;
     float: left;
-    /*font-family: arial, verdana, sans-serif;*/
 }
 
 .tf-card {
@@ -107,7 +121,6 @@ body {
     padding-left: 1em;
     padding-top: 1em;
     color: red;
-    /*font-family: verdana;*/
     font-size: 11px;
 }
 
@@ -115,7 +128,6 @@ body {
     padding-left: 1em;
     padding-top: 1em;
     color: blue;
-    /*font-family: verdana;*/
     font-size: 11px;
 }
 
@@ -132,7 +144,6 @@ body {
     border-bottom: 1px solid #9f9f9f;
     font-size: 11px;
     font-weight: bold;
-    /*font-family: Verdana*/
 }
 
 .admin-button:hover{
@@ -140,10 +151,10 @@ body {
 }
 
 .tf-heading{
-    color: #59c2aa;
+    color: #9fcb5a;
     font-weight: normal;
     font-size: 28px;
-    font-family: karmina;
+    /* font-family: karmina; */
     margin-bottom: 30px;
 }
 
@@ -162,7 +173,7 @@ body {
 }
 
 .tf-font-14 {
-    color: #282572 !important;
+    color: #f2f2f1 !important;
     font-weight: normal;
     font-size: 14px;
 }
@@ -231,7 +242,6 @@ body {
     color: #e96214;
     font-weight: bold;
     font-size: 11px;
-    /*font-family: Verdana;*/
 }
 
 .tf-font-size{
@@ -480,10 +490,8 @@ a.ui-button:active,
 }
 
 #content p{
-	/*font-family: arial, verdana, sans-serif;*/
 	font-size: 12px; 
 	line-height:19px;
-	color: #181818;
 }
 
 #content h1 {
@@ -705,4 +713,23 @@ a.ui-button:active,
 
 .bg-primary {
     background-color: #ED5D4A !important;
+}
+
+.nav-link:hover {
+    color: #9e9b9b !important;
+}
+
+/* geochemical analysis page */
+.col-10 strong h1, 
+#content .col h1,
+.row .col span,
+#content span h1,
+.col-10 #content h1,
+.row .col a
+{
+    color: #f2f2f1 !important;
+}
+
+a:hover {
+    color: grey !important;
 }
