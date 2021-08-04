@@ -74,7 +74,7 @@
         <!-- ff -->
     </div>
 
-    <div id="infobox"></div>
+    <!-- <div id="infobox"></div> -->
 
 
 </body>

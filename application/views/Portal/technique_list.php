@@ -65,7 +65,7 @@
     <div style="clear: both">
         <!-- ff -->
     </div>
-    <div id="infobox"></div>
+    <!-- <div id="infobox"></div> -->
 </body>
 
 <?php $this->load->view('layout/portal_footer.php') ?>

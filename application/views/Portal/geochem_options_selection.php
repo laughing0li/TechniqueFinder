@@ -109,7 +109,7 @@
         <!-- ff -->
     </div>
 
-    <div id="infobox"> </div>
+    <!-- <div id="infobox"> </div> -->
     <div class="container">
         <?php $this->load->view('layout/portal_footer.php') ?>
     </div>

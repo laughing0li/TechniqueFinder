@@ -117,7 +117,7 @@
             <!-- ff -->
         </div>
 
-        <div id="infobox"></div>
+        <!-- <div id="infobox"></div> -->
         <script>
             var datasrc = [
                 <?php $keyword_list = $this->Techniques_model->getKeywordList();
