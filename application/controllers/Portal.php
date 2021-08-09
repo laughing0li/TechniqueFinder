@@ -113,21 +113,10 @@ class Portal extends CI_Controller {
      *
      */
     public function samplePrepOptionsSelection(){
-        die; /* TEMPORARY */
-        $staticData = array();
-        $staticData['tf.physicsChoices.quickGuide'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.quickGuide')->text;
-        $staticData['tf.physicsChoices.comparison.title'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.comparison.title')->text;
-        $staticData['tf.physicsChoices.left.title'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.left.title')->text;
-        $staticData['tf.physicsChoices.right.title'] = $this->Static_model->getStaticDataByName('tf.physicsChoices.right.title')->text;
-
-        $this->load->model('OptionChoice_model');
-        $left_list = $this->OptionChoice_model->getAllOptionChoices('PHYSICS', 'LEFT');
-        $right_list = $this->OptionChoice_model->getAllOptionChoices('PHYSICS', 'RIGHT');
-
-        $this->load->view('Portal/phys_options_selection', array(
-            'staticData' => $staticData,
-                'left_list'=>$left_list,
-                'right_list'=>$right_list
+        $this->load->model('SamplePrep_model');
+        $sample_prep_list = $this->SamplePrep_model->getSamplePrepList();
+        $this->load->view('Portal/sample_preparation', array(
+            'sample_prep_list'=>$sample_prep_list
         ));
     }
 
