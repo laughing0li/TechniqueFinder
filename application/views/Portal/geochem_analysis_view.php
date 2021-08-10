@@ -43,8 +43,8 @@ $this->load->view('layout/portal_header.php'); ?>
 
                                 <?php
                                 foreach ($localisationItems as $key => $localisation) {
-                                    echo "<div class='col'>";
-                                    echo "<div style='border: 1px solid #ED5D4A; width: 400px; padding: 20px 20px;'>";
+                                    echo "<div class='col' style='margin-bottom: 10px'>";
+                                    echo "<div style='border: 1px solid #ED5D4A; max-width: 100%; padding: 10px;'>";
 
                                     echo "<span class='tf-font-18' font-weight: bold'>" . $locationItems[$key][1] . "</span>";
 

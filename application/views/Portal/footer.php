@@ -6,17 +6,17 @@
 <!-- <div class="border-bottom" style="margin: 50px 0"></div> -->
 <div class="container" style="margin: 30px 0 30px 5px">
     <div class="row" style="color: #282572;">
-        <div class="col" style="padding-left: 86px;">
+        <div class="col-md-4" style="padding-left: 86px;">
             <a href="https://www.auscope.org.au/">
-                <img style="width: 270px; height: 45px" src="/assets/images/auscopencrislogo.png" alt="">
+                <img style="max-width: 100%; height: 45px" src="/assets/images/auscopencrislogo.png" alt="">
             </a>
         </div>
-        <div class="col">
+        <div class="col-md-2">
             <a href="https://www.csiro.au/">
-                <img style="width: 45px; height: 45px" src="/assets/images/csiro_logo.png" alt="">
+                <img style="max-width: 100%; height: 45px" src="/assets/images/csiro_logo.png" alt="">
             </a>
         </div>
-        <div class="col-7" style='font-family: Calibre-Light; font-size:14px; '>
+        <div class="col-md-6">
             <span>
                 LabFinder has been developed by the AuScope Geochemistry Network
                 <a target="_blank" href="https://www.auscope.org.au/agn">(AGN)</a>
