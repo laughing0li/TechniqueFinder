@@ -763,7 +763,7 @@ INSERT INTO `elements_set` VALUES(1, 'Excimer laser ablation system'),
 (32, 'EA-IRMS'),
 (33, 'CG-IRMS'),
 (34, 'SEM'),
-(35, 'Rock Disaggregation Facility'),
+(35, 'Sample Preparation'),
 (36, 'Micro-sampling Machine');
 UNLOCK TABLES;
   
@@ -1059,7 +1059,27 @@ INSERT INTO `media` VALUES(1, 1, 1, 'ALPHA', 1, 'ALPHA caption', 'image'),
 (18, 1, 18, 'TIMS', 18, 'TIMS caption', 'image'),
 (19, 1, 19, 'U-PB', 19, 'U-PB caption', 'image'),
 (20, 1, 20, 'U-TH-SM-HE', 20, 'U-TH-SM-HE caption', 'image'),
-(21, 1, 21, 'XRF', 21, 'XRF caption', 'image');
+(21, 1, 21, 'XRF', 21, 'XRF caption', 'image'),
+(22, 1, 22, 'diamondsaws', 22, 'diamondsaw caption', 'image'),
+(23, 1, 23, 'hydraulicrocksplitter', 23, 'hydraulicrocksplitter', 'image'),
+(24, 1, 24, 'ionmilling', 24, 'ionmilling caption', 'image'),
+(25, 1, 25, 'jawcrusher', 25, 'jawcrusher caption', 'image'),
+(26, 1, 26, 'kent', 26, 'kent caption', 'image'),
+(27, 1, 27, 'logitech', 27, 'logitech caption', 'image'),
+(28, 1, 28, 'lowspeedcutter1', 28, 'lowspeedcutter1 caption', 'image'),
+(29, 1, 29, 'lowspeedcutter2', 29, 'lowspeedcutter2 caption', 'image'),
+(30, 1, 30, 'magnetic_sep', 30, 'magnetic_sep caption', 'image'),
+(31, 1, 31, 'manualrocksplitter', 31, 'manualrocksplitter caption', 'image'),
+(32, 1, 32, 'mastersizer', 32, 'mastersizer caption', 'image'),
+(33, 1, 33, 'milling1', 33, 'milling1 caption', 'image'),
+(34, 1, 34, 'milling2', 34, 'milling2 caption', 'image'),
+(35, 1, 35, 'milling3', 35, 'milling3 caption', 'image'),
+(36, 1, 36, 'particlesizeanalyser', 36, 'particlesizeanalyser caption', 'image'),
+(37, 1, 37, 'selfrag', 37, 'selfrag caption', 'image'),
+(38, 1, 38, 'sieves', 38, 'sieves caption', 'image'),
+(39, 1, 39, 'tegramin', 39, 'tegramin caption', 'image'),
+(40, 1, 40, 'DenseLiquid', 40, 'DenseLiquid caption', 'image'),
+(41, 1, 41, 'HydroSeparator', 41, 'HydroSeparator caption', 'image'); 
 /*!40000 ALTER TABLE `media` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1109,7 +1129,27 @@ INSERT INTO `media_file` VALUES (1, 1, 288, 'ALPHA.png', 400, 'image/png', 19914
 (18, 1, 288, 'TIMS.jpg', 400, 'image/jpg', 199140), 
 (19, 1, 288, 'U-PB.gif', 400, 'image/gif', 199140), 
 (20, 1, 288, 'U-TH-SM-HE.jpg', 400, 'image/jpg', 199140), 
-(21, 1, 288, 'XRF.jpg', 400, 'image/png', 199140); 
+(21, 1, 288, 'XRF.jpg', 400, 'image/png', 199140),
+(22, 1, 288, 'diamondsaws.tif', 400, 'image/tif', 199140),
+(23, 1, 288, 'hydraulicrocksplitter.tif', 400, 'image/tif', 199140),
+(24, 1, 288, 'ionmilling.tif', 400, 'image/tif', 199140),
+(25, 1, 288, 'jawcrusher.tif', 400, 'image/tif', 199140),
+(26, 1, 288, 'kent.tif', 400, 'image/tif', 199140),
+(27, 1, 288, 'logitech.tif', 400, 'image/tif', 199140),
+(28, 1, 288, 'lowspeedcutter1.tif', 400, 'image/tif', 199140),
+(29, 1, 288, 'lowspeedcutter2.tif', 400, 'image/tif', 199140),
+(30, 1, 288, 'magnetic_sep.jpg', 400, 'image/jpg', 199140),
+(31, 1, 288, 'manualrocksplitter.tif', 400, 'image/tif', 199140),
+(32, 1, 288, 'mastersizer.tif', 400, 'image/tif', 199140),
+(33, 1, 288, 'milling1.tif', 400, 'image/tif', 199140),
+(34, 1, 288, 'milling2.tif', 400, 'image/tif', 199140),
+(35, 1, 288, 'milling3.tif', 400, 'image/tif', 199140),
+(36, 1, 288, 'particlesizeanalyser.tif' , 400, 'image/tif', 199140),
+(37, 1, 288, 'selfrag.jpg', 400, 'image/jpg', 199140),
+(38, 1, 288, 'sieves.jpg', 400, 'image/jpg', 199140),
+(39, 1, 288, 'tegramin.tif', 400, 'image/tif', 199140),
+(40, 1, 288, 'DenseLiquid.tif', 400, 'image/tif', 199140),
+(41, 1, 288, 'HydroSeparator.tif', 400, 'image/tif', 199140); 
 UNLOCK TABLES;
 
 --
@@ -1408,7 +1448,7 @@ CREATE TABLE `static_content` (
 
 LOCK TABLES `static_content` WRITE;
 /*!40000 ALTER TABLE `static_content` DISABLE KEYS */;
-INSERT INTO `static_content` VALUES (1,7,'<h1>Find the instruments and facilities to fit your research project</h1>\r\n\r\n<p>Use AGN Laborarory Finder to identify and understand the analysis techniques available to researchers through Australian Geochemistry Network. You will find the contact details of our expert staff for each technique. They can provide you with all the information you need and guide you through the planning, training, data collection and interpretation stages of your experiments.</p>\r\n','tf.home.quickGuide'),
+INSERT INTO `static_content` VALUES (1,7,'<h1>Find the instruments and facilities to fit your research project</h1>\r\n\r\n<p>Use AGN Laboratory Finder to identify and understand the analysis techniques available to researchers through Australian Geochemistry Network. You will find the contact details of our expert staff for each technique. They can provide you with all the information you need and guide you through the planning, training, data collection and interpretation stages of your experiments.</p>\r\n','tf.home.quickGuide'),
 (2,3,'','tf.home.optionsExplanation'),
 (7,1,'<h1>Choices for Experimental Procedures</h1>\r\n\r\n<p>Choose the type of machine you to want to use.</p>\r\n','tf.expProcChoices.quickGuide'),
 (11,0,'If you know what you want to explore, type it into the search box and click \'go\'.','tf.home.searchExplanation'),
@@ -1487,8 +1527,28 @@ INSERT INTO `technique_metadata` VALUES
 (204, 'Diamond Anvil Press', 'Experimental Instrument', 'Not applicable'),
 (214, 'Noble Gas spectrometer', 'Age Determination', 'Both'),
 (215, 'Noble Gas Spectrometer', 'Age Determination', 'Whole Rock or Mineral Separates'),
+(216, 'Noble Gas Spectrometer', 'Isotopic Analysis','Spot Analysis'),
 (300, 'Rock Disaggregation Facility', 'Sample Preparation', 'Not applicable'),
-(310, 'Micro-sampling Machine', 'Sample Preparation', 'Not applicable');
+(310, 'Micro-sampling Machine', 'Sample Preparation', 'Not applicable'),
+(311, 'Sieves', 'Sample Preparation', 'Not applicable'),
+(312, 'Magnetic separation', 'Sample Preparation', 'Not applicable'),
+(313, 'Dense Liquid Apparatus', 'Sample Preparation', 'Not applicable'),
+(314, 'Hydro-separator', 'Sample Preparation', 'Not applicable'),
+(315, 'Diamond Saws', 'Sample Preparation', 'Not applicable'),
+(316, 'Other saws and cutters', 'Sample Preparation', 'Not applicable'),
+(317, 'Manual and Hydraulic rock splitter', 'Sample Preparation', 'Not applicable'),
+(318, 'Jaw Crushers', 'Sample Preparation', 'Not applicable'),
+(319, 'Milling Machines', 'Sample Preparation', 'Not applicable'),
+(320, 'Logitech System', 'Sample Preparation', 'Not applicable'),
+(321, 'Resin Vacuum Impregnation Chamber', 'Sample Preparation', 'Not applicable'),
+(322, 'Automatic Mounting Press', 'Sample Preparation', 'Not applicable'),
+(323, 'Petrographic Thin Section Saws and Grinder Systems', 'Sample Preparation', 'Not applicable'),
+(324, 'Bench top automatic polishing/lapping units', 'Sample Preparation', 'Not applicable'),
+(325, 'Ion Milling System', 'Sample Preparation', 'Not applicable'),
+(326, 'Particle Size Analyser', 'Sample Preparation', 'Not applicable'),
+(327, 'Petrographic Microscopes', 'Sample Preparation', 'Not applicable'),
+(328, 'Coating Services', 'Sample Preparation', 'Not applicable');
+
 UNLOCK TABLES;
 
 --
@@ -1586,7 +1646,27 @@ INSERT INTO `technique_metadata_link` VALUES(NULL, 101, 1),
 (NULL, 8, 55), -- SEM
 (NULL, 8, 56), -- SEM
 (NULL, 300, 57), -- Rock Disaggregation Facility
-(NULL, 310, 58); -- Micro-sampling Machine
+(NULL, 310, 58), -- Micro-sampling Machine
+(NULL, 311, 59), -- Sieves
+(NULL, 312, 60), -- Magnetic separation
+(NULL, 313, 61), -- Dense Liquid Apparatus
+(NULL, 314, 62), -- Hydro-separator
+(NULL, 315, 63), -- Diamond Saws
+(NULL, 316, 64), -- Other saws and cutters
+(NULL, 317, 65), -- Manual and Hydraulic rock splitter
+(NULL, 318, 66), -- Jaw Crushers
+(NULL, 319, 67), -- Milling Machines
+(NULL, 320, 68), -- Logitech System
+(NULL, 321, 69), -- Resin Vacuum Impregnation Chamber
+(NULL, 322, 70), -- Automatic Mounting Press
+(NULL, 323, 71), -- Petrographic Thin Section Saws and Grinder Systems
+(NULL, 324, 72), -- Bench top automatic polishing/lapping units
+(NULL, 324, 73), -- Bench top automatic polishing/lapping units
+(NULL, 325, 74), -- Ion Milling System
+(NULL, 326, 75), -- Particle Size Analyser
+(NULL, 326, 76), -- Particle Size Analyser
+(NULL, 327, 77), -- Petrographic Microscopes
+(NULL, 328, 78); -- Coating Services
 UNLOCK TABLES;
 
 
@@ -1685,9 +1765,30 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 /* id, name, instrument_name, model, manufacturer, sample_type, wavelength, beam, min_conc, mass, volume, pressure, temp, ext_ref, summary, desc, keywords, version, alt_names, elements_set_id */
 (54, 'SEM', 'Scanning Electron Microscope (Field Emission)', 'Nanomin', 'FEI', '', '', '','','','','','','','Summary of SEM','Description of SEM','Keywords of SEM',1,'Alternative names for SEM', 34),
 (55, 'SEM', 'Scanning Electron Microscope', 'EVO MA15', 'Zeiss', '', '', '','','','','','','','Summary of SEM','Scanning electron microscope (with Oxford Instruments Aztec Synergy EDS/EBSD and Horiba HCLUE spectral cathodoluminescence detector)','Keywords of SEM',1,'Alternative names for SEM', 34),
-(56, 'SEM', 'Scanning Electron Microscope', 'JCM-6000', 'JEOL', '', '', '','','','','','','','Summary of SEM','Scanning electron microscope Benchtop (BSE-EDS)','Keywords of SEM',1,'Alternative names for SEM', 34),
-(57, 'Sample Preparation', 'Rock Disaggregation Facility', 'Lab', 'selFrag', '', '', '','','','','','','','Summary of electrostatic rock disaggregation facility','Description of electrostatic rock disaggregation facility','Keywords of rock disaggregation facility',1,'Alternative names for rock disaggregation facility', 35),
-(58, 'Micro-sampling', 'MicroMill micro-sampling apparatus', 'MicroMill', 'New Wave Research', '', '', '','','','','','','','Summary of electrostatic rock disaggregation facility','Description of electrostatic rock disaggregation facility','Keywords of rock disaggregation facility',1,'Alternative names for rock disaggregation facility', 36);
+(56, 'SEM', 'Scanning Electron Microscope', 'JCM-6000', 'JEOL', '', '', '','','','','','','','Desktop electron microscope (JEOL JCM6000) is used to check sample quality for highly demanding sample or application.','Desktop electron microscope (JEOL JCM6000) is used to check sample quality for highly demanding sample or application.','Keywords of SEM',1,'Alternative names for SEM', 34),
+(57, 'Mineral Separation', 'Rock Disaggregation Facility', 'Lab', 'selFrag', '', '', '','','','','','','','Summary of electrostatic rock disaggregation facility','The selFrag is an electrostatic pulse disaggregation facility, providing a fast and efficient means of liberating mineral grains from a rock irrespective of lithology or grainsize. Rocks are disaggregated by applying an electric current from a high-voltage power source to a sample in a water bath yielding individual, undamaged mineral grains preserving their original shape and form regardless of grain size. Contamination between samples and the health hazard from dust is eliminated. The selFrag technology has boosted mineral separation efficiency.','Keywords of rock disaggregation facility',1,'Alternative names for rock disaggregation facility', 35),
+(58, 'Micro-sampling', 'MicroMill micro-sampling apparatus', 'MicroMill', 'New Wave Research', '', '', '','','','','','','','Summary of electrostatic rock disaggregation facility','Description of electrostatic rock disaggregation facility','Keywords of rock disaggregation facility',1,'Alternative names for rock disaggregation facility', 36),
+(59,'Mineral Separation','Sieves','Sieve Models','Various Sieve Manufacturers','','','','','','','','','','Dry and wet sieves along with programable sieve shakers and a high precision sieve shaker such as the Analysette 3 Spartan (Fritsch(TM)) can be used to obtain homogenous sample size fractions.','Dry and wet sieves along with programable sieve shakers and a high precision sieve shaker such as the Analysette 3 Spartan (Fritsch(TM)) can be used to obtain homogenous sample size fractions.','Keywords of Sieves',1,'Alternate names of Sieves',35),
+(60,'Mineral separation','Magnetic separation','Magnetic Separation Models','Frantz','','','','','','','','','','Magnetic separation (Frantz) separates and concentrates dry mineral grains according to their magnetic susceptibility.','Magnetic separation (Frantz) separates and concentrates dry mineral grains according to their magnetic susceptibility.','Keywords of Magnetic Separation',1,'Alternate names of  Magnetic Separation',35),
+(61,'Mineral Separation','Dense Liquid Apparatus','Dense Liquid Apparatus Models','Dense Liquid Apparatus Manufacturers','','','','','','','','','','Heavy Liquid separation is used to preconcentrate and characterise minerals of interest as function of their density.','Heavy Liquid separation is used to preconcentrate and characterise minerals of interest as function of their density.','Keywords of Dense Liquid Apparatus',1,'Alternate names of Dense Liquid Apparatus',35),
+(62,'Mineral Separation','Hydro-separator','Hydro-separator Models','Hydro-separator Manufacturers','','','','','','','','','','Summary of Hydro-separator','Hydro-separator','Keywords of Hydro-separator',1,'Alternate names  of Hydro-separator',35),
+(63,'Rock Preparation','Diamond Saws','Diamond Saw Models','Diamond Saw Manufacturers','','','','','','','','','','MQGA as a very comprehensive diamond saw park, offering a wide range of blade diameters: 36-inch, 24-inch, 18-inch, 14-inch and 10-inch (x2) to cut and trim large boulders or hand samples.','MQGA as a very comprehensive diamond saw park, offering a wide range of blade diameters: 36-inch, 24-inch, 18-inch, 14-inch and 10-inch (x2) to cut and trim large boulders or hand samples.','Keywords of Diamond Saws',1,'Alternate names of Diamond Saws',35),
+(64,'Rock Preparation','Other saws and cutters','Other Saw and Cutter Models','isomet','','','','','','','','','','Low speed precision cutters 5-inch and 3-inch (isomet(R)) and wire saws can slice a mineral as small as few mm across','Low speed precision cutters 5-inch and 3-inch (isomet(R)) and wire saws can slice a mineral as small as few mm across','Keywords of other saws and cutters',1,'Alternate names of other saws and cutters',35),
+(65,'Crushing and Milling','Manual and Hydraulic rock splitter ','Manual and Hydraulic rock splitter Models','Rocklabs','','','','','','','','','','Manual and Hydraulic rock splitter (Rocklabs) equipped with tungsten carbide blades and plates to minimise sample contamination, are used to split large samples into smaller, manageable pieces suitable for crushing.','Manual and Hydraulic rock splitter (Rocklabs) equipped with tungsten carbide blades and plates to minimise sample contamination, are used to split large samples into smaller, manageable pieces suitable for crushing.','Keywords of Manual and Hydraulic rock splitter ',1,'Alternate names of Manual and Hydraulic rock splitter ',35),
+(66,'Crushing and Milling','Jaw Crushers','Jaw Crusher Models','Pulverisette','','','','','','','','','','Jaw crushers (Pulverisette) are ideal for pre-crushing of hard brittle materials. The sample is crushed under high pressure between one fixed and one movable crushing jaw. A variety of jaw crushers are available depending on expected rock size.','Jaw crushers (Pulverisette(R)) are ideal for pre-crushing of hard brittle materials. The sample is crushed under high pressure between one fixed and one movable crushing jaw. A variety of jaw crushers are available depending on expected rock size.','Keywords of Jaw Crushers',1,'Alternate names of Jaw Crushers',35),
+(67,'Crushing and Milling','Milling Machines ','Milling Machine Models','Milling Machine Manufacturer','','','','','','','','','','Milling machines are used as a function of rock type, quantity and expected level of trace elements to avoid cross contamination.','Milling machines are used as a function of rock type, quantity and expected level of trace elements to avoid cross contamination.','Keywords of Milling machines',1,'Alternate names of  Milling machines',35),
+(68,'Lapidiary and Polishing','Logitech System','Logitech System','Logitech','','','','','','','','','','Logitech system: Logitech(TM) precision lapping and polishing system (x2), is a highly technical but versatile system, due to its high sample throughput is used for batch thinning and polishing thin sections and blocks.','Logitech system: Logitech(TM) precision lapping and polishing system (x2), is a highly technical but versatile system, due to its high sample throughput is used for batch thinning and polishing thin sections and blocks.','Keywords of Logitech System',1,'Alternate names of Logitech System',35),
+(69,'Lapidiary and Polishing','Resin Vacuum Impregnation Chamber','Resin Vacuum Impregnation Chamber','Resin Vacuum Impregnation Chamber Manufacturer','','','','','','','','','','Resin vacuum impregnation chamber is a resin components mixer to provide reproducible resin compositions.','Resin vacuum impregnation chamber is a resin components mixer to provide reproducible resin compositions. ','Keywords of Resin Vacuum Impregnation Chamber',1,'Alternate names of Resin Vacuum Impregnation Chamber',35),
+(70,'Lapidiary and Polishing','Automatic Mounting Press','Simplimet 3000','Buehler','','','','','','','','','','Automatic mounting press (Simplimet 3000 Buehler(TM)) casts samples at high pressure and temperature in epoxy or in other media (e.g., conductive, volatile free).','Automatic mounting press (Simplimet 3000 Buehler (TM)) casts samples at high pressure and temperature in epoxy or in other media (e.g., conductive, volatile free).','Keywords of Automatic Mounting Press',1,'Alternate names of Automatic Mounting Press',35),
+(71,'Lapidiary and Polishing','Petrographic Thin Section Saws and Grinder Systems','Petrographic Thin Section Saws and Grinder System Models','Petrographic Thin Section Saws and Grinder System Manufacturers','','','','','','','','','','Petrographic thin section saws and grinder systems efficiently manage large sample loads.','Petrographic thin section saws and grinder systems efficiently manage large sample loads.','Keywords of Petrographic Thin Section Saws and Grinder Systems',1,'Alternate names of Petrographic Thin Section Saws and Grinder Systems',35),
+(72,'Lapidiary and Polishing','Bench top automatic polishing/lapping units','Kent 3','Kemet','','','','','','','','','','Kent 3 Bench top automatic polishing/lapping units (Kemet(TM)) are used to obtain a fine polish down to 1/4 ?m. ','Kent 3 Bench top automatic polishing/lapping units (Kemet(TM)) are used to obtain a fine polish down to 1/4 ?m.','Keywords of Bench top automatic polishing/lapping units',1,'Alternate names of Bench top automatic polishing/lapping units ',35),
+(73,'Lapidiary and Polishing','Bench top automatic polishing/lapping units','Tegramin 30','Struers','','','','','','','','','','The Tegramin 30(R) (Struers(TM)) is used as a stand-alone grinding and polishing equipment blocks of mineral separate (e.g., zircon, apatite, garnet and many other minerals). This machine offers a large degree of automatization, reproducibility and high performance.','The Tegramin 30(R) (Struers(TM)) is used as a stand-alone grinding and polishing equipment blocks of mineral separate (e.g., zircon, apatite, garnet and many other minerals). This machine offers a large degree of automatization, reproducibility and high performance. ','Keywords of Bench top automatic polishing/lapping units ',1,'Alternate names of Bench top automatic polishing/lapping units',35),
+(74,'Ion Milling System','Ion Milling System','IM4000','Hitachi','','','','','','','','','','Ion milling (IM) removes the top amorphous layer on a given material to reveal the pristine sample surface required for high-resolution imaging and post-processing. IM is providing the best polish available for extremely demanding techniques such as Transmission Electron Microscopy (TEM) and Electron Back Scattered Diffraction (EBSD) studies.','Ion milling (IM) removes the top amorphous layer on a given material to reveal the pristine sample surface required for high-resolution imaging and post-processing. IM is providing the best polish available for extremely demanding techniques such as Transmission Electron Microscopy (TEM) and Electron Back Scattered Diffraction (EBSD) studies.','Keywords of Ion Milling System',1,'Alternate names of Ion Milling System',35),
+(75,'Other','Particle Size Analyser','SediGraph III','MicroMeritics','','','','','','','','','','Micromeritics SediGraph III determines particle size by using the highly accurate and reproducible sedimentation technique to measure the gravity-induced settling rates of different size particles in a liquid with known properties. This is simple yet extremely effective technique for providing particle size information for a wide variety of materials.','Micromeritics SediGraph III determines particle size by using the highly accurate and reproducible sedimentation technique to measure the gravity-induced settling rates of different size particles in a liquid with known properties. This is simple yet extremely effective technique for providing particle size information for a wide variety of materials.','Keywords of Particle Size Analyser',1,'Alternate names of  Particle Size Analyser',35),
+(76,'Other','LASER Particle Size Analyser','Mastersizer 2000','Malvern Instruments','','','','','','','','','','The Mastersizer 2000 is a laser particle size analyser that relies on light diffraction to measure the intensity of light scattered as a laser beam passes through the sample allowing grainsize determination as volume percentage by laser diffraction. Approximately one gram of disaggregated rock/sand/sediment is dispersed in water and laser diffraction particle size analysis is used to calculate the volume percentage of particles in the sample. This is a highly precise method suitable for particles in the range of 0.02-2000microns.','The Mastersizer 2000 is a laser particle size analyser that relies on light diffraction to measure the intensity of light scattered as a laser beam passes through the sample allowing grainsize determination as volume percentage by laser diffraction. Approximately one gram of disaggregated rock/sand/sediment is dispersed in water and laser diffraction particle size analysis is used to calculate the volume percentage of particles in the sample. This is a highly precise method suitable for particles in the range of 0.02-2000microns.','Keywords of LASER Particle Size Analyser',1,'Alternate names of LASER Particle Size Analyser',35),
+(77,'Other','Petrographic Microscopes','Petrographic Microscope Models','Petrographic Microscope Manufacturers','','','','','','','','','','High-grade petrographic microscopes assess the step by step the quality of the polishing process. ','High-grade petrographic microscopes assess the step by step the quality of the polishing process. ','Keywords of Petrographic Microscopes ',1,'Alternate names of Petrographic Microscopes ',35),
+(78,'Other','Not applicable','Not applicable','Coating Service Providers','','','','','','','','','','Coating services provide dedicated Carbon (x2), Gold and Chromium coating are available.','Coating services provide dedicated Carbon (x2), Gold and Chromium coating are available.','Keywords of Coating Services',1,'Alternate names of Coating Services',35);
+
 
 /*!40000 ALTER TABLE `technique` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1697,14 +1798,16 @@ UNLOCK TABLES;
 --
 DROP VIEW IF EXISTS `technique_view`;
 CREATE VIEW `technique_view` AS
-SELECT t.id as technique_id, m.category_type, m.category, m.analysis_type, t.model, t.manufacturer, t.sample_type,
- t.wavelength, t.beam_diameter, t.min_conc, t.mass, t.volume, t.pressure, t.temperature, t.ext_reference, t.summary,
- t.description, t.keywords, t.version, t.alternative_names, t.elements_set_id
+SELECT t.id as technique_id, m.category_type, m.category, m.analysis_type, t.name, t.model, t.manufacturer,
+t.sample_type, t.wavelength, t.beam_diameter, t.min_conc, t.mass, t.volume, t.pressure, t.temperature, t.ext_reference,
+t.summary, t.description, t.keywords, t.version, t.alternative_names, t.elements_set_id
 from technique t join technique_metadata_link on t.id = technique_metadata_link.technique_id
                join technique_metadata m on m.id = technique_metadata_link.technique_metadata_id;
 
 --
 -- Table structure for table `localisation`
+--
+-- Links technique with location and assigns applications
 --
 DROP TABLE IF EXISTS `localisation`;
 CREATE TABLE `localisation` (
@@ -1756,10 +1859,30 @@ INSERT INTO `localisation` VALUES(NULL, 1, 3,'2013','["geochronology","radiogeni
 (NULL, 1, 49,'2014','[]'),
 (NULL, 1, 53,'n/a','["geochronology","radiogenic geochronology","trace elements","isotopes"]'),
 (NULL, 1, 54,'n/a','["imaging"]'),
-(NULL, 1, 55,'n/a','["imaging","major & minor elements","EBSD"]'),
+(NULL, 1, 55,'n/a','["imaging","major & minor elements","electron back scattered diffraction"]'),
 (NULL, 1, 56,'n/a','["imaging","major & minor elements"]'),
 (NULL, 1, 57,'n/a','["sample preparation"]'),
 (NULL, 1, 58,'n/a','["geochronology","isotopes","radiogenic geochronology"]'),
+(NULL, 1, 59,'n/a','["sample preparation"]'),
+(NULL, 1, 60,'n/a','["sample preparation"]'),
+(NULL, 1, 61,'n/a','["sample preparation"]'),
+(NULL, 1, 62,'n/a','["sample preparation"]'),
+(NULL, 1, 63,'n/a','["sample preparation"]'),
+(NULL, 1, 64,'n/a','["sample preparation"]'),
+(NULL, 1, 65,'n/a','["sample preparation"]'),
+(NULL, 1, 66,'n/a','["sample preparation"]'),
+(NULL, 1, 67,'n/a','["sample preparation"]'),
+(NULL, 1, 68,'n/a','["sample preparation"]'),
+(NULL, 1, 69,'n/a','["sample preparation"]'),
+(NULL, 1, 70,'n/a','["sample preparation"]'),
+(NULL, 1, 71,'n/a','["sample preparation"]'),
+(NULL, 1, 72,'n/a','["sample preparation"]'),
+(NULL, 1, 73,'n/a','["sample preparation"]'),
+(NULL, 1, 74,'n/a','["sample preparation"]'),
+(NULL, 1, 75,'n/a','["sample preparation"]'),
+(NULL, 1, 76,'n/a','["sample preparation"]'),
+(NULL, 1, 77,'n/a','["sample preparation"]'),
+(NULL, 1, 78,'n/a','["sample preparation"]'),
 (NULL, 2, 1,'2018','["geochronology","trace elements","isotopes"]'),
 (NULL, 2, 1,'2020','["geochronology","trace elements","isotopes"]'),
 (NULL, 2, 2,'2012','["geochronology","radiogenic geochronology","trace elements","isotopes"]'),
