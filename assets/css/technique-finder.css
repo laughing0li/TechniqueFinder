@@ -16,9 +16,10 @@
 }
 
 @font-face {
-    font-family: 'Calibre';
+    font-family: 'Calibre-Light';
     src: url('/assets/fonts/Calibre-Light.otf');
-
+}
+@font-face {
     font-family: 'Karmina';
     src: url('/assets/fonts/Karmina.otf');
 }
@@ -27,7 +28,7 @@ body {
     background-color: rgb(242,242,241);
     /* background: url(../images/background.jpg); */
     /* background-image: linear-gradient(180deg,#282572,#4b4b88); */
-    font-family: Calibre;
+    font-family: Calibre-Light;
     }
 
 
