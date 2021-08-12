@@ -31,7 +31,7 @@
 
                         <div class="row">
                             <!-- LHS COLUMN -->
-                            <div class="col-5">
+                            <div class="col-md-5">
                                 <div class="row">
                                     <!-- STEP 1 -->
                                     <h3 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.step1.title']); ?> </h3>
@@ -81,7 +81,7 @@
                             </div> <!-- END LHS COLUMN -->
 
                             <!-- RHS COLUMN -->
-                            <div class="col-7">
+                            <div class="col-md-7">
                                 <div class="row">
                                     <span id="display-area"></span>
                                 </div>

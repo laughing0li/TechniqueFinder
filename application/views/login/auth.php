@@ -5,7 +5,7 @@
     <link href='https://getbootstrap.com/docs/5.0/examples/sign-in/signin.css' rel='stylesheet'>
 </head>
 
-<body class='text-center' style='background-image: linear-gradient(180deg,#282572,#4b4b88);  font-family: Calibre-Light; '>
+<body class='text-center' style='background-image: linear-gradient(180deg,#282572,#4b4b88);  font-family: Calibre; '>
 
     <div style="margin: auto;">
         <?php if ((validation_errors())) {

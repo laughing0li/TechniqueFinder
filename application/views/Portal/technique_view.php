@@ -40,10 +40,10 @@ $this->load->view('layout/portal_header.php'); ?>
                             <div class='row card-group'>
                                 <?php
                                 foreach ($localisationItems as $key => $localisation) {
-                                    echo "<div class='col-lg-6' style='margin: auto'> ";
+                                    echo "<div class='col-lg-6' style='margin: auto;' > ";
                                     echo "<div class='card h-100'>";
                                     echo "<div style='background-color: #ED5D4A' class='card-header text-white'>" . $locationItems[$key][0] . " at " . $locationItems[$key][1] . "</div>";
-                                    echo "<div class='card-body' >";
+                                    echo "<div class='card-body'>";
                                     echo "<p class='card-text'>Applications: ";
                                     foreach (array_slice($localisation, 1) as $application) {
                                         echo $application . ";&nbsp&nbsp";

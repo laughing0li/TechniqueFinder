@@ -16,24 +16,24 @@
 }
 
 @font-face {
-    font-family: Calibre-Light;
+    font-family: 'Calibre';
     src: url('/assets/fonts/Calibre-Light.otf');
-    font-family: Calibre-Semibold;
-    src: url('/assets/fonts/Calibre-Semibold.otf');
-    font-family: TypeTogether;
-    src: url('/assets/fonts/TypeTogether\ -\ Karmina-Regular.otf');
+}
+@font-face {
+    font-family: 'Karmina';
+    src: url('/assets/fonts/Karmina.otf');
 }
 
 body {
     background-color: rgb(242,242,241);
     /* background: url(../images/background.jpg); */
     /* background-image: linear-gradient(180deg,#282572,#4b4b88); */
+    font-family: Calibre;
     }
 
 
 .bg-color {
     background-image: linear-gradient(180deg,#282572,#4b4b88);
-    font-family: Calibre-Light;
 }
 
 .header-bg-color {

@@ -32,7 +32,7 @@
                             <div class="row card-group mt-2">
                                 <?php
                                 foreach ($techniqueList as $key => $technique_view) {
-                                    echo "<div class='col-4'>";
+                                    echo "<div class='col-md-4' style='margin-bottom:10px'>";
                                     echo "<div class='card border-white h-100'>";
                                     echo "<div class='card-header text-white' style='background-color: #ED5D4A'>$technique_view->category</div>";
                                     echo "<div class='card-body'>";
