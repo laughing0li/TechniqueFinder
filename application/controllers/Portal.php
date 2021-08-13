@@ -114,9 +114,11 @@ class Portal extends CI_Controller {
      */
     public function samplePrepOptionsSelection(){
         $this->load->model('SamplePrep_model');
+        $this->load->model('Media_model');
         $sample_prep_list = $this->SamplePrep_model->getSamplePrepList();
         $this->load->view('Portal/sample_preparation', array(
-            'sample_prep_list'=>$sample_prep_list
+            'sample_prep_list'=>$sample_prep_list,
+            'Media_model'=>$this->Media_model
         ));
     }
 

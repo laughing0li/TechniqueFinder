@@ -1130,26 +1130,26 @@ INSERT INTO `media_file` VALUES (1, 1, 288, 'ALPHA.png', 400, 'image/png', 19914
 (19, 1, 288, 'U-PB.gif', 400, 'image/gif', 199140), 
 (20, 1, 288, 'U-TH-SM-HE.jpg', 400, 'image/jpg', 199140), 
 (21, 1, 288, 'XRF.jpg', 400, 'image/png', 199140),
-(22, 1, 288, 'diamondsaws.tif', 400, 'image/tif', 199140),
-(23, 1, 288, 'hydraulicrocksplitter.tif', 400, 'image/tif', 199140),
-(24, 1, 288, 'ionmilling.tif', 400, 'image/tif', 199140),
-(25, 1, 288, 'jawcrusher.tif', 400, 'image/tif', 199140),
-(26, 1, 288, 'kent.tif', 400, 'image/tif', 199140),
-(27, 1, 288, 'logitech.tif', 400, 'image/tif', 199140),
-(28, 1, 288, 'lowspeedcutter1.tif', 400, 'image/tif', 199140),
-(29, 1, 288, 'lowspeedcutter2.tif', 400, 'image/tif', 199140),
+(22, 1, 288, 'diamondsaws.png', 400, 'image/png', 199140),
+(23, 1, 288, 'hydraulicrocksplitter.png', 400, 'image/png', 199140),
+(24, 1, 288, 'ionmilling.png', 400, 'image/png', 199140),
+(25, 1, 288, 'jawcrusher.png', 400, 'image/png', 199140),
+(26, 1, 288, 'kent.png', 400, 'image/png', 199140),
+(27, 1, 288, 'logitech.png', 400, 'image/png', 199140),
+(28, 1, 288, 'lowspeedcutter1.png', 400, 'image/png', 199140),
+(29, 1, 288, 'lowspeedcutter2.png', 400, 'image/png', 199140),
 (30, 1, 288, 'magnetic_sep.jpg', 400, 'image/jpg', 199140),
-(31, 1, 288, 'manualrocksplitter.tif', 400, 'image/tif', 199140),
-(32, 1, 288, 'mastersizer.tif', 400, 'image/tif', 199140),
-(33, 1, 288, 'milling1.tif', 400, 'image/tif', 199140),
-(34, 1, 288, 'milling2.tif', 400, 'image/tif', 199140),
-(35, 1, 288, 'milling3.tif', 400, 'image/tif', 199140),
-(36, 1, 288, 'particlesizeanalyser.tif' , 400, 'image/tif', 199140),
+(31, 1, 288, 'manualrocksplitter.png', 400, 'image/png', 199140),
+(32, 1, 288, 'mastersizer.png', 400, 'image/png', 199140),
+(33, 1, 288, 'milling1.png', 400, 'image/png', 199140),
+(34, 1, 288, 'milling2.png', 400, 'image/png', 199140),
+(35, 1, 288, 'milling3.png', 400, 'image/png', 199140),
+(36, 1, 288, 'particlesizeanalyser.png' , 400, 'image/png', 199140),
 (37, 1, 288, 'selfrag.jpg', 400, 'image/jpg', 199140),
 (38, 1, 288, 'sieves.jpg', 400, 'image/jpg', 199140),
-(39, 1, 288, 'tegramin.tif', 400, 'image/tif', 199140),
-(40, 1, 288, 'DenseLiquid.tif', 400, 'image/tif', 199140),
-(41, 1, 288, 'HydroSeparator.tif', 400, 'image/tif', 199140); 
+(39, 1, 288, 'tegramin.png', 400, 'image/png', 199140),
+(40, 1, 288, 'DenseLiquid.png', 400, 'image/png', 199140),
+(41, 1, 288, 'HydroSeparator.png', 400, 'image/png', 199140); 
 UNLOCK TABLES;
 
 --
@@ -1209,7 +1209,23 @@ INSERT INTO `media_in_section` VALUES (10, 1, 10, 1, 15, 'LIST'),
 (49, 1, 49, 1, 5, 'LIST'),
 (50, 1, 20, 1, 11, 'LIST'),
 (51, 1, 51, 1, 5, 'LIST'),
-(52, 1, 52, 1, 5, 'LIST');
+(52, 1, 52, 1, 5, 'LIST'),
+(57, 1, 57, 1, 37, 'LIST'), -- selFrag
+(59, 1, 59, 1, 38, 'LIST'), -- sieves
+(60, 1, 60, 1, 30, 'LIST'), -- Frantz
+(61, 1, 61, 1, 40, 'LIST'),
+(62, 1, 62, 1, 41, 'LIST'),
+(63, 1, 63, 1, 22, 'LIST'),
+(64, 1, 64, 1, 28, 'LIST'),
+(65, 1, 65, 1, 23, 'LIST'),
+(66, 1, 66, 1, 25, 'LIST'),
+(67, 1, 67, 1, 33, 'LIST'),
+(68, 1, 68, 1, 27, 'LIST'),
+(72, 1, 72, 1, 26, 'LIST'),
+(73, 1, 73, 1, 39, 'LIST'),
+(74, 1, 74, 1, 24, 'LIST'),
+(75, 1, 75, 1, 36, 'LIST'),
+(76, 1, 76, 1, 32, 'LIST');
 UNLOCK TABLES;
 
 --
@@ -1768,7 +1784,7 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 (57, 'Mineral Separation', 'Rock Disaggregation Facility', 'Lab', 'selFrag', '', '', '','','','','','','','Summary of electrostatic rock disaggregation facility','The selFrag is an electrostatic pulse disaggregation facility, providing a fast and efficient means of liberating mineral grains from a rock irrespective of lithology or grainsize. Rocks are disaggregated by applying an electric current from a high-voltage power source to a sample in a water bath yielding individual, undamaged mineral grains preserving their original shape and form regardless of grain size. Contamination between samples and the health hazard from dust is eliminated. The selFrag technology has boosted mineral separation efficiency.','Keywords of rock disaggregation facility',1,'Alternative names for rock disaggregation facility', 35),
 (58, 'Micro-sampling', 'MicroMill micro-sampling apparatus', 'MicroMill', 'New Wave Research', '', '', '','','','','','','','Summary of electrostatic rock disaggregation facility','Description of electrostatic rock disaggregation facility','Keywords of rock disaggregation facility',1,'Alternative names for rock disaggregation facility', 36),
 (59,'Mineral Separation','Sieves','Sieve Models','Various Sieve Manufacturers','','','','','','','','','','Dry and wet sieves along with programable sieve shakers and a high precision sieve shaker such as the Analysette 3 Spartan (Fritsch(TM)) can be used to obtain homogenous sample size fractions.','Dry and wet sieves along with programable sieve shakers and a high precision sieve shaker such as the Analysette 3 Spartan (Fritsch(TM)) can be used to obtain homogenous sample size fractions.','Keywords of Sieves',1,'Alternate names of Sieves',35),
-(60,'Mineral separation','Magnetic separation','Magnetic Separation Models','Frantz','','','','','','','','','','Magnetic separation (Frantz) separates and concentrates dry mineral grains according to their magnetic susceptibility.','Magnetic separation (Frantz) separates and concentrates dry mineral grains according to their magnetic susceptibility.','Keywords of Magnetic Separation',1,'Alternate names of  Magnetic Separation',35),
+(60,'Mineral Separation','Magnetic separation','Magnetic Separation Models','Frantz','','','','','','','','','','Magnetic separation (Frantz) separates and concentrates dry mineral grains according to their magnetic susceptibility.','Magnetic separation (Frantz) separates and concentrates dry mineral grains according to their magnetic susceptibility.','Keywords of Magnetic Separation',1,'Alternate names of  Magnetic Separation',35),
 (61,'Mineral Separation','Dense Liquid Apparatus','Dense Liquid Apparatus Models','Dense Liquid Apparatus Manufacturers','','','','','','','','','','Heavy Liquid separation is used to preconcentrate and characterise minerals of interest as function of their density.','Heavy Liquid separation is used to preconcentrate and characterise minerals of interest as function of their density.','Keywords of Dense Liquid Apparatus',1,'Alternate names of Dense Liquid Apparatus',35),
 (62,'Mineral Separation','Hydro-separator','Hydro-separator Models','Hydro-separator Manufacturers','','','','','','','','','','Summary of Hydro-separator','Hydro-separator','Keywords of Hydro-separator',1,'Alternate names  of Hydro-separator',35),
 (63,'Rock Preparation','Diamond Saws','Diamond Saw Models','Diamond Saw Manufacturers','','','','','','','','','','MQGA as a very comprehensive diamond saw park, offering a wide range of blade diameters: 36-inch, 24-inch, 18-inch, 14-inch and 10-inch (x2) to cut and trim large boulders or hand samples.','MQGA as a very comprehensive diamond saw park, offering a wide range of blade diameters: 36-inch, 24-inch, 18-inch, 14-inch and 10-inch (x2) to cut and trim large boulders or hand samples.','Keywords of Diamond Saws',1,'Alternate names of Diamond Saws',35),
