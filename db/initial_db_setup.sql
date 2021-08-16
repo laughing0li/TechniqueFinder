@@ -1473,7 +1473,7 @@ INSERT INTO `static_content` VALUES (1,7,'<h1>Find the instruments and facilitie
 (14,15,'<div style=\"position:absolute; top:55px\"></img></div>\r\n','tf.home.infoboxContent'),
 (15,0,'','tf.tracking.intersect'),
 (16,3,'','tf.tracking.ammrf'),
-(17,3,'<h1>\r\n	Geochemical Analysis</h1>\r\n<p>\r\n	The choices offered below are based on the fact that many experiments in the geochemical sciences involve the interaction or relationship of two things.</p>\r\n<p>\r\n	Choose one item from each list to see what techniques could help in your experiment.</p>\r\n','tf.geochemChoices.quickGuide'),
+(17,3,'<h1>\r\n	Geochemical Analysis and Age Determination</h1>\r\n<p>\r\n	The choices offered below are based on the fact that many experiments in the geochemical sciences involve the interaction or relationship of two things.</p>\r\n<p>\r\n	Choose one item from each list to see what techniques could help in your experiment.</p>\r\n','tf.geochemChoices.quickGuide'),
 (18,5,'<p>then</p>\r\n','tf.geochemChoices.comparison.title'),
 (19,2,'Step 1: Choose a research interest\r\n','tf.geochemChoices.step1.title'),
 (20,2,'Step 2: Type of analysis', 'tf.geochemChoices.step2.title' ),
