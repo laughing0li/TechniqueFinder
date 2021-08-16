@@ -41,7 +41,7 @@
                             <div class="d-grid gap-2 col-4">
 
                                 <button class="btn outline-primary" type="button" onclick="window.location.assign('<?php echo base_url(); ?>Portal/geochemOptionsSelection');">
-                                    Geochemical Analysis
+                                    Geochemical Analysis and Age Determination
                                 </button>
                                 <button class="btn outline-primary" type="button" onclick="window.location.assign('<?php echo base_url(); ?>Portal/expProcOptionsSelection');">
                                     Experimental Procedure
