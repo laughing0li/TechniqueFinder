@@ -105,6 +105,18 @@ class Techniques extends CI_Controller
         $data['alternative_names'] = $technique_data->alternative_names;
         $data['keywords'] = $technique_data->keywords;
 
+        $data['instrument_name'] = $technique_data->instrument_name;
+        $data['model'] = $technique_data->model;
+        $data['manufacturer'] = $technique_data->manufacturer;
+        $data['sample_type'] = $technique_data->sample_type;
+        $data['wavelength'] = $technique_data->wavelength;
+        $data['beam_diameter'] = $technique_data->beam_diameter;
+        $data['min_conc'] = $technique_data->min_conc;
+        $data['mass'] = $technique_data->mass;
+        $data['volume'] = $technique_data->volume;
+        $data['pressure'] = $technique_data->pressure;
+        $data['temperature'] = $technique_data->temperature;
+
 
         $media_items  = $this->Techniques_model->getMediaItems($x);
         $output_items = $this->Techniques_model->getOutputItems($x);

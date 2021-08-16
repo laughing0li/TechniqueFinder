@@ -4,7 +4,7 @@
 ?>
 
 <?php $this->load->view('layout/header.php'); ?>
-<head><title>TF Admin | Create Technique</title></head>
+<head><title>TF Admin | Add Technique</title></head>
 <style>
     table {
         border-spacing: 3px;

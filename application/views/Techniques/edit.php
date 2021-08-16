@@ -72,6 +72,8 @@ if ($this->session->flashdata('error-warning-message')) {
 <div class="tf-box-big">
     <table style="text-align: left;">
 
+
+        <!-- NAME -->
         <tr>
             <td class="tf-font-orange" style="position: absolute;">Name</td>
             <td>&nbsp;&nbsp;</td>
@@ -83,11 +85,29 @@ if ($this->session->flashdata('error-warning-message')) {
             </td>
         </tr>
 
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- INSTRUMENT NAME -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Instrument Name</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                          name="instrument_name"><?php if (isset($instrument_name)) {
+                        echo $instrument_name;
+                    }; ?></textarea>
+            </td>
+        </tr>
 
         <tr>
             <td>&nbsp;</td>
         </tr>
 
+
+        <!-- ALTERNATIVE NAMES -->
         <tr>
             <td class="tf-font-orange" style="position: absolute;">Alternative names</td>
             <td>&nbsp;&nbsp;</td>
@@ -100,8 +120,95 @@ if ($this->session->flashdata('error-warning-message')) {
             <td>&nbsp;</td>
         </tr>
 
+
+        <!-- MODEL -->
         <tr>
-            <td class="tf-font-orange">Short Description</td>
+            <td class="tf-font-orange" style="position: absolute;">Model</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                          name="model"><?php if (isset($model)) {
+                        echo $model;
+                    }; ?></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- MANUFACTURER -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Manufacturer</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                          name="manufacturer"><?php if (isset($manufacturer)) {
+                        echo $manufacturer;
+                    }; ?></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- SAMPLE_TYPE -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Sample Type</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                          name="sample_type"><?php if (isset($sample_type)) {
+                        echo $sample_type;
+                    }; ?></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- WAVELENGTH -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Wavelength</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                          name="wavelength"><?php if (isset($wavelength)) {
+                        echo $wavelength;
+                    }; ?></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- BEAM DIAMETER -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Beam Diameter</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                          name="beam_diameter"><?php if (isset($beam_diameter)) {
+                        echo $beam_diameter;
+                    }; ?></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- SUMMARY -->
+        <tr>
+            <td class="tf-font-orange">Summary</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                     <textarea name="short_description" class="ckeditor" id="short_description">
@@ -113,6 +220,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td>&nbsp;</td>
         </tr>
 
+        <!-- DESCRIPTION -->
         <tr>
             <td class="tf-font-orange">Long Description</td>
             <td>&nbsp;&nbsp;</td>
@@ -125,6 +233,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td>&nbsp;</td>
         </tr>
 
+        <!-- KEYWORDS -->
         <tr>
             <td class="tf-font-orange">Keywords</td>
             <td>&nbsp;&nbsp;</td>
@@ -138,8 +247,9 @@ if ($this->session->flashdata('error-warning-message')) {
             <td>&nbsp;</td>
         </tr>
 
+        <!-- IMAGES -->
         <tr>
-            <td class="tf-font-orange">Media examples for LIST</td>
+            <td class="tf-font-orange">Media examples</td>
             <td>&nbsp;&nbsp;</td>
             <td>
                 <div class="table-responsive tf-font tf-font-size">
@@ -178,7 +288,8 @@ if ($this->session->flashdata('error-warning-message')) {
             <td>&nbsp;</td>
         </tr>
 
-        <tr>
+
+        <!-- <tr>
             <td class="tf-font-orange">Media examples for OUTPUT</td>
             <td>&nbsp;&nbsp;</td>
             <td>
@@ -253,8 +364,10 @@ if ($this->session->flashdata('error-warning-message')) {
         </tr>
         <tr>
             <td>&nbsp;</td>
-        </tr>
+        </tr> -->
 
+
+        <!-- CONTACTS -->
         <tr>
             <td class="tf-font-orange">Contacts</td>
             <td>&nbsp;&nbsp;</td>
@@ -290,10 +403,9 @@ if ($this->session->flashdata('error-warning-message')) {
             </td>
         </tr>
 
-
         <tr><td>&nbsp;</td></tr>
 
-        <tr>
+        <!-- <tr>
             <td class="tf-font-orange">Case Studies</td>
             <td>&nbsp;&nbsp;</td>
             <td>
@@ -363,7 +475,8 @@ if ($this->session->flashdata('error-warning-message')) {
             </td>
         </tr>
 
-        <tr><td>&nbsp;</td></tr>
+
+        <tr><td>&nbsp;</td></tr> -->
 
 
     </table>
