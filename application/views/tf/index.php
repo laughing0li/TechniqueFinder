@@ -32,27 +32,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="col-sm-2" style="display:inline-table;">
         <button onclick="window.location='<?php echo site_url("Techniques/index");?>'"  class="admin-button">Techniques</button><br>
         <button onclick="window.location='<?php echo site_url("Media/index");?>'"  class="admin-button">Images and movies</button><br>
-        <button disabled style="color:#f5e0c1" onclick="window.location='<?php echo site_url("References/index");?>'"  class="admin-button">References</button><br>
-        <button disabled style="color:#f5e0c1" click="window.location='<?php echo site_url("CaseStudy/index");?>'"  class="admin-button">Case studies</button><br>
+        <!-- <button disabled style="color:#f5e0c1" onclick="window.location='<?php echo site_url("References/index");?>'"  class="admin-button">References</button><br> -->
+        <!-- <button disabled style="color:#f5e0c1" click="window.location='<?php echo site_url("CaseStudy/index");?>'"  class="admin-button">Case studies</button><br> -->
         <button onclick="window.location='<?php echo site_url("Contact/index");?>'"  class="admin-button">Contacts</button><br>
         <button onclick="window.location='<?php echo site_url("Location/index");?>'"  class="admin-button">Locations</button><br>
     </div>
     <div class="col-sm-2" style="display:inline-table;">
 
-        <button disabled style="color:#f5e0c1" onclick="window.location='<?php echo site_url("BioOptionLeft/index");?>'"  class="admin-button">Bio options - Left</button><br>
+        <!-- <button disabled style="color:#f5e0c1" onclick="window.location='<?php echo site_url("BioOptionLeft/index");?>'"  class="admin-button">Bio options - Left</button><br>
         <button disabled style="color:#f5e0c1" onclick="window.location='<?php echo site_url("BioOptionRight/index");?>'"  class="admin-button">Bio options - Right</button><br>
         <button disabled style="color:#f5e0c1" onclick="window.location='<?php echo site_url("PhyOptionLeft/index");?>'"  class="admin-button">Phy options - Left</button><br>
         <button disabled style="color:#f5e0c1" onclick="window.location='<?php echo site_url("PhyOptionRight/index");?>'"  class="admin-button">Phy options - Right</button><br>
         <button disabled style="color:#f5e0c1" onclick="window.location='<?php echo site_url("BioOptionAssociation/select");?>'"  class="admin-button">Bio associations</button><br>
-        <button disabled style="color:#f5e0c1" onclick="window.location='<?php echo site_url("PhyOptionAssociation/select");?>'"  class="admin-button">Phys Associations</button><br>
+        <button disabled style="color:#f5e0c1" onclick="window.location='<?php echo site_url("PhyOptionAssociation/select");?>'"  class="admin-button">Phys Associations</button><br> -->
     </div>
     <div class="col-sm-2">
         <?php
         $current_user = $this->session->userdata();
         if($current_user['isAdmin'] == 'ROLE_ADMIN') { ?>
-            <button disabled style="color:#f5e0c1" onclick="window.location='<?php echo site_url("user/index");?>'"  class="admin-button">Manage Accounts</button><br>
+            <button onclick="window.location='<?php echo site_url("user/index");?>'"  class="admin-button">Manage Accounts</button><br>
         <?php } ?>
-        <button disabled style="color:#f5e0c1" type="button" onclick="window.location='<?php echo site_url("user/show/"."$id")?>'" class="admin-button">Manage my Account</button><br>
+        <button type="button" onclick="window.location='<?php echo site_url("user/show/"."$id")?>'" class="admin-button">Manage my Account</button><br>
         <button type="button" onclick="window.location='<?php echo site_url("staticContent/index")?>'" class="admin-button">Static content</button><br>
 
     </div>
