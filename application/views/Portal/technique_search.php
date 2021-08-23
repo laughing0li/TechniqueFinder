@@ -20,11 +20,6 @@
 </head>
 
 <body>
-    <div class="header-bg-color">
-        <div class='container-md'>
-            <?php include 'header.php'; ?>
-        </div>
-    </div>
     <div class="bg-color">
 
         <div class="container-md">
@@ -32,6 +27,8 @@
             <div class="container">
                 <div class="row justify-content-md-center">
                     <div class="col-10">
+                        <?php include 'header.php'; ?>
+
                         <div id="content" class="container" style="color: #f2f2f1 !important">
 
 
@@ -99,27 +96,33 @@
             <br>
 
         </div>
+    </div>
+    <div class='container-md'>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-10">
+                    <?php include 'footer.php'; ?>
+                </div>
+            </div>
         </div>
-        <div class='container-md'>
-            <?php include 'footer.php'; ?>
-        </div>
-        <div style="clear: both">
-            <!-- ff -->
-        </div>
+    </div>
+    <div style="clear: both">
+        <!-- ff -->
+    </div>
 
-        <!-- <div id="infobox"></div> -->
-        <script>
-            var datasrc = [
-                <?php $keyword_list = $this->Techniques_model->getKeywordList();
-                foreach ($keyword_list as $keyword) {
-                    echo "{label: '" . $keyword->name . "', value: '" . $keyword->name . "'},\n";
-                }
-                ?>
-            ];
-            const ac = new Autocomplete(document.getElementById('myAutocomplete'), {
-                data: datasrc
-            })
-        </script>
+    <!-- <div id="infobox"></div> -->
+    <script>
+        var datasrc = [
+            <?php $keyword_list = $this->Techniques_model->getKeywordList();
+            foreach ($keyword_list as $keyword) {
+                echo "{label: '" . $keyword->name . "', value: '" . $keyword->name . "'},\n";
+            }
+            ?>
+        ];
+        const ac = new Autocomplete(document.getElementById('myAutocomplete'), {
+            data: datasrc
+        })
+    </script>
 
 </body>
 

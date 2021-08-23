@@ -6,11 +6,7 @@
 
 <body>
 
-    <div class="header-bg-color">
-        <div class='container-md'>
-            <?php include 'header.php'; ?>
-        </div>
-    </div>
+
 
     <div class="bg-color">
 
@@ -19,12 +15,13 @@
             <div class="container">
                 <div class="row justify-content-md-center">
                     <div class="col-10">
+                        <?php include 'header.php'; ?>
                         <div class="container" id="content">
 
                             <br>
                             <!-- <div class="border-bottom" style="margin: 50px 0"></div> -->
 
-                            <p class="fs-6 lh-lg" style="color: #f2f2f1;">
+                            <p style="font-size: 16px; color: #f2f2f1;">
                                 Use AGN Laborarory Finder to identify and understand the analysis techniques available to researchers
                                 through Australian Geochemistry Network. You will find the contact details of our expert staff for each technique.
                                 They can provide you with all the information you need and guide you through the planning, training,
@@ -56,7 +53,7 @@
                             <h3 class="tf-heading">Option 2: Search by keyword</h3>
 
 
-                            <form  action="<?php echo base_url(); ?>Portal/techniqueSearch" method="get" name="searchForm" id="searchForm">
+                            <form action="<?php echo base_url(); ?>Portal/techniqueSearch" method="get" name="searchForm" id="searchForm">
 
                                 <div class="container" style='margin-left: -28px'>
                                     <div class="row">
@@ -78,7 +75,7 @@
                             <h3 class="tf-heading">Option 3: View list of available techniques</h3>
 
 
-                            <div class="container" style="margin-left: -25px">
+                            <div class="container" style="margin-left: -25px; padding-bottom: 30px">
                                 <div class="row">
                                     <div class="col-md-8">
                                         <p class="lh-lg" style="font-size: 15px;color: #f2f2f1">
@@ -92,46 +89,26 @@
 
                                 </div>
                             </div>
-                            <div class="border-bottom" style="margin: 30px 0"></div>
-
-                            <div class="container-md" style="color: #7e7caa; margin: 0 0 40px -25px">
-                                <div class="row ">
-                                    <div class="col-md-4" style="margin-bottom: 10px;">
-                                        <button class='btn outline-primary' onclick="window.location='<?php echo base_url(); ?>Portal/adminLogin'">Admin Login</button>
-
-                                    </div>
-                                    <div class="col-md-8" style='font-size: 14px; color: #f2f2f1; '>
-                                        <p >ABOUT THE AGN</p>
-                                        <a style="color: #f2f2f1" href="https://www.auscope.org.au/agn">
-                                            The AuScope Geochemistry Network
-                                        </a>
-                                        <br>
-                                        (AGN) s a team of expert geochemists
-                                        from across Australia, <br>aims to create,
-                                        coordinate, promote and develop national
-                                        geochemistry <br>research infrastructure and
-                                        maximise its use by the Australian
-                                        research community.
-                                    </div>
-                                </div>
-
-                            </div>
 
                         </div>
                     </div>
 
                 </div>
-                <!-- <div class="col" style="color: #7e7caa"> -->
-
             </div>
-
 
         </div>
     </div>
 
 
+
     <div class='container-md'>
-        <?php include 'footer.php'; ?>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-10">
+                    <?php include 'footer.php'; ?>
+                </div>
+            </div>
+        </div>
     </div>
 
 

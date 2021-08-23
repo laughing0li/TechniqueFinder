@@ -14,7 +14,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<?php $this->load->view('layout/header.php'); ?>
+<?php $this->load->view('layout/admin_header.php'); ?>
 <head><title>TF Admin | Edit Technique</title></head>
 <style>
     table {
@@ -39,7 +39,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
 </style>
 
-
+<div class="bg-color">
+    <div class="container-md">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-10" style="margin-left: 50px;">
+                <div class="row" >
+    <h1 class="tf-heading"> Edit Technique</h1>
+</div>
 <div class="nav tf-navbar">
     <button class="btn" onclick="window.location='<?php echo base_url(); ?>TechniqueFinder/index'">
         <span class="home-icon">&nbsp;</span>
@@ -52,9 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 
 
-<div class="row" style="margin-left: 1em; ">
-    <h1 class="tf-heading"> Edit Technique</h1>
-</div>
+
 
 <?php
 if ($this->session->flashdata('error-warning-message')) {
@@ -69,7 +74,7 @@ if ($this->session->flashdata('error-warning-message')) {
 <script type="text/javascript" src="<?php echo base_url(); ?>/assets/ckeditor/ckeditor.js"></script>
 
 <?php echo form_open("techniques/validateEditTechnique/".$id); ?>
-<div class="tf-box-big">
+<div style="background-color: #f2f2f1;">
     <table style="text-align: left;">
 
 
@@ -607,7 +612,21 @@ if ($this->session->flashdata('error-warning-message')) {
         </tbody>
     </table>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='container-md'>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-10">
+                <?php $this->load->view('layout/admin_footer.php') ?>
 
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     function hideDialogs() {
         $('#add-media-list-dialog-form').hide();
@@ -1295,12 +1314,3 @@ if ($this->session->flashdata('error-warning-message')) {
 
 </script>
 
-<div class="row">&nbsp;</div>
-<div class="row">&nbsp;</div>
-<div class="row">&nbsp;</div>
-<div class="row">&nbsp;</div>
-
-<?php $this->load->view('layout/footer.php');?>
-
-<div class="row">&nbsp;</div>
-<div class="row">&nbsp;</div>

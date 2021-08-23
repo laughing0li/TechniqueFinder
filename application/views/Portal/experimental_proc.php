@@ -5,17 +5,13 @@
 </head>
 
 <body>
-    <div class="header-bg-color">
-        <div class='container-md'>
-            <?php include 'header.php'; ?>
-        </div>
-    </div>
     <div class="bg-color">
-
         <div class="container-md">
             <div class="container">
                 <div class="row justify-content-md-center">
                     <div class="col-10">
+                    <?php include 'header.php'; ?>
+
                         <div id="content" class="container" style="padding-bottom: 20px;">
 
                             <div class="d-flex justify-content-end">
@@ -61,7 +57,13 @@
     </div>
 
     <div class='container-md'>
-        <?php include 'footer.php'; ?>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-10">
+                    <?php include 'footer.php'; ?>
+                </div>
+            </div>
+        </div>
     </div>
 
 

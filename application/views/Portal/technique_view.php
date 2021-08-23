@@ -22,20 +22,12 @@ $this->load->view('layout/portal_header.php'); ?>
 
 
 <body>
-    <div class="header-bg-color">
-        <div class='container-md'>
-            <?php include 'header.php'; ?>
-        </div>
-    </div>
-
-
-
-
-    <div class="bg-color">
+<div class="bg-color">
         <div class="container-md">
             <div class="container">
                 <div class="row justify-content-md-center">
                     <div class="col-10">
+                        <?php include 'header.php'; ?>
                         <div id="content" class="container" style="margin: 60px 0 140px;">
                             <div class='row card-group'>
                                 <?php
@@ -250,13 +242,19 @@ $this->load->view('layout/portal_header.php'); ?>
 -->
 
                             </div>
-                            </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
         <div class='container-md'>
-            <?php include 'footer.php'; ?>
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-10">
+                        <?php include 'footer.php'; ?>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div style="clear: both">
