@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="nav tf-navbar">
     <button class="btn" onclick="window.location='<?php echo base_url(); ?>TechniqueFinder/index'">
         <span class="home-icon">&nbsp;</span>
-        <a class="tf-font-orange" style="text-decoration: none;">Home</a>
+        <a class="tf-font-orange" style="text-decoration: none;">Admin Home</a>
     </button>
     <button class="btn" onclick="window.location='<?php echo base_url(); ?>/Techniques/index'">
         <span class="tf-database-table">&nbsp;</span>
@@ -57,6 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 
 <?php
+
 if ($this->session->flashdata('error-warning-message')) {
     echo '<div id="error-warning-message" class=" tf-font tf-font-size error-warning-message">';
     echo $this->session->flashdata('error-warning-message');
@@ -84,7 +85,19 @@ if ($this->session->flashdata('error-warning-message')) {
                     }; ?></textarea>
             </td>
         </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
 
+
+        <!-- ALTERNATIVE NAMES -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Alternative names</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big" name="alternative_names"><?php if (isset($alternative_names)){echo $alternative_names;};?></textarea>
+            </td>
+        </tr>
         <tr>
             <td>&nbsp;</td>
         </tr>
@@ -101,21 +114,6 @@ if ($this->session->flashdata('error-warning-message')) {
                     }; ?></textarea>
             </td>
         </tr>
-
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-        <!-- ALTERNATIVE NAMES -->
-        <tr>
-            <td class="tf-font-orange" style="position: absolute;">Alternative names</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big" name="alternative_names"><?php if (isset($alternative_names)){echo $alternative_names;};?></textarea>
-            </td>
-        </tr>
-
         <tr>
             <td>&nbsp;</td>
         </tr>
@@ -132,7 +130,6 @@ if ($this->session->flashdata('error-warning-message')) {
                     }; ?></textarea>
             </td>
         </tr>
-
         <tr>
             <td>&nbsp;</td>
         </tr>
@@ -149,7 +146,6 @@ if ($this->session->flashdata('error-warning-message')) {
                     }; ?></textarea>
             </td>
         </tr>
-
         <tr>
             <td>&nbsp;</td>
         </tr>
@@ -166,7 +162,6 @@ if ($this->session->flashdata('error-warning-message')) {
                     }; ?></textarea>
             </td>
         </tr>
-
         <tr>
             <td>&nbsp;</td>
         </tr>
@@ -183,7 +178,6 @@ if ($this->session->flashdata('error-warning-message')) {
                     }; ?></textarea>
             </td>
         </tr>
-
         <tr>
             <td>&nbsp;</td>
         </tr>
@@ -200,7 +194,86 @@ if ($this->session->flashdata('error-warning-message')) {
                     }; ?></textarea>
             </td>
         </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
 
+
+        <!-- MIN CONC -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Minimum Conc.</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                     name="min_conc"><?php if (isset($min_conc)) {
+                        echo $min_conc;
+                    }; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- MASS -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Mass</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                     name="mass"><?php if (isset($mass)) {
+                        echo $mass;
+                    }; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- VOLUME -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Volume</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                     name="volume"><?php if (isset($volume)) {
+                        echo $volume;
+                    }; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- PRESSURE -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Pressure</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                     name="pressure"><?php if (isset($pressure)) {
+                        echo $pressure;
+                    }; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- TEMPERATURE -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Temperature</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                     name="temperature"><?php if (isset($temperature)) {
+                        echo $temperature;
+                    }; ?></textarea>
+            </td>
+        </tr>
         <tr>
             <td>&nbsp;</td>
         </tr>
@@ -215,10 +288,10 @@ if ($this->session->flashdata('error-warning-message')) {
                         <?php if (isset($short_description)){echo $short_description;};?></textarea>
             </td>
         </tr>
-
         <tr>
             <td>&nbsp;</td>
         </tr>
+
 
         <!-- DESCRIPTION -->
         <tr>
@@ -228,10 +301,10 @@ if ($this->session->flashdata('error-warning-message')) {
                 <textarea name="long_description" class="ckeditor" id="ckeditor"><?php if (isset($long_description)){echo $long_description;};?></textarea>
             </td>
         </tr>
-
         <tr>
             <td>&nbsp;</td>
         </tr>
+
 
         <!-- KEYWORDS -->
         <tr>
@@ -241,13 +314,12 @@ if ($this->session->flashdata('error-warning-message')) {
                 <textarea class="tf-input-big" name="keywords"><?php if (isset($keywords)){echo $keywords;};?></textarea>
             </td>
         </tr>
-
-
         <tr>
             <td>&nbsp;</td>
         </tr>
 
-        <!-- IMAGES -->
+
+        <!-- MEDIA EXAMPLES -->
         <tr>
             <td class="tf-font-orange">Media examples</td>
             <td>&nbsp;&nbsp;</td>
@@ -280,15 +352,13 @@ if ($this->session->flashdata('error-warning-message')) {
                     </button>
                 </div>
             </td>
-
-
         </tr>
-
         <tr>
             <td>&nbsp;</td>
         </tr>
 
 
+        <!-- Media examples for OUTPUT -->
         <!-- <tr>
             <td class="tf-font-orange">Media examples for OUTPUT</td>
             <td>&nbsp;&nbsp;</td>
@@ -322,13 +392,14 @@ if ($this->session->flashdata('error-warning-message')) {
                     </button>
                 </div>
             </td>
-        </tr>
-
-        <tr>
+        </tr> -->
+        <!-- <tr>
             <td>&nbsp;</td>
-        </tr>
+        </tr> -->
 
-        <tr>
+
+        <!-- Media Examples for Instrument -->
+        <!-- <tr>
             <td class="tf-font-orange">Media examples for Instrument</td>
             <td>&nbsp;&nbsp;</td>
             <td>
@@ -361,8 +432,8 @@ if ($this->session->flashdata('error-warning-message')) {
                     </button>
                 </div>
             </td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
             <td>&nbsp;</td>
         </tr> -->
 
@@ -402,9 +473,12 @@ if ($this->session->flashdata('error-warning-message')) {
                 </div>
             </td>
         </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
 
-        <tr><td>&nbsp;</td></tr>
 
+        <!-- CASE STUDIES -->
         <!-- <tr>
             <td class="tf-font-orange">Case Studies</td>
             <td>&nbsp;&nbsp;</td>
@@ -437,11 +511,14 @@ if ($this->session->flashdata('error-warning-message')) {
                     </button>
                 </div>
             </td>
-        </tr>
+        </tr> -->
+        <!-- <tr>
+            <td>&nbsp;</td>
+        </tr> -->
 
-        <tr><td>&nbsp;</td></tr>
 
-        <tr>
+        <!-- REFERENCES -->
+        <!-- <tr>
             <td class="tf-font-orange">References</td>
             <td>&nbsp;&nbsp;</td>
             <td>
@@ -473,10 +550,10 @@ if ($this->session->flashdata('error-warning-message')) {
                     </button>
                 </div>
             </td>
-        </tr>
-
-
-        <tr><td>&nbsp;</td></tr> -->
+        </tr> -->
+        <!-- <tr>
+            <td>&nbsp;</td>
+        </tr> -->
 
 
     </table>

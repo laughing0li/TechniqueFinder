@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="nav tf-navbar">
     <button class="btn" onclick="window.location='<?php echo base_url(); ?>TechniqueFinder/index'">
         <span class="home-icon">&nbsp;</span>
-        <a class="tf-font-orange" style="text-decoration: none;">Home</a>
+        <a class="tf-font-orange" style="text-decoration: none;">Admin Home</a>
     </button>
     <button class="btn" onclick="window.location='<?php echo base_url(); ?>/Techniques/index'">
         <span class="tf-database-table">&nbsp;</span>
@@ -70,9 +70,10 @@ if ($this->session->flashdata('error-warning-message')) {
 <div class="tf-box-big">
     <table style="text-align: left;">
 
+        <!-- NAME -->
         <tr>
             <td class="tf-font-orange  " style="position: absolute;">Name</td>
-            <td>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                 <div class=""
                      name="technique_name"><?php if (isset($technique_name)) {
@@ -80,27 +81,218 @@ if ($this->session->flashdata('error-warning-message')) {
                     }; ?></div>
             </td>
         </tr>
-
-
         <tr>
             <td>&nbsp;</td>
         </tr>
 
+
+        <!-- ALTERNATIVE NAMES -->
         <tr>
             <td class="tf-font-orange  " style="position: absolute;">Alternative names</td>
-            <td>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                 <div class="" name="alternative_names"><?php if (isset($alternative_names)){echo $alternative_names;};?></div>
             </td>
         </tr>
-
         <tr>
             <td>&nbsp;</td>
         </tr>
 
+
+        <!-- INSTRUMENT NAME -->
         <tr>
-            <td class="tf-font-orange  ">Short Description</td>
-            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font-orange  " style="position: absolute;">Instrument Name</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <div class=""
+                     name="instrument_name"><?php if (isset($instrument_name)) {
+                        echo $instrument_name;
+                    }; ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- MODEL -->
+        <tr>
+            <td class="tf-font-orange  " style="position: absolute;">Model</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <div class=""
+                     name="model"><?php if (isset($model)) {
+                        echo $model;
+                    }; ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- MANUFACTURER -->
+        <tr>
+            <td class="tf-font-orange  " style="position: absolute;">Manufacturer</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <div class=""
+                     name="manufacturer"><?php if (isset($manufacturer)) {
+                        echo $manufacturer;
+                    }; ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- SAMPLE TYPE -->
+        <tr>
+            <td class="tf-font-orange  " style="position: absolute;">Sample Type</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <div class=""
+                     name="sample_type"><?php if (isset($sample_type)) {
+                        echo $sample_type;
+                    }; ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+        <!-- WAVELENGTH -->
+        <tr>
+            <td class="tf-font-orange  " style="position: absolute;">Wavelength</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <div class=""
+                     name="wavelength"><?php if (isset($wavelength)) {
+                        echo $wavelength;
+                    }; ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- BEAM DIAMETER -->
+        <tr>
+            <td class="tf-font-orange  " style="position: absolute;">Beam Diameter</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <div class=""
+                     name="beam_diameter"><?php if (isset($beam_diameter)) {
+                        echo $beam_diameter;
+                    }; ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- MIN CONC -->
+        <tr>
+            <td class="tf-font-orange  " style="position: absolute;">Minimum Conc.</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <div class=""
+                     name="min_conc"><?php if (isset($min_conc)) {
+                        echo $min_conc;
+                    }; ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+         <!-- CASE STUDIES -->
+         <!-- <tr>
+            <td class="tf-font-orange  ">Case Studies</td>
+             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+             <td class="tf-font tf-font-size input-col">
+                <div  name="case">
+                    <?php if (isset($case)){foreach($case as $c){
+                        echo "<li>".strip_tags($c['name'])."</li>";
+                    }}
+                    else
+                        {echo "There are no associated Case Studies";}?></div>
+             </td>
+         </tr> -->
+
+
+        <!-- MASS -->
+        <tr>
+            <td class="tf-font-orange  " style="position: absolute;">Mass</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <div class=""
+                     name="mass"><?php if (isset($mass)) {
+                        echo $mass;
+                    }; ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- VOLUME -->
+        <tr>
+            <td class="tf-font-orange  " style="position: absolute;">Volume</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <div class=""
+                     name="volume"><?php if (isset($volume)) {
+                        echo $volume;
+                    }; ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- PRESSURE -->
+        <tr>
+            <td class="tf-font-orange  " style="position: absolute;">Pressure</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <div class=""
+                     name="pressure"><?php if (isset($pressure)) {
+                        echo $pressure;
+                    }; ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+        <!-- TEMPERATURE -->
+        <tr>
+            <td class="tf-font-orange  " style="position: absolute;">Temperature</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <div class=""
+                     name="temperature"><?php if (isset($temperature)) {
+                        echo $temperature;
+                    }; ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+
+        <!-- SUMMARY -->
+        <tr>
+            <td class="tf-font-orange">Summary</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                 <div name="short_description" class="" id="short_description">
                     <?php if (isset($short_description)){echo $short_description;};?></div>
@@ -111,9 +303,10 @@ if ($this->session->flashdata('error-warning-message')) {
             <td>&nbsp;</td>
         </tr>
 
+        <!-- DESCRIPTION -->
         <tr>
-            <td class="tf-font-orange  ">Long Description</td>
-            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font-orange  ">Description</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                 <div name="long_description" class="" id=""><?php if (isset($long_description)){echo $long_description;};?></div>
             </td>
@@ -121,9 +314,10 @@ if ($this->session->flashdata('error-warning-message')) {
 
         <tr><td>&nbsp;</td></tr>
 
+        <!-- KEYWORDS --> 
         <tr>
             <td class="tf-font-orange  ">Keywords</td>
-            <td>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                 <div class="" name="keywords"><?php if (isset($keywords)){echo $keywords;};?></div>
             </td>
@@ -132,9 +326,10 @@ if ($this->session->flashdata('error-warning-message')) {
 
         <tr><td>&nbsp;</td></tr>
 
+        <!-- CONTACTS -->
         <tr>
             <td class="tf-font-orange  ">Contacts</td>
-            <td>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                 <div class="" name="contacts"><?php if (isset($contacts)){foreach($contacts as $c){
                         echo "<li>". $c['name']. "-". $c['institution'] ."</li>";
@@ -145,42 +340,11 @@ if ($this->session->flashdata('error-warning-message')) {
 
         <tr><td>&nbsp;</td></tr>
 
-        <tr><td>&nbsp;</td></tr>
 
-        <tr>
-            <td class="tf-font-orange  ">Case Studies</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <div  name="case">
-                    <?php if (isset($case)){foreach($case as $c){
-                        echo "<li>".strip_tags($c['name'])."</li>";
-                    }}
-                    else
-                        {echo "There are no associated Case Studies";}?></div>
-            </td>
-        </tr>
-
-
-        <tr><td>&nbsp;</td></tr>
-
-
-        <tr>
-            <td class="tf-font-orange  ">References Studies</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <div class="" name="references"><?php if (isset($references) and count($references)>0){foreach($references as $c){
-                        echo "<li>". $c['reference_names']."</li>";
-                    }}
-                    else{echo "There are no associated references";}?></div>
-            </td>
-        </tr>
-
-
-        <tr><td>&nbsp;</td></tr>
-
-        <tr>
+        <!-- ASSOCIATED OPTIONS -->
+        <!-- <tr>
             <td class="tf-font-orange  ">Associated Options</td>
-            <td>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                 <div class="" name="associated"><?php if (isset($associated)){
                     if(isset($associated['biologyArray'])){
@@ -209,7 +373,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
                     ;?></div>
             </td>
-        </tr>
+        </tr> -->
 
 
         <tr><td>&nbsp;</td></tr>
@@ -217,24 +381,22 @@ if ($this->session->flashdata('error-warning-message')) {
 
 
         <tr>
-            <td class="tf-font-orange  ">Media examples for LIST</td>
-            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font-orange  ">Media examples</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td>
                 <div class="table-responsive tf-font tf-font-size">
                     <input type="hidden" id="media_items_selected_hidden" name="media_items_selected_hidden" value=""/>
                     <div id="list_images"></div>
             </td>
-
-
         </tr>
 
         <tr>
             <td>&nbsp;</td>
         </tr>
 
-        <tr>
+        <!-- <tr>
             <td class="tf-font-orange  ">Media examples for OUTPUT</td>
-            <td>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td>
                 <div class="table-responsive tf-font tf-font-size">
                     <input type="hidden" id="media_output_items_selected_hidden" name="media_output_items_selected_hidden" value=""/>
@@ -250,7 +412,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
         <tr>
             <td class="tf-font-orange  ">Media examples for Instrument</td>
-            <td>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td>
                 <div class="table-responsive tf-font tf-font-size">
                     <input type="hidden" id="media_instrument_items_selected_hidden" name="media_instrument_items_selected_hidden" value=""/>
@@ -260,7 +422,8 @@ if ($this->session->flashdata('error-warning-message')) {
         </tr>
         <tr>
             <td>&nbsp;</td>
-        </tr>
+        </tr> -->
+
     </table>
 </div>
 

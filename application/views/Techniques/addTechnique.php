@@ -1,4 +1,3 @@
-<!-- Make input fields hidden -->
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
@@ -32,7 +31,7 @@
 <div class="nav tf-navbar">
     <button class="btn" onclick="window.location='<?php echo base_url(); ?>TechniqueFinder/index'">
         <span class="home-icon">&nbsp;</span>
-        <a class="tf-font-orange" style="text-decoration: none;">Home</a>
+        <a class="tf-font-orange" style="text-decoration: none;">Admin Home</a>
     </button>
     <button class="btn" onclick="window.location='<?php echo base_url(); ?>/Techniques/index'">
         <span class="tf-database-table">&nbsp;</span>
@@ -61,6 +60,7 @@ if ($this->session->flashdata('error-warning-message')) {
 <div class="tf-box-big">
     <table style="text-align: left;">
 
+        <!-- NAME -->
         <tr>
             <td class="tf-font-orange" style="position: absolute;">Name</td>
             <td>&nbsp;&nbsp;</td>
@@ -71,12 +71,12 @@ if ($this->session->flashdata('error-warning-message')) {
                     }; ?></textarea>
             </td>
         </tr>
-
-
         <tr>
             <td>&nbsp;</td>
         </tr>
 
+         
+        <!-- ALTERNATIVE NAMES -->
         <tr>
             <td class="tf-font-orange" style="position: absolute;">Alternative names</td>
             <td>&nbsp;&nbsp;</td>
@@ -84,11 +84,187 @@ if ($this->session->flashdata('error-warning-message')) {
                     <textarea class="tf-input-big" name="alternative_names"><?php if (isset($alternative_names)){echo $alternative_names;};?></textarea>
             </td>
         </tr>
-
         <tr>
             <td>&nbsp;</td>
         </tr>
 
+
+        <!-- INSTRUMENT NAME -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Instrument Name</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                          name="instrument_name"><?php if (isset($instrument_name)) {
+                        echo $instrument_name;
+                    }; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- MODEL -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Model</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                          name="model"><?php if (isset($model)) {
+                        echo $model;
+                    }; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- MANUFACTURER -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Manufacturer</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                          name="manufacturer"><?php if (isset($manufacturer)) {
+                        echo $manufacturer;
+                    }; ?></textarea>
+            </td>
+        </tr>
+        <tr>                                                                                                                        <td>&nbsp;</td>
+        </tr>
+
+
+       <!-- SAMPLE_TYPE -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Sample Type</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                          name="sample_type"><?php if (isset($sample_type)) {
+                        echo $sample_type;
+                    }; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- WAVELENGTH -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Wavelength</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                          name="wavelength"><?php if (isset($wavelength)) {
+                        echo $wavelength;
+                    }; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- BEAM DIAMETER -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Beam Diameter</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                          name="beam_diameter"><?php if (isset($beam_diameter)) {
+                        echo $beam_diameter;
+                    }; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- MIN CONC -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Minimum Conc.</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                     name="min_conc"><?php if (isset($min_conc)) {
+                        echo $min_conc;
+                    }; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- MASS -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Mass</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                     name="mass"><?php if (isset($mass)) {
+                        echo $mass;
+                    }; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- VOLUME -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Volume</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                     name="volume"><?php if (isset($volume)) {
+                        echo $volume;
+                    }; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- PRESSURE -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Pressure</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                     name="pressure"><?php if (isset($pressure)) {
+                        echo $pressure;
+                    }; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- TEMPERATURE -->
+        <tr>
+            <td class="tf-font-orange" style="position: absolute;">Temperature</td>
+            <td>&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <textarea class="tf-input-big"
+                     name="temperature"><?php if (isset($temperature)) {
+                        echo $temperature;
+                    }; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+        <!-- SUMMARY -->
         <tr>
             <td class="tf-font-orange">Short Description</td>
             <td>&nbsp;&nbsp;</td>
@@ -97,11 +273,12 @@ if ($this->session->flashdata('error-warning-message')) {
                         <?php if (isset($short_description)){echo $short_description;};?></textarea>
             </td>
         </tr>
-
         <tr>
             <td>&nbsp;</td>
         </tr>
 
+
+        <!-- DESCRIPTION -->
         <tr>
             <td class="tf-font-orange">Long Description</td>
             <td>&nbsp;&nbsp;</td>
@@ -109,11 +286,12 @@ if ($this->session->flashdata('error-warning-message')) {
                     <textarea name="long_description" class="ckeditor" id="ckeditor"><?php if (isset($long_description)){echo $long_description;};?></textarea>
             </td>
         </tr>
-
         <tr>
             <td>&nbsp;</td>
         </tr>
 
+
+        <!-- KEYWORDS -->
         <tr>
             <td class="tf-font-orange">Keywords</td>
             <td>&nbsp;&nbsp;</td>
@@ -121,14 +299,14 @@ if ($this->session->flashdata('error-warning-message')) {
                         <textarea class="tf-input-big" name="keywords"><?php if (isset($keywords)){echo $keywords;};?></textarea>
             </td>
         </tr>
-
-
         <tr>
             <td>&nbsp;</td>
         </tr>
 
+
+        <!-- MEDIA -->
         <tr>
-            <td class="tf-font-orange">Media examples for LIST</td>
+            <td class="tf-font-orange">Media examples</td>
             <td>&nbsp;&nbsp;</td>
             <td>
                 <div class="table-responsive tf-font tf-font-size">
@@ -155,19 +333,18 @@ if ($this->session->flashdata('error-warning-message')) {
                 <div>
                     <button type="button" id="add-media-list-submit" class="tf-button"">
                     <span class="tf-database-add"></span>
-                    <span class="tf-font create-technique-dialog-button ">Add Media for LIST</span>
+                    <span class="tf-font create-technique-dialog-button ">Add Media</span>
                     </button>
                 </div>
             </td>
-
-
         </tr>
-
         <tr>
             <td>&nbsp;</td>
         </tr>
 
-        <tr>
+ 
+        <!-- Media examples for OUTPUT --> 
+        <!-- <tr>
             <td class="tf-font-orange">Media examples for OUTPUT</td>
             <td>&nbsp;&nbsp;</td>
             <td>
@@ -200,13 +377,14 @@ if ($this->session->flashdata('error-warning-message')) {
                     </button>
                 </div>
             </td>
-        </tr>
-
-        <tr>
+        </tr> -->
+        <!-- <tr>
             <td>&nbsp;</td>
-        </tr>
+        </tr> -->
 
-        <tr>
+
+        <!-- Media examples for INSTRUMENT -->
+        <!-- <tr>
             <td class="tf-font-orange">Media examples for Instrument</td>
             <td>&nbsp;&nbsp;</td>
             <td>
@@ -239,11 +417,13 @@ if ($this->session->flashdata('error-warning-message')) {
                     </button>
                 </div>
             </td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
             <td>&nbsp;</td>
-        </tr>
+        </tr> -->
 
+
+        <!-- CONTACTS -->
         <tr>
             <td class="tf-font-orange">Contacts</td>
             <td>&nbsp;&nbsp;</td>
@@ -278,13 +458,14 @@ if ($this->session->flashdata('error-warning-message')) {
                 </div>
             </td>
         </tr>
-
-
         <tr>
             <td>&nbsp;</td>
         </tr>
 
-        <tr>
+
+
+        <!-- CASE STUDIES -->
+        <!-- <tr>
             <td class="tf-font-orange">Case Studies</td>
             <td>&nbsp;&nbsp;</td>
             <td>
@@ -316,11 +497,14 @@ if ($this->session->flashdata('error-warning-message')) {
                     </button>
                 </div>
             </td>
-        </tr>
+        </tr> -->
+        <!-- <tr>
+            <td>&nbsp;</td>
+        </tr> -->
 
-        <tr><td>&nbsp;</td></tr>
 
-        <tr>
+        <!-- REFERENCES -->
+        <!-- <tr>
             <td class="tf-font-orange">References</td>
             <td>&nbsp;&nbsp;</td>
             <td>
@@ -352,9 +536,10 @@ if ($this->session->flashdata('error-warning-message')) {
                     </button>
                 </div>
             </td>
-        </tr>
-
-        <tr><td>&nbsp;</td></tr>
+        </tr> -->
+        <!-- <tr>
+            <td>&nbsp;</td>
+        </tr> -->
 
 
     </table>

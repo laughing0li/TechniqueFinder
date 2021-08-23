@@ -67,8 +67,8 @@ if ($this->session->flashdata('success-warning-message')){
                         return '<xmp style="white-space:normal;">'+data+'</xmp>'
                     }
                 },
-                { title: "Keywords"},
-                { title: "Alternative Names"},
+                { title: "Model"},
+                { title: "Manufacturer"},
                 { title: "Actions"},
             ],
             order: [[ 0, "asc" ]],

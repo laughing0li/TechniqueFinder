@@ -53,7 +53,7 @@ class Techniques_model extends MY_Model
         return $result;
     }
 
-    function save_new_technique($technique_name,$alternative_names,$short_description,$long_description,$keywords,$list_media_items,$output_media_items,$instrument_media_items,$contact_items,$case_studies_list, $references_items )
+    function save_new_technique($technique_name,$alternative_names,$short_description,$long_description,$keywords,$list_media_items,$output_media_items,$instrument_media_items,$contact_items,$case_studies_list, $references_items, $extras)
     {
 
         $technique_data = array(
@@ -63,6 +63,7 @@ class Techniques_model extends MY_Model
             'description' => $long_description,
             'keywords' => $keywords,
         );
+        $technique_data = array_merge($technique_data, $extras);
 
 
         $this->db->insert('technique', $technique_data);
@@ -391,7 +392,7 @@ class Techniques_model extends MY_Model
         return($ret_list);
     }
 
-    function update_technique($x,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items){
+    function update_technique($x,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items, $extras){
         $technique_data = array(
             'name' => $technique_name,
             'alternative_names' => $alternative_names,
@@ -399,6 +400,7 @@ class Techniques_model extends MY_Model
             'description' => $long_description,
             'keywords' => $keywords,
         );
+        $technique_data = array_merge($technique_data, $extras);
 
         $this->db->where('id', $x);
         $this->db->update('technique', $technique_data);
