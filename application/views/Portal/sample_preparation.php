@@ -43,11 +43,12 @@
                                     echo '</div>';
                                     echo '<div class="col-md-6" style="margin: auto;">';
                                     $mediaForLIST = $Media_model->getMediaInfosByTechniqueIdAndSection($technique_view->technique_id, 'LIST');
-                                    $media_location = 'nowhere.png';
                                     if (isset($mediaForLIST[0])) {
                                         $media_location = $mediaForLIST[0]->location;
+                                        echo '<div class="col"><img src="' . base_url() . 'media-dir/' . $media_location . '" width="175" height="175" alt="' . $media_location . '"></div>';
+                                    } else {
+                                        echo '<div class="col"></div>';
                                     }
-                                    echo '<div class="col"><img src="' . base_url() . 'media-dir/' . $media_location . '" width="175" height="175" alt="' . $media_location . '"></div>';
                                     echo '</div>';
                                 }
                               ?>
