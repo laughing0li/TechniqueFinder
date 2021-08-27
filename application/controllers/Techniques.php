@@ -52,6 +52,11 @@ class Techniques extends CI_Controller
 
     }
 
+
+    /*
+     * Used to setup a view of technique in the Admin page
+     * @param $x technique id
+     */
     function view($x)
     {
 
@@ -68,7 +73,8 @@ class Techniques extends CI_Controller
             $max++;
         }
 
-        if($current >$max ){
+        // Adjust next and prev page navigation links for first and last page
+        if($current+1 >= $max ){
             $next =0;
         }
         else{
@@ -88,12 +94,16 @@ class Techniques extends CI_Controller
         $data['media_list'] = $this->Techniques_model->getTechniqueDataAll();
 
 
-        $data['contacts'] = $this->Techniques_model->getTechniqueContacts($x);
+        $data['contacts'] = $this->Techniques_model->getContactsForTechnique($x);
         $data['case'] = $this->Techniques_model->getTechniqueCase($x);
 
         $data['references'] = $this->Techniques_model->getTechniqueReferences($x);
         $data['associated'] = $this->Techniques_model->getAssociatedTechniques($x);
 
+
+        $data['option_choices'] = $this->Techniques_model->getOptionChoices($x);
+        $data['metadata'] = $this->Techniques_model->getMetadata($x);
+        $data['elements'] = $this->Techniques_model->getElements($x);
 
         // Get data for Technique
 

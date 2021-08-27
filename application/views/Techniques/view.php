@@ -332,12 +332,63 @@ if ($this->session->flashdata('error-warning-message')) {
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                 <div class="" name="contacts"><?php if (isset($contacts)){foreach($contacts as $c){
-                        echo "<li>". $c['name']. "-". $c['institution'] ."</li>";
+                        echo "<li><b>Name:</b>&nbsp;". $c->name . "&nbsp;<b>Institution:</b>&nbsp;". $c->institution."</li>";
+                        // TODO:
+                        // echo "<li><b>'address'
+                        // 'center_name' 
+                        // 'state' 
+                        // 'institution'
+                        // 'title'
+                        // 'name'
+                        // 'telephone'
+                        // 'email'
+                        // 'contact_position'
+                        // 'yr_commissioned'
+                        // 'applications'
                     }}else{echo "There are no associated Contacts";}?></div>
             </td>
         </tr>
 
 
+        <tr><td>&nbsp;</td></tr>
+
+        <!-- OPTION CHOICES -->
+        <tr>
+            <td class="tf-font-orange  ">Geochem Analysis Choices</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <div class="" name="option_choices"><?php if (isset($option_choices)){foreach($option_choices as $o){
+                        echo "<li><b>Name:</b>&nbsp;". $o->name . "&nbsp;&nbsp;&nbsp;&nbsp;<b>Type:</b>&nbsp;". $o->type . "&nbsp;&nbsp;&nbsp;&nbsp;<b>Science:</b>&nbsp;" . $o->science . "</li>";
+                    }}else{echo "There are no associated Option Choices";}?></div>
+            </td>
+        </tr>
+        
+        <tr><td>&nbsp;</td></tr>
+
+        <!-- METADATA -->
+        <tr>
+            <td class="tf-font-orange  ">Metadata</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+	<div class="" name="metadata"><?php if (isset($metadata)){foreach($metadata as $m){
+			echo "<li><b>Category:</b>&nbsp;". $m->category . "&nbsp;&nbsp;&nbsp;&nbsp;<b>Category Type:</b>&nbsp;". $m->category_type . "&nbsp;&nbsp;&nbsp;&nbsp;<b>Analysis Type:</b>&nbsp;" . $m->analysis_type . "</li>";
+                    }}else{echo "There are no associated Metadata";}?></div>
+            </td>
+        </tr>
+        
+        <tr><td>&nbsp;</td></tr>
+     
+        <!-- ELEMENTS -->
+        <tr>
+            <td class="tf-font-orange  ">Elements</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <div class="" name="elements"><?php if (isset($elements)){foreach($elements as $e){
+                        echo $e->symbol . ",";
+                    }}else{echo "There are no associated Elements";}?></div>
+            </td>
+        </tr>
+        
         <tr><td>&nbsp;</td></tr>
 
 

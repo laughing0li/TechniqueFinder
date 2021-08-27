@@ -675,6 +675,12 @@ class Techniques_model extends MY_Model
     }
 
 
+    /*
+     * Get contact details for the Admin page
+     *
+     * @param $x technique id
+     * @returns array of 'name', 'institution', 'contact', 'location'
+     */
     function getTechniqueContacts($x){
         $query= $this->db->query("SELECT c.name, l.institution FROM contact c, location l, technique_contact t WHERE t.contact_id = c.id AND t.contact_id AND c.location_id = l.id AND t.technique_contacts_id ='". $x."';");
         return $query->result_array();
@@ -814,12 +820,20 @@ class Techniques_model extends MY_Model
         return $results;
     }
 
+    /*
+     * Get contacts for display pages e.g. after geochem analysis
+     *
+     * @param $x techinque id
+     * @returns array of objects, keys are columns of 'location', 'contacts' and 'localisation' tables
+     */
     function getContactsForTechnique($x){
         return $this->db->query(
-            'select location.institution, contact.title, contact.name, contact.telephone, contact.email, contact.contact_position'
-            .' from technique join technique_contact on technique.id=technique_contact.technique_contacts_id '
-            .'join contact on technique_contact.contact_id = contact.id join location on contact.location_id =location.id '
-            .' where technique.id=?' ,
+            'select lc.address, lc.center_name, lc.state, lc.institution,'
+            .' c.title, c.name, c.telephone, c.email, c.contact_position,'
+            .' ls.yr_commissioned, ls.applications'
+            .' from technique t, localisation ls, location lc, contact c where'
+            .' ls.technique_id = t.id and ls.location_id = lc.id and lc.id = c.location_id'
+            .' and t.id=?',
             array($x))->result();
     }
 
@@ -850,4 +864,57 @@ class Techniques_model extends MY_Model
             .' where technique_case_study.technique_case_studies_id =?',
             array($x))->result();
     }
+
+
+    /*
+     * Get option choices for a technique in Admin page
+     *
+     * @param $x technique id
+     * @returns rows with 'name', 'type' and 'science' keys
+     */
+    function getOptionChoices($x){
+        return $this->db->query(
+            'select och.name, och.type, och.science'
+            .' from option_combination ocb, option_choice och, technique t'
+            .' where ocb.left_id = och.id and t.id = ocb.technique_id'
+            .' and t.id =? union'
+            .' select och.name, och.type, och.science'
+            .' from option_combination ocb, option_choice och, technique t'
+            .' where ocb.right_id = och.id and t.id = ocb.technique_id'
+            .' and t.id =?',
+            array($x,$x))->result();
+    }
+
+
+    /*
+     * Get metadata for a technique in Admin page
+     *
+     * @param $x technique id
+     * @returns rows with 'category' 'category_type', 'analysis_type' keys
+     */
+    function getMetadata($x) {
+        return $this->db->query(
+            'select tv.category, tv.category_type, tv.analysis_type'
+            .' from technique_view tv'
+            .' where tv.technique_id =?',
+            array($x))->result();
+    }
+
+
+    /*
+     * Get elements for a technique in Admin page
+     *
+     * @param $x technique id
+     * @returns rows with 'name' and 'symbol' keys
+     */
+    function getElements($x) {
+        return $this->db->query(
+            'select e.name, e.symbol'
+            .' from technique t, elements e, elements_elements_set ees, elements_set es'
+            .' where ees.elements_id = e.id and ees.elements_set_id = es.id'
+            .' and t.elements_set_id = es.id and t.id =?',
+            array($x))->result();
+    }
+
+
 }
