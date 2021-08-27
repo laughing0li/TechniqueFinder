@@ -332,20 +332,32 @@ if ($this->session->flashdata('error-warning-message')) {
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                 <div class="" name="contacts"><?php if (isset($contacts)){foreach($contacts as $c){
-                        echo "<li><b>Name:</b>&nbsp;". $c->name . "&nbsp;<b>Institution:</b>&nbsp;". $c->institution."</li>";
-                        // TODO:
-                        // echo "<li><b>'address'
-                        // 'center_name' 
-                        // 'state' 
-                        // 'institution'
-                        // 'title'
-                        // 'name'
-                        // 'telephone'
-                        // 'email'
-                        // 'contact_position'
-                        // 'yr_commissioned'
-                        // 'applications'
+                        echo "<li><b>Name:</b>&nbsp;". $c->name . "</li>";
+                        echo "<li><b>Institution:</b>&nbsp;". $c->institution. "</li>";
+                        echo "<li><b>Address:</b>&nbsp;". $c->address ."</li>";
+                        echo "<li><b>Centre Name:</b>&nbsp;". $c->center_name ."</li>";
+                        echo "<li><b>State:</b>&nbsp;". $c->state  ."</li>";
+                        echo "<li><b>Title:</b>&nbsp;". $c->title ."</li>";
+                        echo "<li><b>Telephone:</b>&nbsp;". $c->telephone ."</li>";
+                        echo "<li><b>Email:</b>&nbsp;". $c->email ."</li>";
+                        echo "</br>";
                     }}else{echo "There are no associated Contacts";}?></div>
+                </div>
+            </td>
+        </tr>
+
+        <tr><td>&nbsp;</td></tr>
+
+        <!-- APPLICATIONS & AGE -->
+        <tr>
+            <td class="tf-font-orange  ">Applications & Age</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <div class="" name="applications"><?php if (isset($contacts)){foreach($contacts as $c){
+                        echo "<li><b>Year Commissioned:</b>&nbsp;". $c->yr_commissioned ."</li>";
+                        echo "<li><b>Applications:</b>&nbsp;". $c->applications ."</li>";
+                        echo "</br>";
+                    }}else{echo "There are no associated Applications";}?></div>
             </td>
         </tr>
 
