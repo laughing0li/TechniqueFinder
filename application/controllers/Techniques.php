@@ -137,6 +137,8 @@ class Techniques extends CI_Controller
 
 
         if(isset($media_items[0]['media_id'])){$media_items = $media_items[0]['media_id'];}else{$media_items='';}
+
+        // These 'hidden' values are used to display contacts, media etc. that have already been added to the technique
         $data['media_items_selected_hidden'] = $media_items;
         $data['media_output_items_selected_hidden'] = $output_items;
         $data['media_instrument_items_selected_hidden'] = $instrument_items;
@@ -147,6 +149,9 @@ class Techniques extends CI_Controller
         $this->load->view('Techniques/view', $data);
     }
 
+    /*
+     * Used to setup the data to add a new technique
+     */
     function createTechnique()
     {
         $this->load->library('CKEditor');
@@ -168,6 +173,9 @@ class Techniques extends CI_Controller
 
     }
 
+    /*
+     * This gets called after a new technique is added
+     */
     function validateCreateTechnique()
     {
         $this->load->model('Techniques_model');
@@ -323,6 +331,11 @@ class Techniques extends CI_Controller
 
 
 
+    /*
+     * This sets up all the data for the edit view in the Admin page
+     *
+     * @param $x technique id
+     */
     function edit($x)
     {
         $data['media_list'] = $this->Techniques_model->getTechniqueDataAll();
@@ -371,7 +384,13 @@ class Techniques extends CI_Controller
         $this->load->view('Techniques/edit', $data);
     }
 
-    // This checks the technique edit parameters and initiates the database update
+
+    /*
+     * This is called after a technique is edited.
+     * This checks the technique edit parameters and initiates the database update
+     *
+     * @param $x technique id
+     */
     function validateEditTechnique($x){
         $this->load->model('Techniques_model');
         $this->load->library('form_validation');
