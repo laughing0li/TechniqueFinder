@@ -338,10 +338,14 @@ class Techniques extends CI_Controller
      */
     function edit($x)
     {
+        // These are complete lists that the user can choose from when adding new things to techniques
         $data['media_list'] = $this->Techniques_model->getTechniqueDataAll();
         $data['contact_list'] = $this->Techniques_model->getContactList();
         $data['case_list'] = $case_list = $this->Techniques_model->getCaseList();
         $data['references_list'] = $this->Techniques_model->getReferencesList();
+        $data['metadata_list'] = $this->Techniques_model->getMetadataList();
+        $data['elements_list'] = $this->Techniques_model->getElementsList();
+        $data['option_choices_list'] = $this->Techniques_model->getOptionChoicesList(); 
 
         // Get data for Technique
 
@@ -372,6 +376,12 @@ class Techniques extends CI_Controller
         $getCaseItems = $this->Techniques_model->getCaseItems($x);
         $referenceItems = $this->Techniques_model->getReferencesItems($x);
 
+        $localisationItems = $this->Techniques_model->getLocalisationItems($x);
+
+        $data['option_choices'] = $this->Techniques_model->getOptionChoices($x);
+        $data['metadata'] = $this->Techniques_model->getMetadata($x);
+        $data['elements'] = $this->Techniques_model->getElements($x);
+
 
         if(isset($media_items[0]['media_id'])){$media_items = $media_items[0]['media_id'];}else{$media_items='';}
         $data['media_items_selected_hidden'] = $media_items;
@@ -380,6 +390,7 @@ class Techniques extends CI_Controller
         $data['contact_items_selected_hidden'] = $contact_items;
         $data['case_items_selected_hidden'] = $getCaseItems;
         $data['references_items_selected_hidden'] = $referenceItems;
+        $data['localisationItems'] = $localisationItems;
 
         $this->load->view('Techniques/edit', $data);
     }

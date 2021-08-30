@@ -56,6 +56,29 @@ class Techniques_model extends MY_Model
         return $result;
     }
 
+    /**
+     * Return a list of all possible kinds of metadata
+     */
+    function getMetadataList(){
+        return $result = $this->db->distinct()->get('technique_metadata')->result();
+    }
+
+    /**
+     * Return a list of all possible geochemical analysis option choices
+     */
+    function getOptionChoicesList() {
+        return $this->db->query('select distinct name, type, science from option_choice')->result();
+    }
+
+    /**
+     * Return a list of element_set_id & all the element symbols concatenated into one column 
+     * array('id' => '3', 'symbols' => 'Mg,Si,Be')
+     */
+    function getElementsList() {
+        return $this->db->query("select es.id, group_concat(e.symbol) as symbols from elements e, elements_set es, elements_elements_set ees where ees.elements_id = e.id and ees.elements_set_id = es.id group by id")->result_array();
+    }
+
+
     function save_new_technique($technique_name,$alternative_names,$short_description,$long_description,$keywords,$list_media_items,$output_media_items,$instrument_media_items,$contact_items,$case_studies_list, $references_items, $extras)
     {
 
@@ -357,6 +380,12 @@ class Techniques_model extends MY_Model
         return($reference_items);
     }
 
+
+    /*
+     * Returns an array of year commissioned, applications for a technique
+     *
+     * @param $technique_id
+     */
     function getLocalisationItems($technique_id) {
         $query = $this->db->query("SELECT localisation.yr_commissioned, localisation.applications from localisation where technique_id=".$technique_id.";");
         $ret_list = array();
@@ -373,6 +402,13 @@ class Techniques_model extends MY_Model
         return($ret_list);
     }
 
+
+    /*
+     * Returns an array of location data for a technique: centre name, institution, address, state, email, telephone
+     *   & name given a technique_id
+     *
+     * @param $technique_id
+     */
     function getLocationItems($technique_id) {
         $query = $this->db->query("SELECT location.center_name, location.institution, location.address, location.state, contact.email, contact.telephone, contact.name from location, localisation, contact where location.id = localisation.location_id and localisation.technique_id = ".$technique_id." and contact.location_id = location.id;");
         $item_list = $query->result_array();

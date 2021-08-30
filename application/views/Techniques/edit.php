@@ -478,6 +478,112 @@ if ($this->session->flashdata('error-warning-message')) {
         </tr>
 
 
+        <!-- APPLICATIONS & AGE -->
+        <tr>
+            <td class="tf-font-orange">Machine Localisation</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>
+                <div class="table-responsive tf-font tf-font-size">
+                    <input type="hidden" id="localisation_items_selected_hidden" name="localisation_items_selected_hidden" value=""/>
+                    <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
+                        <thead>
+                        <tr class="table-headings tf-font-11 tf-font">
+                            <td>
+                                Institution
+                            </td>
+                            <td>
+                                Applications
+                            </td>
+                            <td>
+                                Year Commissioned
+                            </td>
+                            <td>
+                                Action
+                            </td>
+                        </tr>
+                        </thead>
+                        <tbody id="table_localisation_selected">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <button type="button" id="add-localisation-submit" class="tf-button"">
+                    <span class="tf-database-add"></span>
+                    <span class="tf-font create-technique-dialog-button ">Add machine localisation</span>
+                    </button>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+
+
+
+        <!-- GEOCHEM ANALYSIS CHOICES -->
+        <tr>
+            <td class="tf-font-orange  ">Geochem Analysis Choices</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <select>
+                <? foreach($option_choices_list as $option) {
+                      echo "<option value='". $option->id . "'>". $option->name . "&nbsp;" . $option->type . "&nbsp;" . $option->science . "</option>";
+                   }
+                ?>
+                </select>
+                <textarea class="tf-input-big" name="option_choices"><?php if (isset($option_choices)){foreach($option_choices as $o){
+                        echo "Name:&nbsp;". $o->name . "&nbsp;&nbsp;Type:&nbsp;". $o->type . "&nbsp;&nbsp;&nbsp;&nbsp;Science:&nbsp;" . $o->science;
+                    }}else{echo "There are no associated Option Choices";}?></textarea>
+            </td>
+        </tr>
+
+        <tr><td>&nbsp;</td></tr>
+
+        <!-- METADATA -->
+        <tr>
+            <td class="tf-font-orange  ">Metadata</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <select>
+                <? foreach ($metadata_list as $metadata) {
+                      echo "<option value='". $metadata->id . "'>". $metadata->category . "&nbsp;&nbsp;" . $metadata->category_type . "&nbsp;&nbsp;" . $metadata->analysis_type . "</option>";
+                   }
+                ?>
+                </select>
+                </br>
+                <?php  if (isset($metadata)){ ?>
+                Category:&nbsp;<input name="metadata-category" value="<?php echo $metadata->category; ?>"></input>
+                Category Type:&nbsp;<input name="metadata-category_type" value="<?php echo $metadata->category_type; ?>"></input>
+                Analysis Type:&nbsp;<input name="metadata-analysis_type" value="<?php echo $metadata->analysis_type; ?>"></input>
+                <?php } ?>
+            </td>
+        </tr>
+
+        <tr><td>&nbsp;</td></tr>
+
+        <!-- ELEMENTS -->
+        <tr>
+            <td class="tf-font-orange  ">Elements</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="tf-font tf-font-size input-col">
+                <select>
+                var_dump($elements_list);
+                <? foreach ($elements_list as $ele) {
+                      echo "<option value='". $ele['id'] . "'>". $ele['symbols'] . "</option>";
+                   }
+                ?>
+                </select>
+                <textarea class="tf-input-big" name="elements"><?php if (isset($elements)){foreach($elements as $e){
+                        echo $e->symbol . ",";
+                    }}else{echo "There are no associated Elements";}?></textarea>
+            </td>
+        </tr>
+
+        <tr><td>&nbsp;</td></tr>
+
+
         <!-- CASE STUDIES -->
         <!-- <tr>
             <td class="tf-font-orange">Case Studies</td>
@@ -1035,7 +1141,7 @@ if ($this->session->flashdata('error-warning-message')) {
     })
 
 
-    // Insturment List show and select
+    // Instrument List show and select
     $('#add-media-instrument-submit').click(function (e) {
         $('#media-instrument-table').empty();
 
