@@ -61,9 +61,7 @@
                                     Preparation</a></li>
                         </ul>
                     </li>
-                    <li style="margin-left: 20px" class="nav-item">
-                        <button class='btn outline-primary' onclick="window.location='<?php echo base_url(); ?>Portal/adminLogin'">Admin Login</button>
-                    </li>
+                   
                 </ul>
             </div>
         </div>

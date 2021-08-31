@@ -471,9 +471,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </div>
 
 
-<div class="row" style="margin-left: 1em; ">
-    <h1 class="tf-heading"> Create Technique</h1>
-</div>
 
 <?php
 if ($this->session->flashdata('error-warning-message')) {
@@ -1091,12 +1088,12 @@ if ($this->session->flashdata('error-warning-message')) {
         </div>
     </div>
 </div>
+</div>
 <div class='container-md'>
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-10">
                 <?php $this->load->view('layout/admin_footer.php') ?>
-
             </div>
         </div>
     </div>

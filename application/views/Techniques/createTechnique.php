@@ -1191,5 +1191,3 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     }
 </script>
-
-<?php $this->load->view('layout/admin_footer.php'); ?>
