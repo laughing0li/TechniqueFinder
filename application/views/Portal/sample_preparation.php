@@ -29,7 +29,7 @@
                                         $old_name = $technique_view->name;
                                     }
                                     echo '<div class="col-md-6" style="color:#282572; margin-bottom: 20px">';
-                                    echo '<div class="card">';
+                                    echo '<div class="card" style="min-height: 175px">';
                                     echo '<div class="card-body">';
                                     echo '<h4 class="card-title">'. $technique_view->category.'</h4>';
                                     echo '<p class="card-text">Model: '. $technique_view->model.'</p>';

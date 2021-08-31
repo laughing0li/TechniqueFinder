@@ -14,8 +14,17 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<?php $this->load->view('layout/header.php');?>
+<?php $this->load->view('layout/admin_header.php');?>
 <head><title>TF Admin | Location List</title></head>
+
+<div class="bg-color">
+    <div class="container-md">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-10" style="margin-left: 50px;">
+<div class="row" >
+    <h1 class="tf-heading"> Location List </h1>
+</div>
 <div class="nav tf-navbar">
     <button class="btn" onclick="window.location='<?php echo base_url();?>TechniqueFinder/index'">
         <span class="home-icon">&nbsp;</span>
@@ -27,9 +36,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </button>
 </div>
 
-<div class="row" style="margin-left: 1em; ">
-    <h1 class="tf-heading"> Location List </h1>
-</div>
 
 
 <?php
@@ -46,13 +52,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 <div class="table-responsive tf-font tf-font-size" style="margin-bottom: 3em;">
-    <table id="the_datatable" class="table table-bordered table-striped" style="width: 90%;float: left;margin-left: 1em;">
-        <thead>
+    <table id="the_datatable" class="table table-bordered table-striped" >
+        <thead style="background-color: #f2f2f1 ">
         <tr>
 
         </tr>
         </thead>
     </table>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -76,7 +87,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 { title: "Institution", data:'institution'},
                 { title: "Center Name", data:'center_name'},
                 { title: "Address", data:'address'},
-                { title: "Actions", data:'actions', width: '25%' },
+                { title: "Actions", data:'actions' },
             ],
             rowId: function(data) {
                 return 'id_' + data.id;
@@ -110,4 +121,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </script>
 
 
-<?php $this->load->view('layout/footer.php');?>
+<div class='container-md'>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-10">
+                <?php $this->load->view('layout/admin_footer.php') ?>
+
+            </div>
+        </div>
+    </div>
+</div>

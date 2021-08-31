@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TechniqueFinder - index.php
  *
@@ -11,88 +12,118 @@
  *                   https://creativecommons.org/licenses/by-nc-sa/4.0/
  */
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 
-<?php $this->load->view('layout/header.php');?>
-<head><title>TF Admin | Media List</title></head>
-<div class="nav tf-navbar">
-    <button class="btn" onclick="window.location='<?php echo base_url();?>TechniqueFinder/index'">
-        <span class="home-icon">&nbsp;</span>
-        <a class="tf-font-orange" style="text-decoration: none;">Admin Home</a>
-    </button>
-    <button class="btn" onclick="window.location='<?php echo base_url();?>Media/create_new_image'">
-        <span class="tf-database-add">&nbsp;</span>
-        <a class="tf-font-orange" style="text-decoration: none;">New Image</a>
-    </button>
-    <button class="btn" onclick="window.location='<?php echo base_url();?>Media/create_new_movie'">
-        <span class="tf-database-add">&nbsp;</span>
-        <a class="tf-font-orange" style="text-decoration: none;">New Movie</a>
-    </button>
+<?php $this->load->view('layout/admin_header.php'); ?>
+
+<head>
+    <title>TF Admin | Media List</title>
+</head>
+
+<div class="bg-color">
+    <div class="container-md">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-10" style="margin-left: 50px;">
+                    <div class="row" >
+                        <h1 class="tf-heading"> Media List </h1>
+                    </div>
+                    <div class="nav tf-navbar">
+                        <button class="btn" onclick="window.location='<?php echo base_url(); ?>TechniqueFinder/index'">
+                            <span class="home-icon">&nbsp;</span>
+                            <a class="tf-font-orange" style="text-decoration: none;">Admin Home</a>
+                        </button>
+                        <button class="btn" onclick="window.location='<?php echo base_url(); ?>Media/create_new_image'">
+                            <span class="tf-database-add">&nbsp;</span>
+                            <a class="tf-font-orange" style="text-decoration: none;">New Image</a>
+                        </button>
+                        <button class="btn" onclick="window.location='<?php echo base_url(); ?>Media/create_new_movie'">
+                            <span class="tf-database-add">&nbsp;</span>
+                            <a class="tf-font-orange" style="text-decoration: none;">New Movie</a>
+                        </button>
+                    </div>
+
+
+
+
+                    <?php
+                    if ($this->session->flashdata('success-warning-message')) {
+                        echo '<div id="success-warning-message" class=" tf-font tf-font-size success-warning-message">';
+                        echo $this->session->flashdata('success-warning-message');
+                        echo '</div>';
+                    } else {
+                        echo '<div id="success-warning-message" class=" tf-font tf-font-size success-warning-message" style="display:none;"></div>';
+                    }
+
+                    ?>
+
+
+                    <div class="table-responsive tf-font tf-font-size" >
+                        <table id="the_datatable" class="table table-bordered table-striped" >
+                            <thead style="background-color: #f2f2f1 ">
+                                <tr>
+
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="row" style="margin-left: 1em; ">
-    <h1 class="tf-heading"> Media List </h1>
+<div class='container-md'>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-10">
+                <?php $this->load->view('layout/admin_footer.php') ?>
+
+            </div>
+        </div>
+    </div>
 </div>
-
-
-<?php
-    if ($this->session->flashdata('success-warning-message')){
-        echo '<div id="success-warning-message" class=" tf-font tf-font-size success-warning-message">';
-        echo $this->session ->flashdata('success-warning-message');
-        echo '</div>';
-    }
-    else{
-        echo '<div id="success-warning-message" class=" tf-font tf-font-size success-warning-message" style="display:none;"></div>';
-    }
-
-?>
-
-
-<div class="table-responsive tf-font tf-font-size" style="margin-bottom: 3em;">
-    <table id="the_datatable" class="table table-bordered table-striped" style="width: 90%;float: left;margin-left: 1em;">
-        <thead>
-        <tr>
-
-        </tr>
-        </thead>
-    </table>
-</div>
-
-
 
 <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).ready(function() {
         $('#the_datatable').DataTable({
             columnDefs: [{
 
             }],
             ordering: false,
             paging: false,
-            filter:false,
-            status:false,
-            bInfo : false,
+            filter: false,
+            status: false,
+            bInfo: false,
             ajax: {
-                url : "<?php echo site_url("Media/getList") ?>",
+                url: "<?php echo site_url("Media/getList") ?>",
 
             },
-            columns: [
-                { title: "Thumbnail", data:'thumbnail'},
-                { title: "Name <br/>Dimensions", data:'name_dimensions'},
-                { title: "Caption", data:'caption' },
-                { title: "Actions", data:'actions' , width: '25%'},
+            columns: [{
+                    title: "Thumbnail",
+                    data: 'thumbnail'
+                },
+                {
+                    title: "Name <br/>Dimensions",
+                    data: 'name_dimensions'
+                },
+                {
+                    title: "Caption",
+                    data: 'caption'
+                },
+                {
+                    title: "Actions",
+                    data: 'actions',
+                },
             ],
             rowId: function(data) {
                 return 'id_' + data.id;
             },
-            initComplete: function( settings, json ) {
+            initComplete: function(settings, json) {
                 //$('#the_datatable > tbody').find('td').css('padding','0px 0px 0px 0px')
             }
         });
     });
-
-
 </script>
 
-
-<?php $this->load->view('layout/footer.php');?>
