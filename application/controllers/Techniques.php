@@ -41,9 +41,9 @@ class Techniques extends CI_Controller
             array_push($data, array(
                 $r->name,
                 $r->description,
-                $r->keywords,
-                $r->alternative_names,
-                "<div style='min-width: 300px;'><button id='userIndexButtons' class='user-table-buttons' onclick=window.location='" . base_url() . "Techniques/view/" . $r->id . "'><span style='background: url(../assets/images/database_view.png) 50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>View</button>" . "<span style='margin-left: 2em;'>&nbsp;</span>" . "<button id='userIndexButtons' class='user-table-buttons' onclick=window.location='" . base_url() . "Techniques/edit/" . $r->id . "'><span style='background: url(../assets/images/database_edit.png) 50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>Edit</button>". "<span style='margin-left: 2em;'>&nbsp;</span>"."<button id='userIndexButtons' class='user-table-buttons' onclick='deleteTechnique(".$r->id.")'><span style='background: url(../assets/images/database_delete.png) 50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>Delete</button>" ."</div>",
+                $r->model,
+                $r->manufacturer,
+                "<div style='min-width: 300px;'><button id='userIndexButtons' class='user-table-buttons' onclick=window.location='" . base_url() . "Techniques/view/" . $r->id . "'><span style='background: url(../../assets/images/database_view.png) 50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>View</button>" . "<span style='margin-left: 2em;'>&nbsp;</span>" . "<button id='userIndexButtons' class='user-table-buttons' onclick=window.location='" . base_url() . "Techniques/edit/" . $r->id . "'><span style='background: url(../../assets/images/database_edit.png) 50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>Edit</button>". "<span style='margin-left: 2em;'>&nbsp;</span>"."<button id='userIndexButtons' class='user-table-buttons' onclick='deleteTechnique(".$r->id.")'><span style='background: url(../../assets/images/database_delete.png) 50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>Delete</button>" ."</div>",
 
             ));
         }
@@ -52,6 +52,11 @@ class Techniques extends CI_Controller
 
     }
 
+
+    /*
+     * Used to setup a view of technique in the Admin page
+     * @param $x technique id
+     */
     function view($x)
     {
 
@@ -68,7 +73,8 @@ class Techniques extends CI_Controller
             $max++;
         }
 
-        if($current >$max ){
+        // Adjust next and prev page navigation links for first and last page
+        if($current+1 >= $max ){
             $next =0;
         }
         else{
@@ -88,12 +94,16 @@ class Techniques extends CI_Controller
         $data['media_list'] = $this->Techniques_model->getTechniqueDataAll();
 
 
-        $data['contacts'] = $this->Techniques_model->getTechniqueContacts($x);
+        $data['contacts'] = $this->Techniques_model->getContactsForTechnique($x);
         $data['case'] = $this->Techniques_model->getTechniqueCase($x);
 
         $data['references'] = $this->Techniques_model->getTechniqueReferences($x);
         $data['associated'] = $this->Techniques_model->getAssociatedTechniques($x);
 
+
+        $data['option_choices'] = $this->Techniques_model->getOptionChoices($x);
+        $data['metadata'] = $this->Techniques_model->getMetadata($x);
+        $data['elements'] = $this->Techniques_model->getElements($x);
 
         // Get data for Technique
 
@@ -127,6 +137,8 @@ class Techniques extends CI_Controller
 
 
         if(isset($media_items[0]['media_id'])){$media_items = $media_items[0]['media_id'];}else{$media_items='';}
+
+        // These 'hidden' values are used to display contacts, media etc. that have already been added to the technique
         $data['media_items_selected_hidden'] = $media_items;
         $data['media_output_items_selected_hidden'] = $output_items;
         $data['media_instrument_items_selected_hidden'] = $instrument_items;
@@ -137,6 +149,9 @@ class Techniques extends CI_Controller
         $this->load->view('Techniques/view', $data);
     }
 
+    /*
+     * Used to setup the data to add a new technique
+     */
     function createTechnique()
     {
         $this->load->library('CKEditor');
@@ -158,6 +173,9 @@ class Techniques extends CI_Controller
 
     }
 
+    /*
+     * This gets called after a new technique is added
+     */
     function validateCreateTechnique()
     {
         $this->load->model('Techniques_model');
@@ -167,6 +185,7 @@ class Techniques extends CI_Controller
         $this->form_validation->set_rules('long_description', 'Long Description', 'required');
         $this->form_validation->set_rules('short_description', 'Short Description', 'required');
 
+        // Check if technique name exists
         $technique_name_list = $this->Techniques_model->getTechniqueNameList();
         foreach ($technique_name_list as $new_technique_name) {
             if ($new_technique_name->name == $_POST['technique_name']) {
@@ -184,35 +203,35 @@ class Techniques extends CI_Controller
         if (isset($_POST['media_items_selected_hidden'])) {
             $list_media_items = $_POST['media_items_selected_hidden'];
         } else {
-            $list_media_items = Array();
+            $list_media_items = "";
         }
 
         if (isset($_POST['media_output_items_selected_hidden'])) {
             $output_media_items = $_POST['media_output_items_selected_hidden'];
         }else {
-            $output_media_items = Array();
+            $output_media_items = "";
         }
         if (isset($_POST['media_instrument_items_selected_hidden'])) {
             $instrument_media_items = $_POST['media_instrument_items_selected_hidden'];
         }else {
-            $instrument_media_items = Array();
+            $instrument_media_items = "";
         }
 
         if (isset($_POST['contact_items_selected_hidden'])) {
             $contact_items = $_POST['contact_items_selected_hidden'];
         }else {
-            $contact_items = Array();
+            $contact_items = "";
         }
         if (isset($_POST['case_items_selected_hidden'])) {
             $case_studies_list = $_POST['case_items_selected_hidden'];
         }else {
-            $case_studies_list = Array();
+            $case_studies_list = "";
         }
 
         if (isset($_POST['references_items_selected_hidden'])) {
             $references_items = $_POST['references_items_selected_hidden'];
         }else {
-            $references_items = Array();
+            $references_items = "";
         }
 
         if (isset($_POST['alternative_names'])) {
@@ -226,12 +245,23 @@ class Techniques extends CI_Controller
             $keywords = '';
         }
 
-
+        // Names of excess parameters
+        $input_names = array('instrument_name', 'model', 'manufacturer', 'sample_type', 'wavelength', 'beam_diameter', 'min_conc', 'mass', 'volume', 'pressure', 'temperature');
+        
         if ($this->form_validation->run()) {
-            $id = $this->Techniques_model->save_new_technique($technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items);
+            // There are too many 'Technique' fields for simple parameter passing so pass in as an assoc array
+            $extras = array();
+            foreach ($input_names as $input_name) {
+                if (isset($_POST[$input_name])) {
+                    $extras[$input_name] = $_POST[$input_name];
+                }
+            }
+            // Add new technique to database
+            $id = $this->Techniques_model->save_new_technique($technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items, $extras);
             $this->session->set_flashdata('success-warning-message', "Technique " . $id . " created");
             $this->load->view('Techniques/index');
         } else {
+            // Parameter error: redisplay parameters with an error message
             $this->load->library('CKEditor');
             $this->load->library('CKFinder');
 
@@ -246,6 +276,11 @@ class Techniques extends CI_Controller
             $data['contact_list'] = $this->Techniques_model->getContactList();
             $data['case_list'] = $case_list = $this->Techniques_model->getCaseList();
             $data['references_list'] = $this->Techniques_model->getReferencesList();
+
+            // Assign excess parameters
+            foreach ($input_name as $input_names) {
+                $data[$input_name] = $_POST[$input_name];
+            }
 
             if (isset($_POST['media_items_selected_hidden'])) {
                 $data['media_items_selected_hidden'] = $_POST['media_items_selected_hidden'];
@@ -296,12 +331,21 @@ class Techniques extends CI_Controller
 
 
 
+    /*
+     * This sets up all the data for the edit view in the Admin page
+     *
+     * @param $x technique id
+     */
     function edit($x)
     {
+        // These are complete lists that the user can choose from when adding new things to techniques
         $data['media_list'] = $this->Techniques_model->getTechniqueDataAll();
         $data['contact_list'] = $this->Techniques_model->getContactList();
         $data['case_list'] = $case_list = $this->Techniques_model->getCaseList();
         $data['references_list'] = $this->Techniques_model->getReferencesList();
+        $data['metadata_list'] = $this->Techniques_model->getMetadataList();
+        $data['elements_list'] = $this->Techniques_model->getElementsList();
+        $data['option_choices_list'] = $this->Techniques_model->getOptionChoicesList(); 
 
         // Get data for Technique
 
@@ -313,6 +357,17 @@ class Techniques extends CI_Controller
         $data['alternative_names'] = $technique_data->alternative_names;
         $data['keywords'] = $technique_data->keywords;
 
+        $data['instrument_name'] = $technique_data->instrument_name;
+        $data['model'] = $technique_data->model;
+        $data['manufacturer'] = $technique_data->manufacturer;
+        $data['sample_type'] = $technique_data->sample_type;
+        $data['wavelength'] = $technique_data->wavelength;
+        $data['beam_diameter'] = $technique_data->beam_diameter;
+        $data['min_conc'] = $technique_data->min_conc;
+        $data['mass'] = $technique_data->mass;
+        $data['volume'] = $technique_data->volume;
+        $data['pressure'] = $technique_data->pressure;
+        $data['temperature'] = $technique_data->temperature;
 
         $media_items  = $this->Techniques_model->getMediaItems($x);
         $output_items = $this->Techniques_model->getOutputItems($x);
@@ -320,6 +375,12 @@ class Techniques extends CI_Controller
         $contact_items = $this->Techniques_model->getContactItems($x);
         $getCaseItems = $this->Techniques_model->getCaseItems($x);
         $referenceItems = $this->Techniques_model->getReferencesItems($x);
+
+        $localisationItems = $this->Techniques_model->getLocalisationItems($x);
+
+        $data['option_choices'] = $this->Techniques_model->getOptionChoices($x);
+        $data['metadata'] = $this->Techniques_model->getMetadata($x);
+        $data['elements'] = $this->Techniques_model->getElements($x);
 
 
         if(isset($media_items[0]['media_id'])){$media_items = $media_items[0]['media_id'];}else{$media_items='';}
@@ -329,10 +390,18 @@ class Techniques extends CI_Controller
         $data['contact_items_selected_hidden'] = $contact_items;
         $data['case_items_selected_hidden'] = $getCaseItems;
         $data['references_items_selected_hidden'] = $referenceItems;
+        $data['localisationItems'] = $localisationItems;
 
         $this->load->view('Techniques/edit', $data);
     }
 
+
+    /*
+     * This is called after a technique is edited.
+     * This checks the technique edit parameters and initiates the database update
+     *
+     * @param $x technique id
+     */
     function validateEditTechnique($x){
         $this->load->model('Techniques_model');
         $this->load->library('form_validation');
@@ -356,12 +425,12 @@ class Techniques extends CI_Controller
         if (isset($_POST['media_output_items_selected_hidden'])) {
             $output_media_items = $_POST['media_output_items_selected_hidden'];
         }else {
-            $output_media_items = Array();
+            $output_media_items = "";
         }
         if (isset($_POST['media_instrument_items_selected_hidden'])) {
             $instrument_media_items = $_POST['media_instrument_items_selected_hidden'];
         }else {
-            $instrument_media_items = Array();
+            $instrument_media_items = "";
         }
 
         if (isset($_POST['contact_items_selected_hidden'])) {
@@ -372,13 +441,13 @@ class Techniques extends CI_Controller
         if (isset($_POST['case_items_selected_hidden'])) {
             $case_studies_list = $_POST['case_items_selected_hidden'];
         }else {
-            $case_studies_list = Array();
+            $case_studies_list = "";
         }
 
         if (isset($_POST['references_items_selected_hidden'])) {
             $references_items = $_POST['references_items_selected_hidden'];
         }else {
-            $references_items = Array();
+            $references_items = "";
         }
 
         if (isset($_POST['alternative_names'])) {
@@ -392,9 +461,19 @@ class Techniques extends CI_Controller
             $keywords = '';
         }
 
-
+        // Names of excess parameters
+        $input_names = array('instrument_name', 'model', 'manufacturer', 'sample_type', 'wavelength', 'beam_diameter', 'min_conc', 'mass', 'volume', 'pressure', 'temperature');
+        
         if ($this->form_validation->run()) {
-            $id = $this->Techniques_model->update_technique($x,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items);
+            // There are too many 'Technique' fields for simple parameter passing so pass in as an assoc array
+            $extras = array();
+            foreach ($input_names as $input_name) {
+                if (isset($_POST[$input_name])) {
+                    $extras[$input_name] = $_POST[$input_name];
+                }
+            }
+            // Update the database
+            $id = $this->Techniques_model->update_technique($x,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items, $extras);
             $this->session->set_flashdata('success-warning-message', "Technique " . $id . " updated");
             $this->load->view('Techniques/index');
         } else {

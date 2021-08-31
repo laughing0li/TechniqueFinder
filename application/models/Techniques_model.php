@@ -33,6 +33,9 @@ class Techniques_model extends MY_Model
         return $result;
     }
 
+    /**
+     * Return a list of contact id, name & institution for displaying a table of options for user to select from
+     */
     function getContactList(){
         $query= $this->db->query('select c.id, c.name, l.institution from contact c, location l where c.location_id = l.id AND c.technique_contact+0=1 ORDER BY l.institution,c.name;');
         return $query->result_array();
@@ -53,7 +56,30 @@ class Techniques_model extends MY_Model
         return $result;
     }
 
-    function save_new_technique($technique_name,$alternative_names,$short_description,$long_description,$keywords,$list_media_items,$output_media_items,$instrument_media_items,$contact_items,$case_studies_list, $references_items )
+    /**
+     * Return a list of all possible kinds of metadata
+     */
+    function getMetadataList(){
+        return $result = $this->db->distinct()->get('technique_metadata')->result();
+    }
+
+    /**
+     * Return a list of all possible geochemical analysis option choices
+     */
+    function getOptionChoicesList() {
+        return $this->db->query('select distinct name, type, science from option_choice')->result();
+    }
+
+    /**
+     * Return a list of element_set_id & all the element symbols concatenated into one column 
+     * array('id' => '3', 'symbols' => 'Mg,Si,Be')
+     */
+    function getElementsList() {
+        return $this->db->query("select es.id, group_concat(e.symbol) as symbols from elements e, elements_set es, elements_elements_set ees where ees.elements_id = e.id and ees.elements_set_id = es.id group by id")->result_array();
+    }
+
+
+    function save_new_technique($technique_name,$alternative_names,$short_description,$long_description,$keywords,$list_media_items,$output_media_items,$instrument_media_items,$contact_items,$case_studies_list, $references_items, $extras)
     {
 
         $technique_data = array(
@@ -63,6 +89,7 @@ class Techniques_model extends MY_Model
             'description' => $long_description,
             'keywords' => $keywords,
         );
+        $technique_data = array_merge($technique_data, $extras);
 
 
         $this->db->insert('technique', $technique_data);
@@ -148,39 +175,23 @@ class Techniques_model extends MY_Model
             }
         }
 
+        // New contacts are added here
         if (strlen($contact_items) > 0) {
-
             $contact_list = explode(',',$contact_items);
-            $existing_contact_ids = $this->db->select('contact_id')->from('technique_contact')->where('technique_contacts_id',$technique_id)->get();
 
-            foreach($contact_list as $cl){
-                $where_array = array(
-                    'technique_contacts_id' => $technique_id,
-                    'contact_id'=> $cl,
-                );
-                $this->db->select('*');
-                $this->db->from('technique_contact');
-                $this->db->where($where_array);
-                $q = $this->db->get();
+            // Look for the location ids of the contacts for this technique
+            $existing_contact_ids = $this->db->query("select c.id from contact c, location l, localisation ls where c.location_id = l.id and ls.location_id = l.id and ls.technique_id = '". $x ."';")->result_array();
+            $exist_contacts = array();
+            foreach($existing_contact_ids as $existing_contact) {
+                array_push($exist_contacts, $existing_contact['id']);
+            } 
 
-                $list_array = array(
-                    'technique_contacts_id' => $technique_id,
-                    'contact_id' => $cl,
-                );
-
-                if (! ($q->num_rows() > 0) )
-                {
-                    $this->db->set('technique_contacts_id', $technique_id)->insert('technique_contact', $list_array);
-                }
-            }
-
-
-            foreach ($existing_contact_ids->result_array() as $eci){
-
-                $delete_array = array('technique_contacts_id'=>$technique_id, 'contact_id'=>$eci['contact_id']);
-                if(!(in_array($eci['contact_id'], $contact_list))){
-                    $this->db->where($delete_array);
-                    $this->db->delete('technique_contact');
+            // Insert contacts in list that aren't already existing
+            foreach($contact_list as $cl) {
+                if (!in_array($cl, $exist_contacts)) {
+                    // Get location id for this contact
+                    $location = $this->db->query("select l.id from contact c, location l where c.location_id = l.id and c.id = '". $cl ."';")->row();
+                    $this->db->query("insert into localisation(location_id, technique_id) values(". $location->id .",". $x .");");
                 }
             }
         }
@@ -311,18 +322,24 @@ class Techniques_model extends MY_Model
         return($instrument_items);
     }
 
+    /*
+     * Retrieves a comma separated string list of contact ids 
+     *
+     * @param $x technique id
+     * @return a comma separated string list of contact ids 
+     */
     function getContactItems($x){
-        $query= $this->db->query("SELECT contact_id  from technique_contact where technique_contacts_id=".$x.";");
+        $query= $this->db->query("SELECT c.id from contact c, location l, localisation ls where c.location_id = l.id and ls.location_id = l.id and ls.technique_id=".$x.";");
         $contact_items = "";
         $count = 0;
         $item_list = $query->result_array();
         foreach($item_list as $each_item){
             if($count == 0){
-                $contact_items .= $each_item['contact_id'];
+                $contact_items .= $each_item['id'];
                 $count++;
             }
             else{
-                $contact_items .= "," . $each_item['contact_id'];
+                $contact_items .= "," . $each_item['id'];
             }
         }
         return($contact_items);
@@ -363,6 +380,12 @@ class Techniques_model extends MY_Model
         return($reference_items);
     }
 
+
+    /*
+     * Returns an array of year commissioned, applications for a technique
+     *
+     * @param $technique_id
+     */
     function getLocalisationItems($technique_id) {
         $query = $this->db->query("SELECT localisation.yr_commissioned, localisation.applications from localisation where technique_id=".$technique_id.";");
         $ret_list = array();
@@ -379,6 +402,13 @@ class Techniques_model extends MY_Model
         return($ret_list);
     }
 
+
+    /*
+     * Returns an array of location data for a technique: centre name, institution, address, state, email, telephone
+     *   & name given a technique_id
+     *
+     * @param $technique_id
+     */
     function getLocationItems($technique_id) {
         $query = $this->db->query("SELECT location.center_name, location.institution, location.address, location.state, contact.email, contact.telephone, contact.name from location, localisation, contact where location.id = localisation.location_id and localisation.technique_id = ".$technique_id." and contact.location_id = location.id;");
         $item_list = $query->result_array();
@@ -391,7 +421,11 @@ class Techniques_model extends MY_Model
         return($ret_list);
     }
 
-    function update_technique($x,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items){
+    /*
+     * This is called after a technique is edited in the admin page
+     * @param $x is the technique id
+     */
+    function update_technique($x,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items, $extras){
         $technique_data = array(
             'name' => $technique_name,
             'alternative_names' => $alternative_names,
@@ -399,6 +433,7 @@ class Techniques_model extends MY_Model
             'description' => $long_description,
             'keywords' => $keywords,
         );
+        $technique_data = array_merge($technique_data, $extras);
 
         $this->db->where('id', $x);
         $this->db->update('technique', $technique_data);
@@ -559,40 +594,34 @@ class Techniques_model extends MY_Model
                 }
             }
         }
-
+ 
+        // If any contacts were added or deleted
         if (strlen($contact_items) > 0) {
-
             $contact_list = explode(',',$contact_items);
-            $existing_contact_ids = $this->db->select('contact_id')->from('technique_contact')->where('technique_contacts_id',$x)->get();
 
-            foreach($contact_list as $cl){
-                $where_array = array(
-                    'technique_contacts_id' => $x,
-                    'contact_id'=> $cl,
-                );
-                $this->db->select('*');
-                $this->db->from('technique_contact');
-                $this->db->where($where_array);
-                $q = $this->db->get();
+            // Look for the location ids of the contacts for this technique
+            $existing_contact_ids = $this->db->query("select c.id from contact c, location l, localisation ls where c.location_id = l.id and ls.location_id = l.id and ls.technique_id = '". $x ."';")->result_array();
+            $exist_contacts = array();
+            foreach($existing_contact_ids as $existing_contact) {
+                array_push($exist_contacts, $existing_contact['id']);
+            } 
 
-                $list_array = array(
-                    'technique_contacts_id' => $x,
-                    'contact_id' => $cl,
-                );
-
-                if (! ($q->num_rows() > 0) )
-                {
-                    $this->db->set('technique_contacts_id', $x)->insert('technique_contact', $list_array);
+            // Insert contacts in list that aren't already existing
+            foreach($contact_list as $cl) {
+                if (!in_array($cl, $exist_contacts)) {
+                    // Get location id for this contact
+                    $location = $this->db->query("select l.id from contact c, location l where c.location_id = l.id and c.id = '". $cl ."';")->row();
+                    $this->db->query("insert into localisation(location_id, technique_id) values(". $location->id .",". $x .");");
                 }
             }
 
-
-            foreach ($existing_contact_ids->result_array() as $eci){
-
-                $delete_array = array('technique_contacts_id'=>$x, 'contact_id'=>$eci['contact_id']);
-                if(!(in_array($eci['contact_id'], $contact_list))){
-                    $this->db->where($delete_array);
-                    $this->db->delete('technique_contact');
+            // Delete existing contacts if they weren't in the list
+            foreach ($exist_contacts as $ec) {
+                if (!in_array($ec, $contact_list)) {
+                    // Get location id for this contact
+                    $location = $this->db->query("select l.id from contact c, location l where c.location_id = l.id and c.id = '". $ec ."';")->row();
+                    $delete_array = array('technique_id'=>$x, 'location_id'=>$location->id);
+                    $this->db->where($delete_array)->delete('localisation');
                 }
             }
         }
@@ -670,13 +699,6 @@ class Techniques_model extends MY_Model
                 }
             }
         }
-    }
-
-
-    function getTechniqueContacts($x){
-        $query= $this->db->query("SELECT c.name, l.institution FROM contact c, location l, technique_contact t WHERE t.contact_id = c.id AND t.contact_id AND c.location_id = l.id AND t.technique_contacts_id ='". $x."';");
-        return $query->result_array();
-
     }
 
     function getTechniqueCase($x){
@@ -812,12 +834,20 @@ class Techniques_model extends MY_Model
         return $results;
     }
 
+    /*
+     * Get contacts for Admin and display pages e.g. after geochem analysis
+     *
+     * @param $x technique id
+     * @returns array of objects, keys are columns of 'location', 'contacts' and 'localisation' tables
+     */
     function getContactsForTechnique($x){
         return $this->db->query(
-            'select location.institution, contact.title, contact.name, contact.telephone, contact.email, contact.contact_position'
-            .' from technique join technique_contact on technique.id=technique_contact.technique_contacts_id '
-            .'join contact on technique_contact.contact_id = contact.id join location on contact.location_id =location.id '
-            .' where technique.id=?' ,
+            'select lc.address, lc.center_name, lc.state, lc.institution,'
+            .' c.title, c.name, c.telephone, c.email, c.contact_position,'
+            .' ls.yr_commissioned, ls.applications'
+            .' from technique t, localisation ls, location lc, contact c where'
+            .' ls.technique_id = t.id and ls.location_id = lc.id and lc.id = c.location_id'
+            .' and t.id=?',
             array($x))->result();
     }
 
@@ -848,4 +878,57 @@ class Techniques_model extends MY_Model
             .' where technique_case_study.technique_case_studies_id =?',
             array($x))->result();
     }
+
+
+    /*
+     * Get option choices for a technique in Admin page
+     *
+     * @param $x technique id
+     * @returns rows with 'name', 'type' and 'science' keys
+     */
+    function getOptionChoices($x){
+        return $this->db->query(
+            'select och.name, och.type, och.science'
+            .' from option_combination ocb, option_choice och, technique t'
+            .' where ocb.left_id = och.id and t.id = ocb.technique_id'
+            .' and t.id =? union'
+            .' select och.name, och.type, och.science'
+            .' from option_combination ocb, option_choice och, technique t'
+            .' where ocb.right_id = och.id and t.id = ocb.technique_id'
+            .' and t.id =?',
+            array($x,$x))->result();
+    }
+
+
+    /*
+     * Get metadata for a technique in Admin page
+     *
+     * @param $x technique id
+     * @returns rows with 'category' 'category_type', 'analysis_type' keys
+     */
+    function getMetadata($x) {
+        return $this->db->query(
+            'select tv.category, tv.category_type, tv.analysis_type'
+            .' from technique_view tv'
+            .' where tv.technique_id =?',
+            array($x))->result();
+    }
+
+
+    /*
+     * Get elements for a technique in Admin page
+     *
+     * @param $x technique id
+     * @returns rows with 'name' and 'symbol' keys
+     */
+    function getElements($x) {
+        return $this->db->query(
+            'select e.name, e.symbol'
+            .' from technique t, elements e, elements_elements_set ees, elements_set es'
+            .' where ees.elements_id = e.id and ees.elements_set_id = es.id'
+            .' and t.elements_set_id = es.id and t.id =?',
+            array($x))->result();
+    }
+
+
 }

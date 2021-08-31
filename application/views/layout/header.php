@@ -44,7 +44,7 @@
 </head>
 <body>
 <div style="display: block;">
-<a href="<?php echo base_url(); ?>" title="Home" tabindex="0"><img src="<?php echo base_url(); ?>assets/images/MicroscopyAustralia-Logo-596px.png" border="0" alt="AMMRF"></a>
+<a href="<?php echo base_url(); ?>" title="Home" tabindex="0"><img src="<?php echo base_url(); ?>assets/images/AGN-LOGO1.png" border="0" alt="AGN-LOGO"></a>
 </div>
 <nav style="text-align: right;padding-right: 1em;">
 <?php

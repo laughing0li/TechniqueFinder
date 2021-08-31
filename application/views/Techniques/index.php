@@ -89,18 +89,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         return '<xmp style="white-space:normal;">' + data + '</xmp>'
                     }
                 },
-                {
-                    title: "Keywords"
-                },
-                {
-                    title: "Alternative Names"
-                },
-                {
-                    title: "Actions"
-                },
-            ],
-            order: [
-                [0, "asc"]
+                { title: "Model"},
+                { title: "Manufacturer"},
+                { title: "Actions"},
             ],
             "paging": false,
             "filter": false,
