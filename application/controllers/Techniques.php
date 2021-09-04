@@ -460,6 +460,12 @@ class Techniques extends CI_Controller
         }else {
             $keywords = '';
         }
+        // If a new metadata value was selected
+        if (isset($_POST['metadata-id']) && $_POST['metadata-id'] != '-1') {
+            $metadata_id = $_POST['metadata-id'];
+        }else {
+            $metadata_id = '';
+        }
 
         // Names of excess parameters
         $input_names = array('instrument_name', 'model', 'manufacturer', 'sample_type', 'wavelength', 'beam_diameter', 'min_conc', 'mass', 'volume', 'pressure', 'temperature');
@@ -472,6 +478,10 @@ class Techniques extends CI_Controller
                     $extras[$input_name] = $_POST[$input_name];
                 }
             }
+            // Update metadata
+            if ($metadata_id != '') {
+                $this->Techniques_model->update_metadata($x, $metadata_id); 
+            }
             // Update the database
             $id = $this->Techniques_model->update_technique($x,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items, $extras);
             $this->session->set_flashdata('success-warning-message', "Technique " . $id . " updated");
@@ -479,7 +489,6 @@ class Techniques extends CI_Controller
         } else {
             $this->load->library('CKEditor');
             $this->load->library('CKFinder');
-
 
             $data['technique_name'] = $_POST['technique_name'];
             $data['id'] = $x;

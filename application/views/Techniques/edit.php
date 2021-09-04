@@ -524,15 +524,34 @@ if ($this->session->flashdata('error-warning-message')) {
 
         <!-- GEOCHEM ANALYSIS CHOICES -->
         <tr>
-            <td class="tf-font-orange  ">Geochem Analysis Choices</td>
+            <td class="tf-font-orange">Geochem Analysis Choices</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
             <td class="tf-font tf-font-size input-col">
-                <select>
-                <? foreach($option_choices_list as $option) {
-                      echo "<option value='". $option->id . "'>". $option->name . "&nbsp;" . $option->type . "&nbsp;" . $option->science . "</option>";
-                   }
-                ?>
-                </select>
+                <div>
+                    Step 1:
+                    <select>
+                    <? foreach($option_choices_list as $option) {
+                          if ($option->type == 'STEP1' && $option->science == 'GEOCHEM') {
+                              echo "<option value='". $option->id . "'>". $option->name . "</option>";
+                          }
+                        }
+                    ?>
+                    </select>
+                    &nbsp;&nbsp;Step 2:
+                    <select>
+                    <? foreach($option_choices_list as $option) {
+                          if ($option->type == 'STEP2' && $option->science == 'GEOCHEM') {
+                              echo "<option value='". $option->id . "'>". $option->name . "</option>";
+                          }
+                       }
+                    ?>
+                    </select>
+                    <button type="button" id="add-geochem-analysis-submit" class="tf-button"">
+                    <span class="tf-database-add"></span>
+                    <span class="tf-font create-technique-dialog-button ">Add geochem analysis choices</span>
+                    </button>
+                </div>
                 <textarea class="tf-input-big" name="option_choices"><?php if (isset($option_choices)){foreach($option_choices as $o){
                         echo "Name:&nbsp;". $o->name . "&nbsp;&nbsp;Type:&nbsp;". $o->type . "&nbsp;&nbsp;&nbsp;&nbsp;Science:&nbsp;" . $o->science;
                     }}else{echo "There are no associated Option Choices";}?></textarea>
@@ -543,21 +562,21 @@ if ($this->session->flashdata('error-warning-message')) {
 
         <!-- METADATA -->
         <tr>
-            <td class="tf-font-orange  ">Metadata</td>
+            <td class="tf-font-orange">Metadata</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <select>
-                <? foreach ($metadata_list as $metadata) {
-                      echo "<option value='". $metadata->id . "'>". $metadata->category . "&nbsp;&nbsp;" . $metadata->category_type . "&nbsp;&nbsp;" . $metadata->analysis_type . "</option>";
-                   }
+                <input type="hidden" id="metadata-id" name="metadata-id" value="-1"/>
+                <select id='metadata-selector'>
+                <?php  if (isset($metadata) && sizeof($metadata) > 0) { 
+                    /* Selected value is current metadata value */
+                    echo "<option selected value='-1'><b>Category:</b>&nbsp;" . $metadata[0]->category . "&nbsp;<b>Category Type:</b>&nbsp;" . $metadata[0]->category_type . "&nbsp;<b>Analysis Type:</b>&nbsp;" . $metadata[0]->analysis_type . "</option>";
+                    }
+                    /*  Other possible selections */
+                    foreach ($metadata_list as $md) {
+                          echo "<option value='". $md->id . "'><b>Category:</b>&nbsp;". $md->category . "&nbsp;&nbsp;<b>Category Type:</b>" . $md->category_type . "&nbsp;&nbsp;<b>Analysis Type</b>:" . $md->analysis_type . "</option>";
+                    }
                 ?>
                 </select>
-                </br>
-                <?php  if (isset($metadata)){ ?>
-                Category:&nbsp;<input name="metadata-category" value="<?php echo $metadata->category; ?>"></input>
-                Category Type:&nbsp;<input name="metadata-category_type" value="<?php echo $metadata->category_type; ?>"></input>
-                Analysis Type:&nbsp;<input name="metadata-analysis_type" value="<?php echo $metadata->analysis_type; ?>"></input>
-                <?php } ?>
             </td>
         </tr>
 
@@ -1466,6 +1485,11 @@ if ($this->session->flashdata('error-warning-message')) {
 
     })
 
+    // Update the form input when metadata is selected
+    $('#metadata-selector').change(function() {
+      var str = $("#metadata-selector option:selected").first().val();
+      $("#metadata-id").val(str);
+    }).trigger("change");
 
 
     function arrayRemove(arr, value) {
