@@ -51,7 +51,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     }
                     ?>
 
-                    <div style="background-color: #f2f2f1 ">
+                    <div class="tf-background-color">
                         <table style="text-align: left;display: block; clear: both;">
                             <tr style="width:50em;">
                                 <td class="tf-font-orange">Title</td>
@@ -213,12 +213,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="col-md-6" style="margin: auto;">
                                 <?php
                                 if ($prev_location == 0) {
-                                    echo '<a style="color: #f2f2f1" href="' . base_url() . 'Contact/view/' . $next_location . '">next &gt;</a>';
+                                    echo '<a class="tf-font-color" href="' . base_url() . 'Contact/view/' . $next_location . '">next &gt;</a>';
                                 } else if ($next_location == 0) {
-                                    echo '<a style="color: #f2f2f1" href="' . base_url() . 'Contact/view/' . $prev_location . '">&lt;  prev </a>';
+                                    echo '<a class="tf-font-color" href="' . base_url() . 'Contact/view/' . $prev_location . '">&lt;  prev </a>';
                                 } else {
-                                    echo '<a style="color: #f2f2f1" href="' . base_url() . 'Contact/view/' . $prev_location . '">&lt; previous </a> |
-                                <a style="color: #f2f2f1" href="' . base_url() . 'Contact/view/' . $next_location . '">next &gt;</a>';
+                                    echo '<a class="tf-font-color" href="' . base_url() . 'Contact/view/' . $prev_location . '">&lt; previous </a> |
+                                <a class="tf-font-color" href="' . base_url() . 'Contact/view/' . $next_location . '">next &gt;</a>';
                                 }
 
                                 ?>

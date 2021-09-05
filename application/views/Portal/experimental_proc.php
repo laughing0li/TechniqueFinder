@@ -20,7 +20,7 @@
                                 </div>
                             </div>
 
-                            <span style="color: #f2f2f1 !important">
+                            <span class="tf-font-color">
 
                                 <?php echo $staticData['tf.expProcChoices.quickGuide']; ?>
                             </span>

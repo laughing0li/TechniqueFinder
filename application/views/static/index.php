@@ -47,7 +47,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                     <div class="table-responsive tf-font tf-font-size" style="margin-bottom: 3em;">
                         <table id="static_data" class="table table-bordered table-striped" >
-                            <thead style="background-color: #f2f2f1 ">
+                            <thead class="tf-background-color">
                                 <tr>
 
                                 </tr>

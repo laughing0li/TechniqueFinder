@@ -49,7 +49,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                     ?>
 
-                    <div style="background-color: #f2f2f1 ">
+                    <div class="tf-background-color">
                         <table style="text-align: left;">
                             <tr>
                                 <td class="tf-font-orange">Name</td>

@@ -61,7 +61,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                     <div class="table-responsive tf-font tf-font-size" >
                         <table id="the_datatable" class="table table-bordered table-striped" >
-                            <thead style="background-color: #f2f2f1 ">
+                            <thead class="tf-background-color">
                                 <tr>
 
                                 </tr>

@@ -56,7 +56,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     }
 
                     ?>
-                    <div style="background-color: #f2f2f1 ">
+                    <div class="tf-background-color">
                         <table style="text-align: left; width:90%;">
                             <tr>
                                 <td class="tf-font-orange tf-td-name-col">Name</td>
@@ -149,13 +149,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="col-md-6" style="margin: auto;">
                                 <?php
                                 if ($prev_media && $next_media) {
-                                    echo '<a style="color: #f2f2f1" href="' . base_url() . 'Media/view/' . $prev_media->id . '">&lt; previous</a>'
+                                    echo '<a class="tf-font-color" href="' . base_url() . 'Media/view/' . $prev_media->id . '">&lt; previous</a>'
                                         . ' | '
-                                        . '<a style="color: #f2f2f1" href="' . base_url() . 'Media/view/' . $next_media->id . '">next &gt;</a>';
+                                        . '<a class="tf-font-color" href="' . base_url() . 'Media/view/' . $next_media->id . '">next &gt;</a>';
                                 } else if ($prev_media) {
-                                    echo '<a style="color: #f2f2f1" href="' . base_url() . 'Media/view/' . $prev_media->id . '">&lt; previous</a>';
+                                    echo '<a class="tf-font-color" href="' . base_url() . 'Media/view/' . $prev_media->id . '">&lt; previous</a>';
                                 } else if ($next_media) {
-                                    echo '<a style="color: #f2f2f1" href="' . base_url() . 'Media/view/' . $next_media->id . '">next &gt;</a>';
+                                    echo '<a class="tf-font-color" href="' . base_url() . 'Media/view/' . $next_media->id . '">next &gt;</a>';
                                 } else {
                                     echo 'haha';
                                 }

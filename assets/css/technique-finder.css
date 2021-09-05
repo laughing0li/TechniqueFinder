@@ -733,3 +733,10 @@ a.ui-button:active,
 a:hover {
     color: grey !important;
 }
+
+.tf-font-color {
+    color: #f2f2f1 !important;
+}
+.tf-background-color {
+    background-color: #f2f2f1;
+}

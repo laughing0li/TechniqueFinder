@@ -34,7 +34,7 @@
                     <a href="/Portal" style="margin-left: -20px">
                         <img class="mb-4" src="/assets/images/LabFinder-logo.png" alt="" width="350" height="75">
                     </a>
-                    <h1 style="color: #f2f2f1" class="h3 mb-3 fw-normal">Please sign in</h1>
+                    <h1 class="h3 tf-font-color mb-3 fw-normal">Please sign in</h1>
                     
 
                     <div class="form-floating" style='margin-top: 30px'>
@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="checkbox mb-3">
-                        <label style="color: #f2f2f1">
+                        <label class="tf-font-color">
                             <input  type="checkbox" value="remember-me"> Remember me
                         </label>
                     </div>
@@ -55,7 +55,7 @@
 
                     <button class="w-100 btn btn-lg outline-primary" type="submit" value='Login'>Sign in</button>
                     <div style='margin-top: 20px;'>
-                        <a style="margin-left: 1em; color: #f2f2f1" href="<?php echo base_url(); ?>reset/resetPassword">Forgot your password?</a>
+                        <a class="tf-font-color" style="margin-left: 1em;" href="<?php echo base_url(); ?>reset/resetPassword">Forgot your password?</a>
 
                     </div>
 

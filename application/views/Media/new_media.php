@@ -64,7 +64,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     }
                     ?>
 
-                    <div style="background-color: #f2f2f1 ">
+                    <div class="tf-background-color">
                         <table style="text-align: left; width:90%;">
                             <tr>
                                 <td class="tf-font-orange">Caption</td>

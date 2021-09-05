@@ -21,7 +21,7 @@
                             <br>
                             <!-- <div class="border-bottom" style="margin: 50px 0"></div> -->
 
-                            <p style="font-size: 16px; color: #f2f2f1;">
+                            <p style="font-size: 16px;" class="tf-font-color">
                                 Use AGN Laborarory Finder to identify and understand the analysis techniques available to researchers
                                 through Australian Geochemistry Network. You will find the contact details of our expert staff for each technique.
                                 They can provide you with all the information you need and guide you through the planning, training,
@@ -78,7 +78,7 @@
                             <div class="container" style="margin-left: -25px; padding-bottom: 30px">
                                 <div class="row">
                                     <div class="col-md-8">
-                                        <p class="lh-lg" style="font-size: 15px;color: #f2f2f1">
+                                        <p class="lh-lg tf-font-color" style="font-size: 15px;" >
                                             This list shows the techniques currently available at Australian Geochemistry Network.
                                         </p>
                                     </div>

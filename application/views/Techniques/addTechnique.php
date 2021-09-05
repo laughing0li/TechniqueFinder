@@ -62,7 +62,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                         <?php echo form_open("techniques/validateCreateTechnique/"); ?>
                         <!-- <div class="tf-box-big"> -->
-                        <div style=" background-color: #f2f2f1;">
+                        <div class="tf-background-color">
                             <table style="text-align: left;">
 
                                 <tr>

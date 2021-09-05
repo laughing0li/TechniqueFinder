@@ -78,7 +78,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <script type="text/javascript" src="<?php echo base_url(); ?>/assets/ckeditor/ckeditor.js"></script>
 
                         <?php echo form_open("techniques/validateEditTechnique/" . $id); ?>
-                        <div style=" background-color: #f2f2f1;">
+                        <div class="tf-background-color">
                             <table style="text-align: left; width:100%;">
 
 

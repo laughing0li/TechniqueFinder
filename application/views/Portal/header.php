@@ -12,17 +12,17 @@
             <div style='background-image: linear-gradient(180deg,#282572,#4b4b88);' class="offcanvas offcanvas-start" data-bs-scroll="true" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                 <ul class="navbar-nav" style='font-size: 18px'>
                     <li style="margin-left: 20px;" class="nav-item">
-                        <a class="nav-link" style="color: #f2f2f1" href="/Portal">Home</a>
+                        <a class="nav-link tf-font-color"  href="/Portal">Home</a>
                     </li>
                     <li style="margin-left: 20px" class="nav-item">
-                        <a class="nav-link" style="color: #f2f2f1" href="https://www.auscope.org.au/agn">About</a>
+                        <a class="nav-link tf-font-color"  href="https://www.auscope.org.au/agn">About</a>
                     </li>
                     <li style="margin-left: 20px" class="nav-item">
-                        <a class="nav-link" style="color: #f2f2f1" href="https://app.ausgeochem.org/"> AuGeoChem</a>
+                        <a class="nav-link tf-font-color"  href="https://app.ausgeochem.org/"> AuGeoChem</a>
                     </li>
 
                     <li style="margin-left: 20px" class="nav-item dropdown">
-                        <a style="color: #f2f2f1" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a  class="nav-link dropdown-toggle tf-font-color" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Research Type
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -37,19 +37,19 @@
                 </ul>
             </div>
 
-            <div style="margin-left: 100px;  color: #F2F2F1;" class="collapse navbar-collapse" id="navbarNavDropdown">
+            <div style="margin-left: 100px;" class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav" style='font-size: 18px'>
                     <li style="margin-left: 20px;" class="nav-item">
-                        <a class="nav-link" style="color: #f2f2f1" href="/Portal">Home</a>
+                        <a class="nav-link tf-font-color" href="/Portal">Home</a>
                     </li>
                     <li style="margin-left: 20px" class="nav-item">
-                        <a class="nav-link" style="color: #f2f2f1" href="https://www.auscope.org.au/agn">About</a>
+                        <a class="nav-link tf-font-color"  href="https://www.auscope.org.au/agn">About</a>
                     </li>
                     <li style="margin-left: 20px" class="nav-item">
-                        <a class="nav-link" style="color: #f2f2f1" href="https://app.ausgeochem.org/"> AuGeoChem</a>
+                        <a class="nav-link tf-font-color"  href="https://app.ausgeochem.org/"> AuGeoChem</a>
                     </li>
                     <li style="margin-left: 20px" class="nav-item dropdown">
-                        <a style="color: #f2f2f1" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a  class="nav-link dropdown-toggle tf-font-color" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Research Type
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

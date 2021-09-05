@@ -59,26 +59,26 @@
                 <div class="row justify-content-md-center">
                     <div class="col-10">
                         <div class="container" style="padding: 30px 0">
-                            <nav class="navbar navbar-expand-lg"style="color: #F2F2F1; font-size: 18px">
+                            <nav class="navbar navbar-expand-lg tf-font-color" style=" font-size: 18px">
                                 <div class="container-fluid">
                                     <a class="navbar-brand" href="/Portal"><img src="/assets/images/LabFinder-logo.png" width=280 height=60></a>
                                     <!-- <a class="navbar-brand" href="/Portal"><img src="/assets/images/AGN-Logo.png" width=300 height="60"></a> -->
-                                    <div style="margin-left: 50px;  color: #F2F2F1;" class="collapse navbar-collapse" id="navbarNavDropdown">
+                                    <div style="margin-left: 50px;" class="collapse navbar-collapse" id="navbarNavDropdown">
                                         <ul class="navbar-nav" >
                                             <li  class="nav-item">
-                                                <a class="nav-link" style="color: #f2f2f1" href="/Techniques/index">Techniques</a>
+                                                <a class="nav-link tf-font-color" href="/Techniques/index">Techniques</a>
                                             </li>
                                             <li  class="nav-item">
-                                                <a class="nav-link" style="color: #f2f2f1" href="/Media/index">Media</a>
+                                                <a class="nav-link tf-font-color" href="/Media/index">Media</a>
                                             </li>
                                             <li  class="nav-item">
-                                                <a class="nav-link" style="color: #f2f2f1" href="/Location/index"> Locations</a>
+                                                <a class="nav-link tf-font-color"  href="/Location/index"> Locations</a>
                                             </li>
                                             <li  class="nav-item">
-                                                <a class="nav-link" style="color: #f2f2f1" href="/Contact/index"> Contacts</a>
+                                                <a class="nav-link tf-font-color"  href="/Contact/index"> Contacts</a>
                                             </li>
                                             <li  class="nav-item">
-                                                <a class="nav-link" style="color: #f2f2f1" href="/staticContent/index"> Static content</a>
+                                                <a class="nav-link tf-font-color"  href="/staticContent/index"> Static content</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -88,7 +88,7 @@
                                 echo "<span>You are logged in as </span>";
                                 echo "<span>" . $this->session->userdata('username') . "</span>";
                                 echo "<span>&nbsp;|&nbsp;</span>";
-                                echo '<a style="color: #f2f2f1" href="' . base_url() . 'login/logout">Logout</a>';
+                                echo '<a class="tf-font-color"  href="' . base_url() . 'login/logout">Logout</a>';
                             }
                             ?>
                             </nav>

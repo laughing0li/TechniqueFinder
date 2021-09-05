@@ -37,7 +37,7 @@
                                      */
 
                                     foreach ($allTechniques as $r) {
-                                        echo '<tr class="tf-font-14"><th scope="row"><a style="color: #f2f2f1";   href="' . base_url() . 'Portal/viewTechnique/' . $r->id . '?nav_from=listTechniques" >' . $r->instrument_name . '</a></th><td>' . $r->model . '</td><td>' . $r->manufacturer . '</td></tr>';
+                                        echo '<tr class="tf-font-14"><th scope="row"><a class="tf-font-color";   href="' . base_url() . 'Portal/viewTechnique/' . $r->id . '?nav_from=listTechniques" >' . $r->instrument_name . '</a></th><td>' . $r->model . '</td><td>' . $r->manufacturer . '</td></tr>';
                                     }
                                     ?>
                                 </tbody>

@@ -29,7 +29,7 @@
                     <div class="col-10">
                         <?php include 'header.php'; ?>
 
-                        <div id="content" class="container" style="color: #f2f2f1 !important">
+                        <div id="content" class="container tf-font-color" >
 
 
                             <div class="clear"></div>
