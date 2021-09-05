@@ -35,13 +35,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-10" style="margin-left: 50px;">
-                    <div class="row" >
+                <div class="row" >
                         <h1 class="tf-heading"> Create Technique</h1>
                     </div>
                     <div class="nav tf-navbar">
                         <button class="btn" onclick="window.location='<?php echo base_url(); ?>TechniqueFinder/index'">
                             <span class="home-icon">&nbsp;</span>
-                            <a class="tf-font-orange" style="text-decoration: none;">Home</a>
+                            <a class="tf-font-orange" style="text-decoration: none;">Admin Home</a>
                         </button>
                         <button class="btn" onclick="window.location='<?php echo base_url(); ?>/Techniques/index'">
                             <span class="tf-database-table">&nbsp;</span>
@@ -49,22 +49,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </button>
                     </div>
 
+
+                    
+
                     <?php
                     if ($this->session->flashdata('error-warning-message')) {
                         echo '<div id="error-warning-message" class=" tf-font tf-font-size error-warning-message">';
                         echo $this->session->flashdata('error-warning-message');
                         echo '</div>';
                     }
+
                     ?>
 
                     <body>
                         <script type="text/javascript" src="<?php echo base_url(); ?>/assets/ckeditor/ckeditor.js"></script>
 
                         <?php echo form_open("techniques/validateCreateTechnique/"); ?>
-                        <!-- <div class="tf-box-big"> -->
                         <div class="tf-background-color">
                             <table style="text-align: left;">
 
+                                <!-- NAME -->
                                 <tr>
                                     <td class="tf-font-orange" style="position: absolute;">Name</td>
                                     <td>&nbsp;&nbsp;</td>
@@ -74,12 +78,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                                                                 }; ?></textarea>
                                     </td>
                                 </tr>
-
-
                                 <tr>
                                     <td>&nbsp;</td>
                                 </tr>
 
+
+                                <!-- ALTERNATIVE NAMES -->
                                 <tr>
                                     <td class="tf-font-orange" style="position: absolute;">Alternative names</td>
                                     <td>&nbsp;&nbsp;</td>
@@ -89,11 +93,177 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                                                                 }; ?></textarea>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td>&nbsp;</td>
                                 </tr>
 
+
+                                <!-- INSTRUMENT NAME -->
+                                <tr>
+                                    <td class="tf-font-orange" style="position: absolute;">Instrument Name</td>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td class="tf-font tf-font-size input-col">
+                                        <textarea class="tf-input-big" name="instrument_name"><?php if (isset($instrument_name)) {
+                                                                                                    echo $instrument_name;
+                                                                                                }; ?></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+
+
+                                <!-- MODEL -->
+                                <tr>
+                                    <td class="tf-font-orange" style="position: absolute;">Model</td>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td class="tf-font tf-font-size input-col">
+                                        <textarea class="tf-input-big" name="model"><?php if (isset($model)) {
+                                                                                        echo $model;
+                                                                                    }; ?></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+
+
+                                <!-- MANUFACTURER -->
+                                <tr>
+                                    <td class="tf-font-orange" style="position: absolute;">Manufacturer</td>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td class="tf-font tf-font-size input-col">
+                                        <textarea class="tf-input-big" name="manufacturer"><?php if (isset($manufacturer)) {
+                                                                                                echo $manufacturer;
+                                                                                            }; ?></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+
+
+                                <!-- SAMPLE_TYPE -->
+                                <tr>
+                                    <td class="tf-font-orange" style="position: absolute;">Sample Type</td>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td class="tf-font tf-font-size input-col">
+                                        <textarea class="tf-input-big" name="sample_type"><?php if (isset($sample_type)) {
+                                                                                                echo $sample_type;
+                                                                                            }; ?></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+
+
+                                <!-- WAVELENGTH -->
+                                <tr>
+                                    <td class="tf-font-orange" style="position: absolute;">Wavelength</td>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td class="tf-font tf-font-size input-col">
+                                        <textarea class="tf-input-big" name="wavelength"><?php if (isset($wavelength)) {
+                                                                                                echo $wavelength;
+                                                                                            }; ?></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+
+
+                                <!-- BEAM DIAMETER -->
+                                <tr>
+                                    <td class="tf-font-orange" style="position: absolute;">Beam Diameter</td>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td class="tf-font tf-font-size input-col">
+                                        <textarea class="tf-input-big" name="beam_diameter"><?php if (isset($beam_diameter)) {
+                                                                                                echo $beam_diameter;
+                                                                                            }; ?></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+
+
+                                <!-- MIN CONC -->
+                                <tr>
+                                    <td class="tf-font-orange" style="position: absolute;">Minimum Conc.</td>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td class="tf-font tf-font-size input-col">
+                                        <textarea class="tf-input-big" name="min_conc"><?php if (isset($min_conc)) {
+                                                                                            echo $min_conc;
+                                                                                        }; ?></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+
+
+                                <!-- MASS -->
+                                <tr>
+                                    <td class="tf-font-orange" style="position: absolute;">Mass</td>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td class="tf-font tf-font-size input-col">
+                                        <textarea class="tf-input-big" name="mass"><?php if (isset($mass)) {
+                                                                                        echo $mass;
+                                                                                    }; ?></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+
+
+                                <!-- VOLUME -->
+                                <tr>
+                                    <td class="tf-font-orange" style="position: absolute;">Volume</td>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td class="tf-font tf-font-size input-col">
+                                        <textarea class="tf-input-big" name="volume"><?php if (isset($volume)) {
+                                                                                            echo $volume;
+                                                                                        }; ?></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+
+
+                                <!-- PRESSURE -->
+                                <tr>
+                                    <td class="tf-font-orange" style="position: absolute;">Pressure</td>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td class="tf-font tf-font-size input-col">
+                                        <textarea class="tf-input-big" name="pressure"><?php if (isset($pressure)) {
+                                                                                            echo $pressure;
+                                                                                        }; ?></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+
+
+                                <!-- TEMPERATURE -->
+                                <tr>
+                                    <td class="tf-font-orange" style="position: absolute;">Temperature</td>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td class="tf-font tf-font-size input-col">
+                                        <textarea class="tf-input-big" name="temperature"><?php if (isset($temperature)) {
+                                                                                                echo $temperature;
+                                                                                            }; ?></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+
+
+                                <!-- SUMMARY -->
                                 <tr>
                                     <td class="tf-font-orange">Short Description</td>
                                     <td>&nbsp;&nbsp;</td>
@@ -104,11 +274,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         }; ?></textarea>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td>&nbsp;</td>
                                 </tr>
 
+
+                                <!-- DESCRIPTION -->
                                 <tr>
                                     <td class="tf-font-orange">Long Description</td>
                                     <td>&nbsp;&nbsp;</td>
@@ -118,11 +289,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                                                                             }; ?></textarea>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td>&nbsp;</td>
                                 </tr>
 
+
+                                <!-- KEYWORDS -->
                                 <tr>
                                     <td class="tf-font-orange">Keywords</td>
                                     <td>&nbsp;&nbsp;</td>
@@ -132,14 +304,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                                                         }; ?></textarea>
                                     </td>
                                 </tr>
-
-
                                 <tr>
                                     <td>&nbsp;</td>
                                 </tr>
 
+
+                                <!-- MEDIA -->
                                 <tr>
-                                    <td class="tf-font-orange">Media examples for LIST</td>
+                                    <td class="tf-font-orange">Media examples</td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td>
                                         <div class="table-responsive tf-font tf-font-size">
@@ -165,87 +337,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <div>
                                             <button type="button" id="add-media-list-submit" class="tf-button"">
                     <span class=" tf-database-add"></span>
-                                                <span class="tf-font create-technique-dialog-button ">Add Media for LIST</span>
-                                            </button>
-                                        </div>
-                                    </td>
-
-
-                                </tr>
-
-                                <tr>
-                                    <td>&nbsp;</td>
-                                </tr>
-
-                                <tr>
-                                    <td class="tf-font-orange">Media examples for OUTPUT</td>
-                                    <td>&nbsp;&nbsp;</td>
-                                    <td>
-                                        <div class="table-responsive tf-font tf-font-size">
-                                            <input type="hidden" id="media_output_items_selected_hidden" name="media_output_items_selected_hidden" value="" />
-                                            <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
-                                                <thead>
-                                                    <tr class="table-headings tf-font-11 tf-font">
-                                                        <td>Thumbnail</td>
-                                                        <td>
-                                                            Name<br /> Dimensions
-                                                        </td>
-                                                        <td>
-                                                            Caption
-                                                        </td>
-                                                        <td>
-                                                            Action
-                                                        </td>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table_output_media_selected">
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div>
-                                            <button type="button" id="add-media-output-submit" class="tf-button"">
-                    <span class=" tf-database-add"></span>
-                                                <span class="tf-font create-technique-dialog-button ">Add Media for OUTPUT</span>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>&nbsp;</td>
-                                </tr>
-
-                                <tr>
-                                    <td class="tf-font-orange">Media examples for Instrument</td>
-                                    <td>&nbsp;&nbsp;</td>
-                                    <td>
-                                        <div class="table-responsive tf-font tf-font-size">
-                                            <input type="hidden" id="media_instrument_items_selected_hidden" name="media_instrument_items_selected_hidden" value="" />
-                                            <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
-                                                <thead>
-                                                    <tr class="table-headings tf-font-11 tf-font">
-                                                        <td>Thumbnail</td>
-                                                        <td>
-                                                            Name<br /> Dimensions
-                                                        </td>
-                                                        <td>
-                                                            Caption
-                                                        </td>
-                                                        <td>
-                                                            Action
-                                                        </td>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table_instrument_media_selected">
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div>
-                                            <button type="button" id="add-media-instrument-submit" class="tf-button"">
-                    <span class=" tf-database-add"></span>
-                                                <span class="tf-font create-technique-dialog-button ">Add Media for INSTRUMENT</span>
+                                                <span class="tf-font create-technique-dialog-button ">Add Media</span>
                                             </button>
                                         </div>
                                     </td>
@@ -254,6 +346,88 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <td>&nbsp;</td>
                                 </tr>
 
+
+                                <!-- Media examples for OUTPUT -->
+                                <!-- <tr>
+            <td class="tf-font-orange">Media examples for OUTPUT</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>
+                <div class="table-responsive tf-font tf-font-size">
+                    <input type="hidden" id="media_output_items_selected_hidden" name="media_output_items_selected_hidden" value=""/>
+                    <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
+                        <thead>
+                        <tr class="table-headings tf-font-11 tf-font">
+                            <td>Thumbnail</td>
+                            <td>
+                                Name<br/> Dimensions
+                            </td>
+                            <td>
+                                Caption
+                            </td>
+                            <td>
+                                Action
+                            </td>
+                        </tr>
+                        </thead>
+                        <tbody id="table_output_media_selected">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <button type="button" id="add-media-output-submit" class="tf-button"">
+                    <span class="tf-database-add"></span>
+                    <span class="tf-font create-technique-dialog-button ">Add Media for OUTPUT</span>
+                    </button>
+                </div>
+            </td>
+        </tr> -->
+                                <!-- <tr>
+            <td>&nbsp;</td>
+        </tr> -->
+
+
+                                <!-- Media examples for INSTRUMENT -->
+                                <!-- <tr>
+            <td class="tf-font-orange">Media examples for Instrument</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>
+                <div class="table-responsive tf-font tf-font-size">
+                    <input type="hidden" id="media_instrument_items_selected_hidden" name="media_instrument_items_selected_hidden" value=""/>
+                    <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
+                        <thead>
+                        <tr class="table-headings tf-font-11 tf-font">
+                            <td>Thumbnail</td>
+                            <td>
+                                Name<br/> Dimensions
+                            </td>
+                            <td>
+                                Caption
+                            </td>
+                            <td>
+                                Action
+                            </td>
+                        </tr>
+                        </thead>
+                        <tbody id="table_instrument_media_selected">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <button type="button" id="add-media-instrument-submit" class="tf-button"">
+                    <span class="tf-database-add"></span>
+                    <span class="tf-font create-technique-dialog-button ">Add Media for INSTRUMENT</span>
+                    </button>
+                </div>
+            </td>
+        </tr> -->
+                                <!-- <tr>
+            <td>&nbsp;</td>
+        </tr> -->
+
+
+                                <!-- CONTACTS -->
                                 <tr>
                                     <td class="tf-font-orange">Contacts</td>
                                     <td>&nbsp;&nbsp;</td>
@@ -288,87 +462,88 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         </div>
                                     </td>
                                 </tr>
-
-
                                 <tr>
                                     <td>&nbsp;</td>
                                 </tr>
 
-                                <tr>
-                                    <td class="tf-font-orange">Case Studies</td>
-                                    <td>&nbsp;&nbsp;</td>
-                                    <td>
-                                        <div class="table-responsive tf-font tf-font-size">
-                                            <input type="hidden" id="case_items_selected_hidden" name="case_items_selected_hidden" value="" />
-                                            <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
-                                                <thead>
-                                                    <tr class="table-headings tf-font-11 tf-font">
-                                                        <td>
-                                                            Name
-                                                        </td>
-                                                        <td>
-                                                            URL
-                                                        </td>
-                                                        <td>
-                                                            Action
-                                                        </td>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table_case_selected">
 
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div>
-                                            <button type="button" id="add-case-submit" class="tf-button">
-                                                <span class="tf-database-add"></span>
-                                                <span class="tf-font create-technique-dialog-button ">Add Case study</span>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
 
-                                <tr>
-                                    <td>&nbsp;</td>
-                                </tr>
+                                <!-- CASE STUDIES -->
+                                <!-- <tr>
+            <td class="tf-font-orange">Case Studies</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>
+                <div class="table-responsive tf-font tf-font-size">
+                    <input type="hidden" id="case_items_selected_hidden" name="case_items_selected_hidden" value=""/>
+                    <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
+                        <thead>
+                        <tr class="table-headings tf-font-11 tf-font">
+                            <td>
+                                Name
+                            </td>
+                            <td>
+                                URL
+                            </td>
+                            <td>
+                                Action
+                            </td>
+                        </tr>
+                        </thead>
+                        <tbody id="table_case_selected">
 
-                                <tr>
-                                    <td class="tf-font-orange">References</td>
-                                    <td>&nbsp;&nbsp;</td>
-                                    <td>
-                                        <div class="table-responsive tf-font tf-font-size">
-                                            <input type="hidden" id="references_items_selected_hidden" name="references_items_selected_hidden" value="" />
-                                            <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
-                                                <thead>
-                                                    <tr class="table-headings tf-font-11 tf-font">
-                                                        <td>
-                                                            Authors
-                                                        </td>
-                                                        <td>
-                                                            Title
-                                                        </td>
-                                                        <td>
-                                                            Action
-                                                        </td>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table_references_selected">
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <button type="button" id="add-case-submit" class="tf-button">
+                    <span class="tf-database-add"></span>
+                    <span class="tf-font create-technique-dialog-button ">Add Case study</span>
+                    </button>
+                </div>
+            </td>
+        </tr> -->
+                                <!-- <tr>
+            <td>&nbsp;</td>
+        </tr> -->
 
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div>
-                                            <button type="button" id="add-references-submit" class="tf-button">
-                                                <span class="tf-database-add"></span>
-                                                <span class="tf-font create-technique-dialog-button ">Add References</span>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
 
-                                <tr>
-                                    <td>&nbsp;</td>
-                                </tr>
+                                <!-- REFERENCES -->
+                                <!-- <tr>
+            <td class="tf-font-orange">References</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>
+                <div class="table-responsive tf-font tf-font-size">
+                    <input type="hidden" id="references_items_selected_hidden" name="references_items_selected_hidden" value=""/>
+                    <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
+                        <thead>
+                        <tr class="table-headings tf-font-11 tf-font">
+                            <td>
+                                Authors
+                            </td>
+                            <td>
+                                Title
+                            </td>
+                            <td>
+                                Action
+                            </td>
+                        </tr>
+                        </thead>
+                        <tbody id="table_references_selected">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <button type="button" id="add-references-submit" class="tf-button">
+                        <span class="tf-database-add"></span>
+                        <span class="tf-font create-technique-dialog-button ">Add References</span>
+                    </button>
+                </div>
+            </td>
+        </tr> -->
+                                <!-- <tr>
+            <td>&nbsp;</td>
+        </tr> -->
 
 
                             </table>
@@ -459,597 +634,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                         <div id="add-case-dialog-form" title="Add Contacts">
 
-<div class="nav tf-navbar">
-    <button class="btn" onclick="window.location='<?php echo base_url(); ?>TechniqueFinder/index'">
-        <span class="home-icon">&nbsp;</span>
-        <a class="tf-font-orange" style="text-decoration: none;">Admin Home</a>
-    </button>
-    <button class="btn" onclick="window.location='<?php echo base_url(); ?>/Techniques/index'">
-        <span class="tf-database-table">&nbsp;</span>
-        <a class="tf-font-orange" style="text-decoration: none;">Technique List</a>
-    </button>
-</div>
-
-
-
-<?php
-if ($this->session->flashdata('error-warning-message')) {
-    echo '<div id="error-warning-message" class=" tf-font tf-font-size error-warning-message">';
-    echo $this->session->flashdata('error-warning-message');
-    echo '</div>';
-}
-
-?>
-
-<body>
-<script type="text/javascript" src="<?php echo base_url(); ?>/assets/ckeditor/ckeditor.js"></script>
-
-<?php echo form_open("techniques/validateCreateTechnique/"); ?>
-<div class="tf-box-big">
-    <table style="text-align: left;">
-
-        <!-- NAME -->
-        <tr>
-            <td class="tf-font-orange" style="position: absolute;">Name</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
-                          name="technique_name"><?php if (isset($technique_name)) {
-                        echo $technique_name;
-                    }; ?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-         
-        <!-- ALTERNATIVE NAMES -->
-        <tr>
-            <td class="tf-font-orange" style="position: absolute;">Alternative names</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                    <textarea class="tf-input-big" name="alternative_names"><?php if (isset($alternative_names)){echo $alternative_names;};?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-        <!-- INSTRUMENT NAME -->
-        <tr>
-            <td class="tf-font-orange" style="position: absolute;">Instrument Name</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
-                          name="instrument_name"><?php if (isset($instrument_name)) {
-                        echo $instrument_name;
-                    }; ?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-        <!-- MODEL -->
-        <tr>
-            <td class="tf-font-orange" style="position: absolute;">Model</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
-                          name="model"><?php if (isset($model)) {
-                        echo $model;
-                    }; ?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-        <!-- MANUFACTURER -->
-        <tr>
-            <td class="tf-font-orange" style="position: absolute;">Manufacturer</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
-                          name="manufacturer"><?php if (isset($manufacturer)) {
-                        echo $manufacturer;
-                    }; ?></textarea>
-            </td>
-        </tr>
-        <tr>                                                                                                                        <td>&nbsp;</td>
-        </tr>
-
-
-       <!-- SAMPLE_TYPE -->
-        <tr>
-            <td class="tf-font-orange" style="position: absolute;">Sample Type</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
-                          name="sample_type"><?php if (isset($sample_type)) {
-                        echo $sample_type;
-                    }; ?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-        <!-- WAVELENGTH -->
-        <tr>
-            <td class="tf-font-orange" style="position: absolute;">Wavelength</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
-                          name="wavelength"><?php if (isset($wavelength)) {
-                        echo $wavelength;
-                    }; ?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-        <!-- BEAM DIAMETER -->
-        <tr>
-            <td class="tf-font-orange" style="position: absolute;">Beam Diameter</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
-                          name="beam_diameter"><?php if (isset($beam_diameter)) {
-                        echo $beam_diameter;
-                    }; ?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-        <!-- MIN CONC -->
-        <tr>
-            <td class="tf-font-orange" style="position: absolute;">Minimum Conc.</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
-                     name="min_conc"><?php if (isset($min_conc)) {
-                        echo $min_conc;
-                    }; ?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-        <!-- MASS -->
-        <tr>
-            <td class="tf-font-orange" style="position: absolute;">Mass</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
-                     name="mass"><?php if (isset($mass)) {
-                        echo $mass;
-                    }; ?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-        <!-- VOLUME -->
-        <tr>
-            <td class="tf-font-orange" style="position: absolute;">Volume</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
-                     name="volume"><?php if (isset($volume)) {
-                        echo $volume;
-                    }; ?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-        <!-- PRESSURE -->
-        <tr>
-            <td class="tf-font-orange" style="position: absolute;">Pressure</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
-                     name="pressure"><?php if (isset($pressure)) {
-                        echo $pressure;
-                    }; ?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-        <!-- TEMPERATURE -->
-        <tr>
-            <td class="tf-font-orange" style="position: absolute;">Temperature</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
-                     name="temperature"><?php if (isset($temperature)) {
-                        echo $temperature;
-                    }; ?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-        <!-- SUMMARY -->
-        <tr>
-            <td class="tf-font-orange">Short Description</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                    <textarea name="short_description" class="ckeditor" id="short_description">
-                        <?php if (isset($short_description)){echo $short_description;};?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-        <!-- DESCRIPTION -->
-        <tr>
-            <td class="tf-font-orange">Long Description</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                    <textarea name="long_description" class="ckeditor" id="ckeditor"><?php if (isset($long_description)){echo $long_description;};?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-        <!-- KEYWORDS -->
-        <tr>
-            <td class="tf-font-orange">Keywords</td>
-            <td>&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                        <textarea class="tf-input-big" name="keywords"><?php if (isset($keywords)){echo $keywords;};?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-        <!-- MEDIA -->
-        <tr>
-            <td class="tf-font-orange">Media examples</td>
-            <td>&nbsp;&nbsp;</td>
-            <td>
-                <div class="table-responsive tf-font tf-font-size">
-                    <input type="hidden" id="media_items_selected_hidden" name="media_items_selected_hidden" value=""/>
-                    <table id="static_data" class="table table-bordered table-striped" cellspacing="3"
-                           style="width: 60%;float: left;">
-
-                        <thead class="table-headings tf-font-11 tf-font">
-                            <td>Thumbnail</td>
-                            <td>
-                                Name<br/> Dimensions
-                            </td>
-                            <td>
-                                Caption
-                            </td>
-                            <td>
-                                Action
-                            </td>
-                        </thead>
-                        <tbody id="table_list_media_selected">
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    <button type="button" id="add-media-list-submit" class="tf-button"">
-                    <span class="tf-database-add"></span>
-                    <span class="tf-font create-technique-dialog-button ">Add Media</span>
-                    </button>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
- 
-        <!-- Media examples for OUTPUT --> 
-        <!-- <tr>
-            <td class="tf-font-orange">Media examples for OUTPUT</td>
-            <td>&nbsp;&nbsp;</td>
-            <td>
-                <div class="table-responsive tf-font tf-font-size">
-                    <input type="hidden" id="media_output_items_selected_hidden" name="media_output_items_selected_hidden" value=""/>
-                    <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
-                        <thead>
-                        <tr class="table-headings tf-font-11 tf-font">
-                            <td>Thumbnail</td>
-                            <td>
-                                Name<br/> Dimensions
-                            </td>
-                            <td>
-                                Caption
-                            </td>
-                            <td>
-                                Action
-                            </td>
-                        </tr>
-                        </thead>
-                        <tbody id="table_output_media_selected">
-
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    <button type="button" id="add-media-output-submit" class="tf-button"">
-                    <span class="tf-database-add"></span>
-                    <span class="tf-font create-technique-dialog-button ">Add Media for OUTPUT</span>
-                    </button>
-                </div>
-            </td>
-        </tr> -->
-        <!-- <tr>
-            <td>&nbsp;</td>
-        </tr> -->
-
-
-        <!-- Media examples for INSTRUMENT -->
-        <!-- <tr>
-            <td class="tf-font-orange">Media examples for Instrument</td>
-            <td>&nbsp;&nbsp;</td>
-            <td>
-                <div class="table-responsive tf-font tf-font-size">
-                    <input type="hidden" id="media_instrument_items_selected_hidden" name="media_instrument_items_selected_hidden" value=""/>
-                    <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
-                        <thead>
-                        <tr class="table-headings tf-font-11 tf-font">
-                            <td>Thumbnail</td>
-                            <td>
-                                Name<br/> Dimensions
-                            </td>
-                            <td>
-                                Caption
-                            </td>
-                            <td>
-                                Action
-                            </td>
-                        </tr>
-                        </thead>
-                        <tbody id="table_instrument_media_selected">
-
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    <button type="button" id="add-media-instrument-submit" class="tf-button"">
-                    <span class="tf-database-add"></span>
-                    <span class="tf-font create-technique-dialog-button ">Add Media for INSTRUMENT</span>
-                    </button>
-                </div>
-            </td>
-        </tr> -->
-        <!-- <tr>
-            <td>&nbsp;</td>
-        </tr> -->
-
-
-        <!-- CONTACTS -->
-        <tr>
-            <td class="tf-font-orange">Contacts</td>
-            <td>&nbsp;&nbsp;</td>
-            <td>
-                <div class="table-responsive tf-font tf-font-size">
-                    <input type="hidden" id="contact_items_selected_hidden" name="contact_items_selected_hidden" value=""/>
-                    <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
-                        <thead>
-                        <tr class="table-headings tf-font-11 tf-font">
-
-                            <td>
-                                Name
-                            </td>
-                            <td>
-                                Institution
-                            </td>
-                            <td>
-                                Action
-                            </td>
-                        </tr>
-                        </thead>
-                        <tbody id="table_contacts_selected">
-
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    <button type="button" id="add-contacts-submit" class="tf-button"">
-                    <span class="tf-database-add"></span>
-                    <span class="tf-font create-technique-dialog-button ">Add contacts</span>
-                    </button>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-
-
-
-        <!-- CASE STUDIES -->
-        <!-- <tr>
-            <td class="tf-font-orange">Case Studies</td>
-            <td>&nbsp;&nbsp;</td>
-            <td>
-                <div class="table-responsive tf-font tf-font-size">
-                    <input type="hidden" id="case_items_selected_hidden" name="case_items_selected_hidden" value=""/>
-                    <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
-                        <thead>
-                        <tr class="table-headings tf-font-11 tf-font">
-                            <td>
-                                Name
-                            </td>
-                            <td>
-                                URL
-                            </td>
-                            <td>
-                                Action
-                            </td>
-                        </tr>
-                        </thead>
-                        <tbody id="table_case_selected">
-
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    <button type="button" id="add-case-submit" class="tf-button">
-                    <span class="tf-database-add"></span>
-                    <span class="tf-font create-technique-dialog-button ">Add Case study</span>
-                    </button>
-                </div>
-            </td>
-        </tr> -->
-        <!-- <tr>
-            <td>&nbsp;</td>
-        </tr> -->
-
-
-        <!-- REFERENCES -->
-        <!-- <tr>
-            <td class="tf-font-orange">References</td>
-            <td>&nbsp;&nbsp;</td>
-            <td>
-                <div class="table-responsive tf-font tf-font-size">
-                    <input type="hidden" id="references_items_selected_hidden" name="references_items_selected_hidden" value=""/>
-                    <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
-                        <thead>
-                        <tr class="table-headings tf-font-11 tf-font">
-                            <td>
-                                Authors
-                            </td>
-                            <td>
-                                Title
-                            </td>
-                            <td>
-                                Action
-                            </td>
-                        </tr>
-                        </thead>
-                        <tbody id="table_references_selected">
-
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    <button type="button" id="add-references-submit" class="tf-button">
-                        <span class="tf-database-add"></span>
-                        <span class="tf-font create-technique-dialog-button ">Add References</span>
-                    </button>
-                </div>
-            </td>
-        </tr> -->
-        <!-- <tr>
-            <td>&nbsp;</td>
-        </tr> -->
-
-
-    </table>
-</div>
-
-<button id="update" name="submit" class="tf-button" type="submit">
-    <span class="tf-save">&nbsp;&nbsp;&nbsp;</span>
-    <span class="tf-button-label">Create</span>
-</button>
-
-
-<div id="add-media-list-dialog-form" title="">
-    <label><strong>Selection: LIST</strong></label>
-
-
-    <table class="add-media-list-dialog-table" width="100%" cellspacing="3">
-        <thead>
-        <tr class="tf-font-11 tf-font table-headings">
-            <td></td>
-            <td style="text-align: center; font-weight: bold; ">Thumbnail</td>
-            <td style="text-align: center; font-weight: bold;">Name <br/> Dimensions</td>
-        </tr>
-        </thead>
-        <form>
-            <tbody id="media-list-table">
-
-
-            </tbody>
-        </form>
-    </table>
-</div>
-
-<div id="add-media-output-dialog-form" title="">
-
-    <label><strong>Selection: OUTPUT</strong></label>
-
-    <table class="add-media-output-dialog-table" width="100%" cellspacing="3">
-        <thead>
-        <tr class="tf-font-11 tf-font table-headings">
-            <td></td>
-            <td style="text-align: center; font-weight: bold; ">Thumbnail</td>
-            <td style="text-align: center; font-weight: bold;">Name <br/> Dimensions</td>
-        </tr>
-        </thead>
-        <tbody id="media-output-table">
-
-        </tbody>
-    </table>
-</div>
-
-<div id="add-media-instrument-dialog-form" title="">
-
-    <label><strong>Selection: INSTRUMENT</strong></label>
-
-    <table class="add-media-output-dialog-table" width="100%" cellspacing="3">
-        <thead>
-        <tr class="tf-font-11 tf-font table-headings">
-            <td></td>
-            <td style="text-align: center; font-weight: bold; ">Thumbnail</td>
-            <td style="text-align: center; font-weight: bold;">Name <br/> Dimensions</td>
-        </tr>
-        </thead>
-        <tbody id="media-instrument-table">
-
-        </tbody>
-    </table>
-</div>
-
-
-<div id="add-contacts-dialog-form" title="Add Contacts">
-
-    <label><strong>Contacts</strong></label>
-
-    <table class="add-contacts-dialog-table" width="100%" cellspacing="3">
-        <thead>
-        <tr class="tf-font-11 tf-font table-headings">
-            <td></td>
-            <td style="text-align: center; font-weight: bold; ">Name</td>
-            <td style="text-align: center; font-weight: bold;">Institution</td>
-        </tr>
-        </thead>
-        <tbody id="contacts-table">
+                            <label><strong>Case Studies</strong></label>
 
                             <table class="add-case-dialog-table" width="100%" cellspacing="3">
                                 <thead>
@@ -1084,16 +669,6 @@ if ($this->session->flashdata('error-warning-message')) {
                             </table>
                         </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<div class='container-md'>
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col-10">
-                <?php $this->load->view('layout/admin_footer.php') ?>
             </div>
         </div>
     </div>
@@ -1775,3 +1350,14 @@ if ($this->session->flashdata('error-warning-message')) {
 
     }
 </script>
+
+<div class='container-md'>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-10">
+                <?php $this->load->view('layout/admin_footer.php') ?>
+
+            </div>
+        </div>
+    </div>
+</div>
