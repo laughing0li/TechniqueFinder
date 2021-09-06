@@ -27,7 +27,7 @@
                 <a href="/Portal" style="margin-left: -20px">
                         <img class="mb-4" src="/assets/images/LabFinder-logo.png" alt="" width="350" height="75">
                     </a>
-                    <h1 style="color: #f2f2f1" class="h3 mb-3 fw-normal">Reset password form</h1>
+                    <h1 class="h3 mb-3 fw-normal tf-font-color">Reset password form</h1>
 
                     <div class="form-floating">
                         <input style="box-shadow: none;" type="text" name="username" class="form-control" id="floatingInput" placeholder="Login ID">

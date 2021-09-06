@@ -14,7 +14,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<?php $this->load->view('layout/header.php'); ?>
+<?php $this->load->view('layout/admin_header.php'); ?>
 <head><title>TF Admin | Edit Technique</title></head>
 <style>
     table {
@@ -39,7 +39,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
 </style>
 
-
+<div class="bg-color">
+    <div class="container-md">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-10" style="margin-left: 50px;">
+                    <div class="row">
+                        <h1 class="tf-heading"> Edit Technique</h1>
+                    </div>
 <div class="nav tf-navbar">
     <button class="btn" onclick="window.location='<?php echo base_url(); ?>TechniqueFinder/index'">
         <span class="home-icon">&nbsp;</span>
@@ -51,10 +58,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </button>
 </div>
 
-
-<div class="row" style="margin-left: 1em; ">
-    <h1 class="tf-heading"> Edit Technique</h1>
-</div>
 
 <?php
 
@@ -70,7 +73,7 @@ if ($this->session->flashdata('error-warning-message')) {
 <script type="text/javascript" src="<?php echo base_url(); ?>/assets/ckeditor/ckeditor.js"></script>
 
 <?php echo form_open("techniques/validateEditTechnique/".$id); ?>
-<div class="tf-box-big">
+<div class="tf-background-color">
     <table style="text-align: left;">
 
 
@@ -381,7 +384,6 @@ if ($this->session->flashdata('error-warning-message')) {
                         </tr>
                         </thead>
                         <tbody id="table_output_media_selected">
-
                         </tbody>
                     </table>
                 </div>
@@ -421,7 +423,6 @@ if ($this->session->flashdata('error-warning-message')) {
                         </tr>
                         </thead>
                         <tbody id="table_instrument_media_selected">
-
                         </tbody>
                     </table>
                 </div>
@@ -587,7 +588,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange  ">Elements</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <select>
+            <select style="width: 80em;">
                 var_dump($elements_list);
                 <? foreach ($elements_list as $ele) {
                       echo "<option value='". $ele['id'] . "'>". $ele['symbols'] . "</option>";
@@ -625,7 +626,6 @@ if ($this->session->flashdata('error-warning-message')) {
                         </tr>
                         </thead>
                         <tbody id="table_case_selected">
-
                         </tbody>
                     </table>
                 </div>
@@ -664,7 +664,6 @@ if ($this->session->flashdata('error-warning-message')) {
                         </tr>
                         </thead>
                         <tbody id="table_references_selected">
-
                         </tbody>
                     </table>
                 </div>
@@ -808,6 +807,11 @@ if ($this->session->flashdata('error-warning-message')) {
 
         </tbody>
     </table>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 <script>
@@ -1502,12 +1506,13 @@ if ($this->session->flashdata('error-warning-message')) {
 
 </script>
 
-<div class="row">&nbsp;</div>
-<div class="row">&nbsp;</div>
-<div class="row">&nbsp;</div>
-<div class="row">&nbsp;</div>
+<div class='container-md'>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-10">
+                <?php $this->load->view('layout/admin_footer.php') ?>
 
-<?php $this->load->view('layout/footer.php');?>
-
-<div class="row">&nbsp;</div>
-<div class="row">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+</div>

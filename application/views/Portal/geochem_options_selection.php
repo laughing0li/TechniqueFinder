@@ -5,15 +5,20 @@
 </head>
 
 <body>
-    <div class="header-bg-color">
-        <div class='container-md'>
-            <?php include 'header.php'; ?>
+    <div class=' header-bg-color'>
+        <div class="container-md">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-10">
+                        <?php include 'header.php'; ?>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="bg-color">
-
         <div class="container-md">
-            <div id="content" class="container" >
+            <div id="content" class="container">
                 <div class="row justify-content-md-center">
                     <div class="col-10" style="padding: 0 38px">
                         <div class="d-flex justify-content-end">
@@ -21,9 +26,8 @@
                                 <button type="submit" class="btn outline-primary" onclick="window.location.assign('<?php echo base_url(); ?>Portal')">Back</button>
                             </div>
                         </div>
-                        
                         <div>
-                            <strong style="color: #f2f2f1">
+                            <strong class="tf-font-color">
                                 <?php echo $staticData['tf.geochemChoices.quickGuide']; ?>
                             </strong>
                         </div>
@@ -48,13 +52,13 @@
                                     <!-- THEN -->
                                     <img src="<?php echo base_url() . 'assets/images/space.gif' ?>" width="20" height="5" />
                                     <span style="text-align:center;">
-                                
-                                        <h1 class="tf-heading" style="color: #f2f2f1 "><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']); ?> </h1>
+
+                                        <h1 class="tf-heading" ><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']); ?> </h1>
                                     </span>
                                 </div>
                                 <div class="row">
                                     <!-- STEP 2 -->
-                                    <h3 class="tf-heading" ><?php echo strip_tags($staticData['tf.geochemChoices.step2.title']); ?> </h3>
+                                    <h3 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.step2.title']); ?> </h3>
                                     <div class="btn-group" role="group">
                                         <?php
                                         foreach ($step2_list as $r) {
@@ -68,14 +72,14 @@
                                     <!-- THEN -->
                                     <img src="<?php echo base_url() . 'assets/images/space.gif' ?>" width="20" height="5" />
                                     <span style="text-align:center;">
-                                        <h1 class="tf-heading" style="color: #f2f2f1 "><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']); ?> </h1>
+                                        <h1 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']); ?> </h1>
                                     </span>
                                 </div>
                                 <div class="row">
                                     <!-- STEP 3 -->
                                     <h3 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.step3.title']); ?> </h3>
-                                     <div style="padding-left: 12px;">
-                                    <input id="step3" _type="step3Option" class="form-control" style="font-size: 12px; max-width: 32rem" type="text" placeholder="Type here element interested in" onchange="elementClick(this)" autocomplete="off" disabled="disabled"></input>
+                                    <div style="padding-left: 12px;">
+                                        <input id="step3" _type="step3Option" class="form-control" style="font-size: 12px; max-width: 32rem" type="text" placeholder="Type here element interested in" onchange="elementClick(this)" autocomplete="off" disabled="disabled"></input>
                                     </div>
                                 </div>
                             </div> <!-- END LHS COLUMN -->
@@ -97,8 +101,14 @@
         </div>
 
     </div>
-    <div id="footer" class="container-md" style="padding-left: 12px;">
-        <?php include 'footer.php'; ?>
+    <div class='container-md'>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-10">
+                    <?php include 'footer.php'; ?>
+                </div>
+            </div>
+        </div>
     </div>
     <div style="clear: both">
         <!-- ff -->

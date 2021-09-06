@@ -4,17 +4,14 @@
 </head>
 
 <body>
-    <div class="header-bg-color">
-        <div class='container-md'>
-            <?php include 'header.php'; ?>
-        </div>
-    </div>
     <div class="bg-color">
 
         <div class="container-md">
             <div class="container">
                 <div class="row justify-content-md-center">
                     <div class="col-10">
+                    <?php include 'header.php'; ?>
+
                         <div id="content" class="container">
                             <h1>List of Available Techniques</h1>
                             <table class="table table-striped">
@@ -40,7 +37,7 @@
                                      */
 
                                     foreach ($allTechniques as $r) {
-                                        echo '<tr class="tf-font-14"><th scope="row"><a style="color: #f2f2f1";   href="' . base_url() . 'Portal/viewTechnique/' . $r->id . '?nav_from=listTechniques" >' . $r->instrument_name . '</a></th><td>' . $r->model . '</td><td>' . $r->manufacturer . '</td></tr>';
+                                        echo '<tr class="tf-font-14"><th scope="row"><a class="tf-font-color";   href="' . base_url() . 'Portal/viewTechnique/' . $r->id . '?nav_from=listTechniques" >' . $r->instrument_name . '</a></th><td>' . $r->model . '</td><td>' . $r->manufacturer . '</td></tr>';
                                     }
                                     ?>
                                 </tbody>
@@ -54,7 +51,13 @@
 
     </div>
     <div class='container-md'>
-        <?php include 'footer.php'; ?>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-10">
+                    <?php include 'footer.php'; ?>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div style="clear: both">

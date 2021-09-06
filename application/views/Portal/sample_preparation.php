@@ -5,17 +5,14 @@
 </head>
 
 <body>
-    <div class="header-bg-color">
-        <div class='container-md'>
-            <?php include 'header.php'; ?>
-        </div>
-    </div>
     <div class="bg-color">
 
         <div class="container-md">
             <div class="container">
                 <div class="row justify-content-md-center">
                     <div class="col-10">
+                    <?php include 'header.php'; ?>
+
                         <div id="content" class="container" style="padding-bottom: 20px;">
 
                             <div class="d-flex justify-content-end">
@@ -32,7 +29,7 @@
                                         $old_name = $technique_view->name;
                                     }
                                     echo '<div class="col-md-6" style="color:#282572; margin-bottom: 20px">';
-                                    echo '<div class="card">';
+                                    echo '<div class="card" style="min-height: 175px">';
                                     echo '<div class="card-body">';
                                     echo '<h4 class="card-title">'. $technique_view->category.'</h4>';
                                     echo '<p class="card-text">Model: '. $technique_view->model.'</p>';
@@ -41,7 +38,7 @@
                                     echo '</div>';
                                     echo '</div>';
                                     echo '</div>';
-                                    echo '<div class="col-md-6" style="margin: auto;">';
+                                    echo '<div class="col-md-6" >';
                                     $mediaForLIST = $Media_model->getMediaInfosByTechniqueIdAndSection($technique_view->technique_id, 'LIST');
                                     if (isset($mediaForLIST[0])) {
                                         $media_location = $mediaForLIST[0]->location;
@@ -61,7 +58,13 @@
     </div>
 
     <div class='container-md'>
-        <?php include 'footer.php'; ?>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-10">
+                    <?php include 'footer.php'; ?>
+                </div>
+            </div>
+        </div>
     </div>
 
 

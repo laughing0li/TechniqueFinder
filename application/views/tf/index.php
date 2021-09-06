@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TechniqueFinder - index.php
  *
@@ -11,24 +12,22 @@
  *                   https://creativecommons.org/licenses/by-nc-sa/4.0/
  */
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-<?php $this->load->view('layout/header.php');?>
-<head><title>LabFinder Admin | Home</title></head>
-<?php $id = $this->session->userdata['id'];?>
-<div class="row" style="margin-left: 1em;">
-    <h5 class="tf-heading">
-        LabFinder Admin Area
-    </h5>
-    <p class="tf-font tf-font-11">
-        Welcome to the LabFinder Admin Area. This is where you can edit the technique finder contacts, locations as well as edit the description of the techniques themselves.
-    </p>
-</div>
+<?php $this->load->view('layout/admin_header.php'); ?>
 
-<div class="row">&nbsp;&nbsp;</div>
-<div class="row">&nbsp;</div>
-<div class="row" style=" padding-left: 5em;">
+<head>
+    <title>LabFinder Admin | Home</title>
+</head>
+<?php $id = $this->session->userdata['id']; ?>
+<div class="bg-color" style="height: 400px;">
 
+    <div class="container-md">
+
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-10">
+                    <div class="row" style="margin-left: 1em;">
     <div class="col-sm-2" style="display:inline-table;">
         <button onclick="window.location='<?php echo site_url("Techniques/index");?>'"  class="admin-button">Techniques</button><br>
         <button onclick="window.location='<?php echo site_url("Media/index");?>'"  class="admin-button">Images and movies</button><br>
@@ -55,15 +54,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <button type="button" onclick="window.location='<?php echo site_url("user/show/"."$id")?>'" class="admin-button">Manage my Account</button><br>
         <button type="button" onclick="window.location='<?php echo site_url("staticContent/index")?>'" class="admin-button">Static content</button><br>
 
+                        
+                    <div>
+                        <!--TODO: Add background images for buttons-->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="col-sm-3"></div>
-    <div class="col-sm-3"></div>
-
-</div>
-<div>
-    <!--TODO: Add background images for buttons-->
 </div>
 </div>
+</div>
+<div class='container-md'>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-10">
+                <?php $this->load->view('layout/admin_footer.php') ?>
 
-<?php $this->load->view('layout/footer.php')?>
+            </div>
+        </div>
+    </div>
+</div>
