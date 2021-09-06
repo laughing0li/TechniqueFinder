@@ -422,6 +422,17 @@ class Techniques_model extends MY_Model
     }
 
     /*
+     * Update metadata table for a technique
+     * @param $x technique id
+     * @param $metadata_id technique_metadata_id value
+     */
+    function update_metadata($x, $metadata_id) {
+        $this->db->set('technique_metadata_id', $metadata_id); 
+        $this->db->where('technique_id', $x);
+        $this->db->update('technique_metadata_link');
+    }  
+
+    /*
      * This is called after a technique is edited in the admin page
      * @param $x is the technique id
      */
