@@ -71,11 +71,11 @@ class Techniques_model extends MY_Model
     }
 
     /**
-     * Return a list of element_set_id & all the element symbols concatenated into one column 
-     * array('id' => '3', 'symbols' => 'Mg,Si,Be')
+     * Return a list of machine info, element_set_id & all the element symbols concatenated into one column 
+     * array('id' => '3', 'name' => 'Blah Scanner', 'model'=> 'Blah III', manufacturer => 'Acme Widget', 'symbols' => 'Mg,Si,Be')
      */
     function getElementsList() {
-        return $this->db->query("select es.id, group_concat(e.symbol) as symbols from elements e, elements_set es, elements_elements_set ees where ees.elements_id = e.id and ees.elements_set_id = es.id group by id")->result_array();
+        return $this->db->query("select es.id, t.name, t.model, t.manufacturer, group_concat(e.symbol) as symbols from elements e, elements_set es, elements_elements_set ees, technique t where t.elements_set_id = es.id and ees.elements_id = e.id and ees.elements_set_id = es.id group by id, name, model, manufacturer")->result_array();
     }
 
 
@@ -430,6 +430,21 @@ class Techniques_model extends MY_Model
         $this->db->set('technique_metadata_id', $metadata_id); 
         $this->db->where('technique_id', $x);
         $this->db->update('technique_metadata_link');
+    }  
+
+    /*
+     * Update the set of chemical elements associated with a technique
+     * @param $x 'technique' id
+     * @param $elementsset_id 'elements_set' id value
+     */
+    function update_elementsset($x, $elementsset_id) {
+        if ($elementsset_id == '0') {
+            $this->db->set('elements_set_id', NULL);
+        } else {
+            $this->db->set('elements_set_id', $elementsset_id);
+        }
+        $this->db->where('id', $x);
+        $this->db->update('technique');
     }  
 
     /*

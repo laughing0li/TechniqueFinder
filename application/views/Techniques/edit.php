@@ -588,16 +588,31 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange  ">Elements</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-            <select style="width: 80em;">
-                var_dump($elements_list);
+                <input type="hidden" id="elementsset-id" name="elementsset-id" value="-1"/>
+                Select a machine's elements to copy from:
+                <select id='elementsset-selector' style="width: 80em;">
+                <!-- Display current values -->
+                <option selected value='-1'>Retain current value for
+                   <?php $default_str  = "'" . $technique_name . "'";
+                         if (isset($elements) && count($elements) > 0){
+                             $default_str .= " [";
+                             foreach($elements as $e){
+                                 $default_str .= $e->symbol . ","; 
+                             }
+                             $default_str .= "]";
+                         } else {
+                             $default_str .= " [no elements]";
+                         }
+                         echo substr($default_str , 0, 150); ?>
+                </option>
+                <!-- Remove elements -->
+                <option value='0'>This technique has no elements</option>
+                <!-- Pick a new set of elements -->
                 <? foreach ($elements_list as $ele) {
-                      echo "<option value='". $ele['id'] . "'>". $ele['symbols'] . "</option>";
+                      echo "<option value='". $ele['id'] . "'>" . $ele['name'] . "&nbsp;Model:&nbsp;" . $ele['model'] . "&nbsp;Manufacturer:&nbsp;" . $ele['manufacturer'] . "&nbsp;[" . substr($ele['symbols'], 0, 150) . "]</option>";
                    }
                 ?>
                 </select>
-                <textarea class="tf-input-big" name="elements"><?php if (isset($elements)){foreach($elements as $e){
-                        echo $e->symbol . ",";
-                    }}else{echo "There are no associated Elements";}?></textarea>
             </td>
         </tr>
 
@@ -1486,13 +1501,19 @@ if ($this->session->flashdata('error-warning-message')) {
         referencesSelected = referencesSelected.filter(function(value) { return value != selectedElement });
         $(this).parent().parent().remove();
         document.getElementById('references_items_selected_hidden').value = referencesSelected
-
     })
 
     // Update the form input when metadata is selected
     $('#metadata-selector').change(function() {
       var str = $("#metadata-selector option:selected").first().val();
       $("#metadata-id").val(str);
+    }).trigger("change");
+
+
+    // Update the form input when a set of elements is selected
+    $('#elementsset-selector').change(function() {
+      var str = $("#elementsset-selector option:selected").first().val();
+      $("#elementsset-id").val(str);
     }).trigger("change");
 
 

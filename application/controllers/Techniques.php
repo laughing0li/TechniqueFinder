@@ -467,10 +467,18 @@ class Techniques extends CI_Controller
             $metadata_id = '';
         }
 
+        // If a new chemical elements set was selected
+        if (isset($_POST['elementsset-id']) && $_POST['elementsset-id'] != '-1') {
+            $elementsset_id = $_POST['elementsset-id'];
+        }else {
+            $elementsset_id = '';
+        }
+
         // Names of excess parameters
         $input_names = array('instrument_name', 'model', 'manufacturer', 'sample_type', 'wavelength', 'beam_diameter', 'min_conc', 'mass', 'volume', 'pressure', 'temperature');
         
         if ($this->form_validation->run()) {
+
             // There are too many 'Technique' fields for simple parameter passing so pass in as an assoc array
             $extras = array();
             foreach ($input_names as $input_name) {
@@ -478,10 +486,17 @@ class Techniques extends CI_Controller
                     $extras[$input_name] = $_POST[$input_name];
                 }
             }
+
             // Update metadata
             if ($metadata_id != '') {
                 $this->Techniques_model->update_metadata($x, $metadata_id); 
             }
+
+            // Update set of chemical elements associated with this technique
+            if ($elementsset_id != '') {
+                $this->Techniques_model->update_elementsset($x, $elementsset_id); 
+            }
+
             // Update the database
             $id = $this->Techniques_model->update_technique($x,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items, $extras);
             $this->session->set_flashdata('success-warning-message', "Technique " . $id . " updated");
