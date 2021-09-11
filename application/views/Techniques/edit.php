@@ -39,6 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
 </style>
 
+<body>
 <div class="bg-color">
     <div class="container-md">
         <div class="container">
@@ -69,7 +70,6 @@ if ($this->session->flashdata('error-warning-message')) {
 
 ?>
 
-<body>
 <script type="text/javascript" src="<?php echo base_url(); ?>/assets/ckeditor/ckeditor.js"></script>
 
 <?php echo form_open("techniques/validateEditTechnique/".$id); ?>
@@ -479,13 +479,13 @@ if ($this->session->flashdata('error-warning-message')) {
         </tr>
 
 
-        <!-- APPLICATIONS & AGE -->
+        <!-- LOCALISATION: INSTITUTION, APPLICATIONS & AGE -->
         <tr>
             <td class="tf-font-orange">Machine Localisation</td>
             <td>&nbsp;&nbsp;</td>
             <td>
                 <div class="table-responsive tf-font tf-font-size">
-                    <input type="hidden" id="localisation_items_selected_hidden" name="localisation_items_selected_hidden" value=""/>
+                    <input type="hidden" id="localisations_items_selected_hidden" name="localisations_items_selected_hidden" value=""/>
                     <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
                         <thead>
                         <tr class="table-headings tf-font-11 tf-font">
@@ -503,13 +503,13 @@ if ($this->session->flashdata('error-warning-message')) {
                             </td>
                         </tr>
                         </thead>
-                        <tbody id="table_localisation_selected">
+                        <tbody id="table_localisations_selected">
 
                         </tbody>
                     </table>
                 </div>
                 <div>
-                    <button type="button" id="add-localisation-submit" class="tf-button"">
+                    <button type="button" id="add-localisations-submit" class="tf-button"">
                     <span class="tf-database-add"></span>
                     <span class="tf-font create-technique-dialog-button ">Add machine localisation</span>
                     </button>
@@ -707,9 +707,11 @@ if ($this->session->flashdata('error-warning-message')) {
     <span class="tf-cancel">&nbsp;&nbsp;&nbsp;</span>
     <span class="tf-button-label">Cancel</span>
 </button>
+<br/>
+<br/>
 
 
-
+<!-- This is the popup table used to select & add media list -->
 <div id="add-media-list-dialog-form" title="">
     <label><strong>Selection: LIST</strong></label>
 
@@ -729,8 +731,11 @@ if ($this->session->flashdata('error-warning-message')) {
             </tbody>
         </form>
     </table>
+
 </div>
 
+
+<!-- This is the popup table used to select & add media output -->
 <div id="add-media-output-dialog-form" title="">
 
     <label><strong>Selection: OUTPUT</strong></label>
@@ -749,6 +754,8 @@ if ($this->session->flashdata('error-warning-message')) {
     </table>
 </div>
 
+
+<!-- This is the popup table used to select & add instruments -->
 <div id="add-media-instrument-dialog-form" title="">
 
     <label><strong>Selection: INSTRUMENT</strong></label>
@@ -768,6 +775,7 @@ if ($this->session->flashdata('error-warning-message')) {
 </div>
 
 
+<!-- This is the popup table used to select & add contacts -->
 <div id="add-contacts-dialog-form" title="">
 
     <label><strong>Contacts</strong></label>
@@ -787,7 +795,8 @@ if ($this->session->flashdata('error-warning-message')) {
 </div>
 
 
-<div id="add-case-dialog-form" title="Add Contacts">
+<!-- This is the popup table used to select & add cases -->
+<div id="add-case-dialog-form" title="Add Cases">
 
     <label><strong>Case Studies</strong></label>
 
@@ -806,6 +815,7 @@ if ($this->session->flashdata('error-warning-message')) {
 </div>
 
 
+<!-- This is the popup table used to select & add references -->
 <div id="add-references-dialog-form" title="Add References">
 
     <label><strong>References</strong></label>
@@ -823,9 +833,32 @@ if ($this->session->flashdata('error-warning-message')) {
         </tbody>
     </table>
 </div>
+
+<!-- This is the popup table used to select & add localisations -->
+<div id="add-localisations-dialog-form" title="Add Localisations">
+
+    <label><strong>Localisations</strong></label>
+
+    <table class="add-localisations-dialog-table" width="100%" cellspacing="3">
+        <thead>
+        <tr class="tf-font-11 tf-font table-headings">
+            <td></td>
+            <td style="text-align: center; font-weight: bold; ">Institution</td>
+            <td style="text-align: center; font-weight: bold;">Applications</td>
+            <td style="text-align: center; font-weight: bold; ">Year Commissioned</td>
+        </tr>
+        </thead>
+        <tbody id="localisations-table">
+
+        </tbody>
+    </table>
+</div>
+
+
 </div>
 </div>
 </div>
+
 </div>
 </div>
 
@@ -837,6 +870,7 @@ if ($this->session->flashdata('error-warning-message')) {
         $('#add-contacts-dialog-form').hide();
         $('#add-case-dialog-form').hide();
         $('#add-references-dialog-form').hide();
+        $('#add-localisations-dialog-form').hide();
     }
 
     $(document).ready(function () {
@@ -850,6 +884,7 @@ if ($this->session->flashdata('error-warning-message')) {
     var contactSelected=[];
     var caseSelected=[];
     var referencesSelected=[];
+    var localisationsSelected=[];
 
 
     /////////////////////////////////////////////////////////////////////---POSTBACKS FROM PHP---///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -910,9 +945,20 @@ if ($this->session->flashdata('error-warning-message')) {
 
     <?php }
     else{ ?>
-    referenceSelected = []
+    referencesSelected = []
     <?php } ?>
-    /////////////////////////////////////////////////////////////////////////////-------BUILD TABLES FROM POSTBACK-------////////////////////////////////////////////////////////////////////////////////////////
+
+    //Postback Localisations List
+    <?php if(isset($localisations_items_selected_hidden) && $localisations_items_selected_hidden != ''){ ?>
+    localisationsSelected = [<?php echo $localisations_items_selected_hidden; ?>];
+    document.getElementById('localisations_items_selected_hidden').value = localisationsSelected
+
+    <?php }
+    else{ ?>
+    localisationsSelected = []
+    <?php } ?>
+
+    ////////////////////-------BUILD TABLES FROM POSTBACK-------////////////////////////////////////////
 
 
     if(mediaSelected != []){
@@ -1004,6 +1050,21 @@ if ($this->session->flashdata('error-warning-message')) {
                     "<td><?php echo str_replace("\r\n", '', htmlspecialchars($references_item->full_reference));?></td>" +
                     "<td><?php echo str_replace("\r\n", '', $references_item->title)?></td>" +
                     "<td><button type='button' id='references-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
+                    "</tr>");
+            }
+
+        <?php }?>
+
+    }
+
+    if(localisationsSelected != []){
+        <?php foreach ($localisations_list as $localisations_item){?>
+        if(localisationsSelected.includes(<?php echo $localisations_item['id'];?>)){
+                $('#table_localisations_selected').append("<tr class=\"table-background-color-techniques\" id=\"<?php echo $localisations_item['id']; ?>\">"+
+                    "<td><?php echo $localisations_item['institution']; ?></td>" +
+                    "<td><?php echo str_replace('"', '', $localisations_item['applications']); ?></td>" +
+                    "<td><?php echo $localisations_item['yr_commissioned']; ?></td>" +
+                    "<td><button type='button' id='localisations-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
                     "</tr>");
             }
 
@@ -1262,6 +1323,79 @@ if ($this->session->flashdata('error-warning-message')) {
         document.getElementById('media_instrument_items_selected_hidden').value = instrumentSelected
 
     })
+
+    // Localisations List show and select
+    $('#add-localisations-submit').click(function (e) {
+        $('#localisations-table').empty();
+
+        if($('#localisations-table tr').length == 0 )
+        {
+            <!-- Create a table of localisations to view -->
+            <?php foreach($localisations_list as $localisations_item){?>
+            if(!localisationsSelected.includes(<?php echo $localisations_item['id']?>)) {
+                $('#localisations-table').append('<tr class="table-background-color-techniques">' +
+                    '<td><input type=\'checkbox\' name=\'localisation\' value=\'<?php echo $localisations_item['id']; ?>\'/></td>' +
+                    '<td><?php echo $localisations_item["institution"]; ?></td>' +
+                    '<td><?php echo str_replace("\"", "", $localisations_item["applications"]); ?></td>' + 
+                    '<td><?php echo $localisations_item["yr_commissioned"];?></td>' +
+                    '</tr>');
+            }
+            <?php } ?>
+        }
+        <!-- Create a dialog box of localisations -->
+        $("#add-localisations-dialog-form").dialog({
+            height: 600,
+            width: 900,
+            modal: true,
+            resizable: true,
+            position: {
+                my: " top",
+                at: " top",
+                of: window,
+                collision: "none"
+            },
+
+            modal: true,
+            title: "Available Localisations",
+            buttons: {
+                "Cancel": function () {
+                    $(this).dialog("close");
+                },
+
+                "Select": function () {
+                    $(this).dialog("close");
+
+                    <!-- Compile a list of selected items -->
+                    toAddLocalisations= []
+                    $('input[name="localisation"]:checked').each(function () {
+                        if (!localisationsSelected.includes($(this).attr('value'))) {
+                            localisationsSelected.push(parseInt($(this).attr('value')));
+                            toAddLocalisations.push($(this).attr('value'));
+                        }
+                    });
+
+                    <!-- Copy selected items from dialog to the table displayed on the form -->
+                    <?php foreach ($localisations_list as $localisations_item){?>
+                    toAddLocalisations.forEach(function(element){
+                        if(element == <?php echo $localisations_item['id'];?>)
+                        {
+                            $('#table_localisations_selected').append("<tr class=\"table-background-color-techniques\" id='"+ element + "'>"+
+                                "<td><?php echo $localisations_item['institution'];?></td>" +
+                                "<td><?php echo str_replace('"', '', $localisations_item['applications']); ?></td>" +
+                                "<td><?php echo $localisations_item['yr_commissioned'];?></td>" + 
+                                "<td><button type='button' id='localisations-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
+                                "</tr>");
+                        }
+                    })
+                    <?php } ?>
+                    document.getElementById('localisations_items_selected_hidden').value = localisationsSelected
+
+                },
+            }
+        });
+
+    });
+        
 
 
     // Contact List show and select
@@ -1537,3 +1671,5 @@ if ($this->session->flashdata('error-warning-message')) {
         </div>
     </div>
 </div>
+
+</body>

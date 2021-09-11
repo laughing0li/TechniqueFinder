@@ -34,6 +34,15 @@ class Techniques_model extends MY_Model
     }
 
     /**
+     * Return a list of localisation id, year commissioned, applications, center_name, state, instiution 
+     */
+    function getLocalisationList() {
+        $result = $this->db->query('select ls.id, yr_commissioned, applications, center_name, state, institution from localisation ls, location lc where ls.location_id = lc.id')->result_array();
+        return $result;
+    }
+    
+
+    /**
      * Return a list of contact id, name & institution for displaying a table of options for user to select from
      */
     function getContactList(){
@@ -382,24 +391,17 @@ class Techniques_model extends MY_Model
 
 
     /*
-     * Returns an array of year commissioned, applications for a technique
+     * Returns a localisation id as a string given a technique_id, else empty string if not found
      *
      * @param $technique_id
      */
     function getLocalisationItems($technique_id) {
-        $query = $this->db->query("SELECT localisation.yr_commissioned, localisation.applications from localisation where technique_id=".$technique_id.";");
-        $ret_list = array();
+        $query = $this->db->query("SELECT localisation.id from localisation where technique_id=".$technique_id.";");
         $item_list = $query->result_array();
         foreach($item_list as $item) {
-            $line = array();
-            array_push($line, $item['yr_commissioned']);
-            $app_list = json_decode($item['applications']);
-            foreach($app_list as $app) {
-                array_push($line, $app);
-            }
-            array_push($ret_list, $line);
+            return $item['id'];
         }
-        return($ret_list);
+        return "";
     }
 
 

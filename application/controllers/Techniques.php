@@ -339,6 +339,7 @@ class Techniques extends CI_Controller
     function edit($x)
     {
         // These are complete lists that the user can choose from when adding new things to techniques
+        //
         $data['media_list'] = $this->Techniques_model->getTechniqueDataAll();
         $data['contact_list'] = $this->Techniques_model->getContactList();
         $data['case_list'] = $case_list = $this->Techniques_model->getCaseList();
@@ -346,9 +347,10 @@ class Techniques extends CI_Controller
         $data['metadata_list'] = $this->Techniques_model->getMetadataList();
         $data['elements_list'] = $this->Techniques_model->getElementsList();
         $data['option_choices_list'] = $this->Techniques_model->getOptionChoicesList(); 
+        $data['localisations_list'] = $this->Techniques_model->getLocalisationList();
 
         // Get data for Technique
-
+        // 
         $technique_data = $this->Techniques_model->getTechniqueData($x);
         $data['technique_name'] = $technique_data->name;
         $data['id'] = $technique_data->id;
@@ -369,13 +371,14 @@ class Techniques extends CI_Controller
         $data['pressure'] = $technique_data->pressure;
         $data['temperature'] = $technique_data->temperature;
 
+        // These are the current media, contacts, references etc. for this technique
+        //
         $media_items  = $this->Techniques_model->getMediaItems($x);
         $output_items = $this->Techniques_model->getOutputItems($x);
         $instrument_items = $this->Techniques_model->getInstrumentItems($x);
         $contact_items = $this->Techniques_model->getContactItems($x);
         $getCaseItems = $this->Techniques_model->getCaseItems($x);
         $referenceItems = $this->Techniques_model->getReferencesItems($x);
-
         $localisationItems = $this->Techniques_model->getLocalisationItems($x);
 
         $data['option_choices'] = $this->Techniques_model->getOptionChoices($x);
@@ -390,7 +393,7 @@ class Techniques extends CI_Controller
         $data['contact_items_selected_hidden'] = $contact_items;
         $data['case_items_selected_hidden'] = $getCaseItems;
         $data['references_items_selected_hidden'] = $referenceItems;
-        $data['localisationItems'] = $localisationItems;
+        $data['localisations_items_selected_hidden'] = $localisationItems;
 
         $this->load->view('Techniques/edit', $data);
     }
