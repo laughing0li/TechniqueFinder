@@ -570,11 +570,11 @@ if ($this->session->flashdata('error-warning-message')) {
                 <select id='metadata-selector'>
                 <?php  if (isset($metadata) && sizeof($metadata) > 0) { 
                     /* Selected value is current metadata value */
-                    echo "<option selected value='-1'><b>Category:</b>&nbsp;" . $metadata[0]->category . "&nbsp;<b>Category Type:</b>&nbsp;" . $metadata[0]->category_type . "&nbsp;<b>Analysis Type:</b>&nbsp;" . $metadata[0]->analysis_type . "</option>";
+                    echo "<option selected value='-1'>CATEGORY:&nbsp;" . $metadata[0]->category . "&nbsp;&nbsp;&nbsp;CATEGORY TYPE:&nbsp;" . $metadata[0]->category_type . "&nbsp;&nbsp;&nbsp;ANALYSIS TYPE:&nbsp;" . $metadata[0]->analysis_type . "</option>";
                     }
                     /*  Other possible selections */
                     foreach ($metadata_list as $md) {
-                          echo "<option value='". $md->id . "'><b>Category:</b>&nbsp;". $md->category . "&nbsp;&nbsp;<b>Category Type:</b>" . $md->category_type . "&nbsp;&nbsp;<b>Analysis Type</b>:" . $md->analysis_type . "</option>";
+                          echo "<option value='". $md->id . "'>CATEGORY:&nbsp;". $md->category . "&nbsp;&nbsp;&nbsp;CATEGORY TYPE:&nbsp;" . $md->category_type . "&nbsp;&nbsp;&nbsp;ANALYSIS TYPE:&nbsp;" . $md->analysis_type . "</option>";
                     }
                 ?>
                 </select>
