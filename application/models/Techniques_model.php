@@ -76,7 +76,7 @@ class Techniques_model extends MY_Model
      * Return a list of all possible geochemical analysis option choices
      */
     function getOptionChoicesList() {
-        return $this->db->query('select distinct name, type, science from option_choice')->result();
+        return $this->db->query('select distinct id, name, type, science from option_choice')->result();
     }
 
     /**
@@ -428,7 +428,7 @@ class Techniques_model extends MY_Model
      * @param $x technique id
      * @param $metadata_id technique_metadata_id value
      */
-    function update_metadata($x, $metadata_id) {
+    function updateMetadata($x, $metadata_id) {
         $this->db->set('technique_metadata_id', $metadata_id); 
         $this->db->where('technique_id', $x);
         $this->db->update('technique_metadata_link');
@@ -439,7 +439,7 @@ class Techniques_model extends MY_Model
      * @param $x 'technique' id
      * @param $elementsset_id 'elements_set' id value
      */
-    function update_elementsset($x, $elementsset_id) {
+    function updateElementsset($x, $elementsset_id) {
         if ($elementsset_id == '0') {
             $this->db->set('elements_set_id', NULL);
         } else {
@@ -448,6 +448,31 @@ class Techniques_model extends MY_Model
         $this->db->where('id', $x);
         $this->db->update('technique');
     }  
+
+    /*
+     * Update the options
+     * @param $x 'technique' id
+     * @param $oc1 'option_choice' id  for step1
+     * @param $oc2 'option_choice' id  for step2
+     */
+    function updateOptionCombination($x, $oc1, $oc2) {
+        // IF either option choice id is -1 then remove
+        if ($oc1 == '-1' || $oc2 == '-1') {
+           $this->db->where('technique_id', $x);
+           $this->db->delete('option_combination');     
+        } else {
+           // ELSE Insert or update 'option_combination'
+           $data = [
+               'technique_id' => $x,
+               'left_id'  => $oc1,
+               'right_id'  => $oc2,
+               'version' => 1,
+               'priority' => 1
+           ];
+           $this->db->replace('option_combination', $data);
+        }
+    }
+ 
 
     /*
      * This is called after a technique is edited in the admin page
@@ -916,11 +941,11 @@ class Techniques_model extends MY_Model
      */
     function getOptionChoices($x){
         return $this->db->query(
-            'select och.name, och.type, och.science'
+            'select och.id, och.name, och.type, och.science'
             .' from option_combination ocb, option_choice och, technique t'
             .' where ocb.left_id = och.id and t.id = ocb.technique_id'
             .' and t.id =? union'
-            .' select och.name, och.type, och.science'
+            .' select och.id, och.name, och.type, och.science'
             .' from option_combination ocb, option_choice och, technique t'
             .' where ocb.right_id = och.id and t.id = ocb.technique_id'
             .' and t.id =?',

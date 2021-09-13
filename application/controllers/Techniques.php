@@ -101,9 +101,9 @@ class Techniques extends CI_Controller
         $data['associated'] = $this->Techniques_model->getAssociatedTechniques($x);
 
 
-        $data['option_choices'] = $this->Techniques_model->getOptionChoices($x);
-        $data['metadata'] = $this->Techniques_model->getMetadata($x);
-        $data['elements'] = $this->Techniques_model->getElements($x);
+        $data['selected_option_choices'] = $this->Techniques_model->getOptionChoices($x);
+        $data['selected_metadata'] = $this->Techniques_model->getMetadata($x);
+        $data['selected_elements'] = $this->Techniques_model->getElements($x);
 
         // Get data for Technique
 
@@ -381,12 +381,14 @@ class Techniques extends CI_Controller
         $referenceItems = $this->Techniques_model->getReferencesItems($x);
         $localisationItems = $this->Techniques_model->getLocalisationItems($x);
 
-        $data['option_choices'] = $this->Techniques_model->getOptionChoices($x);
-        $data['metadata'] = $this->Techniques_model->getMetadata($x);
-        $data['elements'] = $this->Techniques_model->getElements($x);
+        // Pass the current values for media, contacts, references etc. to the form via vars
+        $data['selected_option_choices'] = $this->Techniques_model->getOptionChoices($x);
+        $data['selected_metadata'] = $this->Techniques_model->getMetadata($x);
+        $data['selected_elements'] = $this->Techniques_model->getElements($x);
 
 
         if(isset($media_items[0]['media_id'])){$media_items = $media_items[0]['media_id'];}else{$media_items='';}
+
         $data['media_items_selected_hidden'] = $media_items;
         $data['media_output_items_selected_hidden'] = $output_items;
         $data['media_instrument_items_selected_hidden'] = $instrument_items;
@@ -394,6 +396,7 @@ class Techniques extends CI_Controller
         $data['case_items_selected_hidden'] = $getCaseItems;
         $data['references_items_selected_hidden'] = $referenceItems;
         $data['localisations_items_selected_hidden'] = $localisationItems;
+         
 
         $this->load->view('Techniques/edit', $data);
     }
@@ -477,6 +480,15 @@ class Techniques extends CI_Controller
             $elementsset_id = '';
         }
 
+        // If any option choices (geochem analysis choices) were updated
+        if (isset($_POST['option_choice1_hidden']) && isset($_POST['option_choice1_hidden'])) {
+            $option_choice1_id = $_POST['option_choice1_hidden'];
+            $option_choice2_id = $_POST['option_choice2_hidden'];
+        } else {
+            $option_choice1_id = '';
+            $option_choice2_id = '';
+        }
+
         // Names of excess parameters
         $input_names = array('instrument_name', 'model', 'manufacturer', 'sample_type', 'wavelength', 'beam_diameter', 'min_conc', 'mass', 'volume', 'pressure', 'temperature');
         
@@ -492,12 +504,17 @@ class Techniques extends CI_Controller
 
             // Update metadata
             if ($metadata_id != '') {
-                $this->Techniques_model->update_metadata($x, $metadata_id); 
+                $this->Techniques_model->updateMetadata($x, $metadata_id); 
             }
 
             // Update set of chemical elements associated with this technique
             if ($elementsset_id != '') {
-                $this->Techniques_model->update_elementsset($x, $elementsset_id); 
+                $this->Techniques_model->updateElementsset($x, $elementsset_id); 
+            }
+
+            // Update options (geochem analysis choices)
+            if ($option_choice1_id != '' && $option_choice2_id != '') {
+		$this->Techniques_model->updateOptionCombination($x, $option_choice1_id, $option_choice2_id);
             }
 
             // Update the database

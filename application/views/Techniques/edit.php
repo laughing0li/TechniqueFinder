@@ -76,7 +76,6 @@ if ($this->session->flashdata('error-warning-message')) {
 <div class="tf-background-color">
     <table style="text-align: left;">
 
-
         <!-- NAME -->
         <tr>
             <td class="tf-font-orange" style="position: absolute;">Name</td>
@@ -527,11 +526,12 @@ if ($this->session->flashdata('error-warning-message')) {
         <tr>
             <td class="tf-font-orange">Geochem Analysis Choices</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-
             <td class="tf-font tf-font-size input-col">
                 <div>
+                    <!-- A pair of selectors to set the new option choices -->
                     Step 1:
-                    <select>
+                    <select id="option-choice1-select">
+                    <option selected value="-1">No valid choice</option>
                     <? foreach($option_choices_list as $option) {
                           if ($option->type == 'STEP1' && $option->science == 'GEOCHEM') {
                               echo "<option value='". $option->id . "'>". $option->name . "</option>";
@@ -540,7 +540,8 @@ if ($this->session->flashdata('error-warning-message')) {
                     ?>
                     </select>
                     &nbsp;&nbsp;Step 2:
-                    <select>
+                    <select id="option-choice2-select">
+                    <option selected value="-1">No valid choice</option>
                     <? foreach($option_choices_list as $option) {
                           if ($option->type == 'STEP2' && $option->science == 'GEOCHEM') {
                               echo "<option value='". $option->id . "'>". $option->name . "</option>";
@@ -548,14 +549,40 @@ if ($this->session->flashdata('error-warning-message')) {
                        }
                     ?>
                     </select>
-                    <button type="button" id="add-geochem-analysis-submit" class="tf-button"">
-                    <span class="tf-database-add"></span>
-                    <span class="tf-font create-technique-dialog-button ">Add geochem analysis choices</span>
+                    <!-- A button to select the new option choices -->
+                    <button type="button" id="set-options" class="tf-button">
+                        <span class="tf-database-add"></span>
+                        <span class="tf-font create-technique-dialog-button">Set geochem analysis choices</span>
+                    </button>
+                    <button type="button" id="reset-options" class="tf-button">
+                        <span class="tf-font create-technique-dialog-button">Reset</span>
                     </button>
                 </div>
-                <textarea class="tf-input-big" name="option_choices"><?php if (isset($option_choices)){foreach($option_choices as $o){
-                        echo "Name:&nbsp;". $o->name . "&nbsp;&nbsp;Type:&nbsp;". $o->type . "&nbsp;&nbsp;&nbsp;&nbsp;Science:&nbsp;" . $o->science;
-                    }}else{echo "There are no associated Option Choices";}?></textarea>
+                <!-- A table to display current option choices -->
+                <div class="table-responsive tf-font tf-font-size">
+                    <input type="hidden" id="option_choice1_hidden" name="option_choice1_hidden" value=""/>
+                    <input type="hidden" id="option_choice2_hidden" name="option_choice2_hidden" value=""/>
+                    <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
+                        <thead>
+                        <tr class="table-headings tf-font-11 tf-font">
+                            <td>
+                               Step 1:
+                            </td>
+                            <td>
+                               Step 2:
+                            </td>
+                        </tr>
+                        </thead>
+                        <tbody id="table_options_selected">
+                            <?php if (isset($selected_option_choices) && sizeof($selected_option_choices) > 0) { ?>
+                            <tr class='table-background-color-techniques'>
+                                <td><?php echo $selected_option_choices[0]->name; ?></td>
+                                <td><?php echo $selected_option_choices[1]->name; ?></td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
             </td>
         </tr>
 
@@ -568,9 +595,9 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font tf-font-size input-col">
                 <input type="hidden" id="metadata-id" name="metadata-id" value="-1"/>
                 <select id='metadata-selector'>
-                <?php  if (isset($metadata) && sizeof($metadata) > 0) { 
+                <?php  if (isset($selected_metadata) && sizeof($selected_metadata) > 0) { 
                     /* Selected value is current metadata value */
-                    echo "<option selected value='-1'>CATEGORY:&nbsp;" . $metadata[0]->category . "&nbsp;&nbsp;&nbsp;CATEGORY TYPE:&nbsp;" . $metadata[0]->category_type . "&nbsp;&nbsp;&nbsp;ANALYSIS TYPE:&nbsp;" . $metadata[0]->analysis_type . "</option>";
+                    echo "<option selected value='-1'>CATEGORY:&nbsp;" . $selected_metadata[0]->category . "&nbsp;&nbsp;&nbsp;CATEGORY TYPE:&nbsp;" . $selected_metadata[0]->category_type . "&nbsp;&nbsp;&nbsp;ANALYSIS TYPE:&nbsp;" . $selected_metadata[0]->analysis_type . "</option>";
                     }
                     /*  Other possible selections */
                     foreach ($metadata_list as $md) {
@@ -594,9 +621,9 @@ if ($this->session->flashdata('error-warning-message')) {
                 <!-- Display current values -->
                 <option selected value='-1'>Retain current value for
                    <?php $default_str  = "'" . $technique_name . "'";
-                         if (isset($elements) && count($elements) > 0){
+                         if (isset($selected_elements) && count($selected_elements) > 0){
                              $default_str .= " [";
-                             foreach($elements as $e){
+                             foreach($selected_elements as $e){
                                  $default_str .= $e->symbol . ","; 
                              }
                              $default_str .= "]";
@@ -958,6 +985,8 @@ if ($this->session->flashdata('error-warning-message')) {
     localisationsSelected = []
     <?php } ?>
 
+    
+
     ////////////////////-------BUILD TABLES FROM POSTBACK-------////////////////////////////////////////
 
 
@@ -1058,7 +1087,7 @@ if ($this->session->flashdata('error-warning-message')) {
     }
 
     if(localisationsSelected != []){
-        <?php foreach ($localisations_list as $localisations_item){?>
+       <?php foreach ($localisations_list as $localisations_item){?>
         if(localisationsSelected.includes(<?php echo $localisations_item['id'];?>)){
                 $('#table_localisations_selected').append("<tr class=\"table-background-color-techniques\" id=\"<?php echo $localisations_item['id']; ?>\">"+
                     "<td><?php echo $localisations_item['institution']; ?></td>" +
@@ -1072,9 +1101,10 @@ if ($this->session->flashdata('error-warning-message')) {
 
     }
 
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //For Loading Dialogs and Table
+    //This is for fields that require loading dialogs and table
 
     //Media show and select
     $('#add-media-list-submit').click(function (e) {
@@ -1650,9 +1680,37 @@ if ($this->session->flashdata('error-warning-message')) {
       $("#elementsset-id").val(str);
     }).trigger("change");
 
+    // Update the options table when step1 and step2 options choices have been selected (geochem analysis choices)
+    $('body').on('click', '#set-options', function () {
+      // Update the table
+      var opt1_txt = $("#option-choice1-select option:selected").text();
+      var opt2_txt = $("#option-choice2-select option:selected").text();
+      $('#table_options_selected').empty();
+      $('#table_options_selected').append("<tr class='table-background-color-techniques'>"+
+                    "<td>" + opt1_txt + "</td>" +
+                    "<td>" + opt2_txt + "</td>" +
+                    "</tr>");
+      // Update the POSTed form input when an option choice is selected
+      var str = $("#option-choice1-select option:selected").first().val();
+      $('#option_choice1_hidden').val(str);
+      str = $("#option-choice2-select option:selected").first().val();
+      $('#option_choice2_hidden').val(str);
+    });
+
+    // Triggered when person hits reset on the options (geochem analysis choices)
+    $('body').on('click', '#reset-options', function () {
+      $('#table_options_selected').empty();
+      <?php if (isset($selected_option_choices) && sizeof($selected_option_choices) > 0) { ?>
+      $('#table_options_selected').append("<tr class='table-background-color-techniques'>"+
+                                "<td><?php echo $selected_option_choices[0]->name; ?></td>" +
+                                "<td><?php echo $selected_option_choices[1]->name; ?></td>" +
+                                "</tr>");
+      <?php } ?>
+      $('#option_choice1_hidden').val("");
+      $('#option_choice2_hidden').val("");
+    });
 
     function arrayRemove(arr, value) {
-
         return arr.filter(function(ele){
             return ele != value;
         });

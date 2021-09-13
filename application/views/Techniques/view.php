@@ -378,8 +378,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <td class="tf-font-orange  ">Geochem Analysis Choices</td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                             <td class="tf-font tf-font-size input-col">
-                                <div class="" name="option_choices"><?php if (isset($option_choices)) {
-                                                                        foreach ($option_choices as $o) {
+                                <div class="" name="option_choices"><?php if (isset($selected_option_choices)) {
+                                                                        foreach ($selected_option_choices as $o) {
                                                                             echo "<li><b>Name:</b>&nbsp;" . $o->name . "&nbsp;&nbsp;&nbsp;&nbsp;<b>Type:</b>&nbsp;" . $o->type . "&nbsp;&nbsp;&nbsp;&nbsp;<b>Science:</b>&nbsp;" . $o->science . "</li>";
                                                                         }
                                                                     } else {
@@ -397,8 +397,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <td class="tf-font-orange  ">Metadata</td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                             <td class="tf-font tf-font-size input-col">
-                                <div class="" name="metadata"><?php if (isset($metadata)) {
-                                                                    foreach ($metadata as $m) {
+                                <div class="" name="metadata"><?php if (isset($selected_metadata)) {
+                                                                    foreach ($selected_metadata as $m) {
                                                                         echo "<li><b>Category:</b>&nbsp;" . $m->category . "&nbsp;&nbsp;&nbsp;&nbsp;<b>Category Type:</b>&nbsp;" . $m->category_type . "&nbsp;&nbsp;&nbsp;&nbsp;<b>Analysis Type:</b>&nbsp;" . $m->analysis_type . "</li>";
                                                                     }
                                                                 } else {
@@ -416,8 +416,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <td class="tf-font-orange  ">Elements</td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                             <td class="tf-font tf-font-size input-col">
-                                <div class="" name="elements"><?php if (isset($elements)) {
-                                                                    foreach ($elements as $e) {
+                                <div class="" name="elements"><?php if (isset($selected_elements)) {
+                                                                    foreach ($selected_elements as $e) {
                                                                         echo $e->symbol . ",";
                                                                     }
                                                                 } else {
