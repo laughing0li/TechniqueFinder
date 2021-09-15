@@ -1175,6 +1175,7 @@ if ($this->session->flashdata('error-warning-message')) {
         });
     });
 
+    // User clicks on button to remove media from table and the form
     $('body').on('click', '#media-selected-item', function ()   {
         $(this).attr('id');
         mediaSelected=0;
@@ -1261,6 +1262,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
     });
 
+    // User clicks on button to remove media from table and the form
     $('body').on('click', '#media-output-selected-item', function () {
         selectedElement = $(this).parent().parent().attr('id')
         outputSelected = outputSelected.filter(function(value) { return value != selectedElement });
@@ -1346,6 +1348,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
     });
 
+    // User clicks on button to remove media from table and the form
     $('body').on('click', '#media-instrument-selected-item', function () {
         selectedElement = $(this).parent().parent().attr('id')
         instrumentSelected = instrumentSelected.filter(function(value) { return value != selectedElement });
@@ -1360,7 +1363,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
         if($('#localisations-table tr').length == 0 )
         {
-            <!-- Create a table of localisations to view -->
+            // Create a table of localisations to view
             <?php foreach($localisations_list as $localisations_item){?>
             if(!localisationsSelected.includes(<?php echo $localisations_item['id']?>)) {
                 $('#localisations-table').append('<tr class="table-background-color-techniques">' +
@@ -1372,7 +1375,7 @@ if ($this->session->flashdata('error-warning-message')) {
             }
             <?php } ?>
         }
-        <!-- Create a dialog box of localisations -->
+        // Create a dialog box of localisations
         $("#add-localisations-dialog-form").dialog({
             height: 600,
             width: 900,
@@ -1395,7 +1398,7 @@ if ($this->session->flashdata('error-warning-message')) {
                 "Select": function () {
                     $(this).dialog("close");
 
-                    <!-- Compile a list of selected items -->
+                    // Compile a list of selected items
                     toAddLocalisations= []
                     $('input[name="localisation"]:checked').each(function () {
                         if (!localisationsSelected.includes($(this).attr('value'))) {
@@ -1404,7 +1407,7 @@ if ($this->session->flashdata('error-warning-message')) {
                         }
                     });
 
-                    <!-- Copy selected items from dialog to the table displayed on the form -->
+                    // Copy selected items from dialog to the table displayed on the form
                     <?php foreach ($localisations_list as $localisations_item){?>
                     toAddLocalisations.forEach(function(element){
                         if(element == <?php echo $localisations_item['id'];?>)
@@ -1425,6 +1428,15 @@ if ($this->session->flashdata('error-warning-message')) {
         });
 
     });
+
+    // User clicks on button to remove localisations from table and the form
+    $('body').on('click', '#localisations-selected-item', function () {
+        selectedElement = $(this).parent().parent().attr('id')
+        localisationsSelected = localisationsSelected.filter(function(value) { return value != selectedElement });
+        $(this).parent().parent().remove();
+        document.getElementById('localisations_items_selected_hidden').value = localisationsSelected
+    })
+
         
 
 
@@ -1501,6 +1513,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
     });
 
+    // User clicks on button to remove a contact from the table and form
     $('body').on('click', '#contact-selected-item', function () {
         selectedElement = $(this).parent().parent().attr('id')
         contactSelected = contactSelected.filter(function(value) { return value != selectedElement });
@@ -1580,6 +1593,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
     });
 
+    // User clicks on button to remove a case
     $('body').on('click', '#case-selected-item', function () {
         selectedElement = $(this).parent().parent().attr('id')
         caseSelected = caseSelected.filter(function(value) { return value != selectedElement });
@@ -1660,6 +1674,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
     });
 
+    // User clicks on button to remove a reference from the table and form
     $('body').on('click', '#references-selected-item', function () {
         selectedElement = $(this).parent().parent().attr('id')
         referencesSelected = referencesSelected.filter(function(value) { return value != selectedElement });
