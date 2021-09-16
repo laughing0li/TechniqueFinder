@@ -91,10 +91,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <span class="tf-button-label">Edit</span>
                                 </button>
 
-                                <button type="button" class="tf-button" onclick="if (confirm('Are you sure?')){ window.location='<?php echo base_url() ?>Metadata/delete/<?php echo $metadata->id ?>'; }">
+                                <!-- <button type="button" class="tf-button" onclick="if (confirm('Are you sure?')){ window.location='<?php echo base_url() ?>Metadata/delete/<?php echo $metadata->id ?>'; }">
                                     <span class="tf-delete">&nbsp;&nbsp;&nbsp;</span>
                                     <span class="tf-button-label">Delete</span>
-                                </button>
+                                </button> -->
                             </div>
                             <div class="col-md-6" style="margin: auto;">
                                 <!-- <?php
