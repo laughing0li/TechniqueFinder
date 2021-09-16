@@ -31,13 +31,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <div class="col-sm-2" style="display:inline-table;">
         <button onclick="window.location='<?php echo site_url("Techniques/index");?>'"  class="admin-button">Techniques</button><br>
         <button onclick="window.location='<?php echo site_url("Media/index");?>'"  class="admin-button">Images and movies</button><br>
+        <button onclick="window.location='<?php echo site_url("Elements/index");?>'"  class="admin-button">Elements</button><br>
+        <!-- We don't use References -->
         <!-- <button disabled style="color:#f5e0c1" onclick="window.location='<?php echo site_url("References/index");?>'"  class="admin-button">References</button><br> -->
+        <!-- We don't use Case Studies -->
         <!-- <button disabled style="color:#f5e0c1" click="window.location='<?php echo site_url("CaseStudy/index");?>'"  class="admin-button">Case studies</button><br> -->
         <button onclick="window.location='<?php echo site_url("Contact/index");?>'"  class="admin-button">Contacts</button><br>
         <button onclick="window.location='<?php echo site_url("Location/index");?>'"  class="admin-button">Locations</button><br>
     </div>
     <div class="col-sm-2" style="display:inline-table;">
 
+        <!-- We don't use Bio & Phys options & associations -->
         <!-- <button disabled style="color:#f5e0c1" onclick="window.location='<?php echo site_url("BioOptionLeft/index");?>'"  class="admin-button">Bio options - Left</button><br>
         <button disabled style="color:#f5e0c1" onclick="window.location='<?php echo site_url("BioOptionRight/index");?>'"  class="admin-button">Bio options - Right</button><br>
         <button disabled style="color:#f5e0c1" onclick="window.location='<?php echo site_url("PhyOptionLeft/index");?>'"  class="admin-button">Phy options - Left</button><br>
