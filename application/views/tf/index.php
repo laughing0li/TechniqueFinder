@@ -53,6 +53,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <?php } ?>
         <button type="button" onclick="window.location='<?php echo site_url("user/show/"."$id")?>'" class="admin-button">Manage my Account</button><br>
         <button type="button" onclick="window.location='<?php echo site_url("staticContent/index")?>'" class="admin-button">Static content</button><br>
+        <button type="button" onclick="window.location='<?php echo site_url("Metadata/index")?>'" class="admin-button">Metadata</button><br>
 
                         
                     <div>
