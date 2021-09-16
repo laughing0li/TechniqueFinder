@@ -53,12 +53,11 @@ class Contact_model extends MY_Model
     function getContactDataWithBit($x){
         $query= $this->db->query('SELECT c.id, c.title, c.name ,c.contact_position, c.telephone, c.email , l.id as lid, l.institution, c.technique_contact+0 as technique_contact from contact c, location l where c.location_id=l.id and c.id='.$x);
         return $query->result();
-
     }
+
     function getContactData($x){
         $query= $this->db->query('SELECT c.id, c.title, c.name ,c.contact_position, c.telephone, c.email , l.id as lid, l.institution,IF (technique_contact+0 LIKE \'1\',\'Yes\',\'No\')  as technique_contact from contact c, location l where c.location_id=l.id and c.id='.$x);
         return $query->result();
-
     }
 
     function updateContact($x,$name, $telephone, $email, $position, $location, $technique_contact,$title){
