@@ -158,10 +158,10 @@ class Portal extends CI_Controller {
     public function getTechniqueKeywords($step1OptionId, $step2OptionId) {
         $this->load->model('OptionCombination_model');
         $searchResults = $this->OptionCombination_model->getAllTechniquesByOptionCombination($step1OptionId, $step2OptionId);
-        $this->load->model('Element_model');
+        $this->load->model('Elements_model');
         $elemResults = array();
         foreach($searchResults as $res_idx => $result) {
-            $elements = $this->Element_model->getAllElementsByInstrumentType($result->name);
+            $elements = $this->Elements_model->getAllElementsByInstrumentType($result->name);
             foreach($elements as $e_idx => $e) {
                 array_push($elemResults, $e->name);
                 array_push($elemResults, $e->symbol);
@@ -216,9 +216,9 @@ class Portal extends CI_Controller {
         $this->load->model('OptionCombination_model');
         $searchResults = $this->OptionCombination_model->getAllTechniquesByOptionCombination($step1OptionId, $step2OptionId);
 	$newSearchResults = array();
-	$this->load->model('Element_model');
+	$this->load->model('Elements_model');
 	foreach($searchResults as $result) {
-		$elements = $this->Element_model->getAllElementsByInstrumentType($result->name);
+		$elements = $this->Elements_model->getAllElementsByInstrumentType($result->name);
 		foreach($elements as $e) {
 			if ($e->name == $step3Text || $e->symbol == $step3Text) {
 				array_push($newSearchResults, $result);
@@ -271,7 +271,7 @@ class Portal extends CI_Controller {
      * @param       string $id  technique identifier
      */
     public function viewGeochemAnalysis($id) {
-        $this->load->model('Element_model');
+        $this->load->model('Elements_model');
         $this->load->model('Techniques_model');
         $theTechnique = $this->Techniques_model->getTechniqueData($id);
         $instrumentType =  $theTechnique->instrument_name;
@@ -281,7 +281,7 @@ class Portal extends CI_Controller {
                 'theContacts' => $this->Techniques_model->getContactsForTechnique($id),
                 'localisationItems' => $this->Techniques_model->getLocalisationItems($id),
                 'locationItems' => $this->Techniques_model->getLocationItems($id),
-                'elementItems' => $this->Element_model->getAllElementsByInstrumentType($instrumentType)
+                'elementItems' => $this->Elements_model->getAllElementsByInstrumentType($instrumentType)
             )
         );
     }
