@@ -37,11 +37,11 @@ $this->load->view('layout/portal_header.php'); ?>
                                     echo "<div style='background-color: #ED5D4A' class='card-header text-white'>" . $locationItems[$key][0] . " at " . $locationItems[$key][1] . "</div>";
                                     echo "<div class='card-body'>";
                                     echo "<p class='card-text'>Applications: ";
-                                    foreach (array_slice($localisation, 1) as $application) {
+                                    foreach (explode(",", trim($localisation['applications'], "[]")) as $application) {
                                         echo $application . ";&nbsp&nbsp";
                                     }
                                     echo "</p>";
-                                    echo "<p class='card-text'>Year Commissioned: " . $localisation[0] . "</p>";
+                                    echo "<p class='card-text'>Year Commissioned: " . $localisation['yr_commissioned'] . "</p>";
                                     echo "<p class='card-text'>Address: " . $locationItems[$key][2] . "</p>";
                                     echo "<p class='card-text'>State: " . $locationItems[$key][3] . "</p>";
                                     echo "<p class='card-text'>Contact: " . $locationItems[$key][4] . "</p>";

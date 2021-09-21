@@ -37,7 +37,7 @@ $this->load->view('layout/portal_header.php'); ?>
                             <div class='row tf-font-14'>
 
                                 <?php
-                                foreach ($localisationItems as $key => $localisation) {
+                                foreach ($localisationItems as $key => $localisationId) {
                                     echo "<div class='col' style='margin-bottom: 10px'>";
                                     echo "<div style='border: 1px solid #ED5D4A; max-width: 100%; padding: 10px;'>";
 

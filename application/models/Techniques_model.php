@@ -391,17 +391,15 @@ class Techniques_model extends MY_Model
 
 
     /*
-     * Returns a localisation id as a string given a technique_id, else empty string if not found
+     * Returns a localisation an array of arrays with keys 'location_id', 'yr_commissioned' & 'applications'
+     * given a technique_id, else empty array if not found
      *
      * @param $technique_id
      */
     function getLocalisationItems($technique_id) {
-        $query = $this->db->query("SELECT localisation.id from localisation where technique_id=".$technique_id.";");
-        $item_list = $query->result_array();
-        foreach($item_list as $item) {
-            return $item['id'];
-        }
-        return "";
+        $query = $this->db->query("SELECT l.location_id, l.yr_commissioned, l.applications from localisation l where technique_id=".$technique_id.";");
+        $ret_list = $query->result_array();
+        return $ret_list;
     }
 
 
