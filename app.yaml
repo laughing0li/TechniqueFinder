@@ -1,0 +1,15 @@
+# app engine config file
+
+runtime: php74
+
+env_variables:
+  CLOUDSQL_CONNECTION_NAME: dt-test-326006:australia-southeast1:tfinder
+  CLOUDSQL_USER: root
+  CLOUDSQL_PASSWORD: tfinder
+  CLOUDSQL_DATABASE_NAME: techfinder
+
+handlers:
+  - url: /assets
+    static_dir: assets
+  - url: /media-dir
+    static_dir: media-dir

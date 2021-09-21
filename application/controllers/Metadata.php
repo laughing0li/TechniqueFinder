@@ -49,7 +49,8 @@ class Metadata extends CI_Controller
                 ."<button class='user-table-buttons' onclick=window.location='".base_url()."Metadata/edit/".$r->id."'>"
                 ."<span style='background: url(../assets/images/database_edit.png) 50% no-repeat;margin-right:0.1em;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Edit</button>"
                 ."<span style='margin-left: 2em;'>&nbsp;</span>"
-                ."<span style='float: right; margin-top: 0.5em;' ></span>"
+                ."<button class='user-table-buttons' onclick=\"if (confirm('Are you sure?')){ window.location='".base_url()."Metadata/delete/".$r->id."'}\">"
+                ."<span style='background: url(../assets/images/database_delete.png) 50% no-repeat; '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Delete</button>"."<span style='float: right; margin-top: 0.5em;' ></span>"
                 ."</div>",
             ));
         }
@@ -65,7 +66,9 @@ class Metadata extends CI_Controller
 
     function edit($id) {
         $record = $this->Metadata_model->getMetadataById($id);
-        $this->load->view('Metadata/edit', array('metadata'=>$record));
+        $c_type = $this->Metadata_model->getCategoryType();
+        $a_type = $this->Metadata_model->getAnalysisType();
+        $this->load->view('Metadata/edit', array('metadata'=>$record, 'c_type'=>$c_type, 'a_type'=>$a_type));
     }
 
     function update($id) {
@@ -92,7 +95,9 @@ class Metadata extends CI_Controller
     }
 
     function create_new() {
-        $this->load->view('Metadata/new');
+        $c_type = $this->Metadata_model->getCategoryType();
+        $a_type = $this->Metadata_model->getAnalysisType();
+        $this->load->view('Metadata/new', array('c_type'=>$c_type, 'a_type'=>$a_type));
 
     }
 
@@ -117,5 +122,11 @@ class Metadata extends CI_Controller
             $this->session->set_flashdata('error-warning-message',validation_errors());
             redirect(base_url().'Metadata/create_new');
         }
+    }
+
+    function delete($id) {
+        $this->Metadata_model->deleteById($id);
+        $this->session->set_flashdata('success-warning-message', "Metadata ".$id." has been deleted. ");
+        redirect(base_url().'Metadata/index');
     }
 }

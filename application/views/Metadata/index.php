@@ -83,7 +83,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 url: "<?php echo site_url("Metadata/getMetadataList") ?>",
 
             },
-            columns: [{
+            columns: [
+                {
                     title: "Category",
                     data: 'category'
                 },

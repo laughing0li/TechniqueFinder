@@ -79,6 +79,11 @@ $db['default'] = array(
 	'username' => 'root',
 	'password' => 'root',
 	'database' => 'techfinder',
+	// app engine config
+	// 'hostname' => '/cloudsql/dt-test-326006:australia-southeast1:tfinder',
+    // 'username' => 'root',
+	// 'password' => 'tfinder',
+	// 'database' => 'techfinder',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
