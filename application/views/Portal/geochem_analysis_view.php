@@ -23,18 +23,22 @@ $this->load->view('layout/portal_header.php'); ?>
                             <div class="row">
                                 <div class="col">
 
-                                    <h1><?php echo $theTechnique->name; ?></h1>
-                                    <p class='tf-font-14'><?php echo $theTechnique->description; ?></p>
+                                    <!-- <h1><?php echo $theTechnique->name; ?></h1> -->
                                 </div>
                                 <div class="col">
                                     <button style='float: right' class="btn outline-primary" type="submit" onclick="window.location.assign('<?php echo base_url(); ?>Portal/geochemOptionsSelection')">Back</button>
 
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class='tf-font-14'><?php echo $theTechnique->description; ?></p>
+                                </div>
+                            </div>
                             <div class="border-bottom" style="margin: 50px 0"></div>
 
                             <br>
-                            <div class='row tf-font-14'>
+                            <!-- <div class='row tf-font-14'>
 
                                 <?php
                                 foreach ($localisationItems as $key => $localisationId) {
@@ -72,7 +76,7 @@ $this->load->view('layout/portal_header.php'); ?>
                                 }
                                 ?>
 
-                            </div> <!-- end 'row' -->
+                            </div> --> <!-- end 'row' -->
                             <br>
 
                         </div>
