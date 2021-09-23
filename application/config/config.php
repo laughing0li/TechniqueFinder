@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = '';
 // app engine config
-// $config['base_url'] = 'https://dt-test-326006.ts.r.appspot.com';
+// $config['base_url'] = 'https://labfinder.geoanalytics.group/';
 
 
 /*

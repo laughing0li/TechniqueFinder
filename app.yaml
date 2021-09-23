@@ -3,7 +3,7 @@
 runtime: php74
 
 env_variables:
-  CLOUDSQL_CONNECTION_NAME: dt-test-326006:australia-southeast1:tfinder
+  CLOUDSQL_CONNECTION_NAME: tf-4-agn:australia-southeast1:tfinder
   CLOUDSQL_USER: root
   CLOUDSQL_PASSWORD: tfinder
   CLOUDSQL_DATABASE_NAME: techfinder

@@ -80,7 +80,7 @@ $db['default'] = array(
 	'password' => 'root',
 	'database' => 'techfinder',
 	// app engine config
-	// 'hostname' => '/cloudsql/dt-test-326006:australia-southeast1:tfinder',
+	// 'hostname' => '/cloudsql/tf-4-agn:australia-southeast1:tfinder',
     // 'username' => 'root',
 	// 'password' => 'tfinder',
 	// 'database' => 'techfinder',
