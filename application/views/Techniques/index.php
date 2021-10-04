@@ -84,7 +84,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     title: "Name"
                 },
                 {
-                    title: "Text",
+                    title: "Description",
                     render: function(data, type, row) {
                         return '<xmp style="white-space:normal;">' + data + '</xmp>'
                     }

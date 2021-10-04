@@ -81,7 +81,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange" style="position: absolute;">Name</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
+                <textarea class="tf-input-small"
                           name="technique_name"><?php if (isset($technique_name)) {
                         echo $technique_name;
                     }; ?></textarea>
@@ -97,7 +97,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange" style="position: absolute;">Alternative names</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big" name="alternative_names"><?php if (isset($alternative_names)){echo $alternative_names;};?></textarea>
+                <textarea class="tf-input-small" name="alternative_names"><?php if (isset($alternative_names)){echo $alternative_names;};?></textarea>
             </td>
         </tr>
         <tr>
@@ -110,7 +110,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange" style="position: absolute;">Instrument Name</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
+                <textarea class="tf-input-small"
                           name="instrument_name"><?php if (isset($instrument_name)) {
                         echo $instrument_name;
                     }; ?></textarea>
@@ -126,7 +126,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange" style="position: absolute;">Model</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
+                <textarea class="tf-input-small"
                           name="model"><?php if (isset($model)) {
                         echo $model;
                     }; ?></textarea>
@@ -142,7 +142,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange" style="position: absolute;">Manufacturer</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
+                <textarea class="tf-input-small"
                           name="manufacturer"><?php if (isset($manufacturer)) {
                         echo $manufacturer;
                     }; ?></textarea>
@@ -158,7 +158,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange" style="position: absolute;">Sample Type</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
+                <textarea class="tf-input-small"
                           name="sample_type"><?php if (isset($sample_type)) {
                         echo $sample_type;
                     }; ?></textarea>
@@ -174,7 +174,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange" style="position: absolute;">Wavelength</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
+                <textarea class="tf-input-small"
                           name="wavelength"><?php if (isset($wavelength)) {
                         echo $wavelength;
                     }; ?></textarea>
@@ -190,7 +190,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange" style="position: absolute;">Beam Diameter</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
+                <textarea class="tf-input-small"
                           name="beam_diameter"><?php if (isset($beam_diameter)) {
                         echo $beam_diameter;
                     }; ?></textarea>
@@ -206,7 +206,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange" style="position: absolute;">Minimum Conc.</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
+                <textarea class="tf-input-small"
                      name="min_conc"><?php if (isset($min_conc)) {
                         echo $min_conc;
                     }; ?></textarea>
@@ -222,7 +222,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange" style="position: absolute;">Mass</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
+                <textarea class="tf-input-small"
                      name="mass"><?php if (isset($mass)) {
                         echo $mass;
                     }; ?></textarea>
@@ -238,7 +238,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange" style="position: absolute;">Volume</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
+                <textarea class="tf-input-small"
                      name="volume"><?php if (isset($volume)) {
                         echo $volume;
                     }; ?></textarea>
@@ -254,7 +254,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange" style="position: absolute;">Pressure</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
+                <textarea class="tf-input-small"
                      name="pressure"><?php if (isset($pressure)) {
                         echo $pressure;
                     }; ?></textarea>
@@ -270,7 +270,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange" style="position: absolute;">Temperature</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big"
+                <textarea class="tf-input-small"
                      name="temperature"><?php if (isset($temperature)) {
                         echo $temperature;
                     }; ?></textarea>
@@ -313,7 +313,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange">Keywords</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <textarea class="tf-input-big" name="keywords"><?php if (isset($keywords)){echo $keywords;};?></textarea>
+                <textarea class="tf-input-small" name="keywords"><?php if (isset($keywords)){echo $keywords;};?></textarea>
             </td>
         </tr>
         <tr>
@@ -466,9 +466,9 @@ if ($this->session->flashdata('error-warning-message')) {
                     </table>
                 </div>
                 <div>
-                    <button type="button" id="add-contacts-submit" class="tf-button"">
+                    <button type="button" id="add-contacts-submit" class="tf-button">
                     <span class="tf-database-add"></span>
-                    <span class="tf-font create-technique-dialog-button ">Add contacts</span>
+                    <span class="tf-font create-technique-dialog-button">Add contacts</span>
                     </button>
                 </div>
             </td>
@@ -725,12 +725,14 @@ if ($this->session->flashdata('error-warning-message')) {
     </table>
 </div>
 
+<!-- Update button -->
 <button id="update" name="submit" class="tf-button" type="submit">
     <span class="tf-save">&nbsp;&nbsp;&nbsp;</span>
     <span class="tf-button-label">Update</span>
 </button>
 
-<button id="delete" type="button" class="tf-button" type="submit"  onclick="window.location='<?php echo site_url("Techniques/index");?>'">
+<!-- Cancel button -->
+<button id="cancel" type="button" class="tf-button" type="submit"  onclick="window.location='<?php echo site_url("Techniques/index");?>'">
     <span class="tf-cancel">&nbsp;&nbsp;&nbsp;</span>
     <span class="tf-button-label">Cancel</span>
 </button>
@@ -977,7 +979,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
     //Postback Localisations List
     <?php if(isset($localisations_items_selected_hidden) && $localisations_items_selected_hidden != ''){ ?>
-    localisationsSelected = [<?php echo $localisations_items_selected_hidden; ?>];
+    localisationsSelected = [<?php echo $localisations_items_selected_hidden[0]['location_id']; ?>];
     document.getElementById('localisations_items_selected_hidden').value = localisationsSelected
 
     <?php }
