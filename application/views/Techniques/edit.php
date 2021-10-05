@@ -348,7 +348,7 @@ if ($this->session->flashdata('error-warning-message')) {
                     </table>
                 </div>
                 <div>
-                    <button type="button" id="add-media-list-submit" class="tf-button"">
+                    <button type="button" id="add-media-list-submit" class="tf-button">
                     <span class="tf-database-add"></span>
                     <span class="tf-font create-technique-dialog-button ">Add Media for LIST</span>
                     </button>
@@ -387,7 +387,7 @@ if ($this->session->flashdata('error-warning-message')) {
                     </table>
                 </div>
                 <div>
-                    <button type="button" id="add-media-output-submit" class="tf-button"">
+                    <button type="button" id="add-media-output-submit" class="tf-button">
                     <span class="tf-database-add"></span>
                     <span class="tf-font create-technique-dialog-button ">Add Media for OUTPUT</span>
                     </button>
@@ -426,7 +426,7 @@ if ($this->session->flashdata('error-warning-message')) {
                     </table>
                 </div>
                 <div>
-                    <button type="button" id="add-media-instrument-submit" class="tf-button"">
+                    <button type="button" id="add-media-instrument-submit" class="tf-button">
                     <span class="tf-database-add"></span>
                     <span class="tf-font create-technique-dialog-button ">Add Media for INSTRUMENT</span>
                     </button>
@@ -508,7 +508,7 @@ if ($this->session->flashdata('error-warning-message')) {
                     </table>
                 </div>
                 <div>
-                    <button type="button" id="add-localisations-submit" class="tf-button"">
+                    <button type="button" id="add-localisations-submit" class="tf-button">
                     <span class="tf-database-add"></span>
                     <span class="tf-font create-technique-dialog-button ">Add machine localisation</span>
                     </button>
