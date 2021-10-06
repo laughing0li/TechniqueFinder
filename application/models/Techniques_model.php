@@ -69,7 +69,7 @@ class Techniques_model extends MY_Model
      * Return a list of all possible kinds of metadata
      */
     function getMetadataList(){
-        return $result = $this->db->distinct()->get('technique_metadata')->result();
+        return $result = $this->db->order_by('category, category_type, analysis_type')->distinct()->get('technique_metadata')->result();
     }
 
     /**
@@ -84,11 +84,15 @@ class Techniques_model extends MY_Model
      * array('id' => '3', 'name' => 'Blah Scanner', 'model'=> 'Blah III', manufacturer => 'Acme Widget', 'symbols' => 'Mg,Si,Be')
      */
     function getElementsList() {
-        return $this->db->query("select es.id, t.name, t.model, t.manufacturer, group_concat(e.symbol) as symbols from elements e, elements_set es, elements_elements_set ees, technique t where t.elements_set_id = es.id and ees.elements_id = e.id and ees.elements_set_id = es.id group by id, name, model, manufacturer")->result_array();
+        return $this->db->query("select es.id, t.name, t.model, t.manufacturer, group_concat(e.symbol) as symbols from elements e, elements_set es, elements_elements_set ees, technique t where t.elements_set_id = es.id and ees.elements_id = e.id and ees.elements_set_id = es.id group by id, name, model, manufacturer order by name, model, manufacturer")->result_array();
     }
 
 
-    function save_new_technique($technique_name,$alternative_names,$short_description,$long_description,$keywords,$list_media_items,$output_media_items,$instrument_media_items,$contact_items,$case_studies_list, $references_items, $extras)
+    /**
+     * Saves a new technique into the 'technique' table and all the dependent rows in other tables
+     * Returns the new technique_id
+     */
+    function saveNewTechnique($technique_name,$alternative_names,$short_description,$long_description,$keywords,$list_media_items,$output_media_items,$instrument_media_items,$contact_items,$case_studies_list, $references_items, $extras)
     {
 
         $technique_data = array(
@@ -189,7 +193,7 @@ class Techniques_model extends MY_Model
             $contact_list = explode(',',$contact_items);
 
             // Look for the location ids of the contacts for this technique
-            $existing_contact_ids = $this->db->query("select c.id from contact c, location l, localisation ls where c.location_id = l.id and ls.location_id = l.id and ls.technique_id = '". $x ."';")->result_array();
+            $existing_contact_ids = $this->db->query("select c.id from contact c, location l, localisation ls where c.location_id = l.id and ls.location_id = l.id and ls.technique_id = '". $technique_id ."';")->result_array();
             $exist_contacts = array();
             foreach($existing_contact_ids as $existing_contact) {
                 array_push($exist_contacts, $existing_contact['id']);
@@ -200,7 +204,7 @@ class Techniques_model extends MY_Model
                 if (!in_array($cl, $exist_contacts)) {
                     // Get location id for this contact
                     $location = $this->db->query("select l.id from contact c, location l where c.location_id = l.id and c.id = '". $cl ."';")->row();
-                    $this->db->query("insert into localisation(location_id, technique_id) values(". $location->id .",". $x .");");
+                    $this->db->query("insert into localisation(location_id, technique_id) values(". $location->id .",". $technique_id .");");
                 }
             }
         }
@@ -422,22 +426,22 @@ class Techniques_model extends MY_Model
     }
 
     /*
-     * Update metadata table for a technique
+     * Save new metadata for a technique or replace the old one
      * @param $x technique id
      * @param $metadata_id technique_metadata_id value
      */
     function updateMetadata($x, $metadata_id) {
-        $this->db->set('technique_metadata_id', $metadata_id); 
-        $this->db->where('technique_id', $x);
-        $this->db->update('technique_metadata_link');
+        $data = [ 'technique_metadata_id' => $metadata_id, 'technique_id' => $x ];
+        $this->db->replace('technique_metadata_link', $data);
     }  
+    
 
     /*
      * Update the set of chemical elements associated with a technique
      * @param $x 'technique' id
      * @param $elementsset_id 'elements_set' id value
      */
-    function updateElementsset($x, $elementsset_id) {
+    function updateElementsSet($x, $elementsset_id) {
         if ($elementsset_id == '0') {
             $this->db->set('elements_set_id', NULL);
         } else {
@@ -448,7 +452,7 @@ class Techniques_model extends MY_Model
     }  
 
     /*
-     * Update the options
+     * Update the options, inserting or updating as required
      * @param $x 'technique' id
      * @param $oc1 'option_choice' id  for step1
      * @param $oc2 'option_choice' id  for step2
@@ -476,7 +480,7 @@ class Techniques_model extends MY_Model
      * This is called after a technique is edited in the admin page
      * @param $x is the technique id
      */
-    function update_technique($x,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items, $extras){
+    function updateTechnique($x,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items, $extras){
         $technique_data = array(
             'name' => $technique_name,
             'alternative_names' => $alternative_names,
@@ -785,13 +789,21 @@ class Techniques_model extends MY_Model
 
     }
 
+    /**
+     * Deletes technique and associated tables
+     * @param $x technique_id
+     * @return true if successful
+     */
     function deleteTechnique($x){
+        // Remove all rows in other tables that point to this technique
         $this->db->delete('technique_review',array('technique_reviews_id'=>$x));
         $this->db->delete('technique_contact',array('technique_contacts_id'=>$x));
         $this->db->delete('media_in_section',array('technique_id'=>$x));
         $this->db->delete('option_combination',array('technique_id'=>$x));
-
-        $this->db->delete('technique',array('id'=>$x));
+        $this->db->delete('localisation',array('technique_id'=>$x));
+        $this->db->delete('technique_metadata_link',array('technique_id'=>$x));
+        // Remove row from 'technique' table
+        return $this->db->delete('technique',array('id'=>$x));
     }
 
     function getKeywordList() {

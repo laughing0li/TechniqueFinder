@@ -308,6 +308,11 @@ body {
     height: 10em;
 }
 
+.tf-input-small{
+    width: 50em;
+    height: 2em;
+}
+
 .input-col{
     width: 80%;
 }
