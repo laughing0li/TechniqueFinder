@@ -55,11 +55,11 @@ class Techniques extends CI_Controller
 
     /*
      * Used to setup a view of technique in the Admin page
+     *
      * @param $x technique id
      */
     function view($x)
     {
-
         $technique_list = $this->Techniques_model->getAllTechniques();
 
         $current= 0;
@@ -88,8 +88,8 @@ class Techniques extends CI_Controller
         }
 
         $data['prev_location'] = $prev;
-        $data['next_location']  =$next;
-        $data['max']  =$max;
+        $data['next_location'] = $next;
+        $data['max'] = $max;
 
         $data['media_list'] = $this->Techniques_model->getTechniqueDataAll();
 
@@ -138,7 +138,8 @@ class Techniques extends CI_Controller
 
         if(isset($media_items[0]['media_id'])){$media_items = $media_items[0]['media_id'];}else{$media_items='';}
 
-        // These 'hidden' values are used to display contacts, media etc. that have already been added to the technique
+        // These 'hidden' values are used to display contacts, media etc. 
+        // that have already been added to the technique
         $data['media_items_selected_hidden'] = $media_items;
         $data['media_output_items_selected_hidden'] = $output_items;
         $data['media_instrument_items_selected_hidden'] = $instrument_items;
@@ -446,7 +447,12 @@ class Techniques extends CI_Controller
         $data['selected_elements'] = $this->Techniques_model->getElements($x);
 
 
-        if(isset($media_items[0]['media_id'])){$media_items = $media_items[0]['media_id'];}else{$media_items='';}
+        if (isset($media_items[0]['media_id']))
+        {
+            $media_items = $media_items[0]['media_id'];
+        } else {
+            $media_items='';
+        }
 
         $data['media_items_selected_hidden'] = $media_items;
         $data['media_output_items_selected_hidden'] = $output_items;
