@@ -602,7 +602,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 </div>
                 <!-- A table to display current metadata -->
                 <div class="table-responsive tf-font tf-font-size">
-                    <input type="hidden" id="metadata-id-list" name="metadata-id-list" value=""/>
+                    <input type="hidden" id="metadata_ids_selected_hidden" name="metadata_ids_selected_hidden" value=""/>
                     <table id="static_data" class="table table-bordered table-striped" style="width: 70%;float: left;">
                         <thead>
                         <tr class="table-headings tf-font-11 tf-font">
@@ -970,12 +970,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <?php } ?>
 
     // Postback metadata list
-    <?php if (isset($metadata_items_selected_hidden) && $metadata_items_selected_hidden != '') { ?>
-        metadataSelected = [<?php echo $metadata_items_selected_hidden; ?>];
-        document.getElementById('metadata_items_selected_hidden').value = metadataSelected
+    <?php if (isset($metadata_ids_selected_hidden) && $metadata_ids_selected_hidden != '') { ?>
+        metadataSelected = [<?php echo $metadata_ids_selected_hidden; ?>];
+        document.getElementById('metadata_ids_selected_hidden').value = metadataSelected;
 
     <?php } else { ?>
-        metadataSelected = []
+        metadataSelected = [];
     <?php } ?>
 
     /////////////////////////////////////////////////////////////////////////////-------BUILD TABLES FROM POSTBACK-------////////////////////////////////////////////////////////////////////////////////////////
@@ -1332,7 +1332,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
         if($('#localisations-table tr').length == 0 )
         {
             // Create a table of localisations to view
-            <?php foreach($localisations_list as $localisations_item){?>
+            <?php if (isset($localisations_list)) {
+          foreach($localisations_list as $localisations_item){?>
             if(!localisationsSelected.includes(<?php echo $localisations_item['id']?>)) {
                 $('#localisations-table').append('<tr class="table-background-color-techniques">' +
                     '<td><input type=\'checkbox\' name=\'localisation\' value=\'<?php echo $localisations_item['id']; ?>\'/></td>' +
@@ -1341,7 +1342,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     '<td><?php echo $localisations_item["yr_commissioned"];?></td>' +
                     '</tr>');
             }
-            <?php } ?>
+            <?php } } ?>
         }
         // Create a dialog box of localisations
         $("#add-localisations-dialog-form").dialog({
@@ -1376,7 +1377,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     });
 
                     // Copy selected items from dialog to the table displayed on the form
-                    <?php foreach ($localisations_list as $localisations_item){?>
+                    <?php if (isset($localisations_list)) {
+                foreach ($localisations_list as $localisations_item){?>
                     toAddLocalisations.forEach(function(element){
                         if(element == <?php echo $localisations_item['id'];?>)
                         {
@@ -1388,7 +1390,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 "</tr>");
                         }
                     })
-                    <?php } ?>
+                    <?php } } ?>
                     document.getElementById('localisations_items_selected_hidden').value = localisationsSelected
 
                 },
@@ -1650,21 +1652,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
            $("#sample_type").val(str);
     }).trigger("change");
 
-
-    // Update the form input when metadata is selected
-    $('#metadata-selector').change(function() {
-           var str = $("#metadata-selector option:selected").first().val();
-           $("#metadata-id").val(str);
-    }).trigger("change");
-
     // User clicks on button to remove metadata row from the table and form
     $('body').on('click', '#metadata-selected-item', function() {
-        selectedElement = $(this).parent().parent().attr('id')
+        selectedId = $(this).attr('metadata_id');
         metadataSelected = metadataSelected.filter(function(value) {
-            return value != selectedElement
+            return value != selectedId
         });
         $(this).parent().parent().remove();
-        document.getElementById('metadata_items_selected_hidden').value = metadataSelected;
+        document.getElementById('metadata_ids_selected_hidden').value = metadataSelected;
     });
 
     // Update the form input when a set of elements is selected
@@ -1690,15 +1685,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
         $('#option_choice2_hidden').val(str);
     });
 
-    // Update the metadata table when a set of metadata is selected
+    // Update the metadata table when a set of metadata is added
     $('body').on('click', '#add-metadata', function() {
         // Update the table
         var metadata_txt = $("#metadata-selector option:selected").text(); 
+        var metadata_id = $("#metadata-selector option:selected").val();
         $('#table_metadata_selected').append("<tr class='table-background-color-techniques'>"+
                                              "<td>" + metadata_txt + "</td>" +
-                                             "<td><button type='button' id='metadata-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
+                                             "<td><button type='button' metadata_id='" + metadata_id + "' id='metadata-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
                                              "</tr>");
-                                             
+        var metadata_int = parseInt(metadata_id);
+        if (!metadataSelected.includes(metadata_int)) {
+            metadataSelected.push(parseInt(metadata_int));
+        }
+        $('#metadata_ids_selected_hidden').val(metadataSelected); 
     });
 
 </script>

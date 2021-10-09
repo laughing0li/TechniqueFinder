@@ -169,47 +169,6 @@ class Techniques_model extends MY_Model
             }
         }
 
-        // Insert instrument media
-        if (strlen($instrument_media_items) > 0) {
-            $instrument_list = explode(',',$instrument_media_items);
-
-            $get_media_items = array('technique_id'=>$technique_id, 'section'=> 'INSTRUMENT');
-            $existing_media_ids = $this->db->select('media_id')->from('media_in_section')->where($get_media_items)->get();
-
-            foreach($instrument_list as $ol){
-                $where_array = array(
-                    'technique_id' => $technique_id,
-                    'media_id'=> $ol,
-                    'section' => 'INSTRUMENT',
-                );
-                $this->db->select('*');
-                $this->db->from('media_in_section');
-                $this->db->where($where_array);
-                $q = $this->db->get();
-
-                $list_array = array(
-                    'technique_id' => $technique_id,
-                    'media_id' => $ol,
-                    'section' => 'INSTRUMENT',
-                );
-
-                if (! ($q->num_rows() > 0) )
-                {
-                    $this->db->set('technique_id', $technique_id)->insert('media_in_section', $list_array);
-                }
-            }
-
-
-            foreach ($existing_media_ids->result_array() as $emi){
-                $delete_array = array('technique_id'=>$technique_id, 'media_id'=>$emi['media_id'],'section'=>'INSTRUMENT');
-                if(!(in_array($emi['media_id'], $instrument_list))){
-                    $this->db->where($delete_array);
-                    $this->db->delete('media_in_section');
-
-                }
-            }
-        }
-
         // New contacts are added here
         if (strlen($contact_items) > 0) {
             $contact_list = explode(',',$contact_items);
@@ -269,6 +228,7 @@ class Techniques_model extends MY_Model
             }
         }
 
+        // New references are added here
         if (strlen($references_items) > 0) {
             $references_list = explode(',',$references_items);
             $existing_references_ids = $this->db->select('review_id')->from('technique_review')->where('technique_reviews_id',$technique_id)->get();

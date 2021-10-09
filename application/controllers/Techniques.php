@@ -177,7 +177,6 @@ class Techniques extends CI_Controller
     {
         $media_list = $this->Techniques_model->getMediaList();
         echo json_encode($media_list);
-
     }
 
     /*
@@ -266,10 +265,10 @@ class Techniques extends CI_Controller
         }
 
         // If a new metadata value was selected
-        if (isset($_POST['metadata-id']) && $_POST['metadata-id'] != '-1') {
-            $metadata_id = $_POST['metadata-id'];
+        if (isset($_POST['metadata_ids_selected_hidden'])) {
+            $metadata_ids = $_POST['metadata_ids_selected_hidden'];
         }else {
-            $metadata_id = '';
+            $metadata_ids = '';
         }
 
         // If a new chemical elements set was selected
@@ -306,8 +305,10 @@ class Techniques extends CI_Controller
             $this->load->view('Techniques/index');
 
             // Next, update metadata
-            if ($metadata_id != '') {
-                $this->Techniques_model->updateMetadata($id, $metadata_id); 
+            if ($metadata_ids != '') {
+                foreach (explode(",", $metadata_ids) as $metadata_id) {
+                    $this->Techniques_model->updateMetadata($id, $metadata_id); 
+                }
             }
 
             // Next, update set of chemical elements associated with this technique
