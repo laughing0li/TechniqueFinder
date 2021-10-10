@@ -434,6 +434,15 @@ class Techniques_model extends MY_Model
         $data = [ 'technique_metadata_id' => $metadata_id, 'technique_id' => $x ];
         $this->db->replace('technique_metadata_link', $data);
     }  
+
+    /*
+     * Removes all metadata for a technique
+     * @param $x technique id
+     */
+    function deleteMetadata($x) {
+        $this->db->where('technique_id', $x);
+        $this->db->delete('technique_metadata_link');
+    }
     
 
     /*
@@ -947,7 +956,7 @@ class Techniques_model extends MY_Model
      * Get option choices for a technique in Admin page
      *
      * @param $x technique id
-     * @returns rows with 'name', 'type' and 'science' keys
+     * @return rows with 'name', 'type' and 'science' keys
      */
     function getOptionChoices($x){
         return $this->db->query(
@@ -967,14 +976,25 @@ class Techniques_model extends MY_Model
      * Get metadata for a technique in Admin page
      *
      * @param $x technique id
-     * @returns rows with 'category' 'category_type', 'analysis_type' keys
+     * @return string with comma separated list of technique_metadata 'id'
      */
-    function getMetadata($x) {
-        return $this->db->query(
-            'select tv.category, tv.category_type, tv.analysis_type'
-            .' from technique_view tv'
-            .' where tv.technique_id =?',
-            array($x))->result();
+    function getMetadataItems($x) {
+        $item_list = $this->db->query(
+            'select tm.id'
+            .' from technique_metadata_link tml, technique_metadata tm'
+            .' where tml.technique_metadata_id = tm.id and tml.technique_id =?', array($x))->result_array();
+        $metadata_items = "";
+        $count = 0;
+        foreach($item_list as $each_item){
+            if($count == 0){
+                $metadata_items .= $each_item['id'];
+                $count++;
+            }
+            else{
+                $metadata_items .= "," . $each_item['id'];
+            }
+        }
+        return($metadata_items);
     }
 
 
@@ -982,7 +1002,7 @@ class Techniques_model extends MY_Model
      * Get elements for a technique in Admin page
      *
      * @param $x technique id
-     * @returns rows with 'name' and 'symbol' keys
+     * @return rows with 'name' and 'symbol' keys
      */
     function getElements($x) {
         return $this->db->query(

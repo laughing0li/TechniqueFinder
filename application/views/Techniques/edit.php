@@ -593,18 +593,46 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font-orange">Metadata</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
-                <input type="hidden" id="metadata-id" name="metadata-id" value="-1"/>
-                <select id='metadata-selector'>
-                <?php  if (isset($selected_metadata) && sizeof($selected_metadata) > 0) { 
-                    /* Selected value is current metadata value */
-                    echo "<option selected value='-1'>CATEGORY:&nbsp;" . $selected_metadata[0]->category . "&nbsp;&nbsp;&nbsp;CATEGORY TYPE:&nbsp;" . $selected_metadata[0]->category_type . "&nbsp;&nbsp;&nbsp;ANALYSIS TYPE:&nbsp;" . $selected_metadata[0]->analysis_type . "</option>";
-                    }
-                    /*  Other possible selections */
-                    foreach ($metadata_list as $md) {
-                          echo "<option value='". $md->id . "'>CATEGORY:&nbsp;". $md->category . "&nbsp;&nbsp;&nbsp;CATEGORY TYPE:&nbsp;" . $md->category_type . "&nbsp;&nbsp;&nbsp;ANALYSIS TYPE:&nbsp;" . $md->analysis_type . "</option>";
-                    }
-                ?>
-                </select>
+                <div>
+                    <select id="metadata-selector">
+                    <?php
+                        /*  Possible metadata selections */
+                        foreach ($metadata_list as $md) {
+                              echo "<option value='". $md->id . "'>CATEGORY:&nbsp;". $md->category . "&nbsp;&nbsp;&nbsp;CATEGORY TYPE:&nbsp;" . $md->category_type . "&nbsp;&nbsp;&nbsp;ANALYSIS TYPE:&nbsp;" . $md->analysis_type . "</option>";
+                        }
+                    ?>
+                    </select>
+                    <!-- A button to add the new metadata line -->
+                    <button type="button" id="add-metadata" class="tf-button">
+                        <span class="tf-database-add"></span>
+                        <span class="tf-font create-technique-dialog-button">Add Metadata</span>
+                    </button>
+                </div>
+                <!-- A table to display current metadata -->
+                <div class="table-responsive tf-font tf-font-size">
+                    <input type="hidden" id="metadata_items_selected_hidden" name="metadata_items_selected_hidden" value=""/>
+                    <table id="static_data" class="table table-bordered table-striped" style="width: 70%;float: left;">
+                        <thead>
+                        <tr class="table-headings tf-font-11 tf-font">
+                            <td>
+                               Category
+                            </td>
+                            <td>
+                               Category Type
+                            </td>
+                            <td>
+                               Analysis Type
+                            </td>
+                            <td>
+                               Action
+                            </td>
+                        </tr>
+                        </thead>
+                        <tbody id="table_metadata_selected">
+                        </tbody>
+                    </table>
+                </div>
+
             </td>
         </tr>
 
@@ -914,7 +942,7 @@ if ($this->session->flashdata('error-warning-message')) {
     var caseSelected=[];
     var referencesSelected=[];
     var localisationsSelected=[];
-
+    var metadataSelected=[];
 
     /////////////////////////////////////////////////////////////////////---POSTBACKS FROM PHP---///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -988,11 +1016,20 @@ if ($this->session->flashdata('error-warning-message')) {
     localisationsSelected = []
     <?php } ?>
 
+    // Postback metadata list
+    <?php if (isset($metadata_items_selected_hidden) && $metadata_items_selected_hidden != '') { ?>
+        metadataSelected = [<?php echo $metadata_items_selected_hidden; ?>];
+        document.getElementById('metadata_items_selected_hidden').value = metadataSelected;
+
+    <?php } else { ?>
+        metadataSelected = [];
+    <?php } ?>
     
 
     ////////////////////-------BUILD TABLES FROM POSTBACK-------////////////////////////////////////////
 
 
+    // Upon page refresh populate media table with selected rows
     if(mediaSelected != []){
         <?php foreach ($media_list as $media_item){?>
         if(mediaSelected == <?php echo $media_item->id;?>)
@@ -1044,6 +1081,7 @@ if ($this->session->flashdata('error-warning-message')) {
         <?php }?>
     }
 
+    // Upon page refresh populate contacts table with selected rows
     if(contactSelected != []){
         <?php foreach ($contact_list as $contact_item){?>
         if(contactSelected.includes(<?php echo $contact_item['id'];?>)){
@@ -1060,6 +1098,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
 
 
+    // Upon page refresh populate cases table with selected rows
     if(caseSelected != []){
         <?php foreach ($case_list as $case_item){?>
         if(caseSelected.includes(<?php echo $case_item->id;?>)){
@@ -1075,6 +1114,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
     }
 
+    // Upon page refresh populate references table with selected rows
     if(referencesSelected != []){
         <?php foreach ($references_list as $references_item){?>
         if(referencesSelected.includes(<?php echo $references_item->id;?>)){
@@ -1089,7 +1129,8 @@ if ($this->session->flashdata('error-warning-message')) {
 
     }
 
-    if(localisationsSelected != []){
+    // Upon page refresh populate localisation table with selected rows
+    if (localisationsSelected != []){
        <?php foreach ($localisations_list as $localisations_item){?>
         if(localisationsSelected.includes(<?php echo $localisations_item['id'];?>)){
                 $('#table_localisations_selected').append("<tr class=\"table-background-color-techniques\" id=\"<?php echo $localisations_item['id']; ?>\">"+
@@ -1101,8 +1142,25 @@ if ($this->session->flashdata('error-warning-message')) {
             }
 
         <?php }?>
-
     }
+
+    // Upon page refresh populate metadata table with selected rows
+    if (metadataSelected != []){
+       <?php foreach ($metadata_list as $metadata_item) { ?>
+        if (metadataSelected.includes(<?php echo $metadata_item->id;?>)){
+                $('#table_metadata_selected').append(
+                "<tr class='table-background-color-techniques' id='<?php echo $metadata_item->id; ?>'>"+
+                    "<td><?php echo $metadata_item->category; ?></td>" +
+                    "<td><?php echo $metadata_item->category_type; ?></td>" +
+                    "<td><?php echo $metadata_item->analysis_type; ?></td>" +
+                    "<td><button type='button' id='metadata-selected-item' metadata_id='" + <?php echo $metadata_item->id; ?> + "' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
+                 "</tr>");
+            }
+
+        <?php }?>
+    }
+
+
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1603,7 +1661,43 @@ if ($this->session->flashdata('error-warning-message')) {
         $(this).parent().parent().remove();
         document.getElementById('case_items_selected_hidden').value = caseSelected
 
-    })
+    });
+
+    // User clicks on button to remove metadata row from the table and form
+    $('body').on('click', '#metadata-selected-item', function() {
+        selectedId = $(this).attr('metadata_id');
+        metadataSelected = metadataSelected.filter(function(value) {
+            return value != selectedId
+        });
+        $(this).parent().parent().remove();
+        document.getElementById('metadata_items_selected_hidden').value = metadataSelected;
+    });
+
+    // Update the metadata table when a set of metadata is added
+    $('body').on('click', '#add-metadata', function() {
+        // Update the table
+        var metadata_id = $("#metadata-selector option:selected").val();
+
+        <?php foreach ($metadata_list as $metadata_item) { ?>
+            if (metadata_id === "<?php echo $metadata_item->id; ?>") {
+                $('#table_metadata_selected').append("<tr class='table-background-color-techniques'>"+
+                                             "<td><?php echo $metadata_item->category; ?></td>" +
+                                             "<td><?php echo $metadata_item->category_type; ?></td>" +
+                                             "<td><?php echo $metadata_item->analysis_type; ?></td>" +
+                                             "<td><button type='button' metadata_id='" + metadata_id + "' id='metadata-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
+                                             "</tr>");
+            }
+        <? } ?>
+
+        // Add new id to 'metadataSelected' and 'metadata_items_selected'
+        var metadata_int = parseInt(metadata_id);
+        if (!metadataSelected.includes(metadata_int)) {
+            metadataSelected.push(parseInt(metadata_int));
+        }
+        $('#metadata_items_selected_hidden').val(metadataSelected); 
+    });
+
+    
 
     //Reference List show and select
     $('#add-references-submit').click(function (e) {

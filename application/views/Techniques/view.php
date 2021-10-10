@@ -397,9 +397,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <td class="tf-font-orange  ">Metadata</td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                             <td class="tf-font tf-font-size input-col">
-                                <div class="" name="metadata"><?php if (isset($selected_metadata)) {
-                                                                    foreach ($selected_metadata as $m) {
-                                                                        echo "<li><b>Category:</b>&nbsp;" . $m->category . "&nbsp;&nbsp;&nbsp;&nbsp;<b>Category Type:</b>&nbsp;" . $m->category_type . "&nbsp;&nbsp;&nbsp;&nbsp;<b>Analysis Type:</b>&nbsp;" . $m->analysis_type . "</li>";
+                                <div class="" name="metadata"><?php if (isset($metadata_items_selected_hidden)) {
+                                                                    $metadata_ids = explode(',', $metadata_items_selected_hidden);
+                                                                    foreach ($metadata_ids as $m_id) {
+                                                                        foreach ($metadata_list as $m) {
+                                                                            if ($m->id === $m_id) {
+                                                                                echo "<li><b>Category:</b>&nbsp;" . $m->category . "&nbsp;&nbsp;&nbsp;&nbsp;<b>Category Type:</b>&nbsp;" . $m->category_type . "&nbsp;&nbsp;&nbsp;&nbsp;<b>Analysis Type:</b>&nbsp;" . $m->analysis_type . "</li>";
+                                                                            }
+                                                                         }
                                                                     }
                                                                 } else {
                                                                     echo "There are no associated Metadata";
@@ -429,41 +434,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <tr>
                             <td>&nbsp;</td>
                         </tr>
-
-
-                        <!-- ASSOCIATED OPTIONS -->
-                        <!-- <tr>
-            <td class="tf-font-orange  ">Associated Options</td>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <div class="" name="associated"><?php if (isset($associated)) {
-                                                    if (isset($associated['biologyArray'])) {
-                                                        if (count($associated['biologyArray']) > 0) {
-                                                            echo "<br><strong>Biology</strong><br>";
-                                                        }
-                                                        foreach ($associated['biologyArray'] as $ba) {
-                                                            echo "<li>" . $ba . "</li>";
-                                                        }
-                                                    }
-                                                    if (isset($associated['physicsArray'])) {
-                                                        if (count($associated['physicsArray']) > 0) {
-                                                            echo "<br><strong>Physics</strong><br>";
-                                                        }
-                                                        foreach ($associated['physicsArray'] as $pa) {
-                                                            echo "<li>" . $pa . "</li>";
-                                                        }
-                                                    }
-                                                } else {
-                                                    echo "There are no associated options.";
-                                                }; ?></div>
-            </td>
-        </tr> -->
-
-
-                        <tr>
-                            <td>&nbsp;</td>
-                        </tr>
-
 
 
                         <tr>

@@ -92,6 +92,7 @@ class Techniques extends CI_Controller
         $data['max'] = $max;
 
         $data['media_list'] = $this->Techniques_model->getTechniqueDataAll();
+        $data['metadata_list'] = $this->Techniques_model->getMetadataList();
 
 
         $data['contacts'] = $this->Techniques_model->getContactsForTechnique($x);
@@ -102,10 +103,9 @@ class Techniques extends CI_Controller
 
 
         $data['selected_option_choices'] = $this->Techniques_model->getOptionChoices($x);
-        $data['selected_metadata'] = $this->Techniques_model->getMetadata($x);
         $data['selected_elements'] = $this->Techniques_model->getElements($x);
 
-        // Get data for Technique
+        // Get data for this  Technique for display in view
 
         $technique_data = $this->Techniques_model->getTechniqueData($x);
         $data['technique_name'] = $technique_data->name;
@@ -134,9 +134,15 @@ class Techniques extends CI_Controller
         $contact_items = $this->Techniques_model->getContactItems($x);
         $getCaseItems = $this->Techniques_model->getCaseItems($x);
         $referenceItems = $this->Techniques_model->getReferencesItems($x);
+        $metadataItems = $this->Techniques_model->getMetadataItems($x);
+        
 
 
-        if(isset($media_items[0]['media_id'])){$media_items = $media_items[0]['media_id'];}else{$media_items='';}
+        if (isset($media_items[0]['media_id'])) {
+            $media_items = $media_items[0]['media_id'];
+        } else {
+            $media_items='';
+        }
 
         // These 'hidden' values are used to display contacts, media etc. 
         // that have already been added to the technique
@@ -146,6 +152,7 @@ class Techniques extends CI_Controller
         $data['contact_items_selected_hidden'] = $contact_items;
         $data['case_items_selected_hidden'] = $getCaseItems;
         $data['references_items_selected_hidden'] = $referenceItems;
+        $data['metadata_items_selected_hidden'] = $metadataItems;
 
         $this->load->view('Techniques/view', $data);
     }
@@ -441,10 +448,10 @@ class Techniques extends CI_Controller
         $getCaseItems = $this->Techniques_model->getCaseItems($x);
         $referenceItems = $this->Techniques_model->getReferencesItems($x);
         $localisationItems = $this->Techniques_model->getLocalisationItems($x);
+        $metadataItems = $this->Techniques_model->getMetadataItems($x);
 
         // Pass the current values for media, contacts, references etc. to the form via vars
         $data['selected_option_choices'] = $this->Techniques_model->getOptionChoices($x);
-        $data['selected_metadata'] = $this->Techniques_model->getMetadata($x);
         $data['selected_elements'] = $this->Techniques_model->getElements($x);
 
 
@@ -462,6 +469,7 @@ class Techniques extends CI_Controller
         $data['case_items_selected_hidden'] = $getCaseItems;
         $data['references_items_selected_hidden'] = $referenceItems;
         $data['localisations_items_selected_hidden'] = $localisationItems;
+        $data['metadata_items_selected_hidden'] = $metadataItems;
          
 
         $this->load->view('Techniques/edit', $data);
@@ -535,11 +543,12 @@ class Techniques extends CI_Controller
         }else {
             $keywords = '';
         }
-        // If a new metadata value was selected
-        if (isset($_POST['metadata-id']) && $_POST['metadata-id'] != '-1') {
-            $metadata_id = $_POST['metadata-id'];
+
+        // Fetch metadata id values
+        if (isset($_POST['metadata_items_selected_hidden'])) {
+            $metadata_ids = $_POST['metadata_items_selected_hidden'];
         }else {
-            $metadata_id = '';
+            $metadata_ids = '';
         }
 
         // If a new chemical elements set was selected
@@ -572,8 +581,17 @@ class Techniques extends CI_Controller
             }
 
             // Update metadata
-            if ($metadata_id != '') {
-                $this->Techniques_model->updateMetadata($x, $metadata_id); 
+            if ($metadata_ids != '') {
+                // Delete all metadata for a technique
+                $this->Techniques_model->deleteMetadata($x);
+                foreach (explode(",", $metadata_ids) as $metadata_id) {
+                    $metadata_list = $this->Techniques_model->getMetadataList();
+                    foreach ($metadata_list as $m) {
+                        if ($metadata_id == $m->id) {
+                            $this->Techniques_model->updateMetadata($x, $metadata_id);
+                        }
+                    }
+                }
             }
 
             // Update set of chemical elements associated with this technique
