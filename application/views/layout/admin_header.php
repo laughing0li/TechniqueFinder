@@ -84,13 +84,14 @@
                                     </div>
                                 </div>
                                 <?php
-                            if ($this->session->userdata('logged_in') == 1) {
-                                echo "<span>You are logged in as </span>";
-                                echo "<span>" . $this->session->userdata('username') . "</span>";
-                                echo "<span>&nbsp;|&nbsp;</span>";
-                                echo '<a class="tf-font-color"  href="' . base_url() . 'login/logout">Logout</a>';
-                            }
-                            ?>
+                                if ($this->session->userdata('auth0__user') != null) {
+                                    echo "<span>Welcome&nbsp</span>";
+                                    echo "<span>" . $this->session->userdata('auth0__user')['nickname'] . "</span>";
+                                    echo "<span>&nbsp;|&nbsp;</span>";
+                                    echo '<a class="tf-font-color"  href="' . base_url() . 'logout">Logout</a>';
+                                    // echo '<a class="tf-font-color"  href="https://dev-68ut2myz.us.auth0.com/v2/logout?client_id=ubyDQgyXX9U4vQSETnCmgzQHB8PLQWEf&returnTo="http://web.local:8080/Portal">Logout</a>';
+                                }
+                                ?>
                             </nav>
                         </div>
                     </div>

@@ -75,15 +75,16 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'root',
-	'database' => 'techfinder',
-	// app engine config
-	// 'hostname' => '/cloudsql/tf-4-agn:australia-southeast1:tfinder',
-    // 'username' => 'root',
-	// 'password' => 'tfinder',
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => 'root',
 	// 'database' => 'techfinder',
+	// app engine config
+	'hostname' => '/cloudsql/tf-4-agn:australia-southeast1:tfinder',
+	// 'hostname' => '/cloudsql/dt-test-326006:australia-southeast1:tfinder',
+    'username' => 'root',
+	'password' => 'tfinder',
+	'database' => 'techfinder',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

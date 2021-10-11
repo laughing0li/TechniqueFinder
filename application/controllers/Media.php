@@ -17,11 +17,9 @@ class Media extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
-        if (! ($this->session->userdata('logged_in')==True))
-        {
-            redirect(base_url().'login/index');
+        if ($this->session->userdata('auth0__user') == null){
+            redirect(base_url() . 'login');
         }
-
         $this->load->model('Media_model');
         $this->media_folder = 'media-dir/';
         $this->max_thumbnail_box = 100;
