@@ -18,16 +18,28 @@ class Techniques_model extends MY_Model
         parent::__construct();
     }
 
+    /**
+     * Return a list of all rows in 'technique' table, ordered by instrument name and model
+     */
     function getAllTechniques(){
         $result = $this->db->order_by('instrument_name ASC, model ASC')->get('technique')->result();
         return $result;
     }
 
+    /**
+     * Return a rows of 'technique' table
+     *
+     * @param x technique_id
+     * @return a row of 'technique' table
+     */
     function getTechniqueData($x){
         $result = $this->db->where('id',$x)->get('technique')->row();
         return $result;
     }
 
+    /**
+     * Return a list of all rows in 'media' table
+     */
     function getMediaList(){
         $result = $this->db->get('media')->result();
         return $result;
@@ -50,16 +62,25 @@ class Techniques_model extends MY_Model
         return $query->result_array();
     }
 
+    /**
+     * Return a list of all rows in 'technique' table
+     */
     function getTechniqueNameList(){
         $result = $this->db->get('technique')->result();
         return $result;
     }
 
+    /**
+     * Return a list of all rows in 'case_list' table
+     */
     function getCaseList(){
         $result = $this->db->get('case_study')->result();
         return $result;
     }
 
+    /**
+     * Return a list of all rows in 'review' table
+     */
     function getReferencesList(){
         $result = $this->db->get('review')->result();
         return $result;
@@ -69,7 +90,7 @@ class Techniques_model extends MY_Model
      * Return a list of all possible kinds of metadata
      */
     function getMetadataList(){
-        return $result = $this->db->distinct()->get('technique_metadata')->result();
+        return $result = $this->db->order_by('category, category_type, analysis_type')->distinct()->get('technique_metadata')->result();
     }
 
     /**
@@ -84,13 +105,17 @@ class Techniques_model extends MY_Model
      * array('id' => '3', 'name' => 'Blah Scanner', 'model'=> 'Blah III', manufacturer => 'Acme Widget', 'symbols' => 'Mg,Si,Be')
      */
     function getElementsList() {
-        return $this->db->query("select es.id, t.name, t.model, t.manufacturer, group_concat(e.symbol) as symbols from elements e, elements_set es, elements_elements_set ees, technique t where t.elements_set_id = es.id and ees.elements_id = e.id and ees.elements_set_id = es.id group by id, name, model, manufacturer")->result_array();
+        return $this->db->query("select es.id, t.name, t.model, t.manufacturer, group_concat(e.symbol) as symbols from elements e, elements_set es, elements_elements_set ees, technique t where t.elements_set_id = es.id and ees.elements_id = e.id and ees.elements_set_id = es.id group by id, name, model, manufacturer order by name, model, manufacturer")->result_array();
     }
 
 
-    function save_new_technique($technique_name,$alternative_names,$short_description,$long_description,$keywords,$list_media_items,$output_media_items,$instrument_media_items,$contact_items,$case_studies_list, $references_items, $extras)
+    /**
+     * Saves a new technique into the 'technique' table and all the dependent rows in other tables
+     * Returns the new technique_id
+     */
+    function saveNewTechnique($technique_name,$alternative_names,$short_description,$long_description,$keywords,$list_media_items,$output_media_items,$instrument_media_items,$contact_items,$case_studies_list, $references_items, $extras)
     {
-
+        // Insert a new row in technique table
         $technique_data = array(
             'name' => $technique_name,
             'alternative_names' => $alternative_names,
@@ -99,21 +124,21 @@ class Techniques_model extends MY_Model
             'keywords' => $keywords,
         );
         $technique_data = array_merge($technique_data, $extras);
-
-
         $this->db->insert('technique', $technique_data);
-        $technique_id = $this->db->insert_id();
-        if (strlen($output_media_items) > 0) {
-            $output_list = explode(',',$output_media_items);
 
-            $get_media_items = array('technique_id'=>$technique_id, 'section'=> 'OUTPUT');
+        // Insert LIST media
+        $technique_id = $this->db->insert_id();
+        if (strlen($list_media_items) > 0) {
+            $output_list = explode(',',$list_media_items);
+
+            $get_media_items = array('technique_id'=>$technique_id, 'section'=> 'LIST');
             $existing_media_ids = $this->db->select('media_id')->from('media_in_section')->where($get_media_items)->get();
 
             foreach($output_list as $ol){
                 $where_array = array(
                     'technique_id' => $technique_id,
                     'media_id'=> $ol,
-                    'section' => 'OUTPUT',
+                    'section' => 'LIST',
                 );
                 $this->db->select('*');
                 $this->db->from('media_in_section');
@@ -123,7 +148,7 @@ class Techniques_model extends MY_Model
                 $list_array = array(
                     'technique_id' => $technique_id,
                     'media_id' => $ol,
-                    'section' => 'OUTPUT',
+                    'section' => 'LIST',
                 );
 
                 if (! ($q->num_rows() > 0) )
@@ -144,52 +169,12 @@ class Techniques_model extends MY_Model
             }
         }
 
-        if (strlen($instrument_media_items) > 0) {
-            $instrument_list = explode(',',$instrument_media_items);
-
-            $get_media_items = array('technique_id'=>$technique_id, 'section'=> 'INSTRUMENT');
-            $existing_media_ids = $this->db->select('media_id')->from('media_in_section')->where($get_media_items)->get();
-
-            foreach($instrument_list as $ol){
-                $where_array = array(
-                    'technique_id' => $technique_id,
-                    'media_id'=> $ol,
-                    'section' => 'INSTRUMENT',
-                );
-                $this->db->select('*');
-                $this->db->from('media_in_section');
-                $this->db->where($where_array);
-                $q = $this->db->get();
-
-                $list_array = array(
-                    'technique_id' => $technique_id,
-                    'media_id' => $ol,
-                    'section' => 'INSTRUMENT',
-                );
-
-                if (! ($q->num_rows() > 0) )
-                {
-                    $this->db->set('technique_id', $technique_id)->insert('media_in_section', $list_array);
-                }
-            }
-
-
-            foreach ($existing_media_ids->result_array() as $emi){
-                $delete_array = array('technique_id'=>$technique_id, 'media_id'=>$emi['media_id'],'section'=>'INSTRUMENT');
-                if(!(in_array($emi['media_id'], $instrument_list))){
-                    $this->db->where($delete_array);
-                    $this->db->delete('media_in_section');
-
-                }
-            }
-        }
-
         // New contacts are added here
         if (strlen($contact_items) > 0) {
             $contact_list = explode(',',$contact_items);
 
             // Look for the location ids of the contacts for this technique
-            $existing_contact_ids = $this->db->query("select c.id from contact c, location l, localisation ls where c.location_id = l.id and ls.location_id = l.id and ls.technique_id = '". $x ."';")->result_array();
+            $existing_contact_ids = $this->db->query("select c.id from contact c, location l, localisation ls where c.location_id = l.id and ls.location_id = l.id and ls.technique_id = '". $technique_id ."';")->result_array();
             $exist_contacts = array();
             foreach($existing_contact_ids as $existing_contact) {
                 array_push($exist_contacts, $existing_contact['id']);
@@ -200,7 +185,7 @@ class Techniques_model extends MY_Model
                 if (!in_array($cl, $exist_contacts)) {
                     // Get location id for this contact
                     $location = $this->db->query("select l.id from contact c, location l where c.location_id = l.id and c.id = '". $cl ."';")->row();
-                    $this->db->query("insert into localisation(location_id, technique_id) values(". $location->id .",". $x .");");
+                    $this->db->query("insert into localisation(location_id, technique_id) values(". $location->id .",". $technique_id .");");
                 }
             }
         }
@@ -243,6 +228,7 @@ class Techniques_model extends MY_Model
             }
         }
 
+        // New references are added here
         if (strlen($references_items) > 0) {
             $references_list = explode(',',$references_items);
             $existing_references_ids = $this->db->select('review_id')->from('technique_review')->where('technique_reviews_id',$technique_id)->get();
@@ -292,11 +278,23 @@ class Techniques_model extends MY_Model
         return $query->result();
     }
 
+    /**
+     * Return a list of media_ids from LIST type media items given a technique_id
+     *
+     * @param technique_id
+     * @return list of media_ids
+     */
     function getMediaItems($x){
         $query= $this->db->query("SELECT media_id from media_in_section where technique_id='".$x."' and section='LIST';");
         return $query->result_array();
     }
 
+    /**
+     * Return a text comma separated list of media_ids from OUTPUT type media items given a technique_id
+     *
+     * @param technique_id
+     * @return list of media_ids
+     */
     function getOutputItems($x){
         $query= $this->db->query("SELECT media_id as output_id from media_in_section where technique_id='".$x."' and section='OUTPUT';");
         $output_items = "";
@@ -314,6 +312,12 @@ class Techniques_model extends MY_Model
         return($output_items);
     }
 
+    /**
+     * Return a text comma separated list of media_ids from INSTRUMENT type media items given a technique_id
+     *
+     * @param technique_id
+     * @return list of media_ids
+     */
     function getInstrumentItems($x){
         $query= $this->db->query("SELECT media_id as instrument_id from media_in_section where technique_id='".$x."' and section='INSTRUMENT';");
         $instrument_items = "";
@@ -422,22 +426,31 @@ class Techniques_model extends MY_Model
     }
 
     /*
-     * Update metadata table for a technique
+     * Save new metadata for a technique or replace the old one
      * @param $x technique id
      * @param $metadata_id technique_metadata_id value
      */
     function updateMetadata($x, $metadata_id) {
-        $this->db->set('technique_metadata_id', $metadata_id); 
-        $this->db->where('technique_id', $x);
-        $this->db->update('technique_metadata_link');
+        $data = [ 'technique_metadata_id' => $metadata_id, 'technique_id' => $x ];
+        $this->db->replace('technique_metadata_link', $data);
     }  
+
+    /*
+     * Removes all metadata for a technique
+     * @param $x technique id
+     */
+    function deleteMetadata($x) {
+        $this->db->where('technique_id', $x);
+        $this->db->delete('technique_metadata_link');
+    }
+    
 
     /*
      * Update the set of chemical elements associated with a technique
      * @param $x 'technique' id
      * @param $elementsset_id 'elements_set' id value
      */
-    function updateElementsset($x, $elementsset_id) {
+    function updateElementsSet($x, $elementsset_id) {
         if ($elementsset_id == '0') {
             $this->db->set('elements_set_id', NULL);
         } else {
@@ -448,7 +461,7 @@ class Techniques_model extends MY_Model
     }  
 
     /*
-     * Update the options
+     * Update the options, inserting or updating as required
      * @param $x 'technique' id
      * @param $oc1 'option_choice' id  for step1
      * @param $oc2 'option_choice' id  for step2
@@ -476,7 +489,7 @@ class Techniques_model extends MY_Model
      * This is called after a technique is edited in the admin page
      * @param $x is the technique id
      */
-    function update_technique($x,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items, $extras){
+    function updateTechnique($x,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items, $extras){
         $technique_data = array(
             'name' => $technique_name,
             'alternative_names' => $alternative_names,
@@ -785,13 +798,21 @@ class Techniques_model extends MY_Model
 
     }
 
+    /**
+     * Deletes technique and associated tables
+     * @param $x technique_id
+     * @return true if successful
+     */
     function deleteTechnique($x){
+        // Remove all rows in other tables that point to this technique
         $this->db->delete('technique_review',array('technique_reviews_id'=>$x));
         $this->db->delete('technique_contact',array('technique_contacts_id'=>$x));
         $this->db->delete('media_in_section',array('technique_id'=>$x));
         $this->db->delete('option_combination',array('technique_id'=>$x));
-
-        $this->db->delete('technique',array('id'=>$x));
+        $this->db->delete('localisation',array('technique_id'=>$x));
+        $this->db->delete('technique_metadata_link',array('technique_id'=>$x));
+        // Remove row from 'technique' table
+        return $this->db->delete('technique',array('id'=>$x));
     }
 
     function getKeywordList() {
@@ -935,7 +956,7 @@ class Techniques_model extends MY_Model
      * Get option choices for a technique in Admin page
      *
      * @param $x technique id
-     * @returns rows with 'name', 'type' and 'science' keys
+     * @return rows with 'name', 'type' and 'science' keys
      */
     function getOptionChoices($x){
         return $this->db->query(
@@ -955,14 +976,25 @@ class Techniques_model extends MY_Model
      * Get metadata for a technique in Admin page
      *
      * @param $x technique id
-     * @returns rows with 'category' 'category_type', 'analysis_type' keys
+     * @return string with comma separated list of technique_metadata 'id'
      */
-    function getMetadata($x) {
-        return $this->db->query(
-            'select tv.category, tv.category_type, tv.analysis_type'
-            .' from technique_view tv'
-            .' where tv.technique_id =?',
-            array($x))->result();
+    function getMetadataItems($x) {
+        $item_list = $this->db->query(
+            'select tm.id'
+            .' from technique_metadata_link tml, technique_metadata tm'
+            .' where tml.technique_metadata_id = tm.id and tml.technique_id =?', array($x))->result_array();
+        $metadata_items = "";
+        $count = 0;
+        foreach($item_list as $each_item){
+            if($count == 0){
+                $metadata_items .= $each_item['id'];
+                $count++;
+            }
+            else{
+                $metadata_items .= "," . $each_item['id'];
+            }
+        }
+        return($metadata_items);
     }
 
 
@@ -970,7 +1002,7 @@ class Techniques_model extends MY_Model
      * Get elements for a technique in Admin page
      *
      * @param $x technique id
-     * @returns rows with 'name' and 'symbol' keys
+     * @return rows with 'name' and 'symbol' keys
      */
     function getElements($x) {
         return $this->db->query(
