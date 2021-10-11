@@ -1008,7 +1008,7 @@ if ($this->session->flashdata('error-warning-message')) {
     //Postback Localisations List
     <?php if(isset($localisations_items_selected_hidden) && $localisations_items_selected_hidden != ''
                     && !empty($localisations_items_selected_hidden[0])) { ?>
-    localisationsSelected = [<?php echo $localisations_items_selected_hidden[0]['location_id']; ?>];
+    localisationsSelected = [<?php echo $localisations_items_selected_hidden[0]['id']; ?>];
     document.getElementById('localisations_items_selected_hidden').value = localisationsSelected
 
     <?php }

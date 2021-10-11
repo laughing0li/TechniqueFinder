@@ -277,11 +277,7 @@ class Portal extends CI_Controller {
         $instrumentType =  $theTechnique->instrument_name;
         $this->load->view('Portal/geochem_analysis_view',
             array(
-                'theTechnique' => $theTechnique,
-                'theContacts' => $this->Techniques_model->getContactsForTechnique($id),
-                'localisationItems' => $this->Techniques_model->getLocalisationItems($id),
-                'locationItems' => $this->Techniques_model->getLocationItems($id),
-                'elementItems' => $this->Elements_model->getAllElementsByInstrumentType($instrumentType)
+                'theTechnique' => $theTechnique
             )
         );
     }
@@ -319,7 +315,6 @@ class Portal extends CI_Controller {
                 'references' => $this->Techniques_model->getReferencesForTechnique($id),
                 'outputExamples' => $this->Techniques_model->getMediasForTechniqueSection($id,'OUTPUT'),
                 'instrumentExamples' => $this->Techniques_model->getMediasForTechniqueSection($id,'INSTRUMENT'),
-                'localisationItems' => $this->Techniques_model->getLocalisationItems($id),
                 'locationItems' => $this->Techniques_model->getLocationItems($id)
             )
         );

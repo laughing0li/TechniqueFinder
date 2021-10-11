@@ -96,6 +96,7 @@ class Techniques extends CI_Controller
 
 
         $data['contacts'] = $this->Techniques_model->getContactsForTechnique($x);
+        $data['localisations'] = $this->Techniques_model->getLocalisationItems($x);
         $data['case'] = $this->Techniques_model->getTechniqueCase($x);
 
         $data['references'] = $this->Techniques_model->getTechniqueReferences($x);
@@ -260,6 +261,12 @@ class Techniques extends CI_Controller
             $references_items = "";
         }
 
+        if (isset($_POST['localisations_items_selected_hidden'])) {
+            $localisations_ids = $_POST['localisations_items_selected_hidden'];
+        }else {
+            $localisations_ids = "";
+        }
+
         if (isset($_POST['alternative_names'])) {
             $alternative_names = $_POST['alternative_names'];
         }else{
@@ -344,6 +351,8 @@ class Techniques extends CI_Controller
             $data['contact_list'] = $this->Techniques_model->getContactList();
             $data['case_list'] = $case_list = $this->Techniques_model->getCaseList();
             $data['references_list'] = $this->Techniques_model->getReferencesList();
+            $data['localisations_list'] = $this->Techniques_model->getLocalisationList();
+            $data['metadata_list'] = $this->Techniques_model->getMetadataList();
 
             // Assign excess parameters
             foreach ($input_names as $input_name) {
@@ -370,6 +379,14 @@ class Techniques extends CI_Controller
 
             if (isset($_POST['references_items_selected_hidden'])) {
                 $data['references_items_selected_hidden'] = $_POST['references_items_selected_hidden'];
+            }
+
+            if (isset($_POST['localisations_items_selected_hidden'])) {
+                $data['localisations_items_selected_hidden'] = $_POST['localisations_items_selected_hidden'];
+            }
+
+            if (isset($_POST['metadata_ids_selected_hidden'])) {
+                $data['metadata_ids_selected_hidden'] = $_POST['metadata_ids_selected_hidden'];
             }
 
             $this->session->set_flashdata('error-warning-message', validation_errors());

@@ -353,17 +353,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                         <!-- APPLICATIONS & AGE -->
                         <tr>
-                            <td class="tf-font-orange  ">Applications & Age</td>
+                            <td class="tf-font-orange  ">Localisations: Applications & Age</td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                             <td class="tf-font tf-font-size input-col">
-                                <div class="" name="applications"><?php if (isset($contacts)) {
-                                                                        foreach ($contacts as $c) {
-                                                                            echo "<li><b>Year Commissioned:</b>&nbsp;" . $c->yr_commissioned . "</li>";
-                                                                            echo "<li><b>Applications:</b>&nbsp;" . $c->applications . "</li>";
+                                <div class="" name="applications"><?php if (isset($localisations)) {
+                                                                        foreach ($localisations as $l) {
+                                                                            echo "<li><b>Year Commissioned:</b>&nbsp;" . $l['yr_commissioned'] . "</li>";
+                                                                            echo "<li><b>Applications:</b>&nbsp;" . $l['applications'] . "</li>";
                                                                             echo "</br>";
                                                                         }
                                                                     } else {
-                                                                        echo "There are no associated Applications";
+                                                                        echo "There are no associated localisations";
                                                                     } ?></div>
                             </td>
                         </tr>
