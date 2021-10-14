@@ -49,7 +49,7 @@ class Techniques_model extends MY_Model
      * Return a list of localisation id, year commissioned, applications, center_name, state, instiution 
      */
     function getLocalisationList() {
-        $result = $this->db->query('select ls.id, yr_commissioned, applications, center_name, state, institution from localisation ls, location lc where ls.location_id = lc.id')->result_array();
+        $result = $this->db->query('select ls.id, ls.yr_commissioned, ls.applications, lc.center_name, lc.state, lc.institution from localisation ls, location lc where ls.location_id = lc.id')->result_array();
         return $result;
     }
     
@@ -395,13 +395,13 @@ class Techniques_model extends MY_Model
 
 
     /*
-     * Returns a localisation an array of arrays with keys 'location_id', 'yr_commissioned' & 'applications'
+     * Returns a localisation an array of arrays with keys 'id', 'location_id', 'yr_commissioned' & 'applications'
      * given a technique_id, else empty array if not found
      *
      * @param $technique_id
      */
     function getLocalisationItems($technique_id) {
-        $query = $this->db->query("SELECT l.location_id, l.yr_commissioned, l.applications from localisation l where technique_id=".$technique_id.";");
+        $query = $this->db->query("SELECT id, location_id, yr_commissioned, applications from localisation where technique_id=".$technique_id.";");
         $ret_list = $query->result_array();
         return $ret_list;
     }
@@ -414,15 +414,9 @@ class Techniques_model extends MY_Model
      * @param $technique_id
      */
     function getLocationItems($technique_id) {
-        $query = $this->db->query("SELECT location.center_name, location.institution, location.address, location.state, contact.email, contact.telephone, contact.name from location, localisation, contact where location.id = localisation.location_id and localisation.technique_id = ".$technique_id." and contact.location_id = location.id;");
-        $item_list = $query->result_array();
-        $ret_list = array();
-        foreach($item_list as $item) {
-            $line = array();
-            array_push($line, $item['center_name'], $item['institution'], $item['address'], $item['state'], $item['email'], $item['telephone'], $item['name']);
-            array_push($ret_list, $line);
-        }
-        return($ret_list);
+        $query = $this->db->query("SELECT lc.center_name, lc.institution, lc.address, lc.state, c.email, c.telephone, c.name, ls.yr_commissioned, ls.applications from location lc, localisation ls, contact c where lc.id = ls.location_id and ls.technique_id = ".$technique_id." and c.location_id = lc.id;");
+        $ret_list = $query->result_array();
+        return $ret_list;
     }
 
     /*

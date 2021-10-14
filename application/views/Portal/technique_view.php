@@ -31,20 +31,22 @@ $this->load->view('layout/portal_header.php'); ?>
                         <div id="content" class="container" style="margin: 60px 0 140px;">
                             <div class='row card-group'>
                                 <?php
-                                foreach ($localisationItems as $key => $localisation) {
+                                foreach ($locationItems as $key => $location) {
                                     echo "<div class='col-lg-6' style='margin: auto;' > ";
                                     echo "<div class='card h-100'>";
-                                    echo "<div style='background-color: #ED5D4A' class='card-header text-white'>" . $locationItems[$key][0] . " at " . $locationItems[$key][1] . "</div>";
+                                    echo "<div style='background-color: #ED5D4A' class='card-header text-white'>" . $location['center_name'] . " at " . $location['institution'] . "</div>";
                                     echo "<div class='card-body'>";
                                     echo "<p class='card-text'>Applications: ";
-                                    foreach (explode(",", trim($localisation['applications'], "[]")) as $application) {
+                                    foreach (explode(",", trim($location['applications'], "[]")) as $application) {
                                         echo $application . ";&nbsp&nbsp";
                                     }
                                     echo "</p>";
-                                    echo "<p class='card-text'>Year Commissioned: " . $localisation['yr_commissioned'] . "</p>";
-                                    echo "<p class='card-text'>Address: " . $locationItems[$key][2] . "</p>";
-                                    echo "<p class='card-text'>State: " . $locationItems[$key][3] . "</p>";
-                                    echo "<p class='card-text'>Contact: " . $locationItems[$key][4] . "</p>";
+                                    echo "<p class='card-text'>Year Commissioned: " . $location['yr_commissioned'] . "</p>";
+                                    echo "<p class='card-text'>Address: " . $location['address'] . "</p>";
+                                    echo "<p class='card-text'>State: " . $location['state'] . "</p>";
+                                    echo "<p class='card-text'>Contact: " . $location['name'] . "</p>";
+                                    echo "<p class='card-text'>Telephone: " . $location['telephone'] . "</p>";
+                                    echo "<p class='card-text'>Email: " . $location['email'] . "</p>";
                                     echo "<table class='table table-striped'>";
                                     echo "<thead>";
                                     echo "<tr style='color: #282572;font-size:14px'>";
