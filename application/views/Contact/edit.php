@@ -31,7 +31,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="nav tf-navbar">
                         <button class="btn" onclick="window.location='<?php echo base_url(); ?>TechniqueFinder/index'">
                             <span class="home-icon">&nbsp;</span>
-                            <a class="tf-font-orange" style="">Home</a>
+                            <a class="tf-font-orange" style="">Admin Home</a>
                         </button>
                         <button class="btn" onclick="window.location='<?php echo base_url(); ?>Contact/index'">
                             <span class="tf-database-table">&nbsp;</span>
