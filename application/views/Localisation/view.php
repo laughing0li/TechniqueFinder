@@ -42,7 +42,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="tf-background-color">
                         <table style="text-align: left;display: block; clear: both;">
                             <tr style="width:50em;">
-                                <td class="tf-font-orange">Title</td>
+                                <td class="tf-font-orange">Year Commissioned</td>
                                 <td>&nbsp;&nbsp;</td>
                                 <td class="tf-font tf-font-size">
                                     <?php
@@ -54,12 +54,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 </td>
 
                             </tr>
-
                             <tr>
                                 <td>&nbsp;</td>
                             </tr>
+
                             <tr style="width:50em;">
-                                <td class="tf-font-orange">Name</td>
+                                <td class="tf-font-orange">Applications</td>
                                 <td>&nbsp;&nbsp;</td>
                                 <td class="tf-font tf-font-size">
                                     <?php
@@ -75,6 +75,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <td>&nbsp;</td>
                             </tr>
 
+                            <tr style="width:50em;">
+                                <td class="tf-font-orange">Centre Name</td>
+                                <td>&nbsp;&nbsp;</td>
+                                <td class="tf-font tf-font-size">
+                                    <?php
+                                    if (isset($data['center_name'])) {
+                                        echo $data['centre_name'];
+                                    }
+                                    ?>
+
+                                </td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
                         </table>
                     </div>
 

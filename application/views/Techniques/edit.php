@@ -453,6 +453,9 @@ if ($this->session->flashdata('error-warning-message')) {
                                 Name
                             </td>
                             <td>
+                                Centre Name
+                            </td>
+                            <td>
                                 Institution
                             </td>
                             <td>
@@ -489,7 +492,7 @@ if ($this->session->flashdata('error-warning-message')) {
                         <thead>
                         <tr class="table-headings tf-font-11 tf-font">
                             <td>
-                                Institution
+                                Centre Name
                             </td>
                             <td>
                                 Applications
@@ -529,7 +532,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <td class="tf-font tf-font-size input-col">
                 <div>
                     <!-- A pair of selectors to set the new option choices -->
-                    Step 1:
+                    Step 1
                     <select id="option-choice1-select">
                     <option selected value="-1">No valid choice</option>
                     <? foreach($option_choices_list as $option) {
@@ -539,7 +542,7 @@ if ($this->session->flashdata('error-warning-message')) {
                         }
                     ?>
                     </select>
-                    &nbsp;&nbsp;Step 2:
+                    &nbsp;&nbsp;Step 2
                     <select id="option-choice2-select">
                     <option selected value="-1">No valid choice</option>
                     <? foreach($option_choices_list as $option) {
@@ -842,6 +845,7 @@ if ($this->session->flashdata('error-warning-message')) {
         <tr class="tf-font-11 tf-font table-headings">
             <td></td>
             <td style="text-align: center; font-weight: bold; ">Name</td>
+            <td style="text-align: center; font-weight: bold;">Centre Name</td>
             <td style="text-align: center; font-weight: bold;">Institution</td>
         </tr>
         </thead>
@@ -900,7 +904,7 @@ if ($this->session->flashdata('error-warning-message')) {
         <thead>
         <tr class="tf-font-11 tf-font table-headings">
             <td></td>
-            <td style="text-align: center; font-weight: bold; ">Institution</td>
+            <td style="text-align: center; font-weight: bold; ">Centre Name</td>
             <td style="text-align: center; font-weight: bold;">Applications</td>
             <td style="text-align: center; font-weight: bold; ">Year Commissioned</td>
         </tr>
@@ -1088,6 +1092,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
             $('#table_contacts_selected').append("<tr class=\"table-background-color-techniques\" id=\"<?php echo $contact_item['id'];?>\">"+
                 "<td><?php echo $contact_item['name']?></td>" +
+                "<td><?php echo $contact_item['center_name']?></td>" +
                 "<td><?php echo $contact_item['institution']?></td>" +
                 "<td><button type='button' id='contact-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
                 "</tr>");
@@ -1134,7 +1139,7 @@ if ($this->session->flashdata('error-warning-message')) {
        <?php foreach ($localisations_list as $localisations_item){?>
         if(localisationsSelected.includes(<?php echo $localisations_item['id'];?>)){
                 $('#table_localisations_selected').append("<tr class=\"table-background-color-techniques\" id=\"<?php echo $localisations_item['id']; ?>\">"+
-                    "<td><?php echo $localisations_item['institution']; ?></td>" +
+                    "<td><?php echo $localisations_item['center_name']; ?></td>" +
                     "<td><?php echo str_replace('"', '', $localisations_item['applications']); ?></td>" +
                     "<td><?php echo $localisations_item['yr_commissioned']; ?></td>" +
                     "<td><button type='button' id='localisations-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
@@ -1429,7 +1434,7 @@ if ($this->session->flashdata('error-warning-message')) {
             if(!localisationsSelected.includes(<?php echo $localisations_item['id']?>)) {
                 $('#localisations-table').append('<tr class="table-background-color-techniques">' +
                     '<td><input type=\'checkbox\' name=\'localisation\' value=\'<?php echo $localisations_item['id']; ?>\'/></td>' +
-                    '<td><?php echo $localisations_item["institution"]; ?></td>' +
+                    '<td><?php echo $localisations_item["center_name"]; ?></td>' +
                     '<td><?php echo str_replace("\"", "", $localisations_item["applications"]); ?></td>' + 
                     '<td><?php echo $localisations_item["yr_commissioned"];?></td>' +
                     '</tr>');
@@ -1474,7 +1479,7 @@ if ($this->session->flashdata('error-warning-message')) {
                         if(element == <?php echo $localisations_item['id'];?>)
                         {
                             $('#table_localisations_selected').append("<tr class=\"table-background-color-techniques\" id='"+ element + "'>"+
-                                "<td><?php echo $localisations_item['institution'];?></td>" +
+                                "<td><?php echo $localisations_item['center_name'];?></td>" +
                                 "<td><?php echo str_replace('"', '', $localisations_item['applications']); ?></td>" +
                                 "<td><?php echo $localisations_item['yr_commissioned'];?></td>" + 
                                 "<td><button type='button' id='localisations-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
@@ -1513,6 +1518,7 @@ if ($this->session->flashdata('error-warning-message')) {
                 $('#contacts-table').append('<tr class="table-background-color-techniques">' +
                     '<td><input type=\'checkbox\' name=\'contact\' value=\'<?php echo $contact_item['id']; ?>\'/></td>' +
                     "<td><?php echo $contact_item['name'];?></td>" +
+                    '<td><?php echo $contact_item['center_name']; ?></td>' +
                     '<td><?php echo $contact_item['institution']; ?></td>' +
                     '</tr>');
             }
@@ -1560,6 +1566,7 @@ if ($this->session->flashdata('error-warning-message')) {
                         {
                             $('#table_contacts_selected').append("<tr class=\"table-background-color-techniques\" id='"+ element + "'>"+
                                 "<td><?php echo $contact_item['name'];?></td>" +
+                                "<td><?php echo $contact_item['center_name'];?></td>" +
                                 "<td><?php echo $contact_item['institution'];?></td>" +
                                 "<td><button type='button' id='contact-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
                                 "</tr>");
