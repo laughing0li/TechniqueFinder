@@ -47,6 +47,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <span class="tf-database-table">&nbsp;</span>
                             <a class="tf-font-orange" style="text-decoration: none;">Technique List</a>
                         </button>
+                        <div class="my-2">
+    <span class="tf-font-orange">&nbsp;&nbsp;Note: * - indicates mandatory fields, these fields must contain text</span>
+                        </div>
                     </div>
 
 
@@ -70,7 +73,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                 <!-- NAME -->
                                 <tr>
-                                    <td class="tf-font-orange" style="position: absolute;">Name</td>
+                                    <td class="tf-font-orange" style="position: absolute;">Name *</td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td class="tf-font tf-font-size input-col">
                                         <textarea class="tf-input-small" name="technique_name"><?php if (isset($technique_name)) {
@@ -100,7 +103,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                 <!-- INSTRUMENT NAME -->
                                 <tr>
-                                    <td class="tf-font-orange" style="position: absolute;">Instrument Name</td>
+                                    <td class="tf-font-orange" style="position: absolute;">Instrument Name *</td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td class="tf-font tf-font-size input-col">
                                         <textarea class="tf-input-small" name="instrument_name"><?php if (isset($instrument_name)) {
@@ -115,7 +118,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                 <!-- MODEL -->
                                 <tr>
-                                    <td class="tf-font-orange" style="position: absolute;">Model</td>
+                                    <td class="tf-font-orange" style="position: absolute;">Model *</td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td class="tf-font tf-font-size input-col">
                                         <textarea class="tf-input-small" name="model"><?php if (isset($model)) {
@@ -130,7 +133,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                 <!-- MANUFACTURER -->
                                 <tr>
-                                    <td class="tf-font-orange" style="position: absolute;">Manufacturer</td>
+                                    <td class="tf-font-orange" style="position: absolute;">Manufacturer *</td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td class="tf-font tf-font-size input-col">
                                         <textarea class="tf-input-small" name="manufacturer"><?php if (isset($manufacturer)) {
@@ -271,7 +274,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                 <!-- SUMMARY -->
                                 <tr>
-                                    <td class="tf-font-orange">Summary</td>
+                                    <td class="tf-font-orange">Summary *</td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td class="tf-font tf-font-size input-col">
                                         <textarea name="short_description" class="ckeditor" id="short_description">
@@ -287,7 +290,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                 <!-- DESCRIPTION -->
                                 <tr>
-                                    <td class="tf-font-orange">Long Description</td>
+                                    <td class="tf-font-orange">Long Description *</td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td class="tf-font tf-font-size input-col">
                                         <textarea name="long_description" class="ckeditor" id="ckeditor"><?php if (isset($long_description)) {

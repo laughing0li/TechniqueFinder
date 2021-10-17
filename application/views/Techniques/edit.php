@@ -57,6 +57,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <span class="tf-database-table">&nbsp;</span>
         <a class="tf-font-orange" style="text-decoration: none;">Technique List</a>
     </button>
+    <div class="my-2">
+        <span class="tf-font-orange">&nbsp;&nbsp;Note: * - indicates mandatory fields, these fields must contain text</span>
+    </div>
 </div>
 
 
@@ -78,7 +81,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
         <!-- NAME -->
         <tr>
-            <td class="tf-font-orange" style="position: absolute;">Name</td>
+            <td class="tf-font-orange" style="position: absolute;">Name *</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                 <textarea class="tf-input-small"
@@ -107,7 +110,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
         <!-- INSTRUMENT NAME -->
         <tr>
-            <td class="tf-font-orange" style="position: absolute;">Instrument Name</td>
+            <td class="tf-font-orange" style="position: absolute;">Instrument Name *</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                 <textarea class="tf-input-small"
@@ -123,7 +126,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
         <!-- MODEL -->
         <tr>
-            <td class="tf-font-orange" style="position: absolute;">Model</td>
+            <td class="tf-font-orange" style="position: absolute;">Model *</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                 <textarea class="tf-input-small"
@@ -139,7 +142,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
         <!-- MANUFACTURER -->
         <tr>
-            <td class="tf-font-orange" style="position: absolute;">Manufacturer</td>
+            <td class="tf-font-orange" style="position: absolute;">Manufacturer *</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                 <textarea class="tf-input-small"
@@ -283,7 +286,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
         <!-- SUMMARY -->
         <tr>
-            <td class="tf-font-orange">Summary</td>
+            <td class="tf-font-orange">Summary *</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                     <textarea name="short_description" class="ckeditor" id="short_description">
@@ -297,7 +300,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
         <!-- DESCRIPTION -->
         <tr>
-            <td class="tf-font-orange">Long Description</td>
+            <td class="tf-font-orange">Long Description *</td>
             <td>&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                 <textarea name="long_description" class="ckeditor" id="ckeditor"><?php if (isset($long_description)){echo $long_description;};?></textarea>
@@ -755,6 +758,7 @@ if ($this->session->flashdata('error-warning-message')) {
 
     </table>
 </div>
+
 
 <!-- Update button -->
 <button id="update" name="submit" class="tf-button" type="submit">
