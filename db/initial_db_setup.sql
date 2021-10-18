@@ -1821,6 +1821,32 @@ from technique t join technique_metadata_link on t.id = technique_metadata_link.
                join technique_metadata m on m.id = technique_metadata_link.technique_metadata_id;
 
 --
+-- Table structure for table `applications`
+--
+-- Used in localisation table
+--
+DROP TABLE IF EXISTS `applications`;
+CREATE TABLE `applications` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(80),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+ 
+LOCK TABLES `applications` WRITE;
+INSERT INTO `applications` VALUES(NULL,'geochronology'),
+(NULL,'radiogenic geochronology'),
+(NULL,'trace elements'),
+(NULL,'isotopes'),
+(NULL,'major elements'),
+(NULL,'major & minor elements'),
+(NULL,'experimental petrology'),
+(NULL,'sample preparation'),
+(NULL,'thermochronology'),
+(NULL,'imaging'),
+(NULL,'electron back scattered diffraction');
+UNLOCK TABLES;
+
+--
 -- Table structure for table `localisation`
 --
 -- Links technique with location and assigns applications

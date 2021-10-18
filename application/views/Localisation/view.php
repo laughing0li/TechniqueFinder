@@ -81,7 +81,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <td class="tf-font tf-font-size">
                                     <?php
                                     if (isset($data['center_name'])) {
-                                        echo $data['centre_name'];
+                                        echo $data['center_name'];
                                     }
                                     ?>
 
@@ -91,6 +91,92 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <tr>
                                 <td>&nbsp;</td>
                             </tr>
+
+                            <tr style="width:50em;">
+                                <td class="tf-font-orange">Institution</td>
+                                <td>&nbsp;&nbsp;</td>
+                                <td class="tf-font tf-font-size">
+                                    <?php
+                                    if (isset($data['institution'])) {
+                                        echo $data['institution'];
+                                    }
+                                    ?>
+
+                                </td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+
+                            <tr style="width:50em;">
+                                <td class="tf-font-orange">Technique</td>
+                                <td>&nbsp;&nbsp;</td>
+                                <td class="tf-font tf-font-size">
+                                    <?php
+                                    if (isset($data['technique_name'])) {
+                                        echo $data['technique_name'];
+                                    }
+                                    ?>
+
+                                </td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+
+                            <tr style="width:50em;">
+                                <td class="tf-font-orange">Instrument Name</td>
+                                <td>&nbsp;&nbsp;</td>
+                                <td class="tf-font tf-font-size">
+                                    <?php
+                                    if (isset($data['instrument_name'])) {
+                                        echo $data['instrument_name']; 
+                                    }
+                                    ?>
+
+                                </td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+
+                            <tr style="width:50em;">
+                                <td class="tf-font-orange">Model</td>
+                                <td>&nbsp;&nbsp;</td>
+                                <td class="tf-font tf-font-size">
+                                    <?php
+                                    if (isset($data['model'])) {
+                                        echo $data['model'];
+                                    }
+                                    ?>
+
+                                </td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+
+                            <tr style="width:50em;">
+                                <td class="tf-font-orange">Manufacturer</td>
+                                <td>&nbsp;&nbsp;</td>
+                                <td class="tf-font tf-font-size">
+                                    <?php
+                                    if (isset($data['manufacturer'])) {
+                                        echo $data['manufacturer'];
+                                    }
+                                    ?>
+
+                                </td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+
                         </table>
                     </div>
 
