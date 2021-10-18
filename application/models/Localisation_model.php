@@ -11,8 +11,7 @@ class Localisation_model extends MY_Model
      * Get list of localisation data
      */
     public function getLocalisationList(){
-      $query= $this->db->query('SELECT  ls.id, ls.yr_commissioned, ls.applications, lc.center_name from localisation ls, location lc where ls.location_id=lc.id;');
-
+      $query= $this->db->query('SELECT  ls.id, ls.yr_commissioned, ls.applications, lc.center_name, lc.institution, t.name as technique_name, t.instrument_name, t.manufacturer, t.model from localisation ls, location lc, technique t where ls.location_id=lc.id and ls.technique_id=t.id;');
       return $query->result();
     }
 
@@ -22,20 +21,47 @@ class Localisation_model extends MY_Model
     }
 
     /**
+     * Returns list of basic location information (center_name & institution)
+     */
+    public function getLocations(){
+        $query= $this->db->query('SELECT id, center_name, institution from location;');
+        return $query->result();
+    }
+        
+
+    /**
+     * Get list of techniques
+     */
+    public function getTechniqueList() {
+        $result = $this->db->get('technique')->result();
+        return $result;
+    }
+
+    /**
+     * Get list of application names
+     */
+    public function getApplicationList() {
+        $result = $this->db->get('applications')->result();
+        return $result;
+    }
+
+    /**
      * Save a new localisation to database
      *
      * @return new localisation id
      */
     public function saveNewLocalisation($yr_commissioned, $applications, $technique_id, $location_id){
 
+        var_dump(array($yr_commissioned, $applications, $technique_id, $location_id));
         $localisationData = array(
             'yr_commissioned' => $yr_commissioned,
             'applications' => $applications,
         );
         $this->db->insert('localisation', $localisationData);
-        $this->db->query("UPDATE localisation set technique_id=b'".$technique_id."' where id=".$this->db->insert_id());
-        $this->db->query("UPDATE localisation set location_id=b'".$location_id."' where id=".$this->db->insert_id());
-        return $this->db->insert_id();
+        $id = $this->db->insert_id();
+        $this->db->query("UPDATE localisation set technique_id=b'".$technique_id."' where id=".$id);
+        $this->db->query("UPDATE localisation set location_id=b'".$location_id."' where id=".$id);
+        return $id;
     }
 
     /**
@@ -44,7 +70,7 @@ class Localisation_model extends MY_Model
      * @param $localisation_id localisation id
      */
     function getLocalisationData($localisation_id){
-        $query= $this->db->query('SELECT ls.id, ls.yr_commissioned, ls.applications, lc.center_name from localisation ls, location lc where ls.location_id=lc.id and ls.id='.$localisation_id);
+        $query= $this->db->query('SELECT ls.id, t.id as technique_id, ls.yr_commissioned, ls.applications, lc.center_name, lc.institution, t.name as technique_name, t.model, t.instrument_name, t.manufacturer from localisation ls, location lc, technique t where ls.location_id=lc.id and t.id=ls.technique_id and ls.id='.$localisation_id);
         return $query->result();
     }
 
@@ -92,6 +118,13 @@ class Localisation_model extends MY_Model
              array_push($ids,$id->id);
          }
          return $ids;
+    }
+
+
+    /**
+     * Gets 
+     */
+    function getAssociatedTechnique($localisation_id) {
     }
 
 }

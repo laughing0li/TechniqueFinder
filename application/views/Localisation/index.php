@@ -76,6 +76,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     title: "Center Name",
                 },
                 {
+                    title: "Institution",
+                },
+                {
+                    title: "Instrument Name",
+                },
+                {
                     title: "Actions",
                 }
             ],
