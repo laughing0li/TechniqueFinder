@@ -53,6 +53,8 @@ $route['default_controller'] = 'portal/index';
 $route['admin']= 'login/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['login'] = 'login/onLoginRoute';
-$route['callback'] = 'login/onCallbackRoute';
-$route['logout'] = 'login/onLogoutRoute';
+
+// config routes for auth0
+$route['authLogin'] = 'LoginAuth0/onLoginRoute';
+$route['callback'] = 'LoginAuth0/onCallbackRoute';
+$route['logout'] = 'LoginAuth0/onLogoutRoute';
