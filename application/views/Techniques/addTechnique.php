@@ -47,6 +47,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <span class="tf-database-table">&nbsp;</span>
                             <a class="tf-font-orange" style="text-decoration: none;">Technique List</a>
                         </button>
+                        <div class="my-2">
+    <span class="tf-font-orange">&nbsp;&nbsp;Note: * - indicates mandatory fields, these fields must contain text</span>
+                        </div>
                     </div>
 
 
@@ -70,7 +73,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                 <!-- NAME -->
                                 <tr>
-                                    <td class="tf-font-orange" style="position: absolute;">Name</td>
+                                    <td class="tf-font-orange" style="position: absolute;">Name *</td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td class="tf-font tf-font-size input-col">
                                         <textarea class="tf-input-small" name="technique_name"><?php if (isset($technique_name)) {
@@ -100,7 +103,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                 <!-- INSTRUMENT NAME -->
                                 <tr>
-                                    <td class="tf-font-orange" style="position: absolute;">Instrument Name</td>
+                                    <td class="tf-font-orange" style="position: absolute;">Instrument Name *</td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td class="tf-font tf-font-size input-col">
                                         <textarea class="tf-input-small" name="instrument_name"><?php if (isset($instrument_name)) {
@@ -115,7 +118,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                 <!-- MODEL -->
                                 <tr>
-                                    <td class="tf-font-orange" style="position: absolute;">Model</td>
+                                    <td class="tf-font-orange" style="position: absolute;">Model *</td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td class="tf-font tf-font-size input-col">
                                         <textarea class="tf-input-small" name="model"><?php if (isset($model)) {
@@ -130,7 +133,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                 <!-- MANUFACTURER -->
                                 <tr>
-                                    <td class="tf-font-orange" style="position: absolute;">Manufacturer</td>
+                                    <td class="tf-font-orange" style="position: absolute;">Manufacturer *</td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td class="tf-font tf-font-size input-col">
                                         <textarea class="tf-input-small" name="manufacturer"><?php if (isset($manufacturer)) {
@@ -271,7 +274,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                 <!-- SUMMARY -->
                                 <tr>
-                                    <td class="tf-font-orange">Summary</td>
+                                    <td class="tf-font-orange">Summary *</td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td class="tf-font tf-font-size input-col">
                                         <textarea name="short_description" class="ckeditor" id="short_description">
@@ -287,7 +290,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                 <!-- DESCRIPTION -->
                                 <tr>
-                                    <td class="tf-font-orange">Long Description</td>
+                                    <td class="tf-font-orange">Long Description *</td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td class="tf-font tf-font-size input-col">
                                         <textarea name="long_description" class="ckeditor" id="ckeditor"><?php if (isset($long_description)) {
@@ -449,6 +452,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                             Name
                                                         </td>
                                                         <td>
+                                                            Centre Name
+                                                        </td>
+                                                        <td>
                                                             Institution
                                                         </td>
                                                         <td>
@@ -484,7 +490,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <thead>
                         <tr class="table-headings tf-font-11 tf-font">
                             <td>
-                                Institution
+                                Centre Name
                             </td>
                             <td>
                                 Applications
@@ -815,6 +821,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <tr class="tf-font-11 tf-font table-headings">
                                         <td></td>
                                         <td style="text-align: center; font-weight: bold; ">Name</td>
+                                        <td style="text-align: center; font-weight: bold; ">Centre Name</td>
                                         <td style="text-align: center; font-weight: bold;">Institution</td>
                                     </tr>
                                 </thead>
@@ -873,7 +880,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <thead>
                                 <tr class="tf-font-11 tf-font table-headings">
                                     <td></td>
-                                    <td style="text-align: center; font-weight: bold; ">Institution</td>
+                                    <td style="text-align: center; font-weight: bold; ">Centre Name</td>
                                     <td style="text-align: center; font-weight: bold;">Applications</td>
                                     <td style="text-align: center; font-weight: bold; ">Year Commissioned</td>
                                 </tr>
@@ -1037,6 +1044,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                 $('#table_contacts_selected').append("<tr class=\"table-background-color-techniques\" id=\"<?php echo $contact_item['id']; ?>\">" +
                     "<td><?php echo $contact_item['name'] ?></td>" +
+                    "<td><?php echo $contact_item['center_name'] ?></td>" +
                     "<td><?php echo $contact_item['institution'] ?></td>" +
                     "<td><button type='button' id='contact-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
                     "</tr>");
@@ -1337,7 +1345,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             if(!localisationsSelected.includes(<?php echo $localisations_item['id']?>)) {
                 $('#localisations-table').append('<tr class="table-background-color-techniques">' +
                     '<td><input type=\'checkbox\' name=\'localisation\' value=\'<?php echo $localisations_item['id']; ?>\'/></td>' +
-                    '<td><?php echo $localisations_item["institution"]; ?></td>' +
+                    '<td><?php echo $localisations_item["center_name"]; ?></td>' +
                     '<td><?php echo str_replace("\"", "", $localisations_item["applications"]); ?></td>' + 
                     '<td><?php echo $localisations_item["yr_commissioned"];?></td>' +
                     '</tr>');
@@ -1383,7 +1391,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         if(element == <?php echo $localisations_item['id'];?>)
                         {
                             $('#table_localisations_selected').append("<tr class=\"table-background-color-techniques\" id='"+ element + "'>"+
-                                "<td><?php echo $localisations_item['institution'];?></td>" +
+                                "<td><?php echo $localisations_item['center_name'];?></td>" +
                                 "<td><?php echo str_replace('"', '', $localisations_item['applications']); ?></td>" +
                                 "<td><?php echo $localisations_item['yr_commissioned'];?></td>" + 
                                 "<td><button type='button' id='localisations-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
@@ -1419,6 +1427,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     $('#contacts-table').append('<tr class="table-background-color-techniques">' +
                         '<td><input type=\'checkbox\' name=\'contact\' value=\'<?php echo $contact_item['id']; ?>\'/></td>' +
                         "<td><?php echo $contact_item['name']; ?></td>" +
+                        "<td><?php echo $contact_item['center_name']; ?></td>" +
                         '<td><?php echo $contact_item['institution']; ?></td>' +
                         '</tr>');
                 }
@@ -1465,6 +1474,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             if (element == <?php echo $contact_item['id']; ?>) {
                                 $('#table_contacts_selected').append("<tr class=\"table-background-color-techniques\" id='" + element + "'>" +
                                     "<td><?php echo $contact_item['name']; ?></td>" +
+                                    "<td><?php echo $contact_item['center_name']; ?></td>" +
                                     "<td><?php echo $contact_item['institution']; ?></td>" +
                                     "<td><button type='button' id='contact-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
                                     "</tr>");

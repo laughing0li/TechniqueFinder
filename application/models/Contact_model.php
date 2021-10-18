@@ -50,16 +50,25 @@ class Contact_model extends MY_Model
         return $this->db->insert_id();
     }
 
+    /**
+     * @param $x contact_id
+     */
     function getContactDataWithBit($x){
         $query= $this->db->query('SELECT c.id, c.title, c.name ,c.contact_position, c.telephone, c.email , l.id as lid, l.institution, c.technique_contact+0 as technique_contact from contact c, location l where c.location_id=l.id and c.id='.$x);
         return $query->result();
     }
 
+    /**
+     * @param $x contact_id
+     */
     function getContactData($x){
         $query= $this->db->query('SELECT c.id, c.title, c.name ,c.contact_position, c.telephone, c.email , l.id as lid, l.institution,IF (technique_contact+0 LIKE \'1\',\'Yes\',\'No\')  as technique_contact from contact c, location l where c.location_id=l.id and c.id='.$x);
         return $query->result();
     }
 
+    /**
+     * @param $x contact_id
+     */
     function updateContact($x,$name, $telephone, $email, $position, $location, $technique_contact,$title){
         $query= $this->db->query("select id from location where institution='".trim($location)."';");
         $id = $query->result_array();
@@ -73,15 +82,25 @@ class Contact_model extends MY_Model
         $this->db->set('title', $title)->where('id', $x)->update('contact');
     }
 
+    /**
+     * @param $x contact_id
+     */
     function deleteContact($x){
         $this->db->delete('technique_contact',array('contact_id'=>$x));
         $this->db->delete('contact',array('id'=>$x));
     }
+
+    /**
+     * @param $x contact_id
+     */
     function getAssociatedTechniques($x){
         $result = $this->db->where('contact_id',$x)->get('technique_contact')->result_array();
         return $result;
     }
 
+    /**
+     * @param $x technique_id
+     */
     function getTechniqueName($x){
         $result = $this->db->where('id',$x)->get('technique')->row();
         return $result;
@@ -97,10 +116,16 @@ class Contact_model extends MY_Model
     }
 
 
+    /**
+     * @param $x contact_id
+     */
     function getLocationById($id){
         return $this->db->from('contact')->where('id', $id)->get()->row();
     }
 
+    /**
+     * @param $priority contact_id
+     */
     function getLocationByPriority($priority){
         return $this->db->from('contact')->where('id', $priority)->get()->row();
     }

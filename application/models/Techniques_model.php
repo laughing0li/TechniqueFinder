@@ -58,7 +58,7 @@ class Techniques_model extends MY_Model
      * Return a list of contact id, name & institution for displaying a table of options for user to select from
      */
     function getContactList(){
-        $query= $this->db->query('select c.id, c.name, l.institution from contact c, location l where c.location_id = l.id AND c.technique_contact+0=1 ORDER BY l.institution,c.name;');
+        $query= $this->db->query('select c.id, c.name, l.institution, l.center_name from contact c, location l where c.location_id = l.id AND c.technique_contact+0=1 ORDER BY l.institution,c.name;');
         return $query->result_array();
     }
 

@@ -32,7 +32,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="nav tf-navbar">
                         <button class="btn" onclick="">
                             <span class="home-icon">&nbsp;</span>
-                            <a style="text-decoration: none;" href="<?php echo base_url(); ?>TechniqueFinder/index">Home</a>
+                            <a style="text-decoration: none;" href="<?php echo base_url(); ?>TechniqueFinder/index">Admin Home</a>
                         </button>
                         <button class="btn" onclick="">
                             <span class="home-icon">&nbsp;</span>
