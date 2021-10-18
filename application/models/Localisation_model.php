@@ -70,7 +70,7 @@ class Localisation_model extends MY_Model
      * @param $localisation_id localisation id
      */
     function getLocalisationData($localisation_id){
-        $query= $this->db->query('SELECT ls.id, t.id as technique_id, ls.yr_commissioned, ls.applications, lc.center_name, lc.institution, t.name as technique_name, t.model, t.instrument_name, t.manufacturer from localisation ls, location lc, technique t where ls.location_id=lc.id and t.id=ls.technique_id and ls.id='.$localisation_id);
+        $query= $this->db->query('SELECT ls.id, t.id as technique_id, lc.id as location_id, ls.yr_commissioned, ls.applications, lc.center_name, lc.institution, t.name as technique_name, t.model, t.instrument_name, t.manufacturer from localisation ls, location lc, technique t where ls.location_id=lc.id and t.id=ls.technique_id and ls.id='.$localisation_id);
         return $query->result();
     }
 
@@ -78,11 +78,19 @@ class Localisation_model extends MY_Model
      * Update row in localisation table
      *
      */
-    function updateLocalisation($yr_commissioned, $application, $technique_id, $location_id){
-        $this->db->set('yr_commissioned', $yr_commissioned);
-        $this->db->set('applications', $applications);
-        $this->db->where('technique_id', $technique_id)->update('localisation');
-        $this->db->query("UPDATE localisation set location_id = b'".$location_id."' where technique_id=".$technique_id);
+    function updateLocalisation($localisation_id, $yr_commissioned, $applications, $location_id, $technique_id){
+        $localisation_data = array(
+            'yr_commissioned' => $yr_commissioned,
+            'applications' => $applications,
+        );
+        if ($technique_id != '') {
+            array_merge($localisation_data, array('technique_id' => $technique_id));
+        }
+        if ($location_id != '') {
+            array_merge($localisation_data, array('location_id' => $location_id));
+        }
+        $this->db->where('id', $localisation_id);
+        $this->db->update('localisation', $localisation_data);
     }
 
     /**

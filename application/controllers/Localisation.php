@@ -115,6 +115,7 @@ class Localisation extends CI_Controller
             $localisation_data = array(
                 'id'=>$query[0]->id,
                 'technique_id'=>$q->technique_id,
+                'location_id'=>$q->location_id,
                 'yr_commissioned'=>$q->yr_commissioned,
                 'applications'=>$q->applications,
                 'model'=>$q->model,
@@ -124,10 +125,17 @@ class Localisation extends CI_Controller
                 'center_name'=>$q->center_name,
                 'institution'=>$q->institution,
             );
+            $data['applications_items_selected_hidden'] = $q->applications;
         }
-        $data['data']=$localisation_data;
-        $this->load->view('Localisation/edit',$data);
+        $data['data'] = $localisation_data;
 
+        $data['localisations'] = $this->Localisation_model->getLocalisations();
+        $data['locations'] = $this->Localisation_model->getLocations();
+        $data['applications'] = $this->Localisation_model->getApplicationList();
+        $data['techniques'] = $this->Localisation_model->getTechniqueList();
+
+
+        $this->load->view('Localisation/edit',$data);
     }
 
     /**
@@ -149,12 +157,16 @@ class Localisation extends CI_Controller
     function validateEdit($localisation_id){
         $data['data']=$_POST;
 
-        $data['localisation'] = $this->Localisation_model->getLocalisation();
-
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('yr_commissioned', 'Year Commissioned', 'trim|required');
-        $this->form_validation->set_rules('applications', 'Applications', 'trim|required');
+        // $this->form_validation->set_rules('applications_items_selected_hidden', 'Applications', 'trim|required');
+
+        if (isset($_POST['applications_items_selected_hidden'])) {
+            $applications = $_POST['applications_items_selected_hidden'];
+        } else {
+            $applications = "";
+        }
 
         if (isset($_POST['location_id_selected_hidden'])) {
             $location_id = $_POST['location_id_selected_hidden'];
@@ -169,15 +181,14 @@ class Localisation extends CI_Controller
         }
 
         $yr_commissioned = $_POST['yr_commissioned'];
-        $applications = $_POST['applications'];
 
         if ($this->form_validation->run()) {
-            $id = $this->Localisation_model->updateLocalisation($localisation_id, $yr_commissioned, $applications, $location_id, $technique_id);
+            $this->Localisation_model->updateLocalisation($localisation_id, $yr_commissioned, $applications, $location_id, $technique_id);
 
             if($this->session->set_flashdata('error-warning-message')){
                 unset($_SESSION['error-warning-message']);
             }
-            $this->session->set_flashdata('success-warning-message',"Localisation ".$id ." updated");
+            $this->session->set_flashdata('success-warning-message',"Localisation ". $localisation_id ." updated");
 
             redirect(base_url().'Localisation/index');
         } else {
