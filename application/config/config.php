@@ -24,6 +24,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = '';
+// app engine config
+// $config['base_url'] = 'https://labfinder.geoanalytics.group/';
+
 
 /*
 |--------------------------------------------------------------------------

@@ -62,19 +62,39 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <input type="text" name="category" value="<?php echo $metadata->category ?>" />
                                 </td>
                             </tr>
-                          
+
                             <tr>
                                 <td class="tf-font-orange">Category Type</td>
                                 <td>&nbsp;&nbsp;</td>
                                 <td class="tf-font tf-font-size">
-                                    <textarea name="category_type" class="tf-input-big"><?php echo $metadata->category_type ?></textarea>
+                                    <select name="category_type" style="width:95%; background-color: #fcfcfc;">
+                                        <?php
+                                        foreach ($c_type as $type) {
+                                            if ($metadata->category_type === $type->category_type) {
+                                                echo '<option value="' . $type->category_type . '" selected="selected">' . $type->category_type . '</option>';
+                                            } else {
+                                                echo '<option value="' . $type->category_type . '">' . $type->category_type . '</option>';
+                                            }
+                                        }
+                                        ?>
+                                    </select>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="tf-font-orange">Analysis Type</td>
                                 <td>&nbsp;&nbsp;</td>
                                 <td class="tf-font tf-font-size">
-                                    <input type="text" name="analysis_type" value="<?php echo $metadata->analysis_type ?>" />
+                                    <select name="analysis_type" style="width:95%; background-color: #fcfcfc;">
+                                        <?php
+                                        foreach ($a_type as $type) {
+                                            if ($metadata->analysis_type === $type->analysis_type) {
+                                                echo '<option value="' . $type->analysis_type . '" selected="selected">' . $type->analysis_type . '</option>';
+                                            } else {
+                                                echo '<option value="' . $type->analysis_type . '">' . $type->analysis_type . '</option>';
+                                            }
+                                        }
+                                        ?>
+                                    </select>
                                 </td>
                             </tr>
 

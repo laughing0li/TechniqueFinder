@@ -53,5 +53,23 @@ class Metadata_model extends MY_Model
         return  $this->db->trans_status();
     }
 
+    function getCategoryType() {
+        $query= $this->db->query('SELECT distinct category_type from technique_metadata;');
+        return $query->result();
+    }
+
+    function getAnalysisType() {
+        $query= $this->db->query('SELECT distinct analysis_type from technique_metadata;');
+        return $query->result();
+    }
+
+    function deleteById($id) {
+        $this->db->trans_start();
+
+        $this->db->where('technique_metadata_id', $id)->delete('technique_metadata_link');
+        $this->db->where('id', $id)->delete('technique_metadata');
+        $this->db->trans_complete();
+        return $this->db->trans_status();
+    }
 
 }

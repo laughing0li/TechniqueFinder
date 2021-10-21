@@ -23,6 +23,11 @@ class CaseStudy extends CI_Controller
             redirect(base_url() . 'login/index');
         }
 
+        // auth0 config
+        // if ($this->session->userdata('auth0__user') == null){
+        //     redirect(base_url() . 'authLogin');
+        // }
+
         $this->load->model('CaseStudy_model');
     }
 

@@ -13,9 +13,10 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class TechniqueFinder extends CI_Controller {
-
-    public function index(){
+class TechniqueFinder extends CI_Controller
+{
+    public function index()
+    {
         if ($this->session->userdata('logged_in') == 1){
             $current_user = $this->session->userdata();
             $this->load->view('tf/index');
@@ -24,7 +25,11 @@ class TechniqueFinder extends CI_Controller {
             redirect(base_url().'login/index');
         }
 
-
+        // auth0 config
+        // if ($this->session->userdata('auth0__user') != null) {
+        //     $this->load->view('tf/index');
+        // } else {
+        //     redirect(base_url().'authLogin');
+        // }
     }
-
 }

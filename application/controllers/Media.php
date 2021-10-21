@@ -22,6 +22,11 @@ class Media extends CI_Controller {
             redirect(base_url().'login/index');
         }
 
+        // auth0 config
+        // if ($this->session->userdata('auth0__user') == null){
+        //     redirect(base_url() . 'authLogin');
+        // }
+
         $this->load->model('Media_model');
         $this->media_folder = 'media-dir/';
         $this->max_thumbnail_box = 100;
