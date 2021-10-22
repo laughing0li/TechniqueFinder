@@ -420,6 +420,23 @@ class Techniques_model extends MY_Model
     }
 
     /*
+     * Update localisations for a technique
+     * @param $technique_id technique id
+     * @param $localisations_id localisation id
+     */
+    function saveNewLocalisation($technique_id, $localisation_id) {
+        $query = $this->db->query("select location_id, yr_commissioned, applications from localisation where id = ".$localisation_id.";");
+        $ret_list = $query->row();
+        $data = array(
+            'technique_id' => $technique_id,
+            'location_id' => $ret_list->location_id,
+            'yr_commissioned' => $ret_list->yr_commissioned,
+            'applications' => $ret_list->applications
+        );
+        $this->db->insert('localisation', $data);
+    } 
+
+    /*
      * Save new metadata for a technique or replace the old one
      * @param $x technique id
      * @param $metadata_id technique_metadata_id value

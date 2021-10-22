@@ -72,7 +72,7 @@ class Elements_model extends MY_Model
      */
     function saveNewElements($name, $element_id_list) {
         // Get next 'elements_set' id
-        $next_id = $this->db->query('select max(id)+1 as id from elements_set')->result()[0]->id; 
+        $next_id = $this->db->query('select max(id)+1 as id from elements_set')->row()->id; 
         $this->db->insert('elements_set', array('id'=>$next_id, 'name'=>$name));
         // Insert new link table 'elements_elements_set' rows
         foreach($element_id_list as $elements_id) {
