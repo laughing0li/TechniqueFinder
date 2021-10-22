@@ -1366,13 +1366,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
             },
 
             modal: true,
-            title: "Available Localisations",
+            title: "Localisations available for copying",
             buttons: {
                 "Cancel": function () {
                     $(this).dialog("close");
                 },
 
-                "Select": function () {
+                "Copy": function () {
                     $(this).dialog("close");
 
                     // Compile a list of selected items
