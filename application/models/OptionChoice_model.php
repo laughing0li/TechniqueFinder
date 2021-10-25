@@ -37,7 +37,7 @@ class OptionChoice_model extends MY_Model
      * @return      array of db rows, keys are 'category', 'model', 'beam_diameter', 'min_conc'
      */
     function getTechniqueCatByCatTyp($category_type) {
-        return $this->db->query("select technique_view.technique_id, technique_view.category, group_concat(distinct technique_view.model separator '; ') as model, group_concat(distinct technique_view.beam_diameter separator '; ') as beam_diameter, group_concat(distinct technique_view.min_conc separator '; ') as min_conc from technique_view where technique_view.category_type = ? group by technique_view.technique_id, technique_view.category", array($category_type))->result();
+        return $this->db->query("select min(technique_view.technique_id) as technique_id, technique_view.category, group_concat(distinct technique_view.model separator '; ') as model, group_concat(distinct technique_view.beam_diameter separator '; ') as beam_diameter, group_concat(distinct technique_view.min_conc separator '; ') as min_conc from technique_view where technique_view.category_type = ? group by technique_view.category order by technique_view.category", array($category_type))->result();
     }
 
 
@@ -49,7 +49,7 @@ class OptionChoice_model extends MY_Model
      * @return      array of db rows, keys are 'category', 'model', 'beam_diameter', 'min_conc'
      */
     function getTechniqueCatByAnalysis($category_type, $analysis_type) {
-        return $this->db->query("select technique_view.technique_id, technique_view.category, group_concat(distinct technique_view.model separator '; ') as model, group_concat(distinct technique_view.beam_diameter separator '; ') as beam_diameter, group_concat(distinct technique_view.min_conc separator '; ') as min_conc from technique_view where technique_view.category_type = ? and technique_view.analysis_type = ? group by technique_view.technique_id, technique_view.category", array($category_type, $analysis_type))->result();
+        return $this->db->query("select min(technique_view.technique_id) as technique_id, technique_view.category, group_concat(distinct technique_view.model separator '; ') as model, group_concat(distinct technique_view.beam_diameter separator '; ') as beam_diameter, group_concat(distinct technique_view.min_conc separator '; ') as min_conc from technique_view where technique_view.category_type = ? and technique_view.analysis_type = ? group by technique_view.category order by technique_view.category", array($category_type, $analysis_type))->result();
     }
 
 
@@ -62,7 +62,7 @@ class OptionChoice_model extends MY_Model
      * @return      array of db rows, keys are 'category', 'model', 'beam_diameter', 'min_conc'
      */
     function getTechniqueCatByElement($category_type, $analysis_type, $element) {
-        return $this->db->query("select technique_view.technique_id, technique_view.category, group_concat(distinct technique_view.model separator '; ') as model, group_concat(distinct technique_view.beam_diameter separator '; ') as beam_diameter, group_concat(distinct technique_view.min_conc separator '; ') as min_conc from technique_view, elements_view where elements_view.elements_set_id = technique_view.elements_set_id and technique_view.category_type = ? and technique_view.analysis_type = ? and (elements_view.name = ? or elements_view.symbol = ?) group by technique_view.technique_id, technique_view.category", array($category_type, $analysis_type, $element, $element))->result();
+        return $this->db->query("select min(technique_view.technique_id) as technique_id, technique_view.category, group_concat(distinct technique_view.model separator '; ') as model, group_concat(distinct technique_view.beam_diameter separator '; ') as beam_diameter, group_concat(distinct technique_view.min_conc separator '; ') as min_conc from technique_view, elements_view where elements_view.elements_set_id = technique_view.elements_set_id and technique_view.category_type = ? and technique_view.analysis_type = ? and (elements_view.name = ? or elements_view.symbol = ?) group by technique_view.category order by technique_view.category", array($category_type, $analysis_type, $element, $element))->result();
     }
 
 
