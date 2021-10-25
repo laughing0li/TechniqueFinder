@@ -473,25 +473,40 @@ class Techniques_model extends MY_Model
 
     /*
      * Update the options, inserting or updating as required
-     * @param $x 'technique' id
-     * @param $oc1 'option_choice' id  for step1
-     * @param $oc2 'option_choice' id  for step2
+     * @param $technique_id technique id
+     * @param $metadata_id metadata id copy from this row in 'technique_metadata' table
      */
-    function updateOptionCombination($x, $oc1, $oc2) {
-        // IF either option choice id is -1 then remove
-        if ($oc1 == '-1' || $oc2 == '-1') {
-           $this->db->where('technique_id', $x);
-           $this->db->delete('option_combination');     
-        } else {
-           // ELSE Insert or update 'option_combination'
-           $data = [
-               'technique_id' => $x,
-               'left_id'  => $oc1,
-               'right_id'  => $oc2,
-               'version' => 1,
-               'priority' => 1
-           ];
-           $this->db->replace('option_combination', $data);
+    function updateOptionCombination($technique_id, $metadata_id) {
+        $val = $this->db->query("select category_type, analysis_type from technique_metadata where id=" . $metadata_id . ";")->row();
+        if (isset($val)) {
+            $oc1_data = [
+                'version' => 0,
+                'priority' => 1,
+                'name' => $val->category_type,
+                'type' => 'STEP1',
+                'science' => 'GEOCHEM'
+            ];
+            if ($this->db->replace('option_choice', $oc1_data)) {
+                $oc1_id = $this->db->insert_id();
+                $oc2_data = [
+                    'version' => 0,
+                    'priority'=> 1,
+                    'name' => $val->analysis_type,
+                    'type' => 'STEP2',
+                    'science' => 'GEOCHEM'
+                ];
+                if ($this->db->replace('option_choice', $oc2_data)) {
+                    $oc2_id = $this->db->insert_id();
+                    $data = [
+                        'technique_id' => $technique_id,
+                        'left_id'  => $oc1_id,
+                        'right_id'  => $oc2_id,
+                        'version' => 0,
+                        'priority' => 1
+                    ];
+                    $this->db->replace('option_combination', $data);
+                }
+            }
         }
     }
  

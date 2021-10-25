@@ -521,74 +521,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </tr>
 
 
-
-
-        <!-- GEOCHEM ANALYSIS CHOICES -->
+        <!-- METADATA AND GEOCHEM ANALYSIS CHOICES -->
         <tr>
-            <td class="tf-font-orange">Geochem Analysis Choices</td>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td class="tf-font tf-font-size input-col">
-                <div>
-                    <!-- A pair of selectors to set the new option choices -->
-                    Step 1:
-                    <select id="option-choice1-select">
-                    <option selected value="-1">No valid choice</option>
-                    <? foreach($option_choices_list as $option) {
-                          if ($option->type == 'STEP1' && $option->science == 'GEOCHEM') {
-                              echo "<option value='". $option->id . "'>". $option->name . "</option>";
-                          }
-                        }
-                    ?>
-                    </select>
-                    &nbsp;&nbsp;Step 2:
-                    <select id="option-choice2-select">
-                    <option selected value="-1">No valid choice</option>
-                    <? foreach($option_choices_list as $option) {
-                          if ($option->type == 'STEP2' && $option->science == 'GEOCHEM') {
-                              echo "<option value='". $option->id . "'>". $option->name . "</option>";
-                          }
-                       }
-                    ?>
-                    </select>
-                    <!-- A button to select the new option choices -->
-                    <button type="button" id="set-options" class="tf-button">
-                        <span class="tf-database-add"></span>
-                        <span class="tf-font create-technique-dialog-button">Set geochem analysis choices</span>
-                    </button>
-                </div>
-                <!-- A table to display current option choices -->
-                <div class="table-responsive tf-font tf-font-size">
-                    <input type="hidden" id="option_choice1_hidden" name="option_choice1_hidden" value=""/>
-                    <input type="hidden" id="option_choice2_hidden" name="option_choice2_hidden" value=""/>
-                    <table id="static_data" class="table table-bordered table-striped" style="width: 60%;float: left;">
-                        <thead>
-                        <tr class="table-headings tf-font-11 tf-font">
-                            <td>
-                               Step 1
-                            </td>
-                            <td>
-                               Step 2
-                            </td>
-                        </tr>
-                        </thead>
-                        <tbody id="table_options_selected">
-                            <?php if (isset($selected_option_choices) && sizeof($selected_option_choices) > 0) { ?>
-                            <tr class='table-background-color-techniques'>
-                                <td><?php echo $selected_option_choices[0]->name; ?></td>
-                                <td><?php echo $selected_option_choices[1]->name; ?></td>
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
-            </td>
-        </tr>
-
-        <tr><td>&nbsp;</td></tr>
-
-        <!-- METADATA -->
-        <tr>
-            <td class="tf-font-orange">Metadata</td>
+            <td class="tf-font-orange">Metadata and Geochem Analysis Choices</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="tf-font tf-font-size input-col">
                 <div>
@@ -603,7 +538,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <!-- A button to add the new metadata line -->
                     <button type="button" id="add-metadata" class="tf-button">
                         <span class="tf-database-add"></span>
-                        <span class="tf-font create-technique-dialog-button">Add Metadata</span>
+                        <span class="tf-font create-technique-dialog-button" style="font-size: 1em">Add Metadata</span>
                     </button>
                 </div>
                 <!-- A table to display current metadata -->
@@ -615,6 +550,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <td>
                                Metadata 
                             </td>
+                            <td>
+                               Geochemical Analysis Choices
                             <td>
                                Action
                             </td>
@@ -629,6 +566,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </tr>
 
         <tr><td>&nbsp;</td></tr>
+
 
         <!-- ELEMENTS -->
         <tr>
@@ -655,8 +593,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 
-                                <!-- CASE STUDIES -->
-                                <!-- <tr>
+        <!-- CASE STUDIES -->
+        <!-- <tr>
             <td class="tf-font-orange">Case Studies</td>
             <td>&nbsp;&nbsp;</td>
             <td>
@@ -1678,23 +1616,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
         $("#elementsset-id").val(str);
     }).trigger("change");
 
-    // Update the options table when step1 and step2 options choices have been selected (geochem analysis choices)
-    $('body').on('click', '#set-options', function () {
-        // Update the table
-        var opt1_txt = $("#option-choice1-select option:selected").text();
-        var opt2_txt = $("#option-choice2-select option:selected").text();
-        $('#table_options_selected').empty();
-        $('#table_options_selected').append("<tr class='table-background-color-techniques'>"+
-                                            "<td>" + opt1_txt + "</td>" +
-                                            "<td>" + opt2_txt + "</td>" +
-                                            "</tr>");
-        // Update the POSTed form input when an option choice is selected
-        var str = $("#option-choice1-select option:selected").first().val();
-        $('#option_choice1_hidden').val(str);
-        str = $("#option-choice2-select option:selected").first().val();
-        $('#option_choice2_hidden').val(str);
-    });
-
     // Update the metadata table when a set of metadata is added
     $('body').on('click', '#add-metadata', function() {
         // Update the table
@@ -1702,6 +1623,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         var metadata_id = $("#metadata-selector option:selected").val();
         $('#table_metadata_selected').append("<tr class='table-background-color-techniques'>"+
                                              "<td>" + metadata_txt + "</td>" +
+                                             "<td><input type='radio' id='geochem-analysis-meta-id' name='geochem-analysis-meta-id' value='" + metadata_id + "' checked/></td>" +
                                              "<td><button type='button' metadata_id='" + metadata_id + "' id='metadata-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
                                              "</tr>");
         var metadata_int = parseInt(metadata_id);

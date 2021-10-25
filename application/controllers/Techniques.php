@@ -299,12 +299,10 @@ class Techniques extends CI_Controller
         }
 
         // If any option choices (geochem analysis choices) were updated
-        if (isset($_POST['option_choice1_hidden']) && isset($_POST['option_choice1_hidden'])) {
-            $option_choice1_id = $_POST['option_choice1_hidden'];
-            $option_choice2_id = $_POST['option_choice2_hidden'];
+        if (isset($_POST['geochem-analysis-meta-id'])) {
+            $geochem_analysis_meta_id = $_POST['geochem-analysis-meta-id'];
         } else {
-            $option_choice1_id = '';
-            $option_choice2_id = '';
+            $geochem_analysis_meta_id = '';
         }
 
         // Names of excess parameters
@@ -337,8 +335,8 @@ class Techniques extends CI_Controller
             }
 
             // Next, update options (geochem analysis choices)
-            if ($option_choice1_id != '' && $option_choice2_id != '') {
-		$this->Techniques_model->updateOptionCombination($id, $option_choice1_id, $option_choice2_id);
+            if ($geochem_analysis_meta_id != '') {
+		$this->Techniques_model->updateOptionCombination($id, $geochem_analysis_meta_id);
             }
 
             // Next, update localisations
