@@ -341,6 +341,11 @@ class Techniques extends CI_Controller
 		$this->Techniques_model->updateOptionCombination($id, $option_choice1_id, $option_choice2_id);
             }
 
+            // Next, update localisations
+            if ($localisations_ids != '') {
+		$this->Techniques_model->saveNewLocalisation($id, $localisations_ids);
+            }
+
         } else {
             // Parameter error: redisplay parameters with an error message
             $this->load->library('CKEditor');
