@@ -1014,10 +1014,15 @@ if ($this->session->flashdata('error-warning-message')) {
     <?php } ?>
 
     //Postback Localisations List
-    <?php if(isset($localisations_items_selected_hidden) && $localisations_items_selected_hidden != ''
-                    && !empty($localisations_items_selected_hidden[0])) { ?>
-    localisationsSelected = [<?php echo $localisations_items_selected_hidden[0]['id']; ?>];
-    document.getElementById('localisations_items_selected_hidden').value = localisationsSelected
+    <?php if(isset($localisations_items_selected_hidden) && $localisations_items_selected_hidden != '') {
+              $id_str = "";
+              foreach ($localisations_items_selected_hidden as $l_item) {
+                  $id_str = $id_str . $l_item['id'] . ',';
+              }
+              $csv_str = trim($id_str, ',');
+              ?>
+    localisationsSelected = [<?php echo $csv_str; ?>];
+    document.getElementById('localisations_items_selected_hidden').value = localisationsSelected;
 
     <?php }
     else{ ?>

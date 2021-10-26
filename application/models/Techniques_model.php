@@ -49,7 +49,7 @@ class Techniques_model extends MY_Model
      * Return a list of localisation id, year commissioned, applications, center_name, state, instiution 
      */
     function getLocalisationList() {
-        $result = $this->db->query('select ls.id, ls.yr_commissioned, ls.applications, lc.center_name, lc.state, lc.institution from localisation ls, location lc where ls.location_id = lc.id')->result_array();
+        $result = $this->db->query('select ls.id, ls.yr_commissioned, ls.applications, lc.center_name, lc.state, lc.institution from localisation ls right join location lc on ls.location_id = lc.id')->result_array();
         return $result;
     }
     
@@ -422,20 +422,44 @@ class Techniques_model extends MY_Model
     /*
      * Update localisations for a technique
      * @param $technique_id technique id
-     * @param $localisations_id localisation id
+     * @param $localisations localisation ids as a comma separated string
      */
-    function saveNewLocalisation($technique_id, $localisation_id) {
-        $query = $this->db->query("select location_id, yr_commissioned, applications from localisation where id = ".$localisation_id.";");
-        $ret_list = $query->row();
-        $data = array(
-            'technique_id' => $technique_id,
-            'location_id' => $ret_list->location_id,
-            'yr_commissioned' => $ret_list->yr_commissioned,
-            'applications' => $ret_list->applications
-        );
-        $this->db->insert('localisation', $data);
+    function saveNewLocalisation($technique_id, $localisations) {
+        $localisation_id_list = explode(",", $localisations);
+        foreach ($localisation_id_list as $localisation_id) {
+            $query = $this->db->query("select location_id, yr_commissioned, applications from localisation where id = ".$localisation_id.";");
+            $ret_list = $query->row();
+            $data = array(
+                'technique_id' => $technique_id,
+                'location_id' => $ret_list->location_id,
+                'yr_commissioned' => $ret_list->yr_commissioned,
+                'applications' => $ret_list->applications
+            );
+            $this->db->insert('localisation', $data);
+         }
     } 
 
+
+    /*
+     * Update localisations for a technique
+     * @param $technique_id technique id
+     * @param $localisations localisation ids as a comma separated string
+     */
+    function updateLocalisations($technique_id, $localisations) {
+        $localisation_id_list = explode(",", $localisations);
+        foreach ($localisation_id_list as $localisation_id) {
+            $query = $this->db->query("select location_id, yr_commissioned, applications from localisation where id = ".$localisation_id.";");
+            $ret_list = $query->row();
+            $data = array(
+                'technique_id' => $technique_id,
+                'location_id' => $ret_list->location_id,
+                'yr_commissioned' => $ret_list->yr_commissioned,
+                'applications' => $ret_list->applications
+            );
+            $this->db->replace('localisation', $data);
+        }
+    }
+     
     /*
      * Save new metadata for a technique or replace the old one
      * @param $x technique id
@@ -471,21 +495,62 @@ class Techniques_model extends MY_Model
         $this->db->update('technique');
     }  
 
+
     /*
      * Update the options, inserting or updating as required
-     * @param $x 'technique' id
+     * @param $technique_id technique id
+     * @param $metadata_id metadata id copy from this row in 'technique_metadata' table
+     */
+    function updateOptionCombination($technique_id, $metadata_id) {
+        $val = $this->db->query("select category_type, analysis_type from technique_metadata where id=" . $metadata_id . ";")->row();
+        if (isset($val)) {
+            $oc1_data = [
+                'version' => 0,
+                'priority' => 1,
+                'name' => $val->category_type,
+                'type' => 'STEP1',
+                'science' => 'GEOCHEM'
+            ];
+            if ($this->db->replace('option_choice', $oc1_data)) {
+                $oc1_id = $this->db->insert_id();
+                $oc2_data = [
+                    'version' => 0,
+                    'priority'=> 1,
+                    'name' => $val->analysis_type,
+                    'type' => 'STEP2',
+                    'science' => 'GEOCHEM'
+                ];
+                if ($this->db->replace('option_choice', $oc2_data)) {
+                    $oc2_id = $this->db->insert_id();
+                    $data = [
+                        'technique_id' => $technique_id,
+                        'left_id'  => $oc1_id,
+                        'right_id'  => $oc2_id,
+                        'version' => 0,
+                        'priority' => 1
+                    ];
+                    $this->db->replace('option_combination', $data);
+                }
+            }
+        }
+    }
+ 
+
+    /*
+     * Used for editing the options, inserting or updating as required
+     * @param $technique_id 'technique' id
      * @param $oc1 'option_choice' id  for step1
      * @param $oc2 'option_choice' id  for step2
      */
-    function updateOptionCombination($x, $oc1, $oc2) {
+     function editOptionCombination($technique_id, $oc1, $oc2) {
         // IF either option choice id is -1 then remove
         if ($oc1 == '-1' || $oc2 == '-1') {
-           $this->db->where('technique_id', $x);
+           $this->db->where('technique_id', $technique_id);
            $this->db->delete('option_combination');     
         } else {
            // ELSE Insert or update 'option_combination'
            $data = [
-               'technique_id' => $x,
+               'technique_id' => $technique_id,
                'left_id'  => $oc1,
                'right_id'  => $oc2,
                'version' => 1,
@@ -493,8 +558,8 @@ class Techniques_model extends MY_Model
            ];
            $this->db->replace('option_combination', $data);
         }
-    }
- 
+     }
+
 
     /*
      * This is called after a technique is edited in the admin page

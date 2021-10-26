@@ -299,12 +299,10 @@ class Techniques extends CI_Controller
         }
 
         // If any option choices (geochem analysis choices) were updated
-        if (isset($_POST['option_choice1_hidden']) && isset($_POST['option_choice1_hidden'])) {
-            $option_choice1_id = $_POST['option_choice1_hidden'];
-            $option_choice2_id = $_POST['option_choice2_hidden'];
+        if (isset($_POST['geochem-analysis-meta-id'])) {
+            $geochem_analysis_meta_id = $_POST['geochem-analysis-meta-id'];
         } else {
-            $option_choice1_id = '';
-            $option_choice2_id = '';
+            $geochem_analysis_meta_id = '';
         }
 
         // Names of excess parameters
@@ -337,8 +335,8 @@ class Techniques extends CI_Controller
             }
 
             // Next, update options (geochem analysis choices)
-            if ($option_choice1_id != '' && $option_choice2_id != '') {
-		$this->Techniques_model->updateOptionCombination($id, $option_choice1_id, $option_choice2_id);
+            if ($geochem_analysis_meta_id != '') {
+		$this->Techniques_model->updateOptionCombination($id, $geochem_analysis_meta_id);
             }
 
             // Next, update localisations
@@ -508,9 +506,9 @@ class Techniques extends CI_Controller
      * This is called after a technique is edited.
      * This checks the technique edit parameters and initiates the database update
      *
-     * @param $x technique id
+     * @param $technique_id technique id
      */
-    function validateEditTechnique($x){
+    function validateEditTechnique($technique_id){
         $this->load->model('Techniques_model');
         $this->load->library('form_validation');
 
@@ -595,6 +593,14 @@ class Techniques extends CI_Controller
             $option_choice2_id = '';
         }
 
+        // If any localisations were changed
+        if (isset($_POST['localisations_items_selected_hidden'])) {
+            $localisations_ids = $_POST['localisations_items_selected_hidden'];
+        }else {
+            $localisations_ids = "";
+        }
+
+
         // Names of excess parameters
         $input_names = array('instrument_name', 'model', 'manufacturer', 'sample_type', 'wavelength', 'beam_diameter', 'min_conc', 'mass', 'volume', 'pressure', 'temperature');
         
@@ -611,12 +617,12 @@ class Techniques extends CI_Controller
             // Update metadata
             if ($metadata_ids != '') {
                 // Delete all metadata for a technique
-                $this->Techniques_model->deleteMetadata($x);
+                $this->Techniques_model->deleteMetadata($technique_id);
                 foreach (explode(",", $metadata_ids) as $metadata_id) {
                     $metadata_list = $this->Techniques_model->getMetadataList();
                     foreach ($metadata_list as $m) {
                         if ($metadata_id == $m->id) {
-                            $this->Techniques_model->updateMetadata($x, $metadata_id);
+                            $this->Techniques_model->updateMetadata($technique_id, $metadata_id);
                         }
                     }
                 }
@@ -624,16 +630,21 @@ class Techniques extends CI_Controller
 
             // Update set of chemical elements associated with this technique
             if ($elementsset_id != '') {
-                $this->Techniques_model->updateElementsSet($x, $elementsset_id); 
+                $this->Techniques_model->updateElementsSet($technique_id, $elementsset_id); 
             }
 
             // Update options (geochem analysis choices)
             if ($option_choice1_id != '' && $option_choice2_id != '') {
-		$this->Techniques_model->updateOptionCombination($x, $option_choice1_id, $option_choice2_id);
+		$this->Techniques_model->editOptionCombination($technique_id, $option_choice1_id, $option_choice2_id);
+            }
+
+            // Update localisations
+            if ($localisations_ids != '') {
+		$this->Techniques_model->updateLocalisations($technique_id, $localisations_ids);
             }
 
             // Update the database
-            $id = $this->Techniques_model->updateTechnique($x,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items, $extras);
+            $id = $this->Techniques_model->updateTechnique($technique_id,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items, $extras);
             $this->session->set_flashdata('success-warning-message', "Technique " . $id . " updated");
             $this->load->view('Techniques/index');
         } else {
@@ -641,7 +652,7 @@ class Techniques extends CI_Controller
             $this->load->library('CKFinder');
 
             $data['technique_name'] = $_POST['technique_name'];
-            $data['id'] = $x;
+            $data['id'] = $technique_id;
             $data['short_description'] = $_POST['short_description'];
             $data['long_description'] = $_POST['long_description'];
             $data['alternative_names'] = $_POST['alternative_names'];
@@ -673,6 +684,10 @@ class Techniques extends CI_Controller
                 $data['references_items_selected_hidden'] = $_POST['references_items_selected_hidden'];
             }
 
+            if (isset($_POST['localisations_items_selected_hidden'])) {
+                $data['localisations_items_selected_hidden'] = $_POST['localisations_items_selected_hidden'];
+            }
+
             $this->session->set_flashdata('error-warning-message', validation_errors());
             $this->session->keep_flashdata('error-warning-message', validation_errors());
             $this->load->view('Techniques/edit', $data);
@@ -682,13 +697,13 @@ class Techniques extends CI_Controller
 
     /**
      * Deletes a technique
-     * @param $x technique_id
+     * @param $technique_id technique_id
      */
-    function delete($x){
-        if ($this->Techniques_model->deleteTechnique($x)) {
-            $this->session->set_flashdata('success-warning-message',"Technique ". $x ." deleted");
+    function delete($technique_id){
+        if ($this->Techniques_model->deleteTechnique($technique_id)) {
+            $this->session->set_flashdata('success-warning-message',"Technique ". $technique_id ." deleted");
         } else {
-            $this->session->set_flashdata('success-warning-message',"!! Technique ". $x ." could not be deleted");
+            $this->session->set_flashdata('success-warning-message',"!! Technique ". $technique_id ." could not be deleted");
         } 
         redirect(base_url().'Techniques/index');
     }

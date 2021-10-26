@@ -183,11 +183,11 @@ class Portal extends CI_Controller {
     /**
      * Emits HTML to display a page of cards on RHS of "Geochemical Analysis" page
      *
-     * @param       array $tech_meta_arr  array with "category", "model", "beam_diameter", "min_conc" attributes
+     * @param       array $tech_metas  array with "category", "model", "beam_diameter", "min_conc" attributes
      */
-    private function printTechniqueCards($tech_meta_arr) {
+    private function printTechniqueCards($tech_metas) {
         // Print out cards in three columns
-        $array_pairs = array_chunk($tech_meta_arr, 3);
+        $array_pairs = array_chunk($tech_metas, 3);
         foreach ($array_pairs as $tech_meta_pair) {
              echo "<div class='row'>";
              foreach ($tech_meta_pair as $tech_meta) { 
@@ -196,8 +196,8 @@ class Portal extends CI_Controller {
                       "<div class='card-header text-white bg-primary'>$tech_meta->category</div>".
                       "<div class='card-body'>";
                  echo ($tech_meta->model!='')? "<b>Models:</b> $tech_meta->model":"";
-                 echo ($tech_meta->beam_diameter!='')? "<br/><b>Beam Diam.:</b> $tech_meta->beam_diameter":"";
-                 echo ($tech_meta->min_conc!='')? "<br/><b>Min. Conc.:</b> $tech_meta->min_conc":"";
+                 // echo ($tech_meta->beam_diameter!='')? "<br/><b>Beam Diam.:</b> $tech_meta->beam_diameter":"";
+                 // echo ($tech_meta->min_conc!='')? "<br/><b>Min. Conc.:</b> $tech_meta->min_conc":"";
                  echo "</div></div></div>";
              }
              echo "</div>";
