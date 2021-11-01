@@ -3,7 +3,7 @@
 This will help any software developers find where things are kept to make future LabFinder customisation easier.
 
 This is intended to supplement the official [Code Igniter User Guide](https://codeigniter.com/user_guide/index.html) and local [user guide](user_guide).
-It mostly describes the files modified to adapt TechniqueFinder.
+It mostly describes the files modified to adapt Microscopy Australia's TechniqueFinder.
 
 ## "application" directory
 
@@ -29,6 +29,10 @@ The table below maps out which web pages are association with which files.
 | Admin - Static content                  | views/static/*                             | controllers/StaticContent.php    | models/Static_model.php         | 
 | Admin - Metadata                        | views/Metadata/*                           | controllers/Metadata.php         | models/Metadata_model.php       | 
 
+## "assets" directory ##
+
+1) Website specific CSS rules are kept in "assets/css/technique-finder.css"
+2) Website icons and images are kept in "assets/css/images"
 
 ## Other NOTES ##
 
