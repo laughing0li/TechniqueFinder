@@ -27,6 +27,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div class="row justify-content-md-center">
                 <div class="col-10">
                     <div class="row" style="margin-left: 1em;">
+                        <h1 class="tf-heading">Admin Home</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-10">
+                    <div class="row" style="margin-left: 1em;">
                         <div class="col-sm-2" style="display:inline-table;">
                             <button onclick="window.location='<?php echo site_url("Techniques/index"); ?>'" class="admin-button">Techniques</button><br>
                             <button onclick="window.location='<?php echo site_url("Media/index"); ?>'" class="admin-button">Images and movies</button><br>
