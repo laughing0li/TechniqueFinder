@@ -1326,7 +1326,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <?php if (isset($localisations_list)) {
                 foreach ($localisations_list as $localisations_item){?>
                     toAddLocalisations.forEach(function(element){
-                        if(element == <?php echo $localisations_item['id'];?>)
+                        if(element == <?php echo (isset($localisations_item['id']))? $localisations_item['id']: '-9999999';?>)
                         {
                             $('#table_localisations_selected').append("<tr class=\"table-background-color-techniques\" id='"+ element + "'>"+
                                 "<td><?php echo $localisations_item['center_name'];?></td>" +
