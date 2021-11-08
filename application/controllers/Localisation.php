@@ -6,14 +6,14 @@ class Localisation extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        if (!($this->session->userdata('logged_in') == True)) {
-            redirect(base_url() . 'login/index');
-        }
+        // if (!($this->session->userdata('logged_in') == True)) {
+        //     redirect(base_url() . 'login/index');
+        // }
 
         // auth0 config
-        // if ($this->session->userdata('auth0__user') == null){
-        //     redirect(base_url() . 'authLogin');
-        // }
+        if ($this->session->userdata('auth0__user') == null){
+            redirect(base_url() . 'authLogin');
+        }
         
         $this->load->model('Localisation_model');
 
