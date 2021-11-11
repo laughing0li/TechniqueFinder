@@ -42,7 +42,8 @@
                                     $mediaForLIST = $Media_model->getMediaInfosByTechniqueIdAndSection($technique_view->technique_id, 'LIST');
                                     if (isset($mediaForLIST[0])) {
                                         $media_location = $mediaForLIST[0]->location;
-                                        echo '<div class="col"><img src="' . base_url() . 'media-dir/' . $media_location . '" width="175" height="175" alt="' . $media_location . '"></div>';
+                                        // echo '<div class="col"><img src="' . base_url() . 'media-dir/' . $media_location . '" width="175" height="175" alt="' . $media_location . '"></div>';
+                                        echo '<div class="col"><img src="https://storage.googleapis.com/tf-4-agn.appspot.com/static/' . $media_location . '" width="175" height="175" alt="' . $media_location . '"></div>';
                                     } else {
                                         echo '<div class="col"></div>';
                                     }

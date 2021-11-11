@@ -49,7 +49,9 @@ class LoginAuth0 extends CI_Controller
     {
         $this->auth0->exchange();
         $user = $this->session->userdata('auth0__user');
-        if ($user['email_verified'] && $user['email'] == 'laughinglyl90@gmail.com') {
+        $admin_roles = explode(',', $_ENV['ADMIN']);
+        if ($user['email_verified'] &&  in_array($user['email'], $admin_roles)) {
+        // if ($user['email_verified'] && $user['email'] == 'laughinglyl90@gmail.com') {
             header('Location: ' . '/TechniqueFinder/index', true, 303);
         } else {
             $this->session->sess_destroy();

@@ -18,7 +18,7 @@
                         <a class="nav-link tf-font-color"  href="https://www.auscope.org.au/agn">About</a>
                     </li>
                     <li style="margin-left: 20px" class="nav-item">
-                        <a class="nav-link tf-font-color"  href="https://app.ausgeochem.org/"> AuGeoChem</a>
+                        <a class="nav-link tf-font-color"  href="https://app.ausgeochem.org/"> AusGeochem</a>
                     </li>
 
                     <li style="margin-left: 20px" class="nav-item dropdown">
@@ -46,7 +46,7 @@
                         <a class="nav-link tf-font-color"  href="https://www.auscope.org.au/agn">About</a>
                     </li>
                     <li style="margin-left: 20px" class="nav-item">
-                        <a class="nav-link tf-font-color"  href="https://app.ausgeochem.org/"> AuGeoChem</a>
+                        <a class="nav-link tf-font-color"  href="https://app.ausgeochem.org/"> AusGeochem</a>
                     </li>
                     <li style="margin-left: 20px" class="nav-item dropdown">
                         <a  class="nav-link dropdown-toggle tf-font-color" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

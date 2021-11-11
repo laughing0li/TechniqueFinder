@@ -12,12 +12,17 @@
                 <img style="max-width: 100%; height: 45px" src="/assets/images/auscopencrislogo.png" alt="">
             </a>
         </div>
-        <div class="col-md-2">
+        <div class="col-md">
             <a href="https://www.csiro.au/">
                 <img style="max-width: 100%; height: 45px" src="/assets/images/csiro_logo.png" alt="">
             </a>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-2">
+            <a href="https://micro.org.au/">
+                <img style="max-width: 100%; height: 45px" src="/assets/images/MicroscopyAustralia-Logo-596px.png" alt="">
+            </a>
+        </div>
+        <div class="col-md-5">
             <span>
                 LabFinder is a product of the AuScope Geochemistry Network
                 <a target="_blank" href="https://www.auscope.org.au/agn">(AGN)</a>,

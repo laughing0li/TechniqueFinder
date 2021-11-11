@@ -53,7 +53,7 @@
                                     <img src="<?php echo base_url() . 'assets/images/space.gif' ?>" width="20" height="5" />
                                     <span style="text-align:center;">
 
-                                        <h1 class="tf-heading" ><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']); ?> </h1>
+                                        <!-- <h1 class="tf-heading" ><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']); ?> </h1> -->
                                     </span>
                                 </div>
                                 <div class="row">
@@ -72,7 +72,7 @@
                                     <!-- THEN -->
                                     <img src="<?php echo base_url() . 'assets/images/space.gif' ?>" width="20" height="5" />
                                     <span style="text-align:center;">
-                                        <h1 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']); ?> </h1>
+                                        <!-- <h1 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']); ?> </h1> -->
                                     </span>
                                 </div>
                                 <div class="row">

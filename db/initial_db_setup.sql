@@ -1806,4631 +1806,3614 @@ INSERT INTO `technique` VALUES(1,'Introduction system','Excimer laser ablation s
 (78,'Other','Not applicable','Not applicable','Coating Service Providers','','','','','','','','','','Coating services provide dedicated Carbon (x2), Gold and Chromium coating are available.','Coating services provide dedicated Carbon (x2), Gold and Chromium coating are available.','Keywords of Coating Services',1,'Alternate names of Coating Services',35);
 
 UPDATE technique SET description = '<style type="text/css">@import url(\'https://themes.googleusercontent.com/fonts/css?kit=fpjTOVmNbO4Lz34iLyptLUXza5VhXqVC6o75Eld_V98\');ol{margin:0;padding:0}table td,table th{padding:0}.c5{-webkit-text-decoration-skip:none;color:#000000;font-weight:700;text-decoration:underline;vertical-align:baseline;text-decoration-skip-ink:none;font-size:11pt;font-family:"Calibre";font-style:normal}.c8{-webkit-text-decoration-skip:none;color:#000000;font-weight:400;text-decoration:underline;vertical-align:baseline;text-decoration-skip-ink:none;font-size:11pt;font-family:"Calibre";font-style:normal}.c16{-webkit-text-decoration-skip:none;color:#000000;font-weight:700;text-decoration:underline;vertical-align:baseline;text-decoration-skip-ink:none;font-size:11.5pt;font-family:"Calibre";font-style:normal}.c10{-webkit-text-decoration-skip:none;color:#000000;font-weight:700;text-decoration:underline;vertical-align:baseline;text-decoration-skip-ink:none;font-size:11pt;font-family:"Calibre";font-style:normal}.c12{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Arial";font-style:normal}.c7{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Calibre";font-style:normal}.c21{-webkit-text-decoration-skip:none;color:#0070c0;text-decoration:underline;vertical-align:baseline;text-decoration-skip-ink:none;font-size:11pt;font-style:normal}.c4{-webkit-text-decoration-skip:none;color:#1155cc;font-weight:400;text-decoration:underline;text-decoration-skip-ink:none;font-family:"Calibre"}.c17{padding-top:0pt;padding-bottom:12pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c14{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c3{padding-top:0pt;padding-bottom:8pt;line-height:1.0791666666666666;orphans:2;widows:2;text-align:left}.c0{padding-top:12pt;padding-bottom:12pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c19{color:#000000;text-decoration:none;vertical-align:baseline;font-size:11.5pt;font-style:normal}.c15{-webkit-text-decoration-skip:none;color:#1155cc;text-decoration:underline;text-decoration-skip-ink:none}.c1{padding-top:0pt;padding-bottom:0pt;line-height:1.0;text-align:left}.c20{background-color:#ffffff;max-width:451.4pt;padding:72pt 72pt 72pt 72pt}.c13{font-weight:400;font-family:"Calibre"}.c11{margin-left:18pt;text-indent:-18pt}.c2{color:inherit;text-decoration:inherit}.c9{background-color:#ffff00}.c6{height:11pt}.c18{font-style:italic}.title{padding-top:0pt;color:#000000;font-size:26pt;padding-bottom:3pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}.subtitle{padding-top:0pt;color:#666666;font-size:15pt;padding-bottom:16pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}li{color:#000000;font-family:"Arial"}p{margin:0;color:#000000;font-size:11pt;font-family:"Arial"}h1{padding-top:20pt;color:#000000;font-size:20pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h2{padding-top:18pt;color:#000000;font-size:16pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h3{padding-top:16pt;color:#434343;font-size:14pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h4{padding-top:14pt;color:#666666;font-size:12pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h5{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h6{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;font-style:italic;orphans:2;widows:2;text-align:left}</style><div><p class="c17"><span class="c12">LA-ICP-MS</span></p><p class="c0"><span class="c12">&nbsp;</span></p><p class="c0"><span>The laser ablation inductively coupled plasma mass spectrometry (LA-ICP-MS) is an analytical technique that allows small scale </span><span class="c18">in-situ</span><span class="c12">&nbsp;sampling of solid samples via a laser ablation system. This type of instrument provides high precision for elemental and isotopic measurements. It is particularly suitable for elemental analysis of separated phases or thin-sections.</span></p><p class="c0"><span class="c12">The LA-ICP-MS is composed of two parts, the introduction system (Laser Ablation) and the analyser (Inductively Coupled Plasma Mass Spectrometer). The introduction system consists of a pulsed laser beam that heats the sample in order to dig within it. This technique produces an evaporation, an ionisation, and an expulsion of particles from the sampled surface. This mixture is transported toward the ICP-MS in which elements are ionised within a plasma, and then separated in function of their mass/charge ratio before being analysed. This type of instrument can detect elemental composition down to 10 ppb.</span></p><p class="c0"><span class="c12">By comparison with traditional solution analysis by ICP-MS, &nbsp;no preparation is required before the analysis. However, matrix effects can occur, so it is recommended to use in combination with reference materials with the same matrix.</span></p><p class="c0"><span class="c12">Advantage:</span></p><p class="c0 c11"><span class="c12">- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;in-situ measurements of minor and trace elements (down to 10 ppb)</span></p><p class="c0 c11"><span class="c12">- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Small scale analysis from 10 &micro;m to 200 &micro;m</span></p><p class="c0 c11"><span class="c12">- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;No chemical preparation</span></p><p class="c0 c11"><span class="c12">- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Fast turnaround time (typical analysis ca. 3 mins)</span></p><p class="c3"><span class="c10">Macquarie University</span></p><p class="c3"><span class="c7">Instrument&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Element that can be analysed</span></p><p class="c3"><span class="c8">Laser ablation system</span></p><p class="c3"><span class="c7">Excimer laser ablation system&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Analyte G2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not applicable</span></p><p class="c3"><span class="c7">Excimer laser ablation system&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Analyte LSX-213&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not applicable</span></p><p class="c3"><span class="c7">Excimer laser ablation system&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Analyte 198-FS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not applicable</span></p><p class="c3"><span class="c7">Excimer laser ablation system&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Analyte Excite&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not applicable</span></p><p class="c3"><span class="c8">ICP-MS</span></p><p class="c3"><span class="c7">Quadrupole ICP-MS (2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agilent 7700x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Element from Li to U</span></p><p class="c3"><span class="c7">Quadrupole ICP-MS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agilent 7500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Element from Li to U</span></p><p class="c1"><span class="c7">Tandem ICP-MS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agilent 8900&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Element from Li to U</span></p><p class="c3"><span class="c13 c21">SF-ICP-MS</span></p><p class="c3"><span class="c10">Contact detail</span></p><p class="c3"><span class="c13">Mr</span><span class="c7">. Peter Wieland&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr. Yi-Jen Lai</span></p><p class="c3"><span class="c13">T:</span><span class="c13"><a class="c2" href="https://www.google.com/url?q=https://www.mq.edu.au/faculty-of-science-and-engineering/departments-and-schools/department-of-earth-and-environmental-sciences/our-research/mq-geoanalytical/mqga-facilities/%2B61%2520(2)%25209850%25204402&amp;sa=D&amp;source=editors&amp;ust=1632274601749000&amp;usg=AOvVaw0OXuQBEqvOnoljbounaL71">&nbsp;+61 (2) 9850 4402</a></span><span class="c13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T:</span><span class="c13"><a class="c2" href="https://www.google.com/url?q=https://www.mq.edu.au/faculty-of-science-and-engineering/departments-and-schools/department-of-earth-and-environmental-sciences/our-research/mq-geoanalytical/mqga-facilities/%2B61%2520(2)%25209850%25208376&amp;sa=D&amp;source=editors&amp;ust=1632274601750000&amp;usg=AOvVaw1Z1JXLZ_nm1QOdR21silLX">&nbsp;</a></span><span class="c13 c15"><a class="c2" href="https://www.google.com/url?q=https://www.mq.edu.au/faculty-of-science-and-engineering/departments-and-schools/department-of-earth-and-environmental-sciences/our-research/mq-geoanalytical/mqga-facilities/%2B61%2520(2)%25209850%25208376&amp;sa=D&amp;source=editors&amp;ust=1632274601751000&amp;usg=AOvVaw1WpMYoZAA4H35HBh9HnoMT">+61 (2) 9850 8376</a></span></p><p class="c3"><span class="c13">E: </span><span class="c15 c13"><a class="c2" href="mailto:peter.wieland@mq.edu.au">peter.wieland@mq.edu.au</a></span><span class="c13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: </span><span class="c15 c13"><a class="c2" href="mailto:yi-jen.lai@mq.edu.au">yi-jen.lai@mq.edu.au</a></span><span class="c7">&nbsp;</span></p><p class="c3 c6"><span class="c7"></span></p><p class="c3"><span class="c10">John de Leater Centre</span></p><p class="c3"><span class="c7">Instrument&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Element that can be analysed</span></p><p class="c3"><span class="c8">Laser ablation system</span></p><p class="c3"><span class="c7">Excimer laser ablation system&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RESOlution SE S-155&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not applicable</span></p><p class="c3"><span class="c7">Excimer laser ablation system&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RESOlution SE M-50A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not applicable</span></p><p class="c3"><span class="c8">ICP-MS</span></p><p class="c3"><span class="c7">Quadrupole ICP-MS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agilent 7700&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Element from Li to U</span></p><p class="c3"><span class="c5">Contact detail</span></p><p class="c3"><span class="c7">Prof. Noreen Evans</span></p><p class="c3"><span class="c7">T: +61 (8) 9266 2393</span></p><p class="c3"><span class="c13">E: n</span><span class="c4"><a class="c2" href="mailto:Noreen.Evans@curtin.edu.au">oreen.evans@curtin.edu.au</a></span></p><p class="c3 c6"><span class="c7"></span></p><p class="c3"><span class="c16">University of Melbourne</span></p><p class="c3"><span class="c7">Instrument&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Element that can be analysed</span></p><p class="c3"><span class="c8">Laser ablation system</span></p><p class="c3"><span class="c7">Excimer laser ablation system&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RESOlution SE S-155&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not applicable</span></p><p class="c3"><span class="c7">Excimer laser ablation system&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lambda Physik&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not applicable</span></p><p class="c3"><span class="c8">ICP-MS</span></p><p class="c3"><span class="c7">Quadrupole ICP-MS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agilent 7700&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Element from Li to U</span></p><p class="c3"><span class="c7">Quadrupole ICP-MS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agilent 7700x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Element from Li to U</span></p><p class="c3"><span class="c5">Contact detail</span></p><p class="c3"><span class="c13 c19">Dr. Samuel Boone</span></p><p class="c3"><span class="c7">T: +61 (3) 8344 4950</span></p><p class="c3"><span class="c13">E: </span><span class="c4"><a class="c2" href="mailto:samuel.boone@unimelb.edu.au">samuel.boone@unimelb.edu.au</a></span></p><p class="c6 c14"><span class="c12"></span></p></div>' WHERE ID=12;
-UPDATE technique SET description = '
-                    <style type="text/css">
-                      @import url(\'https://themes.googleusercontent.com/fonts/css?kit=fpjTOVmNbO4Lz34iLyptLUXza5VhXqVC6o75Eld_V98\');
-                      .lst-kix_7g54tjt9kss2-1 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-0 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-2 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-2 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-4 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-5 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-3 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-1 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-8 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-6 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-7 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      ul.lst-kix_as7rwr57yz2j-1 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-0 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-5 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-4 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-3 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-2 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-8 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-7 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-6 {
-                        list-style-type: none;
-                      }
-                      li.li-bullet-0:before {
-                        margin-left: -18pt;
-                        white-space: nowrap;
-                        display: inline-block;
-                        min-width: 18pt;
-                      }
-                      .lst-kix_as7rwr57yz2j-6 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-2 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-3 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-0 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-1 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-4 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-8 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-6 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-7 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-3 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-7 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-4 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-5 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-8 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-5 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-0 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      ol {
-                        margin: 0;
-                        padding: 0;
-                      }
+UPDATE technique SET description = '<style type="text/css">
+  
+  .lst-kix_7g54tjt9kss2-1 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-0 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_7g54tjt9kss2-2 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_as7rwr57yz2j-2 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-4 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_7g54tjt9kss2-5 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-3 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-1 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_7g54tjt9kss2-8 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-6 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_7g54tjt9kss2-7 > li:before {
+    content: "\0025cb  ";
+  }
+  ul.lst-kix_as7rwr57yz2j-1 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-0 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-5 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-4 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-3 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-2 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-8 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-7 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-6 {
+    list-style-type: none;
+  }
+  li.li-bullet-0:before {
+    margin-left: -18pt;
+    white-space: nowrap;
+    display: inline-block;
+    min-width: 18pt;
+  }
+  .lst-kix_as7rwr57yz2j-6 > li:before {
+    content: "\0025cf  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-2 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-3 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-0 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-1 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-4 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_as7rwr57yz2j-8 > li:before {
+    content: "\0025a0  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-6 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-7 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-3 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-7 > li:before {
+    content: "\0025cb  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-4 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-5 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-8 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-5 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-0 > li:before {
+    content: "\0025cf  ";
+  }
+  ol {
+    margin: 0;
+    padding: 0;
+  }
 
-                      .c7 {
-                        padding: 5pt 5pt 5pt 5pt;
-                        vertical-align: top;
-                        border: 1px solid #000000;
-                      }
-                      .c2 {
-                        margin-left: 36pt;
-                        padding-top: 0pt;
-                        padding-left: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .c17 {
-                        color: #000000;
-                        font-weight: 400;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 16px;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c1 {
-                        padding-top: 18pt;
-                        padding-bottom: 4pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .c8 {
-                        padding-bottom: 6pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                      .c0 {
-                        font-weight: 400;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 16px;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c20 {
-                        padding-top: 14pt;
-                        padding-bottom: 4pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                      .c19 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 14pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c3 {
-                        padding-top: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        font-size: 16px;
-                        text-align: left;
-                      }
-                      .c12 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 24pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c11 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 18pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c5 {
-                        line-height: 1;
-                        text-align: center;
-                      }
-                      .c16 {
-                        text-decoration-skip-ink: none;
-                        -webkit-text-decoration-skip: none;
-                        color: #1155cc;
-                      }
-                      .c15 {
-                        border-spacing: 0;
-                        border-collapse: collapse;
-                        margin-right: auto;
-                      }
+  .c7 {
+    padding: 5pt 5pt 5pt 5pt;
+    vertical-align: top;
+    border: 1px solid #000000;
+  }
+  .c2 {
+    margin-left: 36pt;
+    padding-top: 0pt;
+    padding-left: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .c17 {
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 16px;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c1 {
+    padding-top: 18pt;
+    padding-bottom: 4pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .c8 {
+    padding-bottom: 6pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+  .c0 {
+    font-weight: 400;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 16px;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c20 {
+    padding-top: 14pt;
+    padding-bottom: 4pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+  .c19 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 14pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c3 {
+    padding-top: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    font-size: 16px;
+    text-align: left;
+  }
+  .c12 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 24pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c11 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 18pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c5 {
+    line-height: 1;
+    text-align: center;
+  }
+  .c16 {
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    color: #1155cc;
+  }
+  .c15 {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-right: auto;
+  }
 
-                      .c18 {
-                        padding: 0;
-                        margin: 0;
-                      }
-                      .c9 {
-                        color: inherit;
-                        text-decoration: inherit;
-                        font-size: 16px;
-                      }
-                      .c13 {
-                        height: 18pt;
-                      }
-                      .c4 {
-                        vertical-align: super;
-                        font-size: 16px;
-                      }
+  .c18 {
+    padding: 0;
+    margin: 0;
+  }
+  .c9 {
+    color: inherit;
+    text-decoration: inherit;
+    font-size: 16px;
+  }
+  .c13 {
+    height: 18pt;
+  }
+  .c4 {
+    vertical-align: super;
+    font-size: 16px;
+  }
 
-                      .c6 {
-                        font-weight: 700;
-                      }
-                      .c10 {
-                        height: 11pt;
-                      }
-                      .title {
-                        padding-top: 24pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 36pt;
-                        padding-bottom: 6pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .subtitle {
-                        padding-top: 18pt;
-                        color: #666666;
-                        font-size: 24pt;
-                        padding-bottom: 4pt;
-                        font-family: "Georgia";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        font-style: italic;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      li {
-                        color: #000000;
-                        font-family: "Calibre";
-                      }
-                      p {
-                        margin: 0;
-                        color: #000000;
-                        font-size: 11pt;
-                        font-family: "Calibre";
-                      }
-                      h1 {
-                        padding-top: 24pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 24pt;
-                        padding-bottom: 6pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h2 {
-                        padding-top: 18pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 18pt;
-                        padding-bottom: 4pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h3 {
-                        padding-top: 14pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 14pt;
-                        padding-bottom: 4pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h4 {
-                        padding-top: 12pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 12pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h5 {
-                        padding-top: 11pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 11pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h6 {
-                        padding-top: 10pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 10pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      table {
-                        margin: auto;
-                      }
+  .c6 {
+    font-weight: 700;
+  }
+  .c10 {
+    height: 11pt;
+  }
+  .title {
+    padding-top: 24pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 36pt;
+    padding-bottom: 6pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .subtitle {
+    padding-top: 18pt;
+    color: #666666;
+    font-size: 24pt;
+    padding-bottom: 4pt;
+    font-family: "Georgia";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    font-style: italic;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  li {
+    color: #000000;
+    font-family: "Calibre";
+  }
+  p {
+    margin: 0;
+    color: #000000;
+    font-size: 11pt;
+    font-family: "Calibre";
+  }
+  h1 {
+    padding-top: 24pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 24pt;
+    padding-bottom: 6pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h2 {
+    padding-top: 18pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 18pt;
+    padding-bottom: 4pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h3 {
+    padding-top: 14pt;
+    color: #f2f2f2;
+    font-weight: 700;
+    font-size: 14pt;
+    padding-bottom: 4pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h4 {
+    padding-top: 12pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 12pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h5 {
+    padding-top: 11pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 11pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h6 {
+    padding-top: 10pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 10pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  table {
+    margin: auto;
+  }
 
-                      table p {
-                        color: #000000 !important;
-                      }
+  table p {
+    color: #000000 !important;
+  }
 
-                      .contact {
-                        padding-top: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                    </style>
-                  </p>
+  .contact {
+    padding-top: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+</style>
+<body>
+    <h1 class="c8" style="margin-bottom: 100px" id="h.6c73zlqek6pu">
+      <span class="c6 c12">Ar/Ar Geochronology</span>
+    </h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <h2 class="c8" id="h.6oyabzybdetz">
+            <span>The Technique</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing01.png"
+                style="max-width: 200px; max-height: 300px;float: left; margin-right: 10px; margin-top: 10px;"
+            />
+            <span class="c3">The</span><span class="c4">40</span
+            ><span class="c3">Ar/</span><span class="c4">39</span
+            ><span class="c3">Ar dating technique is capable of addressing questions spanning
+              all of Earth&rsquo;s history (i.e., from thousands to billions of
+              years). </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c0">Ar geochronology can be applied to a wide range of problems in
+              volcanology, igneous petrology, metamorphic petrology, structural
+              geology and much more!
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c3">The </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3">Ar dating technique builds on, and is more sophisticated than the
+              traditional K/Ar dating technique, where both techniques measure </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar as the parent isotope. A key difference is that the K/Ar technique measures </span
+            ><span class="c4">40</span
+            ><span class="c3">K</span
+            ><span class="c3">&nbsp;as the parent, the</span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3">Ar technique uses </span><span class="c4">39</span
+            ><span class="c0">Ar. </span>
+          </p>
+          <p class="c3">
+            <span class="c3">The parent in the Ar/Ar technique, </span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar, does not occur naturally and can only be produced by a fat
+              neutron reaction. Therefore a key step in </span
+            ><span class="c4">40</span><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar geochronology is placing samples into the core of a nuclear
+              reactor and bombarding them with fast neutrons to produce </span
+            ><span class="c4">39</span><span class="c3">Ar. The amount of </span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar produced by this process is controlled by the amount of </span
+            ><span class="c4">39</span
+            ><span class="c0"
+              >K present initially (related to age of sample), the length of the
+              irradiation, and the flux of neutrons.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >During analysis, argon is extracted from the sample as a gas.
+              This can be done in a variety of ways:</span
+            >
+          </p>
+          <ul class="c18 lst-kix_as7rwr57yz2j-0 start">
+            <li class="c2 li-bullet-0">
+              <span class="c6">Step-heating</span
+              ><span class="c0"
+                >&nbsp;is one of the most common approaches and utilises a laser
+                or furnace to incrementally heat the sample and release argon.
+                The individual ages from each heating increment are then
+                utilised to produce an age spectrum.</span
+              >
+            </li>
+            <li class="c2 li-bullet-0">
+              <span class="c6">Total fusion analysis </span
+              ><span
+                >is most similar to conventional to K/Ar age determination as it
+                utilises complete release of argon from the sample in one step.
+                An important difference is the use of argon </span
+              ><span
+                >ratios (rather than K or Ar abundances). Fusions are typically
+                performed using a </span
+              ><span>laer</span><span class="c0">.</span>
+            </li>
+          </ul>
+        
+          <h2 class="c8" id="h.ksaf7xvy2vvn">
+            <span>Precision</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing02.png"
+                style="max-width: 200px; max-height: 300px;float: right;"
+            />
+            <span class="c3"
+              >A key advantage of this approach (compared to K/Ar dating) is
+              that absolute abundances do not need to be calculated. </span
+            ><span class="c0"
+              >Instead, the ratios of the different argon isotopes are measured,
+              yielding more precise and accurate results.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c3"
+              >New generation, fully automated multi-collector Thermo Fisher
+              Scientific Argus VI mass spectrometers permits high-precision </span
+            ><span class="c4">40</span><span>Ar/</span><span class="c4">39</span
+            ><span class="c0"
+              >Ar dating of a wide variety of sample types, including
+              Pleistocene/Holocene-aged samples of low-K content. Analytical
+              precision: &lt;0.1% for most samples.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >Earlier generation mass spectrometers (e.g., VG3600) are also
+              routinely employed for step-heating of bulk samples or single
+              grains (depending on sample age) and produce analytical precision:
+              &lt;1% for most samples</span
+            >
+          </p>
+        
+          <h2 class="c8" id="h.vyp3lirrdp97">
+            <span class="c6 c11">Sample Preparation</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing03.png"
+                style="max-width: 200px; max-height: 300px;float: left; margin-right: 10px; margin-top: 10px;"
+            />
 
-                  <div>
-                    <h1
-                      class="c8"
-                      style="margin-bottom: 100px"
-                      id="h.6c73zlqek6pu"
-                    >
-                      <span class="c6 c12">Ar/Ar Geochronology</span>
-                    </h1>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.6oyabzybdetz">
-                            <span>The Technique</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c3">The </span><span class="c4">40</span
-                            ><span class="c3">Ar/</span><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar dating technique is capable of addressing
-                              questions spanning all of Earth&rsquo;s history
-                              (i.e., from thousands to billions of years). </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar geochronology can be applied to a wide range
-                              of problems in volcanology, igneous petrology,
-                              metamorphic petrology, structural geology and much
-                              more!
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3">The </span><span class="c4">40</span
-                            ><span class="c3">Ar/</span><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar dating technique builds on, and is more
-                              sophisticated than the traditional K/Ar dating
-                              technique, where both techniques measure </span
-                            ><span class="c4">40</span
-                            ><span class="c3"
-                              >Ar as the parent isotope. A key difference is
-                              that the K/Ar technique measures </span
-                            ><span class="c4">40</span><span class="c3">K</span
-                            ><span class="c3">&nbsp;as the parent, the </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c3">Ar technique uses </span
-                            ><span class="c4">39</span
-                            ><span class="c0">Ar. </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3">The parent in the Ar/Ar technique, </span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar, does not occur naturally and can only be
-                              produced by a fat neutron reaction. Therefore a
-                              key step in </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar geochronology is placing samples into the core
-                              of a nuclear reactor and bombarding them with fast
-                              neutrons to produce </span
-                            ><span class="c4">39</span
-                            ><span class="c3">Ar. The amount of </span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar produced by this process is controlled by the
-                              amount of </span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >K present initially (related to age of sample),
-                              the length of the irradiation, and the flux of
-                              neutrons.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >During analysis, argon is extracted from the
-                              sample as a gas. This can be done in a variety of
-                              ways:</span
-                            >
-                          </p>
-                          <ul class="c18 lst-kix_as7rwr57yz2j-0 start">
-                            <li class="c2 li-bullet-0">
-                              <span class="c6">Step-heating</span
-                              ><span class="c0"
-                                >&nbsp;is one of the most common approaches and
-                                utilises a laser or furnace to incrementally
-                                heat the sample and release argon. The
-                                individual ages from each heating increment are
-                                then utilised to produce an age spectrum.</span
-                              >
-                            </li>
-                            <li class="c2 li-bullet-0">
-                              <span class="c6">Total fusion analysis </span
-                              ><span
-                                >is most similar to conventional to K/Ar age
-                                determination as it utilises complete release of
-                                argon from the sample in one step. An important
-                                difference is the use of argon </span
-                              ><span
-                                >ratios (rather than K or Ar abundances).
-                                Fusions are typically performed using a </span
-                              ><span>laer</span><span class="c0">.</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing01.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.ksaf7xvy2vvn">
-                            <span>Precision</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c3"
-                              >A key advantage of this approach (compared to
-                              K/Ar dating) is that absolute abundances do not
-                              need to be calculated. </span
-                            ><span class="c0"
-                              >Instead, the ratios of the different argon
-                              isotopes are measured, yielding more precise and
-                              accurate results.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3"
-                              >New generation, fully automated multi-collector
-                              Thermo Fisher Scientific Argus VI mass
-                              spectrometers permits high-precision </span
-                            ><span class="c4">40</span><span>Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar dating of a wide variety of sample types,
-                              including Pleistocene/Holocene-aged samples of
-                              low-K content. Analytical precision: &lt;0.1% for
-                              most samples.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >Earlier generation mass spectrometers (e.g.,
-                              VG3600) are also routinely employed for
-                              step-heating of bulk samples or single grains
-                              (depending on sample age) and produce analytical
-                              precision: &lt;1% for most samples</span
-                            >
-                          </p>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing02.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.vyp3lirrdp97">
-                            <span class="c6 c11">Sample Preparation</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar dating techniques can be applied to single or
-                              multi-crystal/grain aliquots and is also routinely
-                              applied to volcanic groundmass samples. Best
-                              results are obtained from the use of gresh,
-                              unaltered samples that are free of inclusions or
-                              sources of contamination.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >Sample size requirement varies based on the age
-                              and K-content of the samples under investigation.
-                              For example, single grains can yield excellent
-                              ages for million year old K-feldspar and mica
-                              grains whereas 10s of milligrams may be required
-                              for Pleistocene/Holocene samples, volcanic
-                              groundmass samples or low-K phases such as
-                              hornblende.
-                            </span>
-                          </p>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing03.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
+            <span class="c4">40</span><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c0"
+              >Ar dating techniques can be applied to single or
+              multi-crystal/grain aliquots and is also routinely applied to
+              volcanic groundmass samples. Best results are obtained from the
+              use of gresh, unaltered samples that are free of inclusions or
+              sources of contamination.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >Sample size requirement varies based on the age and K-content of
+              the samples under investigation. For example, single grains can
+              yield excellent ages for million year old K-feldspar and mica
+              grains whereas 10s of milligrams may be required for
+              Pleistocene/Holocene samples, volcanic groundmass samples or low-K
+              phases such as hornblende.
+            </span>
+          </p>
+        </div>
 
-                    <h2 class="c8" style="margin-top: 70px" id="h.1e0wo2nackbs">
-                      <span class="c11 c6"
-                        >John de Laeter Centre, Curtin University</span
-                      >
-                    </h2>
-                    <table class="c15">
-                      <tbody>
-                        <tr>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Instrument</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Model</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Elements that can be analysed</span
-                              >
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Static Vacuum Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0">ThermoFisher ARGUS VI</span>
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <h3 class="c20" id="h.ihkpk3wfbczv">
-                      <span class="c19 c6">Contact detail</span>
-                    </h3>
-                    <div>
-                      <p class="contact">
-                        <span class="c0"
-                          >Prof. Fred
-                          Jourdan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Celia
-                          Myers</span
-                        >
-                      </p>
-                      <p class="contact">
-                        <span>T:</span><span>&nbsp; </span
-                        ><span class="c0"
-                          >+61 08 9266
-                          2412&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T:
-                          +61 08 9266 4731</span
-                        >
-                      </p>
-
-                      <p class="contact">
-                        <span>E: </span
-                        ><span class="c16"
-                          ><a
-                            class="c9"
-                            href="mailto:f.jourdan@exchange.curtin.edu.au"
-                            >f.jourdan@exchange.curtin.edu.au</a
-                          ></span
-                        ><span
-                          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: </span
-                        ><span class="c16"
-                          ><a
-                            class="c9"
-                            href="mailto:Celia.Mayers@curtin.edu.au"
-                            >Celia.Mayers@curtin.edu.au</a
-                          ></span
-                        ><span class="c0">&nbsp;</span>
-                      </p>
-                    </div>
-
-                    <h2 class="c8" id="h.5tfqchhot5wk">
-                      <span class="c11 c6">University of Melbourne</span>
-                    </h2>
-                    <a id="t.f2da2e225a7f8712251834360fbda197f8c03e29"></a
-                    ><a id="t.1"></a>
-                    <table class="c15">
-                      <tbody>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Instrument</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Model</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Elements that can be analysed</span
-                              >
-                            </p>
-                          </td>
-                        </tr>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Static Vacuum Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0">ThermoFisher ARGUS VI</span>
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >&nbsp;Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">VG3600</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                    <h3 class="c20" id="h.x6e11bsnj7sp">
-                      <span class="c6 c19">Contact detail</span>
-                    </h3>
-                    <p class="contact">
-                      <span class="c17"
-                        >Prof. David
-                        Phillips&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr.
-                        Erin Matchan</span
-                      >
-                    </p>
-                    <p class="contact">
-                      <span class="c0"
-                        >T: +61 3 8344
-                        9866&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T:
-                        +61 3 9035 9621</span
-                      >
-                    </p>
-                    <p class="contact">
-                      <span>E: </span
-                      ><span class="c16"
-                        ><a class="c9" href="mailto:dphillip@unimelb.edu.au"
-                          >dphillip@unimelb.edu.au</a
-                        ></span
-                      ><span
-                        >&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: </span
-                      ><span class="c16"
-                        ><a class="c9" href="mailto:ematchan@unimelb.edu.au"
-                          >ematchan@unimelb.edu.au</a
-                        ></span
-                      ><span class="c0">&nbsp;</span>
-                    </p>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                  </div>
-                </div>
-
+        <div class="col-4">
+          <h3 style="margin-top: 52px">CONTACT AN EXPERT</h3>
+          <br>
+          <p align="left" style="margin-bottom:20px; color: #f2f2f2;">
+            <strong>Curtin University</strong>
+            <br>
+            Model: ThermoFisher ARGUS VI
+            <br>
+            <br>
+            Prof. Fred Jourdan  
+            <br>
+            T: +61 08 9266 2412  
+            <br
+            >E: <a href="mailto:f.jourdan@exchange.curtin.edu.au">
+              f.jourdan@exchange.curtin.edu.au</a>
+            <br>
+            <br>
+            Celia Myers  
+            <br>
+            T: +61 08 9266 4731
+            <br
+            >E: <a href="mailto:Celia.Mayers@curtin.edu.au">
+              Celia.Mayers@curtin.edu.au</a>
+            <br>
+          </p>
+          <p align="left" style="margin-bottom:20px; color:#f2f2f2;">
+            <strong>University of Melbourne</strong>
+            <br>
+            Model: ThermoFisher ARGUS VI & VG3600
+            <br>
+            <br>
+            Prof. David Phillips 
+            <br>
+            T: +61 3 8344 9866
+            <br
+            >E: <a href="mailto:dphillip@unimelb.edu.au">
+              dphillip@unimelb.edu.au</a>
+            <br>
+            <br>
+            Dr. Erin Matchan
+            <br>
+            T: +61 3 9035 9621
+            <br
+            >E: <a href="mailto:ematchan@unimelb.edu.au">
+              ematchan@unimelb.edu.au</a>
+            <br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 ' WHERE ID=28;
-UPDATE technique SET description = '
-                    <style type="text/css">
-                      @import url(\'https://themes.googleusercontent.com/fonts/css?kit=fpjTOVmNbO4Lz34iLyptLUXza5VhXqVC6o75Eld_V98\');
-                      .lst-kix_7g54tjt9kss2-1 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-0 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-2 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-2 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-4 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-5 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-3 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-1 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-8 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-6 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-7 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      ul.lst-kix_as7rwr57yz2j-1 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-0 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-5 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-4 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-3 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-2 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-8 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-7 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-6 {
-                        list-style-type: none;
-                      }
-                      li.li-bullet-0:before {
-                        margin-left: -18pt;
-                        white-space: nowrap;
-                        display: inline-block;
-                        min-width: 18pt;
-                      }
-                      .lst-kix_as7rwr57yz2j-6 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-2 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-3 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-0 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-1 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-4 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-8 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-6 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-7 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-3 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-7 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-4 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-5 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-8 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-5 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-0 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      ol {
-                        margin: 0;
-                        padding: 0;
-                      }
+UPDATE technique SET description = '<style type="text/css">
+  
+  .lst-kix_7g54tjt9kss2-1 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-0 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_7g54tjt9kss2-2 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_as7rwr57yz2j-2 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-4 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_7g54tjt9kss2-5 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-3 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-1 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_7g54tjt9kss2-8 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-6 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_7g54tjt9kss2-7 > li:before {
+    content: "\0025cb  ";
+  }
+  ul.lst-kix_as7rwr57yz2j-1 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-0 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-5 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-4 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-3 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-2 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-8 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-7 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-6 {
+    list-style-type: none;
+  }
+  li.li-bullet-0:before {
+    margin-left: -18pt;
+    white-space: nowrap;
+    display: inline-block;
+    min-width: 18pt;
+  }
+  .lst-kix_as7rwr57yz2j-6 > li:before {
+    content: "\0025cf  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-2 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-3 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-0 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-1 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-4 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_as7rwr57yz2j-8 > li:before {
+    content: "\0025a0  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-6 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-7 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-3 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-7 > li:before {
+    content: "\0025cb  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-4 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-5 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-8 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-5 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-0 > li:before {
+    content: "\0025cf  ";
+  }
+  ol {
+    margin: 0;
+    padding: 0;
+  }
 
-                      .c7 {
-                        padding: 5pt 5pt 5pt 5pt;
-                        vertical-align: top;
-                        border: 1px solid #000000;
-                      }
-                      .c2 {
-                        margin-left: 36pt;
-                        padding-top: 0pt;
-                        padding-left: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .c17 {
-                        color: #000000;
-                        font-weight: 400;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 16px;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c1 {
-                        padding-top: 18pt;
-                        padding-bottom: 4pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .c8 {
-                        padding-bottom: 6pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                      .c0 {
-                        font-weight: 400;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 16px;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c20 {
-                        padding-top: 14pt;
-                        padding-bottom: 4pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                      .c19 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 14pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c3 {
-                        padding-top: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        font-size: 16px;
-                        text-align: left;
-                      }
-                      .c12 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 24pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c11 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 18pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c5 {
-                        line-height: 1;
-                        text-align: center;
-                      }
-                      .c16 {
-                        text-decoration-skip-ink: none;
-                        -webkit-text-decoration-skip: none;
-                        color: #1155cc;
-                      }
-                      .c15 {
-                        border-spacing: 0;
-                        border-collapse: collapse;
-                        margin-right: auto;
-                      }
+  .c7 {
+    padding: 5pt 5pt 5pt 5pt;
+    vertical-align: top;
+    border: 1px solid #000000;
+  }
+  .c2 {
+    margin-left: 36pt;
+    padding-top: 0pt;
+    padding-left: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .c17 {
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 16px;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c1 {
+    padding-top: 18pt;
+    padding-bottom: 4pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .c8 {
+    padding-bottom: 6pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+  .c0 {
+    font-weight: 400;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 16px;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c20 {
+    padding-top: 14pt;
+    padding-bottom: 4pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+  .c19 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 14pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c3 {
+    padding-top: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    font-size: 16px;
+    text-align: left;
+  }
+  .c12 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 24pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c11 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 18pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c5 {
+    line-height: 1;
+    text-align: center;
+  }
+  .c16 {
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    color: #1155cc;
+  }
+  .c15 {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-right: auto;
+  }
 
-                      .c18 {
-                        padding: 0;
-                        margin: 0;
-                      }
-                      .c9 {
-                        color: inherit;
-                        text-decoration: inherit;
-                        font-size: 16px;
-                      }
-                      .c13 {
-                        height: 18pt;
-                      }
-                      .c4 {
-                        vertical-align: super;
-                        font-size: 16px;
-                      }
+  .c18 {
+    padding: 0;
+    margin: 0;
+  }
+  .c9 {
+    color: inherit;
+    text-decoration: inherit;
+    font-size: 16px;
+  }
+  .c13 {
+    height: 18pt;
+  }
+  .c4 {
+    vertical-align: super;
+    font-size: 16px;
+  }
 
-                      .c6 {
-                        font-weight: 700;
-                      }
-                      .c10 {
-                        height: 11pt;
-                      }
-                      .title {
-                        padding-top: 24pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 36pt;
-                        padding-bottom: 6pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .subtitle {
-                        padding-top: 18pt;
-                        color: #666666;
-                        font-size: 24pt;
-                        padding-bottom: 4pt;
-                        font-family: "Georgia";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        font-style: italic;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      li {
-                        color: #000000;
-                        font-family: "Calibre";
-                      }
-                      p {
-                        margin: 0;
-                        color: #000000;
-                        font-size: 11pt;
-                        font-family: "Calibre";
-                      }
-                      h1 {
-                        padding-top: 24pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 24pt;
-                        padding-bottom: 6pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h2 {
-                        padding-top: 18pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 18pt;
-                        padding-bottom: 4pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h3 {
-                        padding-top: 14pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 14pt;
-                        padding-bottom: 4pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h4 {
-                        padding-top: 12pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 12pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h5 {
-                        padding-top: 11pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 11pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h6 {
-                        padding-top: 10pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 10pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      table {
-                        margin: auto;
-                      }
+  .c6 {
+    font-weight: 700;
+  }
+  .c10 {
+    height: 11pt;
+  }
+  .title {
+    padding-top: 24pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 36pt;
+    padding-bottom: 6pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .subtitle {
+    padding-top: 18pt;
+    color: #666666;
+    font-size: 24pt;
+    padding-bottom: 4pt;
+    font-family: "Georgia";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    font-style: italic;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  li {
+    color: #000000;
+    font-family: "Calibre";
+  }
+  p {
+    margin: 0;
+    color: #000000;
+    font-size: 11pt;
+    font-family: "Calibre";
+  }
+  h1 {
+    padding-top: 24pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 24pt;
+    padding-bottom: 6pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h2 {
+    padding-top: 18pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 18pt;
+    padding-bottom: 4pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h3 {
+    padding-top: 14pt;
+    color: #f2f2f2;
+    font-weight: 700;
+    font-size: 14pt;
+    padding-bottom: 4pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h4 {
+    padding-top: 12pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 12pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h5 {
+    padding-top: 11pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 11pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h6 {
+    padding-top: 10pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 10pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  table {
+    margin: auto;
+  }
 
-                      table p {
-                        color: #000000 !important;
-                      }
+  table p {
+    color: #000000 !important;
+  }
 
-                      .contact {
-                        padding-top: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                    </style>
-                  </p>
+  .contact {
+    padding-top: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+</style>
+<body>
+    <h1 class="c8" style="margin-bottom: 100px" id="h.6c73zlqek6pu">
+      <span class="c6 c12">Ar/Ar Geochronology</span>
+    </h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <h2 class="c8" id="h.6oyabzybdetz">
+            <span>The Technique</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing01.png"
+                style="max-width: 200px; max-height: 300px;float: left; margin-right: 10px; margin-top: 10px;"
+            />
+            <span class="c3">The</span><span class="c4">40</span
+            ><span class="c3">Ar/</span><span class="c4">39</span
+            ><span class="c3">Ar dating technique is capable of addressing questions spanning
+              all of Earth&rsquo;s history (i.e., from thousands to billions of
+              years). </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c0">Ar geochronology can be applied to a wide range of problems in
+              volcanology, igneous petrology, metamorphic petrology, structural
+              geology and much more!
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c3">The </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3">Ar dating technique builds on, and is more sophisticated than the
+              traditional K/Ar dating technique, where both techniques measure </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar as the parent isotope. A key difference is that the K/Ar technique measures </span
+            ><span class="c4">40</span
+            ><span class="c3">K</span
+            ><span class="c3">&nbsp;as the parent, the</span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3">Ar technique uses </span><span class="c4">39</span
+            ><span class="c0">Ar. </span>
+          </p>
+          <p class="c3">
+            <span class="c3">The parent in the Ar/Ar technique, </span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar, does not occur naturally and can only be produced by a fat
+              neutron reaction. Therefore a key step in </span
+            ><span class="c4">40</span><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar geochronology is placing samples into the core of a nuclear
+              reactor and bombarding them with fast neutrons to produce </span
+            ><span class="c4">39</span><span class="c3">Ar. The amount of </span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar produced by this process is controlled by the amount of </span
+            ><span class="c4">39</span
+            ><span class="c0"
+              >K present initially (related to age of sample), the length of the
+              irradiation, and the flux of neutrons.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >During analysis, argon is extracted from the sample as a gas.
+              This can be done in a variety of ways:</span
+            >
+          </p>
+          <ul class="c18 lst-kix_as7rwr57yz2j-0 start">
+            <li class="c2 li-bullet-0">
+              <span class="c6">Step-heating</span
+              ><span class="c0"
+                >&nbsp;is one of the most common approaches and utilises a laser
+                or furnace to incrementally heat the sample and release argon.
+                The individual ages from each heating increment are then
+                utilised to produce an age spectrum.</span
+              >
+            </li>
+            <li class="c2 li-bullet-0">
+              <span class="c6">Total fusion analysis </span
+              ><span
+                >is most similar to conventional to K/Ar age determination as it
+                utilises complete release of argon from the sample in one step.
+                An important difference is the use of argon </span
+              ><span
+                >ratios (rather than K or Ar abundances). Fusions are typically
+                performed using a </span
+              ><span>laer</span><span class="c0">.</span>
+            </li>
+          </ul>
+        
+          <h2 class="c8" id="h.ksaf7xvy2vvn">
+            <span>Precision</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing02.png"
+                style="max-width: 200px; max-height: 300px;float: right;"
+            />
+            <span class="c3"
+              >A key advantage of this approach (compared to K/Ar dating) is
+              that absolute abundances do not need to be calculated. </span
+            ><span class="c0"
+              >Instead, the ratios of the different argon isotopes are measured,
+              yielding more precise and accurate results.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c3"
+              >New generation, fully automated multi-collector Thermo Fisher
+              Scientific Argus VI mass spectrometers permits high-precision </span
+            ><span class="c4">40</span><span>Ar/</span><span class="c4">39</span
+            ><span class="c0"
+              >Ar dating of a wide variety of sample types, including
+              Pleistocene/Holocene-aged samples of low-K content. Analytical
+              precision: &lt;0.1% for most samples.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >Earlier generation mass spectrometers (e.g., VG3600) are also
+              routinely employed for step-heating of bulk samples or single
+              grains (depending on sample age) and produce analytical precision:
+              &lt;1% for most samples</span
+            >
+          </p>
+        
+          <h2 class="c8" id="h.vyp3lirrdp97">
+            <span class="c6 c11">Sample Preparation</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing03.png"
+                style="max-width: 200px; max-height: 300px;float: left; margin-right: 10px; margin-top: 10px;"
+            />
 
-                  <div>
-                    <h1
-                      class="c8"
-                      style="margin-bottom: 100px"
-                      id="h.6c73zlqek6pu"
-                    >
-                      <span class="c6 c12">Ar/Ar Geochronology</span>
-                    </h1>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.6oyabzybdetz">
-                            <span>The Technique</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c3">The </span><span class="c4">40</span
-                            ><span class="c3">Ar/</span><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar dating technique is capable of addressing
-                              questions spanning all of Earth&rsquo;s history
-                              (i.e., from thousands to billions of years). </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar geochronology can be applied to a wide range
-                              of problems in volcanology, igneous petrology,
-                              metamorphic petrology, structural geology and much
-                              more!
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3">The </span><span class="c4">40</span
-                            ><span class="c3">Ar/</span><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar dating technique builds on, and is more
-                              sophisticated than the traditional K/Ar dating
-                              technique, where both techniques measure </span
-                            ><span class="c4">40</span
-                            ><span class="c3"
-                              >Ar as the parent isotope. A key difference is
-                              that the K/Ar technique measures </span
-                            ><span class="c4">40</span><span class="c3">K</span
-                            ><span class="c3">&nbsp;as the parent, the </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c3">Ar technique uses </span
-                            ><span class="c4">39</span
-                            ><span class="c0">Ar. </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3">The parent in the Ar/Ar technique, </span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar, does not occur naturally and can only be
-                              produced by a fat neutron reaction. Therefore a
-                              key step in </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar geochronology is placing samples into the core
-                              of a nuclear reactor and bombarding them with fast
-                              neutrons to produce </span
-                            ><span class="c4">39</span
-                            ><span class="c3">Ar. The amount of </span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar produced by this process is controlled by the
-                              amount of </span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >K present initially (related to age of sample),
-                              the length of the irradiation, and the flux of
-                              neutrons.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >During analysis, argon is extracted from the
-                              sample as a gas. This can be done in a variety of
-                              ways:</span
-                            >
-                          </p>
-                          <ul class="c18 lst-kix_as7rwr57yz2j-0 start">
-                            <li class="c2 li-bullet-0">
-                              <span class="c6">Step-heating</span
-                              ><span class="c0"
-                                >&nbsp;is one of the most common approaches and
-                                utilises a laser or furnace to incrementally
-                                heat the sample and release argon. The
-                                individual ages from each heating increment are
-                                then utilised to produce an age spectrum.</span
-                              >
-                            </li>
-                            <li class="c2 li-bullet-0">
-                              <span class="c6">Total fusion analysis </span
-                              ><span
-                                >is most similar to conventional to K/Ar age
-                                determination as it utilises complete release of
-                                argon from the sample in one step. An important
-                                difference is the use of argon </span
-                              ><span
-                                >ratios (rather than K or Ar abundances).
-                                Fusions are typically performed using a </span
-                              ><span>laer</span><span class="c0">.</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing01.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.ksaf7xvy2vvn">
-                            <span>Precision</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c3"
-                              >A key advantage of this approach (compared to
-                              K/Ar dating) is that absolute abundances do not
-                              need to be calculated. </span
-                            ><span class="c0"
-                              >Instead, the ratios of the different argon
-                              isotopes are measured, yielding more precise and
-                              accurate results.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3"
-                              >New generation, fully automated multi-collector
-                              Thermo Fisher Scientific Argus VI mass
-                              spectrometers permits high-precision </span
-                            ><span class="c4">40</span><span>Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar dating of a wide variety of sample types,
-                              including Pleistocene/Holocene-aged samples of
-                              low-K content. Analytical precision: &lt;0.1% for
-                              most samples.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >Earlier generation mass spectrometers (e.g.,
-                              VG3600) are also routinely employed for
-                              step-heating of bulk samples or single grains
-                              (depending on sample age) and produce analytical
-                              precision: &lt;1% for most samples</span
-                            >
-                          </p>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing02.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.vyp3lirrdp97">
-                            <span class="c6 c11">Sample Preparation</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar dating techniques can be applied to single or
-                              multi-crystal/grain aliquots and is also routinely
-                              applied to volcanic groundmass samples. Best
-                              results are obtained from the use of gresh,
-                              unaltered samples that are free of inclusions or
-                              sources of contamination.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >Sample size requirement varies based on the age
-                              and K-content of the samples under investigation.
-                              For example, single grains can yield excellent
-                              ages for million year old K-feldspar and mica
-                              grains whereas 10s of milligrams may be required
-                              for Pleistocene/Holocene samples, volcanic
-                              groundmass samples or low-K phases such as
-                              hornblende.
-                            </span>
-                          </p>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing03.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
+            <span class="c4">40</span><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c0"
+              >Ar dating techniques can be applied to single or
+              multi-crystal/grain aliquots and is also routinely applied to
+              volcanic groundmass samples. Best results are obtained from the
+              use of gresh, unaltered samples that are free of inclusions or
+              sources of contamination.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >Sample size requirement varies based on the age and K-content of
+              the samples under investigation. For example, single grains can
+              yield excellent ages for million year old K-feldspar and mica
+              grains whereas 10s of milligrams may be required for
+              Pleistocene/Holocene samples, volcanic groundmass samples or low-K
+              phases such as hornblende.
+            </span>
+          </p>
+        </div>
 
-                    <h2 class="c8" style="margin-top: 70px" id="h.1e0wo2nackbs">
-                      <span class="c11 c6"
-                        >John de Laeter Centre, Curtin University</span
-                      >
-                    </h2>
-                    <table class="c15">
-                      <tbody>
-                        <tr>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Instrument</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Model</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Elements that can be analysed</span
-                              >
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Static Vacuum Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0">ThermoFisher ARGUS VI</span>
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <h3 class="c20" id="h.ihkpk3wfbczv">
-                      <span class="c19 c6">Contact detail</span>
-                    </h3>
-                    <div>
-                      <p class="contact">
-                        <span class="c0"
-                          >Prof. Fred
-                          Jourdan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Celia
-                          Myers</span
-                        >
-                      </p>
-                      <p class="contact">
-                        <span>T:</span><span>&nbsp; </span
-                        ><span class="c0"
-                          >+61 08 9266
-                          2412&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T:
-                          +61 08 9266 4731</span
-                        >
-                      </p>
-
-                      <p class="contact">
-                        <span>E: </span
-                        ><span class="c16"
-                          ><a
-                            class="c9"
-                            href="mailto:f.jourdan@exchange.curtin.edu.au"
-                            >f.jourdan@exchange.curtin.edu.au</a
-                          ></span
-                        ><span
-                          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: </span
-                        ><span class="c16"
-                          ><a
-                            class="c9"
-                            href="mailto:Celia.Mayers@curtin.edu.au"
-                            >Celia.Mayers@curtin.edu.au</a
-                          ></span
-                        ><span class="c0">&nbsp;</span>
-                      </p>
-                    </div>
-
-                    <h2 class="c8" id="h.5tfqchhot5wk">
-                      <span class="c11 c6">University of Melbourne</span>
-                    </h2>
-                    <a id="t.f2da2e225a7f8712251834360fbda197f8c03e29"></a
-                    ><a id="t.1"></a>
-                    <table class="c15">
-                      <tbody>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Instrument</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Model</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Elements that can be analysed</span
-                              >
-                            </p>
-                          </td>
-                        </tr>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Static Vacuum Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0">ThermoFisher ARGUS VI</span>
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >&nbsp;Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">VG3600</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                    <h3 class="c20" id="h.x6e11bsnj7sp">
-                      <span class="c6 c19">Contact detail</span>
-                    </h3>
-                    <p class="contact">
-                      <span class="c17"
-                        >Prof. David
-                        Phillips&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr.
-                        Erin Matchan</span
-                      >
-                    </p>
-                    <p class="contact">
-                      <span class="c0"
-                        >T: +61 3 8344
-                        9866&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T:
-                        +61 3 9035 9621</span
-                      >
-                    </p>
-                    <p class="contact">
-                      <span>E: </span
-                      ><span class="c16"
-                        ><a class="c9" href="mailto:dphillip@unimelb.edu.au"
-                          >dphillip@unimelb.edu.au</a
-                        ></span
-                      ><span
-                        >&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: </span
-                      ><span class="c16"
-                        ><a class="c9" href="mailto:ematchan@unimelb.edu.au"
-                          >ematchan@unimelb.edu.au</a
-                        ></span
-                      ><span class="c0">&nbsp;</span>
-                    </p>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                  </div>
-                </div>
+        <div class="col-4">
+          <h3 style="margin-top: 52px">CONTACT AN EXPERT</h3>
+          <br>
+          <p align="left" style="margin-bottom:20px; color: #f2f2f2;">
+            <strong>Curtin University</strong>
+            <br>
+            Model: ThermoFisher ARGUS VI
+            <br>
+            <br>
+            Prof. Fred Jourdan  
+            <br>
+            T: +61 08 9266 2412  
+            <br
+            >E: <a href="mailto:f.jourdan@exchange.curtin.edu.au">
+              f.jourdan@exchange.curtin.edu.au</a>
+            <br>
+            <br>
+            Celia Myers  
+            <br>
+            T: +61 08 9266 4731
+            <br
+            >E: <a href="mailto:Celia.Mayers@curtin.edu.au">
+              Celia.Mayers@curtin.edu.au</a>
+            <br>
+          </p>
+          <p align="left" style="margin-bottom:20px; color:#f2f2f2;">
+            <strong>University of Melbourne</strong>
+            <br>
+            Model: ThermoFisher ARGUS VI & VG3600
+            <br>
+            <br>
+            Prof. David Phillips 
+            <br>
+            T: +61 3 8344 9866
+            <br
+            >E: <a href="mailto:dphillip@unimelb.edu.au">
+              dphillip@unimelb.edu.au</a>
+            <br>
+            <br>
+            Dr. Erin Matchan
+            <br>
+            T: +61 3 9035 9621
+            <br
+            >E: <a href="mailto:ematchan@unimelb.edu.au">
+              ematchan@unimelb.edu.au</a>
+            <br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 
 ' WHERE ID=29;
-UPDATE technique SET description = '
-                    <style type="text/css">
-                      @import url(\'https://themes.googleusercontent.com/fonts/css?kit=fpjTOVmNbO4Lz34iLyptLUXza5VhXqVC6o75Eld_V98\');
-                      .lst-kix_7g54tjt9kss2-1 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-0 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-2 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-2 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-4 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-5 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-3 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-1 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-8 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-6 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-7 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      ul.lst-kix_as7rwr57yz2j-1 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-0 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-5 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-4 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-3 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-2 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-8 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-7 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-6 {
-                        list-style-type: none;
-                      }
-                      li.li-bullet-0:before {
-                        margin-left: -18pt;
-                        white-space: nowrap;
-                        display: inline-block;
-                        min-width: 18pt;
-                      }
-                      .lst-kix_as7rwr57yz2j-6 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-2 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-3 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-0 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-1 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-4 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-8 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-6 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-7 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-3 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-7 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-4 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-5 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-8 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-5 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-0 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      ol {
-                        margin: 0;
-                        padding: 0;
-                      }
+UPDATE technique SET description = '<style type="text/css">
+  
+  .lst-kix_7g54tjt9kss2-1 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-0 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_7g54tjt9kss2-2 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_as7rwr57yz2j-2 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-4 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_7g54tjt9kss2-5 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-3 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-1 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_7g54tjt9kss2-8 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-6 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_7g54tjt9kss2-7 > li:before {
+    content: "\0025cb  ";
+  }
+  ul.lst-kix_as7rwr57yz2j-1 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-0 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-5 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-4 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-3 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-2 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-8 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-7 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-6 {
+    list-style-type: none;
+  }
+  li.li-bullet-0:before {
+    margin-left: -18pt;
+    white-space: nowrap;
+    display: inline-block;
+    min-width: 18pt;
+  }
+  .lst-kix_as7rwr57yz2j-6 > li:before {
+    content: "\0025cf  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-2 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-3 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-0 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-1 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-4 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_as7rwr57yz2j-8 > li:before {
+    content: "\0025a0  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-6 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-7 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-3 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-7 > li:before {
+    content: "\0025cb  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-4 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-5 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-8 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-5 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-0 > li:before {
+    content: "\0025cf  ";
+  }
+  ol {
+    margin: 0;
+    padding: 0;
+  }
 
-                      .c7 {
-                        padding: 5pt 5pt 5pt 5pt;
-                        vertical-align: top;
-                        border: 1px solid #000000;
-                      }
-                      .c2 {
-                        margin-left: 36pt;
-                        padding-top: 0pt;
-                        padding-left: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .c17 {
-                        color: #000000;
-                        font-weight: 400;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 16px;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c1 {
-                        padding-top: 18pt;
-                        padding-bottom: 4pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .c8 {
-                        padding-bottom: 6pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                      .c0 {
-                        font-weight: 400;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 16px;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c20 {
-                        padding-top: 14pt;
-                        padding-bottom: 4pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                      .c19 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 14pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c3 {
-                        padding-top: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        font-size: 16px;
-                        text-align: left;
-                      }
-                      .c12 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 24pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c11 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 18pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c5 {
-                        line-height: 1;
-                        text-align: center;
-                      }
-                      .c16 {
-                        text-decoration-skip-ink: none;
-                        -webkit-text-decoration-skip: none;
-                        color: #1155cc;
-                      }
-                      .c15 {
-                        border-spacing: 0;
-                        border-collapse: collapse;
-                        margin-right: auto;
-                      }
+  .c7 {
+    padding: 5pt 5pt 5pt 5pt;
+    vertical-align: top;
+    border: 1px solid #000000;
+  }
+  .c2 {
+    margin-left: 36pt;
+    padding-top: 0pt;
+    padding-left: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .c17 {
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 16px;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c1 {
+    padding-top: 18pt;
+    padding-bottom: 4pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .c8 {
+    padding-bottom: 6pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+  .c0 {
+    font-weight: 400;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 16px;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c20 {
+    padding-top: 14pt;
+    padding-bottom: 4pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+  .c19 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 14pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c3 {
+    padding-top: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    font-size: 16px;
+    text-align: left;
+  }
+  .c12 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 24pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c11 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 18pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c5 {
+    line-height: 1;
+    text-align: center;
+  }
+  .c16 {
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    color: #1155cc;
+  }
+  .c15 {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-right: auto;
+  }
 
-                      .c18 {
-                        padding: 0;
-                        margin: 0;
-                      }
-                      .c9 {
-                        color: inherit;
-                        text-decoration: inherit;
-                        font-size: 16px;
-                      }
-                      .c13 {
-                        height: 18pt;
-                      }
-                      .c4 {
-                        vertical-align: super;
-                        font-size: 16px;
-                      }
+  .c18 {
+    padding: 0;
+    margin: 0;
+  }
+  .c9 {
+    color: inherit;
+    text-decoration: inherit;
+    font-size: 16px;
+  }
+  .c13 {
+    height: 18pt;
+  }
+  .c4 {
+    vertical-align: super;
+    font-size: 16px;
+  }
 
-                      .c6 {
-                        font-weight: 700;
-                      }
-                      .c10 {
-                        height: 11pt;
-                      }
-                      .title {
-                        padding-top: 24pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 36pt;
-                        padding-bottom: 6pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .subtitle {
-                        padding-top: 18pt;
-                        color: #666666;
-                        font-size: 24pt;
-                        padding-bottom: 4pt;
-                        font-family: "Georgia";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        font-style: italic;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      li {
-                        color: #000000;
-                        font-family: "Calibre";
-                      }
-                      p {
-                        margin: 0;
-                        color: #000000;
-                        font-size: 11pt;
-                        font-family: "Calibre";
-                      }
-                      h1 {
-                        padding-top: 24pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 24pt;
-                        padding-bottom: 6pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h2 {
-                        padding-top: 18pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 18pt;
-                        padding-bottom: 4pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h3 {
-                        padding-top: 14pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 14pt;
-                        padding-bottom: 4pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h4 {
-                        padding-top: 12pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 12pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h5 {
-                        padding-top: 11pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 11pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h6 {
-                        padding-top: 10pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 10pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      table {
-                        margin: auto;
-                      }
+  .c6 {
+    font-weight: 700;
+  }
+  .c10 {
+    height: 11pt;
+  }
+  .title {
+    padding-top: 24pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 36pt;
+    padding-bottom: 6pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .subtitle {
+    padding-top: 18pt;
+    color: #666666;
+    font-size: 24pt;
+    padding-bottom: 4pt;
+    font-family: "Georgia";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    font-style: italic;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  li {
+    color: #000000;
+    font-family: "Calibre";
+  }
+  p {
+    margin: 0;
+    color: #000000;
+    font-size: 11pt;
+    font-family: "Calibre";
+  }
+  h1 {
+    padding-top: 24pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 24pt;
+    padding-bottom: 6pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h2 {
+    padding-top: 18pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 18pt;
+    padding-bottom: 4pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h3 {
+    padding-top: 14pt;
+    color: #f2f2f2;
+    font-weight: 700;
+    font-size: 14pt;
+    padding-bottom: 4pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h4 {
+    padding-top: 12pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 12pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h5 {
+    padding-top: 11pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 11pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h6 {
+    padding-top: 10pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 10pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  table {
+    margin: auto;
+  }
 
-                      table p {
-                        color: #000000 !important;
-                      }
+  table p {
+    color: #000000 !important;
+  }
 
-                      .contact {
-                        padding-top: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                    </style>
-                  </p>
+  .contact {
+    padding-top: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+</style>
+<body>
+    <h1 class="c8" style="margin-bottom: 100px" id="h.6c73zlqek6pu">
+      <span class="c6 c12">Ar/Ar Geochronology</span>
+    </h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <h2 class="c8" id="h.6oyabzybdetz">
+            <span>The Technique</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing01.png"
+                style="max-width: 200px; max-height: 300px;float: left; margin-right: 10px; margin-top: 10px;"
+            />
+            <span class="c3">The</span><span class="c4">40</span
+            ><span class="c3">Ar/</span><span class="c4">39</span
+            ><span class="c3">Ar dating technique is capable of addressing questions spanning
+              all of Earth&rsquo;s history (i.e., from thousands to billions of
+              years). </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c0">Ar geochronology can be applied to a wide range of problems in
+              volcanology, igneous petrology, metamorphic petrology, structural
+              geology and much more!
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c3">The </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3">Ar dating technique builds on, and is more sophisticated than the
+              traditional K/Ar dating technique, where both techniques measure </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar as the parent isotope. A key difference is that the K/Ar technique measures </span
+            ><span class="c4">40</span
+            ><span class="c3">K</span
+            ><span class="c3">&nbsp;as the parent, the</span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3">Ar technique uses </span><span class="c4">39</span
+            ><span class="c0">Ar. </span>
+          </p>
+          <p class="c3">
+            <span class="c3">The parent in the Ar/Ar technique, </span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar, does not occur naturally and can only be produced by a fat
+              neutron reaction. Therefore a key step in </span
+            ><span class="c4">40</span><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar geochronology is placing samples into the core of a nuclear
+              reactor and bombarding them with fast neutrons to produce </span
+            ><span class="c4">39</span><span class="c3">Ar. The amount of </span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar produced by this process is controlled by the amount of </span
+            ><span class="c4">39</span
+            ><span class="c0"
+              >K present initially (related to age of sample), the length of the
+              irradiation, and the flux of neutrons.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >During analysis, argon is extracted from the sample as a gas.
+              This can be done in a variety of ways:</span
+            >
+          </p>
+          <ul class="c18 lst-kix_as7rwr57yz2j-0 start">
+            <li class="c2 li-bullet-0">
+              <span class="c6">Step-heating</span
+              ><span class="c0"
+                >&nbsp;is one of the most common approaches and utilises a laser
+                or furnace to incrementally heat the sample and release argon.
+                The individual ages from each heating increment are then
+                utilised to produce an age spectrum.</span
+              >
+            </li>
+            <li class="c2 li-bullet-0">
+              <span class="c6">Total fusion analysis </span
+              ><span
+                >is most similar to conventional to K/Ar age determination as it
+                utilises complete release of argon from the sample in one step.
+                An important difference is the use of argon </span
+              ><span
+                >ratios (rather than K or Ar abundances). Fusions are typically
+                performed using a </span
+              ><span>laer</span><span class="c0">.</span>
+            </li>
+          </ul>
+        
+          <h2 class="c8" id="h.ksaf7xvy2vvn">
+            <span>Precision</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing02.png"
+                style="max-width: 200px; max-height: 300px;float: right;"
+            />
+            <span class="c3"
+              >A key advantage of this approach (compared to K/Ar dating) is
+              that absolute abundances do not need to be calculated. </span
+            ><span class="c0"
+              >Instead, the ratios of the different argon isotopes are measured,
+              yielding more precise and accurate results.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c3"
+              >New generation, fully automated multi-collector Thermo Fisher
+              Scientific Argus VI mass spectrometers permits high-precision </span
+            ><span class="c4">40</span><span>Ar/</span><span class="c4">39</span
+            ><span class="c0"
+              >Ar dating of a wide variety of sample types, including
+              Pleistocene/Holocene-aged samples of low-K content. Analytical
+              precision: &lt;0.1% for most samples.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >Earlier generation mass spectrometers (e.g., VG3600) are also
+              routinely employed for step-heating of bulk samples or single
+              grains (depending on sample age) and produce analytical precision:
+              &lt;1% for most samples</span
+            >
+          </p>
+        
+          <h2 class="c8" id="h.vyp3lirrdp97">
+            <span class="c6 c11">Sample Preparation</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing03.png"
+                style="max-width: 200px; max-height: 300px;float: left; margin-right: 10px; margin-top: 10px;"
+            />
 
-                  <div>
-                    <h1
-                      class="c8"
-                      style="margin-bottom: 100px"
-                      id="h.6c73zlqek6pu"
-                    >
-                      <span class="c6 c12">Ar/Ar Geochronology</span>
-                    </h1>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.6oyabzybdetz">
-                            <span>The Technique</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c3">The </span><span class="c4">40</span
-                            ><span class="c3">Ar/</span><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar dating technique is capable of addressing
-                              questions spanning all of Earth&rsquo;s history
-                              (i.e., from thousands to billions of years). </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar geochronology can be applied to a wide range
-                              of problems in volcanology, igneous petrology,
-                              metamorphic petrology, structural geology and much
-                              more!
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3">The </span><span class="c4">40</span
-                            ><span class="c3">Ar/</span><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar dating technique builds on, and is more
-                              sophisticated than the traditional K/Ar dating
-                              technique, where both techniques measure </span
-                            ><span class="c4">40</span
-                            ><span class="c3"
-                              >Ar as the parent isotope. A key difference is
-                              that the K/Ar technique measures </span
-                            ><span class="c4">40</span><span class="c3">K</span
-                            ><span class="c3">&nbsp;as the parent, the </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c3">Ar technique uses </span
-                            ><span class="c4">39</span
-                            ><span class="c0">Ar. </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3">The parent in the Ar/Ar technique, </span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar, does not occur naturally and can only be
-                              produced by a fat neutron reaction. Therefore a
-                              key step in </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar geochronology is placing samples into the core
-                              of a nuclear reactor and bombarding them with fast
-                              neutrons to produce </span
-                            ><span class="c4">39</span
-                            ><span class="c3">Ar. The amount of </span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar produced by this process is controlled by the
-                              amount of </span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >K present initially (related to age of sample),
-                              the length of the irradiation, and the flux of
-                              neutrons.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >During analysis, argon is extracted from the
-                              sample as a gas. This can be done in a variety of
-                              ways:</span
-                            >
-                          </p>
-                          <ul class="c18 lst-kix_as7rwr57yz2j-0 start">
-                            <li class="c2 li-bullet-0">
-                              <span class="c6">Step-heating</span
-                              ><span class="c0"
-                                >&nbsp;is one of the most common approaches and
-                                utilises a laser or furnace to incrementally
-                                heat the sample and release argon. The
-                                individual ages from each heating increment are
-                                then utilised to produce an age spectrum.</span
-                              >
-                            </li>
-                            <li class="c2 li-bullet-0">
-                              <span class="c6">Total fusion analysis </span
-                              ><span
-                                >is most similar to conventional to K/Ar age
-                                determination as it utilises complete release of
-                                argon from the sample in one step. An important
-                                difference is the use of argon </span
-                              ><span
-                                >ratios (rather than K or Ar abundances).
-                                Fusions are typically performed using a </span
-                              ><span>laer</span><span class="c0">.</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing01.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.ksaf7xvy2vvn">
-                            <span>Precision</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c3"
-                              >A key advantage of this approach (compared to
-                              K/Ar dating) is that absolute abundances do not
-                              need to be calculated. </span
-                            ><span class="c0"
-                              >Instead, the ratios of the different argon
-                              isotopes are measured, yielding more precise and
-                              accurate results.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3"
-                              >New generation, fully automated multi-collector
-                              Thermo Fisher Scientific Argus VI mass
-                              spectrometers permits high-precision </span
-                            ><span class="c4">40</span><span>Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar dating of a wide variety of sample types,
-                              including Pleistocene/Holocene-aged samples of
-                              low-K content. Analytical precision: &lt;0.1% for
-                              most samples.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >Earlier generation mass spectrometers (e.g.,
-                              VG3600) are also routinely employed for
-                              step-heating of bulk samples or single grains
-                              (depending on sample age) and produce analytical
-                              precision: &lt;1% for most samples</span
-                            >
-                          </p>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing02.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.vyp3lirrdp97">
-                            <span class="c6 c11">Sample Preparation</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar dating techniques can be applied to single or
-                              multi-crystal/grain aliquots and is also routinely
-                              applied to volcanic groundmass samples. Best
-                              results are obtained from the use of gresh,
-                              unaltered samples that are free of inclusions or
-                              sources of contamination.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >Sample size requirement varies based on the age
-                              and K-content of the samples under investigation.
-                              For example, single grains can yield excellent
-                              ages for million year old K-feldspar and mica
-                              grains whereas 10s of milligrams may be required
-                              for Pleistocene/Holocene samples, volcanic
-                              groundmass samples or low-K phases such as
-                              hornblende.
-                            </span>
-                          </p>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing03.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
+            <span class="c4">40</span><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c0"
+              >Ar dating techniques can be applied to single or
+              multi-crystal/grain aliquots and is also routinely applied to
+              volcanic groundmass samples. Best results are obtained from the
+              use of gresh, unaltered samples that are free of inclusions or
+              sources of contamination.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >Sample size requirement varies based on the age and K-content of
+              the samples under investigation. For example, single grains can
+              yield excellent ages for million year old K-feldspar and mica
+              grains whereas 10s of milligrams may be required for
+              Pleistocene/Holocene samples, volcanic groundmass samples or low-K
+              phases such as hornblende.
+            </span>
+          </p>
+        </div>
 
-                    <h2 class="c8" style="margin-top: 70px" id="h.1e0wo2nackbs">
-                      <span class="c11 c6"
-                        >John de Laeter Centre, Curtin University</span
-                      >
-                    </h2>
-                    <table class="c15">
-                      <tbody>
-                        <tr>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Instrument</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Model</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Elements that can be analysed</span
-                              >
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Static Vacuum Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0">ThermoFisher ARGUS VI</span>
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <h3 class="c20" id="h.ihkpk3wfbczv">
-                      <span class="c19 c6">Contact detail</span>
-                    </h3>
-                    <div>
-                      <p class="contact">
-                        <span class="c0"
-                          >Prof. Fred
-                          Jourdan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Celia
-                          Myers</span
-                        >
-                      </p>
-                      <p class="contact">
-                        <span>T:</span><span>&nbsp; </span
-                        ><span class="c0"
-                          >+61 08 9266
-                          2412&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T:
-                          +61 08 9266 4731</span
-                        >
-                      </p>
-
-                      <p class="contact">
-                        <span>E: </span
-                        ><span class="c16"
-                          ><a
-                            class="c9"
-                            href="mailto:f.jourdan@exchange.curtin.edu.au"
-                            >f.jourdan@exchange.curtin.edu.au</a
-                          ></span
-                        ><span
-                          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: </span
-                        ><span class="c16"
-                          ><a
-                            class="c9"
-                            href="mailto:Celia.Mayers@curtin.edu.au"
-                            >Celia.Mayers@curtin.edu.au</a
-                          ></span
-                        ><span class="c0">&nbsp;</span>
-                      </p>
-                    </div>
-
-                    <h2 class="c8" id="h.5tfqchhot5wk">
-                      <span class="c11 c6">University of Melbourne</span>
-                    </h2>
-                    <a id="t.f2da2e225a7f8712251834360fbda197f8c03e29"></a
-                    ><a id="t.1"></a>
-                    <table class="c15">
-                      <tbody>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Instrument</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Model</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Elements that can be analysed</span
-                              >
-                            </p>
-                          </td>
-                        </tr>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Static Vacuum Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0">ThermoFisher ARGUS VI</span>
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >&nbsp;Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">VG3600</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                    <h3 class="c20" id="h.x6e11bsnj7sp">
-                      <span class="c6 c19">Contact detail</span>
-                    </h3>
-                    <p class="contact">
-                      <span class="c17"
-                        >Prof. David
-                        Phillips&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr.
-                        Erin Matchan</span
-                      >
-                    </p>
-                    <p class="contact">
-                      <span class="c0"
-                        >T: +61 3 8344
-                        9866&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T:
-                        +61 3 9035 9621</span
-                      >
-                    </p>
-                    <p class="contact">
-                      <span>E: </span
-                      ><span class="c16"
-                        ><a class="c9" href="mailto:dphillip@unimelb.edu.au"
-                          >dphillip@unimelb.edu.au</a
-                        ></span
-                      ><span
-                        >&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: </span
-                      ><span class="c16"
-                        ><a class="c9" href="mailto:ematchan@unimelb.edu.au"
-                          >ematchan@unimelb.edu.au</a
-                        ></span
-                      ><span class="c0">&nbsp;</span>
-                    </p>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                  </div>
-                </div>
-
+        <div class="col-4">
+          <h3 style="margin-top: 52px">CONTACT AN EXPERT</h3>
+          <br>
+          <p align="left" style="margin-bottom:20px; color: #f2f2f2;">
+            <strong>Curtin University</strong>
+            <br>
+            Model: ThermoFisher ARGUS VI
+            <br>
+            <br>
+            Prof. Fred Jourdan  
+            <br>
+            T: +61 08 9266 2412  
+            <br
+            >E: <a href="mailto:f.jourdan@exchange.curtin.edu.au">
+              f.jourdan@exchange.curtin.edu.au</a>
+            <br>
+            <br>
+            Celia Myers  
+            <br>
+            T: +61 08 9266 4731
+            <br
+            >E: <a href="mailto:Celia.Mayers@curtin.edu.au">
+              Celia.Mayers@curtin.edu.au</a>
+            <br>
+          </p>
+          <p align="left" style="margin-bottom:20px; color:#f2f2f2;">
+            <strong>University of Melbourne</strong>
+            <br>
+            Model: ThermoFisher ARGUS VI & VG3600
+            <br>
+            <br>
+            Prof. David Phillips 
+            <br>
+            T: +61 3 8344 9866
+            <br
+            >E: <a href="mailto:dphillip@unimelb.edu.au">
+              dphillip@unimelb.edu.au</a>
+            <br>
+            <br>
+            Dr. Erin Matchan
+            <br>
+            T: +61 3 9035 9621
+            <br
+            >E: <a href="mailto:ematchan@unimelb.edu.au">
+              ematchan@unimelb.edu.au</a>
+            <br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 ' WHERE ID=30;
 UPDATE technique SET description = '
                     <style type="text/css">
-                      @import url(\'https://themes.googleusercontent.com/fonts/css?kit=fpjTOVmNbO4Lz34iLyptLUXza5VhXqVC6o75Eld_V98\');
-                      .lst-kix_7g54tjt9kss2-1 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-0 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-2 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-2 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-4 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-5 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-3 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-1 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-8 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-6 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-7 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      ul.lst-kix_as7rwr57yz2j-1 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-0 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-5 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-4 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-3 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-2 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-8 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-7 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-6 {
-                        list-style-type: none;
-                      }
-                      li.li-bullet-0:before {
-                        margin-left: -18pt;
-                        white-space: nowrap;
-                        display: inline-block;
-                        min-width: 18pt;
-                      }
-                      .lst-kix_as7rwr57yz2j-6 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-2 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-3 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-0 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-1 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-4 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-8 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-6 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-7 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-3 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-7 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-4 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-5 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-8 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-5 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-0 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      ol {
-                        margin: 0;
-                        padding: 0;
-                      }
+  
+  .lst-kix_7g54tjt9kss2-1 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-0 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_7g54tjt9kss2-2 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_as7rwr57yz2j-2 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-4 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_7g54tjt9kss2-5 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-3 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-1 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_7g54tjt9kss2-8 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-6 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_7g54tjt9kss2-7 > li:before {
+    content: "\0025cb  ";
+  }
+  ul.lst-kix_as7rwr57yz2j-1 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-0 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-5 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-4 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-3 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-2 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-8 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-7 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-6 {
+    list-style-type: none;
+  }
+  li.li-bullet-0:before {
+    margin-left: -18pt;
+    white-space: nowrap;
+    display: inline-block;
+    min-width: 18pt;
+  }
+  .lst-kix_as7rwr57yz2j-6 > li:before {
+    content: "\0025cf  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-2 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-3 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-0 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-1 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-4 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_as7rwr57yz2j-8 > li:before {
+    content: "\0025a0  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-6 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-7 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-3 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-7 > li:before {
+    content: "\0025cb  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-4 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-5 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-8 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-5 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-0 > li:before {
+    content: "\0025cf  ";
+  }
+  ol {
+    margin: 0;
+    padding: 0;
+  }
 
-                      .c7 {
-                        padding: 5pt 5pt 5pt 5pt;
-                        vertical-align: top;
-                        border: 1px solid #000000;
-                      }
-                      .c2 {
-                        margin-left: 36pt;
-                        padding-top: 0pt;
-                        padding-left: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .c17 {
-                        color: #000000;
-                        font-weight: 400;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 16px;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c1 {
-                        padding-top: 18pt;
-                        padding-bottom: 4pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .c8 {
-                        padding-bottom: 6pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                      .c0 {
-                        font-weight: 400;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 16px;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c20 {
-                        padding-top: 14pt;
-                        padding-bottom: 4pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                      .c19 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 14pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c3 {
-                        padding-top: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        font-size: 16px;
-                        text-align: left;
-                      }
-                      .c12 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 24pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c11 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 18pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c5 {
-                        line-height: 1;
-                        text-align: center;
-                      }
-                      .c16 {
-                        text-decoration-skip-ink: none;
-                        -webkit-text-decoration-skip: none;
-                        color: #1155cc;
-                      }
-                      .c15 {
-                        border-spacing: 0;
-                        border-collapse: collapse;
-                        margin-right: auto;
-                      }
+  .c7 {
+    padding: 5pt 5pt 5pt 5pt;
+    vertical-align: top;
+    border: 1px solid #000000;
+  }
+  .c2 {
+    margin-left: 36pt;
+    padding-top: 0pt;
+    padding-left: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .c17 {
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 16px;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c1 {
+    padding-top: 18pt;
+    padding-bottom: 4pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .c8 {
+    padding-bottom: 6pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+  .c0 {
+    font-weight: 400;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 16px;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c20 {
+    padding-top: 14pt;
+    padding-bottom: 4pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+  .c19 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 14pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c3 {
+    padding-top: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    font-size: 16px;
+    text-align: left;
+  }
+  .c12 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 24pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c11 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 18pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c5 {
+    line-height: 1;
+    text-align: center;
+  }
+  .c16 {
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    color: #1155cc;
+  }
+  .c15 {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-right: auto;
+  }
 
-                      .c18 {
-                        padding: 0;
-                        margin: 0;
-                      }
-                      .c9 {
-                        color: inherit;
-                        text-decoration: inherit;
-                        font-size: 16px;
-                      }
-                      .c13 {
-                        height: 18pt;
-                      }
-                      .c4 {
-                        vertical-align: super;
-                        font-size: 16px;
-                      }
+  .c18 {
+    padding: 0;
+    margin: 0;
+  }
+  .c9 {
+    color: inherit;
+    text-decoration: inherit;
+    font-size: 16px;
+  }
+  .c13 {
+    height: 18pt;
+  }
+  .c4 {
+    vertical-align: super;
+    font-size: 16px;
+  }
 
-                      .c6 {
-                        font-weight: 700;
-                      }
-                      .c10 {
-                        height: 11pt;
-                      }
-                      .title {
-                        padding-top: 24pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 36pt;
-                        padding-bottom: 6pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .subtitle {
-                        padding-top: 18pt;
-                        color: #666666;
-                        font-size: 24pt;
-                        padding-bottom: 4pt;
-                        font-family: "Georgia";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        font-style: italic;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      li {
-                        color: #000000;
-                        font-family: "Calibre";
-                      }
-                      p {
-                        margin: 0;
-                        color: #000000;
-                        font-size: 11pt;
-                        font-family: "Calibre";
-                      }
-                      h1 {
-                        padding-top: 24pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 24pt;
-                        padding-bottom: 6pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h2 {
-                        padding-top: 18pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 18pt;
-                        padding-bottom: 4pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h3 {
-                        padding-top: 14pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 14pt;
-                        padding-bottom: 4pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h4 {
-                        padding-top: 12pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 12pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h5 {
-                        padding-top: 11pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 11pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h6 {
-                        padding-top: 10pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 10pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      table {
-                        margin: auto;
-                      }
+  .c6 {
+    font-weight: 700;
+  }
+  .c10 {
+    height: 11pt;
+  }
+  .title {
+    padding-top: 24pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 36pt;
+    padding-bottom: 6pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .subtitle {
+    padding-top: 18pt;
+    color: #666666;
+    font-size: 24pt;
+    padding-bottom: 4pt;
+    font-family: "Georgia";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    font-style: italic;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  li {
+    color: #000000;
+    font-family: "Calibre";
+  }
+  p {
+    margin: 0;
+    color: #000000;
+    font-size: 11pt;
+    font-family: "Calibre";
+  }
+  h1 {
+    padding-top: 24pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 24pt;
+    padding-bottom: 6pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h2 {
+    padding-top: 18pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 18pt;
+    padding-bottom: 4pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h3 {
+    padding-top: 14pt;
+    color: #f2f2f2;
+    font-weight: 700;
+    font-size: 14pt;
+    padding-bottom: 4pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h4 {
+    padding-top: 12pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 12pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h5 {
+    padding-top: 11pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 11pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h6 {
+    padding-top: 10pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 10pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  table {
+    margin: auto;
+  }
 
-                      table p {
-                        color: #000000 !important;
-                      }
+  table p {
+    color: #000000 !important;
+  }
 
-                      .contact {
-                        padding-top: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                    </style>
-                  </p>
+  .contact {
+    padding-top: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+</style>
+<body>
+    <h1 class="c8" style="margin-bottom: 100px" id="h.6c73zlqek6pu">
+      <span class="c6 c12">Ar/Ar Geochronology</span>
+    </h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <h2 class="c8" id="h.6oyabzybdetz">
+            <span>The Technique</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing01.png"
+                style="max-width: 200px; max-height: 300px;float: left; margin-right: 10px; margin-top: 10px;"
+            />
+            <span class="c3">The</span><span class="c4">40</span
+            ><span class="c3">Ar/</span><span class="c4">39</span
+            ><span class="c3">Ar dating technique is capable of addressing questions spanning
+              all of Earth&rsquo;s history (i.e., from thousands to billions of
+              years). </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c0">Ar geochronology can be applied to a wide range of problems in
+              volcanology, igneous petrology, metamorphic petrology, structural
+              geology and much more!
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c3">The </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3">Ar dating technique builds on, and is more sophisticated than the
+              traditional K/Ar dating technique, where both techniques measure </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar as the parent isotope. A key difference is that the K/Ar technique measures </span
+            ><span class="c4">40</span
+            ><span class="c3">K</span
+            ><span class="c3">&nbsp;as the parent, the</span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3">Ar technique uses </span><span class="c4">39</span
+            ><span class="c0">Ar. </span>
+          </p>
+          <p class="c3">
+            <span class="c3">The parent in the Ar/Ar technique, </span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar, does not occur naturally and can only be produced by a fat
+              neutron reaction. Therefore a key step in </span
+            ><span class="c4">40</span><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar geochronology is placing samples into the core of a nuclear
+              reactor and bombarding them with fast neutrons to produce </span
+            ><span class="c4">39</span><span class="c3">Ar. The amount of </span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar produced by this process is controlled by the amount of </span
+            ><span class="c4">39</span
+            ><span class="c0"
+              >K present initially (related to age of sample), the length of the
+              irradiation, and the flux of neutrons.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >During analysis, argon is extracted from the sample as a gas.
+              This can be done in a variety of ways:</span
+            >
+          </p>
+          <ul class="c18 lst-kix_as7rwr57yz2j-0 start">
+            <li class="c2 li-bullet-0">
+              <span class="c6">Step-heating</span
+              ><span class="c0"
+                >&nbsp;is one of the most common approaches and utilises a laser
+                or furnace to incrementally heat the sample and release argon.
+                The individual ages from each heating increment are then
+                utilised to produce an age spectrum.</span
+              >
+            </li>
+            <li class="c2 li-bullet-0">
+              <span class="c6">Total fusion analysis </span
+              ><span
+                >is most similar to conventional to K/Ar age determination as it
+                utilises complete release of argon from the sample in one step.
+                An important difference is the use of argon </span
+              ><span
+                >ratios (rather than K or Ar abundances). Fusions are typically
+                performed using a </span
+              ><span>laer</span><span class="c0">.</span>
+            </li>
+          </ul>
+        
+          <h2 class="c8" id="h.ksaf7xvy2vvn">
+            <span>Precision</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing02.png"
+                style="max-width: 200px; max-height: 300px;float: right;"
+            />
+            <span class="c3"
+              >A key advantage of this approach (compared to K/Ar dating) is
+              that absolute abundances do not need to be calculated. </span
+            ><span class="c0"
+              >Instead, the ratios of the different argon isotopes are measured,
+              yielding more precise and accurate results.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c3"
+              >New generation, fully automated multi-collector Thermo Fisher
+              Scientific Argus VI mass spectrometers permits high-precision </span
+            ><span class="c4">40</span><span>Ar/</span><span class="c4">39</span
+            ><span class="c0"
+              >Ar dating of a wide variety of sample types, including
+              Pleistocene/Holocene-aged samples of low-K content. Analytical
+              precision: &lt;0.1% for most samples.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >Earlier generation mass spectrometers (e.g., VG3600) are also
+              routinely employed for step-heating of bulk samples or single
+              grains (depending on sample age) and produce analytical precision:
+              &lt;1% for most samples</span
+            >
+          </p>
+        
+          <h2 class="c8" id="h.vyp3lirrdp97">
+            <span class="c6 c11">Sample Preparation</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing03.png"
+                style="max-width: 200px; max-height: 300px;float: left; margin-right: 10px; margin-top: 10px;"
+            />
 
-                  <div>
-                    <h1
-                      class="c8"
-                      style="margin-bottom: 100px"
-                      id="h.6c73zlqek6pu"
-                    >
-                      <span class="c6 c12">Ar/Ar Geochronology</span>
-                    </h1>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.6oyabzybdetz">
-                            <span>The Technique</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c3">The </span><span class="c4">40</span
-                            ><span class="c3">Ar/</span><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar dating technique is capable of addressing
-                              questions spanning all of Earth&rsquo;s history
-                              (i.e., from thousands to billions of years). </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar geochronology can be applied to a wide range
-                              of problems in volcanology, igneous petrology,
-                              metamorphic petrology, structural geology and much
-                              more!
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3">The </span><span class="c4">40</span
-                            ><span class="c3">Ar/</span><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar dating technique builds on, and is more
-                              sophisticated than the traditional K/Ar dating
-                              technique, where both techniques measure </span
-                            ><span class="c4">40</span
-                            ><span class="c3"
-                              >Ar as the parent isotope. A key difference is
-                              that the K/Ar technique measures </span
-                            ><span class="c4">40</span><span class="c3">K</span
-                            ><span class="c3">&nbsp;as the parent, the </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c3">Ar technique uses </span
-                            ><span class="c4">39</span
-                            ><span class="c0">Ar. </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3">The parent in the Ar/Ar technique, </span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar, does not occur naturally and can only be
-                              produced by a fat neutron reaction. Therefore a
-                              key step in </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar geochronology is placing samples into the core
-                              of a nuclear reactor and bombarding them with fast
-                              neutrons to produce </span
-                            ><span class="c4">39</span
-                            ><span class="c3">Ar. The amount of </span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar produced by this process is controlled by the
-                              amount of </span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >K present initially (related to age of sample),
-                              the length of the irradiation, and the flux of
-                              neutrons.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >During analysis, argon is extracted from the
-                              sample as a gas. This can be done in a variety of
-                              ways:</span
-                            >
-                          </p>
-                          <ul class="c18 lst-kix_as7rwr57yz2j-0 start">
-                            <li class="c2 li-bullet-0">
-                              <span class="c6">Step-heating</span
-                              ><span class="c0"
-                                >&nbsp;is one of the most common approaches and
-                                utilises a laser or furnace to incrementally
-                                heat the sample and release argon. The
-                                individual ages from each heating increment are
-                                then utilised to produce an age spectrum.</span
-                              >
-                            </li>
-                            <li class="c2 li-bullet-0">
-                              <span class="c6">Total fusion analysis </span
-                              ><span
-                                >is most similar to conventional to K/Ar age
-                                determination as it utilises complete release of
-                                argon from the sample in one step. An important
-                                difference is the use of argon </span
-                              ><span
-                                >ratios (rather than K or Ar abundances).
-                                Fusions are typically performed using a </span
-                              ><span>laer</span><span class="c0">.</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing01.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.ksaf7xvy2vvn">
-                            <span>Precision</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c3"
-                              >A key advantage of this approach (compared to
-                              K/Ar dating) is that absolute abundances do not
-                              need to be calculated. </span
-                            ><span class="c0"
-                              >Instead, the ratios of the different argon
-                              isotopes are measured, yielding more precise and
-                              accurate results.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3"
-                              >New generation, fully automated multi-collector
-                              Thermo Fisher Scientific Argus VI mass
-                              spectrometers permits high-precision </span
-                            ><span class="c4">40</span><span>Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar dating of a wide variety of sample types,
-                              including Pleistocene/Holocene-aged samples of
-                              low-K content. Analytical precision: &lt;0.1% for
-                              most samples.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >Earlier generation mass spectrometers (e.g.,
-                              VG3600) are also routinely employed for
-                              step-heating of bulk samples or single grains
-                              (depending on sample age) and produce analytical
-                              precision: &lt;1% for most samples</span
-                            >
-                          </p>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing02.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.vyp3lirrdp97">
-                            <span class="c6 c11">Sample Preparation</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar dating techniques can be applied to single or
-                              multi-crystal/grain aliquots and is also routinely
-                              applied to volcanic groundmass samples. Best
-                              results are obtained from the use of gresh,
-                              unaltered samples that are free of inclusions or
-                              sources of contamination.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >Sample size requirement varies based on the age
-                              and K-content of the samples under investigation.
-                              For example, single grains can yield excellent
-                              ages for million year old K-feldspar and mica
-                              grains whereas 10s of milligrams may be required
-                              for Pleistocene/Holocene samples, volcanic
-                              groundmass samples or low-K phases such as
-                              hornblende.
-                            </span>
-                          </p>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing03.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
+            <span class="c4">40</span><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c0"
+              >Ar dating techniques can be applied to single or
+              multi-crystal/grain aliquots and is also routinely applied to
+              volcanic groundmass samples. Best results are obtained from the
+              use of gresh, unaltered samples that are free of inclusions or
+              sources of contamination.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >Sample size requirement varies based on the age and K-content of
+              the samples under investigation. For example, single grains can
+              yield excellent ages for million year old K-feldspar and mica
+              grains whereas 10s of milligrams may be required for
+              Pleistocene/Holocene samples, volcanic groundmass samples or low-K
+              phases such as hornblende.
+            </span>
+          </p>
+        </div>
 
-                    <h2 class="c8" style="margin-top: 70px" id="h.1e0wo2nackbs">
-                      <span class="c11 c6"
-                        >John de Laeter Centre, Curtin University</span
-                      >
-                    </h2>
-                    <table class="c15">
-                      <tbody>
-                        <tr>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Instrument</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Model</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Elements that can be analysed</span
-                              >
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Static Vacuum Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0">ThermoFisher ARGUS VI</span>
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <h3 class="c20" id="h.ihkpk3wfbczv">
-                      <span class="c19 c6">Contact detail</span>
-                    </h3>
-                    <div>
-                      <p class="contact">
-                        <span class="c0"
-                          >Prof. Fred
-                          Jourdan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Celia
-                          Myers</span
-                        >
-                      </p>
-                      <p class="contact">
-                        <span>T:</span><span>&nbsp; </span
-                        ><span class="c0"
-                          >+61 08 9266
-                          2412&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T:
-                          +61 08 9266 4731</span
-                        >
-                      </p>
-
-                      <p class="contact">
-                        <span>E: </span
-                        ><span class="c16"
-                          ><a
-                            class="c9"
-                            href="mailto:f.jourdan@exchange.curtin.edu.au"
-                            >f.jourdan@exchange.curtin.edu.au</a
-                          ></span
-                        ><span
-                          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: </span
-                        ><span class="c16"
-                          ><a
-                            class="c9"
-                            href="mailto:Celia.Mayers@curtin.edu.au"
-                            >Celia.Mayers@curtin.edu.au</a
-                          ></span
-                        ><span class="c0">&nbsp;</span>
-                      </p>
-                    </div>
-
-                    <h2 class="c8" id="h.5tfqchhot5wk">
-                      <span class="c11 c6">University of Melbourne</span>
-                    </h2>
-                    <a id="t.f2da2e225a7f8712251834360fbda197f8c03e29"></a
-                    ><a id="t.1"></a>
-                    <table class="c15">
-                      <tbody>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Instrument</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Model</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Elements that can be analysed</span
-                              >
-                            </p>
-                          </td>
-                        </tr>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Static Vacuum Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0">ThermoFisher ARGUS VI</span>
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >&nbsp;Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">VG3600</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                    <h3 class="c20" id="h.x6e11bsnj7sp">
-                      <span class="c6 c19">Contact detail</span>
-                    </h3>
-                    <p class="contact">
-                      <span class="c17"
-                        >Prof. David
-                        Phillips&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr.
-                        Erin Matchan</span
-                      >
-                    </p>
-                    <p class="contact">
-                      <span class="c0"
-                        >T: +61 3 8344
-                        9866&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T:
-                        +61 3 9035 9621</span
-                      >
-                    </p>
-                    <p class="contact">
-                      <span>E: </span
-                      ><span class="c16"
-                        ><a class="c9" href="mailto:dphillip@unimelb.edu.au"
-                          >dphillip@unimelb.edu.au</a
-                        ></span
-                      ><span
-                        >&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: </span
-                      ><span class="c16"
-                        ><a class="c9" href="mailto:ematchan@unimelb.edu.au"
-                          >ematchan@unimelb.edu.au</a
-                        ></span
-                      ><span class="c0">&nbsp;</span>
-                    </p>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                  </div>
-                </div>
-
+        <div class="col-4">
+          <h3 style="margin-top: 52px">CONTACT AN EXPERT</h3>
+          <br>
+          <p align="left" style="margin-bottom:20px; color: #f2f2f2;">
+            <strong>Curtin University</strong>
+            <br>
+            Model: ThermoFisher ARGUS VI
+            <br>
+            <br>
+            Prof. Fred Jourdan  
+            <br>
+            T: +61 08 9266 2412  
+            <br
+            >E: <a href="mailto:f.jourdan@exchange.curtin.edu.au">
+              f.jourdan@exchange.curtin.edu.au</a>
+            <br>
+            <br>
+            Celia Myers  
+            <br>
+            T: +61 08 9266 4731
+            <br
+            >E: <a href="mailto:Celia.Mayers@curtin.edu.au">
+              Celia.Mayers@curtin.edu.au</a>
+            <br>
+          </p>
+          <p align="left" style="margin-bottom:20px; color:#f2f2f2;">
+            <strong>University of Melbourne</strong>
+            <br>
+            Model: ThermoFisher ARGUS VI & VG3600
+            <br>
+            <br>
+            Prof. David Phillips 
+            <br>
+            T: +61 3 8344 9866
+            <br
+            >E: <a href="mailto:dphillip@unimelb.edu.au">
+              dphillip@unimelb.edu.au</a>
+            <br>
+            <br>
+            Dr. Erin Matchan
+            <br>
+            T: +61 3 9035 9621
+            <br
+            >E: <a href="mailto:ematchan@unimelb.edu.au">
+              ematchan@unimelb.edu.au</a>
+            <br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 ' WHERE ID=31;
 UPDATE technique SET description = '
                     <style type="text/css">
-                      @import url(\'https://themes.googleusercontent.com/fonts/css?kit=fpjTOVmNbO4Lz34iLyptLUXza5VhXqVC6o75Eld_V98\');
-                      .lst-kix_7g54tjt9kss2-1 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-0 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-2 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-2 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-4 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-5 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-3 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-1 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-8 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-6 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-7 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      ul.lst-kix_as7rwr57yz2j-1 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-0 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-5 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-4 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-3 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-2 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-8 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-7 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-6 {
-                        list-style-type: none;
-                      }
-                      li.li-bullet-0:before {
-                        margin-left: -18pt;
-                        white-space: nowrap;
-                        display: inline-block;
-                        min-width: 18pt;
-                      }
-                      .lst-kix_as7rwr57yz2j-6 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-2 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-3 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-0 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-1 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-4 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-8 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-6 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-7 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-3 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-7 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-4 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-5 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-8 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-5 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-0 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      ol {
-                        margin: 0;
-                        padding: 0;
-                      }
+  
+  .lst-kix_7g54tjt9kss2-1 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-0 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_7g54tjt9kss2-2 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_as7rwr57yz2j-2 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-4 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_7g54tjt9kss2-5 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-3 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-1 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_7g54tjt9kss2-8 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-6 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_7g54tjt9kss2-7 > li:before {
+    content: "\0025cb  ";
+  }
+  ul.lst-kix_as7rwr57yz2j-1 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-0 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-5 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-4 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-3 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-2 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-8 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-7 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-6 {
+    list-style-type: none;
+  }
+  li.li-bullet-0:before {
+    margin-left: -18pt;
+    white-space: nowrap;
+    display: inline-block;
+    min-width: 18pt;
+  }
+  .lst-kix_as7rwr57yz2j-6 > li:before {
+    content: "\0025cf  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-2 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-3 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-0 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-1 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-4 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_as7rwr57yz2j-8 > li:before {
+    content: "\0025a0  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-6 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-7 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-3 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-7 > li:before {
+    content: "\0025cb  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-4 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-5 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-8 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-5 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-0 > li:before {
+    content: "\0025cf  ";
+  }
+  ol {
+    margin: 0;
+    padding: 0;
+  }
 
-                      .c7 {
-                        padding: 5pt 5pt 5pt 5pt;
-                        vertical-align: top;
-                        border: 1px solid #000000;
-                      }
-                      .c2 {
-                        margin-left: 36pt;
-                        padding-top: 0pt;
-                        padding-left: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .c17 {
-                        color: #000000;
-                        font-weight: 400;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 16px;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c1 {
-                        padding-top: 18pt;
-                        padding-bottom: 4pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .c8 {
-                        padding-bottom: 6pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                      .c0 {
-                        font-weight: 400;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 16px;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c20 {
-                        padding-top: 14pt;
-                        padding-bottom: 4pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                      .c19 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 14pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c3 {
-                        padding-top: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        font-size: 16px;
-                        text-align: left;
-                      }
-                      .c12 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 24pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c11 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 18pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c5 {
-                        line-height: 1;
-                        text-align: center;
-                      }
-                      .c16 {
-                        text-decoration-skip-ink: none;
-                        -webkit-text-decoration-skip: none;
-                        color: #1155cc;
-                      }
-                      .c15 {
-                        border-spacing: 0;
-                        border-collapse: collapse;
-                        margin-right: auto;
-                      }
+  .c7 {
+    padding: 5pt 5pt 5pt 5pt;
+    vertical-align: top;
+    border: 1px solid #000000;
+  }
+  .c2 {
+    margin-left: 36pt;
+    padding-top: 0pt;
+    padding-left: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .c17 {
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 16px;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c1 {
+    padding-top: 18pt;
+    padding-bottom: 4pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .c8 {
+    padding-bottom: 6pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+  .c0 {
+    font-weight: 400;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 16px;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c20 {
+    padding-top: 14pt;
+    padding-bottom: 4pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+  .c19 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 14pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c3 {
+    padding-top: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    font-size: 16px;
+    text-align: left;
+  }
+  .c12 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 24pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c11 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 18pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c5 {
+    line-height: 1;
+    text-align: center;
+  }
+  .c16 {
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    color: #1155cc;
+  }
+  .c15 {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-right: auto;
+  }
 
-                      .c18 {
-                        padding: 0;
-                        margin: 0;
-                      }
-                      .c9 {
-                        color: inherit;
-                        text-decoration: inherit;
-                        font-size: 16px;
-                      }
-                      .c13 {
-                        height: 18pt;
-                      }
-                      .c4 {
-                        vertical-align: super;
-                        font-size: 16px;
-                      }
+  .c18 {
+    padding: 0;
+    margin: 0;
+  }
+  .c9 {
+    color: inherit;
+    text-decoration: inherit;
+    font-size: 16px;
+  }
+  .c13 {
+    height: 18pt;
+  }
+  .c4 {
+    vertical-align: super;
+    font-size: 16px;
+  }
 
-                      .c6 {
-                        font-weight: 700;
-                      }
-                      .c10 {
-                        height: 11pt;
-                      }
-                      .title {
-                        padding-top: 24pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 36pt;
-                        padding-bottom: 6pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .subtitle {
-                        padding-top: 18pt;
-                        color: #666666;
-                        font-size: 24pt;
-                        padding-bottom: 4pt;
-                        font-family: "Georgia";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        font-style: italic;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      li {
-                        color: #000000;
-                        font-family: "Calibre";
-                      }
-                      p {
-                        margin: 0;
-                        color: #000000;
-                        font-size: 11pt;
-                        font-family: "Calibre";
-                      }
-                      h1 {
-                        padding-top: 24pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 24pt;
-                        padding-bottom: 6pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h2 {
-                        padding-top: 18pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 18pt;
-                        padding-bottom: 4pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h3 {
-                        padding-top: 14pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 14pt;
-                        padding-bottom: 4pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h4 {
-                        padding-top: 12pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 12pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h5 {
-                        padding-top: 11pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 11pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h6 {
-                        padding-top: 10pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 10pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      table {
-                        margin: auto;
-                      }
+  .c6 {
+    font-weight: 700;
+  }
+  .c10 {
+    height: 11pt;
+  }
+  .title {
+    padding-top: 24pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 36pt;
+    padding-bottom: 6pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .subtitle {
+    padding-top: 18pt;
+    color: #666666;
+    font-size: 24pt;
+    padding-bottom: 4pt;
+    font-family: "Georgia";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    font-style: italic;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  li {
+    color: #000000;
+    font-family: "Calibre";
+  }
+  p {
+    margin: 0;
+    color: #000000;
+    font-size: 11pt;
+    font-family: "Calibre";
+  }
+  h1 {
+    padding-top: 24pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 24pt;
+    padding-bottom: 6pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h2 {
+    padding-top: 18pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 18pt;
+    padding-bottom: 4pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h3 {
+    padding-top: 14pt;
+    color: #f2f2f2;
+    font-weight: 700;
+    font-size: 14pt;
+    padding-bottom: 4pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h4 {
+    padding-top: 12pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 12pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h5 {
+    padding-top: 11pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 11pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h6 {
+    padding-top: 10pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 10pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  table {
+    margin: auto;
+  }
 
-                      table p {
-                        color: #000000 !important;
-                      }
+  table p {
+    color: #000000 !important;
+  }
 
-                      .contact {
-                        padding-top: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                    </style>
-                  </p>
+  .contact {
+    padding-top: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+</style>
+<body>
+    <h1 class="c8" style="margin-bottom: 100px" id="h.6c73zlqek6pu">
+      <span class="c6 c12">Ar/Ar Geochronology</span>
+    </h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <h2 class="c8" id="h.6oyabzybdetz">
+            <span>The Technique</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing01.png"
+                style="max-width: 200px; max-height: 300px;float: left; margin-right: 10px; margin-top: 10px;"
+            />
+            <span class="c3">The</span><span class="c4">40</span
+            ><span class="c3">Ar/</span><span class="c4">39</span
+            ><span class="c3">Ar dating technique is capable of addressing questions spanning
+              all of Earth&rsquo;s history (i.e., from thousands to billions of
+              years). </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c0">Ar geochronology can be applied to a wide range of problems in
+              volcanology, igneous petrology, metamorphic petrology, structural
+              geology and much more!
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c3">The </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3">Ar dating technique builds on, and is more sophisticated than the
+              traditional K/Ar dating technique, where both techniques measure </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar as the parent isotope. A key difference is that the K/Ar technique measures </span
+            ><span class="c4">40</span
+            ><span class="c3">K</span
+            ><span class="c3">&nbsp;as the parent, the</span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3">Ar technique uses </span><span class="c4">39</span
+            ><span class="c0">Ar. </span>
+          </p>
+          <p class="c3">
+            <span class="c3">The parent in the Ar/Ar technique, </span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar, does not occur naturally and can only be produced by a fat
+              neutron reaction. Therefore a key step in </span
+            ><span class="c4">40</span><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar geochronology is placing samples into the core of a nuclear
+              reactor and bombarding them with fast neutrons to produce </span
+            ><span class="c4">39</span><span class="c3">Ar. The amount of </span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar produced by this process is controlled by the amount of </span
+            ><span class="c4">39</span
+            ><span class="c0"
+              >K present initially (related to age of sample), the length of the
+              irradiation, and the flux of neutrons.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >During analysis, argon is extracted from the sample as a gas.
+              This can be done in a variety of ways:</span
+            >
+          </p>
+          <ul class="c18 lst-kix_as7rwr57yz2j-0 start">
+            <li class="c2 li-bullet-0">
+              <span class="c6">Step-heating</span
+              ><span class="c0"
+                >&nbsp;is one of the most common approaches and utilises a laser
+                or furnace to incrementally heat the sample and release argon.
+                The individual ages from each heating increment are then
+                utilised to produce an age spectrum.</span
+              >
+            </li>
+            <li class="c2 li-bullet-0">
+              <span class="c6">Total fusion analysis </span
+              ><span
+                >is most similar to conventional to K/Ar age determination as it
+                utilises complete release of argon from the sample in one step.
+                An important difference is the use of argon </span
+              ><span
+                >ratios (rather than K or Ar abundances). Fusions are typically
+                performed using a </span
+              ><span>laer</span><span class="c0">.</span>
+            </li>
+          </ul>
+        
+          <h2 class="c8" id="h.ksaf7xvy2vvn">
+            <span>Precision</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing02.png"
+                style="max-width: 200px; max-height: 300px;float: right;"
+            />
+            <span class="c3"
+              >A key advantage of this approach (compared to K/Ar dating) is
+              that absolute abundances do not need to be calculated. </span
+            ><span class="c0"
+              >Instead, the ratios of the different argon isotopes are measured,
+              yielding more precise and accurate results.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c3"
+              >New generation, fully automated multi-collector Thermo Fisher
+              Scientific Argus VI mass spectrometers permits high-precision </span
+            ><span class="c4">40</span><span>Ar/</span><span class="c4">39</span
+            ><span class="c0"
+              >Ar dating of a wide variety of sample types, including
+              Pleistocene/Holocene-aged samples of low-K content. Analytical
+              precision: &lt;0.1% for most samples.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >Earlier generation mass spectrometers (e.g., VG3600) are also
+              routinely employed for step-heating of bulk samples or single
+              grains (depending on sample age) and produce analytical precision:
+              &lt;1% for most samples</span
+            >
+          </p>
+        
+          <h2 class="c8" id="h.vyp3lirrdp97">
+            <span class="c6 c11">Sample Preparation</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing03.png"
+                style="max-width: 200px; max-height: 300px;float: left; margin-right: 10px; margin-top: 10px;"
+            />
 
-                  <div>
-                    <h1
-                      class="c8"
-                      style="margin-bottom: 100px"
-                      id="h.6c73zlqek6pu"
-                    >
-                      <span class="c6 c12">Ar/Ar Geochronology</span>
-                    </h1>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.6oyabzybdetz">
-                            <span>The Technique</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c3">The </span><span class="c4">40</span
-                            ><span class="c3">Ar/</span><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar dating technique is capable of addressing
-                              questions spanning all of Earth&rsquo;s history
-                              (i.e., from thousands to billions of years). </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar geochronology can be applied to a wide range
-                              of problems in volcanology, igneous petrology,
-                              metamorphic petrology, structural geology and much
-                              more!
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3">The </span><span class="c4">40</span
-                            ><span class="c3">Ar/</span><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar dating technique builds on, and is more
-                              sophisticated than the traditional K/Ar dating
-                              technique, where both techniques measure </span
-                            ><span class="c4">40</span
-                            ><span class="c3"
-                              >Ar as the parent isotope. A key difference is
-                              that the K/Ar technique measures </span
-                            ><span class="c4">40</span><span class="c3">K</span
-                            ><span class="c3">&nbsp;as the parent, the </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c3">Ar technique uses </span
-                            ><span class="c4">39</span
-                            ><span class="c0">Ar. </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3">The parent in the Ar/Ar technique, </span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar, does not occur naturally and can only be
-                              produced by a fat neutron reaction. Therefore a
-                              key step in </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar geochronology is placing samples into the core
-                              of a nuclear reactor and bombarding them with fast
-                              neutrons to produce </span
-                            ><span class="c4">39</span
-                            ><span class="c3">Ar. The amount of </span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar produced by this process is controlled by the
-                              amount of </span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >K present initially (related to age of sample),
-                              the length of the irradiation, and the flux of
-                              neutrons.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >During analysis, argon is extracted from the
-                              sample as a gas. This can be done in a variety of
-                              ways:</span
-                            >
-                          </p>
-                          <ul class="c18 lst-kix_as7rwr57yz2j-0 start">
-                            <li class="c2 li-bullet-0">
-                              <span class="c6">Step-heating</span
-                              ><span class="c0"
-                                >&nbsp;is one of the most common approaches and
-                                utilises a laser or furnace to incrementally
-                                heat the sample and release argon. The
-                                individual ages from each heating increment are
-                                then utilised to produce an age spectrum.</span
-                              >
-                            </li>
-                            <li class="c2 li-bullet-0">
-                              <span class="c6">Total fusion analysis </span
-                              ><span
-                                >is most similar to conventional to K/Ar age
-                                determination as it utilises complete release of
-                                argon from the sample in one step. An important
-                                difference is the use of argon </span
-                              ><span
-                                >ratios (rather than K or Ar abundances).
-                                Fusions are typically performed using a </span
-                              ><span>laer</span><span class="c0">.</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing01.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.ksaf7xvy2vvn">
-                            <span>Precision</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c3"
-                              >A key advantage of this approach (compared to
-                              K/Ar dating) is that absolute abundances do not
-                              need to be calculated. </span
-                            ><span class="c0"
-                              >Instead, the ratios of the different argon
-                              isotopes are measured, yielding more precise and
-                              accurate results.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3"
-                              >New generation, fully automated multi-collector
-                              Thermo Fisher Scientific Argus VI mass
-                              spectrometers permits high-precision </span
-                            ><span class="c4">40</span><span>Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar dating of a wide variety of sample types,
-                              including Pleistocene/Holocene-aged samples of
-                              low-K content. Analytical precision: &lt;0.1% for
-                              most samples.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >Earlier generation mass spectrometers (e.g.,
-                              VG3600) are also routinely employed for
-                              step-heating of bulk samples or single grains
-                              (depending on sample age) and produce analytical
-                              precision: &lt;1% for most samples</span
-                            >
-                          </p>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing02.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.vyp3lirrdp97">
-                            <span class="c6 c11">Sample Preparation</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar dating techniques can be applied to single or
-                              multi-crystal/grain aliquots and is also routinely
-                              applied to volcanic groundmass samples. Best
-                              results are obtained from the use of gresh,
-                              unaltered samples that are free of inclusions or
-                              sources of contamination.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >Sample size requirement varies based on the age
-                              and K-content of the samples under investigation.
-                              For example, single grains can yield excellent
-                              ages for million year old K-feldspar and mica
-                              grains whereas 10s of milligrams may be required
-                              for Pleistocene/Holocene samples, volcanic
-                              groundmass samples or low-K phases such as
-                              hornblende.
-                            </span>
-                          </p>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing03.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
+            <span class="c4">40</span><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c0"
+              >Ar dating techniques can be applied to single or
+              multi-crystal/grain aliquots and is also routinely applied to
+              volcanic groundmass samples. Best results are obtained from the
+              use of gresh, unaltered samples that are free of inclusions or
+              sources of contamination.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >Sample size requirement varies based on the age and K-content of
+              the samples under investigation. For example, single grains can
+              yield excellent ages for million year old K-feldspar and mica
+              grains whereas 10s of milligrams may be required for
+              Pleistocene/Holocene samples, volcanic groundmass samples or low-K
+              phases such as hornblende.
+            </span>
+          </p>
+        </div>
 
-                    <h2 class="c8" style="margin-top: 70px" id="h.1e0wo2nackbs">
-                      <span class="c11 c6"
-                        >John de Laeter Centre, Curtin University</span
-                      >
-                    </h2>
-                    <table class="c15">
-                      <tbody>
-                        <tr>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Instrument</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Model</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Elements that can be analysed</span
-                              >
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Static Vacuum Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0">ThermoFisher ARGUS VI</span>
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <h3 class="c20" id="h.ihkpk3wfbczv">
-                      <span class="c19 c6">Contact detail</span>
-                    </h3>
-                    <div>
-                      <p class="contact">
-                        <span class="c0"
-                          >Prof. Fred
-                          Jourdan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Celia
-                          Myers</span
-                        >
-                      </p>
-                      <p class="contact">
-                        <span>T:</span><span>&nbsp; </span
-                        ><span class="c0"
-                          >+61 08 9266
-                          2412&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T:
-                          +61 08 9266 4731</span
-                        >
-                      </p>
-
-                      <p class="contact">
-                        <span>E: </span
-                        ><span class="c16"
-                          ><a
-                            class="c9"
-                            href="mailto:f.jourdan@exchange.curtin.edu.au"
-                            >f.jourdan@exchange.curtin.edu.au</a
-                          ></span
-                        ><span
-                          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: </span
-                        ><span class="c16"
-                          ><a
-                            class="c9"
-                            href="mailto:Celia.Mayers@curtin.edu.au"
-                            >Celia.Mayers@curtin.edu.au</a
-                          ></span
-                        ><span class="c0">&nbsp;</span>
-                      </p>
-                    </div>
-
-                    <h2 class="c8" id="h.5tfqchhot5wk">
-                      <span class="c11 c6">University of Melbourne</span>
-                    </h2>
-                    <a id="t.f2da2e225a7f8712251834360fbda197f8c03e29"></a
-                    ><a id="t.1"></a>
-                    <table class="c15">
-                      <tbody>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Instrument</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Model</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Elements that can be analysed</span
-                              >
-                            </p>
-                          </td>
-                        </tr>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Static Vacuum Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0">ThermoFisher ARGUS VI</span>
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >&nbsp;Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">VG3600</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                    <h3 class="c20" id="h.x6e11bsnj7sp">
-                      <span class="c6 c19">Contact detail</span>
-                    </h3>
-                    <p class="contact">
-                      <span class="c17"
-                        >Prof. David
-                        Phillips&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr.
-                        Erin Matchan</span
-                      >
-                    </p>
-                    <p class="contact">
-                      <span class="c0"
-                        >T: +61 3 8344
-                        9866&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T:
-                        +61 3 9035 9621</span
-                      >
-                    </p>
-                    <p class="contact">
-                      <span>E: </span
-                      ><span class="c16"
-                        ><a class="c9" href="mailto:dphillip@unimelb.edu.au"
-                          >dphillip@unimelb.edu.au</a
-                        ></span
-                      ><span
-                        >&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: </span
-                      ><span class="c16"
-                        ><a class="c9" href="mailto:ematchan@unimelb.edu.au"
-                          >ematchan@unimelb.edu.au</a
-                        ></span
-                      ><span class="c0">&nbsp;</span>
-                    </p>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                  </div>
-                </div>
-
+        <div class="col-4">
+          <h3 style="margin-top: 52px">CONTACT AN EXPERT</h3>
+          <br>
+          <p align="left" style="margin-bottom:20px; color: #f2f2f2;">
+            <strong>Curtin University</strong>
+            <br>
+            Model: ThermoFisher ARGUS VI
+            <br>
+            <br>
+            Prof. Fred Jourdan  
+            <br>
+            T: +61 08 9266 2412  
+            <br
+            >E: <a href="mailto:f.jourdan@exchange.curtin.edu.au">
+              f.jourdan@exchange.curtin.edu.au</a>
+            <br>
+            <br>
+            Celia Myers  
+            <br>
+            T: +61 08 9266 4731
+            <br
+            >E: <a href="mailto:Celia.Mayers@curtin.edu.au">
+              Celia.Mayers@curtin.edu.au</a>
+            <br>
+          </p>
+          <p align="left" style="margin-bottom:20px; color:#f2f2f2;">
+            <strong>University of Melbourne</strong>
+            <br>
+            Model: ThermoFisher ARGUS VI & VG3600
+            <br>
+            <br>
+            Prof. David Phillips 
+            <br>
+            T: +61 3 8344 9866
+            <br
+            >E: <a href="mailto:dphillip@unimelb.edu.au">
+              dphillip@unimelb.edu.au</a>
+            <br>
+            <br>
+            Dr. Erin Matchan
+            <br>
+            T: +61 3 9035 9621
+            <br
+            >E: <a href="mailto:ematchan@unimelb.edu.au">
+              ematchan@unimelb.edu.au</a>
+            <br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 ' WHERE ID=32;
-UPDATE technique SET description = '
-                    <style type="text/css">
-                      @import url(\'https://themes.googleusercontent.com/fonts/css?kit=fpjTOVmNbO4Lz34iLyptLUXza5VhXqVC6o75Eld_V98\');
-                      .lst-kix_7g54tjt9kss2-1 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-0 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-2 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-2 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-4 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-5 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-3 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-1 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-8 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-6 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-7 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      ul.lst-kix_as7rwr57yz2j-1 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-0 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-5 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-4 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-3 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-2 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-8 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-7 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_as7rwr57yz2j-6 {
-                        list-style-type: none;
-                      }
-                      li.li-bullet-0:before {
-                        margin-left: -18pt;
-                        white-space: nowrap;
-                        display: inline-block;
-                        min-width: 18pt;
-                      }
-                      .lst-kix_as7rwr57yz2j-6 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-2 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-3 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-0 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-1 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-4 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-8 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-6 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-7 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-3 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      .lst-kix_as7rwr57yz2j-7 > li:before {
-                        content: "\0025cb  ";
-                      }
-                      ul.lst-kix_7g54tjt9kss2-4 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-5 {
-                        list-style-type: none;
-                      }
-                      ul.lst-kix_7g54tjt9kss2-8 {
-                        list-style-type: none;
-                      }
-                      .lst-kix_as7rwr57yz2j-5 > li:before {
-                        content: "\0025a0  ";
-                      }
-                      .lst-kix_7g54tjt9kss2-0 > li:before {
-                        content: "\0025cf  ";
-                      }
-                      ol {
-                        margin: 0;
-                        padding: 0;
-                      }
+UPDATE technique SET description = '<style type="text/css">
+  
+  .lst-kix_7g54tjt9kss2-1 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-0 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_7g54tjt9kss2-2 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_as7rwr57yz2j-2 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-4 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_7g54tjt9kss2-5 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-3 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-1 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_7g54tjt9kss2-8 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-6 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_7g54tjt9kss2-7 > li:before {
+    content: "\0025cb  ";
+  }
+  ul.lst-kix_as7rwr57yz2j-1 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-0 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-5 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-4 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-3 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-2 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-8 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-7 {
+    list-style-type: none;
+  }
+  ul.lst-kix_as7rwr57yz2j-6 {
+    list-style-type: none;
+  }
+  li.li-bullet-0:before {
+    margin-left: -18pt;
+    white-space: nowrap;
+    display: inline-block;
+    min-width: 18pt;
+  }
+  .lst-kix_as7rwr57yz2j-6 > li:before {
+    content: "\0025cf  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-2 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-3 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-0 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-1 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-4 > li:before {
+    content: "\0025cb  ";
+  }
+  .lst-kix_as7rwr57yz2j-8 > li:before {
+    content: "\0025a0  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-6 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-7 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-3 > li:before {
+    content: "\0025cf  ";
+  }
+  .lst-kix_as7rwr57yz2j-7 > li:before {
+    content: "\0025cb  ";
+  }
+  ul.lst-kix_7g54tjt9kss2-4 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-5 {
+    list-style-type: none;
+  }
+  ul.lst-kix_7g54tjt9kss2-8 {
+    list-style-type: none;
+  }
+  .lst-kix_as7rwr57yz2j-5 > li:before {
+    content: "\0025a0  ";
+  }
+  .lst-kix_7g54tjt9kss2-0 > li:before {
+    content: "\0025cf  ";
+  }
+  ol {
+    margin: 0;
+    padding: 0;
+  }
 
-                      .c7 {
-                        padding: 5pt 5pt 5pt 5pt;
-                        vertical-align: top;
-                        border: 1px solid #000000;
-                      }
-                      .c2 {
-                        margin-left: 36pt;
-                        padding-top: 0pt;
-                        padding-left: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .c17 {
-                        color: #000000;
-                        font-weight: 400;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 16px;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c1 {
-                        padding-top: 18pt;
-                        padding-bottom: 4pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .c8 {
-                        padding-bottom: 6pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                      .c0 {
-                        font-weight: 400;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 16px;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c20 {
-                        padding-top: 14pt;
-                        padding-bottom: 4pt;
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                      .c19 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 14pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c3 {
-                        padding-top: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        font-size: 16px;
-                        text-align: left;
-                      }
-                      .c12 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 24pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c11 {
-                        color: #000000;
-                        text-decoration: none;
-                        vertical-align: baseline;
-                        font-size: 18pt;
-                        font-family: "Calibre";
-                        font-style: normal;
-                      }
-                      .c5 {
-                        line-height: 1;
-                        text-align: center;
-                      }
-                      .c16 {
-                        text-decoration-skip-ink: none;
-                        -webkit-text-decoration-skip: none;
-                        color: #1155cc;
-                      }
-                      .c15 {
-                        border-spacing: 0;
-                        border-collapse: collapse;
-                        margin-right: auto;
-                      }
+  .c7 {
+    padding: 5pt 5pt 5pt 5pt;
+    vertical-align: top;
+    border: 1px solid #000000;
+  }
+  .c2 {
+    margin-left: 36pt;
+    padding-top: 0pt;
+    padding-left: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .c17 {
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 16px;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c1 {
+    padding-top: 18pt;
+    padding-bottom: 4pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .c8 {
+    padding-bottom: 6pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+  .c0 {
+    font-weight: 400;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 16px;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c20 {
+    padding-top: 14pt;
+    padding-bottom: 4pt;
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+  .c19 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 14pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c3 {
+    padding-top: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    font-size: 16px;
+    text-align: left;
+  }
+  .c12 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 24pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c11 {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: baseline;
+    font-size: 18pt;
+    font-family: "Calibre";
+    font-style: normal;
+  }
+  .c5 {
+    line-height: 1;
+    text-align: center;
+  }
+  .c16 {
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    color: #1155cc;
+  }
+  .c15 {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-right: auto;
+  }
 
-                      .c18 {
-                        padding: 0;
-                        margin: 0;
-                      }
-                      .c9 {
-                        color: inherit;
-                        text-decoration: inherit;
-                        font-size: 16px;
-                      }
-                      .c13 {
-                        height: 18pt;
-                      }
-                      .c4 {
-                        vertical-align: super;
-                        font-size: 16px;
-                      }
+  .c18 {
+    padding: 0;
+    margin: 0;
+  }
+  .c9 {
+    color: inherit;
+    text-decoration: inherit;
+    font-size: 16px;
+  }
+  .c13 {
+    height: 18pt;
+  }
+  .c4 {
+    vertical-align: super;
+    font-size: 16px;
+  }
 
-                      .c6 {
-                        font-weight: 700;
-                      }
-                      .c10 {
-                        height: 11pt;
-                      }
-                      .title {
-                        padding-top: 24pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 36pt;
-                        padding-bottom: 6pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      .subtitle {
-                        padding-top: 18pt;
-                        color: #666666;
-                        font-size: 24pt;
-                        padding-bottom: 4pt;
-                        font-family: "Georgia";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        font-style: italic;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      li {
-                        color: #000000;
-                        font-family: "Calibre";
-                      }
-                      p {
-                        margin: 0;
-                        color: #000000;
-                        font-size: 11pt;
-                        font-family: "Calibre";
-                      }
-                      h1 {
-                        padding-top: 24pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 24pt;
-                        padding-bottom: 6pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h2 {
-                        padding-top: 18pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 18pt;
-                        padding-bottom: 4pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h3 {
-                        padding-top: 14pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 14pt;
-                        padding-bottom: 4pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h4 {
-                        padding-top: 12pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 12pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h5 {
-                        padding-top: 11pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 11pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      h6 {
-                        padding-top: 10pt;
-                        color: #000000;
-                        font-weight: 700;
-                        font-size: 10pt;
-                        padding-bottom: 2pt;
-                        font-family: "Calibre";
-                        line-height: 1.0791666666666666;
-                        page-break-after: avoid;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: left;
-                      }
-                      table {
-                        margin: auto;
-                      }
+  .c6 {
+    font-weight: 700;
+  }
+  .c10 {
+    height: 11pt;
+  }
+  .title {
+    padding-top: 24pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 36pt;
+    padding-bottom: 6pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  .subtitle {
+    padding-top: 18pt;
+    color: #666666;
+    font-size: 24pt;
+    padding-bottom: 4pt;
+    font-family: "Georgia";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    font-style: italic;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  li {
+    color: #000000;
+    font-family: "Calibre";
+  }
+  p {
+    margin: 0;
+    color: #000000;
+    font-size: 11pt;
+    font-family: "Calibre";
+  }
+  h1 {
+    padding-top: 24pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 24pt;
+    padding-bottom: 6pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h2 {
+    padding-top: 18pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 18pt;
+    padding-bottom: 4pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h3 {
+    padding-top: 14pt;
+    color: #f2f2f2;
+    font-weight: 700;
+    font-size: 14pt;
+    padding-bottom: 4pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h4 {
+    padding-top: 12pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 12pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h5 {
+    padding-top: 11pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 11pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  h6 {
+    padding-top: 10pt;
+    color: #000000;
+    font-weight: 700;
+    font-size: 10pt;
+    padding-bottom: 2pt;
+    font-family: "Calibre";
+    line-height: 1.0791666666666666;
+    page-break-after: avoid;
+    orphans: 2;
+    widows: 2;
+    text-align: left;
+  }
+  table {
+    margin: auto;
+  }
 
-                      table p {
-                        color: #000000 !important;
-                      }
+  table p {
+    color: #000000 !important;
+  }
 
-                      .contact {
-                        padding-top: 0pt;
-                        padding-bottom: 8pt;
-                        line-height: 1.0791666666666666;
-                        orphans: 2;
-                        widows: 2;
-                        text-align: center;
-                      }
-                    </style>
-                  </p>
+  .contact {
+    padding-top: 0pt;
+    padding-bottom: 8pt;
+    line-height: 1.0791666666666666;
+    orphans: 2;
+    widows: 2;
+    text-align: center;
+  }
+</style>
+<body>
+    <h1 class="c8" style="margin-bottom: 100px" id="h.6c73zlqek6pu">
+      <span class="c6 c12">Ar/Ar Geochronology</span>
+    </h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <h2 class="c8" id="h.6oyabzybdetz">
+            <span>The Technique</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing01.png"
+                style="max-width: 200px; max-height: 300px;float: left; margin-right: 10px; margin-top: 10px;"
+            />
+            <span class="c3">The</span><span class="c4">40</span
+            ><span class="c3">Ar/</span><span class="c4">39</span
+            ><span class="c3">Ar dating technique is capable of addressing questions spanning
+              all of Earth&rsquo;s history (i.e., from thousands to billions of
+              years). </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c0">Ar geochronology can be applied to a wide range of problems in
+              volcanology, igneous petrology, metamorphic petrology, structural
+              geology and much more!
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c3">The </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3">Ar dating technique builds on, and is more sophisticated than the
+              traditional K/Ar dating technique, where both techniques measure </span
+            ><span class="c4">40</span
+            ><span class="c3">Ar as the parent isotope. A key difference is that the K/Ar technique measures </span
+            ><span class="c4">40</span
+            ><span class="c3">K</span
+            ><span class="c3">&nbsp;as the parent, the</span
+            ><span class="c4">40</span
+            ><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3">Ar technique uses </span><span class="c4">39</span
+            ><span class="c0">Ar. </span>
+          </p>
+          <p class="c3">
+            <span class="c3">The parent in the Ar/Ar technique, </span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar, does not occur naturally and can only be produced by a fat
+              neutron reaction. Therefore a key step in </span
+            ><span class="c4">40</span><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar geochronology is placing samples into the core of a nuclear
+              reactor and bombarding them with fast neutrons to produce </span
+            ><span class="c4">39</span><span class="c3">Ar. The amount of </span
+            ><span class="c4">39</span
+            ><span class="c3"
+              >Ar produced by this process is controlled by the amount of </span
+            ><span class="c4">39</span
+            ><span class="c0"
+              >K present initially (related to age of sample), the length of the
+              irradiation, and the flux of neutrons.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >During analysis, argon is extracted from the sample as a gas.
+              This can be done in a variety of ways:</span
+            >
+          </p>
+          <ul class="c18 lst-kix_as7rwr57yz2j-0 start">
+            <li class="c2 li-bullet-0">
+              <span class="c6">Step-heating</span
+              ><span class="c0"
+                >&nbsp;is one of the most common approaches and utilises a laser
+                or furnace to incrementally heat the sample and release argon.
+                The individual ages from each heating increment are then
+                utilised to produce an age spectrum.</span
+              >
+            </li>
+            <li class="c2 li-bullet-0">
+              <span class="c6">Total fusion analysis </span
+              ><span
+                >is most similar to conventional to K/Ar age determination as it
+                utilises complete release of argon from the sample in one step.
+                An important difference is the use of argon </span
+              ><span
+                >ratios (rather than K or Ar abundances). Fusions are typically
+                performed using a </span
+              ><span>laer</span><span class="c0">.</span>
+            </li>
+          </ul>
+        
+          <h2 class="c8" id="h.ksaf7xvy2vvn">
+            <span>Precision</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing02.png"
+                style="max-width: 200px; max-height: 300px;float: right;"
+            />
+            <span class="c3"
+              >A key advantage of this approach (compared to K/Ar dating) is
+              that absolute abundances do not need to be calculated. </span
+            ><span class="c0"
+              >Instead, the ratios of the different argon isotopes are measured,
+              yielding more precise and accurate results.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c3"
+              >New generation, fully automated multi-collector Thermo Fisher
+              Scientific Argus VI mass spectrometers permits high-precision </span
+            ><span class="c4">40</span><span>Ar/</span><span class="c4">39</span
+            ><span class="c0"
+              >Ar dating of a wide variety of sample types, including
+              Pleistocene/Holocene-aged samples of low-K content. Analytical
+              precision: &lt;0.1% for most samples.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >Earlier generation mass spectrometers (e.g., VG3600) are also
+              routinely employed for step-heating of bulk samples or single
+              grains (depending on sample age) and produce analytical precision:
+              &lt;1% for most samples</span
+            >
+          </p>
+        
+          <h2 class="c8" id="h.vyp3lirrdp97">
+            <span class="c6 c11">Sample Preparation</span>
+          </h2>
+          <p class="c3">
+            <img
+                alt=""
+                src="../../../assets/images/landing03.png"
+                style="max-width: 200px; max-height: 300px;float: left; margin-right: 10px; margin-top: 10px;"
+            />
 
-                  <div>
-                    <h1
-                      class="c8"
-                      style="margin-bottom: 100px"
-                      id="h.6c73zlqek6pu"
-                    >
-                      <span class="c6 c12">Ar/Ar Geochronology</span>
-                    </h1>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.6oyabzybdetz">
-                            <span>The Technique</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c3">The </span><span class="c4">40</span
-                            ><span class="c3">Ar/</span><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar dating technique is capable of addressing
-                              questions spanning all of Earth&rsquo;s history
-                              (i.e., from thousands to billions of years). </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar geochronology can be applied to a wide range
-                              of problems in volcanology, igneous petrology,
-                              metamorphic petrology, structural geology and much
-                              more!
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3">The </span><span class="c4">40</span
-                            ><span class="c3">Ar/</span><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar dating technique builds on, and is more
-                              sophisticated than the traditional K/Ar dating
-                              technique, where both techniques measure </span
-                            ><span class="c4">40</span
-                            ><span class="c3"
-                              >Ar as the parent isotope. A key difference is
-                              that the K/Ar technique measures </span
-                            ><span class="c4">40</span><span class="c3">K</span
-                            ><span class="c3">&nbsp;as the parent, the </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c3">Ar technique uses </span
-                            ><span class="c4">39</span
-                            ><span class="c0">Ar. </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3">The parent in the Ar/Ar technique, </span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar, does not occur naturally and can only be
-                              produced by a fat neutron reaction. Therefore a
-                              key step in </span
-                            ><span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar geochronology is placing samples into the core
-                              of a nuclear reactor and bombarding them with fast
-                              neutrons to produce </span
-                            ><span class="c4">39</span
-                            ><span class="c3">Ar. The amount of </span
-                            ><span class="c4">39</span
-                            ><span class="c3"
-                              >Ar produced by this process is controlled by the
-                              amount of </span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >K present initially (related to age of sample),
-                              the length of the irradiation, and the flux of
-                              neutrons.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >During analysis, argon is extracted from the
-                              sample as a gas. This can be done in a variety of
-                              ways:</span
-                            >
-                          </p>
-                          <ul class="c18 lst-kix_as7rwr57yz2j-0 start">
-                            <li class="c2 li-bullet-0">
-                              <span class="c6">Step-heating</span
-                              ><span class="c0"
-                                >&nbsp;is one of the most common approaches and
-                                utilises a laser or furnace to incrementally
-                                heat the sample and release argon. The
-                                individual ages from each heating increment are
-                                then utilised to produce an age spectrum.</span
-                              >
-                            </li>
-                            <li class="c2 li-bullet-0">
-                              <span class="c6">Total fusion analysis </span
-                              ><span
-                                >is most similar to conventional to K/Ar age
-                                determination as it utilises complete release of
-                                argon from the sample in one step. An important
-                                difference is the use of argon </span
-                              ><span
-                                >ratios (rather than K or Ar abundances).
-                                Fusions are typically performed using a </span
-                              ><span>laer</span><span class="c0">.</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing01.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.ksaf7xvy2vvn">
-                            <span>Precision</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c3"
-                              >A key advantage of this approach (compared to
-                              K/Ar dating) is that absolute abundances do not
-                              need to be calculated. </span
-                            ><span class="c0"
-                              >Instead, the ratios of the different argon
-                              isotopes are measured, yielding more precise and
-                              accurate results.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c3"
-                              >New generation, fully automated multi-collector
-                              Thermo Fisher Scientific Argus VI mass
-                              spectrometers permits high-precision </span
-                            ><span class="c4">40</span><span>Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar dating of a wide variety of sample types,
-                              including Pleistocene/Holocene-aged samples of
-                              low-K content. Analytical precision: &lt;0.1% for
-                              most samples.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >Earlier generation mass spectrometers (e.g.,
-                              VG3600) are also routinely employed for
-                              step-heating of bulk samples or single grains
-                              (depending on sample age) and produce analytical
-                              precision: &lt;1% for most samples</span
-                            >
-                          </p>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing02.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-8">
-                          <h2 class="c8" id="h.vyp3lirrdp97">
-                            <span class="c6 c11">Sample Preparation</span>
-                          </h2>
-                          <p class="c3">
-                            <span class="c4">40</span><span class="c3">Ar/</span
-                            ><span class="c4">39</span
-                            ><span class="c0"
-                              >Ar dating techniques can be applied to single or
-                              multi-crystal/grain aliquots and is also routinely
-                              applied to volcanic groundmass samples. Best
-                              results are obtained from the use of gresh,
-                              unaltered samples that are free of inclusions or
-                              sources of contamination.
-                            </span>
-                          </p>
-                          <p class="c3">
-                            <span class="c0"
-                              >Sample size requirement varies based on the age
-                              and K-content of the samples under investigation.
-                              For example, single grains can yield excellent
-                              ages for million year old K-feldspar and mica
-                              grains whereas 10s of milligrams may be required
-                              for Pleistocene/Holocene samples, volcanic
-                              groundmass samples or low-K phases such as
-                              hornblende.
-                            </span>
-                          </p>
-                        </div>
-                        <div class="col-4" style="text-align: center">
-                          <span
-                            ><img
-                              alt=""
-                              src="/assets/images/landing03.png"
-                              style="max-width: 200px; max-height: 300px"
-                          /></span>
-                        </div>
-                      </div>
-                    </div>
+            <span class="c4">40</span><span class="c3">Ar/</span
+            ><span class="c4">39</span
+            ><span class="c0"
+              >Ar dating techniques can be applied to single or
+              multi-crystal/grain aliquots and is also routinely applied to
+              volcanic groundmass samples. Best results are obtained from the
+              use of gresh, unaltered samples that are free of inclusions or
+              sources of contamination.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c0"
+              >Sample size requirement varies based on the age and K-content of
+              the samples under investigation. For example, single grains can
+              yield excellent ages for million year old K-feldspar and mica
+              grains whereas 10s of milligrams may be required for
+              Pleistocene/Holocene samples, volcanic groundmass samples or low-K
+              phases such as hornblende.
+            </span>
+          </p>
+        </div>
 
-                    <h2 class="c8" style="margin-top: 70px" id="h.1e0wo2nackbs">
-                      <span class="c11 c6"
-                        >John de Laeter Centre, Curtin University</span
-                      >
-                    </h2>
-                    <table class="c15">
-                      <tbody>
-                        <tr>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Instrument</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Model</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Elements that can be analysed</span
-                              >
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Static Vacuum Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0">ThermoFisher ARGUS VI</span>
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <h3 class="c20" id="h.ihkpk3wfbczv">
-                      <span class="c19 c6">Contact detail</span>
-                    </h3>
-                    <div>
-                      <p class="contact">
-                        <span class="c0"
-                          >Prof. Fred
-                          Jourdan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Celia
-                          Myers</span
-                        >
-                      </p>
-                      <p class="contact">
-                        <span>T:</span><span>&nbsp; </span
-                        ><span class="c0"
-                          >+61 08 9266
-                          2412&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T:
-                          +61 08 9266 4731</span
-                        >
-                      </p>
-
-                      <p class="contact">
-                        <span>E: </span
-                        ><span class="c16"
-                          ><a
-                            class="c9"
-                            href="mailto:f.jourdan@exchange.curtin.edu.au"
-                            >f.jourdan@exchange.curtin.edu.au</a
-                          ></span
-                        ><span
-                          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: </span
-                        ><span class="c16"
-                          ><a
-                            class="c9"
-                            href="mailto:Celia.Mayers@curtin.edu.au"
-                            >Celia.Mayers@curtin.edu.au</a
-                          ></span
-                        ><span class="c0">&nbsp;</span>
-                      </p>
-                    </div>
-
-                    <h2 class="c8" id="h.5tfqchhot5wk">
-                      <span class="c11 c6">University of Melbourne</span>
-                    </h2>
-                    <a id="t.f2da2e225a7f8712251834360fbda197f8c03e29"></a
-                    ><a id="t.1"></a>
-                    <table class="c15">
-                      <tbody>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Instrument</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">Model</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Elements that can be analysed</span
-                              >
-                            </p>
-                          </td>
-                        </tr>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >Static Vacuum Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0">ThermoFisher ARGUS VI</span>
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                        <tr class="c14">
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5">
-                              <span class="c0"
-                                >&nbsp;Noble Gas Mass Spectrometer</span
-                              >
-                            </p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5"><span class="c0">VG3600</span></p>
-                          </td>
-                          <td class="c7" colspan="1" rowspan="1">
-                            <p class="c5 c10"><span class="c0"></span></p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                    <h3 class="c20" id="h.x6e11bsnj7sp">
-                      <span class="c6 c19">Contact detail</span>
-                    </h3>
-                    <p class="contact">
-                      <span class="c17"
-                        >Prof. David
-                        Phillips&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr.
-                        Erin Matchan</span
-                      >
-                    </p>
-                    <p class="contact">
-                      <span class="c0"
-                        >T: +61 3 8344
-                        9866&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T:
-                        +61 3 9035 9621</span
-                      >
-                    </p>
-                    <p class="contact">
-                      <span>E: </span
-                      ><span class="c16"
-                        ><a class="c9" href="mailto:dphillip@unimelb.edu.au"
-                          >dphillip@unimelb.edu.au</a
-                        ></span
-                      ><span
-                        >&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: </span
-                      ><span class="c16"
-                        ><a class="c9" href="mailto:ematchan@unimelb.edu.au"
-                          >ematchan@unimelb.edu.au</a
-                        ></span
-                      ><span class="c0">&nbsp;</span>
-                    </p>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                    <p class="c3 c10"><span class="c0"></span></p>
-                  </div>
-                </div>
-
+        <div class="col-4">
+          <h3 style="margin-top: 52px">CONTACT AN EXPERT</h3>
+          <br>
+          <p align="left" style="margin-bottom:20px; color: #f2f2f2;">
+            <strong>Curtin University</strong>
+            <br>
+            Model: ThermoFisher ARGUS VI
+            <br>
+            <br>
+            Prof. Fred Jourdan  
+            <br>
+            T: +61 08 9266 2412  
+            <br
+            >E: <a href="mailto:f.jourdan@exchange.curtin.edu.au">
+              f.jourdan@exchange.curtin.edu.au</a>
+            <br>
+            <br>
+            Celia Myers  
+            <br>
+            T: +61 08 9266 4731
+            <br
+            >E: <a href="mailto:Celia.Mayers@curtin.edu.au">
+              Celia.Mayers@curtin.edu.au</a>
+            <br>
+          </p>
+          <p align="left" style="margin-bottom:20px; color:#f2f2f2;">
+            <strong>University of Melbourne</strong>
+            <br>
+            Model: ThermoFisher ARGUS VI & VG3600
+            <br>
+            <br>
+            Prof. David Phillips 
+            <br>
+            T: +61 3 8344 9866
+            <br
+            >E: <a href="mailto:dphillip@unimelb.edu.au">
+              dphillip@unimelb.edu.au</a>
+            <br>
+            <br>
+            Dr. Erin Matchan
+            <br>
+            T: +61 3 9035 9621
+            <br
+            >E: <a href="mailto:ematchan@unimelb.edu.au">
+              ematchan@unimelb.edu.au</a>
+            <br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 ' WHERE ID=33;
 
 /*!40000 ALTER TABLE `technique` ENABLE KEYS */;
