@@ -1,4 +1,4 @@
-# AuScope Geochmistry LabFinder
+# AuScope Geochemistry LabFinder
 
 AGN Laborarory Finder is used to identify and understand the analysis techniques available to researchers through Australian Geochemistry Network.
 
