@@ -1,0 +1,19 @@
+# app engine config file
+
+runtime: php74
+
+env_variables:
+  CLOUDSQL_CONNECTION_NAME: ${{ secrets.CLOUDSQL_CONNECTION_NAME }}
+  CLOUDSQL_USER: ${{ secrets.CLOUDSQL_USER }}
+  CLOUDSQL_PASSWORD: ${{ secrets.CLOUDSQL_PASSWORD }}
+  CLOUDSQL_DATABASE_NAME: ${{ secrets.CLOUDSQL_DATABASE_NAME }}
+
+handlers:
+  - url: /assets
+    static_dir: assets
+  - url: /media-dir
+    static_dir: media-dir
+  - url: /.*
+    secure: always
+    redirect_http_response_code: 301
+    script: auto    
