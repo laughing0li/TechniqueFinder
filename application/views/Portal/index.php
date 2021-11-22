@@ -2,6 +2,7 @@
 
 <head>
     <title>AGN Laboratory Finder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/css/autoComplete.min.css">
 </head>
 
 <body>
@@ -119,17 +120,34 @@
     <!-- <div style='z-index: -1' class="container" id="infobox">
         <?php echo $staticData['tf.home.infoboxContent']; ?>
     </div> -->
+
+    <!-- Autocomplete -->
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/autoComplete.min.js"></script>
+
     <script>
         var datasrc = [
             <?php $keyword_list = $this->Techniques_model->getKeywordList();
             foreach ($keyword_list as $keyword) {
-                echo "{label: '" . $keyword->name . "', value: '" . $keyword->name . "'},\n";
+                echo "'" . $keyword->name . "',\n";
             }
             ?>
         ];
-        const ac = new Autocomplete(document.getElementById('myAutocomplete'), {
-            data: datasrc
-        })
+        const autoCompleteJS = new autoComplete({ selector: "#myAutocomplete",
+                                                  resultItem: {
+                                                      highlight: {
+                                                          render: true
+                                                      }
+                                                  },
+                                                  data: { src: datasrc },
+                                                  events: {
+                                                      input: {
+                                                          selection: (event) => {
+                                                              const selection = event.detail.selection.value;
+                                                              autoCompleteJS.input.value = selection;
+                                                          }
+                                                      }
+                                                 }
+                                                 });
     </script>
 </body>
 
