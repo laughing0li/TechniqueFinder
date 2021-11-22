@@ -9,7 +9,7 @@ jobs:
 
       - name: deploy to app engine
         id: deploy
-        uses: google-github-actions/deploy-appengine@main
+        uses: google-github-actions/deploy-appengine@v0.2.0
         with: 
           deliverables: app.yaml
           project_id: ${{ secrets.GCP_PROJECT }}
