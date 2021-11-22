@@ -15,10 +15,10 @@
                         <a class="nav-link tf-font-color"  href="/Portal">Home</a>
                     </li>
                     <li style="margin-left: 20px" class="nav-item">
-                        <a class="nav-link tf-font-color"  href="https://www.auscope.org.au/agn">About</a>
+                        <a class="nav-link tf-font-color"  href="https://www.auscope.org.au/agn">AGN</a>
                     </li>
                     <li style="margin-left: 20px" class="nav-item">
-                        <a class="nav-link tf-font-color"  href="https://app.ausgeochem.org/"> AusGeochem</a>
+                        <a class="nav-link tf-font-color"  href="https://ausgeochem.auscope.org.au/"> AusGeochem</a>
                     </li>
 
                     <li style="margin-left: 20px" class="nav-item dropdown">
@@ -43,10 +43,10 @@
                         <a class="nav-link tf-font-color" href="/Portal">Home</a>
                     </li>
                     <li style="margin-left: 20px" class="nav-item">
-                        <a class="nav-link tf-font-color"  href="https://www.auscope.org.au/agn">About</a>
+                        <a class="nav-link tf-font-color"  href="https://www.auscope.org.au/agn">AGN</a>
                     </li>
                     <li style="margin-left: 20px" class="nav-item">
-                        <a class="nav-link tf-font-color"  href="https://app.ausgeochem.org/"> AusGeochem</a>
+                        <a class="nav-link tf-font-color"  href="https://ausgeochem.auscope.org.au/"> AusGeochem</a>
                     </li>
                     <li style="margin-left: 20px" class="nav-item dropdown">
                         <a  class="nav-link dropdown-toggle tf-font-color" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

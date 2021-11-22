@@ -1048,7 +1048,7 @@ if ($this->session->flashdata('error-warning-message')) {
         if(mediaSelected == <?php echo $media_item->id;?>)
         {
             $('#table_list_media_selected').append("<tr class=\"table-background-color-techniques\">" +
-                "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
+                "<td><img height=100 width=100 src='<?php echo ('https://storage.googleapis.com/tf-4-agn.appspot.com/static/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
                 '<td><?php echo $media_item->name;
                     echo "<br>";
                     echo $media_item->height."x". $media_item->width;
@@ -1064,7 +1064,7 @@ if ($this->session->flashdata('error-warning-message')) {
         <?php foreach ($media_list as $media_item){?>
         if(outputSelected.includes(<?php echo $media_item->id;?>)){
                 $('#table_output_media_selected').append("<tr class=\"table-background-color-techniques\" id=\"<?php echo $media_item->id;?>\">"+
-                    "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
+                    "<td><img height=100 width=100 src='<?php echo ('https://storage.googleapis.com/tf-4-agn.appspot.com/static/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
                     '<td><?php echo $media_item->name;
                         echo "<br>";
                         echo $media_item->height."x". $media_item->width;
@@ -1081,7 +1081,7 @@ if ($this->session->flashdata('error-warning-message')) {
         <?php foreach ($media_list as $media_item){?>
         if(instrumentSelected.includes(<?php echo $media_item->id;?>)){
             $('#table_instrument_media_selected').append("<tr class=\"table-background-color-techniques\" id=\"<?php echo $media_item->id;?>\">"+
-                "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
+                "<td><img height=100 width=100 src='<?php echo ('https://storage.googleapis.com/tf-4-agn.appspot.com/static/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
                 '<td><?php echo $media_item->name;
                     echo "<br>";
                     echo $media_item->height."x". $media_item->width;
@@ -1188,7 +1188,7 @@ if ($this->session->flashdata('error-warning-message')) {
             <?php foreach($media_list as $media_item){ ?>
             $('#media-list-table').append('<tr class=\"table-background-color-techniques\">' +
                 '<td><input type=\'radio\' name=\'media_list\' value=\'<?php echo $media_item->id; ?>\'/></td>' +
-                "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
+                "<td><img height=100 width=100 src='<?php echo ('https://storage.googleapis.com/tf-4-agn.appspot.com/static/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
                 '<td><?php echo $media_item->name;
                     echo "<br>";
                     echo $media_item->height."x". $media_item->width;
@@ -1233,7 +1233,7 @@ if ($this->session->flashdata('error-warning-message')) {
                     if(mediaSelected == <?php echo $media_item->id;?>)
                     {
                         $('#table_list_media_selected').append("<tr class=\"table-background-color-techniques\">" +
-                            "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
+                            "<td><img height=100 width=100 src='<?php echo ('https://storage.googleapis.com/tf-4-agn.appspot.com/static/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
                             '<td><?php echo $media_item->name;
                                 echo "<br>";
                                 echo $media_item->height."x". $media_item->width;
@@ -1272,7 +1272,7 @@ if ($this->session->flashdata('error-warning-message')) {
             if(!outputSelected.includes(<?php echo $media_item->id;?>)) {
                 $('#media-output-table').append('<tr class="table-background-color-techniques">' +
                     '<td><input type=\'checkbox\' name=\'media_output\' value=\'<?php echo $media_item->id; ?>\'/></td>' +
-                    "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
+                    "<td><img height=100 width=100 src='<?php echo ('https://storage.googleapis.com/tf-4-agn.appspot.com/static/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
                     '<td><?php echo $media_item->name;
                         echo "<br>";
                         echo $media_item->height . "x" . $media_item->width;
@@ -1318,7 +1318,7 @@ if ($this->session->flashdata('error-warning-message')) {
                         if(element == <?php echo $media_item->id;?>)
                         {
                             $('#table_output_media_selected').append("<tr class=\"table-background-color-techniques\" id='"+ element + "'>"+
-                                "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
+                                "<td><img height=100 width=100 src='<?php echo ('https://storage.googleapis.com/tf-4-agn.appspot.com/static/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
                                 '<td><?php echo $media_item->name;
                                     echo "<br>";
                                     echo $media_item->height."x". $media_item->width;
@@ -1357,7 +1357,7 @@ if ($this->session->flashdata('error-warning-message')) {
             if(!instrumentSelected.includes(<?php echo $media_item->id;?>)) {
                 $('#media-instrument-table').append('<tr class="table-background-color-techniques">' +
                     '<td><input type=\'checkbox\' name=\'media_instrument\' value=\'<?php echo $media_item->id; ?>\'/></td>' +
-                    "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
+                    "<td><img height=100 width=100 src='<?php echo ('https://storage.googleapis.com/tf-4-agn.appspot.com/static/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
                     '<td><?php echo $media_item->name;
                         echo "<br>";
                         echo $media_item->height . "x" . $media_item->width;
@@ -1404,7 +1404,7 @@ if ($this->session->flashdata('error-warning-message')) {
                         if(element == <?php echo $media_item->id;?>)
                         {
                             $('#table_instrument_media_selected').append("<tr class=\"table-background-color-techniques\" id='"+ element + "'>"+
-                                "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
+                                "<td><img height=100 width=100 src='<?php echo ('https://storage.googleapis.com/tf-4-agn.appspot.com/static/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
                                 '<td><?php echo $media_item->name;
                                     echo "<br>";
                                     echo $media_item->height."x". $media_item->width;

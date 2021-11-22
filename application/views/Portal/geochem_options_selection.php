@@ -21,15 +21,21 @@
             <div id="content" class="container">
                 <div class="row justify-content-md-center">
                     <div class="col-10" style="padding: 0 38px">
-                        <div class="d-flex justify-content-end">
+                        <!-- <div class="d-flex justify-content-end">
                             <div class="p-2">
                                 <button type="submit" class="btn outline-primary" onclick="window.location.assign('<?php echo base_url(); ?>Portal')">Back</button>
                             </div>
-                        </div>
-                        <div>
+                        </div> -->
+                        <div class="row">
+                            <div class="col-6" style="margin: auto;">
                             <strong class="tf-font-color">
                                 <?php echo $staticData['tf.geochemChoices.quickGuide']; ?>
                             </strong>
+                            </div>
+                            <div class="col-6">
+                                <img style="height: 200px; width:350px; margin: 27px 0 0 135px" src="/assets/images/lores_shrimpii.jpg" alt="">
+                            </div>
+                            
                         </div>
                         <div class="border-bottom" style="margin: 50px 0"></div>
 
@@ -48,7 +54,7 @@
                                         ?>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row" style="margin-top: 30px;">
                                     <!-- THEN -->
                                     <img src="<?php echo base_url() . 'assets/images/space.gif' ?>" width="20" height="5" />
                                     <span style="text-align:center;">
@@ -75,7 +81,7 @@
                                         <!-- <h1 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']); ?> </h1> -->
                                     </span>
                                 </div>
-                                <div class="row">
+                                <div class="row" style="margin-top: 30px;">
                                     <!-- STEP 3 -->
                                     <h3 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.step3.title']); ?> </h3>
                                     <div style="padding-left: 12px;">
@@ -134,6 +140,8 @@
                     xmlhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
                             document.getElementById("display-area").innerHTML = this.responseText;
+                            console.log(this.responseText);
+
                         }
                     };
                     xmlhttp.open("GET", "<?php echo base_url() . 'Portal/getTechniqueChoices/'; ?>" + step1_id + "/0/Notspecified", true);

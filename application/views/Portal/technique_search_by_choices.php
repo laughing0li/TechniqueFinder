@@ -65,7 +65,7 @@ $this->load->view('layout/portal_header.php'); ?>
                 echo '<td width="10"><img src="' . base_url() . 'images/space.gif" width="10" height="5"></td>'
                     . '<td width="140" valign="top">'
                     . '<div style="display:block;margin-left:auto;margin-right:auto;">'
-                    . '<img src="' . base_url() . 'media-dir/' . $media_location . '" width="145" height="145" alt="' . $media_location . '">'
+                    . '<img src="https://storage.googleapis.com/tf-4-agn.appspot.com/static/' . $media_location . '" width="145" height="145" alt="' . $media_location . '">'
                     . '</div>'
                     . '</td>'
                     . '</tr> </tbody></table>';
