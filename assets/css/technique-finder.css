@@ -317,6 +317,10 @@ body {
     width: 80%;
 }
 
+.tf-disabled:disabled {
+    display: none;
+}
+
 .tf-col-label{
     position: fixed;
 }
