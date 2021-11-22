@@ -1,4 +1,8 @@
-# Technique Finder
+# AuScope Geochemistry Network Laboratory Finder
+
+AGN Laboratory Finder is used to identify and understand the analysis techniques available to researchers through Australian Geochemistry Network.
+
+It is a based on Microscopy Australia's "Technique Finder" web application. 
 
 Technique Finder(TF) application aids researchers to find the techniques and facilities to fit their research project.
 
