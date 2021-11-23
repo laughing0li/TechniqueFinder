@@ -1,0 +1,8 @@
+.github/workflows/*
+.idea
+.gcloudignore
+app.yaml
+tf.json
+application/third_party/*
+.DS_Store
+.gitingore

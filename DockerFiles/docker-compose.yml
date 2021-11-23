@@ -1,0 +1,57 @@
+#
+#   TechniqueFinder - docker-compose.yml
+#
+#    Description:
+#    Author:           Intersect Australia Ltd
+#    Created:          12 Aug 2019
+#    Source:           https://github.com/IntersectAustralia/TechniqueFinder
+#    License:          Copyright (c) 2019 Intersect Australia - Licensed under Creative Commons
+#                      Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+#                      https://creativecommons.org/licenses/by-nc-sa/4.0/
+#
+version: '3.6'
+services:
+  web:
+    image: nginx:1.21.1
+    ports:
+      - "8080:80"
+      - "25:25"
+    volumes:
+      - ../:/www
+      - ./site.conf:/etc/nginx/conf.d/site.conf
+    networks:
+      - web_net
+    depends_on:
+      - php
+
+  php:
+    build: .
+    volumes:
+      - ../:/www
+      - ./dev-database.php:/www/application/config/database.php
+      - ./dev-config.php:/www/application/config/config.php
+    entrypoint: sh -c "cd /www/application/third_party && composer install && exec docker-php-entrypoint php-fpm" # install auth0 libs
+    environment:
+      - PHP_ENV=development
+    networks:
+      - web_net
+      - db_net
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7.35
+    ports:
+      - "3306:3306"
+    networks:
+      - db_net
+    volumes:
+      - ../db/initial_db_setup.sql:/docker-entrypoint-initdb.d/01_data.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=techfinder
+    command:
+      --disable-partition-engine-check
+networks:
+  web_net:
+  db_net:
