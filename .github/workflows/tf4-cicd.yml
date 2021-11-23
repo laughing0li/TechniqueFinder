@@ -7,12 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: into third_party directory
-        run: cd application/third_party
-        
-      - name: install composer dependency
-        run: composer install
-
       - name: deploy to app engine
         id: deploy
         uses: google-github-actions/deploy-appengine@v0.2.0
