@@ -17,6 +17,7 @@
 
 <head>
     <title>Technique Search</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/css/autoComplete.min.css">
 </head>
 
 <body>
@@ -40,7 +41,7 @@
 
                                 <div class="container" style="margin-left: -24px">
                                     <div class="row">
-                                        <div class="col-4">
+                                        <div class="col-6">
                                             <input id="myAutocomplete" type="text" class="form-control" name="q" placeholder="Search by keyword" autocomplete="off">
                                         </div>
                                         <div class="col">
@@ -110,18 +111,32 @@
         <!-- ff -->
     </div>
 
-    <!-- <div id="infobox"></div> -->
+    <!-- Autocomplete -->
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/autoComplete.min.js"></script>
     <script>
         var datasrc = [
             <?php $keyword_list = $this->Techniques_model->getKeywordList();
             foreach ($keyword_list as $keyword) {
-                echo "{label: '" . $keyword->name . "', value: '" . $keyword->name . "'},\n";
+                echo "'" . $keyword->name . "',\n";
             }
             ?>
         ];
-        const ac = new Autocomplete(document.getElementById('myAutocomplete'), {
-            data: datasrc
-        })
+        const autoCompleteJS = new autoComplete({ selector: "#myAutocomplete",
+                                                  resultItem: {
+                                                      highlight: {
+                                                          render: true
+                                                      }
+                                                  },
+                                                  data: { src: datasrc },
+                                                  events: {
+                                                      input: {
+                                                          selection: (event) => {
+                                                              const selection = event.detail.selection.value;
+                                                              autoCompleteJS.input.value = selection;
+                                                          }
+                                                      }
+                                                 } 
+                                                 });
     </script>
 
 </body>

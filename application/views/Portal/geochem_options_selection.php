@@ -2,6 +2,7 @@
 
 <head>
     <title>Geochemical Analysis</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/css/autoComplete.min.css">
 </head>
 
 <body>
@@ -58,8 +59,6 @@
                                     <!-- THEN -->
                                     <img src="<?php echo base_url() . 'assets/images/space.gif' ?>" width="20" height="5" />
                                     <span style="text-align:center;">
-
-                                        <!-- <h1 class="tf-heading" ><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']); ?> </h1> -->
                                     </span>
                                 </div>
                                 <div class="row">
@@ -78,14 +77,13 @@
                                     <!-- THEN -->
                                     <img src="<?php echo base_url() . 'assets/images/space.gif' ?>" width="20" height="5" />
                                     <span style="text-align:center;">
-                                        <!-- <h1 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.comparison.title']); ?> </h1> -->
                                     </span>
                                 </div>
                                 <div class="row" style="margin-top: 30px;">
                                     <!-- STEP 3 -->
-                                    <h3 class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.step3.title']); ?> </h3>
+                                    <h3 id="step3-title" style="display: none" class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.step3.title']); ?> </h3>
                                     <div style="padding-left: 12px;">
-                                        <input id="step3" _type="step3Option" class="form-control" style="font-size: 12px; max-width: 32rem" type="text" placeholder="Type here element interested in" onchange="elementClick(this)" autocomplete="off" disabled="disabled"></input>
+                                        <input id="step3" _type="step3Option" class="tf-disabled form-control" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off" disabled="disabled">
                                     </div>
                                 </div>
                             </div> <!-- END LHS COLUMN -->
@@ -125,6 +123,9 @@
         <?php $this->load->view('layout/portal_footer.php') ?>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/autoComplete.min.js"></script>
+
+
     <script type="text/javascript">
         /*
          * This updates the cards on the right hand side as the user makes choices
@@ -154,6 +155,7 @@
                     $('input[name="btnradio-2"]').prop('checked', false);
                     // Reset step 3 input
                     $('#step3').attr('disabled', 'disabled');
+                    $('#step3-title').css('display', 'none');
 
                 } else if (element.attr('_type') == 'step2Option') {
                     // User clicked on "Step2" button
@@ -173,7 +175,7 @@
             }
         }
 
-        /* Called when user selects an element  in Step 3 */
+        /* Called when user selects an element in Step 3 */
         function elementClick(e) {
             var step1_id = $('input[name="btnradio-1"]:checked').attr('_id');
             var step2_id = $('input[name="btnradio-2"]:checked').attr('_id');
@@ -190,17 +192,37 @@
 
         /* This updates the set of autocomplete keywords in Step 3 */
         function autoKeywordUpdate(step1_id, step2_id) {
+            var me = this;
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     const jsonResp = JSON.parse(this.responseText);
                     if (jsonResp.length === 0) {
                         $('#step3').attr('disabled', 'disabled');
+                        $('#step3-title').css('display', 'none');
                     } else {
                         $('#step3').removeAttr('disabled');
-                        const ac = new Autocomplete(document.getElementById('step3'), {
-                            data: jsonResp
-                        });
+                        $('#step3-title').css('display', 'block');
+                        const autoCompleteJS = new autoComplete({ selector: "#step3",
+                                                                  placeHolder: "Search for elements...",
+                                                                  resultItem: {
+                                                                      highlight: {
+                                                                          render: true
+                                                                      }
+                                                                  },
+                                                                  data: { src: jsonResp,
+                                                                          keys: ['label'],
+                                                                        },
+                                                                  events: {
+                                                                      input: {
+                                                                          selection: (event) => {
+                                                                              const selection = event.detail.selection.value;
+                                                                              autoCompleteJS.input.value = selection['label'];
+                                                                              me.elementClick(event.target)
+                                                                          }
+                                                                      }
+                                                                 }
+                                                                 });
                     }
                 }
             };
