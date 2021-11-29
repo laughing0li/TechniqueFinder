@@ -122,6 +122,16 @@
 
     <script type="text/javascript">
         /*
+         * Activate tooltips on cards
+         */
+        function activateToolTips() {
+            $('div[data-toggle="tooltip"]').tooltip({
+                animated: 'fade',
+                placement: 'top'
+            });
+        }
+
+        /*
          * This updates the cards on the right hand side as the user makes choices
          */
         function onClick(e) {
@@ -136,6 +146,7 @@
                         if (this.readyState == 4 && this.status == 200) {
                             document.getElementById("display-area").innerHTML = this.responseText;
                         }
+                        activateToolTips();
                     };
                     xmlhttp.open("GET", "<?php echo base_url() . 'Portal/getTechniqueChoices/'; ?>" + step1_id + "/0/Notspecified", true);
                     xmlhttp.send();
@@ -157,6 +168,7 @@
                         if (this.readyState == 4 && this.status == 200) {
                             document.getElementById("display-area").innerHTML = this.responseText;
                         }
+                        activateToolTips();
                     };
                     var step1_id = $('input[name="btnradio-1"]:checked').attr('_id');
                     xmlhttp.open("GET", "<?php echo base_url() . 'Portal/getTechniqueChoices/'; ?>" + step1_id + "/" + step2_id + "/Notspecified", true);
@@ -177,6 +189,7 @@
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("display-area").innerHTML = this.responseText;
                 }
+                activateToolTips();
             };
             xmlhttp.open("GET", "<?php echo base_url() . 'Portal/getTechniqueChoices/'; ?>" + step1_id + "/" + step2_id + "/" + step3_val, true);
             xmlhttp.send();
