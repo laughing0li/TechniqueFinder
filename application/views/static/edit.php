@@ -60,26 +60,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <td class="tf-font-orange">Name</td>
                                 <td>&nbsp;&nbsp;</td>
                                 <td class="tf-font tf-font-size">
-                                    <?php if ($static_data['name'] == 'tf.home.quickGuide') {
-                                        echo "Quick guide on the home page";
-                                    }
+                                    <?php
                                     if ($static_data['name'] == 'tf.home.optionsExplanation') {
-                                        echo "Options explanation on the home page";
+                                        echo "Research interest explanation on the home page";
                                     }
                                     if ($static_data['name'] == 'tf.home.searchExplanation') {
                                         echo "Search explanation on the home page";
                                     }
-                                    if ($static_data['name'] == 'tf.home.allTechniquesExplanation') {
-                                        echo "List all techniques explanation on the home page";
-                                    }
-                                    if ($static_data['name'] == 'tf.home.infoboxContent') {
-                                        echo "Infobox (right hand side bar) content on the home page";
-                                    }
                                     if ($static_data['name'] == 'tf.geochemChoices.quickGuide') {
                                         echo "Text at the top of \"Geochemical Analysis and Age Determination\" page";
-                                    }
-                                    if ($static_data['name'] == 'tf.geochemChoices.comparison.title') {
-                                        echo "Comparison text on the choices for geochemistry page (not used)";
                                     }
                                     if ($static_data['name'] == 'tf.geochemChoices.step1.title') {
                                         echo "Title for first step for \"Geochemical Analysis and Age Determination\" page";
@@ -92,15 +81,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     }
                                     if ($static_data['name'] == 'tf.expProcChoices.quickGuide') {
                                         echo "Text at the top of \"Experimental Procedures\" page";
-                                    }
-                                    if ($static_data['name'] == 'tf.menu') {
-                                        echo "Main menu on public site";
-                                    }
-                                    if ($static_data['name'] == 'tf.tracking.ammrf') {
-                                        echo "Tracking AMMRF (not used)";
-                                    }
-                                    if ($static_data['name'] == ' tf.tracking.intersect') {
-                                        echo "Tracking Intersect (not used)";
                                     }
                                     ?></td>
                             </tr>
