@@ -75,38 +75,32 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     if ($static_data['name'] == 'tf.home.infoboxContent') {
                                         echo "Infobox (right hand side bar) content on the home page";
                                     }
-                                    if ($static_data['name'] == 'tf.biologyChoices.quickGuide') {
-                                        echo "Quick guide on the choices for biological sciences page";
+                                    if ($static_data['name'] == 'tf.geochemChoices.quickGuide') {
+                                        echo "Text at the top of \"Geochemical Analysis and Age Determination\" page";
                                     }
-                                    if ($static_data['name'] == 'tf.biologyChoices.comparison.title') {
-                                        echo "Comparison text on the choices for biological sciences page";
+                                    if ($static_data['name'] == 'tf.geochemChoices.comparison.title') {
+                                        echo "Comparison text on the choices for geochemistry page (not used)";
                                     }
-                                    if ($static_data['name'] == 'tf.biologyChoices.left.title') {
-                                        echo "Title for left side options on the choices for biological sciences page";
+                                    if ($static_data['name'] == 'tf.geochemChoices.step1.title') {
+                                        echo "Title for first step for \"Geochemical Analysis and Age Determination\" page";
                                     }
-                                    if ($static_data['name'] == 'tf.biologyChoices.right.title') {
-                                        echo "Title for right side options on the choices for biological sciences page";
+                                    if ($static_data['name'] == 'tf.geochemChoices.step2.title') {
+                                        echo "Title for second step for \"Geochemical Analysis and Age Determination\" page";
                                     }
-                                    if ($static_data['name'] == 'tf.physicsChoices.quickGuide') {
-                                        echo "Quick guide on the choices for physical sciences page";
+                                    if ($static_data['name'] == 'tf.geochemChoices.step3.title') {
+                                        echo "Title for third step for \"Geochemical Analysis and Age Determination\" page";
                                     }
-                                    if ($static_data['name'] == 'tf.physicsChoices.comparison.title') {
-                                        echo "Comparison text on the choices for physical sciences page";
-                                    }
-                                    if ($static_data['name'] == 'tf.physicsChoices.left.title') {
-                                        echo "Title for left side options on the choices for physical sciences page";
-                                    }
-                                    if ($static_data['name'] == 'tf.physicsChoices.right.title') {
-                                        echo "Title for right side options on the choices for physical sciences page";
+                                    if ($static_data['name'] == 'tf.expProcChoices.quickGuide') {
+                                        echo "Text at the top of \"Experimental Procedures\" page";
                                     }
                                     if ($static_data['name'] == 'tf.menu') {
                                         echo "Main menu on public site";
                                     }
                                     if ($static_data['name'] == 'tf.tracking.ammrf') {
-                                        echo "Tracking AMMRF";
+                                        echo "Tracking AMMRF (not used)";
                                     }
                                     if ($static_data['name'] == ' tf.tracking.intersect') {
-                                        echo "Tracking Intersect";
+                                        echo "Tracking Intersect (not used)";
                                     }
                                     ?></td>
                             </tr>

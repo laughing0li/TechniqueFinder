@@ -25,27 +25,21 @@ class Static_model extends MY_Model
 
         $query = $this->db->query("    SELECT id,text,
           CASE WHEN name='tf.home.quickGuide' THEN  'Quick guide on the home page'
-              WHEN name='tf.home.optionsExplanation' THEN  'Options explanation on the home page'
-              WHEN name='tf.home.searchExplanation' THEN  'Search explanation on the home page'
-                WHEN name='tf.home.allTechniquesExplanation' THEN  'List all techniques explanation on the home page'
-                WHEN name='tf.home.infoboxContent' THEN  'Infobox (right hand side bar) content on the home page'
-              WHEN name='tf.geochemChoices.quickGuide' THEN  'Quick guide on the choices for geochemistry page'
-              WHEN name='tf.geochemChoices.comparison.title' THEN  'Comparison text on the choices for geochemistry page'
-              WHEN name='tf.geochemChoices.left.title' THEN  'Title for left side options on the choices for geochemistry page'
-              WHEN name='tf.geochemChoices.right.title' THEN  'Title for right side options on the choices for geochemistry page'
-                WHEN name='tf.biologyChoices.quickGuide' THEN  'Quick guide on the choices for biological sciences page'
-                WHEN name='tf.biologyChoices.comparison.title' THEN  'Comparison text on the choices for biological sciences page'
-                WHEN name='tf.biologyChoices.left.title' THEN  'Title for left side options on the choices for biological sciences page'
-                WHEN name='tf.biologyChoices.right.title' THEN  'Title for right side options on the choices for biological sciences page'
-                WHEN name='tf.physicsChoices.quickGuide' THEN  'Quick guide on the choices for physical sciences page'
-                WHEN name='tf.physicsChoices.comparison.title' THEN  'Comparison text on the choices for physical sciences page'
-                WHEN name='tf.physicsChoices.left.title' THEN  'Title for left side options on the choices for physical sciences page'
-                WHEN name='tf.physicsChoices.right.title' THEN  'Title for right side options on the choices for physical sciences page'
-                WHEN name='tf.menu' THEN 'Main menu on public site'
-                WHEN name='tf.tracking.ammrf' THEN 'Tracking AMMRF'
-                WHEN name='tf.tracking.intersect' THEN 'Tracking Intersect'
-                ELSE name='Undefined'
-                END as name1
+               WHEN name='tf.home.optionsExplanation' THEN  'Options explanation on the home page'
+               WHEN name='tf.home.searchExplanation' THEN  'Search explanation on the home page'
+               WHEN name='tf.home.allTechniquesExplanation' THEN  'List all techniques explanation on the home page'
+               WHEN name='tf.home.infoboxContent' THEN  'Infobox (right hand side bar) content on the home page'
+               WHEN name='tf.geochemChoices.quickGuide' THEN  'Text at the top of \"Geochemical Analysis and Age Determination\" page'
+               WHEN name='tf.geochemChoices.comparison.title' THEN  'Comparison text on the choices for geochemistry page (not used)'
+               WHEN name='tf.geochemChoices.step1.title' THEN  'Title for first step for \"Geochemical Analysis and Age Determination\" page'
+               WHEN name='tf.geochemChoices.step2.title' THEN  'Title for second step for \"Geochemical Analysis and Age Determination\" page'
+               WHEN name='tf.geochemChoices.step3.title' THEN  'Title for third step for \"Geochemical Analysis and Age Determination\" page'
+               WHEN name='tf.expProcChoices.quickGuide' THEN 'Text at the top of \"Experimental Procedures\" page'
+               WHEN name='tf.menu' THEN 'Main menu on public site'
+               WHEN name='tf.tracking.ammrf' THEN 'Tracking AMMRF (not used)'
+               WHEN name='tf.tracking.intersect' THEN 'Tracking Intersect (not used)'
+               ELSE name='Undefined'
+               END as name1
          from static_content;");
         return $query->result_array();
 
