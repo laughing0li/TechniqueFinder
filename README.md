@@ -14,9 +14,11 @@ We use [Auth0](https://auth0.com/) to provide login access to the admin pages.
 
 ## Documentation
 
-A "Developers Rough Code Layout Guide" can be found [here](https://github.com/AuScope/TechniqueFinder/blob/aus-geochem-net/LabFinderCodeLayout.md)
+[A guide to the administration interface](AdminGuide.md) 
 
-A database schema diagram can be found [here](https://github.com/AuScope/TechniqueFinder/blob/aus-geochem-net/db/tf_er_diagram_minimal.png)
+[Developers Rough Code Layout Guide](LabFinderCodeLayout.md)
+
+[Database schema diagram](https://github.com/AuScope/TechniqueFinder/blob/aus-geochem-net/db/tf_er_diagram_minimal.png)
 
 
 
