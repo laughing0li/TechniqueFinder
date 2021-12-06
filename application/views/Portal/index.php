@@ -19,40 +19,32 @@
                         <?php include 'header.php'; ?>
                         <div class="container" id="content">
 
-                            <br>
-                            <!-- <div class="border-bottom" style="margin: 50px 0"></div> -->
-
-                            <p style="font-size: 16px;" class="tf-font-color">
-                                Use AGN Laborarory Finder to identify and understand the analysis techniques available to researchers
-                                through Australian Geochemistry Network. You will find the contact details of our expert staff for each technique.
-                                They can provide you with all the information you need and guide you through the planning, training,
-                                data collection and interpretation stages of your experiments.
-                            </p>
-
-
-                            <div class="border-bottom" style="margin: 50px 0"></div>
-
-                            <h3 class="tf-heading">Option 1: Choose your research interest</h3>
                             <div class="row">
-                                <div class="col-md-8">
-                                    <p class="lh-lg tf-font-color" style="font-size: 15px;" >
-                                        <?php if (isset($staticData['tf.home.optionsExplanation'])) {
-                                            echo $staticData['tf.home.optionsExplanation'];
-                                        } ?>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="d-grid gap-2 col-4">
+                                <div class="col-5" style="color: #f2f2f1;">
+                                    <br>
+                                    <?php echo $staticData['tf.home.quickGuide']; ?>
+                                    <div class="border-bottom" style="margin: 50px 0"></div>
 
-                                <button class="btn outline-primary" type="button" onclick="window.location.assign('<?php echo base_url(); ?>Portal/geochemOptionsSelection');">
-                                    Geochemical Analysis and Age Determination
-                                </button>
-                                <button class="btn outline-primary" type="button" onclick="window.location.assign('<?php echo base_url(); ?>Portal/expProcOptionsSelection');">
-                                    Experimental Procedure
-                                </button>
-                                <button class="btn outline-primary" type="button" onclick="window.location.assign('<?php echo base_url(); ?>Portal/samplePrepOptionsSelection');">
-                                    Sample Preparation
-                                </button>
+                                    <h3 class="tf-heading">Option 1: Select your research interest</h3>
+                                    <!-- <?php if (isset($staticData['tf.home.optionsExplanation'])) {
+                                                echo "<div class='alert alert-primary' role='alert'>" . $staticData['tf.home.optionsExplanation'] . "</div";
+                                            } ?> -->
+                                    <div class="d-grid gap-2 col-10">
+
+                                        <button class="btn outline-primary" type="button" onclick="window.location.assign('<?php echo base_url(); ?>Portal/geochemOptionsSelection');">
+                                            Geochemical Analysis and Age Determination
+                                        </button>
+                                        <button class="btn outline-primary" type="button" onclick="window.location.assign('<?php echo base_url(); ?>Portal/expProcOptionsSelection');">
+                                            Experimental Procedure
+                                        </button>
+                                        <button class="btn outline-primary" type="button" onclick="window.location.assign('<?php echo base_url(); ?>Portal/samplePrepOptionsSelection');">
+                                            Sample Preparation
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-7">
+                                    <img style="height: 400px; max-width:500px; margin: 27px 0 0 76px" src="/assets/images/korieno_phd_auscopejdlc.jpg" alt="">
+                                </div>
                             </div>
 
 
@@ -60,16 +52,9 @@
 
                             <h3 class="tf-heading">Option 2: Search by single keyword</h3>
 
+
                             <form action="<?php echo base_url(); ?>Portal/techniqueSearch" method="get" name="searchForm" id="searchForm">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <p class="lh-lg tf-font-color" style="font-size: 15px;" >
-                                            <?php if (isset($staticData['tf.home.searchExplanation'])) {
-                                                echo $staticData['tf.home.searchExplanation'];
-                                            } ?>
-                                        </p>
-                                    </div>
-                                </div>
+
                                 <div class="container" style='margin-left: -28px'>
                                     <div class="row">
                                         <div class="col-md-8" style="margin-bottom: 10px;">
