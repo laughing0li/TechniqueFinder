@@ -9,7 +9,7 @@ PLEASE NOTE: The data entered in steps 2,3,4,5 are optional, because they may ha
 
 ### Step 1: Add an image
 
-1. Take a picture of the instrument. The picture must be &quot;PNG&quot; or &quot;JPEG&quot; and roughly square not too large or detailed, up to about 300kB in size
+1. Take a picture of the instrument. The picture must be &quot;PNG&quot; or &quot;JPEG&quot;, roughly square, not too large or detailed (typically 300kB in size)
 2. In the main admin page, click on &quot;Images and Movies&quot;
 3. Click on &quot;New Image&quot;
 4. Type in a caption into the &quot;Caption&quot;
@@ -56,7 +56,9 @@ This defines the person that manages the laboratory and institution. Skip this s
 
 ### Step 4: Add metadata (optional)
 
-This defines the TYPE of technique as used in the &quot;Geochemical Analysis Choices&quot; or if it is used for &quot;Sample Preparation&quot; or &quot;Experimental Procedure&quot;. This step is only required if the technique&#39;s metadata category has not been defined yet. This table is a summary:
+This defines the TYPE of technique as used in the &quot;Geochemical Analysis Choices&quot; or if it is used for &quot;Sample Preparation&quot; or &quot;Experimental Procedure&quot;. This step is only required if the technique&#39;s metadata category has not been defined yet.
+
+This table is a summary:
 
 | **Type of lab technique** | **Choice of Category Type** | **Choice of Analysis Type** |
 | --- | --- | --- |
@@ -70,9 +72,11 @@ This defines the TYPE of technique as used in the &quot;Geochemical Analysis Cho
 
    (i) Enter in the &quot;Category&quot; field – this is the broad type of machine/technique used e.g. &quot;Diamond Saws&quot;, &quot;ICP-MS&quot;, &quot;Magnetic Separation&quot;
 
-   (ii) Select in the &quot;Category Type&quot;. For &quot;Sample Preparation&quot; or &quot;Experimental Instruments&quot; just pick &quot;Sample Preparation&quot; or &quot;Experimental Instrument&quot;. Note if you choose &quot;Age Determination&quot; or &quot;Elemental Composition&quot; or &quot;Isotopic Analysis&quot; it will be displayed in the &quot;Geochemical Analysis and Age Determination&quot; section.
+   (ii) Select in the &quot;Category Type&quot;. For &quot;Sample Preparation&quot; or &quot;Experimental Instruments&quot; just pick &quot;Sample Preparation&quot; or &quot;Experimental Instrument&quot;. 
+   
+   Note if you choose &quot;Age Determination&quot; or &quot;Elemental Composition&quot; or &quot;Isotopic Analysis&quot; this technique will be displayed in the &quot;Geochemical Analysis and Age Determination&quot; section.
 
-   (iii) Select the &quot;Analysis Type&quot;. This is really only used by instruments which will be displayed in the &quot;Geochemical Analysis&quot; section. Therefore, if you chose &quot;Age Determination&quot; or &quot;Elemental Composition&quot; or &quot;Isotopic Analysis&quot;, then you should choose &quot;Spot Analysis&quot; or &quot;Whole Rock or Mineral Separates&quot; or &quot;Both&quot;. Otherwise just choose &quot;Not Applicable&quot;.
+   (iii) Select the &quot;Analysis Type&quot;. This is really only used by instruments which will be displayed in the &quot;Geochemical Analysis&quot; section. Therefore, if you chose &quot;Age Determination&quot; or &quot;Elemental Composition&quot; or &quot;Isotopic Analysis&quot; in (ii), then you should choose &quot;Spot Analysis&quot; or &quot;Whole Rock or Mineral Separates&quot; or &quot;Both&quot;. Otherwise just choose &quot;Not Applicable&quot;.
 
 ### Step 5: Add elements (optional)
 
@@ -147,6 +151,20 @@ More info: https://database.guide/how-the-match-function-works-in-mysql/
 ## Changing Titles and Short Phrases in Web Pages
 
 In the Admin Page the &quot;Static Content&quot; sub menu allows you to edit the titles and certain short phrases. A table is displayed with the left hand column describing the location and purpose of the text.
+
+## Advice about using the HTML Editor
+
+Some fields use the [HTML](https://en.wikipedia.org/wiki/HTML) editor, i.e. in "Static Content" section and "Summary" and "Description" in "Techniques" section. 
+
+It uses HTML markup to format the text. HTML markup is represented by text in angle brackets e.g. &lt;div&gt;
+
+Please note that many of the fields in "Static Content" and the "Summary" field will display correctly *only* when displayed with minimal HTML markup.
+
+This means just "&lt;p&gt;" and "&lt;\p&gt;"
+
+e.g. &lt;p&gt;Search for your choice here.&lt;\p&gt; 
+
+To use minimise the HTML markup, enter in your text with the "Source" button enabled (click on "Source" in top LH corner).
 
 ## Changing a Technique&#39;s Text &amp; Image: Which fields to edit in the Admin Pages
 
