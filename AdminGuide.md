@@ -192,10 +192,8 @@ This section is a map from the text and images you see in the public web pages t
 
 | **Web Page Element** | **Admin Submenu** | **Field** |
 | --- | --- | --- |
-| Cards header | Locations | Center name
- Institution |
-| Cards &quot;Applications&quot; &amp; &quot;Year Commissioned&quot; attributes | Localisation | Applications
- Year Commissioned |
+| Cards header | Locations | Center Name &amp; Institution |
+| Cards &quot;Applications&quot; &amp; &quot;Year Commissioned&quot; attributes | Localisation | Applications &amp; Year Commissioned |
 | Cards other attributes | Locations | \* |
 | Cards tables &quot;analysis type&quot; | Metadata | Analysis type |
 | Cards tables | Technique | \* |
@@ -215,10 +213,8 @@ This section is a map from the text and images you see in the public web pages t
 
 | **Web Page Element** | **Admin Submenu** | **Field** |
 | --- | --- | --- |
-| Cards header | Locations | Center Name
- Institution |
-| Cards &quot;Applications&quot; &amp; &quot;Year Commissioned&quot; attributes | Localisation | Applications
- Year Commissioned |
+| Cards header | Locations | Center Name &amp; Institution |
+| Cards &quot;Applications&quot; &amp; &quot;Year Commissioned&quot; attributes | Localisation | Applications &amp; Year Commissioned |
 | Cards other attributes | Locations | \* |
 | Cards table &quot;analysis type&quot; | Metadata | Analysis type |
 | Cards table | Technique | \* |
