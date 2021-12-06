@@ -1465,17 +1465,10 @@ CREATE TABLE `static_content` (
 
 LOCK TABLES `static_content` WRITE;
 /*!40000 ALTER TABLE `static_content` DISABLE KEYS */;
-INSERT INTO `static_content` VALUES (1,7,'<h1>Find the instruments and facilities to fit your research project</h1>\r\n\r\n<p>Use AGN Laboratory Finder to identify and understand the analysis techniques available to researchers through Australian Geochemistry Network. You will find the contact details of our expert staff for each technique. They can provide you with all the information you need and guide you through the planning, training, data collection and interpretation stages of your experiments.</p>\r\n','tf.home.quickGuide'),
-(2,3,'','tf.home.optionsExplanation'),
+INSERT INTO `static_content` VALUES (2,3,'','tf.home.optionsExplanation'),
 (7,1,'<h1>Choices for Experimental Procedures</h1>\r\n\r\n<p>Choose the type of machine you to want to use.</p>\r\n','tf.expProcChoices.quickGuide'),
-(11,0,'If you know what you want to explore, type it into the search box and click \'go\'.','tf.home.searchExplanation'),
-(12,9,'<p>Unused</p>\r\n','tf.menu'),
-(13,1,'This list shows the techniques currently available at Australian Geochemistry Network.','tf.home.allTechniquesExplanation'),
-(14,15,'<div style=\"position:absolute; top:55px\"></img></div>\r\n','tf.home.infoboxContent'),
-(15,0,'','tf.tracking.intersect'),
-(16,3,'','tf.tracking.ammrf'),
+(11,0,'','tf.home.searchExplanation'),
 (17,3,'<h1>\r\n	Geochemical Analysis and Age Determination</h1>\r\n<p>\r\n	The choices offered below are based on the fact that many experiments in the geochemical sciences involve the interaction or relationship of two things.</p>\r\n<p>\r\n	Choose one item from each list to see what techniques could help in your experiment.</p>\r\n','tf.geochemChoices.quickGuide'),
-(18,5,'<p>then</p>\r\n','tf.geochemChoices.comparison.title'),
 (19,2,'Step 1: Choose a research interest\r\n','tf.geochemChoices.step1.title'),
 (20,2,'Step 2: Type of analysis', 'tf.geochemChoices.step2.title' ),
 (21,2,'Step 3: Choose elements\r\n','tf.geochemChoices.step3.title');

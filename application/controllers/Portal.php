@@ -24,10 +24,7 @@ class Portal extends CI_Controller {
 
     public function index(){
         $staticData = array();
-        $staticData['tf.home.quickGuide']= $this->Static_model->getStaticDataByName('tf.home.quickGuide')->text;
         $staticData['tf.home.searchExplanation']= $this->Static_model->getStaticDataByName('tf.home.searchExplanation')->text;
-        $staticData['tf.home.allTechniquesExplanation']= $this->Static_model->getStaticDataByName('tf.home.allTechniquesExplanation')->text;
-        $staticData['tf.home.infoboxContent']= $this->Static_model->getStaticDataByName('tf.home.infoboxContent')->text;
         $staticData['tf.home.optionsExplanation']= $this->Static_model->getStaticDataByName('tf.home.optionsExplanation')->text;
 
         $this->load->view('Portal/index', array(
@@ -74,7 +71,6 @@ class Portal extends CI_Controller {
     public function geochemOptionsSelection(){
         $staticData = array();
         $staticData['tf.geochemChoices.quickGuide'] = $this->Static_model->getStaticDataByName('tf.geochemChoices.quickGuide')->text;
-        $staticData['tf.geochemChoices.comparison.title'] = $this->Static_model->getStaticDataByName('tf.geochemChoices.comparison.title')->text;
         $staticData['tf.geochemChoices.step1.title'] = $this->Static_model->getStaticDataByName('tf.geochemChoices.step1.title')->text;
         $staticData['tf.geochemChoices.step2.title'] = $this->Static_model->getStaticDataByName('tf.geochemChoices.step2.title')->text;
         $staticData['tf.geochemChoices.step3.title'] = $this->Static_model->getStaticDataByName('tf.geochemChoices.step3.title')->text;
@@ -192,12 +188,10 @@ class Portal extends CI_Controller {
              echo "<div class='row'>";
              foreach ($tech_meta_pair as $tech_meta) { 
                  echo "<div class='col-sm-4'>".
-                      "<div class='card mb-3 tf-card' onclick='window.location.assign(\"".base_url()."Portal/viewGeochemAnalysis/".$tech_meta->technique_id."\")'>".
-                      "<button class='card-header text-white btn btn-outline-secondary bg-primary'>$tech_meta->category</button>".
+                      "<div class='card mb-3 tf-card' data-toggle='tooltip' title='".$tech_meta->summary."' onclick='window.location.assign(\"".base_url()."Portal/viewGeochemAnalysis/".$tech_meta->technique_id."\")'>".
+                      "<div class='card-header text-white bg-primary'>$tech_meta->category</div>".
                       "<div class='card-body'>";
                  echo ($tech_meta->model!='')? "<b>Models:</b> $tech_meta->model":"";
-                 // echo ($tech_meta->beam_diameter!='')? "<br/><b>Beam Diam.:</b> $tech_meta->beam_diameter":"";
-                 // echo ($tech_meta->min_conc!='')? "<br/><b>Min. Conc.:</b> $tech_meta->min_conc":"";
                  echo "</div></div></div>";
              }
              echo "</div>";
