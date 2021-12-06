@@ -23,14 +23,6 @@
                                 <div class="col-5" style="color: #f2f2f1;">
                                     <br>
                                     <?php echo $staticData['tf.home.quickGuide']; ?>
-
-                                    <!-- <p style="font-size: 16px;" class="tf-font-color">
-                                        Use AGN Laborarory Finder to identify and understand the analysis techniques available to researchers
-                                        through Australian Geochemistry Network. You will find the contact details of our expert staff for each technique.
-                                        They can provide you with all the information you need and guide you through the planning, training,
-                                        data collection and interpretation stages of your experiments.
-                                    </p> -->
-
                                     <div class="border-bottom" style="margin: 50px 0"></div>
 
                                     <h3 class="tf-heading">Option 1: Select your research interest</h3>
@@ -90,7 +82,7 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <p class="lh-lg tf-font-color" style="font-size: 15px;">
-                                            This list shows the techniques currently available at Australian Geochemistry Network.
+                                        <?php echo $staticData['tf.home.allTechniquesExplanation']; ?>
                                         </p>
                                     </div>
                                 </div>

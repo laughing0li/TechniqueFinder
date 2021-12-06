@@ -247,7 +247,7 @@ class Portal extends CI_Controller {
         $this->load->view('Portal/technique_search_by_choices', array(
             'science' => $science,
             'leftOption' => $step1Option,
-	    'centreText' => $step3Text,
+            'centreText' => $step3Text,
             'rightOption' => $step2Option,
             'searchResults'=>array_slice($newSearchResults, $offset?$offset:0, self::PAGE_LENGTH),
             'Media_model'=>$this->Media_model
@@ -260,7 +260,7 @@ class Portal extends CI_Controller {
         $this->load->view(
             'Portal/technique_list',
             array(
-                'allTechniques'=> $this->Techniques_model->getAllTechniques(),
+                'allTechniques'=> $this->Techniques_model->getTechniques(),
             )
         );
     }
@@ -273,8 +273,8 @@ class Portal extends CI_Controller {
     public function viewGeochemAnalysis($id) {
         $this->load->model('Elements_model');
         $this->load->model('Techniques_model');
-        $theTechnique = $this->Techniques_model->getTechniqueData($id);
-        $instrumentType =  $theTechnique->instrument_name;
+        $theTechnique = $this->Techniques_model->getTechniqueDataAndImg($id);
+        // $instrumentType =  $theTechnique->instrument_name;
         $this->load->view('Portal/geochem_analysis_view',
             array(
                 'theTechnique' => $theTechnique
@@ -309,7 +309,7 @@ class Portal extends CI_Controller {
                 'right' => $right,
                 'left' => $left,
                 'prevPage' => $this->input->get('nav_from'),
-                'theTechnique' => $this->Techniques_model->getTechniqueData($id),
+                'theTechnique' => $this->Techniques_model->getTechniqueDataAndImg($id),
                 'caseStudies' => $this->Techniques_model->getCaseStudiesforTechnique($id),
                 'theContacts' => $this->Techniques_model->getContactsForTechnique($id),
                 'references' => $this->Techniques_model->getReferencesForTechnique($id),

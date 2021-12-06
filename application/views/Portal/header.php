@@ -37,7 +37,7 @@
                 </ul>
             </div>
 
-            <div style="margin-left: 100px;" class="collapse navbar-collapse" id="navbarNavDropdown">
+            <div  class="collapse navbar-collapse" style="margin-left: auto; flex-grow: 0;" id="navbarNavDropdown">
                 <ul class="navbar-nav" style='font-size: 18px'>
                     <li style="margin-left: 20px;" class="nav-item">
                         <a class="nav-link tf-font-color" href="/Portal">Home</a>

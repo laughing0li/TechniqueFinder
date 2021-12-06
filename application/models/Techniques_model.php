@@ -24,6 +24,15 @@ class Techniques_model extends MY_Model
      */
     function getAllTechniques()
     {
+        $result = $this->db->order_by('instrument_name ASC, model ASC')->get('technique')->result();
+        return $result;
+    }
+    /**
+     * 
+     * Return a list of all rows in 'technique' table, ordered by instrument name
+     */
+    function getTechniques()
+    {
         // to get all rows of name in 'technique' table
         $names = array();
         // to get unique name of instruments
@@ -49,11 +58,39 @@ class Techniques_model extends MY_Model
             }
             array_push($final, [$newArray[$i], $data]);
 
-                    // array_push($data, [$newArray[$i],$row]);
+            // array_push($data, [$newArray[$i],$row]);
         }
         // var_dump($final[11]);
         return $final;
+    }
 
+    function getTechniqueDataAndImg($x)
+    {
+        $info = array();
+        $result = $this->db->where('id', $x)->get('technique')->row();
+        // get the media id from media in section table according to technique id
+        $data = $this->db->query("SELECT * FROM media_in_section WHERE technique_id = $x")->result();
+        // some of the technique has no media, so we need to check if the data is empty
+        // if ($data != null) {
+        //     // extract the media id from data array
+        //     $media_id = $data[0]->media_id;
+        //     // get the media data from media table according to media id
+        //     $media_file = $this->db->query("SELECT * FROM media_file WHERE id = $media_id")->row();
+        //     $info['media_file'] = $media_file;
+        //     $info['result'] = $result;
+        // }
+        if ($data == null) {
+            $info['media_file'] = null;
+            $info['result'] = $result;
+        } else {
+            // extract the media id from data array
+            $media_id = $data[0]->media_id;
+            // get the media data from media table according to media id
+            $media_file = $this->db->query("SELECT * FROM media_file WHERE id = $media_id")->row();
+            $info['media_file'] = $media_file;
+            $info['result'] = $result;
+        }
+        return $info;
     }
 
     /**
@@ -497,7 +534,8 @@ class Techniques_model extends MY_Model
                 'yr_commissioned' => $ret_list->yr_commissioned,
                 'applications' => $ret_list->applications
             );
-            $this->db->replace('localisation', $data);
+            $this->db->delete('localisation', array('technique_id' => $technique_id));
+            $this->db->insert('localisation', $data);
         }
     }
 

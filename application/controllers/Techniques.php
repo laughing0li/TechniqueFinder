@@ -49,7 +49,19 @@ class Techniques extends CI_Controller
                 substr($r->description, 0, 200),
                 $r->model,
                 $r->manufacturer,
-                "<div style='min-width: 300px;'><button id='userIndexButtons' class='user-table-buttons' onclick=window.location='" . base_url() . "Techniques/view/" . $r->id . "'><span style='background: url(../../assets/images/database_view.png) 50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>View</button>" . "<span style='margin-left: 2em;'>&nbsp;</span>" . "<button id='userIndexButtons' class='user-table-buttons' onclick=window.location='" . base_url() . "Techniques/edit/" . $r->id . "'><span style='background: url(../../assets/images/database_edit.png) 50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>Edit</button>". "<span style='margin-left: 2em;'>&nbsp;</span>"."<button id='userIndexButtons' class='user-table-buttons' onclick='deleteTechnique(".$r->id.")'><span style='background: url(../../assets/images/database_delete.png) 50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>Delete</button>" ."</div>",
+                "<div style='min-width: 300px;'><button id='userIndexButtons' class='user-table-buttons' 
+                onclick=window.location='" . base_url() . "Techniques/view/" . $r->id . 
+                "'><span style='background: url(../../assets/images/database_view.png) 
+                50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>View</button>" . 
+                "<span style='margin-left: 2em;'>&nbsp;</span>" . 
+                "<button id='userIndexButtons' class='user-table-buttons' onclick=window.location='" .
+                base_url() . "Techniques/edit/" . $r->id .
+                "'><span style='background: url(../../assets/images/database_edit.png)
+                50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>Edit</button>". 
+                "<span style='margin-left: 2em;'>&nbsp;</span>"."<button id='userIndexButtons' 
+                class='user-table-buttons' onclick='deleteTechnique(".$r->id.")'>
+                <span style='background: url(../../assets/images/database_delete.png) 
+                50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>Delete</button>" ."</div>",
 
             ));
         }
@@ -115,6 +127,7 @@ class Techniques extends CI_Controller
         // Get data for this  Technique for display in view
 
         $technique_data = $this->Techniques_model->getTechniqueData($x);
+        
         $data['technique_name'] = $technique_data->name;
         $data['id'] = $technique_data->id;
         $data['short_description'] = $technique_data->summary;
