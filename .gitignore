@@ -3,6 +3,5 @@
 .gcloudignore
 app.yaml
 tf.json
-application/third_party/*
+application/third_party/vendor/*
 .DS_Store
-.gitingore
