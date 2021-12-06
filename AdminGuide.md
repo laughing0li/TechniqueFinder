@@ -128,24 +128,6 @@ You can add as many applications as you like.
 
 Select the technique added in the previous step.
 
-## Fields Used in Search Function
-
-The search function uses the MySQL &quot;MATCHES&quot; search in &quot;NATURAL LANGUAGE&quot; mode.
-
-If there are multiple words e.g. &quot;Scanning Raman&quot;, then it will should return records with &quot;Scanning&quot; and records with &quot;Raman&quot;, but if any records have both, then they are ranked higher and will come higher up in the search results list.
-
-More info: https://database.guide/how-the-match-function-works-in-mysql/
-
- It does a search of the following fields:
-
-| **Admin Sub-Menu** | **Field** |
-| --- | --- |
-| Techniques | Name, Instrument Name, Model, Manufacturer, Sample Type, Alternative Names, Summary, Description, Keywords |
-| Locations | Institution, Center Name, Address, State |
-| Techniques | &quot;Category&quot; in Geochem Analysis Choices |
-| Metadata | Category |
-| Images and Movies | Caption |
-| Elements | Name, Symbol |
 
 
 ## Changing Titles and Short Phrases in Web Pages
@@ -166,7 +148,7 @@ e.g. &lt;p&gt;Search for your choice here.&lt;\p&gt;
 
 To use minimise the HTML markup, enter in your text with the "Source" button enabled (click on "Source" in top LH corner).
 
-## Changing a Technique&#39;s Text &amp; Image: Which fields to edit in the Admin Pages
+## Changing a Technique&#39;s text &amp; images: which fields to edit in the Admin Pages
 
 This section is a map from the text and images you see in the public web pages to the fields that can be modified in the admin pages.
 
@@ -236,3 +218,24 @@ This section is a map from the text and images you see in the public web pages t
 | Cards other attributes | Locations | \* |
 | Cards table &quot;analysis type&quot; | Metadata | Analysis type |
 | Cards table | Technique | \* |
+
+
+## Fields Used in Search Function
+
+The search function uses the MySQL &quot;MATCHES&quot; search in &quot;NATURAL LANGUAGE&quot; mode.
+
+If there are multiple words e.g. &quot;Scanning Raman&quot;, then it will should return records with &quot;Scanning&quot; and records with &quot;Raman&quot;, but if any records have both, then they are ranked higher and will come higher up in the search results list.
+
+More info: https://database.guide/how-the-match-function-works-in-mysql/
+
+ It does a search of the following fields:
+
+| **Admin Sub-Menu** | **Field** |
+| --- | --- |
+| Techniques | Name, Instrument Name, Model, Manufacturer, Sample Type, Alternative Names, Summary, Description, Keywords |
+| Locations | Institution, Center Name, Address, State |
+| Techniques | &quot;Category&quot; in Geochem Analysis Choices |
+| Metadata | Category |
+| Images and Movies | Caption |
+| Elements | Name, Symbol |
+
