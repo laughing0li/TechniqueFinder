@@ -220,11 +220,13 @@ This section is a map from the text and images you see in the public web pages t
 | Cards table | Technique | \* |
 
 
-## Fields Used in Search Function
+## Search Function
 
 The search function uses the MySQL &quot;MATCHES&quot; search in &quot;NATURAL LANGUAGE&quot; mode.
 
 If there are multiple words e.g. &quot;Scanning Raman&quot;, then it will should return records with &quot;Scanning&quot; and records with &quot;Raman&quot;, but if any records have both, then they are ranked higher and will come higher up in the search results list.
+
+Two or three letter word searches (e.g. chemical element symbol names like 'Pt') are not currently supported.
 
 More info: https://database.guide/how-the-match-function-works-in-mysql/
 
