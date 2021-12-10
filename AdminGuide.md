@@ -167,6 +167,11 @@ This section is a map from the text and images you see in the public web pages t
 | Cards header | Metadata | Category | |
 | Cards body | Technique | Model | |
 | Cards mouseover text | Technique | Name, Summary | The mouseover text has the technique id displayed so it is easy to locate which technique to edit |
+
+#### Geochemical Analysis and Age Determination Landing Page
+
+| **Web Page Element** | **Admin Submenu** | **Field** | **Notes** |
+| --- | --- | --- | --- |
 | Final cards landing page | Technique | Description | The landing page has the technique id in the URL e.g. "https://labfinder.geoanalytics.group/Portal/viewGeochemAnalysis/16" has technique id of 16. This can be used to locate the correct technique to edit. |
 
 #### Experimental Procedure
@@ -175,8 +180,19 @@ This section is a map from the text and images you see in the public web pages t
 | --- | --- | --- |
 | Cards header | Metadata | Category |
 | Cards body | Technique | \* |
-| Details Page Card Header | Location | Center_name, Institution |
-| Details Page Card Body | Location, Technique | \* |
+
+#### Experimental Procedure Details Page
+
+| **Web Page Element** | **Admin Submenu** | **Field** |
+| --- | --- | --- |
+| Cards header | Locations | Center Name &amp; Institution |
+| Cards &quot;Applications&quot; &amp; &quot;Year Commissioned&quot; attributes | Localisation | Applications &amp; Year Commissioned |
+| Cards other attributes | Locations | \* |
+| Cards tables &quot;analysis type&quot; | Metadata | Analysis type |
+| Cards tables | Technique | \* |
+
+NOTE: The details page has the technique id in the URL e.g. "https://labfinder.geoanalytics.group/Portal/viewTechnique/41" has technique id of 41.
+This can be used to locate the correct technique to edit.
 
 #### Sample Preparation
 
@@ -229,6 +245,8 @@ This can be used to locate the correct technique to edit.
 | Cards table &quot;analysis type&quot; | Metadata | Analysis type |
 | Cards table | Technique | \* |
 
+NOTE: The cards page has the technique id in the URL e.g. "https://labfinder.geoanalytics.group/Portal/viewTechnique/41" has technique id of 41.
+This can be used to locate the correct technique to edit.
 
 ## Search Function
 
