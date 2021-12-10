@@ -3,13 +3,15 @@
 
 #### This is a brief guide to the AGN LabFinder administration interface.
 
-## How to add a new Technique
+**CLARIFICATION**: The words "instrument", "procedure" and "technique" are equivalent in this document. Instruments, procedures and techniques are all stored as "techniques" in the database.
+
+## How to add a new Technique/Instrument/Procedure
 
 PLEASE NOTE: The data entered in steps 2,3,4,5 are optional, because they may have already been entered for other machines. E.g. your university lab has already been added. In this case they can be copied or re-used for the new technique.
 
-### Step 1: Add an image
+### Step 1: Add an image (if required)
 
-1. Take a picture of the instrument. The picture must be &quot;PNG&quot; or &quot;JPEG&quot;, roughly square, not too large or detailed (typically 300kB in size)
+1. Take a picture of the equipment. The picture must be &quot;PNG&quot; or &quot;JPEG&quot;, roughly square, not too large or detailed (typically 300kB in size)
 2. In the main admin page, click on &quot;Images and Movies&quot;
 3. Click on &quot;New Image&quot;
 4. Type in a caption into the &quot;Caption&quot;
@@ -56,13 +58,13 @@ This defines the person that manages the laboratory and institution. Skip this s
 
 ### Step 4: Add metadata (optional)
 
-This defines the TYPE of technique as used in the &quot;Geochemical Analysis Choices&quot; or if it is used for &quot;Sample Preparation&quot; or &quot;Experimental Procedure&quot;. This step is only required if the technique&#39;s metadata category has not been defined yet.
+This defines the TYPE of technique/instrument/procedure as used in the &quot;Geochemical Analysis Choices&quot; and/or if it is used for &quot;Sample Preparation&quot; or &quot;Experimental Procedure&quot;. This step is only required if the technique&#39;s metadata category has not been defined yet.
 
 This table is a summary:
 
 | **Type of lab technique** | **Choice of Category Type** | **Choice of Analysis Type** |
 | --- | --- | --- |
-| Geochemical Analysis Choices | &lt;any&gt; (Appears in "Step 1" choices) | &lt;any&gt; (Appears in &quot;Step 2&quot; choices) |
+| Geochemical Analysis Choices | &lt;any&gt; (Appears in "Step 1" choices) | &lt;any&gt; (Appears in &quot;Step 2&quot; choices) | 
 | Experimental Procedure | Experimental Instrument | Not Applicable |
 | Sample Preparation | Sample Preparation | Not Applicable |
 
@@ -74,7 +76,7 @@ This table is a summary:
 
    (ii) Select in the &quot;Category Type&quot;. For &quot;Sample Preparation&quot; or &quot;Experimental Instruments&quot; just pick &quot;Sample Preparation&quot; or &quot;Experimental Instrument&quot;. 
    
-   Note if you choose &quot;Age Determination&quot; or &quot;Elemental Composition&quot; or &quot;Isotopic Analysis&quot; this technique will be displayed in the &quot;Geochemical Analysis and Age Determination&quot; section.
+   Note if you choose &quot;Age Determination&quot; or &quot;Elemental Composition&quot; or &quot;Isotopic Analysis&quot; the associated technique will be displayed in the &quot;Geochemical Analysis and Age Determination&quot; section.
 
    (iii) Select the &quot;Analysis Type&quot;. This is really only used by instruments which will be displayed in the &quot;Geochemical Analysis&quot; section. Therefore, if you chose &quot;Age Determination&quot; or &quot;Elemental Composition&quot; or &quot;Isotopic Analysis&quot; in (ii), then you should choose &quot;Spot Analysis&quot; or &quot;Whole Rock or Mineral Separates&quot; or &quot;Both&quot;. Otherwise just choose &quot;Not Applicable&quot;.
 
@@ -88,7 +90,7 @@ This is only required if the technique has a fixed set of elements that it can d
    Select elements by clicking on tickboxes as required
    Click &quot;Create&quot;
 
-### Step 6: Add technique
+### Step 6: Add technique (instrument/procedure)
 
 1. In the &quot;Admin&quot; page, click on &quot;Techniques&quot;
 2. Click on &quot;New Technique&quot;
@@ -108,7 +110,7 @@ This is only required if the technique has a fixed set of elements that it can d
 
    NB: &quot;Machine Localisation&quot; is seldom used. It can be used to copy an existing machine localisation. Only use this if you have duplicate machines - two identical machines installed in the same year in the same laboratory. Normally machine localisation would be added in the next step.
 
-   Select &quot;Metadata&quot; and click &quot;Add Metadata&quot;. Add in metadata from Step 4.
+   Select &quot;Metadata&quot; and click &quot;Add Metadata&quot;. Add in metadata from Step 4. If you add in one row of metadata, that option is automatically selected as representing this technique/instrument in "Geochem Analysis Choices" section. If you add more than one row of metadata, you can choose which metadata row you want to represent this technique/instrument by clicking on the radio buttons in the "Geochem Analysis Choices" column.
 
    If the machine has a list of detected elements (from Step 5), select them.
 
@@ -117,7 +119,7 @@ This is only required if the technique has a fixed set of elements that it can d
 
 ### Step 7: Add new localisation
 
-This defines the particular instrument details
+This defines the particular instrument/technique details
 
 1. In the &quot;Admin&quot; page, click on &quot;Localisation&quot;.
 2. Click on &quot;Add Localisation&quot;
@@ -148,7 +150,7 @@ e.g. &lt;p&gt;Search for your choice here.&lt;\p&gt;
 
 To use minimise the HTML markup, enter in your text with the "Source" button enabled (click on "Source" in top LH corner).
 
-## Changing a Technique&#39;s text &amp; images: which fields to edit in the Admin Pages
+## Changing a Technique&#39;s text and images: which fields to edit in the Admin Pages
 
 This section is a map from the text and images you see in the public web pages to the fields that can be modified in the admin pages.
 
@@ -156,18 +158,21 @@ This section is a map from the text and images you see in the public web pages t
 
 #### Geochemical Analysis and Age Determination
 
-| **Web Page Element** | **Admin Submenu** | **Field** |
-| --- | --- | --- |
-| Step 1: Choose a research interest | Technique | Geochem Analysis Choices |
-| Step 2: Type of analysis | Technique | Geochem Analysis Choices |
-| Step 3: Choose elements | Not applicable | Not applicable |
+| **Web Page Element** | **Admin Submenu** | **Field** | **Notes** |
+| --- | --- | --- | --- |
+| Step 1: Choose a research interest | Technique | Geochem Analysis Choices | See "Step 4" in "How to add a new Technique" |
+| Step 2: Type of analysis | Technique | Geochem Analysis Choices | See "Step 4" in "How to add a new Technique" |
+| Step 3: Choose elements | Not applicable | Not applicable | |
+| Cards header | Metadata | Category | |
+| Cards body | Technique | Model | |
+| Cards mouseover text | Technique | Name, Summary | |
 
 #### Experimental Procedure
 
 | **Web Page Element** | **Admin Submenu** | **Field** |
 | --- | --- | --- |
 | Cards header | Metadata | Category |
-| Cards attributes | Technique | \* |
+| Cards body | Technique | \* |
 
 
 #### Sample Preparation
@@ -230,7 +235,7 @@ Two or three letter word searches (e.g. chemical element symbol names like 'Pt')
 
 More info: https://database.guide/how-the-match-function-works-in-mysql/
 
- It does a search of the following fields:
+The search function does a search of the following fields:
 
 | **Admin Sub-Menu** | **Field** |
 | --- | --- |
