@@ -58,7 +58,7 @@ This defines the person that manages the laboratory and institution. Skip this s
 
 ### Step 4: Add metadata (optional)
 
-This defines the TYPE of technique/instrument/procedure as used in the &quot;Geochemical Analysis Choices&quot; and/or if it is used for &quot;Sample Preparation&quot; or &quot;Experimental Procedure&quot;. This step is only required if the technique&#39;s metadata category has not been defined yet.
+This defines the TYPE of technique/instrument/procedure as used in the &quot;Geochemical Analysis Choices&quot; and/or if it is used for &quot;Sample Preparation&quot; and/or &quot;Experimental Procedure&quot;. This step is only required if the technique&#39;s metadata category has not been defined yet.
 
 This table is a summary:
 
@@ -110,7 +110,7 @@ This is only required if the technique has a fixed set of elements that it can d
 
    NB: &quot;Machine Localisation&quot; is seldom used. It can be used to copy an existing machine localisation. Only use this if you have duplicate machines - two identical machines installed in the same year in the same laboratory. Normally machine localisation would be added in the next step.
 
-   Select &quot;Metadata&quot; and click &quot;Add Metadata&quot;. Add in metadata from Step 4. If you add in one row of metadata, that option is automatically selected as representing this technique/instrument in "Geochem Analysis Choices" section. If you add more than one row of metadata, you can choose which metadata row you want to represent this technique/instrument by clicking on the radio buttons in the "Geochem Analysis Choices" column.
+   Select &quot;Metadata&quot; and click &quot;Add Metadata&quot;. Add in metadata from Step 4. You can add more than one row of metadata to a technique. If you add in one row of metadata, that option is automatically selected as representing this technique/instrument in "Geochem Analysis Choices" section. If you add more than one row of metadata, you can choose which metadata row you want to represent this technique/instrument by clicking on the radio buttons in the "Geochem Analysis Choices" column. Only one metadata row can be referenced in "Geochem Analysis Choices". 
 
    If the machine has a list of detected elements (from Step 5), select them.
 
@@ -150,6 +150,8 @@ e.g. &lt;p&gt;Search for your choice here.&lt;\p&gt;
 
 To use minimise the HTML markup, enter in your text with the "Source" button enabled (click on "Source" in top LH corner).
 
+With the "Description" fields it is expected that HTML will be in full use, so the "Source" button can be disabled.
+
 ## Changing a Technique&#39;s text and images: which fields to edit in the Admin Pages
 
 This section is a map from the text and images you see in the public web pages to the fields that can be modified in the admin pages.
@@ -160,12 +162,12 @@ This section is a map from the text and images you see in the public web pages t
 
 | **Web Page Element** | **Admin Submenu** | **Field** | **Notes** |
 | --- | --- | --- | --- |
-| Step 1: Choose a research interest | Technique | Geochem Analysis Choices | See "Step 4" in "How to add a new Technique" |
-| Step 2: Type of analysis | Technique | Geochem Analysis Choices | See "Step 4" in "How to add a new Technique" |
-| Step 3: Choose elements | Not applicable | Not applicable | |
+| Text in boxes under "Step 1: Choose a research interest" | Technique | Geochem Analysis Choices | See "Step 4" in "How to add a new Technique" |
+| Text in boxes under "Step 2: Type of analysis" | Technique | Geochem Analysis Choices | See "Step 4" in "How to add a new Technique" |
 | Cards header | Metadata | Category | |
 | Cards body | Technique | Model | |
-| Cards mouseover text | Technique | Name, Summary | |
+| Cards mouseover text | Technique | Name, Summary | The mouseover text has the technique id displayed so it is easy to locate which technique to edit |
+| Final cards landing page | Technique | Description | The landing page has the technique id in the URL e.g. "https://labfinder.geoanalytics.group/Portal/viewGeochemAnalysis/16" has technique id of 16. This can be used to locate the correct technique to edit. |
 
 #### Experimental Procedure
 
@@ -173,7 +175,8 @@ This section is a map from the text and images you see in the public web pages t
 | --- | --- | --- |
 | Cards header | Metadata | Category |
 | Cards body | Technique | \* |
-
+| Details Page Card Header | Location | Center_name, Institution |
+| Details Page Card Body | Location, Technique | \* |
 
 #### Sample Preparation
 
@@ -203,6 +206,8 @@ This section is a map from the text and images you see in the public web pages t
 | Cards tables &quot;analysis type&quot; | Metadata | Analysis type |
 | Cards tables | Technique | \* |
 
+NOTE: The cards page has the technique id in the URL e.g. "https://labfinder.geoanalytics.group/Portal/viewTechnique/41" has technique id of 41.
+This can be used to locate the correct technique to edit.
 
 ### Option 3: View list of available techniques
 
