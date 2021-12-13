@@ -17,8 +17,8 @@ $this->load->view('layout/portal_header.php'); ?>
 <head>
     <title>Experimental instrument</title>
 </head>
-<link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
-<script src="http://vjs.zencdn.net/4.12/video.js"></script>
+<link href="https://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/4.12/video.js"></script>
 
 
 <body>
@@ -29,10 +29,15 @@ $this->load->view('layout/portal_header.php'); ?>
                     <div class="col-10">
                         <?php include 'header.php'; ?>
                         <div id="content" class="container" style="margin: 60px 0 140px;">
+                        <div class="d-flex justify-content-end">
+                                <div class="p-2">
+                                    <button type="submit" class="btn outline-primary" onclick="window.location.assign('<?php echo base_url(); ?>Portal/listTechniques')">Back</button>
+                                </div>
+                            </div>
                             <div class='row card-group'>
                                 <?php
                                 foreach ($locationItems as $key => $location) {
-                                    echo "<div class='col-lg-6' style='margin: auto;' > ";
+                                    echo "<div class='col-lg-6' style='margin-bottom: 20px; ' > ";
                                     echo "<div class='card h-100'>";
                                     echo "<div style='background-color: #ED5D4A' class='card-header text-white'>" . $location['center_name'] . " at " . $location['institution'] . "</div>";
                                     echo "<div class='card-body'>";
@@ -41,6 +46,8 @@ $this->load->view('layout/portal_header.php'); ?>
                                         echo $application . ";&nbsp&nbsp";
                                     }
                                     echo "</p>";
+                                    echo (empty($theTechnique['result']->instrument_name)) ? "" : "<p class='card-text'>Instrument Name: ".$theTechnique['result']->instrument_name."</p>";
+                                    echo (empty($theTechnique['result']->model)) ? "" : "<p class='card-text'>Model: ".$theTechnique['result']->model."</p>";
                                     echo "<p class='card-text'>Year Commissioned: " . $location['yr_commissioned'] . "</p>";
                                     echo "<p class='card-text'>Address: " . $location['address'] . "</p>";
                                     echo "<p class='card-text'>State: " . $location['state'] . "</p>";
@@ -87,8 +94,10 @@ $this->load->view('layout/portal_header.php'); ?>
                                     echo "</div>"; /* card-body */
                                     echo "</div>"; /* card */
                                     echo "</div>"; /* col-4 */
+                                    echo (empty($theTechnique['media_file']->location)) ? "" : '<div class="col-md-4"><img src="'.storage_url().$theTechnique['media_file']->location.' "width="350" height="330" alt="..."></div>';
                                 }
                                 echo "</div>"; /* card-group */
+                                
                                 ?>
                                 <!--
         <div>

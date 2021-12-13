@@ -37,6 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 #$config['base_url'] = 'http://tf:8080/';
 $config['base_url'] = 'http://web.local:8080/';
+$config['storage_url'] = 'https://storage.googleapis.com/tf-4-agn.appspot.com/static/';
 
 /*
 |--------------------------------------------------------------------------

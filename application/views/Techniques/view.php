@@ -550,7 +550,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     if (mediaSelected != []) {
                         <?php foreach ($media_list as $media_item) { ?>
                             if (mediaSelected == <?php echo $media_item->id; ?>) {
-                                $('#list_images').append("<img height=100 width=100  style='margin-left:0.3em;' src='<?php echo base_url('/media-dir/' . $media_item->location); ?>' alt='No Image Uploaded'/>");
+                                $('#list_images').append("<img height=100 width=100  style='margin-left:0.3em;' src='<?php echo (storage_url()  . $media_item->location); ?>' alt='No Image Uploaded'/>");
                             }
                         <?php } ?>
                     }
@@ -560,7 +560,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                             outputSelected.forEach(function(element) {
                                 if (element == <?php echo $media_item->id; ?>) {
-                                    $('#output_images').append("<img height=100 width=100 style='margin-left:0.3em;' src='<?php echo base_url('/media-dir/' . $media_item->location); ?>' alt='No Image Uploaded'/>");
+                                    $('#output_images').append("<img height=100 width=100 style='margin-left:0.3em;' src='<?php echo (storage_url()  . $media_item->location); ?>' alt='No Image Uploaded'/>");
                                 }
                             })
 
@@ -573,7 +573,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             instrumentSelected.forEach(function(element) {
                                 if (element == <?php echo $media_item->id; ?>) {
 
-                                    $('#instrument_images').append("<img height=100 width=100 style='margin-left:0.3em;' src='<?php echo base_url('/media-dir/' . $media_item->location); ?>' alt='No Image Uploaded'/>");
+                                    $('#instrument_images').append("<img height=100 width=100 style='margin-left:0.3em;' src='<?php echo (storage_url()  . $media_item->location); ?>' alt='No Image Uploaded'/>");
                                 }
                             })
 

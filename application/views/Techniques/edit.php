@@ -558,10 +558,10 @@ if ($this->session->flashdata('error-warning-message')) {
                     <!-- A button to select the new option choices -->
                     <button type="button" id="set-options" class="tf-button">
                         <span class="tf-database-add"></span>
-                        <span class="tf-font create-technique-dialog-button">Set geochem analysis choices</span>
+                        <span class="tf-font create-technique-dialog-button" style="font-size: 1em">Set geochem analysis choices</span>
                     </button>
                     <button type="button" id="reset-options" class="tf-button">
-                        <span class="tf-font create-technique-dialog-button">Reset</span>
+                        <span class="tf-font create-technique-dialog-button" style="font-size: 1em">Reset</span>
                     </button>
                 </div>
                 <!-- A table to display current option choices -->
@@ -611,7 +611,7 @@ if ($this->session->flashdata('error-warning-message')) {
                     <!-- A button to add the new metadata line -->
                     <button type="button" id="add-metadata" class="tf-button">
                         <span class="tf-database-add"></span>
-                        <span class="tf-font create-technique-dialog-button">Add Metadata</span>
+                        <span class="tf-font create-technique-dialog-button" style="font-size: 1em">Add Metadata</span>
                     </button>
                 </div>
                 <!-- A table to display current metadata -->
@@ -1043,28 +1043,27 @@ if ($this->session->flashdata('error-warning-message')) {
 
 
     // Upon page refresh populate media table with selected rows
-    if(mediaSelected != []){
-        <?php foreach ($media_list as $media_item){?>
-        if(mediaSelected == <?php echo $media_item->id;?>)
-        {
-            $('#table_list_media_selected').append("<tr class=\"table-background-color-techniques\">" +
-                "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
-                '<td><?php echo $media_item->name;
-                    echo "<br>";
-                    echo $media_item->height."x". $media_item->width;
-                    ?></td>' +
-                "<td><p><?php echo str_replace("\r\n", '', $media_item->caption);?></p></td>" +
-                "<td><button type='button' id='media-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
-                "</tr>");
-        }
-        <?php }?>
+    if (mediaSelected != []) {
+        <?php foreach ($media_list as $media_item) { ?>
+            if (mediaSelected == <?php echo $media_item->id; ?>) {
+                $('#table_list_media_selected').append("<tr class=\"table-background-color-techniques\">" +
+                    "<td><img height=100 width=100 src='<?php echo (storage_url()  . $media_item->location); ?>' alt='No Image Uploaded'/></td>" +
+                    '<td><?php echo $media_item->name;
+                            echo "<br>";
+                            echo $media_item->height . "x" . $media_item->width;
+                            ?></td>' +
+                    "<td><p><?php echo str_replace("\r\n", '', $media_item->caption); ?></p></td>" +
+                    "<td><button type='button' id='media-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
+                    "</tr>");
+            }
+        <?php } ?>
     }
 
     if(outputSelected != []){
         <?php foreach ($media_list as $media_item){?>
         if(outputSelected.includes(<?php echo $media_item->id;?>)){
                 $('#table_output_media_selected').append("<tr class=\"table-background-color-techniques\" id=\"<?php echo $media_item->id;?>\">"+
-                    "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
+                    "<td><img height=100 width=100 src='<?php echo (storage_url()  . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
                     '<td><?php echo $media_item->name;
                         echo "<br>";
                         echo $media_item->height."x". $media_item->width;
@@ -1081,7 +1080,7 @@ if ($this->session->flashdata('error-warning-message')) {
         <?php foreach ($media_list as $media_item){?>
         if(instrumentSelected.includes(<?php echo $media_item->id;?>)){
             $('#table_instrument_media_selected').append("<tr class=\"table-background-color-techniques\" id=\"<?php echo $media_item->id;?>\">"+
-                "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
+                "<td><img height=100 width=100 src='<?php echo (storage_url()  . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
                 '<td><?php echo $media_item->name;
                     echo "<br>";
                     echo $media_item->height."x". $media_item->width;
@@ -1182,18 +1181,17 @@ if ($this->session->flashdata('error-warning-message')) {
     //This is for fields that require loading dialogs and table
 
     //Media show and select
-    $('#add-media-list-submit').click(function (e) {
-        if($('#media-list-table tr').length == 0)
-        {
-            <?php foreach($media_list as $media_item){ ?>
-            $('#media-list-table').append('<tr class=\"table-background-color-techniques\">' +
-                '<td><input type=\'radio\' name=\'media_list\' value=\'<?php echo $media_item->id; ?>\'/></td>' +
-                "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
-                '<td><?php echo $media_item->name;
-                    echo "<br>";
-                    echo $media_item->height."x". $media_item->width;
-                    ?></td>' +
-                '</tr>');
+    $('#add-media-list-submit').click(function(e) {
+        if ($('#media-list-table tr').length == 0) {
+            <?php foreach ($media_list as $media_item) { ?>
+                $('#media-list-table').append('<tr class=\"table-background-color-techniques\">' +
+                    '<td><input type=\'radio\' name=\'media_list\' value=\'<?php echo $media_item->id; ?>\'/></td>' +
+                    "<td><img height=100 width=100 src='<?php echo (storage_url()  . $media_item->location); ?>' alt='No Image Uploaded'/></td>" +
+                    '<td><?php echo $media_item->name;
+                            echo "<br>";
+                            echo $media_item->height . "x" . $media_item->width;
+                            ?></td>' +
+                    '</tr>');
             <?php } ?>
         }
 
@@ -1212,36 +1210,35 @@ if ($this->session->flashdata('error-warning-message')) {
             modal: true,
             title: "Available Resources",
             buttons: {
-                "Cancel": function () {
+                "Cancel": function() {
                     $(this).dialog("close");
                 },
 
-                "Select": function () {
+                "Select": function() {
                     $(this).dialog("close");
 
                     mediaSelected = []
 
 
-                    $('input[name="media_list"]:checked').each(function () {
+                    $('input[name="media_list"]:checked').each(function() {
                         if (!mediaSelected.includes($(this).attr('value'))) {
                             mediaSelected.push($(this).attr('value'));
                         }
                     });
                     $('#table_list_media_selected').empty();
 
-                    <?php foreach ($media_list as $media_item){ ?>
-                    if(mediaSelected == <?php echo $media_item->id;?>)
-                    {
-                        $('#table_list_media_selected').append("<tr class=\"table-background-color-techniques\">" +
-                            "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
-                            '<td><?php echo $media_item->name;
-                                echo "<br>";
-                                echo $media_item->height."x". $media_item->width;
-                                ?></td>' +
-                            "<td><p><?php echo str_replace("\r\n", '', $media_item->caption);?></p></td>" +
-                            "<td><button type='button' id='media-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
-                            "</tr>");
-                    }
+                    <?php foreach ($media_list as $media_item) { ?>
+                        if (mediaSelected == <?php echo $media_item->id; ?>) {
+                            $('#table_list_media_selected').append("<tr class=\"table-background-color-techniques\">" +
+                                "<td><img height=100 width=100 src='<?php echo (storage_url()  . $media_item->location); ?>' alt='No Image Uploaded'/></td>" +
+                                '<td><?php echo $media_item->name;
+                                        echo "<br>";
+                                        echo $media_item->height . "x" . $media_item->width;
+                                        ?></td>' +
+                                "<td><p><?php echo str_replace("\r\n", '', $media_item->caption); ?></p></td>" +
+                                "<td><button type='button' id='media-selected-item' class='tf-delete'>&nbsp;&nbsp;&nbsp;</td>" +
+                                "</tr>");
+                        }
                     <?php } ?>
                     document.getElementById('media_items_selected_hidden').value = mediaSelected
 
@@ -1250,11 +1247,9 @@ if ($this->session->flashdata('error-warning-message')) {
         });
     });
 
-    // User clicks on button to remove media from table and the form
-    $('body').on('click', '#media-selected-item', function ()   {
+    $('body').on('click', '#media-selected-item', function() {
         $(this).attr('id');
-        mediaSelected=0;
-        //referencesSelected.pop($(this).closest('tr').attr('id'))
+        mediaSelected = 0;
         $(this).parent().parent().remove();
         document.getElementById('media_items_selected_hidden').value = mediaSelected;
 
@@ -1272,7 +1267,7 @@ if ($this->session->flashdata('error-warning-message')) {
             if(!outputSelected.includes(<?php echo $media_item->id;?>)) {
                 $('#media-output-table').append('<tr class="table-background-color-techniques">' +
                     '<td><input type=\'checkbox\' name=\'media_output\' value=\'<?php echo $media_item->id; ?>\'/></td>' +
-                    "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
+                    "<td><img height=100 width=100 src='<?php echo (storage_url()  . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
                     '<td><?php echo $media_item->name;
                         echo "<br>";
                         echo $media_item->height . "x" . $media_item->width;
@@ -1318,7 +1313,7 @@ if ($this->session->flashdata('error-warning-message')) {
                         if(element == <?php echo $media_item->id;?>)
                         {
                             $('#table_output_media_selected').append("<tr class=\"table-background-color-techniques\" id='"+ element + "'>"+
-                                "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
+                                "<td><img height=100 width=100 src='<?php echo (storage_url()  . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
                                 '<td><?php echo $media_item->name;
                                     echo "<br>";
                                     echo $media_item->height."x". $media_item->width;
@@ -1357,7 +1352,7 @@ if ($this->session->flashdata('error-warning-message')) {
             if(!instrumentSelected.includes(<?php echo $media_item->id;?>)) {
                 $('#media-instrument-table').append('<tr class="table-background-color-techniques">' +
                     '<td><input type=\'checkbox\' name=\'media_instrument\' value=\'<?php echo $media_item->id; ?>\'/></td>' +
-                    "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
+                    "<td><img height=100 width=100 src='<?php echo (storage_url()  . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
                     '<td><?php echo $media_item->name;
                         echo "<br>";
                         echo $media_item->height . "x" . $media_item->width;
@@ -1404,7 +1399,7 @@ if ($this->session->flashdata('error-warning-message')) {
                         if(element == <?php echo $media_item->id;?>)
                         {
                             $('#table_instrument_media_selected').append("<tr class=\"table-background-color-techniques\" id='"+ element + "'>"+
-                                "<td><img height=100 width=100 src='<?php echo base_url('/media-dir/' . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
+                                "<td><img height=100 width=100 src='<?php echo (storage_url()  . $media_item->location);?>' alt='No Image Uploaded'/></td>" +
                                 '<td><?php echo $media_item->name;
                                     echo "<br>";
                                     echo $media_item->height."x". $media_item->width;

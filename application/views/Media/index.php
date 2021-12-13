@@ -100,7 +100,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 url: "<?php echo site_url("Media/getList") ?>",
 
             },
-            columns: [{
+            columns: [
+                {title: 'location', data: 'location'},
+                {
                     title: "Thumbnail",
                     data: 'thumbnail'
                 },

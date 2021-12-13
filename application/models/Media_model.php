@@ -44,7 +44,7 @@ class Media_model extends MY_Model
         return $this->db
             ->select('thumbnail.width as thumbnail_width, thumbnail.height as thumbnail_height, thumbnail.location as thumbnail_location,'
                 .' media.id, media.media_type, media.name, media.caption,'
-                .' media_file.mime, media_file.size, media_file.location, media_file.width, media_file.height')
+                .' media_file.mime, media_file.size, media_file.location as file_location, media_file.width, media_file.height')
             ->from('media')
             ->join('media_file', 'media.original_id=media_file.id')
             ->join('media_file as thumbnail', 'media.thumbnail_id=thumbnail.id')

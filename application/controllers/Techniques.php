@@ -19,14 +19,9 @@ class Techniques extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
-        // if (!($this->session->userdata('logged_in') == True)) {
-        //     redirect(base_url() . 'login/index');
-        // }
-
         // auth0 config
         if ($this->session->userdata('auth0__user') == null){
-            redirect(base_url() . 'authLogin');
+            redirect(base_url() . 'login');
         }
         
         $this->load->model('Techniques_model');
@@ -45,11 +40,24 @@ class Techniques extends CI_Controller
 
         foreach ($results as $r) {
             array_push($data, array(
+                $r->id,
                 $r->name,
                 substr($r->description, 0, 200),
                 $r->model,
                 $r->manufacturer,
-                "<div style='min-width: 300px;'><button id='userIndexButtons' class='user-table-buttons' onclick=window.location='" . base_url() . "Techniques/view/" . $r->id . "'><span style='background: url(../../assets/images/database_view.png) 50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>View</button>" . "<span style='margin-left: 2em;'>&nbsp;</span>" . "<button id='userIndexButtons' class='user-table-buttons' onclick=window.location='" . base_url() . "Techniques/edit/" . $r->id . "'><span style='background: url(../../assets/images/database_edit.png) 50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>Edit</button>". "<span style='margin-left: 2em;'>&nbsp;</span>"."<button id='userIndexButtons' class='user-table-buttons' onclick='deleteTechnique(".$r->id.")'><span style='background: url(../../assets/images/database_delete.png) 50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>Delete</button>" ."</div>",
+                "<div style='min-width: 300px;'><button id='userIndexButtons' class='user-table-buttons' 
+                onclick=window.location='" . base_url() . "Techniques/view/" . $r->id . 
+                "'><span style='background: url(../../assets/images/database_view.png) 
+                50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>View</button>" . 
+                "<span style='margin-left: 2em;'>&nbsp;</span>" . 
+                "<button id='userIndexButtons' class='user-table-buttons' onclick=window.location='" .
+                base_url() . "Techniques/edit/" . $r->id .
+                "'><span style='background: url(../../assets/images/database_edit.png)
+                50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>Edit</button>". 
+                "<span style='margin-left: 2em;'>&nbsp;</span>"."<button id='userIndexButtons' 
+                class='user-table-buttons' onclick='deleteTechnique(".$r->id.")'>
+                <span style='background: url(../../assets/images/database_delete.png) 
+                50% no-repeat;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>Delete</button>" ."</div>",
 
             ));
         }
@@ -115,6 +123,7 @@ class Techniques extends CI_Controller
         // Get data for this  Technique for display in view
 
         $technique_data = $this->Techniques_model->getTechniqueData($x);
+        
         $data['technique_name'] = $technique_data->name;
         $data['id'] = $technique_data->id;
         $data['short_description'] = $technique_data->summary;
@@ -299,10 +308,19 @@ class Techniques extends CI_Controller
         }
 
         // If any option choices (geochem analysis choices) were updated
-        if (isset($_POST['geochem-analysis-meta-id'])) {
-            $geochem_analysis_meta_id = $_POST['geochem-analysis-meta-id'];
+        // if (isset($_POST['geochem-analysis-meta-id'])) {
+        //     $geochem_analysis_meta_id = $_POST['geochem-analysis-meta-id'];
+        // } else {
+        //     $geochem_analysis_meta_id = '';
+        // }
+
+        // If any option choices (geochem analysis choices) were updated
+        if (isset($_POST['option_choice1_hidden']) && isset($_POST['option_choice1_hidden'])) {
+            $option_choice1_id = $_POST['option_choice1_hidden'];
+            $option_choice2_id = $_POST['option_choice2_hidden'];
         } else {
-            $geochem_analysis_meta_id = '';
+            $option_choice1_id = '';
+            $option_choice2_id = '';
         }
 
         // Names of excess parameters
@@ -335,9 +353,13 @@ class Techniques extends CI_Controller
             }
 
             // Next, update options (geochem analysis choices)
-            if ($geochem_analysis_meta_id != '') {
-		$this->Techniques_model->updateOptionCombination($id, $geochem_analysis_meta_id);
-            }
+        //     if ($geochem_analysis_meta_id != '') {
+		// $this->Techniques_model->updateOptionCombination($id, $geochem_analysis_meta_id);
+        //     }
+         // Update options (geochem analysis choices)
+         if ($option_choice1_id != '' && $option_choice2_id != '') {
+            $this->Techniques_model->editOptionCombination($id, $option_choice1_id, $option_choice2_id);
+                }
 
             // Next, update localisations
             if ($localisations_ids != '') {

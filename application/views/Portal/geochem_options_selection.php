@@ -22,15 +22,21 @@
             <div id="content" class="container">
                 <div class="row justify-content-md-center">
                     <div class="col-10" style="padding: 0 38px">
-                        <div class="d-flex justify-content-end">
+                        <!-- <div class="d-flex justify-content-end">
                             <div class="p-2">
                                 <button type="submit" class="btn outline-primary" onclick="window.location.assign('<?php echo base_url(); ?>Portal')">Back</button>
                             </div>
-                        </div>
-                        <div>
-                            <strong class="tf-font-color">
-                                <?php echo $staticData['tf.geochemChoices.quickGuide']; ?>
-                            </strong>
+                        </div> -->
+                        <div class="row">
+                            <div class="col-6" style="margin: auto;">
+                                <strong class="tf-font-color">
+                                    <?php echo $staticData['tf.geochemChoices.quickGuide']; ?>
+                                </strong>
+                            </div>
+                            <div class="col-6">
+                                <img style="height: 300px; width:420px; margin: 27px 0 0 70px" src="/assets/images/lores_shrimpii.jpg" alt="">
+                            </div>
+
                         </div>
                         <div class="border-bottom" style="margin: 50px 0"></div>
 
@@ -49,7 +55,7 @@
                                         ?>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row" style="margin-top: 30px;">
                                     <!-- THEN -->
                                     <img src="<?php echo base_url() . 'assets/images/space.gif' ?>" width="20" height="5" />
                                     <span style="text-align:center;">
@@ -73,7 +79,7 @@
                                     <span style="text-align:center;">
                                     </span>
                                 </div>
-                                <div class="row">
+                                <div class="row" style="margin-top: 30px;">
                                     <!-- STEP 3 -->
                                     <h3 id="step3-title" style="display: none" class="tf-heading"><?php echo strip_tags($staticData['tf.geochemChoices.step3.title']); ?> </h3>
                                     <div style="padding-left: 12px;">
@@ -124,12 +130,37 @@
         /*
          * Activate tooltips on cards
          */
+
         function activateToolTips() {
-            $('div[data-toggle="tooltip"]').tooltip({
-                animated: 'fade',
-                placement: 'top'
-            });
+            const closeIcons = document.getElementsByClassName('tooltips');
+            for (let i = 0; i < closeIcons.length; i++) {
+                // closeIcons.style.position = 'relative';
+                // closeIcons.style.display = 'inline-block';
+                // closeIcons.style.borderBottom = '1px dotted black';
+                closeIcons[i].addEventListener('mouseover', function() {
+                    document.getElementsByClassName('tooltipsText')[i].style.display = 'block';
+                    document.getElementsByClassName('tooltipsText')[i].style.position = 'absolute';
+                    document.getElementsByClassName('tooltipsText')[i].style.minTop = '-30px';
+                    document.getElementsByClassName('tooltipsText')[i].style.left = '50%';
+                    document.getElementsByClassName('tooltipsText')[i].style.bottom = '105%';
+                    document.getElementsByClassName('tooltipsText')[i].style.marginLeft = '-60px';
+                    document.getElementsByClassName('tooltipsText')[i].style.background = 'white';
+                    document.getElementsByClassName('tooltipsText')[i].style.padding = '5px 0';
+                    document.getElementsByClassName('tooltipsText')[i].style.borderRadius = '5px';
+                    document.getElementsByClassName('tooltipsText')[i].style.width = '120px';
+                    document.getElementsByClassName('tooltipsText')[i].style.textAlign = 'center';
+
+                });
+                closeIcons[i].addEventListener('mouseout', function() {
+                    document.getElementsByClassName('tooltipsText')[i].style.display = 'none';
+
+                });
+            }
         }
+
+
+
+
 
         /*
          * This updates the cards on the right hand side as the user makes choices
@@ -145,8 +176,9 @@
                     xmlhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
                             document.getElementById("display-area").innerHTML = this.responseText;
+                            activateToolTips();
                         }
-                        activateToolTips();
+
                     };
                     xmlhttp.open("GET", "<?php echo base_url() . 'Portal/getTechniqueChoices/'; ?>" + step1_id + "/0/Notspecified", true);
                     xmlhttp.send();
@@ -167,8 +199,8 @@
                     xmlhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
                             document.getElementById("display-area").innerHTML = this.responseText;
+                            activateToolTips();
                         }
-                        activateToolTips();
                     };
                     var step1_id = $('input[name="btnradio-1"]:checked').attr('_id');
                     xmlhttp.open("GET", "<?php echo base_url() . 'Portal/getTechniqueChoices/'; ?>" + step1_id + "/" + step2_id + "/Notspecified", true);
@@ -188,8 +220,8 @@
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("display-area").innerHTML = this.responseText;
+                    activateToolTips();
                 }
-                activateToolTips();
             };
             xmlhttp.open("GET", "<?php echo base_url() . 'Portal/getTechniqueChoices/'; ?>" + step1_id + "/" + step2_id + "/" + step3_val, true);
             xmlhttp.send();
@@ -208,26 +240,28 @@
                     } else {
                         $('#step3').removeAttr('disabled');
                         $('#step3-title').css('display', 'block');
-                        const autoCompleteJS = new autoComplete({ selector: "#step3",
-                                                                  placeHolder: "Search for elements...",
-                                                                  resultItem: {
-                                                                      highlight: {
-                                                                          render: true
-                                                                      }
-                                                                  },
-                                                                  data: { src: jsonResp,
-                                                                          keys: ['label'],
-                                                                        },
-                                                                  events: {
-                                                                      input: {
-                                                                          selection: (event) => {
-                                                                              const selection = event.detail.selection.value;
-                                                                              autoCompleteJS.input.value = selection['label'];
-                                                                              me.elementClick(event.target)
-                                                                          }
-                                                                      }
-                                                                 }
-                                                                 });
+                        const autoCompleteJS = new autoComplete({
+                            selector: "#step3",
+                            placeHolder: "Search for elements...",
+                            resultItem: {
+                                highlight: {
+                                    render: true
+                                }
+                            },
+                            data: {
+                                src: jsonResp,
+                                keys: ['label'],
+                            },
+                            events: {
+                                input: {
+                                    selection: (event) => {
+                                        const selection = event.detail.selection.value;
+                                        autoCompleteJS.input.value = selection['label'];
+                                        me.elementClick(event.target)
+                                    }
+                                }
+                            }
+                        });
                     }
                 }
             };

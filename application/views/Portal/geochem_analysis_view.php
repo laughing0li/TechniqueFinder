@@ -30,7 +30,7 @@ $this->load->view('layout/portal_header.php'); ?>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <p class='tf-font-14'><?php echo $theTechnique->description; ?></p>
+                                    <p class='tf-font-14'><?php echo $theTechnique['result']->description; ?></p>
                                 </div>
                             </div>
                             <div class="border-bottom" style="margin: 50px 0"></div>
