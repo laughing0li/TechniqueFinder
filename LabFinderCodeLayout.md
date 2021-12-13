@@ -39,3 +39,4 @@ The table below maps out which web pages are associated with which files.
 1) Case Studies are not used
 2) Only media type of "LIST" is used
 3) LabFinder does not store usernames and passwords, so all the user management functions are not used. Instead "Auth0" is used to manage logins. 
+4) Docker images are not used
