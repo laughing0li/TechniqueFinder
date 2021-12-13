@@ -322,6 +322,36 @@ class CI_Config {
 		return $base_url.$this->_uri_string($uri);
 	}
 
+	/**
+	 * Base URL
+	 *
+	 * Returns base_url [. uri_string]
+	 *
+	 * @uses	CI_Config::_uri_string()
+	 *
+	 * @param	string|string[]	$uri	URI string or an array of segments
+	 * @param	string	$protocol
+	 * @return	string
+	 */
+	public function storage_url($uri = '', $protocol = NULL)
+	{
+		$storage_url = $this->slash_item('storage_url');
+
+		if (isset($protocol))
+		{
+			// For protocol-relative links
+			if ($protocol === '')
+			{
+				$storage_url = substr($storage_url, strpos($storage_url, '//'));
+			}
+			else
+			{
+				$storage_url = $protocol.substr($storage_url, strpos($storage_url, '://'));
+			}
+		}
+
+		return $storage_url.$this->_uri_string($uri);
+	}
 	// -------------------------------------------------------------
 
 	/**

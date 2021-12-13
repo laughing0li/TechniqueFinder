@@ -108,7 +108,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <td class="tf-font tf-font-size">
                                     <?php
                                     if ($media_data->media_type == 'image') {
-                                        echo '<img id="media_' . $media_data->id . '" src="https://storage.googleapis.com/tf-4-agn.appspot.com/static/' . $media_data->location . '" width="' . $media_data->width . '" height="' . $media_data->height . '" alt="[' . $media_data->name . ']">';
+                                        echo '<img id="media_' . $media_data->id . '" src="'.storage_url() . $media_data->location . '" width="' . $media_data->width . '" height="' . $media_data->height . '" alt="[' . $media_data->name . ']">';
                                     } else {
                                         echo '<p>You need <a href="http://www.adobe.com/go/getflashplayer">Flash Player</a> installed to play this media.</p>';
                                     }

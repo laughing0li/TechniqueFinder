@@ -74,7 +74,7 @@
                                         //                    . '<p>' . $r->summary . '</p>'
                                         . '<a href="' . base_url() . 'Portal/viewTechnique/' . $r->id . '" id="Technique_' . $r->id . '">' . $r->summary . '</a>'
                                         . '</div>'
-                                        . '<div class="col"><img src="https://storage.googleapis.com/tf-4-agn.appspot.com/static/' . $media_location . '" width="175" height="175" alt="' . $media_location . '"></div>'
+                                        . '<div class="col"><img src="'.storage_url() . $media_location . '" width="175" height="175" alt="' . $media_location . '"></div>'
                                         . '</div>'
                                         . '</div>';
                                 }

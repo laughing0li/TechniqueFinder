@@ -25,14 +25,9 @@ class Media extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        // if (! ($this->session->userdata('logged_in')==True))
-        // {
-        //     redirect(base_url().'login/index');
-        // }
-
         // auth0 config
         if ($this->session->userdata('auth0__user') == null) {
-            redirect(base_url() . 'authLogin');
+            redirect(base_url() . 'login');
         }
 
         $this->load->model('Media_model');
@@ -66,9 +61,11 @@ class Media extends CI_Controller
                     $thumbnail_height = $this->max_thumbnail_box;
                 }
             }
+            
             array_push($data, array(
                 'id' => $r->id,
-                'thumbnail' => '<img id="media_' . $r->id . '" class="sortHandle" src="https://storage.googleapis.com/tf-4-agn.appspot.com/static/' . $r->thumbnail_location
+                'location' => $r->file_location,
+                'thumbnail' => '<img id="media_' . $r->id . '" class="sortHandle" src="'.storage_url() . $r->file_location
                     . '" width="' . $file_width . '" height="' . $file_height . '" alt="[AFM_01_TF.jpg]">',
                 'name_dimensions' => $r->name . '<br>' . $r->width . 'x' . $r->height,
                 'caption' => $r->caption,

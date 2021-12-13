@@ -46,7 +46,7 @@
                                     $mediaForLIST = $Media_model->getMediaInfosByTechniqueIdAndSection($technique_view[0]->technique_id, 'LIST');
                                     if (isset($mediaForLIST[0])) {
                                         $media_location = $mediaForLIST[0]->location;
-                                        echo '<div class="col"><img src="https://storage.googleapis.com/tf-4-agn.appspot.com/static/' . $media_location . '" width="300" height="300" alt="' . $media_location . '"></div>';
+                                        echo '<div class="col"><img src="'.storage_url() . $media_location . '" width="300" height="300" alt="' . $media_location . '"></div>';
                                     } else {
                                         echo '<div class="col"></div>';
                                     }

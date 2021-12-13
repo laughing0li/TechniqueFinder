@@ -19,14 +19,9 @@ class Techniques extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
-        // if (!($this->session->userdata('logged_in') == True)) {
-        //     redirect(base_url() . 'login/index');
-        // }
-
         // auth0 config
         if ($this->session->userdata('auth0__user') == null){
-            redirect(base_url() . 'authLogin');
+            redirect(base_url() . 'login');
         }
         
         $this->load->model('Techniques_model');
@@ -45,6 +40,7 @@ class Techniques extends CI_Controller
 
         foreach ($results as $r) {
             array_push($data, array(
+                $r->id,
                 $r->name,
                 substr($r->description, 0, 200),
                 $r->model,
@@ -312,10 +308,19 @@ class Techniques extends CI_Controller
         }
 
         // If any option choices (geochem analysis choices) were updated
-        if (isset($_POST['geochem-analysis-meta-id'])) {
-            $geochem_analysis_meta_id = $_POST['geochem-analysis-meta-id'];
+        // if (isset($_POST['geochem-analysis-meta-id'])) {
+        //     $geochem_analysis_meta_id = $_POST['geochem-analysis-meta-id'];
+        // } else {
+        //     $geochem_analysis_meta_id = '';
+        // }
+
+        // If any option choices (geochem analysis choices) were updated
+        if (isset($_POST['option_choice1_hidden']) && isset($_POST['option_choice1_hidden'])) {
+            $option_choice1_id = $_POST['option_choice1_hidden'];
+            $option_choice2_id = $_POST['option_choice2_hidden'];
         } else {
-            $geochem_analysis_meta_id = '';
+            $option_choice1_id = '';
+            $option_choice2_id = '';
         }
 
         // Names of excess parameters
@@ -348,9 +353,13 @@ class Techniques extends CI_Controller
             }
 
             // Next, update options (geochem analysis choices)
-            if ($geochem_analysis_meta_id != '') {
-		$this->Techniques_model->updateOptionCombination($id, $geochem_analysis_meta_id);
-            }
+        //     if ($geochem_analysis_meta_id != '') {
+		// $this->Techniques_model->updateOptionCombination($id, $geochem_analysis_meta_id);
+        //     }
+         // Update options (geochem analysis choices)
+         if ($option_choice1_id != '' && $option_choice2_id != '') {
+            $this->Techniques_model->editOptionCombination($id, $option_choice1_id, $option_choice2_id);
+                }
 
             // Next, update localisations
             if ($localisations_ids != '') {

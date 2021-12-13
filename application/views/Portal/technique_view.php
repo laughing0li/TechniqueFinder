@@ -94,7 +94,7 @@ $this->load->view('layout/portal_header.php'); ?>
                                     echo "</div>"; /* card-body */
                                     echo "</div>"; /* card */
                                     echo "</div>"; /* col-4 */
-                                    echo (empty($theTechnique['media_file']->location)) ? "" : '<div class="col-md-4"><img src="https://storage.googleapis.com/tf-4-agn.appspot.com/static/'.$theTechnique['media_file']->location.' "width="350" height="330" alt="..."></div>';
+                                    echo (empty($theTechnique['media_file']->location)) ? "" : '<div class="col-md-4"><img src="'.storage_url().$theTechnique['media_file']->location.' "width="350" height="330" alt="..."></div>';
                                 }
                                 echo "</div>"; /* card-group */
                                 

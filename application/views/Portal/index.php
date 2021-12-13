@@ -78,7 +78,7 @@
                             <h3 class="tf-heading">Option 3: View list of available instruments</h3>
 
 
-                            <div class="container" style="margin-left: -25px; padding-bottom: 30px">
+                            <div class="container" style="margin-left: -25px; padding-bottom: 10px">
                                 <div class="row">
                                     <div class="col-md-8">
                                         <p class="lh-lg tf-font-color" style="font-size: 15px;">
@@ -88,7 +88,7 @@
                                 </div>
 
                             </div>
-                            <div class="d-grid gap-2 col-4" style="margin-bottom: 20px;">
+                            <div class="d-grid gap-2 col-4" style="margin-bottom: 60px;">
                                 <button class="btn outline-primary" type="button" onclick="window.location.assign('<?php echo base_url(); ?>Portal/listTechniques');">View List
                                 </button>
                             </div>

@@ -80,7 +80,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
             columnDefs: [{
 
             }],
-            columns: [{
+            columns: [
+                {title: "ID"},
+                {
                     title: "Name"
                 },
                 {

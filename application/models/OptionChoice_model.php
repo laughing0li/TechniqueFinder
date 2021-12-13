@@ -176,6 +176,11 @@ class OptionChoice_model extends MY_Model
 
     }
 
+    function getTechniqueByModel($model) {
+        return $this->db->from('technique_view')
+            ->where('model', $model)->get()->row();
+    }
+
     function getOptionName($id){
         $query = $this->db->query('SELECT * from option_choice where id="'.$id.'";');
         return $query->result();

@@ -589,7 +589,7 @@ class Techniques_model extends MY_Model
         if (isset($val)) {
             $oc1_data = [
                 'version' => 0,
-                'priority' => 1,
+                'priority' => 0,
                 'name' => $val->category_type,
                 'type' => 'STEP1',
                 'science' => 'GEOCHEM'
@@ -598,7 +598,7 @@ class Techniques_model extends MY_Model
                 $oc1_id = $this->db->insert_id();
                 $oc2_data = [
                     'version' => 0,
-                    'priority' => 1,
+                    'priority' => 0,
                     'name' => $val->analysis_type,
                     'type' => 'STEP2',
                     'science' => 'GEOCHEM'
@@ -610,7 +610,7 @@ class Techniques_model extends MY_Model
                         'left_id'  => $oc1_id,
                         'right_id'  => $oc2_id,
                         'version' => 0,
-                        'priority' => 1
+                        'priority' => 0
                     ];
                     $this->db->replace('option_combination', $data);
                 }
@@ -638,7 +638,7 @@ class Techniques_model extends MY_Model
                 'left_id'  => $oc1,
                 'right_id'  => $oc2,
                 'version' => 1,
-                'priority' => 1
+                'priority' => 0
             ];
             $this->db->replace('option_combination', $data);
         }
@@ -816,35 +816,35 @@ class Techniques_model extends MY_Model
         }
 
         // If any contacts were added or deleted
-        if (strlen($contact_items) > 0) {
-            $contact_list = explode(',', $contact_items);
+        // if (strlen($contact_items) > 0) {
+        //     $contact_list = explode(',', $contact_items);
 
-            // Look for the location ids of the contacts for this technique
-            $existing_contact_ids = $this->db->query("select c.id from contact c, location l, localisation ls where c.location_id = l.id and ls.location_id = l.id and ls.technique_id = '" . $x . "';")->result_array();
-            $exist_contacts = array();
-            foreach ($existing_contact_ids as $existing_contact) {
-                array_push($exist_contacts, $existing_contact['id']);
-            }
+        //     // Look for the location ids of the contacts for this technique
+        //     $existing_contact_ids = $this->db->query("select c.id from contact c, location l, localisation ls where c.location_id = l.id and ls.location_id = l.id and ls.technique_id = '" . $x . "';")->result_array();
+        //     $exist_contacts = array();
+        //     foreach ($existing_contact_ids as $existing_contact) {
+        //         array_push($exist_contacts, $existing_contact['id']);
+        //     }
 
-            // Insert contacts in list that aren't already existing
-            foreach ($contact_list as $cl) {
-                if (!in_array($cl, $exist_contacts)) {
-                    // Get location id for this contact
-                    $location = $this->db->query("select l.id from contact c, location l where c.location_id = l.id and c.id = '" . $cl . "';")->row();
-                    $this->db->query("insert into localisation(location_id, technique_id) values(" . $location->id . "," . $x . ");");
-                }
-            }
+        //     // Insert contacts in list that aren't already existing
+        //     foreach ($contact_list as $cl) {
+        //         if (!in_array($cl, $exist_contacts)) {
+        //             // Get location id for this contact
+        //             $location = $this->db->query("select l.id from contact c, location l where c.location_id = l.id and c.id = '" . $cl . "';")->row();
+        //             $this->db->query("insert into localisation(location_id, technique_id) values(" . $location->id . "," . $x . ");");
+        //         }
+        //     }
 
-            // Delete existing contacts if they weren't in the list
-            foreach ($exist_contacts as $ec) {
-                if (!in_array($ec, $contact_list)) {
-                    // Get location id for this contact
-                    $location = $this->db->query("select l.id from contact c, location l where c.location_id = l.id and c.id = '" . $ec . "';")->row();
-                    $delete_array = array('technique_id' => $x, 'location_id' => $location->id);
-                    $this->db->where($delete_array)->delete('localisation');
-                }
-            }
-        }
+        //     // Delete existing contacts if they weren't in the list
+        //     foreach ($exist_contacts as $ec) {
+        //         if (!in_array($ec, $contact_list)) {
+        //             // Get location id for this contact
+        //             $location = $this->db->query("select l.id from contact c, location l where c.location_id = l.id and c.id = '" . $ec . "';")->row();
+        //             $delete_array = array('technique_id' => $x, 'location_id' => $location->id);
+        //             $this->db->where($delete_array)->delete('localisation');
+        //         }
+        //     }
+        // }
 
         if (strlen($case_studies_list) > 0) {
             $case_list = explode(',', $case_studies_list);

@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $config['base_url'] = '';
 // app engine config
 $config['base_url'] = 'https://labfinder.geoanalytics.group/';
-
+$config['storage_url'] = 'https://storage.googleapis.com/tf-4-agn.appspot.com/static/';
 
 /*
 |--------------------------------------------------------------------------
