@@ -123,12 +123,14 @@ This defines the particular instrument/technique details
 
 1. In the &quot;Admin&quot; page, click on &quot;Localisation&quot;.
 2. Click on &quot;Add Localisation&quot;
-3. Enter in a four digit &quot;Year Commissioned&quot;
-   Select an application, click on &quot;Add Applications&quot; to add it.
 
-You can add as many applications as you like.
+   Enter in a four digit "Year Commissioned".
 
-Select the technique added in the previous step.
+   Select an application, click on "Add Applications" to add it. You can add as many applications as you like.
+   
+   Select a location.
+
+   Select the technique added in the previous step.
 
 
 
