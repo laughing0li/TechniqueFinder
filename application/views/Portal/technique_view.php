@@ -31,7 +31,7 @@ $this->load->view('layout/portal_header.php'); ?>
                         <div id="content" class="container" style="margin: 60px 0 140px;">
                         <div class="d-flex justify-content-end">
                                 <div class="p-2">
-                                    <button type="submit" class="btn outline-primary" onclick="window.location.assign('<?php echo base_url(); ?>Portal/listTechniques')">Back</button>
+                                    <button type='submit' class='btn outline-primary' onclick='history.go(-1)'>Back</button>
                                 </div>
                             </div>
                             <div class='row card-group'>
