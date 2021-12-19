@@ -70,7 +70,7 @@ cd ../..
 
 ---
 
-**Add in secret details**
+**Add in database password etc.**
 
 ```
 cp app.yaml.example app.yaml
