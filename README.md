@@ -14,7 +14,7 @@ We use [Auth0](https://auth0.com/) to provide login access to the admin pages.
 
 ## Documentation
 
-[App Engine Installation Guide](AppEngInstall.md)
+[App Engine Development Environment Installation Guide](AppEngInstall.md)
 
 [A guide to the administration interface](AdminGuide.md) 
 
