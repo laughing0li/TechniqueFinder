@@ -256,9 +256,11 @@ The search function uses the MySQL &quot;MATCHES&quot; search in &quot;NATURAL L
 
 If there are multiple words e.g. &quot;Scanning Raman&quot;, then it will should return records with &quot;Scanning&quot; and records with &quot;Raman&quot;, but if any records have both, then they are ranked higher and will come higher up in the search results list.
 
-Two or three letter word searches (e.g. chemical element symbol names like 'Pt') are not currently supported.
+Two letter word searches for chemical element symbol names like 'Pt' are supported by modifying the 'innodb_ft_min_token_size' database parameter
 
-More info: https://database.guide/how-the-match-function-works-in-mysql/
+More info: 
+1. https://database.guide/how-the-match-function-works-in-mysql/
+2. https://dev.mysql.com/doc/refman/5.7/en/fulltext-fine-tuning.html
 
 The search function does a search of the following fields:
 
