@@ -52,15 +52,14 @@ class Localisation_model extends MY_Model
      */
     public function saveNewLocalisation($yr_commissioned, $applications, $technique_id, $location_id){
 
-        var_dump(array($yr_commissioned, $applications, $technique_id, $location_id));
         $localisationData = array(
             'yr_commissioned' => $yr_commissioned,
             'applications' => $applications,
         );
         $this->db->insert('localisation', $localisationData);
         $id = $this->db->insert_id();
-        $this->db->query("UPDATE localisation set technique_id=b'".$technique_id."' where id=".$id);
-        $this->db->query("UPDATE localisation set location_id=b'".$location_id."' where id=".$id);
+        $this->db->query("UPDATE localisation set technique_id='".$technique_id."' where id=".$id);
+        $this->db->query("UPDATE localisation set location_id='".$location_id."' where id=".$id);
         return $id;
     }
 
@@ -79,18 +78,16 @@ class Localisation_model extends MY_Model
      *
      */
     function updateLocalisation($localisation_id, $yr_commissioned, $applications, $location_id, $technique_id){
-        $localisation_data = array(
-            'yr_commissioned' => $yr_commissioned,
-            'applications' => $applications,
-        );
-        if ($technique_id != '') {
-            array_merge($localisation_data, array('technique_id' => $technique_id));
+        $this->db->query("UPDATE localisation set location_id='".$location_id."' where id=".$localisation_id);
+        $this->db->query("UPDATE localisation set technique_id='".$technique_id."' where id=".$localisation_id);
+        $this->db->query("UPDATE localisation set yr_commissioned='".$yr_commissioned."' where id=".$localisation_id);
+        $data = $this->getLocalisationData($localisation_id);
+        // need to find out whether this is a new application or an existing one
+        $result = explode(',',$applications);
+        if (json_decode($data[0]->applications) != ($result)) {
+            $this->db->query("UPDATE localisation set applications='".$applications."' where id=".$localisation_id);
         }
-        if ($location_id != '') {
-            array_merge($localisation_data, array('location_id' => $location_id));
-        }
-        $this->db->where('id', $localisation_id);
-        $this->db->update('localisation', $localisation_data);
+        
     }
 
     /**

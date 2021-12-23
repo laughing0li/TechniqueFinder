@@ -227,6 +227,8 @@ $('body').on('click', '#application-add-item', function () {
 $('#location-selector').change(function() {
     var id = $("#location-selector option:selected").first().attr('id');
     $("#location_id_selected_hidden").val(id);
+    // console.log($("#location_id_selected_hidden"));
+    // console.log(id)
 }).trigger("change");
 
 

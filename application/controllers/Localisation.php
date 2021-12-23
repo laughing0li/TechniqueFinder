@@ -7,11 +7,12 @@ class Localisation extends CI_Controller
     {
         parent::__construct();
         // auth0 config
-        if ($this->session->userdata('auth0__user') == null){
-            redirect(base_url() . 'login');
-        }
+        // if ($this->session->userdata('auth0__user') == null){
+        //     redirect(base_url() . 'login');
+        // }
         
         $this->load->model('Localisation_model');
+        $this->load->model('Location_model');
 
     }
 
@@ -158,23 +159,17 @@ class Localisation extends CI_Controller
      */
     function validateEdit($localisation_id){
         $data['data']=$_POST;
-
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('yr_commissioned', 'Year Commissioned', 'trim|required');
-        // $this->form_validation->set_rules('applications_items_selected_hidden', 'Applications', 'trim|required');
-
+        $this->form_validation->set_rules('applications', 'Applications', 'trim|required');
         if (isset($_POST['applications_items_selected_hidden'])) {
             $applications = $_POST['applications_items_selected_hidden'];
         } else {
             $applications = "";
         }
-
-        if (isset($_POST['location_id_selected_hidden'])) {
-            $location_id = $_POST['location_id_selected_hidden'];
-        } else {
-            $location_id = "";
-        }
+        $location = $this->Location_model->getLocationByName($data['data']['location']);
+        $location_id = intval($location->id);
 
         if (isset($_POST['technique_id_selected_hidden'])) {
             $technique_id = $_POST['technique_id_selected_hidden'];

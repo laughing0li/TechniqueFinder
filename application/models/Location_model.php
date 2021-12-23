@@ -27,6 +27,11 @@ class Location_model extends MY_Model
             ->where('id', $id)->get()->row();
     }
 
+    function getLocationByName($name){
+        return $this->db->from('location')
+            ->where('institution', $name)->get()->row();
+    }
+
     function getLocationByPriority($priority){
         return $this->db->from('location')
             ->where('priority', $priority)->get()->row();

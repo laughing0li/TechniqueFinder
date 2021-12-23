@@ -71,14 +71,6 @@ class Techniques_model extends MY_Model
         // get the media id from media in section table according to technique id
         $data = $this->db->query("SELECT * FROM media_in_section WHERE technique_id = $x")->result();
         // some of the technique has no media, so we need to check if the data is empty
-        // if ($data != null) {
-        //     // extract the media id from data array
-        //     $media_id = $data[0]->media_id;
-        //     // get the media data from media table according to media id
-        //     $media_file = $this->db->query("SELECT * FROM media_file WHERE id = $media_id")->row();
-        //     $info['media_file'] = $media_file;
-        //     $info['result'] = $result;
-        // }
         if ($data == null) {
             $info['media_file'] = null;
             $info['result'] = $result;
@@ -86,9 +78,17 @@ class Techniques_model extends MY_Model
             // extract the media id from data array
             $media_id = $data[0]->media_id;
             // get the media data from media table according to media id
-            $media_file = $this->db->query("SELECT * FROM media_file WHERE id = $media_id")->row();
-            $info['media_file'] = $media_file;
-            $info['result'] = $result;
+            $query = $this->db->query("SELECT m.id as id, m.name as name, m.caption as caption, m.media_type, mf.id as tid, mf.height as height, mf.width as width, mf.location
+                FROM media m, media_file mf
+                WHERE m.thumbnail_id= mf.id
+                ORDER BY m.name;");
+            $img = $query->result();
+            foreach ($img as $row) {
+                if ($row->id == $media_id) {
+                    $info['media_file'] = $row->location;
+                    $info['result'] = $result;
+                }
+            }
         }
         return $info;
     }
