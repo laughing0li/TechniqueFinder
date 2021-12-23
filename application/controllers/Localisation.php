@@ -7,9 +7,9 @@ class Localisation extends CI_Controller
     {
         parent::__construct();
         // auth0 config
-        // if ($this->session->userdata('auth0__user') == null){
-        //     redirect(base_url() . 'login');
-        // }
+        if ($this->session->userdata('auth0__user') == null){
+            redirect(base_url() . 'login');
+        }
         
         $this->load->model('Localisation_model');
         $this->load->model('Location_model');
