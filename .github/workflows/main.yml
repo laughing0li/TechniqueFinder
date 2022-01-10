@@ -1,0 +1,23 @@
+name: Deploy to GAE
+on: push
+
+jobs: 
+  deploy: 
+    name: deploying to Google cloud
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: create app yaml file
+        run: |
+          ls -la ~/
+          echo CLOUDSQL_CONNECTION_NAME = ${{ secrets.CLOUDSQL_CONNECTION_NAME }}  > ~/app.yaml
+          echo CLOUDSQL_USER = ${{ secrets.CLOUDSQL_USER }} >> ~/app.yaml
+          echo CLOUDSQL_PASSWORD = ${{ secrets.CLOUDSQL_PASSWORD }} >> ~/app.yaml
+          echo CLOUDSQL_DATABASE_NAME = ${{ secrets.CLOUDSQL_DATABASE_NAME }} >> ~/app.yaml
+      - name: show file content
+        run: |
+          ls -la ~/
+          cat ~/app.yaml

@@ -1,4 +1,4 @@
-.github/workflows/*
+# .github/workflows/*
 .idea
 .gcloudignore
 app.yaml
