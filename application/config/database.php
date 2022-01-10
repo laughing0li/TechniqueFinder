@@ -81,6 +81,7 @@ $db['default'] = array(
 	'username' => getenv('USERNAME'),
 	'password' => getenv('PASSWORD'),
 	'database' => getenv('DATABASE'),
+	var_dump(getenv('HOSTNAME')),
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
