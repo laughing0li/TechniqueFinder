@@ -70,8 +70,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-require './application/third_party/vendor/autoload.php';
-(Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
+// require './application/third_party/vendor/autoload.php';
+// (Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
 $active_group = 'default';
 $query_builder = TRUE;
 
