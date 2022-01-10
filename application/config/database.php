@@ -78,6 +78,8 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	var_dump(getenv()),
+	var_dump($_ENV),
+	var_dump($_SERVER),
 	'hostname' => getenv('HOSTNAME'),
 	'username' => getenv('USERNAME'),
 	'password' => getenv('PASSWORD'),
