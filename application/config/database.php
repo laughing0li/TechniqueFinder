@@ -77,10 +77,8 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	var_dump(getenv()),
 	var_dump(getenv('CLOUDSQL_USER')),
 	var_dump(getenv('CLOUDSQL_DATABASE_NAME')),
-	var_dump(getenv('GOOGLE_CLOUD_PROJECT')),
 	var_dump(getenv('GOOGLE_CLOUD_PROJECT')),
 	'hostname' => getenv('HOSTNAME'),
 	'username' => getenv('USERNAME'),
