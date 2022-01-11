@@ -32,15 +32,15 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
           PROJECT_ID: ${{ secrets.PROJECT_ID }}
           USERNAME: ${{ secrets.USERNAME }}
-        run: |
-          touch .env
-          echo ${{ secrets.ADMIN }} >> .env
-          ls -la ~/
-          cat .env
-      # - name: Deploy
-      #   id: deploy
-      #   uses: google-github-actions/deploy-appengine@v0.2.0
-      #   with: 
-      #     deliverables: app.yaml
-      #     project_id: ${{ secrets.GCP_PROJECT }}
-      #     credentials: ${{ secrets.GCP_CREDENTIALS }}
+        # run: |
+        #   touch .env
+        #   echo ${{ secrets.ADMIN }} >> .env
+        #   ls -la ~/
+        #   cat .env
+      - name: Deploy
+        id: deploy
+        uses: google-github-actions/deploy-appengine@v0.2.0
+        with: 
+          deliverables: app.yaml
+          project_id: ${{ secrets.GCP_PROJECT }}
+          credentials: ${{ secrets.GCP_CREDENTIALS }}
