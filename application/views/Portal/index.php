@@ -6,16 +6,6 @@
 </head>
 
 <body>
-    <?php
-    defined('BASEPATH') or exit('No direct script access allowed');
-
-    require './application/third_party/vendor/autoload.php';
-    use Symfony\Component\Yaml\Yaml;
-    $yaml = new Yaml();
-    $ym = Yaml::parse(file_get_contents('app.yaml'));
-    var_dump($ym['env_variables']['ADMIN']);
-    ?>
-
     <div class="bg-color">
 
         <div class="container-md">
