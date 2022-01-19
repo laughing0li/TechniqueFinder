@@ -46,7 +46,7 @@ jobs:
         uses: google-github-actions/deploy-appengine@v0.2.0
         with: 
           deliverables: app.yaml
-          service_account_email: ${{GAE_EMAIL}}
+          service_account_email: ${{secrets.GAE_EMAIL}}
           project_id: ${{ secrets.GCP_PROJECT }}
           credentials: ${{ secrets.GCP_CREDENTIALS }}
-          gae_variables: ${{CLOUD_STORAGE_CONFIG_FILE}}
+          gae_variables: ${{secrets.CLOUD_STORAGE_CONFIG_FILE}}
