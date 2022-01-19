@@ -9,10 +9,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
+      - name: install dependency
+        uses: php-actions/composer@v6 
 
       - name: copy secrets to app.yaml
-        uses: php-actions/composer@v6
         env: 
           ADMIN: ${{ secrets.ADMIN }}
           AUTH0_CLIENT_ID: ${{ secrets.AUTH0_CLIENT_ID }}
