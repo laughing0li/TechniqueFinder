@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-require './application/third_party/vendor/autoload.php';
+require './vendor/autoload.php';
 // (Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
 use Symfony\Component\Yaml\Yaml;
 $yaml = new Yaml();

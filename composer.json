@@ -13,11 +13,13 @@
 	"require": {
 		"php": ">=5.3.7",
 		"guzzlehttp/guzzle": "^7.3",
-        "auth0/auth0-php": "^8.0",
         "guzzlehttp/psr7": "^2.0",
         "http-interop/http-factory-guzzle": "^1.2",
         "vlucas/phpdotenv": "^5.3",
-        "steampixel/simple-php-router": "^0.7.0"
+        "steampixel/simple-php-router": "^0.7.0",
+		"auth0/auth0-php": "~7.0",
+		"google/cloud-storage": "^1.25",
+		"symfony/yaml": "^5.4"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
