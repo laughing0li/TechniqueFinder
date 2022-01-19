@@ -4,5 +4,5 @@
 # app.yaml
 tf.json
 application/third_party/vendor/*
-application/third_party/.env
+# application/third_party/.env
 .DS_Store

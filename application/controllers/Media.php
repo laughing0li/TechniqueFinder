@@ -13,8 +13,8 @@
  */
 
 defined('BASEPATH') or exit('No direct script access allowed');
-// require './application/third_party/vendor/autoload.php';
-// (Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
+require './application/third_party/vendor/autoload.php';
+(Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
 
 use Google\Cloud\Storage\StorageClient;
 use Google\Cloud\Storage\StorageObject;

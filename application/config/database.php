@@ -70,20 +70,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-// require './application/third_party/vendor/autoload.php';
-// (Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
+require './application/third_party/vendor/autoload.php';
+(Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
 $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	var_dump(getenv('CLOUDSQL_USER')),
-	var_dump(getenv('CLOUDSQL_DATABASE_NAME')),
-	var_dump(getenv('GOOGLE_CLOUD_PROJECT')),
-	'hostname' => getenv('HOSTNAME'),
-	'username' => getenv('USERNAME'),
-	'password' => getenv('PASSWORD'),
-	'database' => getenv('DATABASE'),
+	'hostname' => $_ENV['HOSTNAME'],
+	'username' => $_ENV['USERNAME'],
+	'password' => $_ENV['PASSWORD'],
+	'database' => $_ENV['DATABASE'],
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

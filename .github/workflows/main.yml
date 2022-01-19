@@ -12,6 +12,17 @@ jobs:
 
       - name: create env 
         env: 
+
+          CLOUDSQL_CONNECTION_NAME: ${{ secrets.CLOUDSQL_CONNECTION_NAME }}
+          CLOUDSQL_DATABASE_NAME: ${{ secrets.CLOUDSQL_DATABASE_NAME }}
+          CLOUDSQL_PASSWORD: ${{ secrets.CLOUDSQL_PASSWORD }}
+          CLOUDSQL_USER: ${{ secrets.CLOUDSQL_USER }}
+        with:
+          app_yaml_path: "./app.yaml"
+        run: |
+          echo $ADMIN $PROJECT_ID
+      - name: to .env
+        env: 
           ADMIN: ${{ secrets.ADMIN }}
           AUTH0_CLIENT_ID: ${{ secrets.AUTH0_CLIENT_ID }}
           AUTH0_CLIENT_SECRET: ${{ secrets.AUTH0_CLIENT_SECRET }}
@@ -20,10 +31,6 @@ jobs:
           AUTH0_LOGOUT_URI: ${{ secrets.AUTH0_LOGOUT_URI }}
           AUTH0_REDIRECT_URI: ${{ secrets.AUTH0_REDIRECT_URI }}
           BUCKETNAME: ${{ secrets.BUCKETNAME }}
-          CLOUDSQL_CONNECTION_NAME: ${{ secrets.CLOUDSQL_CONNECTION_NAME }}
-          CLOUDSQL_DATABASE_NAME: ${{ secrets.CLOUDSQL_DATABASE_NAME }}
-          CLOUDSQL_PASSWORD: ${{ secrets.CLOUDSQL_PASSWORD }}
-          CLOUDSQL_USER: ${{ secrets.CLOUDSQL_USER }}
           CLOUD_STORAGE_CONFIG_FILE: ${{ secrets.CLOUD_STORAGE_CONFIG_FILE }}
           DATABASE: ${{ secrets.DATABASE }}
           GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
@@ -32,12 +39,12 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
           PROJECT_ID: ${{ secrets.PROJECT_ID }}
           USERNAME: ${{ secrets.USERNAME }}
-        run: |
-          echo $ADMIN $PROJECT_ID
-      # - name: Deploy
-      #   id: deploy
-      #   uses: google-github-actions/deploy-appengine@v0.2.0
-      #   with: 
-      #     deliverables: app.yaml
-      #     project_id: ${{ secrets.GCP_PROJECT }}
-      #     credentials: ${{ secrets.GCP_CREDENTIALS }}
+        with:
+          env_path: "./application/third_party/.env"
+      - name: Deploy
+        id: deploy
+        uses: google-github-actions/deploy-appengine@v0.2.0
+        with: 
+          deliverables: app.yaml
+          project_id: ${{ secrets.GCP_PROJECT }}
+          credentials: ${{ secrets.GCP_CREDENTIALS }}

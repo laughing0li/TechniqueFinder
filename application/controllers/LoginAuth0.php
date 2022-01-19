@@ -13,8 +13,8 @@
  */
 
 
-// require './application/third_party/vendor/autoload.php';
-// (Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
+require './application/third_party/vendor/autoload.php';
+(Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
 
 use Auth0\SDK\Auth0;
 
