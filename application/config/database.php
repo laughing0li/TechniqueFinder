@@ -71,16 +71,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | the query builder class.
 */
 require './application/third_party/vendor/autoload.php';
-(Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
+// (Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
+use Symfony\Component\Yaml\Yaml;
+$yaml = new Yaml();
+$ym = Yaml::parse(file_get_contents('app.yaml'));
+var_dump($ym['env_variables']['ADMIN']);
 $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => $_ENV['HOSTNAME'],
-	'username' => $_ENV['USERNAME'],
-	'password' => $_ENV['PASSWORD'],
-	'database' => $_ENV['DATABASE'],
+	'hostname' => $ym['env_variables']['HOSTNAME'],
+	'username' => $ym['env_variables']['USERNAME'],
+	'password' => $ym['env_variables']['PASSWORD'],
+	'database' => $ym['env_variables']['DATABASE'],
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
