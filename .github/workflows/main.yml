@@ -12,7 +12,6 @@ jobs:
 
       - name: create env 
         env: 
-
           CLOUDSQL_CONNECTION_NAME: ${{ secrets.CLOUDSQL_CONNECTION_NAME }}
           CLOUDSQL_DATABASE_NAME: ${{ secrets.CLOUDSQL_DATABASE_NAME }}
           CLOUDSQL_PASSWORD: ${{ secrets.CLOUDSQL_PASSWORD }}
@@ -20,7 +19,7 @@ jobs:
         with:
           app_yaml_path: "./app.yaml"
         run: |
-          echo $ADMIN $PROJECT_ID
+          echo $CLOUDSQL_USER
       - name: to .env
         env: 
           ADMIN: ${{ secrets.ADMIN }}
@@ -41,6 +40,8 @@ jobs:
           USERNAME: ${{ secrets.USERNAME }}
         with:
           env_path: "./application/third_party/.env"
+        run: |
+          echo $ADMIN
       - name: Deploy
         id: deploy
         uses: google-github-actions/deploy-appengine@v0.2.0
