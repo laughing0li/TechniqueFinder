@@ -36,6 +36,8 @@ jobs:
           CLOUDSQL_USER: ${{ secrets.CLOUDSQL_USER }}
         with:
           app_yaml_path: "./app.yaml"
+        run: |
+          echo $ADMIN
 
       - name: Deploy
         id: deploy
