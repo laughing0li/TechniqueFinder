@@ -23,6 +23,7 @@ jobs:
           echo $CLOUDSQL_USER
 
       - name: copy secrets to .env file
+      - uses: 73h/gae-app-yaml-replace-env-variables@v0.1
         env: 
           ADMIN: ${{ secrets.ADMIN }}
           AUTH0_CLIENT_ID: ${{ secrets.AUTH0_CLIENT_ID }}
