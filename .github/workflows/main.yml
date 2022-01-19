@@ -35,7 +35,6 @@ jobs:
           CLOUDSQL_USER: ${{ secrets.CLOUDSQL_USER }}
         with:
           app_yaml_path: "./app.yaml"
-          args: "./application/third_party/.env"
 
       - name: Deploy
         id: deploy

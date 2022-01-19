@@ -2,6 +2,7 @@
     "require": {
       "auth0/auth0-php": "~7.0",
       "vlucas/phpdotenv": "^5.3",
-      "google/cloud-storage": "^1.25"
+      "google/cloud-storage": "^1.25",
+        "symfony/yaml": "^5.4"
     }
   }
