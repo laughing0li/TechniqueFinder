@@ -76,6 +76,7 @@ use Symfony\Component\Yaml\Yaml;
 $yaml = new Yaml();
 $ym = Yaml::parse(file_get_contents('app.yaml'));
 var_dump($ym['env_variables']['ADMIN']);
+var_dump($ym['env_variables']['USERNAME']);
 $active_group = 'default';
 $query_builder = TRUE;
 
