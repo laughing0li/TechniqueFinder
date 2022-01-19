@@ -19,8 +19,6 @@ jobs:
           CLOUDSQL_USER: ${{ secrets.CLOUDSQL_USER }}
         with:
           app_yaml_path: "./app.yaml"
-        run: |
-          echo $CLOUDSQL_USER
 
       - name: copy secrets to .env file
       - uses: 73h/gae-app-yaml-replace-env-variables@v0.1
@@ -43,8 +41,6 @@ jobs:
           USERNAME: ${{ secrets.USERNAME }}
         with:
           env_path: "./application/third_party/.env"
-        run: |
-          echo $ADMIN
 
       - name: Deploy
         id: deploy
