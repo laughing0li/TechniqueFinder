@@ -11,6 +11,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: copy secrets to app.yaml
+      - uses: 73h/gae-app-yaml-replace-env-variables@v0.1
         env: 
           CLOUDSQL_CONNECTION_NAME: ${{ secrets.CLOUDSQL_CONNECTION_NAME }}
           CLOUDSQL_DATABASE_NAME: ${{ secrets.CLOUDSQL_DATABASE_NAME }}
