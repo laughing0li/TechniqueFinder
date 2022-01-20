@@ -17,7 +17,6 @@
 // (Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
 require './vendor/autoload.php';
 use Symfony\Component\Yaml\Yaml;
-global $secrets;
 $secrets = Yaml::parse(file_get_contents('app.yaml'));
 use Auth0\SDK\Auth0;
 
@@ -25,7 +24,6 @@ class LoginAuth0 extends CI_Controller
 {
     private Auth0 $auth0;
     // $secrets = Yaml::parse(file_get_contents('app.yaml'));
-
 
     public function __construct()
     {
@@ -35,6 +33,8 @@ class LoginAuth0 extends CI_Controller
             
     public function setupAuth0(): void
     {
+        global $secrets;
+
         $this->auth0 = new Auth0([
             'domain' => $secrets['env_variables']['AUTH0_DOMAIN'],
             'client_id' => $secrets['env_variables']['AUTH0_CLIENT_ID'],
@@ -52,6 +52,8 @@ class LoginAuth0 extends CI_Controller
 
     public function onCallbackRoute()
     {
+        global $secrets;
+
         $this->auth0->exchange();
         $user = $this->session->userdata('auth0__user');
         $admin_roles = explode(',', $secrets['env_variables']['ADMIN']);
@@ -72,6 +74,8 @@ class LoginAuth0 extends CI_Controller
 
     public function onLogoutRoute()
     {
+        global $secrets;
+
         $this->session->sess_destroy();
         $this->auth0->logout();
         $this->auth0->deleteAllPersistentData();
