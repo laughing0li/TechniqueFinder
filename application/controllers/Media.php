@@ -13,11 +13,12 @@
  */
 
 defined('BASEPATH') or exit('No direct script access allowed');
-require './application/third_party/vendor/autoload.php';
-(Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
-
+// require './application/third_party/vendor/autoload.php';
+// (Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
+require './vendor/autoload.php';
+use Symfony\Component\Yaml\Yaml;
+$secrets = Yaml::parse(file_get_contents('app.yaml'));
 use Google\Cloud\Storage\StorageClient;
-use Google\Cloud\Storage\StorageObject;
 
 class Media extends CI_Controller
 {
@@ -146,6 +147,7 @@ class Media extends CI_Controller
 
     private function create_or_update_image($action, $media_id)
     {
+        global $secrets;
         if ($action == 'create') {
             $current_action_url = 'create_new_image';
         } else {
@@ -153,8 +155,8 @@ class Media extends CI_Controller
         }
 
         $storage =  new StorageClient([
-            'keyFilePath' => $_ENV['CLOUD_STORAGE_CONFIG_FILE'],
-            'projectId' => $_ENV['PROJECT_ID'],
+            'keyFilePath' => $secrets['env_variables']['CLOUD_STORAGE_CONFIG_FILE'],
+            'projectId' => $secrets['env_variables']['PROJECT_ID'],
         ]);
 
         $file_location = $_FILES['userfile']['name'];
@@ -212,7 +214,7 @@ class Media extends CI_Controller
         if ($action == 'create') {
             // upload the file to the cloud storage
             $file = fopen($_FILES["userfile"]["tmp_name"], 'r');
-            $bucket = $storage->bucket($_ENV['BUCKETNAME']);
+            $bucket = $storage->bucket($secrets['env_variables']['BUCKETNAME']);
             $bucket->upload($file, [
                 'name' => 'static/' . $_FILES["userfile"]["name"],
             ]);
@@ -248,10 +250,10 @@ class Media extends CI_Controller
             $name = 'static/' . $del_object->location;
             // config cloud storage
             $storage =  new StorageClient([
-                'keyFilePath' => $_ENV['CLOUD_STORAGE_CONFIG_FILE'],
-                'projectId' => $_ENV['PROJECT_ID'],
+                'keyFilePath' => $secrets['env_variables']['CLOUD_STORAGE_CONFIG_FILE'],
+                'projectId' => $secrets['env_variables']['PROJECT_ID'],
             ]);
-            $bucket = $storage->bucket($_ENV['BUCKETNAME']);
+            $bucket = $storage->bucket($secrets['env_variables']['BUCKETNAME']);
             $object = $bucket->object($name);
             $object->delete();
 
@@ -407,16 +409,17 @@ class Media extends CI_Controller
 
     function delete($id)
     {
+        global $secrets;
         // get to be deleted media info
         $del_object = $this->Media_model->getMediaInfoById($id);
         // the path of the file to be deleted
         $name = 'static/' . $del_object->location;
         // config cloud storage
         $storage =  new StorageClient([
-            'keyFilePath' => $_ENV['CLOUD_STORAGE_CONFIG_FILE'],
-            'projectId' => $_ENV['PROJECT_ID'],
+            'keyFilePath' => $secrets['env_variables']['CLOUD_STORAGE_CONFIG_FILE'],
+            'projectId' => $secrets['env_variables']['PROJECT_ID'],
         ]);
-        $bucket = $storage->bucket($_ENV['BUCKETNAME']);
+        $bucket = $storage->bucket($secrets['env_variables']['BUCKETNAME']);
         $object = $bucket->object($name);
         $object->delete();
         if ($this->Media_model->deleteById($id)) {
