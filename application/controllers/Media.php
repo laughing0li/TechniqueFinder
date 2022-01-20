@@ -250,7 +250,7 @@ class Media extends CI_Controller
             $name = 'static/' . $del_object->location;
             // config cloud storage
             $storage =  new StorageClient([
-                'keyFilePath' => $secrets['env_variables']['CLOUD_STORAGE_CONFIG_FILE'],
+                // 'keyFilePath' => $secrets['env_variables']['CLOUD_STORAGE_CONFIG_FILE'],
                 'projectId' => $secrets['env_variables']['PROJECT_ID'],
             ]);
             $bucket = $storage->bucket($secrets['env_variables']['BUCKETNAME']);
@@ -416,7 +416,7 @@ class Media extends CI_Controller
         $name = 'static/' . $del_object->location;
         // config cloud storage
         $storage =  new StorageClient([
-            'keyFilePath' => $secrets['env_variables']['CLOUD_STORAGE_CONFIG_FILE'],
+            // 'keyFilePath' => $secrets['env_variables']['CLOUD_STORAGE_CONFIG_FILE'],
             'projectId' => $secrets['env_variables']['PROJECT_ID'],
         ]);
         $bucket = $storage->bucket($secrets['env_variables']['BUCKETNAME']);
