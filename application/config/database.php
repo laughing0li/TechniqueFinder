@@ -74,18 +74,16 @@ require './vendor/autoload.php';
 // (Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
 use Symfony\Component\Yaml\Yaml;
 $yaml = new Yaml();
-$ym = Yaml::parse(file_get_contents('app.yaml'));
-// var_dump($ym['env_variables']['ADMIN']);
-// var_dump($ym['env_variables']['USERNAME']);
+$secrets = Yaml::parse(file_get_contents('app.yaml'));
 $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => $ym['env_variables']['HOSTNAME'],
-	'username' => $ym['env_variables']['USERNAME'],
-	'password' => $ym['env_variables']['PASSWORD'],
-	'database' => $ym['env_variables']['DATABASE'],
+	'hostname' => $secrets['env_variables']['HOSTNAME'],
+	'username' => $secrets['env_variables']['USERNAME'],
+	'password' => $secrets['env_variables']['PASSWORD'],
+	'database' => $secrets['env_variables']['DATABASE'],
 	// 'hostname' => $_ENV['HOSTNAME'],
 	// 'username' => $_ENV['USERNAME'],
 	// 'password' => $_ENV['PASSWORD'],
