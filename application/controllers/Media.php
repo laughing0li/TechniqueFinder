@@ -155,7 +155,7 @@ class Media extends CI_Controller
         }
 
         $storage =  new StorageClient([
-            'keyFilePath' => $secrets['env_variables']['CLOUD_STORAGE_CONFIG_FILE'],
+            // 'keyFilePath' => $secrets['env_variables']['CLOUD_STORAGE_CONFIG_FILE'],
             'projectId' => $secrets['env_variables']['PROJECT_ID'],
         ]);
 
