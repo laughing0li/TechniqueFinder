@@ -73,7 +73,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 require './vendor/autoload.php';
 // (Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
 use Symfony\Component\Yaml\Yaml;
-$yaml = new Yaml();
 $secrets = Yaml::parse(file_get_contents('app.yaml'));
 $active_group = 'default';
 $query_builder = TRUE;

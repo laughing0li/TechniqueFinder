@@ -17,13 +17,14 @@
 // (Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
 require './vendor/autoload.php';
 use Symfony\Component\Yaml\Yaml;
-$yaml = new Yaml();
-$secrets = Yaml::parse(file_get_contents('app.yaml'));
+global $secrets = Yaml::parse(file_get_contents('app.yaml'));
 use Auth0\SDK\Auth0;
 
 class LoginAuth0 extends CI_Controller
 {
     private Auth0 $auth0;
+    // $secrets = Yaml::parse(file_get_contents('app.yaml'));
+
 
     public function __construct()
     {
@@ -34,10 +35,10 @@ class LoginAuth0 extends CI_Controller
     public function setupAuth0(): void
     {
         $this->auth0 = new Auth0([
-            'domain' => $this->secrets['env_variables']['AUTH0_DOMAIN'],
-            'client_id' => $this->secrets['env_variables']['AUTH0_CLIENT_ID'],
-            'client_secret' => $this->secrets['env_variables']['AUTH0_CLIENT_SECRET'],
-            'redirect_uri' => $this->secrets['env_variables']['AUTH0_REDIRECT_URI'],
+            'domain' => $secrets['env_variables']['AUTH0_DOMAIN'],
+            'client_id' => $secrets['env_variables']['AUTH0_CLIENT_ID'],
+            'client_secret' => $secrets['env_variables']['AUTH0_CLIENT_SECRET'],
+            'redirect_uri' => $secrets['env_variables']['AUTH0_REDIRECT_URI'],
         ]);
     }
 
@@ -52,7 +53,7 @@ class LoginAuth0 extends CI_Controller
     {
         $this->auth0->exchange();
         $user = $this->session->userdata('auth0__user');
-        $admin_roles = explode(',', $this->secrets['env_variables']['ADMIN']);
+        $admin_roles = explode(',', $secrets['env_variables']['ADMIN']);
         if ($user['email_verified'] &&  in_array($user['email'], $admin_roles)) {
         // if ($user['email_verified'] && $user['email'] == 'laughinglyl90@gmail.com') {
             header('Location: ' . '/TechniqueFinder/index', true, 303);
@@ -62,7 +63,7 @@ class LoginAuth0 extends CI_Controller
             $this->auth0->deleteAllPersistentData();
             echo '<script>let r=alert("You do not have the access permit, Please contact the admin")</script>';
             echo '<script> if (r == true) {</script>';
-            echo '<script>window.location.href="'.$this->secrets['env_variables']['AUTH0_LOGOUT_URI'].'"</script>';
+            echo '<script>window.location.href="'.$secrets['env_variables']['AUTH0_LOGOUT_URI'].'"</script>';
             echo '<script>}</script>';
         }
     }
@@ -73,7 +74,7 @@ class LoginAuth0 extends CI_Controller
         $this->session->sess_destroy();
         $this->auth0->logout();
         $this->auth0->deleteAllPersistentData();
-        redirect($this->secrets['env_variables']['AUTH0_LOGOUT_URI']);
+        redirect($secrets['env_variables']['AUTH0_LOGOUT_URI']);
     }
 
 }
