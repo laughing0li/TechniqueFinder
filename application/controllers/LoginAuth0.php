@@ -17,7 +17,8 @@
 // (Dotenv\Dotenv::createImmutable('application/third_party/'))->load();
 require './vendor/autoload.php';
 use Symfony\Component\Yaml\Yaml;
-global $secrets = Yaml::parse(file_get_contents('app.yaml'));
+global $secrets;
+$secrets = Yaml::parse(file_get_contents('app.yaml'));
 use Auth0\SDK\Auth0;
 
 class LoginAuth0 extends CI_Controller
