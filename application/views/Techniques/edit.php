@@ -471,12 +471,12 @@ if ($this->session->flashdata('error-warning-message')) {
                         </tbody>
                     </table>
                 </div>
-                <div>
+                <!-- <div>
                     <button type="button" id="add-contacts-submit" class="tf-button">
                     <span class="tf-database-add"></span>
                     <span class="tf-font create-technique-dialog-button">Add contacts</span>
                     </button>
-                </div>
+                </div> -->
             </td>
         </tr>
         <tr>
@@ -513,12 +513,12 @@ if ($this->session->flashdata('error-warning-message')) {
                         </tbody>
                     </table>
                 </div>
-                <div>
+                <!-- <div>
                     <button type="button" id="add-localisations-submit" class="tf-button">
                     <span class="tf-database-add"></span>
                     <span class="tf-font create-technique-dialog-button ">Add machine localisation</span>
                     </button>
-                </div>
+                </div> -->
             </td>
         </tr>
         <tr>

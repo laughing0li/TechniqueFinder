@@ -661,9 +661,9 @@ class Techniques extends CI_Controller
             }
 
             // Update localisations
-            if ($localisations_ids != '') {
-		$this->Techniques_model->updateLocalisations($technique_id, $localisations_ids);
-            }
+        //     if ($localisations_ids != '') {
+		// $this->Techniques_model->updateLocalisations($technique_id, $localisations_ids);
+        //     }
 
             // Update the database
             $id = $this->Techniques_model->updateTechnique($technique_id,$technique_name, $alternative_names, $short_description, $long_description, $keywords, $list_media_items, $output_media_items, $instrument_media_items, $contact_items, $case_studies_list, $references_items, $extras);
